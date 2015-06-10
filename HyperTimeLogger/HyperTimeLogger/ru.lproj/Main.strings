@@ -1,0 +1,21 @@
+
+/* Class = "UILabel"; text = "[Category]"; ObjectID = "3jm-gy-tqK"; */
+"3jm-gy-tqK.text" = "[Category]";
+
+/* Class = "UILabel"; text = "[action.title]"; ObjectID = "M7M-pw-ZZ0"; */
+"M7M-pw-ZZ0.text" = "[action.title]";
+
+/* Class = "UILabel"; text = "[category.title]"; ObjectID = "O4T-RW-PUf"; */
+"O4T-RW-PUf.text" = "[category.title]";
+
+/* Class = "UILabel"; text = "[Date]"; ObjectID = "OTb-B3-LJR"; */
+"OTb-B3-LJR.text" = "[Date]";
+
+/* Class = "UILabel"; text = "[Duration]"; ObjectID = "PMS-ar-YE1"; */
+"PMS-ar-YE1.text" = "[Duration]";
+
+/* Class = "UILabel"; text = "[Title]"; ObjectID = "Sgj-un-jmQ"; */
+"Sgj-un-jmQ.text" = "[Title]";
+
+/* Class = "UILabel"; text = "[Title]"; ObjectID = "W17-k0-bNQ"; */
+"W17-k0-bNQ.text" = "[Title]";
