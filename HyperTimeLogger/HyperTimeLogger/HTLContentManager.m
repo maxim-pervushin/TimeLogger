@@ -52,8 +52,8 @@
     }
 }
 
-- (BOOL)resetContent {
-    BOOL result = [self.storageProvider resetContent];
+- (BOOL)clear {
+    BOOL result = [self.storageProvider clear];
     [self initializeStorage];
     return result;
 }
@@ -66,8 +66,8 @@
     return [self.storageProvider addCategory:category];
 }
 
-- (NSArray *)completionsForText:(NSString *)text {
-    return [self.storageProvider completionsForText:text];
+- (NSArray *)completionsWithText:(NSString *)text {
+    return [self.storageProvider completionsWithText:text];
 }
 
 //- (id)statisticsFromDate:(NSDate *)fromDate toDate:(NSDate *)toDate {
@@ -78,12 +78,12 @@
     return self.storageProvider.reportsExtended;
 }
 
-- (NSArray *)dateSections {
-    return [self.storageProvider dateSections];
+- (NSArray *)reportSections {
+    return [self.storageProvider reportSections];
 }
 
-- (NSArray *)reportsExtendedWithDateSection:(HTLDateSectionDto *)dateSection {
-    return [self.storageProvider reportsExtendedWithDateSection:dateSection];
+- (NSArray *)reportsExtendedWithSection:(HTLDateSectionDto *)dateSection {
+    return [self.storageProvider reportsExtendedWithSection:dateSection];
 }
 
 - (BOOL)addReportExtended:(HTLReportExtendedDto *)reportExtended {

@@ -11,7 +11,7 @@
 @implementation HTETodayModelController
 
 - (NSArray *)completions:(NSUInteger)numberOfCompletions {
-    NSArray *completions = [[HTLContentManager defaultManager] completionsForText:nil];
+    NSArray *completions = [[HTLContentManager defaultManager] completionsWithText:nil];
     NSMutableArray *result = [NSMutableArray new];
 //    for (NSUInteger i = 0; i < completions.count && i < numberOfCompletions; i++) {
     for (NSUInteger i = 0; i < completions.count && i < numberOfCompletions; i++) {

@@ -9,7 +9,7 @@
 @implementation HTLSettingsModelController
 
 - (BOOL)resetContent {
-    return [[HTLContentManager defaultManager] resetContent];
+    return [[HTLContentManager defaultManager] clear];
 }
 
 - (BOOL)resetDefaults {

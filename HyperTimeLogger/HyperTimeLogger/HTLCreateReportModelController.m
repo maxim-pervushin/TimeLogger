@@ -13,7 +13,7 @@
 #pragma mark - HTLCreateReportModelController
 
 - (NSArray *)getCompletionsForText:(NSString *)text {
-    return [[HTLContentManager defaultManager] completionsForText:text];
+    return [[HTLContentManager defaultManager] completionsWithText:text];
 }
 
 - (NSArray *)getCategories {

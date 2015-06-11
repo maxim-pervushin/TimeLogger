@@ -117,7 +117,7 @@ static NSString *const kCreateReportSegueIdentifier = @"CreateReport";
     // Scroll to bottom
     NSUInteger sectionsCount = self.modelController.dateSections.count;
     if (sectionsCount > 0) {
-        NSUInteger recordsCount = [self.modelController reportsExtendedForDateSecionAtIndex:sectionsCount - 1].count;
+        NSUInteger recordsCount = [self.modelController reportsExtendedForDateSectionAtIndex:sectionsCount - 1].count;
         [self.tableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:recordsCount - 1 inSection:sectionsCount - 1]
                               atScrollPosition:UITableViewScrollPositionBottom
                                       animated:NO];
@@ -136,7 +136,7 @@ static NSString *const kCreateReportSegueIdentifier = @"CreateReport";
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return [self.modelController reportsExtendedForDateSecionAtIndex:section].count;
+    return [self.modelController reportsExtendedForDateSectionAtIndex:section].count;
 }
 
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
@@ -147,7 +147,7 @@ static NSString *const kCreateReportSegueIdentifier = @"CreateReport";
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     HTLReportExtendedCell *cell = [tableView dequeueReusableCellWithIdentifier:kReportCellIdentifier forIndexPath:indexPath];
-    HTLReportExtendedDto *report = [self.modelController reportsExtendedForDateSecionAtIndex:(NSUInteger) indexPath.section][(NSUInteger) indexPath.row];
+    HTLReportExtendedDto *report = [self.modelController reportsExtendedForDateSectionAtIndex:(NSUInteger) indexPath.section][(NSUInteger) indexPath.row];
     [cell configureWithReport:report];
     return cell;
 }

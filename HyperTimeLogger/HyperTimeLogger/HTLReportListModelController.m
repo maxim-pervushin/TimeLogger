@@ -27,12 +27,12 @@ static NSString *const kDefaultDateFormat = @"yyyy-MM-dd HH:mm:ss ZZZ";
 }
 
 - (NSArray *)dateSections {
-    return [[HTLContentManager defaultManager] dateSections];
+    return [[HTLContentManager defaultManager] reportSections];
 }
 
-- (NSArray *)reportsExtendedForDateSecionAtIndex:(NSInteger)index {
-    HTLDateSectionDto *dateSection = [[HTLContentManager defaultManager] dateSections][(NSUInteger) index];
-    return [[HTLContentManager defaultManager] reportsExtendedWithDateSection:dateSection];
+- (NSArray *)reportsExtendedForDateSectionAtIndex:(NSInteger)index {
+    HTLDateSectionDto *dateSection = [[HTLContentManager defaultManager] reportSections][(NSUInteger) index];
+    return [[HTLContentManager defaultManager] reportsExtendedWithSection:dateSection];
 }
 
 - (NSString *)newIdentifier {

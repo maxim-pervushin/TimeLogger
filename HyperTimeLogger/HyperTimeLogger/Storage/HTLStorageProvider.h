@@ -17,7 +17,7 @@ static NSString *const kHTLStorageProviderChangedNotification = @"HTLStorageProv
 
 @protocol HTLStorageProvider <NSObject>
 
-- (BOOL)resetContent;
+- (BOOL)clear;
 
 // Categories
 
@@ -29,11 +29,11 @@ static NSString *const kHTLStorageProviderChangedNotification = @"HTLStorageProv
 
 // Reports
 
-- (NSArray *)dateSections;
+- (NSArray *)reportSections;
 
 - (NSArray *)reportsExtended;
 
-- (NSArray *)reportsExtendedWithDateSection:(HTLDateSectionDto *)dateSection;
+- (NSArray *)reportsExtendedWithSection:(HTLDateSectionDto *)dateSection;
 
 - (NSArray *)reportsExtendedWithCategory:(HTLCategoryDto *)category fromDate:(NSDate *)fromDate toDate:(NSDate *)toDate;
 
@@ -45,6 +45,6 @@ static NSString *const kHTLStorageProviderChangedNotification = @"HTLStorageProv
 
 // Completions
 
-- (NSArray *)completionsForText:(NSString *)text;
+- (NSArray *)completionsWithText:(NSString *)text;
 
 @end

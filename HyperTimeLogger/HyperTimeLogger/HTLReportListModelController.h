@@ -15,7 +15,7 @@
 
 @property(nonatomic, readonly) NSArray *dateSections;
 
-- (NSArray *)reportsExtendedForDateSecionAtIndex:(NSInteger)index;
+- (NSArray *)reportsExtendedForDateSectionAtIndex:(NSInteger)index;
 
 - (void)createTestData;
 
