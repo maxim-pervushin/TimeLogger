@@ -659,9 +659,7 @@ static NSString *const kLastReportEndDateCacheKey = @"lastReportEndDate";
 
     [database close];
 
-    if (categories.count) {
-        [self.cache setObject:categories forKey:kCategoriesCacheKey];
-    }
+    [self.cache setObject:categories forKey:kCategoriesCacheKey];
 
     return categories;
 }
@@ -771,9 +769,7 @@ static NSString *const kLastReportEndDateCacheKey = @"lastReportEndDate";
     [database close];
 
     NSArray *result = [NSArray arrayWithArray:reportsExtended];
-    if (result.count) {
-        [self.reportsExtendedBySectionCache setObject:result forKey:@(dateSection.hash)];
-    }
+    [self.reportsExtendedBySectionCache setObject:result forKey:@(dateSection.hash)];
 
     return result;
 }
@@ -895,7 +891,9 @@ static NSString *const kLastReportEndDateCacheKey = @"lastReportEndDate";
 
     [database close];
 
-    [self.cache setObject:lastReportEndDate forKey:kLastReportEndDateCacheKey];
+    if (lastReportEndDate) {
+        [self.cache setObject:lastReportEndDate forKey:kLastReportEndDateCacheKey];
+    }
 
     return lastReportEndDate;
 }
@@ -916,7 +914,9 @@ static NSString *const kLastReportEndDateCacheKey = @"lastReportEndDate";
 
     [database close];
 
-    [self.cache setObject:lastReportExtended forKey:kLastReportExtendedCacheKey];
+    if (lastReportExtended) {
+        [self.cache setObject:lastReportExtended forKey:kLastReportExtendedCacheKey];
+    }
 
     return lastReportExtended;
 }

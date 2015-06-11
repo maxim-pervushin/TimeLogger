@@ -87,6 +87,7 @@
 		C5B133A11B27625900437B10 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C5B133A01B27625900437B10 /* Images.xcassets */; };
 		C5B133A41B27625900437B10 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = C5B133A21B27625900437B10 /* LaunchScreen.xib */; };
 		C5BA1B801B26F890006D80BC /* TodayExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = C5BA1B731B26F890006D80BC /* TodayExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		C5DEC4BB1B29CF250009CF46 /* HTLCompletionCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC699EDAA8359E310393BD /* HTLCompletionCollectionViewCell.m */; };
 		C5FFE3F21B1857CE007D317D /* HyperTimeLoggerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C5FFE3F11B1857CE007D317D /* HyperTimeLoggerTests.m */; };
 /* End PBXBuildFile section */
 
@@ -969,6 +970,7 @@
 				73BC688E05940C6C7A19AEFE /* HTLCategoryDto.m in Sources */,
 				73BC62568DE7117F7D84C604 /* HTLActionDto.m in Sources */,
 				73BC6436C539FA93E8CB0BFF /* HTLCompletion.m in Sources */,
+				C5DEC4BB1B29CF250009CF46 /* HTLCompletionCollectionViewCell.m in Sources */,
 				73BC6BCFC083BDB023D12F96 /* HTLDateSectionDto.m in Sources */,
 				73BC6BBDB05B2D670300F209 /* HTLReportExtendedDto.m in Sources */,
 				73BC66FBEB3FEDA6D59A4EEB /* HTLSqliteStorageProvider.m in Sources */,
