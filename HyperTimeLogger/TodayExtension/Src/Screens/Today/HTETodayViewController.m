@@ -17,7 +17,8 @@
 #import <ZLBalancedFlowLayout/ZLBalancedFlowLayout-Swift.h>
 
 static NSString *const kCompletionCellIdentifier = @"CompletionCell";
-static const NSUInteger kNumberOfCompletions = 9;
+// TODO: Load number of completions from defaults
+static const NSUInteger kNumberOfCompletions = 15;
 static const int kCollectionViewRowHeight = 40;
 static const int kCollectionViewMinItemsPerRow = 3;
 
