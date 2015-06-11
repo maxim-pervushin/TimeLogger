@@ -12,21 +12,26 @@
 
 static NSString *const kDefaultDateFormat = @"yyyy-MM-dd HH:mm:ss ZZZ";
 
+@interface HTLReportListModelController ()
+
+@property(nonatomic, copy) HTLModelControllerContentChangedBlock contentChangedBlock;
+
+@end
 
 @implementation HTLReportListModelController
-@dynamic reportsExtendedCount;
-@dynamic reportsExtended;
-@dynamic dateSections;
+@dynamic reportSections;
 
-- (NSUInteger)reportsExtendedCount {
-    return self.reportsExtended.count;
+#pragma mark - HTLReportListModelController
+
++ (instancetype)modelControllerWithContentChangedBlock:(HTLModelControllerContentChangedBlock)block {
+    HTLReportListModelController *instance = [self new];
+    if (block) {
+        instance.contentChangedBlock = block;
+    }
+    return instance;
 }
 
-- (NSArray *)reportsExtended {
-    return [[HTLContentManager defaultManager] reportsExtended];
-}
-
-- (NSArray *)dateSections {
+- (NSArray *)reportSections {
     return [[HTLContentManager defaultManager] reportSections];
 }
 
@@ -34,6 +39,35 @@ static NSString *const kDefaultDateFormat = @"yyyy-MM-dd HH:mm:ss ZZZ";
     HTLDateSectionDto *dateSection = [[HTLContentManager defaultManager] reportSections][(NSUInteger) index];
     return [[HTLContentManager defaultManager] reportsExtendedWithSection:dateSection];
 }
+
+- (void)subscribe {
+    __weak __typeof(self) weakSelf = self;
+    [[NSNotificationCenter defaultCenter] addObserverForName:kHTLStorageProviderChangedNotification object:nil queue:nil usingBlock:^(NSNotification *note) {
+        if (weakSelf.contentChangedBlock) {
+            weakSelf.contentChangedBlock();
+        }
+    }];
+}
+
+- (void)unsubscribe {
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:kHTLStorageProviderChangedNotification object:nil];
+};
+
+#pragma mark - NSObject
+
+- (instancetype)init {
+    self = [super init];
+    if (self) {
+        [self subscribe];
+    }
+    return self;
+}
+
+- (void)dealloc {
+    [self unsubscribe];
+}
+
+#pragma mark  - Test Data
 
 - (NSString *)newIdentifier {
     return [NSUUID UUID].UUIDString;
@@ -68,7 +102,7 @@ static NSString *const kDefaultDateFormat = @"yyyy-MM-dd HH:mm:ss ZZZ";
 }
 
 - (void)createTestData {
-    if (self.reportsExtendedCount != 0) {
+    if ([HTLContentManager defaultManager].reportsExtended.count != 0) {
         return;
     }
 

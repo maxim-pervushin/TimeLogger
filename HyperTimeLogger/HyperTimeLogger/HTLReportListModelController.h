@@ -5,15 +5,17 @@
 
 #import <Foundation/Foundation.h>
 
+
+typedef void (^HTLModelControllerContentChangedBlock)();
+
 @class HTLReportDto;
 
 
 @interface HTLReportListModelController : NSObject
 
-@property(nonatomic, readonly) NSUInteger reportsExtendedCount;
-@property(nonatomic, readonly) NSArray *reportsExtended;
++ (instancetype)modelControllerWithContentChangedBlock:(HTLModelControllerContentChangedBlock)block;
 
-@property(nonatomic, readonly) NSArray *dateSections;
+@property(nonatomic, readonly) NSArray *reportSections;
 
 - (NSArray *)reportsExtendedForDateSectionAtIndex:(NSInteger)index;
 

@@ -12,7 +12,7 @@
 #import "HTLCompletion.h"
 #import "NSDate+HTLComponents.h"
 #import "HTLDateSectionDto.h"
-
+#import "DTFolderMonitor.h"
 
 static NSString *const kApplicationGroup = @"group.timelogger";
 static NSString *const kStorageFileName = @"time_logger_storage.db";
@@ -28,6 +28,7 @@ static NSString *const kLastReportEndDateCacheKey = @"lastReportEndDate";
 @property(nonatomic, strong) NSCache *cache;
 @property(nonatomic, strong) NSCache *reportsExtendedBySectionCache;
 @property(nonatomic, strong) NSCache *completionByPatternCache;
+@property(nonatomic, strong) DTFolderMonitor *folderMonitor;
 
 @end
 
@@ -35,6 +36,7 @@ static NSString *const kLastReportEndDateCacheKey = @"lastReportEndDate";
 @synthesize cache = cache_;
 @synthesize reportsExtendedBySectionCache = reportsExtendedBySectionCache_;
 @synthesize completionByPatternCache = completionByPatternCache_;
+@synthesize folderMonitor = folderMonitor_;
 
 #pragma mark - HTLSqliteStorageProvider
 
@@ -601,6 +603,11 @@ static NSString *const kLastReportEndDateCacheKey = @"lastReportEndDate";
         cache_ = [NSCache new];
         reportsExtendedBySectionCache_ = [NSCache new];
         completionByPatternCache_ = [NSCache new];
+        folderMonitor_ = [DTFolderMonitor folderMonitorForURL:self.storageFileFolderURL block:^{
+            [self clearCaches];
+            [[NSNotificationCenter defaultCenter] postNotificationName:kHTLStorageProviderChangedNotification object:nil];
+        }];
+        [folderMonitor_ startMonitoring];
     }
     return self;
 }

@@ -14,10 +14,10 @@ target :HyperTimeLogger do
   pod 'ZLBalancedFlowLayout'
 end
 
- target :TodayExtension do
-   pod 'CocoaLumberjack'
-   pod 'UIColor+BFPaperColors', :head
-   pod 'HexColors'
-   pod 'FMDB'
-   pod 'ZLBalancedFlowLayout'
- end
+target :TodayExtension do
+  pod 'CocoaLumberjack'
+  pod 'UIColor+BFPaperColors', :head
+  pod 'HexColors'
+  pod 'FMDB'
+  pod 'ZLBalancedFlowLayout'
+end

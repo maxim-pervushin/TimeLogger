@@ -101,10 +101,13 @@ static NSString *const kCreateReportSegueIdentifier = @"CreateReport";
     UINib *sectionHeaderNib = [UINib nibWithNibName:@"DateSectionHeader" bundle:nil];
     [self.tableView registerNib:sectionHeaderNib forHeaderFooterViewReuseIdentifier:kDateSectionHeaderIdentifier];
     self.tableView.contentInset = UIEdgeInsetsMake(0, 0, 120, 0);
-    self.modelController = [HTLReportListModelController new];
 
-    // TODO: For testing only
-    [self.modelController createTestData];
+    __weak __typeof(self)weakSelf = self;
+    self.modelController = [HTLReportListModelController modelControllerWithContentChangedBlock:^{
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [weakSelf.tableView reloadData];
+        });
+    }];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -115,7 +118,7 @@ static NSString *const kCreateReportSegueIdentifier = @"CreateReport";
     [self loadDefaults];
 
     // Scroll to bottom
-    NSUInteger sectionsCount = self.modelController.dateSections.count;
+    NSUInteger sectionsCount = self.modelController.reportSections.count;
     if (sectionsCount > 0) {
         NSUInteger recordsCount = [self.modelController reportsExtendedForDateSectionAtIndex:sectionsCount - 1].count;
         [self.tableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:recordsCount - 1 inSection:sectionsCount - 1]
@@ -132,7 +135,7 @@ static NSString *const kCreateReportSegueIdentifier = @"CreateReport";
 #pragma mark - UITableViewDataSource, UITableViewDelegate
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return self.modelController.dateSections.count;
+    return self.modelController.reportSections.count;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
@@ -141,7 +144,7 @@ static NSString *const kCreateReportSegueIdentifier = @"CreateReport";
 
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
     HTLDateSectionHeader *header = [tableView dequeueReusableHeaderFooterViewWithIdentifier:kDateSectionHeaderIdentifier];
-    [header configureWithDateSection:self.modelController.dateSections[(NSUInteger) section]];
+    [header configureWithDateSection:self.modelController.reportSections[(NSUInteger) section]];
     return header;
 }
 

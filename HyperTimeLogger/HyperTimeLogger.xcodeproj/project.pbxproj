@@ -65,6 +65,9 @@
 		C550ED411B26FF5F00A07113 /* HTLCompletion.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6994273ABCF4FB577C9C /* HTLCompletion.m */; };
 		C57EA57A1B27034600B97F65 /* HTLCompletionCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6FD7882AEE28F3332C2B /* HTLCompletionCollectionViewCell.m */; };
 		C57EA57B1B27073C00B97F65 /* NSDate+HTLComponents.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6916D46541979A320E8F /* NSDate+HTLComponents.m */; };
+		C5A4337C1B29B90C00E97EE0 /* DTFolderMonitor.m in Sources */ = {isa = PBXBuildFile; fileRef = C5A4337A1B29B90C00E97EE0 /* DTFolderMonitor.m */; };
+		C5A4337D1B29B90C00E97EE0 /* DTFolderMonitor.m in Sources */ = {isa = PBXBuildFile; fileRef = C5A4337A1B29B90C00E97EE0 /* DTFolderMonitor.m */; };
+		C5A4337E1B29B90C00E97EE0 /* DTFolderMonitor.m in Sources */ = {isa = PBXBuildFile; fileRef = C5A4337A1B29B90C00E97EE0 /* DTFolderMonitor.m */; };
 		C5B133961B27625900437B10 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C5B133951B27625900437B10 /* main.m */; };
 		C5B133991B27625900437B10 /* DMMAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C5B133981B27625900437B10 /* DMMAppDelegate.m */; };
 		C5B1339C1B27625900437B10 /* DMMViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C5B1339B1B27625900437B10 /* DMMViewController.m */; };
@@ -197,6 +200,9 @@
 		C50E7A601B205B18004A005D /* settings@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "settings@3x.png"; sourceTree = "<group>"; };
 		C54E00B91B219F90005BA9F2 /* clock_transparent.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = clock_transparent.png; sourceTree = "<group>"; };
 		C57EA5791B27021600B97F65 /* TodayExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = TodayExtension.entitlements; sourceTree = "<group>"; };
+		C5A433791B29B90C00E97EE0 /* DTFolderMonitor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DTFolderMonitor.h; sourceTree = "<group>"; };
+		C5A4337A1B29B90C00E97EE0 /* DTFolderMonitor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DTFolderMonitor.m; sourceTree = "<group>"; };
+		C5A4337B1B29B90C00E97EE0 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		C5A6E8231B1C6748000F459A /* HyperTimeLogger.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = HyperTimeLogger.entitlements; sourceTree = "<group>"; };
 		C5B133911B27625900437B10 /* DatabaseMigrationManager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DatabaseMigrationManager.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C5B133941B27625900437B10 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -378,6 +384,40 @@
 			path = Res;
 			sourceTree = "<group>";
 		};
+		C5A433751B29B90C00E97EE0 /* Vendor */ = {
+			isa = PBXGroup;
+			children = (
+				C5A433761B29B90C00E97EE0 /* DTFoundation */,
+			);
+			path = Vendor;
+			sourceTree = "<group>";
+		};
+		C5A433761B29B90C00E97EE0 /* DTFoundation */ = {
+			isa = PBXGroup;
+			children = (
+				C5A433771B29B90C00E97EE0 /* Core */,
+				C5A4337B1B29B90C00E97EE0 /* LICENSE */,
+			);
+			path = DTFoundation;
+			sourceTree = "<group>";
+		};
+		C5A433771B29B90C00E97EE0 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				C5A433781B29B90C00E97EE0 /* Source */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		C5A433781B29B90C00E97EE0 /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				C5A433791B29B90C00E97EE0 /* DTFolderMonitor.h */,
+				C5A4337A1B29B90C00E97EE0 /* DTFolderMonitor.m */,
+			);
+			path = Source;
+			sourceTree = "<group>";
+		};
 		C5B133921B27625900437B10 /* DatabaseMigrationManager */ = {
 			isa = PBXGroup;
 			children = (
@@ -428,6 +468,7 @@
 		C5FFE3C91B1857CD007D317D = {
 			isa = PBXGroup;
 			children = (
+				C5A433751B29B90C00E97EE0 /* Vendor */,
 				C5FFE3D41B1857CE007D317D /* HyperTimeLogger */,
 				C5FFE3EE1B1857CE007D317D /* HyperTimeLoggerTests */,
 				C5BA1B761B26F890006D80BC /* TodayExtension */,
@@ -790,6 +831,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C5A4337E1B29B90C00E97EE0 /* DTFolderMonitor.m in Sources */,
 				C5B1339C1B27625900437B10 /* DMMViewController.m in Sources */,
 				C5B133991B27625900437B10 /* DMMAppDelegate.m in Sources */,
 				C5B133961B27625900437B10 /* main.m in Sources */,
@@ -810,6 +852,7 @@
 				C550ED3B1B26FEED00A07113 /* HTLCSVStringExportProvider.m in Sources */,
 				C550ED3D1B26FF4F00A07113 /* HTLCategoryDto.m in Sources */,
 				C57EA57B1B27073C00B97F65 /* NSDate+HTLComponents.m in Sources */,
+				C5A4337D1B29B90C00E97EE0 /* DTFolderMonitor.m in Sources */,
 				C550ED3E1B26FF4F00A07113 /* HTLActionDto.m in Sources */,
 				C550ED3A1B26FEE400A07113 /* HTLSqliteStorageProvider.m in Sources */,
 				C57EA57A1B27034600B97F65 /* HTLCompletionCollectionViewCell.m in Sources */,
@@ -840,6 +883,7 @@
 				73BC697E74695F84646F5B99 /* HTLCreateReportViewController.m in Sources */,
 				73BC6530F712D01FC0D268C0 /* HTLCategoryCell.m in Sources */,
 				73BC601F1247C526897FB081 /* HTLSqliteStorageProvider.m in Sources */,
+				C5A4337C1B29B90C00E97EE0 /* DTFolderMonitor.m in Sources */,
 				73BC67A50F771F794A8DC1E0 /* HTLCompletion.m in Sources */,
 				73BC6C2476AFC18E242336D7 /* HTLCompletionTableViewCell.m in Sources */,
 				73BC6527015521E81F82017E /* HTLBackgroundView.m in Sources */,
