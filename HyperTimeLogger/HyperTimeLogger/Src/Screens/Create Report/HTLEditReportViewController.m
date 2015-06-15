@@ -106,7 +106,6 @@ static NSString *const kCategoryCellIdentifier = @"CategoryCell";
     NSUInteger selectedCategoryIndex = [self.modelController.categories indexOfObject:reportExtended.category];
     NSIndexPath *selectedCategoryIndexPath = [NSIndexPath indexPathForRow:selectedCategoryIndex inSection:0];
     [self.categoriesCollectionView selectItemAtIndexPath:selectedCategoryIndexPath animated:YES scrollPosition:UICollectionViewScrollPositionCenteredHorizontally];
-
 }
 
 - (void)save {
@@ -169,15 +168,12 @@ static NSString *const kCategoryCellIdentifier = @"CategoryCell";
         balancedFlowLayout.enforcesRowHeight = YES;
     }
 
-    [self updateUI];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     [self subscribe];
-    [self.categoriesCollectionView selectItemAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]
-                                                animated:NO
-                                          scrollPosition:UICollectionViewScrollPositionCenteredHorizontally];
+    [self updateUI];
 }
 
 - (void)viewDidDisappear:(BOOL)animated {

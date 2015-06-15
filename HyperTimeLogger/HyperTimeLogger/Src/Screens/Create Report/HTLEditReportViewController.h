@@ -11,6 +11,6 @@
 
 @interface HTLEditReportViewController : UIViewController
 
-@property (nonatomic, copy) HTLReportExtendedDto *reportExtended;
+@property(nonatomic, copy) HTLReportExtendedDto *reportExtended;
 
 @end
