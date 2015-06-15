@@ -7,6 +7,7 @@
 #import "HTLReportExtendedDto.h"
 #import "HTLActionDto.h"
 #import "HTLCategoryDto.h"
+#import "HTLReportDto.h"
 
 
 static NSString *const kDefaultDateFormat = @"yyyy-MM-dd HH:mm:ss ZZZ";
@@ -39,8 +40,8 @@ static NSString *const kDefaultDateFormat = @"yyyy-MM-dd HH:mm:ss ZZZ";
         }
 
         [csvString appendFormat:@"%@\t%@\t%@\t%@\n",
-                        [[self defaultDateFormatter] stringFromDate:reportExtended.startDate],
-                        [[self defaultDateFormatter] stringFromDate:reportExtended.endDate],
+                        [[self defaultDateFormatter] stringFromDate:reportExtended.report.startDate],
+                        [[self defaultDateFormatter] stringFromDate:reportExtended.report.endDate],
                         reportExtended.action.title,
                         reportExtended.category.localizedTitle];
     }

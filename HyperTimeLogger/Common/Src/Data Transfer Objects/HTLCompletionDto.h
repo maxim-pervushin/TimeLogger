@@ -9,7 +9,7 @@
 @class HTLCategoryDto;
 
 
-@interface HTLCompletion : NSObject <NSCopying>
+@interface HTLCompletionDto : NSObject <NSCopying>
 
 + (instancetype)completionWithAction:(HTLActionDto *)action category:(HTLCategoryDto *)category weight:(NSUInteger)weight;
 
@@ -19,7 +19,7 @@
 
 - (BOOL)isEqual:(id)other;
 
-- (BOOL)isEqualToCompletion:(HTLCompletion *)completion;
+- (BOOL)isEqualToCompletion:(HTLCompletionDto *)completion;
 
 - (NSUInteger)hash;
 

@@ -7,6 +7,7 @@
 
 
 @implementation HTLReportDto
+@synthesize identifier = identifier_;
 @synthesize actionIdentifier = actionIdentifier_;
 @synthesize categoryIdentifier = categoryIdentifier_;
 @synthesize startDate = startDate_;
@@ -14,16 +15,14 @@
 
 #pragma mark - HTLReport
 
-+ (instancetype)reportWithActionIdentifier:(HTLActionIdentifier)actionIdentifier categoryIdentifier:(HTLCategoryIdentifier)categoryIdentifier startDate:(NSDate *)startDate endDate:(NSDate *)endDate {
-    return [[self alloc] initWithActionIdentifier:actionIdentifier
-                               categoryIdentifier:categoryIdentifier
-                                        startDate:startDate
-                                          endDate:endDate];
++ (instancetype)reportWithIdentifier:(HTLReportIdentifier)identifier actionIdentifier:(HTLActionIdentifier)actionIdentifier categoryIdentifier:(HTLCategoryIdentifier)categoryIdentifier startDate:(NSDate *)startDate endDate:(NSDate *)endDate {
+    return [[self alloc] initWithIdentifier:identifier actionIdentifier:actionIdentifier categoryIdentifier:categoryIdentifier startDate:startDate endDate:endDate];
 }
 
-- (instancetype)initWithActionIdentifier:(HTLActionIdentifier)actionIdentifier categoryIdentifier:(HTLCategoryIdentifier)categoryIdentifier startDate:(NSDate *)startDate endDate:(NSDate *)endDate {
+- (instancetype)initWithIdentifier:(HTLReportIdentifier)identifier actionIdentifier:(HTLActionIdentifier)actionIdentifier categoryIdentifier:(HTLCategoryIdentifier)categoryIdentifier startDate:(NSDate *)startDate endDate:(NSDate *)endDate {
     self = [super init];
     if (self) {
+        identifier_ = [identifier copy];
         actionIdentifier_ = [actionIdentifier copy];
         categoryIdentifier_ = [categoryIdentifier copy];
         startDate_ = [startDate copy];
@@ -38,6 +37,7 @@
     HTLReportDto *copy = [[[self class] allocWithZone:zone] init];
 
     if (copy != nil) {
+        copy->identifier_ = identifier_;
         copy->actionIdentifier_ = actionIdentifier_;
         copy->categoryIdentifier_ = categoryIdentifier_;
         copy->startDate_ = startDate_;
@@ -63,6 +63,8 @@
         return YES;
     if (dto == nil)
         return NO;
+    if (self.identifier != dto.identifier && ![self.identifier isEqualToString:dto.identifier])
+        return NO;
     if (self.actionIdentifier != dto.actionIdentifier && ![self.actionIdentifier isEqualToString:dto.actionIdentifier])
         return NO;
     if (self.categoryIdentifier != dto.categoryIdentifier && ![self.categoryIdentifier isEqualToString:dto.categoryIdentifier])
@@ -75,7 +77,8 @@
 }
 
 - (NSUInteger)hash {
-    NSUInteger hash = [self.actionIdentifier hash];
+    NSUInteger hash = [self.identifier hash];
+    hash = hash * 31u + [self.actionIdentifier hash];
     hash = hash * 31u + [self.categoryIdentifier hash];
     hash = hash * 31u + [self.startDate hash];
     hash = hash * 31u + [self.endDate hash];

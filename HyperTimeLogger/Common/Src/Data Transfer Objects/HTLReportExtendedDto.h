@@ -7,18 +7,26 @@
 
 @class HTLActionDto;
 @class HTLCategoryDto;
+@class HTLReportDto;
 
 
-@interface HTLReportExtendedDto : NSObject
+@interface HTLReportExtendedDto : NSObject <NSCopying>
 
-+ (instancetype)reportWithAction:(HTLActionDto *)action category:(HTLCategoryDto *)category startDate:(NSDate *)startDate endDate:(NSDate *)endDate;
++ (instancetype)reportExtendedWithReport:(HTLReportDto *)report action:(HTLActionDto *)action category:(HTLCategoryDto *)category;
 
-- (instancetype)initWithAction:(HTLActionDto *)action category:(HTLCategoryDto *)category startDate:(NSDate *)startDate endDate:(NSDate *)endDate;
+- (instancetype)initWithReport:(HTLReportDto *)report action:(HTLActionDto *)action category:(HTLCategoryDto *)category;
 
+- (id)copyWithZone:(NSZone *)zone;
+
+- (BOOL)isEqual:(id)other;
+
+- (BOOL)isEqualToDto:(HTLReportExtendedDto *)dto;
+
+- (NSUInteger)hash;
+
+@property(nonatomic, readonly) HTLReportDto *report;
 @property(nonatomic, readonly) HTLActionDto *action;
 @property(nonatomic, readonly) HTLCategoryDto *category;
-@property(nonatomic, readonly) NSDate *startDate;
-@property(nonatomic, readonly) NSDate *endDate;
 
 @end
 

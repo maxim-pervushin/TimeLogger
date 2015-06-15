@@ -7,5 +7,8 @@
 
 
 @interface HTLSqliteStorageProvider : NSObject <HTLStorageProvider>
+
+- (NSString *)storageFilePath;
+
 @end
 

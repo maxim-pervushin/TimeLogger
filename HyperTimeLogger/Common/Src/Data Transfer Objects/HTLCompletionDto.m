@@ -3,12 +3,12 @@
 // Copyright (c) 2015 Maxim Pervushin. All rights reserved.
 //
 
-#import "HTLCompletion.h"
+#import "HTLCompletionDto.h"
 #import "HTLCategoryDto.h"
 #import "HTLActionDto.h"
 
 
-@implementation HTLCompletion
+@implementation HTLCompletionDto
 @synthesize action = action_;
 @synthesize category = category_;
 @synthesize weight = weight_;
@@ -34,7 +34,7 @@
 #pragma mark - NSCopying
 
 - (id)copyWithZone:(NSZone *)zone {
-    HTLCompletion *copy = [[[self class] allocWithZone:zone] init];
+    HTLCompletionDto *copy = [[[self class] allocWithZone:zone] init];
 
     if (copy != nil) {
         copy->action_ = action_;
@@ -56,7 +56,7 @@
     return [self isEqualToCompletion:other];
 }
 
-- (BOOL)isEqualToCompletion:(HTLCompletion *)completion {
+- (BOOL)isEqualToCompletion:(HTLCompletionDto *)completion {
     if (self == completion)
         return YES;
     if (completion == nil)

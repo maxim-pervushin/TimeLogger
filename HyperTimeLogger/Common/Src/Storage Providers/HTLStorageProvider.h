@@ -25,7 +25,7 @@ static NSString *const kHTLStorageProviderChangedNotification = @"HTLStorageProv
 
 - (NSArray *)categoriesFromDate:(NSDate *)fromDate toDate:(NSDate *)toDate;
 
-- (BOOL)addCategory:(HTLCategoryDto *)category;
+- (BOOL)storeCategory:(HTLCategoryDto *)category;
 
 // Reports
 
@@ -37,7 +37,7 @@ static NSString *const kHTLStorageProviderChangedNotification = @"HTLStorageProv
 
 - (NSArray *)reportsExtendedWithCategory:(HTLCategoryDto *)category fromDate:(NSDate *)fromDate toDate:(NSDate *)toDate;
 
-- (BOOL)addReportExtended:(HTLReportExtendedDto *)reportExtended;
+- (BOOL)storeReportExtended:(HTLReportExtendedDto *)reportExtended;
 
 - (NSDate *)lastReportEndDate;
 

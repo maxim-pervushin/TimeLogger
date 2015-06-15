@@ -47,7 +47,7 @@
         ];
 
         for (HTLCategoryDto *category in initialCategories) {
-            [self.storageProvider addCategory:category];
+            [self.storageProvider storeCategory:category];
         }
     }
 }
@@ -62,8 +62,8 @@
     return [self.storageProvider categories];
 }
 
-- (BOOL)addCategory:(HTLCategoryDto *)category {
-    return [self.storageProvider addCategory:category];
+- (BOOL)storeCategory:(HTLCategoryDto *)category {
+    return [self.storageProvider storeCategory:category];
 }
 
 - (NSArray *)completionsWithText:(NSString *)text {
@@ -86,8 +86,8 @@
     return [self.storageProvider reportsExtendedWithSection:dateSection];
 }
 
-- (BOOL)addReportExtended:(HTLReportExtendedDto *)reportExtended {
-    return [self.storageProvider addReportExtended:reportExtended];
+- (BOOL)storeReportExtended:(HTLReportExtendedDto *)reportExtended {
+    return [self.storageProvider storeReportExtended:reportExtended];
 }
 
 - (NSString *)exportDataToCSV {

@@ -4,6 +4,7 @@
 //
 
 #import "HTLReportExtendedDto+Helpers.h"
+#import "HTLReportDto.h"
 
 
 @implementation HTLReportExtendedDto (Helpers)
@@ -20,7 +21,7 @@
 }
 
 - (NSTimeInterval)duration {
-    return [self.endDate timeIntervalSinceDate:self.startDate];
+    return [self.report.endDate timeIntervalSinceDate:self.report.startDate];
 }
 
 - (NSString *)durationString {
@@ -32,11 +33,11 @@
 }
 
 - (NSString *)startDateString {
-    return [self.dateFormatter stringFromDate:self.startDate];
+    return [self.dateFormatter stringFromDate:self.report.startDate];
 }
 
 - (NSString *)endDateString {
-    return [self.dateFormatter stringFromDate:self.endDate];
+    return [self.dateFormatter stringFromDate:self.report.endDate];
 }
 
 @end

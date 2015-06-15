@@ -12,6 +12,7 @@
 #import "HTLReportExtendedDto.h"
 #import "HTLDateSectionHeader.h"
 #import "HTLAppDelegate.h"
+#import "HTLEditReportViewController.h"
 
 static NSString *const kReportCellIdentifier = @"ReportCell";
 static NSString *const kDateSectionHeaderIdentifier = @"DateSectionHeader";
@@ -130,6 +131,25 @@ static NSString *const kCreateReportSegueIdentifier = @"CreateReport";
 - (void)viewDidDisappear:(BOOL)animated {
     [self unsubscribe];
     [super viewDidDisappear:animated];
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([segue.identifier isEqualToString:@"EditReport"] && [segue.destinationViewController isKindOfClass:[UINavigationController class]]) {
+        UINavigationController *navigationController = segue.destinationViewController;
+        HTLEditReportViewController *createReportViewController = (HTLEditReportViewController *) navigationController.topViewController;
+
+        NSIndexPath *selected = self.tableView.indexPathForSelectedRow;
+        if (!selected) {
+            return;
+        }
+
+        HTLReportExtendedDto *reportExtended = [self.modelController reportsExtendedForDateSectionAtIndex:selected.section][(NSUInteger) selected.row];
+        if (!reportExtended) {
+            return;
+        }
+
+        createReportViewController.reportExtended = reportExtended;
+    }
 }
 
 #pragma mark - UITableViewDataSource, UITableViewDelegate

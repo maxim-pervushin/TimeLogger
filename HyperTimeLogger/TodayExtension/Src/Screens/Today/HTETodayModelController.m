@@ -21,7 +21,7 @@
 }
 
 - (BOOL)createReportExtended:(HTLReportExtendedDto *)reportExtended {
-    return [[HTLContentManager defaultManager] addReportExtended:reportExtended];
+    return [[HTLContentManager defaultManager] storeReportExtended:reportExtended];
 }
 
 - (NSDate *)lastReportEndDate {

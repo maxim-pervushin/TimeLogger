@@ -8,11 +8,14 @@
 #import "HTLActionDto.h"
 
 
+typedef NSString *HTLReportIdentifier;
+
+
 @interface HTLReportDto : NSObject <NSCopying>
 
-+ (instancetype)reportWithActionIdentifier:(HTLActionIdentifier)actionIdentifier categoryIdentifier:(HTLCategoryIdentifier)categoryIdentifier startDate:(NSDate *)startDate endDate:(NSDate *)endDate;
++ (instancetype)reportWithIdentifier:(HTLReportIdentifier)identifier actionIdentifier:(HTLActionIdentifier)actionIdentifier categoryIdentifier:(HTLCategoryIdentifier)categoryIdentifier startDate:(NSDate *)startDate endDate:(NSDate *)endDate;
 
-- (instancetype)initWithActionIdentifier:(HTLActionIdentifier)actionIdentifier categoryIdentifier:(HTLCategoryIdentifier)categoryIdentifier startDate:(NSDate *)startDate endDate:(NSDate *)endDate;
+- (instancetype)initWithIdentifier:(HTLReportIdentifier)identifier actionIdentifier:(HTLActionIdentifier)actionIdentifier categoryIdentifier:(HTLCategoryIdentifier)categoryIdentifier startDate:(NSDate *)startDate endDate:(NSDate *)endDate;
 
 - (id)copyWithZone:(NSZone *)zone;
 
@@ -22,6 +25,7 @@
 
 - (NSUInteger)hash;
 
+@property(nonatomic, readonly) HTLReportIdentifier identifier;
 @property(nonatomic, readonly) HTLActionIdentifier actionIdentifier;
 @property(nonatomic, readonly) HTLCategoryIdentifier categoryIdentifier;
 @property(nonatomic, readonly) NSDate *startDate;

@@ -92,12 +92,9 @@ static NSString *const kDefaultDateFormat = @"yyyy-MM-dd HH:mm:ss ZZZ";
 
     NSDate *startDate = manager.lastReportEndDate ? manager.lastReportEndDate : [self dateFromString:dateString];
 
-    HTLReportExtendedDto *reportExtended = [HTLReportExtendedDto reportWithAction:action
-                                                                         category:category
-                                                                        startDate:startDate
-                                                                          endDate:[self dateFromString:dateString]];
+    HTLReportExtendedDto *reportExtended = [HTLReportExtendedDto reportExtendedWithReport:nil action:action category:category];
 
-    [manager addReportExtended:reportExtended
+    [manager storeReportExtended:reportExtended
     ];
 }
 

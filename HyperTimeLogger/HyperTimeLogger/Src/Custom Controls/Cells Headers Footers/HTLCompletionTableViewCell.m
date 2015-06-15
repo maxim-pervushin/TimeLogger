@@ -4,7 +4,7 @@
 //
 
 #import "HTLCompletionTableViewCell.h"
-#import "HTLCompletion.h"
+#import "HTLCompletionDto.h"
 #import "HTLActionDto.h"
 #import "HTLCategoryDto.h"
 #import "UIColor+BFPaperColors.h"
@@ -18,7 +18,7 @@
 
 @implementation HTLCompletionTableViewCell
 
-- (void)configureWithCompletion:(HTLCompletion *)completion {
+- (void)configureWithCompletion:(HTLCompletionDto *)completion {
     if (completion) {
         self.actionTitleLabel.text = completion.action.title;
         self.categoryTitleLabel.text = completion.category.localizedTitle;

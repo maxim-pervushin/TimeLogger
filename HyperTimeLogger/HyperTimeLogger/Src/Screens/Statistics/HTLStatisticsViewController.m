@@ -8,6 +8,7 @@
 #import "HTLCategoryDto.h"
 #import "HTLContentManager.h"
 #import "HTLReportExtendedDto.h"
+#import "HTLReportDto.h"
 
 @interface HTLStatisticsViewController () <XYPieChartDataSource, XYPieChartDelegate>
 
@@ -82,7 +83,7 @@
     NSArray *reportsExtended = [[HTLContentManager defaultManager] reportsExtendedWithCategory:category fromDate:self.fromDate toDate:self.toDate];
     NSTimeInterval totalTime = 0;
     for (HTLReportExtendedDto *reportExtended in reportsExtended) {
-        totalTime += [reportExtended.endDate timeIntervalSinceDate:reportExtended.startDate];
+        totalTime += [reportExtended.report.endDate timeIntervalSinceDate:reportExtended.report.startDate];
     }
 
     return totalTime;

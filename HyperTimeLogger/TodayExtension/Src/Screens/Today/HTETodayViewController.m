@@ -8,7 +8,7 @@
 
 #import "HTETodayViewController.h"
 #import "HTLCompletionCollectionViewCell.h"
-#import "HTLCompletion.h"
+#import "HTLCompletionDto.h"
 #import "HTLReportDto.h"
 #import "HTLReportExtendedDto.h"
 #import "HTETodayModelController.h"
@@ -38,7 +38,7 @@ static const int kCollectionViewMinItemsPerRow = 3;
 
 - (void)updateUI;
 
-- (void)createReportWithCompletion:(HTLCompletion *)completion;
+- (void)createReportWithCompletion:(HTLCompletionDto *)completion;
 
 @end
 
@@ -70,12 +70,9 @@ static const int kCollectionViewMinItemsPerRow = 3;
     [self.view layoutIfNeeded];
 }
 
-- (void)createReportWithCompletion:(HTLCompletion *)completion {
+- (void)createReportWithCompletion:(HTLCompletionDto *)completion {
     HTLReportExtendedDto *reportExtended =
-            [HTLReportExtendedDto reportWithAction:completion.action
-                                          category:completion.category
-                                         startDate:self.modelController.lastReportEndDate
-                                           endDate:[NSDate new]];
+            [HTLReportExtendedDto reportExtendedWithReport:nil action:completion.action category:completion.category];
 
     [self.modelController createReportExtended:reportExtended];
     [self updateUI];
@@ -135,7 +132,7 @@ static const int kCollectionViewMinItemsPerRow = 3;
 }
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
-    HTLCompletion *completion = [self.modelController completions:kNumberOfCompletions][(NSUInteger) indexPath.row];
+    HTLCompletionDto *completion = [self.modelController completions:kNumberOfCompletions][(NSUInteger) indexPath.row];
     [self createReportWithCompletion:completion];
     [collectionView deselectItemAtIndexPath:indexPath animated:YES];
 }
