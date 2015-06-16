@@ -70,10 +70,6 @@
     return [self.storageProvider completionsWithText:text];
 }
 
-//- (id)statisticsFromDate:(NSDate *)fromDate toDate:(NSDate *)toDate {
-//    return [self.storageProvider statisticsFromDate:fromDate toDate:toDate];
-//}
-
 - (NSArray *)reportsExtended {
     return self.storageProvider.reportsExtended;
 }

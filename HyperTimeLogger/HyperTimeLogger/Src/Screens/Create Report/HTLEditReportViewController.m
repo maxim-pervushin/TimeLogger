@@ -167,7 +167,6 @@ static NSString *const kCategoryCellIdentifier = @"CategoryCell";
         balancedFlowLayout.rowHeight = 40;
         balancedFlowLayout.enforcesRowHeight = YES;
     }
-
 }
 
 - (void)viewWillAppear:(BOOL)animated {
