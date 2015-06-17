@@ -10,22 +10,17 @@
 
 @interface HTLReportListModelController ()
 
-@property(nonatomic, copy) HTLModelControllerContentChangedBlock contentChangedBlock;
+- (void)subscribe;
 
-@end
+- (void)unsubscribe;
+
+@end;
+
 
 @implementation HTLReportListModelController
 @dynamic reportSections;
 
 #pragma mark - HTLReportListModelController
-
-+ (instancetype)modelControllerWithContentChangedBlock:(HTLModelControllerContentChangedBlock)block {
-    HTLReportListModelController *instance = [self new];
-    if (block) {
-        instance.contentChangedBlock = block;
-    }
-    return instance;
-}
 
 - (NSArray *)reportSections {
     return [[HTLContentManager defaultManager] reportSections];
@@ -40,9 +35,7 @@
 - (void)subscribe {
     __weak __typeof(self) weakSelf = self;
     [[NSNotificationCenter defaultCenter] addObserverForName:kHTLStorageProviderChangedNotification object:nil queue:nil usingBlock:^(NSNotification *note) {
-        if (weakSelf.contentChangedBlock) {
-            weakSelf.contentChangedBlock();
-        }
+        [weakSelf contentChanged];
     }];
 }
 

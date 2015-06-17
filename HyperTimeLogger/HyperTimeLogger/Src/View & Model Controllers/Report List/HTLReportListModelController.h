@@ -3,22 +3,16 @@
 // Copyright (c) 2015 Maxim Pervushin. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+#import "HTLModelController.h"
 
-
-typedef void (^HTLModelControllerContentChangedBlock)();
 
 @class HTLReportDto;
 
 
-@interface HTLReportListModelController : NSObject
-
-+ (instancetype)modelControllerWithContentChangedBlock:(HTLModelControllerContentChangedBlock)block;
+@interface HTLReportListModelController : HTLModelController
 
 @property(nonatomic, readonly) NSArray *reportSections;
 
 - (NSArray *)reportsExtendedForDateSectionAtIndex:(NSInteger)index;
 
 @end
-
-

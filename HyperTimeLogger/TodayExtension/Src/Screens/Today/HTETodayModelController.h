@@ -4,15 +4,16 @@
 //
 
 
+#import "HTLModelController.h"
+
+@class HTLCompletionDto;
 @class HTLReportExtendedDto;
 
-@interface HTETodayModelController : NSObject
+@interface HTETodayModelController : HTLModelController
 
 - (NSArray *)completions:(NSUInteger)numberOfCompletions;
 
-- (BOOL)createReportExtended:(HTLReportExtendedDto *)reportExtended;
-
-- (NSDate *)lastReportEndDate;
+- (BOOL)createReportWithCompletion:(HTLCompletionDto *)completion;
 
 - (HTLReportExtendedDto *)lastReportExtended;
 

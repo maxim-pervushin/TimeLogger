@@ -10,13 +10,6 @@
 #import "HTLCategoryDto.h"
 #import "HTLReportDto.h"
 
-@interface HTLEditReportModelController ()
-
-@property(nonatomic, copy) HTLModelControllerContentChangedBlock contentChangedBlock;
-
-- (void)contentChanged;
-
-@end
 
 @implementation HTLEditReportModelController
 @dynamic completions;
@@ -31,14 +24,11 @@
 + (instancetype)modelControllerWithReportExtended:(HTLReportExtendedDto *)reportExtended
                               contentChangedBlock:(HTLModelControllerContentChangedBlock)block {
 
-    HTLEditReportModelController *instance = [self new];
+    HTLEditReportModelController *instance = [self modelControllerWithContentChangedBlock:block];
     if (reportExtended) {
         instance.report = reportExtended.report;
         instance.action = reportExtended.action;
         instance.category = reportExtended.category;
-    }
-    if (block) {
-        instance.contentChangedBlock = block;
     }
     return instance;
 }
@@ -100,12 +90,6 @@
 
 - (BOOL)save {
     return [[HTLContentManager defaultManager] storeReportExtended:self.reportExtended];
-}
-
-- (void)contentChanged {
-    if (self.contentChangedBlock) {
-        self.contentChangedBlock();
-    }
 }
 
 @end

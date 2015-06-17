@@ -3,14 +3,14 @@
 // Copyright (c) 2015 Maxim Pervushin. All rights reserved.
 //
 
-#import "HTLReportListModelController.h"
+#import "HTLModelController.h"
 
-typedef void (^HTLModelControllerContentChangedBlock)();
 
 @class HTLCategoryDto;
 @class HTLDateSectionDto;
 
-@interface HTLStatisticsModelController : NSObject
+
+@interface HTLStatisticsModelController : HTLModelController
 
 + (instancetype)modelControllerWithDateSection:(HTLDateSectionDto *)dateSection
                            contentChangedBlock:(HTLModelControllerContentChangedBlock)block;

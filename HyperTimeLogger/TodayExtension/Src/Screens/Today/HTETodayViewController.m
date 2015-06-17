@@ -15,7 +15,6 @@
 #import "HTLReportExtendedDto+Helpers.h"
 #import <NotificationCenter/NotificationCenter.h>
 #import <ZLBalancedFlowLayout/ZLBalancedFlowLayout-Swift.h>
-#import "HTLContentManager.h"
 
 static NSString *const kCompletionCellIdentifier = @"CompletionCell";
 // TODO: Load number of completions from defaults
@@ -38,8 +37,6 @@ static const int kCollectionViewMinItemsPerRow = 3;
 - (IBAction)addCustomAction:(id)sender;
 
 - (void)updateUI;
-
-- (void)createReportWithCompletion:(HTLCompletionDto *)completion;
 
 @end
 
@@ -71,26 +68,16 @@ static const int kCollectionViewMinItemsPerRow = 3;
     [self.view layoutIfNeeded];
 }
 
-- (void)createReportWithCompletion:(HTLCompletionDto *)completion {
-    NSDate *startDate = [HTLContentManager defaultManager].lastReportEndDate;
-    HTLReportDto *report = [HTLReportDto reportWithIdentifier:[NSUUID UUID].UUIDString
-                                             actionIdentifier:completion.action.identifier
-                                           categoryIdentifier:completion.category.identifier
-                                                    startDate:startDate ? startDate : [NSDate new]
-                                                      endDate:[NSDate new]];
-    HTLReportExtendedDto *reportExtended =
-            [HTLReportExtendedDto reportExtendedWithReport:report action:completion.action category:completion.category];
-
-    [self.modelController createReportExtended:reportExtended];
-    [self updateUI];
-}
-
 #pragma mark - UIViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-    self.modelController = [HTETodayModelController new];
+    self.modelController = [HTETodayModelController modelControllerWithContentChangedBlock:^{
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self updateUI];
+        });
+    }];
 
     if ([self.collectionView.collectionViewLayout isKindOfClass:[ZLBalancedFlowLayout class]]) {
         ZLBalancedFlowLayout *balancedFlowLayout = (ZLBalancedFlowLayout *) self.collectionView.collectionViewLayout;
@@ -109,12 +96,7 @@ static const int kCollectionViewMinItemsPerRow = 3;
 #pragma mark - NCWidgetProviding
 
 - (void)widgetPerformUpdateWithCompletionHandler:(void (^)(NCUpdateResult))completionHandler {
-    // Perform any setup necessary in order to update the view.
-
-    // If an error is encountered, use NCUpdateResultFailed
-    // If there's no update required, use NCUpdateResultNoData
-    // If there's an update, use NCUpdateResultNewData
-
+    [self updateUI];
     completionHandler(NCUpdateResultNewData);
 }
 
@@ -140,7 +122,7 @@ static const int kCollectionViewMinItemsPerRow = 3;
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
     HTLCompletionDto *completion = [self.modelController completions:kNumberOfCompletions][(NSUInteger) indexPath.row];
-    [self createReportWithCompletion:completion];
+    [self.modelController createReportWithCompletion:completion];
     [collectionView deselectItemAtIndexPath:indexPath animated:YES];
 }
 

@@ -8,14 +8,9 @@
 #import "HTLReportExtendedDto.h"
 #import "HTLContentManager.h"
 #import "HTLDateSectionDto.h"
-#import "HTLEditReportModelController.h"
 
 
 @interface HTLStatisticsModelController ()
-
-@property(nonatomic, copy) HTLModelControllerContentChangedBlock contentChangedBlock;
-
-- (void)contentChanged;
 
 - (void)subscribe;
 
@@ -31,18 +26,9 @@
 
 + (instancetype)modelControllerWithDateSection:(HTLDateSectionDto *)dateSection contentChangedBlock:(HTLModelControllerContentChangedBlock)block {
 
-    HTLStatisticsModelController *instance = [self new];
+    HTLStatisticsModelController *instance = [self modelControllerWithContentChangedBlock:block];
     instance.dateSection = dateSection;
-    if (block) {
-        instance.contentChangedBlock = block;
-    }
     return instance;
-}
-
-- (void)contentChanged {
-    if (self.contentChangedBlock) {
-        self.contentChangedBlock();
-    }
 }
 
 - (void)subscribe {

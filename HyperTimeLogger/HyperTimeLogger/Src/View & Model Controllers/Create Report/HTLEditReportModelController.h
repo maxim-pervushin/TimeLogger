@@ -4,17 +4,16 @@
 //
 
 
-#import <Foundation/Foundation.h>
+#import "HTLModelController.h"
 
-
-typedef void (^HTLModelControllerContentChangedBlock)();
 
 @class HTLActionDto;
 @class HTLCategoryDto;
 @class HTLReportExtendedDto;
 @class HTLReportDto;
 
-@interface HTLEditReportModelController : NSObject
+
+@interface HTLEditReportModelController : HTLModelController
 
 + (instancetype)modelControllerWithReportExtended:(HTLReportExtendedDto *)reportExtended
                               contentChangedBlock:(HTLModelControllerContentChangedBlock)block;

@@ -59,7 +59,11 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.modelController = [HTLSettingsModelController new];
+    self.modelController = [HTLSettingsModelController modelControllerWithContentChangedBlock:^{
+        dispatch_async(dispatch_get_main_queue(), ^{
+           // TODO: updateUI;
+        });
+    }];
 }
 
 #pragma mark - MFMailComposeViewControllerDelegate

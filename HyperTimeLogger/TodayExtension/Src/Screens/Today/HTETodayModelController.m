@@ -6,31 +6,74 @@
 #import "HTETodayModelController.h"
 #import "HTLContentManager.h"
 #import "HTLReportExtendedDto.h"
-#import "HTETodayViewController.h"
+#import "HTLCompletionDto.h"
+#import "HTLCategoryDto.h"
+#import "HTLActionDto.h"
+#import "HTLReportDto.h"
+
+
+@interface HTETodayModelController ()
+
+- (void)subscribe;
+
+- (void)unsubscribe;
+
+@end;
+
 
 @implementation HTETodayModelController
+
+#pragma mark - HTETodayModelController
 
 - (NSArray *)completions:(NSUInteger)numberOfCompletions {
     NSArray *completions = [[HTLContentManager defaultManager] completionsWithText:nil];
     NSMutableArray *result = [NSMutableArray new];
-//    for (NSUInteger i = 0; i < completions.count && i < numberOfCompletions; i++) {
     for (NSUInteger i = 0; i < completions.count && i < numberOfCompletions; i++) {
         [result addObject:completions[i]];
     }
     return [result copy];
 }
 
-- (BOOL)createReportExtended:(HTLReportExtendedDto *)reportExtended {
-    return [[HTLContentManager defaultManager] storeReportExtended:reportExtended];
-}
+- (BOOL)createReportWithCompletion:(HTLCompletionDto *)completion {
+    NSDate *startDate = [HTLContentManager defaultManager].lastReportEndDate;
+    HTLReportDto *report = [HTLReportDto reportWithIdentifier:[NSUUID UUID].UUIDString
+                                             actionIdentifier:completion.action.identifier
+                                           categoryIdentifier:completion.category.identifier
+                                                    startDate:startDate ? startDate : [NSDate new]
+                                                      endDate:[NSDate new]];
+    HTLReportExtendedDto *reportExtended =
+            [HTLReportExtendedDto reportExtendedWithReport:report action:completion.action category:completion.category];
 
-- (NSDate *)lastReportEndDate {
-    NSDate *date = [HTLContentManager defaultManager].lastReportEndDate;
-    return date ? date : [NSDate new];
+    return [[HTLContentManager defaultManager] storeReportExtended:reportExtended];
 }
 
 - (HTLReportExtendedDto *)lastReportExtended {
     return [HTLContentManager defaultManager].lastReportExtended;
+}
+
+- (void)subscribe {
+    __weak __typeof(self) weakSelf = self;
+    [[NSNotificationCenter defaultCenter] addObserverForName:kHTLStorageProviderChangedNotification object:nil queue:nil usingBlock:^(NSNotification *note) {
+        [weakSelf contentChanged];
+    }];
+}
+
+- (void)unsubscribe {
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:kHTLStorageProviderChangedNotification object:nil];
+};
+
+#pragma mark - NSObject
+
+- (instancetype)init {
+    self = [super init];
+    if (self) {
+        [self subscribe];
+    }
+    return self;
+}
+
+- (void)dealloc {
+    [self unsubscribe];
 }
 
 @end
