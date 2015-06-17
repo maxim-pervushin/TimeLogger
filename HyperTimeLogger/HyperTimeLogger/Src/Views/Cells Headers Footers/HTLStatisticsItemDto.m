@@ -9,18 +9,20 @@
 @implementation HTLStatisticsItemDto
 @synthesize category = category_;
 @synthesize totalTime = totalTime_;
+@synthesize totalReports = totalReports_;
 
 #pragma mark - HTLStatisticsItemDto
 
-+ (instancetype)statisticsItemWithCategory:(HTLCategoryDto *)category totalTime:(NSTimeInterval)totalTime {
-    return [[self alloc] initWithCategory:category totalTime:totalTime];
++ (instancetype)statisticsItemWithCategory:(HTLCategoryDto *)category totalTime:(NSTimeInterval)totalTime totalReports:(NSUInteger)totalReports {
+    return [[self alloc] initWithCategory:category totalTime:totalTime totalReports:totalReports];
 }
 
-- (instancetype)initWithCategory:(HTLCategoryDto *)category totalTime:(NSTimeInterval)totalTime {
+- (instancetype)initWithCategory:(HTLCategoryDto *)category totalTime:(NSTimeInterval)totalTime totalReports:(NSUInteger)totalReports {
     self = [super init];
     if (self) {
         category_ = [category copy];
         totalTime_ = totalTime;
+        totalReports_ = totalReports;
     }
     return self;
 }
@@ -33,6 +35,7 @@
     if (copy != nil) {
         copy->category_ = category_;
         copy->totalTime_ = totalTime_;
+        copy->totalReports_ = totalReports_;
     }
 
     return copy;
@@ -58,12 +61,15 @@
         return NO;
     if (self.totalTime != dto.totalTime)
         return NO;
+    if (self.totalReports != dto.totalReports)
+        return NO;
     return YES;
 }
 
 - (NSUInteger)hash {
     NSUInteger hash = [self.category hash];
     hash = hash * 31u + [[NSNumber numberWithDouble:self.totalTime] hash];
+    hash = hash * 31u + self.totalReports;
     return hash;
 }
 

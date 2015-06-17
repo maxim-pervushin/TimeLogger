@@ -32,7 +32,7 @@
     if (statisticsItem) {
         self.categoryTitleLabel.text = statisticsItem.category.title;
         self.totalTimeLabel.text = [self descriptionForTimeInterval:statisticsItem.totalTime];
-        self.totalReportsLabel.text = @"";
+        self.totalReportsLabel.text = [NSString stringWithFormat:@"Reports: %d", statisticsItem.totalReports];
         self.categoryTitleLabel.textColor = statisticsItem.category.color;
         self.totalTimeLabel.textColor = statisticsItem.category.color;
         self.totalReportsLabel.textColor = statisticsItem.category.color;

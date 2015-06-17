@@ -53,11 +53,13 @@
                                                                                          category:category];
 
     NSTimeInterval totalTime = 0;
+    NSUInteger totalReports = 0;
     for (HTLReportExtendedDto *reportExtended in reportsExtended) {
         totalTime += [reportExtended.report.endDate timeIntervalSinceDate:reportExtended.report.startDate];
+        totalReports++;
     }
 
-    return [HTLStatisticsItemDto statisticsItemWithCategory:category totalTime:totalTime];
+    return [HTLStatisticsItemDto statisticsItemWithCategory:category totalTime:totalTime totalReports:totalReports];
 }
 
 #pragma mark - NSObject

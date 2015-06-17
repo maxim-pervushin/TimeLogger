@@ -11,9 +11,9 @@
 
 @interface HTLStatisticsItemDto : NSObject <NSCopying>
 
-+ (instancetype)statisticsItemWithCategory:(HTLCategoryDto *)category totalTime:(NSTimeInterval)totalTime;
++ (instancetype)statisticsItemWithCategory:(HTLCategoryDto *)category totalTime:(NSTimeInterval)totalTime totalReports:(NSUInteger)totalReports;
 
-- (instancetype)initWithCategory:(HTLCategoryDto *)category totalTime:(NSTimeInterval)totalTime;
+- (instancetype)initWithCategory:(HTLCategoryDto *)category totalTime:(NSTimeInterval)totalTime totalReports:(NSUInteger)totalReports;
 
 - (id)copyWithZone:(NSZone *)zone;
 
@@ -25,5 +25,6 @@
 
 @property(nonatomic, readonly) HTLCategoryDto *category;
 @property(nonatomic, readonly) NSTimeInterval totalTime;
+@property(nonatomic, readonly) NSUInteger totalReports;
 
 @end
