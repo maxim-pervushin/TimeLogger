@@ -39,7 +39,9 @@
 }
 
 - (IBAction)reportButtonAction:(id)sender {
-
+    if ([self.delegate respondsToSelector:@selector(dateSectionHeader:showStatisticsForDateSection:)]) {
+        [self.delegate dateSectionHeader:self showStatisticsForDateSection:self.dateSection];
+    }
 }
 
 - (void)initializeUI {

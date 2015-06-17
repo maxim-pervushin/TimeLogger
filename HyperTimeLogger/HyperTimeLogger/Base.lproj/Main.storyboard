@@ -153,7 +153,7 @@
                         <outlet property="addButtonToBottomLayoutConstraint" destination="Ye1-yn-tfe" id="wED-6a-e1R"/>
                         <outlet property="addButtonToRightLayoutConstraint" destination="BTo-Vw-zEy" id="Myp-CP-I7A"/>
                         <outlet property="tableView" destination="CmE-Wj-DPf" id="AGN-Pk-Gd2"/>
-                        <segue destination="FHu-qc-3H3" kind="show" identifier="ShowReport" id="Sif-mw-GqJ"/>
+                        <segue destination="FHu-qc-3H3" kind="show" identifier="ShowStatistics" id="Sif-mw-GqJ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ccS-bz-JGu" userLabel="First Responder" sceneMemberID="firstResponder"/>

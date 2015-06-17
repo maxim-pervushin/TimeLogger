@@ -13,6 +13,7 @@
 #import "HTLDateSectionHeader.h"
 #import "HTLAppDelegate.h"
 #import "HTLEditReportViewController.h"
+#import "HTLStatisticsViewController.h"
 
 static NSString *const kReportCellIdentifier = @"ReportCell";
 static NSString *const kDateSectionHeaderIdentifier = @"DateSectionHeader";
@@ -20,7 +21,9 @@ static const float kAddButtonToBottomDefault = 50.0f;
 
 static NSString *const kCreateReportSegueIdentifier = @"CreateReport";
 
-@interface HTLReportListViewController () <UITableViewDataSource, UITableViewDelegate>
+static NSString *const kShowStatisticsSegueIdentifier = @"ShowStatistics";
+
+@interface HTLReportListViewController () <UITableViewDataSource, UITableViewDelegate, HTLDateSectionHeaderDelegate>
 
 @property(nonatomic, weak) IBOutlet UIButton *addButton;
 @property(nonatomic, weak) IBOutlet NSLayoutConstraint *addButtonToBottomLayoutConstraint;
@@ -103,7 +106,7 @@ static NSString *const kCreateReportSegueIdentifier = @"CreateReport";
     [self.tableView registerNib:sectionHeaderNib forHeaderFooterViewReuseIdentifier:kDateSectionHeaderIdentifier];
     self.tableView.contentInset = UIEdgeInsetsMake(0, 0, 120, 0);
 
-    __weak __typeof(self)weakSelf = self;
+    __weak __typeof(self) weakSelf = self;
     self.modelController = [HTLReportListModelController modelControllerWithContentChangedBlock:^{
         dispatch_async(dispatch_get_main_queue(), ^{
             [weakSelf.tableView reloadData];
@@ -149,6 +152,10 @@ static NSString *const kCreateReportSegueIdentifier = @"CreateReport";
         }
 
         createReportViewController.reportExtended = reportExtended;
+
+    } else if ([segue.identifier isEqualToString:kShowStatisticsSegueIdentifier]) {
+        HTLStatisticsViewController *statisticsViewController = segue.destinationViewController;
+        statisticsViewController.dateSection = sender;
     }
 }
 
@@ -165,6 +172,7 @@ static NSString *const kCreateReportSegueIdentifier = @"CreateReport";
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
     HTLDateSectionHeader *header = [tableView dequeueReusableHeaderFooterViewWithIdentifier:kDateSectionHeaderIdentifier];
     [header configureWithDateSection:self.modelController.reportSections[(NSUInteger) section]];
+    header.delegate = self;
     return header;
 }
 
@@ -181,6 +189,12 @@ static NSString *const kCreateReportSegueIdentifier = @"CreateReport";
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
     return 35.0f;
+}
+
+#pragma mark  - HTLDateSectionHeaderDelegate
+
+- (void)dateSectionHeader:(HTLDateSectionHeader *)dateSectionHeader showStatisticsForDateSection:(HTLDateSectionDto *)dateSection {
+    [self performSegueWithIdentifier:kShowStatisticsSegueIdentifier sender:dateSection];
 }
 
 @end

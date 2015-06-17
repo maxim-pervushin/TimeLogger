@@ -7,10 +7,20 @@
 
 
 @class HTLDateSectionDto;
+@protocol HTLDateSectionHeaderDelegate;
 
 
 @interface HTLDateSectionHeader : UITableViewHeaderFooterView
 
+@property(nonatomic, weak) id <HTLDateSectionHeaderDelegate> delegate;
+
 - (void)configureWithDateSection:(HTLDateSectionDto *)dateSection;
+
+@end
+
+
+@protocol HTLDateSectionHeaderDelegate <NSObject>
+
+- (void)dateSectionHeader:(HTLDateSectionHeader *)dateSectionHeader showStatisticsForDateSection:(HTLDateSectionDto *)dateSection;
 
 @end

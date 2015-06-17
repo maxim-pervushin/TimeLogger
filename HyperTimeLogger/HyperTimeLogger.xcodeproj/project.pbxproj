@@ -62,6 +62,7 @@
 		73BC6ACF153F24B101D5596E /* HTLCategoryCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6BF188BC4B62EBAED386 /* HTLCategoryCell.m */; };
 		73BC6AEDC24B3643325E6F75 /* HTLCategoryDto.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC660F9035AF2D12D68B11 /* HTLCategoryDto.m */; };
 		73BC6B1E338548FE30A4AFAD /* HTLActionDto.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC648635BCE062AF18E634 /* HTLActionDto.m */; };
+		73BC6B5E48C8D2C5D91C39EB /* HTLStatisticsModelController.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC64B38D1BC62AB8562034 /* HTLStatisticsModelController.m */; };
 		73BC6B9AD1668565075E5DF0 /* Pods_TodayExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73BC622E9691559B4565139E /* Pods_TodayExtension.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		73BC6BBDB05B2D670300F209 /* HTLReportExtendedDto.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC666118C4F574F66F741D /* HTLReportExtendedDto.m */; };
 		73BC6BCFC083BDB023D12F96 /* HTLDateSectionDto.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC66709A1F2D03B601899D /* HTLDateSectionDto.m */; };
@@ -153,6 +154,7 @@
 		73BC63DA891A05E05D6EB4CC /* HTLCompletionCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTLCompletionCollectionViewCell.h; sourceTree = "<group>"; };
 		73BC642D0A6375B6BC652163 /* HTLStorageProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTLStorageProvider.h; sourceTree = "<group>"; };
 		73BC648635BCE062AF18E634 /* HTLActionDto.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTLActionDto.m; sourceTree = "<group>"; };
+		73BC64B38D1BC62AB8562034 /* HTLStatisticsModelController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTLStatisticsModelController.m; sourceTree = "<group>"; };
 		73BC64D990F65D9E25A88C68 /* Pods_HyperTimeLogger.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Pods_HyperTimeLogger.framework; path = "../../../Library/Caches/AppCode32/DerivedData/HyperTimeLogger-3b7e8ea7/Build/Products/Debug-iphonesimulator/Pods_HyperTimeLogger.framework"; sourceTree = "<group>"; };
 		73BC64E454A17ED44DEA7F42 /* HTETodayModelController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTETodayModelController.h; sourceTree = "<group>"; };
 		73BC65321D9C90EA753BBE0D /* ru */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -170,6 +172,7 @@
 		73BC667316551E776F1E8784 /* add.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = add.png; sourceTree = "<group>"; };
 		73BC669236F7FD0A9AA838FA /* HTLCSVStringExportProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTLCSVStringExportProvider.h; sourceTree = "<group>"; };
 		73BC673032446C1BF1CE5E98 /* HTLReportExtendedDto+Helpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "HTLReportExtendedDto+Helpers.h"; sourceTree = "<group>"; };
+		73BC674C459A467E5BBE9DE3 /* HTLStatisticsModelController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTLStatisticsModelController.h; sourceTree = "<group>"; };
 		73BC675BA63D17605F56B715 /* HTLNavigationBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTLNavigationBar.m; sourceTree = "<group>"; };
 		73BC681B64B78D2126E3F273 /* HTLReportExtendedCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTLReportExtendedCell.h; sourceTree = "<group>"; };
 		73BC683230DB63BFBED239E8 /* HTLCircleButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTLCircleButton.h; sourceTree = "<group>"; };
@@ -588,6 +591,8 @@
 			children = (
 				73BC6034DE2E0674AFE42546 /* HTLStatisticsViewController.h */,
 				73BC6B86F0BBBAD9C3ECC490 /* HTLStatisticsViewController.m */,
+				73BC674C459A467E5BBE9DE3 /* HTLStatisticsModelController.h */,
+				73BC64B38D1BC62AB8562034 /* HTLStatisticsModelController.m */,
 			);
 			path = Statistics;
 			sourceTree = "<group>";
@@ -1033,6 +1038,7 @@
 				73BC68546859BB9B9464FFD0 /* HTLReportListModelController.m in Sources */,
 				73BC6C75E24784AC052671E5 /* HTLEditReportViewController.m in Sources */,
 				73BC6FAB452C5DBF4EC4D193 /* HTLEditReportModelController.m in Sources */,
+				73BC6B5E48C8D2C5D91C39EB /* HTLStatisticsModelController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

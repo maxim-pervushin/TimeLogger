@@ -4,11 +4,10 @@
 //
 
 #import "HTLStatisticsViewController.h"
+#import "HTLStatisticsModelController.h"
 #import "XYPieChart.h"
 #import "HTLCategoryDto.h"
-#import "HTLContentManager.h"
-#import "HTLReportExtendedDto.h"
-#import "HTLReportDto.h"
+#import "HTLDateSectionDto.h"
 
 @interface HTLStatisticsViewController () <XYPieChartDataSource, XYPieChartDelegate>
 
@@ -33,9 +32,12 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-    self.modelController = [HTLStatisticsModelController new];
-    self.modelController.fromDate = [NSDate date];
-    self.modelController.toDate = [NSDate date];
+    __weak __typeof(self) weakSelf = self;
+    self.modelController = [HTLStatisticsModelController modelControllerWithDateSection:self.dateSection
+                                                                    contentChangedBlock:^{
+        // TODO: updateUI, not only pie chart.
+        [weakSelf.pieChart reloadData];
+    }];
 
     self.pieChart.dataSource = self;
     self.pieChart.delegate = self;
@@ -72,21 +74,3 @@
 
 @end
 
-@implementation HTLStatisticsModelController
-@dynamic categories;
-
-- (NSArray *)categories{
-    return [[HTLContentManager defaultManager] categoriesFromDate:self.fromDate toDate:self.toDate];
-}
-
-- (NSTimeInterval)totalTimeForCategory:(HTLCategoryDto *)category {
-    NSArray *reportsExtended = [[HTLContentManager defaultManager] reportsExtendedWithCategory:category fromDate:self.fromDate toDate:self.toDate];
-    NSTimeInterval totalTime = 0;
-    for (HTLReportExtendedDto *reportExtended in reportsExtended) {
-        totalTime += [reportExtended.report.endDate timeIntervalSinceDate:reportExtended.report.startDate];
-    }
-
-    return totalTime;
-}
-
-@end

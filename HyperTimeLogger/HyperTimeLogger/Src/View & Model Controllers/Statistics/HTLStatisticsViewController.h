@@ -6,20 +6,12 @@
 #import <UIKit/UIKit.h>
 
 
-@class HTLCategoryDto;
+@class HTLDateSectionDto;
 
 
 @interface HTLStatisticsViewController : UIViewController
-@end
 
-@interface HTLStatisticsModelController : NSObject
-
-@property(nonatomic, copy) NSDate *fromDate;
-@property(nonatomic, copy) NSDate *toDate;
-
-@property(nonatomic, readonly) NSArray *categories;
-
-- (NSTimeInterval)totalTimeForCategory:(HTLCategoryDto *)category;
+@property(nonatomic, copy) HTLDateSectionDto *dateSection;
 
 @end
 

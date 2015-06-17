@@ -30,13 +30,14 @@
 
 + (instancetype)modelControllerWithReportExtended:(HTLReportExtendedDto *)reportExtended
                               contentChangedBlock:(HTLModelControllerContentChangedBlock)block {
+
     HTLEditReportModelController *instance = [self new];
+    if (reportExtended) {
+        instance.report = reportExtended.report;
+        instance.action = reportExtended.action;
+        instance.category = reportExtended.category;
+    }
     if (block) {
-        if (reportExtended) {
-            instance.report = reportExtended.report;
-            instance.action = reportExtended.action;
-            instance.category = reportExtended.category;
-        }
         instance.contentChangedBlock = block;
     }
     return instance;

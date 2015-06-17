@@ -15,6 +15,7 @@
 #import "HTLReportExtendedDto+Helpers.h"
 #import <NotificationCenter/NotificationCenter.h>
 #import <ZLBalancedFlowLayout/ZLBalancedFlowLayout-Swift.h>
+#import "HTLContentManager.h"
 
 static NSString *const kCompletionCellIdentifier = @"CompletionCell";
 // TODO: Load number of completions from defaults
@@ -71,8 +72,14 @@ static const int kCollectionViewMinItemsPerRow = 3;
 }
 
 - (void)createReportWithCompletion:(HTLCompletionDto *)completion {
+    NSDate *startDate = [HTLContentManager defaultManager].lastReportEndDate;
+    HTLReportDto *report = [HTLReportDto reportWithIdentifier:[NSUUID UUID].UUIDString
+                                             actionIdentifier:completion.action.identifier
+                                           categoryIdentifier:completion.category.identifier
+                                                    startDate:startDate ? startDate : [NSDate new]
+                                                      endDate:[NSDate new]];
     HTLReportExtendedDto *reportExtended =
-            [HTLReportExtendedDto reportExtendedWithReport:nil action:completion.action category:completion.category];
+            [HTLReportExtendedDto reportExtendedWithReport:report action:completion.action category:completion.category];
 
     [self.modelController createReportExtended:reportExtended];
     [self updateUI];

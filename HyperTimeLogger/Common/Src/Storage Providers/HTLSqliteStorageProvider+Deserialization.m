@@ -22,9 +22,9 @@
 }
 
 - (HTLCategoryDto *)categoryWithResultSet:(FMResultSet *)resultSet {
-    return [HTLCategoryDto categoryWithIdentifier:[resultSet stringForColumn:@"identifier"]
-                                            title:[resultSet stringForColumn:@"title"]
-                                            color:[UIColor colorWithHexString:[resultSet stringForColumn:@"color"]]];
+    return [HTLCategoryDto categoryWithIdentifier:[resultSet stringForColumn:@"categoryIdentifier"]
+                                            title:[resultSet stringForColumn:@"categoryTitle"]
+                                            color:[UIColor colorWithHexString:[resultSet stringForColumn:@"categoryColor"]]];
 }
 
 - (HTLDateSectionDto *)dateSectionWithResultSet:(FMResultSet *)resultSet {

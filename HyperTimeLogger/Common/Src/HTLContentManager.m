@@ -8,6 +8,7 @@
 #import "HTLSqliteStorageProvider.h"
 #import "HTLCSVStringExportProvider.h"
 #import "HTLReportExtendedDto.h"
+#import "HTLDateSectionDto.h"
 
 
 @interface HTLContentManager ()
@@ -62,6 +63,10 @@
     return [self.storageProvider categories];
 }
 
+- (NSArray *)categoriesWithDateSection:(HTLDateSectionDto *)dateSection {
+    return [self.storageProvider categoriesWithDateSection:dateSection];
+}
+
 - (BOOL)storeCategory:(HTLCategoryDto *)category {
     return [self.storageProvider storeCategory:category];
 }
@@ -78,8 +83,8 @@
     return [self.storageProvider reportSections];
 }
 
-- (NSArray *)reportsExtendedWithSection:(HTLDateSectionDto *)dateSection {
-    return [self.storageProvider reportsExtendedWithSection:dateSection];
+- (NSArray *)reportsExtendedWithDateSection:(HTLDateSectionDto *)dateSection {
+    return [self.storageProvider reportsExtendedWithDateSection:dateSection];
 }
 
 - (BOOL)storeReportExtended:(HTLReportExtendedDto *)reportExtended {
@@ -90,12 +95,8 @@
     return [self.csvStringExportProvider exportReportsExtended:[self.storageProvider reportsExtended]];
 }
 
-- (NSArray *)categoriesFromDate:(NSDate *)fromDate toDate:(NSDate *)toDate {
-    return [self.storageProvider categoriesFromDate:fromDate toDate:toDate];
-}
-
-- (NSArray *)reportsExtendedWithCategory:(HTLCategoryDto *)category fromDate:(NSDate *)fromDate toDate:(NSDate *)toDate {
-    return [self.storageProvider reportsExtendedWithCategory:category fromDate:fromDate toDate:toDate];
+- (NSArray *)reportsExtendedWithDateSection:(HTLDateSectionDto *)dateSection category:(HTLCategoryDto *)category {
+    return [self.storageProvider reportsExtendedWithDateSection:dateSection category:category];
 }
 
 - (NSDate *)lastReportEndDate {

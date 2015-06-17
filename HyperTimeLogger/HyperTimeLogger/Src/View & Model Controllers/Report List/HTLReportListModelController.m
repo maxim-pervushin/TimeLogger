@@ -33,7 +33,7 @@
 
 - (NSArray *)reportsExtendedForDateSectionAtIndex:(NSInteger)index {
     HTLDateSectionDto *dateSection = [[HTLContentManager defaultManager] reportSections][(NSUInteger) index];
-    NSArray *result = [[HTLContentManager defaultManager] reportsExtendedWithSection:dateSection];
+    NSArray *result = [[HTLContentManager defaultManager] reportsExtendedWithDateSection:dateSection];
     return result;
 }
 
