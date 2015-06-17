@@ -33,7 +33,10 @@ static const CGFloat kStatisticsItemCellHeight = 40;
 #pragma mark - HTLStatisticsViewController
 
 - (void)updateUI {
-    [self.tableView reloadData];
+    __weak __typeof(self) weakSelf = self;
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [weakSelf.tableView reloadData];
+    });
 }
 
 #pragma mark - UIViewController
