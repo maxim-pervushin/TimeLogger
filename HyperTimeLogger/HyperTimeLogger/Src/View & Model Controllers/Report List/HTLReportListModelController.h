@@ -19,8 +19,6 @@ typedef void (^HTLModelControllerContentChangedBlock)();
 
 - (NSArray *)reportsExtendedForDateSectionAtIndex:(NSInteger)index;
 
-- (void)createTestData;
-
 @end
 
 
