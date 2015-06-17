@@ -8,6 +8,7 @@
 
 @class HTLCategoryDto;
 @class HTLDateSectionDto;
+@class HTLStatisticsItemDto;
 
 
 @interface HTLStatisticsModelController : HTLModelController
@@ -19,6 +20,6 @@
 
 @property(nonatomic, readonly) NSArray *categories;
 
-- (NSTimeInterval)totalTimeForCategory:(HTLCategoryDto *)category;
+- (HTLStatisticsItemDto *)statisticsForCategory:(HTLCategoryDto *)category;
 
 @end

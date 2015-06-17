@@ -2,7 +2,6 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="J61-BK-lbg">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
-        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -479,33 +478,91 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DMK-CE-lEc" customClass="XYPieChart">
-                                <rect key="frame" x="16" y="72" width="288" height="288"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="DMK-CE-lEc" secondAttribute="height" multiplier="1:1" id="B81-wB-3Vz"/>
-                                </constraints>
-                            </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qhZ-2b-J6V">
-                                <rect key="frame" x="16" y="430" width="288" height="30"/>
-                                <state key="normal" title="Export Report">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                            </button>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="40" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="z9z-6G-8KR">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="PieChartCell" id="M7K-0D-wXF" customClass="HTLPieChartCell">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="M7K-0D-wXF" id="qxj-b6-yOG">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WZs-kP-sbC" customClass="XYPieChart">
+                                                    <rect key="frame" x="0.0" y="0.0" width="320" height="40"/>
+                                                </view>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="WZs-kP-sbC" secondAttribute="trailing" id="4uh-4A-3dQ"/>
+                                                <constraint firstAttribute="bottom" secondItem="WZs-kP-sbC" secondAttribute="bottom" id="7H9-VE-Aak"/>
+                                                <constraint firstItem="WZs-kP-sbC" firstAttribute="top" secondItem="qxj-b6-yOG" secondAttribute="top" id="IJs-Uj-0Gg"/>
+                                                <constraint firstItem="WZs-kP-sbC" firstAttribute="leading" secondItem="qxj-b6-yOG" secondAttribute="leading" id="OKf-Ab-SkT"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="pieChart" destination="WZs-kP-sbC" id="S1i-mx-AkB"/>
+                                        </connections>
+                                    </tableViewCell>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="StatisticsItemCell" id="u16-9N-aTe" customClass="HTLStatisticsItemCell">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="u16-9N-aTe" id="wDk-9S-ICd">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="[Category Title]" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3dE-YY-8fR">
+                                                    <rect key="frame" x="8" y="8" width="164" height="11"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="252" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="751" text="[Total Reports]" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FOw-r7-4We">
+                                                    <rect key="frame" x="8" y="21" width="61" height="11"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="9"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="[Total Time]" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Phl-kh-mwn">
+                                                    <rect key="frame" x="180" y="8" width="132" height="18"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="FOw-r7-4We" firstAttribute="leading" secondItem="3dE-YY-8fR" secondAttribute="leading" id="7ZN-o0-VNH"/>
+                                                <constraint firstItem="3dE-YY-8fR" firstAttribute="top" secondItem="wDk-9S-ICd" secondAttribute="topMargin" id="HUK-dt-8aT"/>
+                                                <constraint firstItem="Phl-kh-mwn" firstAttribute="leading" secondItem="3dE-YY-8fR" secondAttribute="trailing" constant="8" id="WUM-oG-vIM"/>
+                                                <constraint firstItem="3dE-YY-8fR" firstAttribute="leading" secondItem="wDk-9S-ICd" secondAttribute="leadingMargin" id="XoZ-9z-0jA"/>
+                                                <constraint firstItem="3dE-YY-8fR" firstAttribute="top" secondItem="Phl-kh-mwn" secondAttribute="top" id="dOf-4u-kbg"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="FOw-r7-4We" secondAttribute="bottom" id="dsz-Q9-SC3"/>
+                                                <constraint firstItem="Phl-kh-mwn" firstAttribute="trailing" secondItem="wDk-9S-ICd" secondAttribute="trailingMargin" id="iN8-rf-V6t"/>
+                                                <constraint firstItem="FOw-r7-4We" firstAttribute="top" secondItem="3dE-YY-8fR" secondAttribute="bottom" constant="2" id="l9q-ri-cZ0"/>
+                                                <constraint firstItem="FOw-r7-4We" firstAttribute="trailing" secondItem="3dE-YY-8fR" secondAttribute="trailing" constant="-103" id="poS-ME-VEs"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="categoryTitleLabel" destination="3dE-YY-8fR" id="QsI-sD-Z0v"/>
+                                            <outlet property="totalReportsLabel" destination="FOw-r7-4We" id="eX3-y9-MkE"/>
+                                            <outlet property="totalTimeLabel" destination="Phl-kh-mwn" id="Mzc-Mk-3lG"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="FHu-qc-3H3" id="aXE-3w-IlH"/>
+                                    <outlet property="delegate" destination="FHu-qc-3H3" id="fL1-V3-8pA"/>
+                                </connections>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="7c7-Tb-se8" firstAttribute="top" secondItem="qhZ-2b-J6V" secondAttribute="bottom" constant="20" id="PBD-ek-g88"/>
-                            <constraint firstItem="DMK-CE-lEc" firstAttribute="leading" secondItem="Loi-ZP-DQy" secondAttribute="leadingMargin" id="Rmn-za-d7h"/>
-                            <constraint firstItem="DMK-CE-lEc" firstAttribute="top" secondItem="3oK-2J-JXA" secondAttribute="bottom" constant="8" id="fRY-mC-gVK"/>
-                            <constraint firstItem="qhZ-2b-J6V" firstAttribute="top" relation="greaterThanOrEqual" secondItem="DMK-CE-lEc" secondAttribute="bottom" constant="8" id="h7g-SC-vXu"/>
-                            <constraint firstItem="DMK-CE-lEc" firstAttribute="trailing" secondItem="Loi-ZP-DQy" secondAttribute="trailingMargin" id="jwn-TQ-eC0"/>
-                            <constraint firstItem="qhZ-2b-J6V" firstAttribute="trailing" secondItem="Loi-ZP-DQy" secondAttribute="trailingMargin" id="wza-uC-ZNS"/>
-                            <constraint firstItem="qhZ-2b-J6V" firstAttribute="leading" secondItem="Loi-ZP-DQy" secondAttribute="leadingMargin" id="xGg-Wt-UaG"/>
+                            <constraint firstItem="7c7-Tb-se8" firstAttribute="top" secondItem="z9z-6G-8KR" secondAttribute="bottom" id="T2y-RO-BoA"/>
+                            <constraint firstItem="z9z-6G-8KR" firstAttribute="top" secondItem="Loi-ZP-DQy" secondAttribute="top" id="irW-Pk-YQo"/>
+                            <constraint firstAttribute="trailing" secondItem="z9z-6G-8KR" secondAttribute="trailing" id="nd0-bo-a8O"/>
+                            <constraint firstItem="z9z-6G-8KR" firstAttribute="leading" secondItem="Loi-ZP-DQy" secondAttribute="leading" id="wvZ-OS-eSF"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="pieChart" destination="DMK-CE-lEc" id="GPQ-WZ-TFw"/>
+                        <outlet property="tableView" destination="z9z-6G-8KR" id="hBr-yV-gkv"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YDC-4Q-Xdy" userLabel="First Responder" sceneMemberID="firstResponder"/>

@@ -8,6 +8,7 @@
 #import "HTLReportExtendedDto.h"
 #import "HTLContentManager.h"
 #import "HTLDateSectionDto.h"
+#import "HTLStatisticsItemDto.h"
 
 
 @interface HTLStatisticsModelController ()
@@ -47,21 +48,16 @@
     return [[HTLContentManager defaultManager] categoriesWithDateSection:self.dateSection];
 }
 
-- (NSTimeInterval)totalTimeForCategory:(HTLCategoryDto *)category {
+- (HTLStatisticsItemDto *)statisticsForCategory:(HTLCategoryDto *)category {
     NSArray *reportsExtended = [[HTLContentManager defaultManager] reportsExtendedWithDateSection:self.dateSection
                                                                                          category:category];
-
-//    NSLog(@"====================");
-//    NSLog(@"DateSection: %@", self.dateSection);
-//    NSLog(@"Category: %@", category);
-//    NSLog(@"Reports: %@", reportsExtended);
 
     NSTimeInterval totalTime = 0;
     for (HTLReportExtendedDto *reportExtended in reportsExtended) {
         totalTime += [reportExtended.report.endDate timeIntervalSinceDate:reportExtended.report.startDate];
     }
 
-    return totalTime;
+    return [HTLStatisticsItemDto statisticsItemWithCategory:category totalTime:totalTime];
 }
 
 #pragma mark - NSObject
