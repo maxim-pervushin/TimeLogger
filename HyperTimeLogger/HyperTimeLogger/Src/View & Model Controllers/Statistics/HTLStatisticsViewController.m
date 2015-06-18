@@ -49,8 +49,7 @@ static const CGFloat kStatisticsItemCellHeight = 40;
                                                                         [weakSelf updateUI];
                                                                     }];
 
-    // TODO: Make HTLDateSection category for good title.
-    self.title = self.dateSection.description;
+    self.title = self.dateSection.fulldateStringLocalized;
 }
 
 #pragma mark - UITableViewDataSource, UITableViewDelegate

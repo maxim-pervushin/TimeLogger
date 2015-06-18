@@ -19,16 +19,16 @@
                             <subviews>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ogM-qg-NGh" userLabel="Show Report Button">
                                     <rect key="frame" x="369" y="4" width="38" height="38"/>
-                                    <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="0.25098040700000002" alpha="1" colorSpace="calibratedRGB"/>
                                     <constraints>
                                         <constraint firstAttribute="width" secondItem="ogM-qg-NGh" secondAttribute="height" multiplier="1:1" id="lyk-uK-4zQ"/>
                                     </constraints>
-                                    <state key="normal" title="&gt;">
+                                    <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                    <state key="normal" image="statistics.png">
                                         <color key="titleColor" red="1" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                     </state>
                                     <connections>
-                                        <action selector="reportButtonAction:" destination="iN0-l3-epB" eventType="touchUpInside" id="M6D-rK-ZFi"/>
+                                        <action selector="statisticsButtonAction:" destination="iN0-l3-epB" eventType="touchUpInside" id="M6D-rK-ZFi"/>
                                     </connections>
                                 </button>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="[sectionTitle]" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nOd-N7-Nrn" userLabel="Title Label">
@@ -70,10 +70,13 @@
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
                 <outlet property="backgroundColorView" destination="Jxe-wG-3q1" id="Q4m-KO-1ed"/>
-                <outlet property="reportButton" destination="ogM-qg-NGh" id="H8t-1T-2x0"/>
+                <outlet property="statisticsButton" destination="ogM-qg-NGh" id="H8t-1T-2x0"/>
                 <outlet property="sectionTitleLabel" destination="nOd-N7-Nrn" id="MTb-yF-L0J"/>
             </connections>
             <point key="canvasLocation" x="434.5" y="319"/>
         </view>
     </objects>
+    <resources>
+        <image name="statistics.png" width="22" height="17"/>
+    </resources>
 </document>

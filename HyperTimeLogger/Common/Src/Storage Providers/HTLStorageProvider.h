@@ -35,6 +35,9 @@ static NSString *const kHTLStorageProviderChangedNotification = @"HTLStorageProv
 // TODO: Do we need it???
 - (NSArray *)reportsExtended;
 
+// TODO:countOfReportsWithDateSection:
+// - (NSUInteger)countOfReportsWithDateSection:(HTLDateSectionDto *)dateSection;
+
 // TODO: Do we need it???
 - (NSArray *)reportsExtendedWithDateSection:(HTLDateSectionDto *)dateSection;
 

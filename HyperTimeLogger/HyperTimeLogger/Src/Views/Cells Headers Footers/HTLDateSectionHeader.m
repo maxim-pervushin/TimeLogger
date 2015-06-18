@@ -10,11 +10,11 @@
 
 @property(nonatomic, weak) IBOutlet UIView *backgroundColorView;
 @property(nonatomic, weak) IBOutlet UILabel *sectionTitleLabel;
-@property(nonatomic, weak) IBOutlet UIButton *reportButton;
+@property(nonatomic, weak) IBOutlet UIButton *statisticsButton;
 
 @property(nonatomic, copy) HTLDateSectionDto *dateSection;
 
-- (IBAction)reportButtonAction:(id)sender;
+- (IBAction)statisticsButtonAction:(id)sender;
 
 - (void)initializeUI;
 
@@ -33,7 +33,7 @@
     }
 }
 
-- (IBAction)reportButtonAction:(id)sender {
+- (IBAction)statisticsButtonAction:(id)sender {
     if ([self.delegate respondsToSelector:@selector(dateSectionHeader:showStatisticsForDateSection:)]) {
         [self.delegate dateSectionHeader:self showStatisticsForDateSection:self.dateSection];
     }
@@ -42,10 +42,11 @@
 - (void)initializeUI {
     self.contentView.backgroundColor = [UIColor clearColor];
     self.backgroundColorView.backgroundColor = [UIColor paperColorGray800];
-    self.reportButton.backgroundColor = [UIColor clearColor];
-    self.reportButton.tintColor = [UIColor paperColorTextLight];
-    [self.reportButton setTitleColor:[UIColor paperColorTextLight] forState:UIControlStateNormal];
-    [self.reportButton setTitleColor:[UIColor paperColorTextLight] forState:UIControlStateSelected];
+    UIImage *image = [[UIImage imageNamed:@"statistics.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
+    [self.statisticsButton setImage:image forState:UIControlStateNormal];
+    [self.statisticsButton setImage:image forState:UIControlStateSelected];
+    self.statisticsButton.backgroundColor = [UIColor clearColor];
+    self.statisticsButton.tintColor = [UIColor paperColorTextLight];
     self.sectionTitleLabel.textColor = [UIColor paperColorTextLight];
 }
 
