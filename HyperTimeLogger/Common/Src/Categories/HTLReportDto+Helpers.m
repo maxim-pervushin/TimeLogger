@@ -14,6 +14,7 @@
         formatter = [NSDateFormatter new];
         formatter.dateStyle = NSDateFormatterMediumStyle;
         formatter.timeStyle = NSDateFormatterMediumStyle;
+        formatter.timeZone = [NSTimeZone localTimeZone];
     });
     return formatter;
 }

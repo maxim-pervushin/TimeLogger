@@ -17,8 +17,8 @@
 @implementation HTLSqliteStorageProvider (Deserialization)
 
 - (HTLActionDto *)actionWithResultSet:(FMResultSet *)resultSet {
-    return [HTLActionDto actionWithIdentifier:[resultSet stringForColumn:@"identifier"]
-                                        title:[resultSet stringForColumn:@"title"]];
+    return [HTLActionDto actionWithIdentifier:[resultSet stringForColumn:@"actionIdentifier"]
+                                        title:[resultSet stringForColumn:@"actionTitle"]];
 }
 
 - (HTLCategoryDto *)categoryWithResultSet:(FMResultSet *)resultSet {
@@ -28,20 +28,20 @@
 }
 
 - (HTLDateSectionDto *)dateSectionWithResultSet:(FMResultSet *)resultSet {
-    return [HTLDateSectionDto dateSectionWithDate:[resultSet doubleForColumn:@"endDate"]
-                                             time:[resultSet doubleForColumn:@"endTime"]
-                                             zone:[resultSet stringForColumn:@"endZone"]];
+    return [HTLDateSectionDto dateSectionWithDateString:[resultSet stringForColumn:@"endDate"]
+                                             timeString:[resultSet stringForColumn:@"endTime"]
+                                               timeZone:[resultSet stringForColumn:@"endZone"]];
 }
 
 - (HTLReportDto *)reportWithResultSet:(FMResultSet *)resultSet {
 
-    NSDate *startDate = [NSDate dateWithDateInterval:[resultSet doubleForColumn:@"startDate"]
-                                        timeInterval:[resultSet doubleForColumn:@"startTime"]
-                                                zone:[resultSet stringForColumn:@"startZone"]];
+    NSDate *startDate = [NSDate dateWithDateString:[resultSet stringForColumn:@"reportStartDate"]
+                                        timeString:[resultSet stringForColumn:@"reportStartTime"]
+                                    timeZoneString:[resultSet stringForColumn:@"reportStartZone"]];
 
-    NSDate *endDate = [NSDate dateWithDateInterval:[resultSet doubleForColumn:@"endDate"]
-                                      timeInterval:[resultSet doubleForColumn:@"endTime"]
-                                              zone:[resultSet stringForColumn:@"endZone"]];
+    NSDate *endDate = [NSDate dateWithDateString:[resultSet stringForColumn:@"reportEndDate"]
+                                      timeString:[resultSet stringForColumn:@"reportEndTime"]
+                                  timeZoneString:[resultSet stringForColumn:@"reportEndZone"]];
 
     return [HTLReportDto reportWithIdentifier:[resultSet stringForColumn:@"identifier"]
                              actionIdentifier:[resultSet stringForColumn:@"actionIdentifier"]
@@ -51,43 +51,14 @@
 }
 
 - (HTLReportExtendedDto *)reportExtendedWithResultSet:(FMResultSet *)resultSet {
-
-    NSDate *startDate = [NSDate dateWithDateInterval:[resultSet doubleForColumn:@"reportStartDate"]
-                                        timeInterval:[resultSet doubleForColumn:@"reportStartTime"]
-                                                zone:[resultSet stringForColumn:@"reportStartZone"]];
-
-    NSDate *endDate = [NSDate dateWithDateInterval:[resultSet doubleForColumn:@"reportEndDate"]
-                                      timeInterval:[resultSet doubleForColumn:@"reportEndTime"]
-                                              zone:[resultSet stringForColumn:@"reportEndZone"]];
-
-    HTLReportDto *report = [HTLReportDto reportWithIdentifier:[resultSet stringForColumn:@"identifier"]
-                                             actionIdentifier:[resultSet stringForColumn:@"actionIdentifier"]
-                                           categoryIdentifier:[resultSet stringForColumn:@"categoryIdentifier"]
-                                                    startDate:startDate
-                                                      endDate:endDate];
-
-    HTLActionDto *action = [HTLActionDto actionWithIdentifier:[resultSet stringForColumn:@"actionIdentifier"]
-                                                        title:[resultSet stringForColumn:@"actionTitle"]];
-
-    HTLCategoryDto *category = [HTLCategoryDto categoryWithIdentifier:[resultSet stringForColumn:@"categoryIdentifier"]
-                                                                title:[resultSet stringForColumn:@"categoryTitle"]
-                                                                color:[UIColor colorWithHexString:[resultSet stringForColumn:@"categoryColor"]]];
-
-
-    return [HTLReportExtendedDto reportExtendedWithReport:report action:action category:category];
+    return [HTLReportExtendedDto reportExtendedWithReport:[self reportWithResultSet:resultSet]
+                                                   action:[self actionWithResultSet:resultSet]
+                                                 category:[self categoryWithResultSet:resultSet]];
 }
 
 - (HTLCompletionDto *)completionWithResultSet:(FMResultSet *)resultSet {
-
-    HTLActionDto *action = [HTLActionDto actionWithIdentifier:[resultSet stringForColumn:@"actionIdentifier"]
-                                                        title:[resultSet stringForColumn:@"actionTitle"]];
-
-    HTLCategoryDto *category = [HTLCategoryDto categoryWithIdentifier:[resultSet stringForColumn:@"categoryIdentifier"]
-                                                                title:[resultSet stringForColumn:@"categoryTitle"]
-                                                                color:[UIColor colorWithHexString:[resultSet stringForColumn:@"categoryColor"]]];
-
-    return [HTLCompletionDto completionWithAction:action
-                                         category:category
+    return [HTLCompletionDto completionWithAction:[self actionWithResultSet:resultSet]
+                                         category:[self categoryWithResultSet:resultSet]
                                            weight:(NSUInteger) [resultSet intForColumn:@"weight"]];
 }
 

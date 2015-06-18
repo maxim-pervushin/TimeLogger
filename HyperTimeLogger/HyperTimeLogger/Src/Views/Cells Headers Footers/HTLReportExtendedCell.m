@@ -6,7 +6,8 @@
 #import "HTLReportExtendedCell.h"
 #import "HTLActionDto.h"
 #import "HTLCategoryDto.h"
-#import "HTLReportExtendedDto+Helpers.h"
+#import "HTLReportExtendedDto.h"
+#import "HTLReportDto+Helpers.h"
 
 @interface HTLReportExtendedCell ()
 
@@ -30,8 +31,8 @@
     if (reportExtended) {
         title = reportExtended.action.title;
         category = reportExtended.category.localizedTitle;
-        date = reportExtended.endDateString;
-        duration = reportExtended.durationString;
+        date = reportExtended.report.endDateString;
+        duration = reportExtended.report.durationString;
         color = reportExtended.category.color;
     }
 

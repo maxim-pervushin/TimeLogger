@@ -26,12 +26,24 @@
                                     <action selector="exportSqliteDatabase:" destination="BYZ-38-t0r" eventType="touchUpInside" id="coM-4c-MBM"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hWF-nD-7i9">
+                                <rect key="frame" x="16" y="66" width="568" height="30"/>
+                                <state key="normal" title="Delete Database File">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="deleteDatabaseFile:" destination="BYZ-38-t0r" eventType="touchUpInside" id="KER-8u-TJJ"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="RxD-1v-AUm" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="NRl-L0-sha"/>
                             <constraint firstItem="RxD-1v-AUm" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="Ze7-gf-Qoy"/>
+                            <constraint firstItem="hWF-nD-7i9" firstAttribute="top" secondItem="RxD-1v-AUm" secondAttribute="bottom" constant="8" id="fGP-A0-w7e"/>
+                            <constraint firstItem="hWF-nD-7i9" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="gum-Up-R6e"/>
                             <constraint firstItem="RxD-1v-AUm" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="hu9-R6-vEK"/>
+                            <constraint firstItem="hWF-nD-7i9" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="ip9-hG-n4F"/>
                         </constraints>
                     </view>
                 </viewController>

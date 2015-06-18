@@ -219,6 +219,15 @@
                                     <action selector="exportToCSVButtonAction:" destination="47e-2Z-u09" eventType="touchUpInside" id="yfi-KF-apn"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p3C-ZV-Aiz">
+                                <rect key="frame" x="16" y="186" width="288" height="30"/>
+                                <state key="normal" title="Generate Test Data">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="generateTestDataButtonAction:" destination="47e-2Z-u09" eventType="touchUpInside" id="OVD-eW-kQ5"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -226,10 +235,13 @@
                             <constraint firstItem="vBj-xp-MRs" firstAttribute="leading" secondItem="lsZ-z4-Zfb" secondAttribute="leadingMargin" id="A37-uW-syL"/>
                             <constraint firstItem="erl-mU-x5B" firstAttribute="trailing" secondItem="lsZ-z4-Zfb" secondAttribute="trailingMargin" id="GTs-hn-T5J"/>
                             <constraint firstItem="4Zy-wc-5eB" firstAttribute="trailing" secondItem="lsZ-z4-Zfb" secondAttribute="trailingMargin" id="MN8-Dy-Kwg"/>
+                            <constraint firstItem="p3C-ZV-Aiz" firstAttribute="trailing" secondItem="lsZ-z4-Zfb" secondAttribute="trailingMargin" id="Sg0-wk-JPw"/>
                             <constraint firstItem="vBj-xp-MRs" firstAttribute="top" secondItem="4Zy-wc-5eB" secondAttribute="bottom" constant="8" id="ZA8-a9-fwB"/>
                             <constraint firstItem="erl-mU-x5B" firstAttribute="leading" secondItem="lsZ-z4-Zfb" secondAttribute="leadingMargin" id="anC-9B-Wky"/>
                             <constraint firstItem="4Zy-wc-5eB" firstAttribute="leading" secondItem="lsZ-z4-Zfb" secondAttribute="leadingMargin" id="h54-Jg-Qqs"/>
                             <constraint firstItem="4Zy-wc-5eB" firstAttribute="top" secondItem="2rm-RZ-Hqg" secondAttribute="bottom" constant="8" id="mrk-V0-U2Q"/>
+                            <constraint firstItem="p3C-ZV-Aiz" firstAttribute="leading" secondItem="lsZ-z4-Zfb" secondAttribute="leadingMargin" id="q2R-Fd-qKh"/>
+                            <constraint firstItem="p3C-ZV-Aiz" firstAttribute="top" secondItem="erl-mU-x5B" secondAttribute="bottom" constant="8" id="uuo-BR-3Rq"/>
                             <constraint firstItem="vBj-xp-MRs" firstAttribute="trailing" secondItem="lsZ-z4-Zfb" secondAttribute="trailingMargin" id="xuJ-qH-UCl"/>
                         </constraints>
                     </view>

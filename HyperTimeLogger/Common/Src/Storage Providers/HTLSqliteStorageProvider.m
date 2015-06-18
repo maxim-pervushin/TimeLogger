@@ -3,18 +3,17 @@
 // Copyright (c) 2015 Maxim Pervushin. All rights reserved.
 //
 
-#import "HTLSqliteStorageProvider.h"
-#import "HTLReportExtendedDto.h"
-#import "FMDB.h"
-#import "HTLCategoryDto.h"
-#import "HTLActionDto.h"
-#import "HTLCompletionDto.h"
-#import "NSDate+HTLComponents.h"
-#import "HTLDateSectionDto.h"
 #import "DTFolderMonitor.h"
+#import "FMDB.h"
+#import "HTLActionDto.h"
+#import "HTLCategoryDto.h"
+#import "HTLCompletionDto.h"
+#import "HTLDateSectionDto.h"
 #import "HTLReportDto.h"
+#import "HTLReportExtendedDto.h"
 #import "HTLSqliteStorageProvider+Deserialization.h"
-#import "HTLSqliteStorageProvider+TestData.h"
+#import "HTLSqliteStorageProvider.h"
+#import "NSDate+HTLComponents.h"
 
 static NSString *const kApplicationGroup = @"group.timelogger";
 static NSString *const kStorageFileName = @"time_logger_storage.db";
@@ -96,11 +95,11 @@ static NSString *const kLastReportEndDateCacheKey = @"lastReportEndDate";
                         "identifier TEXT PRIMARY KEY, "
                         "actionIdentifier TEXT, "
                         "categoryIdentifier TEXT, "
-                        "startDate REAL, "
-                        "startTime REAL, "
+                        "startDate TEXT, "
+                        "startTime TEXT, "
                         "startZone TEXT, "
-                        "endDate REAL, "
-                        "endTime REAL, "
+                        "endDate TEXT, "
+                        "endTime TEXT, "
                         "endZone TEXT"
                         ");"];
 
@@ -108,8 +107,6 @@ static NSString *const kLastReportEndDateCacheKey = @"lastReportEndDate";
 
         [database close];
     }
-
-    [self createTestData];
 }
 
 - (void)clearCaches {
@@ -155,7 +152,7 @@ static NSString *const kLastReportEndDateCacheKey = @"lastReportEndDate";
                             "GROUP BY category.identifier "
                             "ORDER BY category.identifier;"
                             withParameterDictionary:@{
-                                    @"endDate" : @(dateSection.date),
+                                    @"endDate" : dateSection.dateString,
                             }];
 
     NSMutableArray *categories = [NSMutableArray new];
@@ -168,6 +165,25 @@ static NSString *const kLastReportEndDateCacheKey = @"lastReportEndDate";
     [resultSet close];
 
     return [categories copy];
+}
+
+- (HTLActionDto *)actionWithTitle:(NSString *)title database:(FMDatabase *)database {
+    FMResultSet *resultSet = [database executeQuery:
+                    @"SELECT "
+                            "identifier AS actionIdentifier, "
+                            "title AS actionTitle "
+                            "FROM action "
+                            "WHERE title = :title "
+                            "LIMIT 1;"
+                            withParameterDictionary:@{
+                                    @"title" : title ? title : @""
+                            }];
+
+    HTLActionDto *result;
+    if ([resultSet next]) {
+        result = [self actionWithResultSet:resultSet];
+    }
+    return result;
 }
 
 - (HTLActionDto *)storeAction:(HTLActionDto *)action database:(FMDatabase *)database {
@@ -185,6 +201,27 @@ static NSString *const kLastReportEndDateCacheKey = @"lastReportEndDate";
         return nil;
     }
 }
+
+- (HTLCategoryDto *)categoryWithTitle:(NSString *)title database:(FMDatabase *)database {
+    FMResultSet *resultSet = [database executeQuery:
+                    @"SELECT "
+                            "identifier AS categoryIdentifier, "
+                            "title AS categoryTitle, "
+                            "color AS categoryColor "
+                            "FROM category "
+                            "WHERE title = :title "
+                            "LIMIT 1;"
+                            withParameterDictionary:@{
+                                    @"title" : title ? title : @""
+                            }];
+
+    HTLCategoryDto *result;
+    if ([resultSet next]) {
+        result = [self categoryWithResultSet:resultSet];
+    }
+    return result;
+}
+
 
 - (HTLCategoryDto *)storeCategory:(HTLCategoryDto *)category database:(FMDatabase *)database {
     BOOL success = [database executeUpdate:@"INSERT OR REPLACE INTO category VALUES (:identifier, :title, :color)"
@@ -204,27 +241,27 @@ static NSString *const kLastReportEndDateCacheKey = @"lastReportEndDate";
 }
 
 - (HTLReportDto *)storeReport:(HTLReportDto *)report database:(FMDatabase *)database {
-    NSTimeInterval startDateInterval;
-    NSTimeInterval startTimeInterval;
-    NSString *startZoneComponentString;
-    [report.startDate disassembleToDateInterval:&startDateInterval timeInterval:&startTimeInterval zone:&startZoneComponentString];
+    NSString *startDateString;
+    NSString *startTimeString;
+    NSString *startTimeZoneString;
+    [report.startDate getDateString:&startDateString timeString:&startTimeString timeZoneString:&startTimeZoneString];
 
-    NSTimeInterval endDateInterval;
-    NSTimeInterval endTimeInterval;
-    NSString *endZoneComponentString;
-    [report.endDate disassembleToDateInterval:&endDateInterval timeInterval:&endTimeInterval zone:&endZoneComponentString];
+    NSString *endDateString;
+    NSString *endTimeString;
+    NSString *endTimeZoneString;
+    [report.endDate getDateString:&endDateString timeString:&endTimeString timeZoneString:&endTimeZoneString];
 
     BOOL success = [database executeUpdate:@"INSERT OR REPLACE INTO report VALUES (:identifier, :actionIdentifier, :categoryIdentifier, :startDate, :startTime, :startZone, :endDate, :endTime, :endZone)"
                    withParameterDictionary:@{
                            @"identifier" : report.identifier,
                            @"actionIdentifier" : report.actionIdentifier,
                            @"categoryIdentifier" : report.categoryIdentifier,
-                           @"startDate" : @(startDateInterval),
-                           @"startTime" : @(startTimeInterval),
-                           @"startZone" : startZoneComponentString,
-                           @"endDate" : @(endDateInterval),
-                           @"endTime" : @(endTimeInterval),
-                           @"endZone" : endZoneComponentString,
+                           @"startDate" : startDateString,
+                           @"startTime" : startTimeString,
+                           @"startZone" : startTimeZoneString,
+                           @"endDate" : endDateString,
+                           @"endTime" : endTimeString,
+                           @"endZone" : endTimeZoneString,
                    }];
 
     if (success) {
@@ -345,7 +382,7 @@ static NSString *const kLastReportEndDateCacheKey = @"lastReportEndDate";
                     "WHERE report.endDate = :dateSectionDate "
                     "ORDER BY report.endDate ASC, report.endTime ASC "
                     ";"
-                            withParameterDictionary:@{@"dateSectionDate" : @(dateSection.date)}];
+                            withParameterDictionary:@{@"dateSectionDate" : dateSection.dateString}];
 
     NSMutableArray *reportsExtended = [NSMutableArray new];
     while ([resultSet next]) {
@@ -381,7 +418,7 @@ static NSString *const kLastReportEndDateCacheKey = @"lastReportEndDate";
                     "ORDER BY report.endDate ASC, report.endTime ASC "
                     ";"
                             withParameterDictionary:@{
-                                    @"endDate" : @(dateSection.date),
+                                    @"endDate" : dateSection.dateString,
                                     @"categoryIdentifier" : category.identifier
                             }];
 
@@ -409,9 +446,9 @@ static NSString *const kLastReportEndDateCacheKey = @"lastReportEndDate";
 
     NSDate *lastReportEndDate;
     while ([resultSet next]) {
-        lastReportEndDate = [NSDate dateWithDateInterval:[resultSet doubleForColumn:@"endDate"]
-                                            timeInterval:[resultSet doubleForColumn:@"endTime"]
-                                                    zone:[resultSet stringForColumn:@"endZone"]];
+        lastReportEndDate = [NSDate dateWithDateString:[resultSet stringForColumn:@"reportEndDate"]
+                                            timeString:[resultSet stringForColumn:@"reportEndTime"]
+                                        timeZoneString:[resultSet stringForColumn:@"reportEndZone"]];
     }
     [resultSet close];
 
@@ -714,13 +751,19 @@ static NSString *const kLastReportEndDateCacheKey = @"lastReportEndDate";
 
     [self clearCaches];
 
-    HTLActionDto *action = [self storeAction:reportExtended.action database:database];
+    HTLActionDto *action = [self actionWithTitle:reportExtended.action.title database:database];
+    if (!action) {
+        action = [self storeAction:reportExtended.action database:database];
+    }
     if (!action) {
         [database close];
         return NO;
     }
 
-    HTLCategoryDto *category = [self storeCategory:reportExtended.category database:database];
+    HTLCategoryDto *category = [self categoryWithTitle:reportExtended.category.title database:database];
+    if (!category) {
+        category = [self storeCategory:reportExtended.category database:database];
+    }
     if (!category) {
         [database close];
         return NO;

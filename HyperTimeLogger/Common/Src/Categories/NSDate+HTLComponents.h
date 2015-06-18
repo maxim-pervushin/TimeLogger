@@ -8,8 +8,12 @@
 
 @interface NSDate (HTLComponents)
 
-- (void)disassembleToDateInterval:(NSTimeInterval *)dateInterval timeInterval:(NSTimeInterval *)timeInterval zone:(NSString **)zone;
+//- (void)disassembleToDateInterval:(NSTimeInterval *)dateInterval timeInterval:(NSTimeInterval *)timeInterval zone:(NSString **)zone;
 
-+ (NSDate *)dateWithDateInterval:(NSTimeInterval)dateInterval timeInterval:(NSTimeInterval)timeInterval zone:(NSString *)zone;
+//+ (NSDate *)dateWithDateInterval:(NSTimeInterval)dateInterval timeInterval:(NSTimeInterval)timeInterval zone:(NSString *)zone;
+
+- (BOOL)getDateString:(NSString **)dateString timeString:(NSString **)timeString timeZoneString:(NSString **)timeZoneString;
+
++ (NSDate *)dateWithDateString:(NSString *)dateString timeString:(NSString *)timeString timeZoneString:(NSString *)timeZoneString;
 
 @end

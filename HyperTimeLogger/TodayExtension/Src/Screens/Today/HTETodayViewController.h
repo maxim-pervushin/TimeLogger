@@ -13,5 +13,3 @@
 @interface HTETodayViewController : UIViewController
 
 @end
-
-

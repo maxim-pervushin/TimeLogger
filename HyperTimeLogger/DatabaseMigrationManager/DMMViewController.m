@@ -18,6 +18,8 @@ static NSString *const kStorageFileName = @"time_logger_storage.db";
 
 - (IBAction)exportSqliteDatabase:(id)sender;
 
+- (IBAction)deleteDatabaseFile:(id)sender;
+
 - (NSURL *)storageFileFolderURL;
 - (NSString *)storageFilePath;
 
@@ -36,6 +38,14 @@ static NSString *const kStorageFileName = @"time_logger_storage.db";
                                         mimeType:@"text/csv"
                                         fileName:@"time_logger_storage.db"];
     [self presentViewController:mailComposeViewController animated:YES completion:nil];
+}
+
+- (IBAction)deleteDatabaseFile:(id)sender {
+    NSError *error;
+    [[NSFileManager defaultManager] removeItemAtPath:[self storageFilePath] error:&error];
+    if (error) {
+        NSLog(@"ERROR: %@", error.localizedDescription);
+    }
 }
 
 - (NSURL *)storageFileFolderURL {

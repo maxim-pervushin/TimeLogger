@@ -22,8 +22,15 @@
     return YES;
 }
 
+- (BOOL)generateTestData {
+    //CCLogDebug(@"");
+
+    return YES;
+}
+
 - (NSString *)exportDataToCSV {
     return [[HTLContentManager defaultManager] exportDataToCSV];
 }
 
 @end
+

@@ -6,13 +6,12 @@
 //  Copyright (c) 2015 Maxim Pervushin. All rights reserved.
 //
 
+#import "HTETodayModelController.h"
 #import "HTETodayViewController.h"
 #import "HTLCompletionCollectionViewCell.h"
 #import "HTLCompletionDto.h"
-#import "HTLReportDto.h"
+#import "HTLReportDto+Helpers.h"
 #import "HTLReportExtendedDto.h"
-#import "HTETodayModelController.h"
-#import "HTLReportExtendedDto+Helpers.h"
 #import <NotificationCenter/NotificationCenter.h>
 #import <ZLBalancedFlowLayout/ZLBalancedFlowLayout-Swift.h>
 
@@ -53,8 +52,8 @@ static const int kCollectionViewMinItemsPerRow = 3;
     if (reportExtended) {
         self.lastReportActionTitleLabel.text = reportExtended.action.title;
         self.lastReportCategoryTitleLabel.text = reportExtended.category.title;
-        self.lastReportDurationLabel.text = reportExtended.durationString;
-        self.lastReportEndDateLabel.text = reportExtended.endDateString;
+        self.lastReportDurationLabel.text = reportExtended.report.durationString;
+        self.lastReportEndDateLabel.text = reportExtended.report.endDateString;
     } else {
         self.lastReportActionTitleLabel.text = @"";
         self.lastReportCategoryTitleLabel.text = @"";

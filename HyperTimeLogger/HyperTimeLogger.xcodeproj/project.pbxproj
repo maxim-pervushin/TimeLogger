@@ -10,7 +10,6 @@
 		73BC600E8C599F6D11BBD183 /* HTLCategoryDto.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC660F9035AF2D12D68B11 /* HTLCategoryDto.m */; };
 		73BC60A9E3DA6728F9788F57 /* HTLSqliteStorageProvider+Deserialization.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6D1F71AFEE603353B859 /* HTLSqliteStorageProvider+Deserialization.m */; };
 		73BC60E4095C74AD7CDC81DB /* DTFolderMonitor.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6C4782FCAEADF81D13DD /* DTFolderMonitor.m */; };
-		73BC610903BF6030BCDAFFEB /* HTLSqliteStorageProvider+TestData.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6BFA927CBF8B6DD0412D /* HTLSqliteStorageProvider+TestData.m */; };
 		73BC610CA9365423EC183AE7 /* HTETodayModelController.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6C705D0378287850972F /* HTETodayModelController.m */; };
 		73BC611D0DB73478A87E6CAE /* DTFolderMonitor.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6C4782FCAEADF81D13DD /* DTFolderMonitor.m */; };
 		73BC617D5432B3204E578CF4 /* settings.png in Resources */ = {isa = PBXBuildFile; fileRef = 73BC6F7DCFA8D0EF70DD39E0 /* settings.png */; };
@@ -30,7 +29,6 @@
 		73BC6455DC8F4C1A22455C36 /* DTFolderMonitor.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6C4782FCAEADF81D13DD /* DTFolderMonitor.m */; };
 		73BC646264303616218950CF /* Main.strings in Resources */ = {isa = PBXBuildFile; fileRef = 73BC6BAD07B312E2C41255F3 /* Main.strings */; };
 		73BC649195952AAE2A01D533 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 73BC607744427E66F86E1B3E /* Main.storyboard */; };
-		73BC651928FC2C006FFD9AD2 /* HTLReportExtendedDto+Helpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6204171F3BFE6B043867 /* HTLReportExtendedDto+Helpers.m */; };
 		73BC65608065C1CBF9F089C0 /* HTLStatisticsItemDto.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC68639DDCA8BD7C16A37A /* HTLStatisticsItemDto.m */; };
 		73BC65AB5A04FEEA2462F6AF /* HTLCompletionCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6A799292EFF1A3FDE4D4 /* HTLCompletionCollectionViewCell.m */; };
 		73BC65B877658336591063CC /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 73BC656F6A0FB629B3E8087F /* LaunchScreen.xib */; };
@@ -61,6 +59,7 @@
 		73BC6A38F00033FFAF9A4769 /* HTLSettingsModelController.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6E516EB62290DD7B243C /* HTLSettingsModelController.m */; };
 		73BC6A40B1C27D0F21D567DE /* HTLReportExtendedCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6096955E043B729051F4 /* HTLReportExtendedCell.m */; };
 		73BC6AC1C3C34AB23E8A3D42 /* HTLModelController.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6B2EF7D4AAB16D0EC09A /* HTLModelController.m */; };
+		73BC6ACDC82E718A89E6C930 /* HTLSettingsModelController+TestData.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC61A9C99CE0428963C88B /* HTLSettingsModelController+TestData.m */; };
 		73BC6ACF153F24B101D5596E /* HTLCategoryCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6BF188BC4B62EBAED386 /* HTLCategoryCell.m */; };
 		73BC6AEDC24B3643325E6F75 /* HTLCategoryDto.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC660F9035AF2D12D68B11 /* HTLCategoryDto.m */; };
 		73BC6B1E338548FE30A4AFAD /* HTLActionDto.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC648635BCE062AF18E634 /* HTLActionDto.m */; };
@@ -71,11 +70,9 @@
 		73BC6BBDB05B2D670300F209 /* HTLReportExtendedDto.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC666118C4F574F66F741D /* HTLReportExtendedDto.m */; };
 		73BC6BCFC083BDB023D12F96 /* HTLDateSectionDto.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC66709A1F2D03B601899D /* HTLDateSectionDto.m */; };
 		73BC6BF4CEB14B9FDFD57BAE /* HTLCompletionDto.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC612AAFD0BFC06B406EC4 /* HTLCompletionDto.m */; };
-		73BC6C31367AB81A42B0C753 /* HTLReportExtendedDto+Helpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6204171F3BFE6B043867 /* HTLReportExtendedDto+Helpers.m */; };
 		73BC6C3879C2267F06376B2E /* HTLDateSectionDto.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC66709A1F2D03B601899D /* HTLDateSectionDto.m */; };
 		73BC6C6045A93032F36ED35A /* HTLContentManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6F1E0AC02A596C78B942 /* HTLContentManager.m */; };
 		73BC6C75E24784AC052671E5 /* HTLEditReportViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6B659C1F2AF2CF606296 /* HTLEditReportViewController.m */; };
-		73BC6C7EE2E921F7298FD7F4 /* HTLSqliteStorageProvider+TestData.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6BFA927CBF8B6DD0412D /* HTLSqliteStorageProvider+TestData.m */; };
 		73BC6CC003E2DB538E6F16DE /* settings@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 73BC6A22878FD4F414CF5C2A /* settings@2x.png */; };
 		73BC6D0BCBFFC6D7B897C999 /* HTLContentManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6F1E0AC02A596C78B942 /* HTLContentManager.m */; };
 		73BC6D42F5DEFED44D50CF72 /* settings@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 73BC6B415FC214ECAF121C50 /* settings@3x.png */; };
@@ -83,7 +80,6 @@
 		73BC6D96930A9DDA7825C490 /* HTLCompletionCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6A799292EFF1A3FDE4D4 /* HTLCompletionCollectionViewCell.m */; };
 		73BC6E37E01E454ABCF88F75 /* HTLActionDto.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC648635BCE062AF18E634 /* HTLActionDto.m */; };
 		73BC6E4DED1BEDC0CE46C60D /* HTLStatisticsItemCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC68B935DD2C83FA55C77F /* HTLStatisticsItemCell.m */; };
-		73BC6E5835E32AB771D40421 /* HTLReportExtendedDto+Helpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6204171F3BFE6B043867 /* HTLReportExtendedDto+Helpers.m */; };
 		73BC6E87D97E20610C0F256F /* HTLCircleButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6396FF8919F2C1A22A95 /* HTLCircleButton.m */; };
 		73BC6E8F223111B6EB5A243E /* HTLReportListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6E168D88E254C8F6A4CE /* HTLReportListViewController.m */; };
 		73BC6EB6EE606785D69E11BF /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 73BC6641825542B858B9CDD1 /* MainInterface.storyboard */; };
@@ -94,6 +90,7 @@
 		C51F130F1B32C592001F452F /* statistics@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C51F130C1B32C592001F452F /* statistics@2x.png */; };
 		C51F13101B32C592001F452F /* statistics@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = C51F130D1B32C592001F452F /* statistics@3x.png */; };
 		C51F13121B32C5B2001F452F /* add.png in Resources */ = {isa = PBXBuildFile; fileRef = C51F13111B32C5B2001F452F /* add.png */; };
+		C51F13131B32F129001F452F /* HTLReportDto+Helpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6F771B4A63AA8FABCDF5 /* HTLReportDto+Helpers.m */; };
 		C5B133961B27625900437B10 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C5B133951B27625900437B10 /* main.m */; };
 		C5B133991B27625900437B10 /* DMMAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C5B133981B27625900437B10 /* DMMAppDelegate.m */; };
 		C5B1339C1B27625900437B10 /* DMMViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C5B1339B1B27625900437B10 /* DMMViewController.m */; };
@@ -151,8 +148,8 @@
 		73BC615392383318004C30BA /* HTLDateSectionHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTLDateSectionHeader.m; sourceTree = "<group>"; };
 		73BC616434A45FFEFED50CE7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = HyperTimeLogger/Base.lproj/Main.storyboard; sourceTree = SOURCE_ROOT; };
 		73BC6194DBE33DB85E9AFFDA /* HTLSqliteStorageProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTLSqliteStorageProvider.h; sourceTree = "<group>"; };
+		73BC61A9C99CE0428963C88B /* HTLSettingsModelController+TestData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "HTLSettingsModelController+TestData.m"; sourceTree = "<group>"; };
 		73BC61D53D7649DDE8385BD3 /* PrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
-		73BC6204171F3BFE6B043867 /* HTLReportExtendedDto+Helpers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "HTLReportExtendedDto+Helpers.m"; sourceTree = "<group>"; };
 		73BC622E9691559B4565139E /* Pods_TodayExtension.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Pods_TodayExtension.framework; path = "../../../Library/Caches/AppCode32/DerivedData/HyperTimeLogger-3b7e8ea7/Build/Products/Debug-iphonesimulator/Pods_TodayExtension.framework"; sourceTree = "<group>"; };
 		73BC623BCFD075E99FAA860D /* HTLWordCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTLWordCell.h; sourceTree = "<group>"; };
 		73BC623D9D51D3602062774D /* ru */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = ru; path = HyperTimeLogger/ru.lproj/LaunchScreen.strings; sourceTree = SOURCE_ROOT; };
@@ -180,7 +177,7 @@
 		73BC66709A1F2D03B601899D /* HTLDateSectionDto.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTLDateSectionDto.m; sourceTree = "<group>"; };
 		73BC669236F7FD0A9AA838FA /* HTLCSVStringExportProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTLCSVStringExportProvider.h; sourceTree = "<group>"; };
 		73BC6721C1F8610DAB796DB4 /* HTLPieChartCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTLPieChartCell.h; sourceTree = "<group>"; };
-		73BC673032446C1BF1CE5E98 /* HTLReportExtendedDto+Helpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "HTLReportExtendedDto+Helpers.h"; sourceTree = "<group>"; };
+		73BC672CAAD267B51798D558 /* HTLSettingsModelController+TestData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "HTLSettingsModelController+TestData.h"; sourceTree = "<group>"; };
 		73BC674C459A467E5BBE9DE3 /* HTLStatisticsModelController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTLStatisticsModelController.h; sourceTree = "<group>"; };
 		73BC675BA63D17605F56B715 /* HTLNavigationBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTLNavigationBar.m; sourceTree = "<group>"; };
 		73BC67B2DC0CBCFD95BC63E9 /* HTLModelController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTLModelController.h; sourceTree = "<group>"; };
@@ -212,9 +209,7 @@
 		73BC6B659C1F2AF2CF606296 /* HTLEditReportViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTLEditReportViewController.m; sourceTree = "<group>"; };
 		73BC6B86F0BBBAD9C3ECC490 /* HTLStatisticsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTLStatisticsViewController.m; sourceTree = "<group>"; };
 		73BC6B8E25A8D300C95D3491 /* HTETodayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTETodayViewController.m; sourceTree = "<group>"; };
-		73BC6BE415204C123F690D68 /* HTLSqliteStorageProvider+TestData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "HTLSqliteStorageProvider+TestData.h"; sourceTree = "<group>"; };
 		73BC6BF188BC4B62EBAED386 /* HTLCategoryCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTLCategoryCell.m; sourceTree = "<group>"; };
-		73BC6BFA927CBF8B6DD0412D /* HTLSqliteStorageProvider+TestData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "HTLSqliteStorageProvider+TestData.m"; sourceTree = "<group>"; };
 		73BC6C4782FCAEADF81D13DD /* DTFolderMonitor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DTFolderMonitor.m; sourceTree = "<group>"; };
 		73BC6C705D0378287850972F /* HTETodayModelController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTETodayModelController.m; sourceTree = "<group>"; };
 		73BC6CB3E44ADE3599C48F2D /* HTLStatisticsItemCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTLStatisticsItemCell.h; sourceTree = "<group>"; };
@@ -534,8 +529,6 @@
 				73BC642D0A6375B6BC652163 /* HTLStorageProvider.h */,
 				73BC686334D59793FEFA2E86 /* HTLSqliteStorageProvider.m */,
 				73BC6194DBE33DB85E9AFFDA /* HTLSqliteStorageProvider.h */,
-				73BC6BFA927CBF8B6DD0412D /* HTLSqliteStorageProvider+TestData.m */,
-				73BC6BE415204C123F690D68 /* HTLSqliteStorageProvider+TestData.h */,
 				73BC6D1F71AFEE603353B859 /* HTLSqliteStorageProvider+Deserialization.m */,
 				73BC60F50DF43992ADE82594 /* HTLSqliteStorageProvider+Deserialization.h */,
 			);
@@ -558,6 +551,8 @@
 				73BC69788FA88BEA8DAF03AC /* HTLSettingsViewController.m */,
 				73BC656F19F67BA6578AE7DC /* HTLSettingsModelController.h */,
 				73BC6E516EB62290DD7B243C /* HTLSettingsModelController.m */,
+				73BC672CAAD267B51798D558 /* HTLSettingsModelController+TestData.h */,
+				73BC61A9C99CE0428963C88B /* HTLSettingsModelController+TestData.m */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -618,8 +613,6 @@
 				73BC6F6EE1E455D98426F705 /* NSDate+HTLComponents.m */,
 				73BC6AF703B69F7D9811A489 /* NSDate+HTLComponents.h */,
 				73BC6F771B4A63AA8FABCDF5 /* HTLReportDto+Helpers.m */,
-				73BC6204171F3BFE6B043867 /* HTLReportExtendedDto+Helpers.m */,
-				73BC673032446C1BF1CE5E98 /* HTLReportExtendedDto+Helpers.h */,
 				73BC608BED34E02C9AAE75C1 /* HTLReportDto+Helpers.h */,
 			);
 			path = Categories;
@@ -1014,6 +1007,7 @@
 				C5B133991B27625900437B10 /* DMMAppDelegate.m in Sources */,
 				C5B133961B27625900437B10 /* main.m in Sources */,
 				73BC6455DC8F4C1A22455C36 /* DTFolderMonitor.m in Sources */,
+				C51F13131B32F129001F452F /* HTLReportDto+Helpers.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1023,7 +1017,6 @@
 			files = (
 				73BC679BF2C1A1A36939932B /* NSDate+HTLComponents.m in Sources */,
 				73BC6919D98B939D1BBDAF28 /* HTLReportDto+Helpers.m in Sources */,
-				73BC6E5835E32AB771D40421 /* HTLReportExtendedDto+Helpers.m in Sources */,
 				73BC63E583DA471B2D26C36E /* HTLReportDto.m in Sources */,
 				73BC688E05940C6C7A19AEFE /* HTLCategoryDto.m in Sources */,
 				73BC62568DE7117F7D84C604 /* HTLActionDto.m in Sources */,
@@ -1037,7 +1030,6 @@
 				73BC60E4095C74AD7CDC81DB /* DTFolderMonitor.m in Sources */,
 				73BC65AB5A04FEEA2462F6AF /* HTLCompletionCollectionViewCell.m in Sources */,
 				73BC69530AA65A5F73B11569 /* HTLCSVStringExportProvider.m in Sources */,
-				73BC610903BF6030BCDAFFEB /* HTLSqliteStorageProvider+TestData.m in Sources */,
 				73BC60A9E3DA6728F9788F57 /* HTLSqliteStorageProvider+Deserialization.m in Sources */,
 				73BC63D7E123A596DFCD6FEC /* HTLModelController.m in Sources */,
 			);
@@ -1049,7 +1041,6 @@
 			files = (
 				73BC63A745D1B957781BC3C0 /* NSDate+HTLComponents.m in Sources */,
 				73BC68D75AF9520DFA1BB170 /* HTLReportDto+Helpers.m in Sources */,
-				73BC651928FC2C006FFD9AD2 /* HTLReportExtendedDto+Helpers.m in Sources */,
 				73BC663B16F6B52EE9662BF9 /* HTLReportDto.m in Sources */,
 				73BC600E8C599F6D11BBD183 /* HTLCategoryDto.m in Sources */,
 				73BC6B1E338548FE30A4AFAD /* HTLActionDto.m in Sources */,
@@ -1072,7 +1063,6 @@
 				73BC63E32C89489EBDFD05E0 /* HTLDateSectionHeader.m in Sources */,
 				73BC69E4F116C55691C0B6DF /* HTLCSVStringExportProvider.m in Sources */,
 				73BC686682E53ABD3DCB152B /* HTLAppDelegate.m in Sources */,
-				73BC6C7EE2E921F7298FD7F4 /* HTLSqliteStorageProvider+TestData.m in Sources */,
 				73BC673ED541609F1B93818F /* HTLSqliteStorageProvider+Deserialization.m in Sources */,
 				73BC63786959F7D83E3E87CF /* HTLSettingsViewController.m in Sources */,
 				73BC6A38F00033FFAF9A4769 /* HTLSettingsModelController.m in Sources */,
@@ -1086,6 +1076,7 @@
 				73BC6BB80E74AD1C414F0C8D /* HTLPieChartCell.m in Sources */,
 				73BC6E4DED1BEDC0CE46C60D /* HTLStatisticsItemCell.m in Sources */,
 				73BC65608065C1CBF9F089C0 /* HTLStatisticsItemDto.m in Sources */,
+				73BC6ACDC82E718A89E6C930 /* HTLSettingsModelController+TestData.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1095,7 +1086,6 @@
 			files = (
 				C5FFE3F21B1857CE007D317D /* HyperTimeLoggerTests.m in Sources */,
 				73BC62DBB0557CEF66331263 /* HTLReportDto+Helpers.m in Sources */,
-				73BC6C31367AB81A42B0C753 /* HTLReportExtendedDto+Helpers.m in Sources */,
 				73BC6A05148AF26290542AC6 /* HTLReportDto.m in Sources */,
 				73BC6AEDC24B3643325E6F75 /* HTLCategoryDto.m in Sources */,
 				73BC6E37E01E454ABCF88F75 /* HTLActionDto.m in Sources */,

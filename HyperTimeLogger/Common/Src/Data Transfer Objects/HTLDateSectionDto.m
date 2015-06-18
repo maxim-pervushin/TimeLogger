@@ -4,23 +4,24 @@
 //
 
 #import "HTLDateSectionDto.h"
+#import "NSDate+HTLComponents.h"
 
 
 @implementation HTLDateSectionDto
-@synthesize date = date_;
-@synthesize time = time_;
-@synthesize zone = zone_;
+@synthesize dateString = dateString_;
+@synthesize timeString = timeString_;
+@synthesize timeZoneString = timeZoneString_;
 
-+ (instancetype)dateSectionWithDate:(NSTimeInterval)date time:(NSTimeInterval)time zone:(NSString *)zone {
-    return [[self alloc] initWithDate:date time:time zone:zone];
++ (instancetype)dateSectionWithDateString:(NSString *)dateString timeString:(NSString *)timeString timeZone:(NSString *)timeZone {
+    return [[self alloc] initWithDateString:dateString timeString:timeString timeZone:timeZone];
 }
 
-- (instancetype)initWithDate:(NSTimeInterval)date time:(NSTimeInterval)time zone:(NSString *)zone {
+- (instancetype)initWithDateString:(NSString *)dateString timeString:(NSString *)timeString timeZone:(NSString *)timeZone {
     self = [super init];
     if (self) {
-        date_ = date;
-        time_ = time;
-        zone_ = [zone copy];
+        dateString_ = [dateString copy];
+        timeString_ = [timeString copy];
+        timeZoneString_ = [timeZone copy];
     }
     return self;
 }
@@ -31,9 +32,9 @@
     HTLDateSectionDto *copy = [[[self class] allocWithZone:zone] init];
 
     if (copy != nil) {
-        copy->date_ = date_;
-        copy->time_ = time_;
-        copy->zone_ = zone_;
+        copy->dateString_ = dateString_;
+        copy->timeString_ = timeString_;
+        copy->timeZoneString_ = timeZoneString_;
     }
 
     return copy;
@@ -55,19 +56,19 @@
         return YES;
     if (dto == nil)
         return NO;
-    if (self.date != dto.date)
+    if (self.dateString != dto.dateString && ![self.dateString isEqualToString:dto.dateString])
         return NO;
-    if (self.time != dto.time)
+    if (self.timeString != dto.timeString && ![self.timeString isEqualToString:dto.timeString])
         return NO;
-    if (self.zone != dto.zone && ![self.zone isEqualToString:dto.zone])
+    if (self.timeZoneString != dto.timeZoneString && ![self.timeZoneString isEqualToString:dto.timeZoneString])
         return NO;
     return YES;
 }
 
 - (NSUInteger)hash {
-    NSUInteger hash = [[NSNumber numberWithDouble:self.date] hash];
-    hash = hash * 31u + [[NSNumber numberWithDouble:self.time] hash];
-    hash = hash * 31u + [self.zone hash];
+    NSUInteger hash = [self.dateString hash];
+    hash = hash * 31u + [self.timeString hash];
+    hash = hash * 31u + [self.timeZoneString hash];
     return hash;
 }
 
@@ -75,11 +76,26 @@
 
 - (NSString *)description {
     NSMutableString *description = [NSMutableString stringWithFormat:@"<%@: ", NSStringFromClass([self class])];
-    [description appendFormat:@"self.date=%f", self.date];
-    [description appendFormat:@", self.time=%f", self.time];
-    [description appendFormat:@", self.zone=%@", self.zone];
+    [description appendFormat:@"self.dateString=%@", self.dateString];
+    [description appendFormat:@", self.timeString=%@", self.timeString];
+    [description appendFormat:@", self.timeZoneString=%@", self.timeZoneString];
     [description appendString:@">"];
     return description;
+}
+
+@end
+
+@implementation HTLDateSectionDto (Helpers)
+
++ (NSDateFormatter *)fullFormatter {
+    NSDateFormatter *formatter = [NSDateFormatter new];
+    formatter.dateStyle = NSDateFormatterFullStyle;
+    formatter.timeStyle = NSDateFormatterNoStyle;
+    return formatter;
+}
+
+- (NSString *)fulldateStringLocalized {
+    return [[HTLDateSectionDto fullFormatter] stringFromDate:[NSDate dateWithDateString:self.dateString timeString:self.timeString timeZoneString:self.timeZoneString]];
 }
 
 @end

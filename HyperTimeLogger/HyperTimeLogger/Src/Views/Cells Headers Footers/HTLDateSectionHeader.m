@@ -27,12 +27,7 @@
 - (void)configureWithDateSection:(HTLDateSectionDto *)dateSection {
     self.dateSection = dateSection;
     if (self.dateSection) {
-        // TODO: Move formatter somewhere
-        NSDateFormatter *formatter = [NSDateFormatter new];
-        formatter.dateStyle = NSDateFormatterFullStyle;
-        formatter.timeStyle = NSDateFormatterNoStyle;
-        NSDate *date = [NSDate dateWithTimeIntervalSince1970:self.dateSection.date];
-        self.sectionTitleLabel.text = [formatter stringFromDate:date];
+        self.sectionTitleLabel.text = self.dateSection.fulldateStringLocalized;
     } else {
         self.sectionTitleLabel.text = @"";
     }

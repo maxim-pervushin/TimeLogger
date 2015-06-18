@@ -8,9 +8,9 @@
 
 @interface HTLDateSectionDto : NSObject <NSCopying>
 
-+ (instancetype)dateSectionWithDate:(NSTimeInterval)date time:(NSTimeInterval)time zone:(NSString *)zone;
++ (instancetype)dateSectionWithDateString:(NSString *)dateString timeString:(NSString *)timeString timeZone:(NSString *)timeZone;
 
-- (instancetype)initWithDate:(NSTimeInterval)date time:(NSTimeInterval)time zone:(NSString *)zone;
+- (instancetype)initWithDateString:(NSString *)dateString timeString:(NSString *)timeString timeZone:(NSString *)timeZone;
 
 - (id)copyWithZone:(NSZone *)zone;
 
@@ -22,8 +22,15 @@
 
 - (NSString *)description;
 
-@property (nonatomic, readonly) NSTimeInterval date;
-@property (nonatomic, readonly) NSTimeInterval time;
-@property (nonatomic, readonly) NSString *zone;
+@property (nonatomic, readonly) NSString *dateString;
+@property (nonatomic, readonly) NSString *timeString;
+@property (nonatomic, readonly) NSString *timeZoneString;
+
+@end
+
+
+@interface HTLDateSectionDto (Helpers)
+
+@property (nonatomic, readonly) NSString *fulldateStringLocalized;
 
 @end

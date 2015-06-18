@@ -5,6 +5,7 @@
 
 #import "HTLSettingsViewController.h"
 #import "HTLSettingsModelController.h"
+#import "HTLSettingsModelController+TestData.h"
 #import <MessageUI/MessageUI.h>
 
 @interface HTLSettingsViewController () <MFMailComposeViewControllerDelegate>
@@ -18,6 +19,10 @@
 - (IBAction)resetDefaultsButtonAction:(id)sender;
 
 - (IBAction)exportToCSVButtonAction:(id)sender;
+
+- (IBAction)generateTestDataButtonAction:(id)sender;
+
+- (void)generateTestData;
 
 @end
 
@@ -53,6 +58,15 @@
                                         mimeType:@"text/csv"
                                         fileName:@"export.csv"];
     [self presentViewController:mailComposeViewController animated:YES completion:nil];
+}
+
+- (IBAction)generateTestDataButtonAction:(id)sender {
+    // TODO: Check if storage is not empty
+    [self generateTestData];
+}
+
+- (void)generateTestData {
+    [self.modelController generateTestData];
 }
 
 #pragma mark - UIViewController
