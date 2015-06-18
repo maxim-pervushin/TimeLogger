@@ -29,6 +29,7 @@ static NSString *const kLastReportEndDateCacheKey = @"lastReportEndDate";
 
 @property(nonatomic, strong) NSCache *cache;
 @property(nonatomic, strong) NSCache *categoriesBySectionCache;
+@property(nonatomic, strong) NSCache *reportsExtendedByCategoryCache;
 @property(nonatomic, strong) NSCache *reportsExtendedBySectionCache;
 @property(nonatomic, strong) NSCache *reportsExtendedByCategoryAndSectionCache;
 @property(nonatomic, strong) NSCache *completionByPatternCache;
@@ -39,6 +40,7 @@ static NSString *const kLastReportEndDateCacheKey = @"lastReportEndDate";
 @implementation HTLSqliteStorageProvider
 @synthesize cache = cache_;
 @synthesize categoriesBySectionCache = categoriesBySectionCache_;
+@synthesize reportsExtendedByCategoryCache = reportsExtendedByCategoryCache_;
 @synthesize reportsExtendedBySectionCache = reportsExtendedBySectionCache_;
 @synthesize reportsExtendedByCategoryAndSectionCache = reportsExtendedByCategoryAndSectionCache_;
 @synthesize completionByPatternCache = completionByPatternCache_;
@@ -113,6 +115,7 @@ static NSString *const kLastReportEndDateCacheKey = @"lastReportEndDate";
 - (void)clearCaches {
     [self.cache removeAllObjects];
     [self.categoriesBySectionCache removeAllObjects];
+    [self.reportsExtendedByCategoryCache removeAllObjects];
     [self.reportsExtendedBySectionCache removeAllObjects];
     [self.reportsExtendedByCategoryAndSectionCache removeAllObjects];
     [self.completionByPatternCache removeAllObjects];
@@ -288,6 +291,40 @@ static NSString *const kLastReportEndDateCacheKey = @"lastReportEndDate";
     return [reportsExtended copy];
 }
 
+- (NSArray *)reportsExtendedWithCategory:(HTLCategoryDto *)category database:(FMDatabase *)database {
+    FMResultSet *resultSet = [database executeQuery:@"SELECT "
+                    "report.identifier AS identifier, "
+                    "actionIdentifier, "
+                    "action.title AS actionTitle, "
+                    "categoryIdentifier, "
+                    "category.title AS categoryTitle, "
+                    "category.color AS categoryColor, "
+                    "report.startDate AS reportStartDate, "
+                    "report.startTime AS reportStartTime, "
+                    "report.startZone AS reportStartZone, "
+                    "report.endDate AS reportEndDate, "
+                    "report.endTime AS reportEndTime, "
+                    "report.endZone AS reportEndZone "
+                    "FROM report "
+                    "INNER JOIN category ON report.categoryIdentifier = category.identifier "
+                    "INNER JOIN action ON report.actionIdentifier = action.identifier "
+                    "WHERE report.categoryIdentifier = :categoryIdentifier "
+                    "ORDER BY report.endDate ASC, report.endTime ASC "
+                    ";"
+                            withParameterDictionary:@{@"categoryIdentifier" : category.identifier}];
+
+    NSMutableArray *reportsExtended = [NSMutableArray new];
+    while ([resultSet next]) {
+        HTLReportExtendedDto *reportExtended = [self reportExtendedWithResultSet:resultSet];
+        if (reportExtended) {
+            [reportsExtended addObject:reportExtended];
+        }
+    }
+    [resultSet close];
+
+    return [reportsExtended copy];
+}
+
 - (NSArray *)reportsExtendedWithDateSection:(HTLDateSectionDto *)dateSection database:(FMDatabase *)database {
     FMResultSet *resultSet = [database executeQuery:@"SELECT "
                     "report.identifier AS identifier, "
@@ -445,6 +482,7 @@ static NSString *const kLastReportEndDateCacheKey = @"lastReportEndDate";
     if (self) {
         cache_ = [NSCache new];
         categoriesBySectionCache_ = [NSCache new];
+        reportsExtendedByCategoryCache_ = [NSCache new];
         reportsExtendedBySectionCache_ = [NSCache new];
         reportsExtendedByCategoryAndSectionCache_ = [NSCache new];
         completionByPatternCache_ = [NSCache new];
@@ -576,6 +614,32 @@ static NSString *const kLastReportEndDateCacheKey = @"lastReportEndDate";
     return reportsExtended;
 }
 
+- (NSArray *)reportsExtendedWithCategory:(HTLCategoryDto *)category {
+    if (!category) {
+        return [self reportsExtended];
+    }
+
+    NSArray *cached = [self.reportsExtendedByCategoryCache objectForKey:@(category.hash)];
+    if (cached) {
+        DDLogVerbose(@"Retrieving cached Reports Extended for Category %@", category);
+        return cached;
+    }
+
+    FMDatabase *database = self.databaseOpen;
+    if (!database) {
+        return @[];
+    }
+
+    NSArray *reportsExtended = [self reportsExtendedWithCategory:category database:database];
+
+    [database close];
+
+    NSArray *result = [NSArray arrayWithArray:reportsExtended];
+    [self.reportsExtendedByCategoryCache setObject:result forKey:@(category.hash)];
+
+    return result;
+}
+
 - (NSArray *)reportsExtendedWithDateSection:(HTLDateSectionDto *)dateSection {
     if (!dateSection) {
         return [self reportsExtended];
@@ -603,6 +667,14 @@ static NSString *const kLastReportEndDateCacheKey = @"lastReportEndDate";
 }
 
 - (NSArray *)reportsExtendedWithDateSection:(HTLDateSectionDto *)dateSection category:(HTLCategoryDto *)category {
+    if (!dateSection && !category) {
+        return [self reportsExtended];
+    }
+
+    if (!dateSection) {
+        return [self reportsExtendedWithCategory:category];
+    }
+
     if (!category) {
         return [self reportsExtendedWithDateSection:dateSection];
     }

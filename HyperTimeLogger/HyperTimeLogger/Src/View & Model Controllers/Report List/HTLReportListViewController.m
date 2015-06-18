@@ -20,7 +20,6 @@ static NSString *const kDateSectionHeaderIdentifier = @"DateSectionHeader";
 static const float kAddButtonToBottomDefault = 50.0f;
 
 static NSString *const kCreateReportSegueIdentifier = @"CreateReport";
-
 static NSString *const kShowStatisticsSegueIdentifier = @"ShowStatistics";
 
 @interface HTLReportListViewController () <UITableViewDataSource, UITableViewDelegate, HTLDateSectionHeaderDelegate>

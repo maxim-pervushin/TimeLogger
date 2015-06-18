@@ -140,9 +140,9 @@
                                 <segue destination="dAz-sZ-3p6" kind="presentation" id="1Ot-XN-yho"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="Bok-tL-Upo">
+                        <barButtonItem key="rightBarButtonItem" image="statistics.png" id="Bok-tL-Upo">
                             <connections>
-                                <segue destination="XV1-gz-e3Z" kind="presentation" id="baO-aD-tMu"/>
+                                <segue destination="FHu-qc-3H3" kind="show" id="xss-nb-MOj"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -512,19 +512,19 @@
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="[Category Title]" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3dE-YY-8fR">
                                                     <rect key="frame" x="8" y="8" width="164" height="11"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="252" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="751" text="[Total Reports]" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FOw-r7-4We">
                                                     <rect key="frame" x="8" y="21" width="61" height="11"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="9"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="[Total Time]" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Phl-kh-mwn">
                                                     <rect key="frame" x="180" y="8" width="132" height="18"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
@@ -573,8 +573,10 @@
     <resources>
         <image name="add.png" width="512" height="512"/>
         <image name="settings.png" width="22" height="22"/>
+        <image name="statistics.png" width="22" height="17"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="xss-nb-MOj"/>
         <segue reference="LVF-Py-ybV"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="1" green="0.50196081399917603" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>

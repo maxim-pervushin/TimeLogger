@@ -21,6 +21,7 @@ static NSString *const kHTLStorageProviderChangedNotification = @"HTLStorageProv
 
 // Categories
 
+// TODO: Do we need it???
 - (NSArray *)categories;
 
 - (NSArray *)categoriesWithDateSection:(HTLDateSectionDto *)dateSection;
@@ -31,8 +32,10 @@ static NSString *const kHTLStorageProviderChangedNotification = @"HTLStorageProv
 
 - (NSArray *)reportSections;
 
+// TODO: Do we need it???
 - (NSArray *)reportsExtended;
 
+// TODO: Do we need it???
 - (NSArray *)reportsExtendedWithDateSection:(HTLDateSectionDto *)dateSection;
 
 - (NSArray *)reportsExtendedWithDateSection:(HTLDateSectionDto *)dateSection category:(HTLCategoryDto *)category;

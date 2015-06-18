@@ -17,7 +17,6 @@
 		73BC619C76D5356050DEACF4 /* HTLCircleButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6396FF8919F2C1A22A95 /* HTLCircleButton.m */; };
 		73BC62568DE7117F7D84C604 /* HTLActionDto.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC648635BCE062AF18E634 /* HTLActionDto.m */; };
 		73BC62DBB0557CEF66331263 /* HTLReportDto+Helpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6F771B4A63AA8FABCDF5 /* HTLReportDto+Helpers.m */; };
-		73BC635B1E01373D28A4F9F8 /* add.png in Resources */ = {isa = PBXBuildFile; fileRef = 73BC667316551E776F1E8784 /* add.png */; };
 		73BC63786959F7D83E3E87CF /* HTLSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC69788FA88BEA8DAF03AC /* HTLSettingsViewController.m */; };
 		73BC63A745D1B957781BC3C0 /* NSDate+HTLComponents.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6F6EE1E455D98426F705 /* NSDate+HTLComponents.m */; };
 		73BC63BF4341BE823B52C5F2 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 73BC6BD313341A57CCCED79F /* Localizable.strings */; };
@@ -91,6 +90,10 @@
 		73BC6F0D931166EADD7E2E4F /* Pods_HyperTimeLogger.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73BC64D990F65D9E25A88C68 /* Pods_HyperTimeLogger.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		73BC6FAB452C5DBF4EC4D193 /* HTLEditReportModelController.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6F6B107E3546F7EBAE5C /* HTLEditReportModelController.m */; };
 		73BC6FB04C767843085BD236 /* HTLWordCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6D5199B0C7EF65D8A836 /* HTLWordCell.m */; };
+		C51F130E1B32C592001F452F /* statistics.png in Resources */ = {isa = PBXBuildFile; fileRef = C51F130B1B32C592001F452F /* statistics.png */; };
+		C51F130F1B32C592001F452F /* statistics@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C51F130C1B32C592001F452F /* statistics@2x.png */; };
+		C51F13101B32C592001F452F /* statistics@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = C51F130D1B32C592001F452F /* statistics@3x.png */; };
+		C51F13121B32C5B2001F452F /* add.png in Resources */ = {isa = PBXBuildFile; fileRef = C51F13111B32C5B2001F452F /* add.png */; };
 		C5B133961B27625900437B10 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C5B133951B27625900437B10 /* main.m */; };
 		C5B133991B27625900437B10 /* DMMAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C5B133981B27625900437B10 /* DMMAppDelegate.m */; };
 		C5B1339C1B27625900437B10 /* DMMViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C5B1339B1B27625900437B10 /* DMMViewController.m */; };
@@ -175,7 +178,6 @@
 		73BC6659B5F07E9B5ADCADEB /* ru */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = ru; path = HyperTimeLogger/ru.lproj/Main.strings; sourceTree = SOURCE_ROOT; };
 		73BC666118C4F574F66F741D /* HTLReportExtendedDto.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTLReportExtendedDto.m; sourceTree = "<group>"; };
 		73BC66709A1F2D03B601899D /* HTLDateSectionDto.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTLDateSectionDto.m; sourceTree = "<group>"; };
-		73BC667316551E776F1E8784 /* add.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = add.png; sourceTree = "<group>"; };
 		73BC669236F7FD0A9AA838FA /* HTLCSVStringExportProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTLCSVStringExportProvider.h; sourceTree = "<group>"; };
 		73BC6721C1F8610DAB796DB4 /* HTLPieChartCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTLPieChartCell.h; sourceTree = "<group>"; };
 		73BC673032446C1BF1CE5E98 /* HTLReportExtendedDto+Helpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "HTLReportExtendedDto+Helpers.h"; sourceTree = "<group>"; };
@@ -241,6 +243,10 @@
 		73BC6FBF1D739E2158DA64F6 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		73BC6FEC821B2D22ACD250CD /* HTLCSVStringExportProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTLCSVStringExportProvider.m; sourceTree = "<group>"; };
 		C080C216BEBCCD26E4BC3451 /* Pods-HyperTimeLogger.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HyperTimeLogger.release.xcconfig"; path = "../Pods/Target Support Files/Pods-HyperTimeLogger/Pods-HyperTimeLogger.release.xcconfig"; sourceTree = "<group>"; };
+		C51F130B1B32C592001F452F /* statistics.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = statistics.png; sourceTree = "<group>"; };
+		C51F130C1B32C592001F452F /* statistics@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "statistics@2x.png"; sourceTree = "<group>"; };
+		C51F130D1B32C592001F452F /* statistics@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "statistics@3x.png"; sourceTree = "<group>"; };
+		C51F13111B32C5B2001F452F /* add.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = add.png; sourceTree = "<group>"; };
 		C57EA5791B27021600B97F65 /* TodayExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = TodayExtension.entitlements; sourceTree = "<group>"; };
 		C5B133911B27625900437B10 /* DatabaseMigrationManager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DatabaseMigrationManager.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C5B133941B27625900437B10 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -455,7 +461,10 @@
 		73BC680E65C87515CE45F909 /* Res */ = {
 			isa = PBXGroup;
 			children = (
-				73BC667316551E776F1E8784 /* add.png */,
+				C51F13111B32C5B2001F452F /* add.png */,
+				C51F130B1B32C592001F452F /* statistics.png */,
+				C51F130C1B32C592001F452F /* statistics@2x.png */,
+				C51F130D1B32C592001F452F /* statistics@3x.png */,
 				73BC68B4BB6FD2C16DCFD83A /* clock_transparent.png */,
 				73BC6F7DCFA8D0EF70DD39E0 /* settings.png */,
 				73BC6A22878FD4F414CF5C2A /* settings@2x.png */,
@@ -891,17 +900,20 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				73BC635B1E01373D28A4F9F8 /* add.png in Resources */,
 				73BC697836C7BC71A9FAEE26 /* clock_transparent.png in Resources */,
 				73BC617D5432B3204E578CF4 /* settings.png in Resources */,
 				73BC6CC003E2DB538E6F16DE /* settings@2x.png in Resources */,
+				C51F13121B32C5B2001F452F /* add.png in Resources */,
 				73BC6D42F5DEFED44D50CF72 /* settings@3x.png in Resources */,
+				C51F13101B32C592001F452F /* statistics@3x.png in Resources */,
+				C51F130F1B32C592001F452F /* statistics@2x.png in Resources */,
 				73BC68BD5C6BF2A0BA095605 /* Images.xcassets in Resources */,
 				73BC63BF4341BE823B52C5F2 /* Localizable.strings in Resources */,
 				73BC6D50D0F7419C4DBD8D09 /* DateSectionHeader.xib in Resources */,
 				73BC649195952AAE2A01D533 /* Main.storyboard in Resources */,
 				73BC646264303616218950CF /* Main.strings in Resources */,
 				73BC65B877658336591063CC /* LaunchScreen.xib in Resources */,
+				C51F130E1B32C592001F452F /* statistics.png in Resources */,
 				73BC68542367D43948F591CF /* LaunchScreen.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
