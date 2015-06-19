@@ -15,7 +15,7 @@
 
 @property(nonatomic, readonly) NSArray *reportSections;
 
-- (NSUInteger)countOfReportsForDateSectionAtIndex:(NSInteger)index;
+- (NSUInteger)numberOfReportsForDateSectionAtIndex:(NSInteger)index;
 
 - (NSArray *)reportsExtendedForDateSectionAtIndex:(NSInteger)index;
 

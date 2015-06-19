@@ -75,8 +75,12 @@
     return [self.storageProvider findCompletionsWithText:text];
 }
 
-- (NSArray *)reportSections {
-    return [self.storageProvider reportSections];
+- (NSUInteger)numberOfReportSections {
+    return [self.storageProvider numberOfReportSections];
+}
+
+- (NSArray *)findAllReportSections {
+    return [self.storageProvider findAllReportSections];
 }
 
 - (NSUInteger)numberOfReportsWithDateSection:(HTLDateSectionDto *)dateSection {

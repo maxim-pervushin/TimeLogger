@@ -15,12 +15,14 @@
 #import "HTLEditReportViewController.h"
 #import "HTLStatisticsViewController.h"
 
+
 static NSString *const kReportCellIdentifier = @"ReportCell";
 static NSString *const kDateSectionHeaderIdentifier = @"DateSectionHeader";
-static const float kAddButtonToBottomDefault = 50.0f;
-
 static NSString *const kCreateReportSegueIdentifier = @"CreateReport";
 static NSString *const kShowStatisticsSegueIdentifier = @"ShowStatistics";
+static const float kAddButtonToBottomDefault = 50.0f;
+static const float kHeaderHeight = 35.0f;
+
 
 @interface HTLReportListViewController () <UITableViewDataSource, UITableViewDelegate, HTLDateSectionHeaderDelegate>
 
@@ -165,7 +167,7 @@ static NSString *const kShowStatisticsSegueIdentifier = @"ShowStatistics";
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return [self.modelController countOfReportsForDateSectionAtIndex:section];
+    return [self.modelController numberOfReportsForDateSectionAtIndex:section];
 }
 
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
@@ -187,7 +189,7 @@ static NSString *const kShowStatisticsSegueIdentifier = @"ShowStatistics";
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
-    return 35.0f;
+    return kHeaderHeight;
 }
 
 #pragma mark  - HTLDateSectionHeaderDelegate

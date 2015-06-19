@@ -102,7 +102,9 @@ static NSString *const kStorageFileName = @"time_logger_storage.db";
 
     NSMutableString *whereString = [NSMutableString new];
     if (dateSection) {
-        [whereString appendString:@"WHERE report.endDate = :endDate "];
+        [whereString appendString:
+                @"INNER JOIN report ON report.categoryIdentifier = category.identifier "
+                        "WHERE report.endDate = :endDate "];
     }
 
     NSString *queryString = [NSString stringWithFormat:@"SELECT "
@@ -110,7 +112,6 @@ static NSString *const kStorageFileName = @"time_logger_storage.db";
                                                                "category.title AS categoryTitle, "
                                                                "category.color AS categoryColor "
                                                                "FROM category "
-                                                               "INNER JOIN report ON report.categoryIdentifier = category.identifier "
                                                                "%@ "
                                                                "GROUP BY category.identifier "
                                                                "ORDER BY category.identifier;", whereString];
@@ -271,7 +272,19 @@ static NSString *const kStorageFileName = @"time_logger_storage.db";
     }
 }
 
-- (NSArray *)reportSectionsInDatabase:(FMDatabase *)database {
+- (NSUInteger)numberOfReportSectionsInDatabase:(FMDatabase *)database {
+    FMResultSet *resultSet = [database executeQuery:@"SELECT COUNT(DISTINCT endDate) as count FROM report"];
+
+    NSUInteger result = 0;
+    if ([resultSet next]) {
+        result = (NSUInteger) [resultSet intForColumn:@"count"];
+    }
+    [resultSet close];
+
+    return result;
+}
+
+- (NSArray *)findAllReportSectionsInDatabase:(FMDatabase *)database {
 
     FMResultSet *resultSet = [database executeQuery:
             @"SELECT "
@@ -381,9 +394,9 @@ static NSString *const kStorageFileName = @"time_logger_storage.db";
 - (NSDate *)lastReportEndDateInDatabase:(FMDatabase *)database {
     FMResultSet *resultSet = [database executeQuery:
             @"SELECT "
-                    "endDate, "
-                    "endTime, "
-                    "endZone "
+                    "endDate AS reportEndDate, "
+                    "endTime AS reportEndTime, "
+                    "endZone AS reportEndZone "
                     "FROM report "
                     "ORDER BY endDate DESC, endTime DESC "
                     "LIMIT 1;"];
@@ -552,7 +565,28 @@ static NSString *const kStorageFileName = @"time_logger_storage.db";
     return YES;
 }
 
-- (NSArray *)reportSections {
+- (NSUInteger)numberOfReportSections {
+    NSString *cacheKey = NSStringFromSelector(_cmd);
+    NSNumber *cached = [self.cache objectForKey:cacheKey];
+    if (cached) {
+        return cached.unsignedIntegerValue;
+    }
+
+    FMDatabase *database = self.databaseOpen;
+    if (!database) {
+        return 0;
+    }
+
+    NSUInteger result = [self numberOfReportSectionsInDatabase:database];
+
+    [database close];
+
+    [self.cache setObject:@(result) forKey:cacheKey];
+
+    return result;
+}
+
+- (NSArray *)findAllReportSections {
     NSString *cacheKey = NSStringFromSelector(_cmd);
     NSArray *cached = [self.cache objectForKey:cacheKey];
     if (cached) {
@@ -564,7 +598,7 @@ static NSString *const kStorageFileName = @"time_logger_storage.db";
         return @[];
     }
 
-    NSArray *reportSections = [self reportSectionsInDatabase:database];
+    NSArray *reportSections = [self findAllReportSectionsInDatabase:database];
 
     [database close];
 

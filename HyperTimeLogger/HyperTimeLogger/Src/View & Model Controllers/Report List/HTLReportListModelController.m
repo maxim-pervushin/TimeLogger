@@ -24,21 +24,21 @@
 #pragma mark - HTLReportListModelController
 
 - (NSUInteger)numberOfReportSections {
-    return [[HTLContentManager defaultManager] numberOfCategoriesWithDateSection:nil];
+    return [[HTLContentManager defaultManager] numberOfReportSections];
 }
 
 - (NSArray *)reportSections {
-    return [[HTLContentManager defaultManager] reportSections];
+    return [[HTLContentManager defaultManager] findAllReportSections];
 }
 
-- (NSUInteger)countOfReportsForDateSectionAtIndex:(NSInteger)index {
-    HTLDateSectionDto *dateSection = [[HTLContentManager defaultManager] reportSections][(NSUInteger) index];
+- (NSUInteger)numberOfReportsForDateSectionAtIndex:(NSInteger)index {
+    HTLDateSectionDto *dateSection = self.reportSections[(NSUInteger) index];
     NSUInteger result = [[HTLContentManager defaultManager] numberOfReportsWithDateSection:dateSection];
     return result;
 }
 
 - (NSArray *)reportsExtendedForDateSectionAtIndex:(NSInteger)index {
-    HTLDateSectionDto *dateSection = [[HTLContentManager defaultManager] reportSections][(NSUInteger) index];
+    HTLDateSectionDto *dateSection = [[HTLContentManager defaultManager] findAllReportSections][(NSUInteger) index];
     NSArray *result = [[HTLContentManager defaultManager] findReportsExtendedWithDateSection:dateSection category:nil];
     return result;
 }

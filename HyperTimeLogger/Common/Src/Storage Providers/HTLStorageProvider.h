@@ -29,7 +29,9 @@ static NSString *const kHTLStorageProviderChangedNotification = @"HTLStorageProv
 
 // Report sections
 
-- (NSArray *)reportSections;
+- (NSUInteger)numberOfReportSections;
+
+- (NSArray *)findAllReportSections;
 
 // Reports
 
