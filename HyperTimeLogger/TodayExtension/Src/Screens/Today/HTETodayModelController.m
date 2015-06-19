@@ -26,7 +26,7 @@
 #pragma mark - HTETodayModelController
 
 - (NSArray *)completions:(NSUInteger)numberOfCompletions {
-    NSArray *completions = [[HTLContentManager defaultManager] completionsWithText:nil];
+    NSArray *completions = [[HTLContentManager defaultManager] findCompletionsWithText:nil];
     NSMutableArray *result = [NSMutableArray new];
     for (NSUInteger i = 0; i < completions.count && i < numberOfCompletions; i++) {
         [result addObject:completions[i]];
@@ -35,7 +35,7 @@
 }
 
 - (BOOL)createReportWithCompletion:(HTLCompletionDto *)completion {
-    NSDate *startDate = [HTLContentManager defaultManager].lastReportEndDate;
+    NSDate *startDate = [HTLContentManager defaultManager].findLastReportEndDate;
     HTLReportDto *report = [HTLReportDto reportWithIdentifier:[NSUUID UUID].UUIDString
                                              actionIdentifier:completion.action.identifier
                                            categoryIdentifier:completion.category.identifier
@@ -48,7 +48,7 @@
 }
 
 - (HTLReportExtendedDto *)lastReportExtended {
-    return [HTLContentManager defaultManager].lastReportExtended;
+    return [HTLContentManager defaultManager].findLastReportExtended;
 }
 
 - (void)subscribe {

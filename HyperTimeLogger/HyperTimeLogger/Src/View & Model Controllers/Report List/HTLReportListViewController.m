@@ -121,7 +121,7 @@ static NSString *const kShowStatisticsSegueIdentifier = @"ShowStatistics";
     [self loadDefaults];
 
     // Scroll to bottom
-    NSUInteger sectionsCount = self.modelController.reportSections.count;
+    NSUInteger sectionsCount = self.modelController.numberOfReportSections;
     if (sectionsCount > 0) {
         NSUInteger recordsCount = [self.modelController reportsExtendedForDateSectionAtIndex:sectionsCount - 1].count;
         [self.tableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:recordsCount - 1 inSection:sectionsCount - 1]
@@ -161,11 +161,11 @@ static NSString *const kShowStatisticsSegueIdentifier = @"ShowStatistics";
 #pragma mark - UITableViewDataSource, UITableViewDelegate
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return self.modelController.reportSections.count;
+    return self.modelController.numberOfReportSections;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return [self.modelController reportsExtendedForDateSectionAtIndex:section].count;
+    return [self.modelController countOfReportsForDateSectionAtIndex:section];
 }
 
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {

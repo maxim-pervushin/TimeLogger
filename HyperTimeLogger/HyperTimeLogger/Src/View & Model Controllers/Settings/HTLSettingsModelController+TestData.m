@@ -70,40 +70,44 @@
             @{@"from" : @(2213), @"to" : @(2359), @"action" : @"Интернет", @"category" : @"Time Waste"},
     ];
 
-    int repeats = 130; // ~4 month of data
-    for (int i = 1; i <= repeats; i++) {
-        DDLogDebug(@"%.1f%%", (double) i / (double) repeats * 100);
+    int repeats = 400; // ~12 month of data
 
-        for (NSDictionary *testDataSet in testDataSets) {
-            HTLActionDto *action = [HTLActionDto actionWithIdentifier:[self newIdentifier] title:testDataSet[@"action"]];
-            HTLCategoryDto *category = [HTLCategoryDto categoryWithIdentifier:[self newIdentifier] title:testDataSet[@"category"] color:[UIColor redColor]];
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0), ^{
 
-            NSInteger from = ((NSNumber *) testDataSet[@"from"]).integerValue;
-            NSInteger fromHours = from / 100;
-            NSInteger fromMinutes = from - fromHours * 100;
-            NSDate *startDate = [self yesterdayHours:fromHours - 24 * (i - 1) minutes:fromMinutes];
+        for (int i = 1; i <= repeats; i++) {
+            DDLogDebug(@"%.1f%%", (double) i / (double) repeats * 100);
 
-            NSInteger to = ((NSNumber *) testDataSet[@"to"]).integerValue;
-            NSInteger toHours = to / 100;
-            NSInteger toMinutes = to - toHours * 100;
-            NSDate *endDate = [self yesterdayHours:toHours - 24 * (i - 1) minutes:toMinutes];
+            for (NSDictionary *testDataSet in testDataSets) {
+                HTLActionDto *action = [HTLActionDto actionWithIdentifier:[self newIdentifier] title:testDataSet[@"action"]];
+                HTLCategoryDto *category = [HTLCategoryDto categoryWithIdentifier:[self newIdentifier] title:testDataSet[@"category"] color:[UIColor redColor]];
+
+                NSInteger from = ((NSNumber *) testDataSet[@"from"]).integerValue;
+                NSInteger fromHours = from / 100;
+                NSInteger fromMinutes = from - fromHours * 100;
+                NSDate *startDate = [self yesterdayHours:fromHours - 24 * (i - 1) minutes:fromMinutes];
+
+                NSInteger to = ((NSNumber *) testDataSet[@"to"]).integerValue;
+                NSInteger toHours = to / 100;
+                NSInteger toMinutes = to - toHours * 100;
+                NSDate *endDate = [self yesterdayHours:toHours - 24 * (i - 1) minutes:toMinutes];
 
 
-            HTLReportDto *report = [HTLReportDto reportWithIdentifier:[self newIdentifier]
-                                                     actionIdentifier:action.identifier
-                                                   categoryIdentifier:category.identifier
-                                                            startDate:startDate
-                                                              endDate:endDate];
+                HTLReportDto *report = [HTLReportDto reportWithIdentifier:[self newIdentifier]
+                                                         actionIdentifier:action.identifier
+                                                       categoryIdentifier:category.identifier
+                                                                startDate:startDate
+                                                                  endDate:endDate];
 
-            [[HTLContentManager defaultManager] storeReportExtended:
-                    [HTLReportExtendedDto reportExtendedWithReport:report
-                                                            action:action
-                                                          category:category]];
+                [[HTLContentManager defaultManager] storeReportExtended:
+                        [HTLReportExtendedDto reportExtendedWithReport:report
+                                                                action:action
+                                                              category:category]];
 
+            }
         }
-    }
 
-    DDLogDebug(@"Test data generated...");
+        DDLogDebug(@"Test data generated...");
+    });
 
     return YES;
 }

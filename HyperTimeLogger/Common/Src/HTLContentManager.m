@@ -36,7 +36,7 @@
 
 - (void)initializeStorage {
     // Check categories.
-    if ([self.storageProvider categories].count == 0) {
+    if ([self.storageProvider findCategoriesWithDateSection:nil].count == 0) {
         NSArray *initialCategories = @[
                 [HTLCategoryDto categoryWithIdentifier:@"0" title:@"Sleep" color:[UIColor paperColorDeepPurple]],
                 [HTLCategoryDto categoryWithIdentifier:@"1" title:@"Personal" color:[UIColor paperColorIndigo]],
@@ -59,32 +59,32 @@
     return result;
 }
 
-- (NSArray *)categories {
-    return [self.storageProvider categories];
+- (NSUInteger)numberOfCategoriesWithDateSection:(HTLDateSectionDto *)dateSection {
+    return [self.storageProvider numberOfCategoriesWithDateSection:dateSection];
 }
 
-- (NSArray *)categoriesWithDateSection:(HTLDateSectionDto *)dateSection {
-    return [self.storageProvider categoriesWithDateSection:dateSection];
+- (NSArray *)findCategoriesWithDateSection:(HTLDateSectionDto *)dateSection {
+    return [self.storageProvider findCategoriesWithDateSection:dateSection];
 }
 
 - (BOOL)storeCategory:(HTLCategoryDto *)category {
     return [self.storageProvider storeCategory:category];
 }
 
-- (NSArray *)completionsWithText:(NSString *)text {
-    return [self.storageProvider completionsWithText:text];
-}
-
-- (NSArray *)reportsExtended {
-    return self.storageProvider.reportsExtended;
+- (NSArray *)findCompletionsWithText:(NSString *)text {
+    return [self.storageProvider findCompletionsWithText:text];
 }
 
 - (NSArray *)reportSections {
     return [self.storageProvider reportSections];
 }
 
-- (NSArray *)reportsExtendedWithDateSection:(HTLDateSectionDto *)dateSection {
-    return [self.storageProvider reportsExtendedWithDateSection:dateSection];
+- (NSUInteger)numberOfReportsWithDateSection:(HTLDateSectionDto *)dateSection {
+    return [self.storageProvider numberOfReportsWithDateSection:dateSection];
+}
+
+- (NSArray *)findReportsExtendedWithDateSection:(HTLDateSectionDto *)dateSection category:(HTLCategoryDto *)category {
+    return [self.storageProvider findReportsExtendedWithDateSection:dateSection category:category];
 }
 
 - (BOOL)storeReportExtended:(HTLReportExtendedDto *)reportExtended {
@@ -92,19 +92,15 @@
 }
 
 - (NSString *)exportDataToCSV {
-    return [self.csvStringExportProvider exportReportsExtended:[self.storageProvider reportsExtended]];
+    return [self.csvStringExportProvider exportReportsExtended:[self.storageProvider findReportsExtendedWithDateSection:nil category:nil]];
 }
 
-- (NSArray *)reportsExtendedWithDateSection:(HTLDateSectionDto *)dateSection category:(HTLCategoryDto *)category {
-    return [self.storageProvider reportsExtendedWithDateSection:dateSection category:category];
+- (NSDate *)findLastReportEndDate {
+    return [self.storageProvider findLastReportEndDate];
 }
 
-- (NSDate *)lastReportEndDate {
-    return [self.storageProvider lastReportEndDate];
-}
-
-- (HTLReportExtendedDto *)lastReportExtended {
-    return [self.storageProvider lastReportExtended];
+- (HTLReportExtendedDto *)findLastReportExtended {
+    return [self.storageProvider findLastReportExtended];
 }
 
 @end

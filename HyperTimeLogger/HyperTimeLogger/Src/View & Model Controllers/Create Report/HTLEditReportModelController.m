@@ -34,11 +34,11 @@
 }
 
 - (NSArray *)completions {
-    return [[HTLContentManager defaultManager] completionsWithText:self.action.title];
+    return [[HTLContentManager defaultManager] findCompletionsWithText:self.action.title];
 }
 
 - (NSArray *)categories {
-    return [HTLContentManager defaultManager].categories;
+    return [[HTLContentManager defaultManager] findCategoriesWithDateSection:nil];
 }
 
 - (HTLReportExtendedDto *)reportExtended {
@@ -56,7 +56,7 @@
 
     HTLReportDto *report = self.report;
     if (!report) {
-        NSDate *startDate = [HTLContentManager defaultManager].lastReportEndDate;
+        NSDate *startDate = [HTLContentManager defaultManager].findLastReportEndDate;
         report = [HTLReportDto reportWithIdentifier:[NSUUID UUID].UUIDString
                                    actionIdentifier:action.identifier
                                  categoryIdentifier:category.identifier

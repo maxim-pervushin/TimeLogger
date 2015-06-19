@@ -11,7 +11,11 @@
 
 @interface HTLReportListModelController : HTLModelController
 
+@property(nonatomic, readonly) NSUInteger numberOfReportSections;
+
 @property(nonatomic, readonly) NSArray *reportSections;
+
+- (NSUInteger)countOfReportsForDateSectionAtIndex:(NSInteger)index;
 
 - (NSArray *)reportsExtendedForDateSectionAtIndex:(NSInteger)index;
 

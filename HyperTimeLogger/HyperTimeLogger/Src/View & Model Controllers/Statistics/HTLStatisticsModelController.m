@@ -45,12 +45,12 @@
 
 
 - (NSArray *)categories {
-    return [[HTLContentManager defaultManager] categoriesWithDateSection:self.dateSection];
+    return [[HTLContentManager defaultManager] findCategoriesWithDateSection:self.dateSection];
 }
 
 - (HTLStatisticsItemDto *)statisticsForCategory:(HTLCategoryDto *)category {
-    NSArray *reportsExtended = [[HTLContentManager defaultManager] reportsExtendedWithDateSection:self.dateSection
-                                                                                         category:category];
+    NSArray *reportsExtended = [[HTLContentManager defaultManager] findReportsExtendedWithDateSection:self.dateSection
+                                                                                             category:category];
 
     NSTimeInterval totalTime = 0;
     NSUInteger totalReports = 0;

@@ -18,17 +18,28 @@
 
 
 @implementation HTLReportListModelController
+@dynamic numberOfReportSections;
 @dynamic reportSections;
 
 #pragma mark - HTLReportListModelController
+
+- (NSUInteger)numberOfReportSections {
+    return [[HTLContentManager defaultManager] numberOfCategoriesWithDateSection:nil];
+}
 
 - (NSArray *)reportSections {
     return [[HTLContentManager defaultManager] reportSections];
 }
 
+- (NSUInteger)countOfReportsForDateSectionAtIndex:(NSInteger)index {
+    HTLDateSectionDto *dateSection = [[HTLContentManager defaultManager] reportSections][(NSUInteger) index];
+    NSUInteger result = [[HTLContentManager defaultManager] numberOfReportsWithDateSection:dateSection];
+    return result;
+}
+
 - (NSArray *)reportsExtendedForDateSectionAtIndex:(NSInteger)index {
     HTLDateSectionDto *dateSection = [[HTLContentManager defaultManager] reportSections][(NSUInteger) index];
-    NSArray *result = [[HTLContentManager defaultManager] reportsExtendedWithDateSection:dateSection];
+    NSArray *result = [[HTLContentManager defaultManager] findReportsExtendedWithDateSection:dateSection category:nil];
     return result;
 }
 

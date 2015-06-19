@@ -21,36 +21,30 @@ static NSString *const kHTLStorageProviderChangedNotification = @"HTLStorageProv
 
 // Categories
 
-// TODO: Do we need it???
-- (NSArray *)categories;
+- (NSUInteger)numberOfCategoriesWithDateSection:(HTLDateSectionDto *)dateSection;
 
-- (NSArray *)categoriesWithDateSection:(HTLDateSectionDto *)dateSection;
+- (NSArray *)findCategoriesWithDateSection:(HTLDateSectionDto *)dateSection;
 
 - (BOOL)storeCategory:(HTLCategoryDto *)category;
 
-// Reports
+// Report sections
 
 - (NSArray *)reportSections;
 
-// TODO: Do we need it???
-- (NSArray *)reportsExtended;
+// Reports
 
-// TODO:countOfReportsWithDateSection:
-// - (NSUInteger)countOfReportsWithDateSection:(HTLDateSectionDto *)dateSection;
+- (NSUInteger)numberOfReportsWithDateSection:(HTLDateSectionDto *)dateSection;
 
-// TODO: Do we need it???
-- (NSArray *)reportsExtendedWithDateSection:(HTLDateSectionDto *)dateSection;
-
-- (NSArray *)reportsExtendedWithDateSection:(HTLDateSectionDto *)dateSection category:(HTLCategoryDto *)category;
+- (NSArray *)findReportsExtendedWithDateSection:(HTLDateSectionDto *)dateSection category:(HTLCategoryDto *)category;
 
 - (BOOL)storeReportExtended:(HTLReportExtendedDto *)reportExtended;
 
-- (NSDate *)lastReportEndDate;
+- (NSDate *)findLastReportEndDate;
 
-- (HTLReportExtendedDto *)lastReportExtended;
+- (HTLReportExtendedDto *)findLastReportExtended;
 
 // Completions
 
-- (NSArray *)completionsWithText:(NSString *)text;
+- (NSArray *)findCompletionsWithText:(NSString *)text;
 
 @end
