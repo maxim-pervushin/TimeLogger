@@ -500,6 +500,9 @@
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="M7K-0D-wXF" id="qxj-b6-yOG">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
+                                                <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="8R3-aP-L0d">
+                                                    <rect key="frame" x="150" y="10" width="20" height="20"/>
+                                                </activityIndicatorView>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WZs-kP-sbC" customClass="XYPieChart">
                                                     <rect key="frame" x="0.0" y="0.0" width="320" height="40"/>
                                                 </view>
@@ -509,9 +512,12 @@
                                                 <constraint firstAttribute="bottom" secondItem="WZs-kP-sbC" secondAttribute="bottom" id="7H9-VE-Aak"/>
                                                 <constraint firstItem="WZs-kP-sbC" firstAttribute="top" secondItem="qxj-b6-yOG" secondAttribute="top" id="IJs-Uj-0Gg"/>
                                                 <constraint firstItem="WZs-kP-sbC" firstAttribute="leading" secondItem="qxj-b6-yOG" secondAttribute="leading" id="OKf-Ab-SkT"/>
+                                                <constraint firstAttribute="centerY" secondItem="8R3-aP-L0d" secondAttribute="centerY" id="gZW-PS-1jc"/>
+                                                <constraint firstAttribute="centerX" secondItem="8R3-aP-L0d" secondAttribute="centerX" id="q2h-uz-Gvh"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="activityIndicator" destination="8R3-aP-L0d" id="Gj4-uH-wR8"/>
                                             <outlet property="pieChart" destination="WZs-kP-sbC" id="S1i-mx-AkB"/>
                                         </connections>
                                     </tableViewCell>

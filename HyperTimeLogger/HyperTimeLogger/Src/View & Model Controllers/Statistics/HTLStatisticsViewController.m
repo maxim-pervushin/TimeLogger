@@ -72,6 +72,14 @@ static const CGFloat kStatisticsItemCellHeight = 40;
         cell.pieChart.dataSource = self;
         cell.pieChart.delegate = self;
         cell.pieChart.userInteractionEnabled = NO;
+
+        NSUInteger categoriesCount = self.modelController.categories.count;
+        if (categoriesCount > 0) {
+            [cell.activityIndicator stopAnimating];
+        } else {
+            [cell.activityIndicator startAnimating];
+        }
+
         return cell;
 
     } else {

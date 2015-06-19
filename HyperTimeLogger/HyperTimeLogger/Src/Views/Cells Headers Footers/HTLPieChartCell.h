@@ -12,5 +12,6 @@
 @interface HTLPieChartCell : UITableViewCell
 
 @property(nonatomic, weak) IBOutlet XYPieChart *pieChart;
+@property(nonatomic, weak) IBOutlet UIActivityIndicatorView *activityIndicator;
 
 @end

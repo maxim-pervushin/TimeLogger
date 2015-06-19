@@ -20,6 +20,8 @@
 
 @property(nonatomic, readonly) NSArray *categories;
 
+- (void)reloadData;
+
 - (HTLStatisticsItemDto *)statisticsForCategory:(HTLCategoryDto *)category;
 
 @end
