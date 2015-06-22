@@ -9,6 +9,7 @@
 #import "HTLReportDto.h"
 #import "HTLReportExtendedDto.h"
 #import "HTLContentManager.h"
+#import "HTLAppDelegate.h"
 
 @implementation HTLSettingsModelController (TestData)
 
@@ -98,7 +99,7 @@
                                                                 startDate:startDate
                                                                   endDate:endDate];
 
-                [[HTLContentManager defaultManager] storeReportExtended:
+                [HTLAppContentManger storeReportExtended:
                         [HTLReportExtendedDto reportExtendedWithReport:report
                                                                 action:action
                                                               category:category]];

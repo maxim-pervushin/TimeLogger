@@ -8,6 +8,9 @@
 
 #import "HTLAppDelegate.h"
 #import "CocoaLumberjack.h"
+#import "HTLContentManager.h"
+#import "HTLSqliteStorageProvider.h"
+#import "HTLCSVStringExportProvider.h"
 
 
 static NSString *const kAddReportURL = @"timelogger://add";
@@ -16,6 +19,8 @@ static NSString *const kAddReportURL = @"timelogger://add";
 @interface HTLAppDelegate ()
 
 - (void)initializeLoggers;
+
+- (void)initializeContentManager;
 
 @end
 
@@ -26,8 +31,14 @@ static NSString *const kAddReportURL = @"timelogger://add";
     [DDLog addLogger:[DDTTYLogger sharedInstance] withLevel:DDLogLevelDebug];
 }
 
+- (void)initializeContentManager {
+    self.contentManager = [HTLContentManager contentManagerWithStorageProvider:[HTLSqliteStorageProvider new] exportProvider:[HTLCSVStringExportProvider new]];
+}
+
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     [self initializeLoggers];
+    [self initializeContentManager];
+
     return YES;
 }
 

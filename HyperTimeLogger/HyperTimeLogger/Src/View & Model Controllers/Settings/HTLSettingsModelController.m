@@ -5,11 +5,12 @@
 
 #import "HTLSettingsModelController.h"
 #import "HTLContentManager.h"
+#import "HTLAppDelegate.h"
 
 @implementation HTLSettingsModelController
 
 - (BOOL)resetContent {
-    return [[HTLContentManager defaultManager] clear];
+    return [HTLAppContentManger clear];
 }
 
 - (BOOL)resetDefaults {
@@ -29,7 +30,7 @@
 }
 
 - (NSString *)exportDataToCSV {
-    return [[HTLContentManager defaultManager] exportDataToCSV];
+    return [HTLAppContentManger exportDataToCSV];
 }
 
 @end

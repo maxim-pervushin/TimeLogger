@@ -9,6 +9,7 @@
 #import "HTLCSVStringExportProvider.h"
 #import "HTLReportExtendedDto.h"
 #import "HTLDateSectionDto.h"
+#import "HTLStringExportProvider.h"
 
 
 @interface HTLContentManager ()
@@ -22,16 +23,12 @@
 
 @implementation HTLContentManager
 
-+ (instancetype)defaultManager {
-    static HTLContentManager *defaultManager = nil;
-    static dispatch_once_t token = 0;
-    dispatch_once(&token, ^{
-        defaultManager = [self new];
-        defaultManager.storageProvider = [HTLSqliteStorageProvider new];
-        defaultManager.csvStringExportProvider = [HTLCSVStringExportProvider new];
-        [defaultManager initializeStorage];
-    });
-    return defaultManager;
++ (instancetype)contentManagerWithStorageProvider:(id <HTLStorageProvider>)storageProvider exportProvider:(id <HTLStringExportProvider>)exportProvider {
+    HTLContentManager *contentManager = [HTLContentManager new];
+    contentManager.storageProvider=  storageProvider;
+    contentManager.csvStringExportProvider = exportProvider;
+    [contentManager initializeStorage];
+    return contentManager;
 }
 
 - (void)initializeStorage {

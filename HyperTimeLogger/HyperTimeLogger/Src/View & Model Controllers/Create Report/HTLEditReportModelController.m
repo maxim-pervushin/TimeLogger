@@ -9,6 +9,7 @@
 #import "HTLActionDto.h"
 #import "HTLCategoryDto.h"
 #import "HTLReportDto.h"
+#import "HTLAppDelegate.h"
 
 
 @implementation HTLEditReportModelController
@@ -34,11 +35,11 @@
 }
 
 - (NSArray *)completions {
-    return [[HTLContentManager defaultManager] findCompletionsWithText:self.action.title];
+    return [HTLAppContentManger findCompletionsWithText:self.action.title];
 }
 
 - (NSArray *)categories {
-    return [[HTLContentManager defaultManager] findCategoriesWithDateSection:nil];
+    return [HTLAppContentManger findCategoriesWithDateSection:nil];
 }
 
 - (HTLReportExtendedDto *)reportExtended {
@@ -56,7 +57,7 @@
 
     HTLReportDto *report = self.report;
     if (!report) {
-        NSDate *startDate = [HTLContentManager defaultManager].findLastReportEndDate;
+        NSDate *startDate = HTLAppContentManger.findLastReportEndDate;
         report = [HTLReportDto reportWithIdentifier:[NSUUID UUID].UUIDString
                                    actionIdentifier:action.identifier
                                  categoryIdentifier:category.identifier
@@ -89,7 +90,7 @@
 }
 
 - (BOOL)save {
-    return [[HTLContentManager defaultManager] storeReportExtended:self.reportExtended];
+    return [HTLAppContentManger storeReportExtended:self.reportExtended];
 }
 
 @end

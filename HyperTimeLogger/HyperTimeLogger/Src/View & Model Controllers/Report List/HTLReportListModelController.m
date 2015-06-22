@@ -6,6 +6,7 @@
 #import "HTLReportListModelController.h"
 #import "HTLContentManager.h"
 #import "HTLDateSectionDto.h"
+#import "HTLAppDelegate.h"
 
 
 @interface HTLReportListModelController ()
@@ -24,22 +25,22 @@
 #pragma mark - HTLReportListModelController
 
 - (NSUInteger)numberOfReportSections {
-    return [[HTLContentManager defaultManager] numberOfReportSections];
+    return [HTLAppContentManger numberOfReportSections];
 }
 
 - (NSArray *)reportSections {
-    return [[HTLContentManager defaultManager] findAllReportSections];
+    return [HTLAppContentManger findAllReportSections];
 }
 
 - (NSUInteger)numberOfReportsForDateSectionAtIndex:(NSInteger)index {
     HTLDateSectionDto *dateSection = self.reportSections[(NSUInteger) index];
-    NSUInteger result = [[HTLContentManager defaultManager] numberOfReportsWithDateSection:dateSection];
+    NSUInteger result = [HTLAppContentManger numberOfReportsWithDateSection:dateSection];
     return result;
 }
 
 - (NSArray *)reportsExtendedForDateSectionAtIndex:(NSInteger)index {
-    HTLDateSectionDto *dateSection = [[HTLContentManager defaultManager] findAllReportSections][(NSUInteger) index];
-    NSArray *result = [[HTLContentManager defaultManager] findReportsExtendedWithDateSection:dateSection category:nil];
+    HTLDateSectionDto *dateSection = [HTLAppContentManger findAllReportSections][(NSUInteger) index];
+    NSArray *result = [HTLAppContentManger findReportsExtendedWithDateSection:dateSection category:nil];
     return result;
 }
 

@@ -6,10 +6,12 @@
 #import <Foundation/Foundation.h>
 #import "HTLStorageProvider.h"
 
+@protocol HTLStringExportProvider;
+
 
 @interface HTLContentManager : NSObject <HTLStorageProvider>
 
-+ (instancetype)defaultManager;
++ (instancetype)contentManagerWithStorageProvider:(id <HTLStorageProvider>)storageProvider exportProvider:(id <HTLStringExportProvider>)exportProvider;
 
 - (NSString *)exportDataToCSV;
 

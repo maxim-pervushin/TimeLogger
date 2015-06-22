@@ -9,11 +9,18 @@
 #import <UIKit/UIKit.h>
 
 
+#define HTLAppContentManger ((HTLAppDelegate *)[UIApplication sharedApplication].delegate).contentManager
+
+
+@class HTLContentManager;
+
+
 static NSString *const kHTLAppDelegateAddReportURLReceived = @"HTLAppDelegateAddReportURLReceived";
 
 @interface HTLAppDelegate : UIResponder <UIApplicationDelegate>
 
-@property (strong, nonatomic) UIWindow *window;
+@property(nonatomic, strong) UIWindow *window;
+@property(nonatomic, strong) HTLContentManager *contentManager;
 
 @end
 

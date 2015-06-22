@@ -14,6 +14,7 @@
 #import "HTLSqliteStorageProvider+Deserialization.h"
 #import "NSDate+HTLComponents.h"
 
+// TODO: Set storage path when storge provider initialized.
 static NSString *const kApplicationGroup = @"group.timelogger";
 static NSString *const kStorageFileName = @"time_logger_storage.db";
 

@@ -9,6 +9,7 @@
 #import "HTLContentManager.h"
 #import "HTLDateSectionDto.h"
 #import "HTLStatisticsItemDto.h"
+#import "HTLAppDelegate.h"
 
 
 @interface HTLStatisticsModelController ()
@@ -38,11 +39,11 @@
 - (void)reloadData {
     __weak __typeof(self) weakSelf = self;
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0), ^{
-        NSArray *categories = [[HTLContentManager defaultManager] findCategoriesWithDateSection:weakSelf.dateSection];
+        NSArray *categories = [HTLAppContentManger findCategoriesWithDateSection:weakSelf.dateSection];
         NSMutableArray *categoriesCalculated = [NSMutableArray new];
         NSMutableDictionary *statisticsByCategoryCalculated = [NSMutableDictionary new];
         for (HTLCategoryDto *category in categories) {
-            NSArray *reportsExtended = [[HTLContentManager defaultManager] findReportsExtendedWithDateSection:self.dateSection
+            NSArray *reportsExtended = [HTLAppContentManger findReportsExtendedWithDateSection:self.dateSection
                                                                                                      category:category];
 
             NSTimeInterval totalTime = 0;

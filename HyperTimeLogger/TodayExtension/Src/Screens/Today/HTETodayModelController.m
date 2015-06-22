@@ -10,9 +10,14 @@
 #import "HTLCategoryDto.h"
 #import "HTLActionDto.h"
 #import "HTLReportDto.h"
+#import "HTLAppDelegate.h"
+#import "HTLCSVStringExportProvider.h"
+#import "HTLSqliteStorageProvider.h"
 
 
 @interface HTETodayModelController ()
+
+@property(nonatomic, strong) HTLContentManager *contentManager;
 
 - (void)subscribe;
 
@@ -22,11 +27,12 @@
 
 
 @implementation HTETodayModelController
+@synthesize contentManager = contentManager_;
 
 #pragma mark - HTETodayModelController
 
 - (NSArray *)completions:(NSUInteger)numberOfCompletions {
-    NSArray *completions = [[HTLContentManager defaultManager] findCompletionsWithText:nil];
+    NSArray *completions = [self.contentManager findCompletionsWithText:nil];
     NSMutableArray *result = [NSMutableArray new];
     for (NSUInteger i = 0; i < completions.count && i < numberOfCompletions; i++) {
         [result addObject:completions[i]];
@@ -35,7 +41,7 @@
 }
 
 - (BOOL)createReportWithCompletion:(HTLCompletionDto *)completion {
-    NSDate *startDate = [HTLContentManager defaultManager].findLastReportEndDate;
+    NSDate *startDate = self.contentManager.findLastReportEndDate;
     HTLReportDto *report = [HTLReportDto reportWithIdentifier:[NSUUID UUID].UUIDString
                                              actionIdentifier:completion.action.identifier
                                            categoryIdentifier:completion.category.identifier
@@ -44,11 +50,11 @@
     HTLReportExtendedDto *reportExtended =
             [HTLReportExtendedDto reportExtendedWithReport:report action:completion.action category:completion.category];
 
-    return [[HTLContentManager defaultManager] storeReportExtended:reportExtended];
+    return [self.contentManager storeReportExtended:reportExtended];
 }
 
 - (HTLReportExtendedDto *)lastReportExtended {
-    return [HTLContentManager defaultManager].findLastReportExtended;
+    return self.contentManager.findLastReportExtended;
 }
 
 - (void)subscribe {
@@ -67,6 +73,7 @@
 - (instancetype)init {
     self = [super init];
     if (self) {
+        contentManager_ = [HTLContentManager contentManagerWithStorageProvider:[HTLSqliteStorageProvider new] exportProvider:[HTLCSVStringExportProvider new]];
         [self subscribe];
     }
     return self;
