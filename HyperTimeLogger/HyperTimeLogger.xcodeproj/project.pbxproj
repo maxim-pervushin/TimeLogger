@@ -91,6 +91,12 @@
 		C51F13101B32C592001F452F /* statistics@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = C51F130D1B32C592001F452F /* statistics@3x.png */; };
 		C51F13121B32C5B2001F452F /* add.png in Resources */ = {isa = PBXBuildFile; fileRef = C51F13111B32C5B2001F452F /* add.png */; };
 		C51F13131B32F129001F452F /* HTLReportDto+Helpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6F771B4A63AA8FABCDF5 /* HTLReportDto+Helpers.m */; };
+		C56ED4ED1B38217F00221171 /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C56ED4EB1B38217F00221171 /* Fabric.framework */; };
+		C56ED4EE1B38217F00221171 /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C56ED4EB1B38217F00221171 /* Fabric.framework */; };
+		C56ED4F01B38217F00221171 /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C56ED4EB1B38217F00221171 /* Fabric.framework */; };
+		C56ED4F11B38217F00221171 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C56ED4EC1B38217F00221171 /* Crashlytics.framework */; };
+		C56ED4F21B38217F00221171 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C56ED4EC1B38217F00221171 /* Crashlytics.framework */; };
+		C56ED4F41B38217F00221171 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C56ED4EC1B38217F00221171 /* Crashlytics.framework */; };
 		C5B133961B27625900437B10 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C5B133951B27625900437B10 /* main.m */; };
 		C5B133991B27625900437B10 /* DMMAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C5B133981B27625900437B10 /* DMMAppDelegate.m */; };
 		C5B1339C1B27625900437B10 /* DMMViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C5B1339B1B27625900437B10 /* DMMViewController.m */; };
@@ -242,6 +248,8 @@
 		C51F130C1B32C592001F452F /* statistics@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "statistics@2x.png"; sourceTree = "<group>"; };
 		C51F130D1B32C592001F452F /* statistics@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "statistics@3x.png"; sourceTree = "<group>"; };
 		C51F13111B32C5B2001F452F /* add.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = add.png; sourceTree = "<group>"; };
+		C56ED4EB1B38217F00221171 /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = "<group>"; };
+		C56ED4EC1B38217F00221171 /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
 		C57EA5791B27021600B97F65 /* TodayExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = TodayExtension.entitlements; sourceTree = "<group>"; };
 		C5B133911B27625900437B10 /* DatabaseMigrationManager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DatabaseMigrationManager.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C5B133941B27625900437B10 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -268,6 +276,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				73BC6F0D931166EADD7E2E4F /* Pods_HyperTimeLogger.framework in Frameworks */,
+				C56ED4F11B38217F00221171 /* Crashlytics.framework in Frameworks */,
+				C56ED4ED1B38217F00221171 /* Fabric.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -275,6 +285,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C56ED4F41B38217F00221171 /* Crashlytics.framework in Frameworks */,
+				C56ED4F01B38217F00221171 /* Fabric.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -291,6 +303,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C56ED4F21B38217F00221171 /* Crashlytics.framework in Frameworks */,
+				C56ED4EE1B38217F00221171 /* Fabric.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -589,6 +603,8 @@
 		73BC6EDE9C53A95392DB1EB9 /* Vendor */ = {
 			isa = PBXGroup;
 			children = (
+				C56ED4EB1B38217F00221171 /* Fabric.framework */,
+				C56ED4EC1B38217F00221171 /* Crashlytics.framework */,
 				73BC6A3FB81EA8C7F211F896 /* DTFoundation */,
 			);
 			path = Vendor;
@@ -776,6 +792,7 @@
 				5F5C460A30D0748349F01A76 /* Frameworks */,
 				F2F3B8981CEF6CCBB5470609 /* Embed Pods Frameworks */,
 				3FB54796D56242B98B617037 /* Copy Pods Resources */,
+				C56ED4EA1B38214400221171 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -981,6 +998,19 @@
 			shellScript = "\"${SRCROOT}/../Pods/Target Support Files/Pods-TodayExtension/Pods-TodayExtension-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		C56ED4EA1B38214400221171 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "./Dependencies/Vendor/Fabric.framework/run e83e0095e24774f93f86cd8f53b5743615ff236b ee344f57d2c4470643f18815f88b8e8f5665090f6cbe9dae15562ba9bd36fb4a";
+		};
 		F2F3B8981CEF6CCBB5470609 /* Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -1179,6 +1209,10 @@
 				CODE_SIGN_ENTITLEMENTS = DatabaseMigrationManager/DatabaseMigrationManager.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Dependencies/Vendor",
+				);
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
@@ -1197,6 +1231,10 @@
 				CODE_SIGN_ENTITLEMENTS = DatabaseMigrationManager/DatabaseMigrationManager.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Dependencies/Vendor",
+				);
 				INFOPLIST_FILE = DatabaseMigrationManager/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1211,6 +1249,10 @@
 				CODE_SIGN_ENTITLEMENTS = TodayExtension/TodayExtension.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Dependencies/Vendor",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = HyperTimeLogger/PrefixHeader.pch;
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -1232,6 +1274,10 @@
 				CODE_SIGN_ENTITLEMENTS = TodayExtension/TodayExtension.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Dependencies/Vendor",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = HyperTimeLogger/PrefixHeader.pch;
 				INFOPLIST_FILE = TodayExtension/Info.plist;
@@ -1332,6 +1378,10 @@
 				CODE_SIGN_ENTITLEMENTS = HyperTimeLogger/HyperTimeLogger.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Dependencies/Vendor",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = HyperTimeLogger/PrefixHeader.pch;
 				INFOPLIST_FILE = HyperTimeLogger/Info.plist;
@@ -1350,6 +1400,10 @@
 				CODE_SIGN_ENTITLEMENTS = HyperTimeLogger/HyperTimeLogger.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Dependencies/Vendor",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = HyperTimeLogger/PrefixHeader.pch;
 				INFOPLIST_FILE = HyperTimeLogger/Info.plist;
@@ -1367,6 +1421,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
+					"$(PROJECT_DIR)/Dependencies/Vendor",
 				);
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
@@ -1386,6 +1441,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
+					"$(PROJECT_DIR)/Dependencies/Vendor",
 				);
 				INFOPLIST_FILE = HyperTimeLoggerTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";

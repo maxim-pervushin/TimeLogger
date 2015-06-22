@@ -18,14 +18,6 @@
     [[NSUserDefaults standardUserDefaults] removeObjectForKey:@"self.addButtonToRightLayoutConstraint.constant"];
     [[NSUserDefaults standardUserDefaults] synchronize];
 
-    // TODO: Send notification.
-
-    return YES;
-}
-
-- (BOOL)generateTestData {
-    //CCLogDebug(@"");
-
     return YES;
 }
 

@@ -11,6 +11,8 @@
 #import "HTLContentManager.h"
 #import "HTLSqliteStorageProvider.h"
 #import "HTLCSVStringExportProvider.h"
+#import <Fabric/Fabric.h>
+#import <Crashlytics/Crashlytics.h>
 
 
 static NSString *const kAddReportURL = @"timelogger://add";
@@ -36,6 +38,9 @@ static NSString *const kAddReportURL = @"timelogger://add";
 }
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+
+    [Fabric with:@[CrashlyticsKit]];
+
     [self initializeLoggers];
     [self initializeContentManager];
 
