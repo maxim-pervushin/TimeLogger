@@ -11,6 +11,8 @@
 #import "HTLCompletionDto.h"
 #import "HTLCategoryCell.h"
 #import "HTLCompletionCollectionViewCell.h"
+#import "HTLReportDto.h"
+#import "HTLReportDto+Helpers.h"
 #import <ZLBalancedFlowLayout/ZLBalancedFlowLayout-Swift.h>
 
 
@@ -60,11 +62,11 @@ static NSString *const kCategoryCellIdentifier = @"CategoryCell";
 @implementation HTLEditReportViewController
 
 - (IBAction)startDateButtonAction:(id)sender {
-    NSLog(@"startDateButtonAction:");
+    // Nothing
 }
 
 - (IBAction)endDateButtonAction:(id)sender {
-    NSLog(@"endDateButtonAction:");
+    // Nothing
 }
 
 - (IBAction)textFieldEditingChanged:(id)sender {
@@ -102,6 +104,9 @@ static NSString *const kCategoryCellIdentifier = @"CategoryCell";
     }
 
     self.textField.text = reportExtended.action.title;
+
+    [self.startDateButton setTitle:reportExtended.report.startDateString forState:UIControlStateNormal];
+    [self.endDateButton setTitle:reportExtended.report.endDateString forState:UIControlStateNormal];
 
     NSUInteger selectedCategoryIndex = [self.modelController.categories indexOfObject:reportExtended.category];
     NSIndexPath *selectedCategoryIndexPath = [NSIndexPath indexPathForRow:selectedCategoryIndex inSection:0];

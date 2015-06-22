@@ -286,10 +286,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wig-9e-GnR">
-                                <rect key="frame" x="0.0" y="340" width="320" height="140"/>
+                                <rect key="frame" x="0.0" y="350" width="320" height="130"/>
                                 <subviews>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="caI-j5-rMv">
-                                        <rect key="frame" x="8" y="102" width="304" height="30"/>
+                                        <rect key="frame" x="8" y="94" width="304" height="28"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences" autocorrectionType="yes" returnKeyType="done"/>
                                         <connections>
@@ -298,7 +298,7 @@
                                         </connections>
                                     </textField>
                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="got-qe-sSl">
-                                        <rect key="frame" x="0.0" y="58" width="320" height="40"/>
+                                        <rect key="frame" x="0.0" y="50" width="320" height="40"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="Ysk-KF-JPg"/>
@@ -353,9 +353,13 @@
                                         </connections>
                                     </collectionView>
                                     <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="77B-vV-T3r">
-                                        <rect key="frame" x="0.0" y="0.0" width="320" height="29"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="25"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="25" id="JTa-mS-b4Q"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                         <state key="normal" title="Start: [Start Date]">
-                                            <color key="titleColor" red="1" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
@@ -363,9 +367,10 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="252" verticalHuggingPriority="252" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H2M-l0-ft5">
-                                        <rect key="frame" x="0.0" y="29" width="320" height="29"/>
+                                        <rect key="frame" x="0.0" y="25" width="320" height="25"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                         <state key="normal" title="End: [End Date]">
-                                            <color key="titleColor" red="1" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
@@ -384,7 +389,7 @@
                                     <constraint firstAttribute="trailing" secondItem="caI-j5-rMv" secondAttribute="trailing" constant="8" id="JRl-xW-bpd"/>
                                     <constraint firstAttribute="bottom" secondItem="caI-j5-rMv" secondAttribute="bottom" constant="8" id="LEh-zx-Ced"/>
                                     <constraint firstItem="77B-vV-T3r" firstAttribute="top" secondItem="Wig-9e-GnR" secondAttribute="top" id="RQB-62-t2B"/>
-                                    <constraint firstAttribute="height" constant="140" id="Uf7-7B-3tU"/>
+                                    <constraint firstAttribute="height" constant="130" id="Uf7-7B-3tU"/>
                                     <constraint firstItem="77B-vV-T3r" firstAttribute="leading" secondItem="H2M-l0-ft5" secondAttribute="leading" id="VCM-Bl-nhe"/>
                                     <constraint firstItem="caI-j5-rMv" firstAttribute="top" secondItem="got-qe-sSl" secondAttribute="bottom" constant="4" id="cyE-gl-a3M"/>
                                     <constraint firstAttribute="trailing" secondItem="77B-vV-T3r" secondAttribute="trailing" id="eMN-5U-UAj"/>
@@ -393,7 +398,7 @@
                                 </constraints>
                             </view>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Z5m-Y5-2Fx">
-                                <rect key="frame" x="0.0" y="64" width="320" height="276"/>
+                                <rect key="frame" x="0.0" y="64" width="320" height="286"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <collectionViewLayout key="collectionViewLayout" id="tNU-L3-bST" customClass="ZLBalancedFlowLayout" customModule="ZLBalancedFlowLayout"/>
                                 <cells>
