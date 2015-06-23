@@ -1,0 +1,21 @@
+
+/* Class = "UIButton"; normalTitle = "Add Custom"; ObjectID = "R0o-zm-Gr8"; */
+"R0o-zm-Gr8.normalTitle" = "Добавить другое...";
+
+/* Class = "UILabel"; text = "[Duration]"; ObjectID = "d92-bg-y0l"; */
+"d92-bg-y0l.text" = "[Duration]";
+
+/* Class = "UILabel"; text = "[Category Title]"; ObjectID = "iyL-lK-kGP"; */
+"iyL-lK-kGP.text" = "[Category Title]";
+
+/* Class = "UILabel"; text = "[End Date]"; ObjectID = "jvf-G5-adf"; */
+"jvf-G5-adf.text" = "[End Date]";
+
+/* Class = "UILabel"; text = "[Action Title]"; ObjectID = "kJM-Gl-n53"; */
+"kJM-Gl-n53.text" = "[Action Title]";
+
+/* Class = "UILabel"; text = "[Category Title]"; ObjectID = "kv1-VZ-j6R"; */
+"kv1-VZ-j6R.text" = "[Category Title]";
+
+/* Class = "UILabel"; text = "[Action Title]"; ObjectID = "s4o-LW-GfR"; */
+"s4o-LW-GfR.text" = "[Action Title]";
