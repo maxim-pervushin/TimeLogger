@@ -14,7 +14,7 @@
 
 static NSString *const kPieChartCellIdentifier = @"PieChartCell";
 static NSString *const kStatisticsItemCellIdentifier = @"StatisticsItemCell";
-static const CGFloat kStatisticsItemCellHeight = 40;
+static const CGFloat kStatisticsItemCellHeight = 44;
 
 
 @interface HTLStatisticsViewController () <UITableViewDataSource, UITableViewDelegate, XYPieChartDataSource, XYPieChartDelegate>
@@ -69,6 +69,7 @@ static const CGFloat kStatisticsItemCellHeight = 40;
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     if (indexPath.section == 0) {
         HTLPieChartCell *cell = [tableView dequeueReusableCellWithIdentifier:kPieChartCellIdentifier];
+        cell.pieChart.showLabel = NO;
         cell.pieChart.dataSource = self;
         cell.pieChart.delegate = self;
         cell.pieChart.userInteractionEnabled = NO;

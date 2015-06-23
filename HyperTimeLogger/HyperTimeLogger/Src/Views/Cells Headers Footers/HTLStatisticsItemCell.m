@@ -30,9 +30,9 @@
 
 - (void)configureWithStatisticsItem:(HTLStatisticsItemDto *)statisticsItem {
     if (statisticsItem) {
-        self.categoryTitleLabel.text = statisticsItem.category.title;
+        self.categoryTitleLabel.text = statisticsItem.category.localizedTitle;
         self.totalTimeLabel.text = [self descriptionForTimeInterval:statisticsItem.totalTime];
-        self.totalReportsLabel.text = [NSString stringWithFormat:@"Reports: %d", statisticsItem.totalReports];
+        self.totalReportsLabel.text = [NSString stringWithFormat:NSLocalizedString(@"Reports: %lu", nil), (unsigned long)statisticsItem.totalReports];
         self.categoryTitleLabel.textColor = statisticsItem.category.color;
         self.totalTimeLabel.textColor = statisticsItem.category.color;
         self.totalReportsLabel.textColor = statisticsItem.category.color;

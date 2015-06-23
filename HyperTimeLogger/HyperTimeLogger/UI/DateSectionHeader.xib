@@ -70,8 +70,8 @@
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
                 <outlet property="backgroundColorView" destination="Jxe-wG-3q1" id="Q4m-KO-1ed"/>
-                <outlet property="statisticsButton" destination="ogM-qg-NGh" id="H8t-1T-2x0"/>
                 <outlet property="sectionTitleLabel" destination="nOd-N7-Nrn" id="MTb-yF-L0J"/>
+                <outlet property="statisticsButton" destination="ogM-qg-NGh" id="H8t-1T-2x0"/>
             </connections>
             <point key="canvasLocation" x="434.5" y="319"/>
         </view>

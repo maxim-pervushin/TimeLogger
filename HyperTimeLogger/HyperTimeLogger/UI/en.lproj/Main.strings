@@ -1,0 +1,48 @@
+
+/* Class = "UILabel"; text = "[Category Title]"; ObjectID = "3dE-YY-8fR"; */
+"3dE-YY-8fR.text" = "[Category Title]";
+
+/* Class = "UILabel"; text = "[Category]"; ObjectID = "3jm-gy-tqK"; */
+"3jm-gy-tqK.text" = "[Category]";
+
+/* Class = "UIButton"; normalTitle = "Reset Content"; ObjectID = "4Zy-wc-5eB"; */
+"4Zy-wc-5eB.normalTitle" = "Reset Content";
+
+/* Class = "UIButton"; normalTitle = "Start: [Start Date]"; ObjectID = "77B-vV-T3r"; */
+"77B-vV-T3r.normalTitle" = "Start: [Start Date]";
+
+/* Class = "UILabel"; text = "[Total Reports]"; ObjectID = "FOw-r7-4We"; */
+"FOw-r7-4We.text" = "[Total Reports]";
+
+/* Class = "UIButton"; normalTitle = "End: [End Date]"; ObjectID = "H2M-l0-ft5"; */
+"H2M-l0-ft5.normalTitle" = "End: [End Date]";
+
+/* Class = "UILabel"; text = "[Date]"; ObjectID = "OTb-B3-LJR"; */
+"OTb-B3-LJR.text" = "[Date]";
+
+/* Class = "UILabel"; text = "[Duration]"; ObjectID = "PMS-ar-YE1"; */
+"PMS-ar-YE1.text" = "[Duration]";
+
+/* Class = "UILabel"; text = "[Total Time]"; ObjectID = "Phl-kh-mwn"; */
+"Phl-kh-mwn.text" = "[Total Time]";
+
+/* Class = "UILabel"; text = "[Title]"; ObjectID = "Sgj-un-jmQ"; */
+"Sgj-un-jmQ.text" = "[Title]";
+
+/* Class = "UILabel"; text = "[Title]"; ObjectID = "dvj-IQ-Opl"; */
+"dvj-IQ-Opl.text" = "[Title]";
+
+/* Class = "UIButton"; normalTitle = "Export To CSV"; ObjectID = "erl-mU-x5B"; */
+"erl-mU-x5B.normalTitle" = "Export To CSV";
+
+/* Class = "UILabel"; text = "[Action Title]"; ObjectID = "fZ0-7Z-dsf"; */
+"fZ0-7Z-dsf.text" = "[Action Title]";
+
+/* Class = "UILabel"; text = "[Category Title]"; ObjectID = "fbC-MA-1cf"; */
+"fbC-MA-1cf.text" = "[Category Title]";
+
+/* Class = "UIButton"; normalTitle = "Generate Test Data"; ObjectID = "p3C-ZV-Aiz"; */
+"p3C-ZV-Aiz.normalTitle" = "Generate Test Data";
+
+/* Class = "UIButton"; normalTitle = "Reset Defaults"; ObjectID = "vBj-xp-MRs"; */
+"vBj-xp-MRs.normalTitle" = "Reset Defaults";
