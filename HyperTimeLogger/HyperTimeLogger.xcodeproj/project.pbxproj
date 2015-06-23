@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		73BC600E8C599F6D11BBD183 /* HTLCategoryDto.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC660F9035AF2D12D68B11 /* HTLCategoryDto.m */; };
 		73BC60A9E3DA6728F9788F57 /* HTLSqliteStorageProvider+Deserialization.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6D1F71AFEE603353B859 /* HTLSqliteStorageProvider+Deserialization.m */; };
-		73BC60E4095C74AD7CDC81DB /* DTFolderMonitor.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6C4782FCAEADF81D13DD /* DTFolderMonitor.m */; };
 		73BC610CA9365423EC183AE7 /* HTETodayModelController.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6C705D0378287850972F /* HTETodayModelController.m */; };
 		73BC611D0DB73478A87E6CAE /* DTFolderMonitor.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6C4782FCAEADF81D13DD /* DTFolderMonitor.m */; };
 		73BC617D5432B3204E578CF4 /* settings.png in Resources */ = {isa = PBXBuildFile; fileRef = 73BC6F7DCFA8D0EF70DD39E0 /* settings.png */; };
@@ -84,6 +83,7 @@
 		C51F13101B32C592001F452F /* statistics@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = C51F130D1B32C592001F452F /* statistics@3x.png */; };
 		C51F13121B32C5B2001F452F /* add.png in Resources */ = {isa = PBXBuildFile; fileRef = C51F13111B32C5B2001F452F /* add.png */; };
 		C53370711B397E520095549E /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C533706F1B397E520095549E /* MainInterface.storyboard */; };
+		C53370781B397FC50095549E /* DTFolderMonitor.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6C4782FCAEADF81D13DD /* DTFolderMonitor.m */; };
 		C56ED4ED1B38217F00221171 /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C56ED4EB1B38217F00221171 /* Fabric.framework */; };
 		C56ED4EE1B38217F00221171 /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C56ED4EB1B38217F00221171 /* Fabric.framework */; };
 		C56ED4F11B38217F00221171 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C56ED4EC1B38217F00221171 /* Crashlytics.framework */; };
@@ -942,9 +942,9 @@
 				73BC6BBDB05B2D670300F209 /* HTLReportExtendedDto.m in Sources */,
 				73BC66FBEB3FEDA6D59A4EEB /* HTLSqliteStorageProvider.m in Sources */,
 				73BC6C6045A93032F36ED35A /* HTLContentManager.m in Sources */,
+				C53370781B397FC50095549E /* DTFolderMonitor.m in Sources */,
 				73BC68033AF8061D639DCFC0 /* HTETodayViewController.m in Sources */,
 				73BC610CA9365423EC183AE7 /* HTETodayModelController.m in Sources */,
-				73BC60E4095C74AD7CDC81DB /* DTFolderMonitor.m in Sources */,
 				73BC65AB5A04FEEA2462F6AF /* HTLCompletionCollectionViewCell.m in Sources */,
 				73BC69530AA65A5F73B11569 /* HTLCSVStringExportProvider.m in Sources */,
 				73BC60A9E3DA6728F9788F57 /* HTLSqliteStorageProvider+Deserialization.m in Sources */,
