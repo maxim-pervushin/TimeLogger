@@ -22,6 +22,8 @@ static NSString *const kStorageFileName = @"time_logger_storage.db";
 
 @interface HTLAppDelegate ()
 
+- (void)initializeCrashReporter;
+
 - (void)initializeLoggers;
 
 - (void)initializeContentManager;
@@ -29,6 +31,10 @@ static NSString *const kStorageFileName = @"time_logger_storage.db";
 @end
 
 @implementation HTLAppDelegate
+
+- (void)initializeCrashReporter {
+    [Fabric with:@[CrashlyticsKit]];
+}
 
 - (void)initializeLoggers {
     [DDLog addLogger:[DDASLLogger sharedInstance] withLevel:DDLogLevelDebug];
@@ -45,8 +51,7 @@ static NSString *const kStorageFileName = @"time_logger_storage.db";
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
 
-    [Fabric with:@[CrashlyticsKit]];
-
+    [self initializeCrashReporter];
     [self initializeLoggers];
     [self initializeContentManager];
 
