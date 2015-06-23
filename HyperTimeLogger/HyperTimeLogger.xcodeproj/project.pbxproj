@@ -83,6 +83,7 @@
 		C51F130F1B32C592001F452F /* statistics@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C51F130C1B32C592001F452F /* statistics@2x.png */; };
 		C51F13101B32C592001F452F /* statistics@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = C51F130D1B32C592001F452F /* statistics@3x.png */; };
 		C51F13121B32C5B2001F452F /* add.png in Resources */ = {isa = PBXBuildFile; fileRef = C51F13111B32C5B2001F452F /* add.png */; };
+		C53370711B397E520095549E /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C533706F1B397E520095549E /* MainInterface.storyboard */; };
 		C56ED4ED1B38217F00221171 /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C56ED4EB1B38217F00221171 /* Fabric.framework */; };
 		C56ED4EE1B38217F00221171 /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C56ED4EB1B38217F00221171 /* Fabric.framework */; };
 		C56ED4F11B38217F00221171 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C56ED4EC1B38217F00221171 /* Crashlytics.framework */; };
@@ -227,6 +228,9 @@
 		C51F130C1B32C592001F452F /* statistics@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "statistics@2x.png"; sourceTree = "<group>"; };
 		C51F130D1B32C592001F452F /* statistics@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "statistics@3x.png"; sourceTree = "<group>"; };
 		C51F13111B32C5B2001F452F /* add.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = add.png; sourceTree = "<group>"; };
+		C53370701B397E520095549E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
+		C53370721B397E5C0095549E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/MainInterface.strings; sourceTree = "<group>"; };
+		C53370731B397E5F0095549E /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/MainInterface.strings; sourceTree = "<group>"; };
 		C56ED4EB1B38217F00221171 /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = "<group>"; };
 		C56ED4EC1B38217F00221171 /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
 		C57EA5791B27021600B97F65 /* TodayExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = TodayExtension.entitlements; sourceTree = "<group>"; };
@@ -390,6 +394,7 @@
 		73BC679CF1C0629D469D7895 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				C533706F1B397E520095549E /* MainInterface.storyboard */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -799,6 +804,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C53370711B397E520095549E /* MainInterface.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1023,6 +1029,16 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		C533706F1B397E520095549E /* MainInterface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C53370701B397E520095549E /* Base */,
+				C53370721B397E5C0095549E /* en */,
+				C53370731B397E5F0095549E /* ru */,
+			);
+			name = MainInterface.storyboard;
+			sourceTree = "<group>";
+		};
 		C58B385D1B395FB7006C7AE7 /* LaunchScreen.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
