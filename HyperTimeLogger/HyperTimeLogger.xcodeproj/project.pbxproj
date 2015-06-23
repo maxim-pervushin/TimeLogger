@@ -90,6 +90,8 @@
 		C56ED4F21B38217F00221171 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C56ED4EC1B38217F00221171 /* Crashlytics.framework */; };
 		C58B38611B395FB7006C7AE7 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = C58B385D1B395FB7006C7AE7 /* LaunchScreen.xib */; };
 		C58B38621B395FB7006C7AE7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C58B385F1B395FB7006C7AE7 /* Main.storyboard */; };
+		C59088BA1B398BD10099F8CB /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C59088BC1B398BD10099F8CB /* InfoPlist.strings */; };
+		C59088C11B398C220099F8CB /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C59088C31B398C220099F8CB /* InfoPlist.strings */; };
 		C5BA1B801B26F890006D80BC /* TodayExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = C5BA1B731B26F890006D80BC /* TodayExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		C5FFE3F21B1857CE007D317D /* HyperTimeLoggerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C5FFE3F11B1857CE007D317D /* HyperTimeLoggerTests.m */; };
 /* End PBXBuildFile section */
@@ -240,6 +242,12 @@
 		C58B38661B395FE0006C7AE7 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Main.strings; sourceTree = "<group>"; };
 		C58B38681B396076006C7AE7 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		C58B386A1B396078006C7AE7 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		C59088BB1B398BD10099F8CB /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		C59088BD1B398BD30099F8CB /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		C59088BE1B398BD40099F8CB /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		C59088C21B398C220099F8CB /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		C59088C41B398C230099F8CB /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		C59088C51B398C240099F8CB /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		C5BA1B731B26F890006D80BC /* TodayExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = TodayExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		C5BA1B781B26F890006D80BC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C5FFE3D21B1857CE007D317D /* HyperTimeLogger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HyperTimeLogger.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -404,6 +412,7 @@
 			children = (
 				73BC699EDAD3D271F8F3A424 /* Info.plist */,
 				73BC658C5988656B19048ABE /* main.m */,
+				C59088BC1B398BD10099F8CB /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -637,6 +646,7 @@
 			isa = PBXGroup;
 			children = (
 				C5BA1B781B26F890006D80BC /* Info.plist */,
+				C59088C31B398C220099F8CB /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -805,6 +815,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C53370711B397E520095549E /* MainInterface.storyboard in Resources */,
+				C59088C11B398C220099F8CB /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -815,6 +826,7 @@
 				73BC697836C7BC71A9FAEE26 /* clock_transparent.png in Resources */,
 				73BC617D5432B3204E578CF4 /* settings.png in Resources */,
 				73BC6CC003E2DB538E6F16DE /* settings@2x.png in Resources */,
+				C59088BA1B398BD10099F8CB /* InfoPlist.strings in Resources */,
 				C58B38621B395FB7006C7AE7 /* Main.storyboard in Resources */,
 				C51F13121B32C5B2001F452F /* add.png in Resources */,
 				73BC6D42F5DEFED44D50CF72 /* settings@3x.png in Resources */,
@@ -1057,6 +1069,26 @@
 				C58B38661B395FE0006C7AE7 /* ru */,
 			);
 			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		C59088BC1B398BD10099F8CB /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C59088BB1B398BD10099F8CB /* Base */,
+				C59088BD1B398BD30099F8CB /* en */,
+				C59088BE1B398BD40099F8CB /* ru */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		C59088C31B398C220099F8CB /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C59088C21B398C220099F8CB /* Base */,
+				C59088C41B398C230099F8CB /* en */,
+				C59088C51B398C240099F8CB /* ru */,
+			);
+			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
