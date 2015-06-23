@@ -25,7 +25,6 @@
 		73BC63F953A4F0A419C9FAB6 /* HTLBackgroundView.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC69C3F2154ED17C55C345 /* HTLBackgroundView.m */; };
 		73BC6436C539FA93E8CB0BFF /* HTLCompletionDto.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC612AAFD0BFC06B406EC4 /* HTLCompletionDto.m */; };
 		73BC645506B4E067A0A25D6D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC658C5988656B19048ABE /* main.m */; };
-		73BC6455DC8F4C1A22455C36 /* DTFolderMonitor.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6C4782FCAEADF81D13DD /* DTFolderMonitor.m */; };
 		73BC65608065C1CBF9F089C0 /* HTLStatisticsItemDto.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC68639DDCA8BD7C16A37A /* HTLStatisticsItemDto.m */; };
 		73BC65AB5A04FEEA2462F6AF /* HTLCompletionCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6A799292EFF1A3FDE4D4 /* HTLCompletionCollectionViewCell.m */; };
 		73BC65EBF2E0EFBE18CE5FAA /* HTLReportExtendedDto.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC666118C4F574F66F741D /* HTLReportExtendedDto.m */; };
@@ -84,21 +83,12 @@
 		C51F130F1B32C592001F452F /* statistics@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C51F130C1B32C592001F452F /* statistics@2x.png */; };
 		C51F13101B32C592001F452F /* statistics@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = C51F130D1B32C592001F452F /* statistics@3x.png */; };
 		C51F13121B32C5B2001F452F /* add.png in Resources */ = {isa = PBXBuildFile; fileRef = C51F13111B32C5B2001F452F /* add.png */; };
-		C51F13131B32F129001F452F /* HTLReportDto+Helpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6F771B4A63AA8FABCDF5 /* HTLReportDto+Helpers.m */; };
 		C56ED4ED1B38217F00221171 /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C56ED4EB1B38217F00221171 /* Fabric.framework */; };
 		C56ED4EE1B38217F00221171 /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C56ED4EB1B38217F00221171 /* Fabric.framework */; };
-		C56ED4F01B38217F00221171 /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C56ED4EB1B38217F00221171 /* Fabric.framework */; };
 		C56ED4F11B38217F00221171 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C56ED4EC1B38217F00221171 /* Crashlytics.framework */; };
 		C56ED4F21B38217F00221171 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C56ED4EC1B38217F00221171 /* Crashlytics.framework */; };
-		C56ED4F41B38217F00221171 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C56ED4EC1B38217F00221171 /* Crashlytics.framework */; };
 		C58B38611B395FB7006C7AE7 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = C58B385D1B395FB7006C7AE7 /* LaunchScreen.xib */; };
 		C58B38621B395FB7006C7AE7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C58B385F1B395FB7006C7AE7 /* Main.storyboard */; };
-		C5B133961B27625900437B10 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C5B133951B27625900437B10 /* main.m */; };
-		C5B133991B27625900437B10 /* DMMAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C5B133981B27625900437B10 /* DMMAppDelegate.m */; };
-		C5B1339C1B27625900437B10 /* DMMViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C5B1339B1B27625900437B10 /* DMMViewController.m */; };
-		C5B1339F1B27625900437B10 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C5B1339D1B27625900437B10 /* Main.storyboard */; };
-		C5B133A11B27625900437B10 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C5B133A01B27625900437B10 /* Images.xcassets */; };
-		C5B133A41B27625900437B10 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = C5B133A21B27625900437B10 /* LaunchScreen.xib */; };
 		C5BA1B801B26F890006D80BC /* TodayExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = C5BA1B731B26F890006D80BC /* TodayExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		C5FFE3F21B1857CE007D317D /* HyperTimeLoggerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C5FFE3F11B1857CE007D317D /* HyperTimeLoggerTests.m */; };
 /* End PBXBuildFile section */
@@ -246,17 +236,6 @@
 		C58B38661B395FE0006C7AE7 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Main.strings; sourceTree = "<group>"; };
 		C58B38681B396076006C7AE7 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		C58B386A1B396078006C7AE7 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
-		C5B133911B27625900437B10 /* DatabaseMigrationManager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DatabaseMigrationManager.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		C5B133941B27625900437B10 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		C5B133951B27625900437B10 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		C5B133971B27625900437B10 /* DMMAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DMMAppDelegate.h; sourceTree = "<group>"; };
-		C5B133981B27625900437B10 /* DMMAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DMMAppDelegate.m; sourceTree = "<group>"; };
-		C5B1339A1B27625900437B10 /* DMMViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DMMViewController.h; sourceTree = "<group>"; };
-		C5B1339B1B27625900437B10 /* DMMViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DMMViewController.m; sourceTree = "<group>"; };
-		C5B1339E1B27625900437B10 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		C5B133A01B27625900437B10 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		C5B133A31B27625900437B10 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
-		C5B133B71B27635D00437B10 /* DatabaseMigrationManager.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = DatabaseMigrationManager.entitlements; sourceTree = "<group>"; };
 		C5BA1B731B26F890006D80BC /* TodayExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = TodayExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		C5BA1B781B26F890006D80BC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C5FFE3D21B1857CE007D317D /* HyperTimeLogger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HyperTimeLogger.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -273,15 +252,6 @@
 				73BC6F0D931166EADD7E2E4F /* Pods_HyperTimeLogger.framework in Frameworks */,
 				C56ED4F11B38217F00221171 /* Crashlytics.framework in Frameworks */,
 				C56ED4ED1B38217F00221171 /* Fabric.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		C5B1338E1B27625900437B10 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				C56ED4F41B38217F00221171 /* Crashlytics.framework in Frameworks */,
-				C56ED4F01B38217F00221171 /* Fabric.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -647,31 +617,6 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
-		C5B133921B27625900437B10 /* DatabaseMigrationManager */ = {
-			isa = PBXGroup;
-			children = (
-				C5B133B71B27635D00437B10 /* DatabaseMigrationManager.entitlements */,
-				C5B133971B27625900437B10 /* DMMAppDelegate.h */,
-				C5B133981B27625900437B10 /* DMMAppDelegate.m */,
-				C5B1339A1B27625900437B10 /* DMMViewController.h */,
-				C5B1339B1B27625900437B10 /* DMMViewController.m */,
-				C5B1339D1B27625900437B10 /* Main.storyboard */,
-				C5B133A01B27625900437B10 /* Images.xcassets */,
-				C5B133A21B27625900437B10 /* LaunchScreen.xib */,
-				C5B133931B27625900437B10 /* Supporting Files */,
-			);
-			path = DatabaseMigrationManager;
-			sourceTree = "<group>";
-		};
-		C5B133931B27625900437B10 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				C5B133941B27625900437B10 /* Info.plist */,
-				C5B133951B27625900437B10 /* main.m */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
 		C5BA1B761B26F890006D80BC /* TodayExtension */ = {
 			isa = PBXGroup;
 			children = (
@@ -696,7 +641,6 @@
 			children = (
 				C5FFE3EE1B1857CE007D317D /* HyperTimeLoggerTests */,
 				C5BA1B761B26F890006D80BC /* TodayExtension */,
-				C5B133921B27625900437B10 /* DatabaseMigrationManager */,
 				C5FFE3D31B1857CE007D317D /* Products */,
 				884E6DD6E7CF859E8C96B7F3 /* Pods */,
 				73BC62248BFB3B8402AF0871 /* Common */,
@@ -711,7 +655,6 @@
 				C5FFE3D21B1857CE007D317D /* HyperTimeLogger.app */,
 				C5FFE3EB1B1857CE007D317D /* HyperTimeLoggerTests.xctest */,
 				C5BA1B731B26F890006D80BC /* TodayExtension.appex */,
-				C5B133911B27625900437B10 /* DatabaseMigrationManager.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -736,23 +679,6 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		C5B133901B27625900437B10 /* DatabaseMigrationManager */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = C5B133B11B27625A00437B10 /* Build configuration list for PBXNativeTarget "DatabaseMigrationManager" */;
-			buildPhases = (
-				C5B1338D1B27625900437B10 /* Sources */,
-				C5B1338E1B27625900437B10 /* Frameworks */,
-				C5B1338F1B27625900437B10 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = DatabaseMigrationManager;
-			productName = DatabaseMigrationManager;
-			productReference = C5B133911B27625900437B10 /* DatabaseMigrationManager.app */;
-			productType = "com.apple.product-type.application";
-		};
 		C5BA1B721B26F890006D80BC /* TodayExtension */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = C5BA1B831B26F890006D80BC /* Build configuration list for PBXNativeTarget "TodayExtension" */;
@@ -823,15 +749,6 @@
 				LastUpgradeCheck = 0630;
 				ORGANIZATIONNAME = "Maxim Pervushin";
 				TargetAttributes = {
-					C5B133901B27625900437B10 = {
-						CreatedOnToolsVersion = 6.3.2;
-						DevelopmentTeam = FRM2L78456;
-						SystemCapabilities = {
-							com.apple.ApplicationGroups.iOS = {
-								enabled = 1;
-							};
-						};
-					};
 					C5BA1B721B26F890006D80BC = {
 						CreatedOnToolsVersion = 6.3.2;
 						DevelopmentTeam = FRM2L78456;
@@ -873,22 +790,11 @@
 				C5FFE3D11B1857CD007D317D /* HyperTimeLogger */,
 				C5FFE3EA1B1857CE007D317D /* HyperTimeLoggerTests */,
 				C5BA1B721B26F890006D80BC /* TodayExtension */,
-				C5B133901B27625900437B10 /* DatabaseMigrationManager */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		C5B1338F1B27625900437B10 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				C5B1339F1B27625900437B10 /* Main.storyboard in Resources */,
-				C5B133A41B27625900437B10 /* LaunchScreen.xib in Resources */,
-				C5B133A11B27625900437B10 /* Images.xcassets in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		C5BA1B711B26F890006D80BC /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -1016,18 +922,6 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		C5B1338D1B27625900437B10 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				C5B1339C1B27625900437B10 /* DMMViewController.m in Sources */,
-				C5B133991B27625900437B10 /* DMMAppDelegate.m in Sources */,
-				C5B133961B27625900437B10 /* main.m in Sources */,
-				73BC6455DC8F4C1A22455C36 /* DTFolderMonitor.m in Sources */,
-				C51F13131B32F129001F452F /* HTLReportDto+Helpers.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		C5BA1B6F1B26F890006D80BC /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -1149,65 +1043,9 @@
 			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
-		C5B1339D1B27625900437B10 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				C5B1339E1B27625900437B10 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		C5B133A21B27625900437B10 /* LaunchScreen.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				C5B133A31B27625900437B10 /* Base */,
-			);
-			name = LaunchScreen.xib;
-			sourceTree = "<group>";
-		};
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		C5B133B21B27625A00437B10 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = DatabaseMigrationManager/DatabaseMigrationManager.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Dependencies/Vendor",
-				);
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = DatabaseMigrationManager/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
-			};
-			name = Debug;
-		};
-		C5B133B31B27625A00437B10 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = DatabaseMigrationManager/DatabaseMigrationManager.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Dependencies/Vendor",
-				);
-				INFOPLIST_FILE = DatabaseMigrationManager/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
-			};
-			name = Release;
-		};
 		C5BA1B811B26F890006D80BC /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 617AE9E650925A0499F5E44C /* Pods-TodayExtension.debug.xcconfig */;
@@ -1419,15 +1257,6 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		C5B133B11B27625A00437B10 /* Build configuration list for PBXNativeTarget "DatabaseMigrationManager" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				C5B133B21B27625A00437B10 /* Debug */,
-				C5B133B31B27625A00437B10 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		C5BA1B831B26F890006D80BC /* Build configuration list for PBXNativeTarget "TodayExtension" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
