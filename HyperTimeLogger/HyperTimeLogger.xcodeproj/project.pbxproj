@@ -92,6 +92,8 @@
 		C58B38621B395FB7006C7AE7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C58B385F1B395FB7006C7AE7 /* Main.storyboard */; };
 		C59088BA1B398BD10099F8CB /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C59088BC1B398BD10099F8CB /* InfoPlist.strings */; };
 		C59088C11B398C220099F8CB /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C59088C31B398C220099F8CB /* InfoPlist.strings */; };
+		C59088C81B398E330099F8CB /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = C59088CA1B398E330099F8CB /* Localizable.strings */; };
+		C59088CD1B398FE20099F8CB /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = C59088CA1B398E330099F8CB /* Localizable.strings */; };
 		C5BA1B801B26F890006D80BC /* TodayExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = C5BA1B731B26F890006D80BC /* TodayExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		C5FFE3F21B1857CE007D317D /* HyperTimeLoggerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C5FFE3F11B1857CE007D317D /* HyperTimeLoggerTests.m */; };
 /* End PBXBuildFile section */
@@ -248,6 +250,9 @@
 		C59088C21B398C220099F8CB /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		C59088C41B398C230099F8CB /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		C59088C51B398C240099F8CB /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		C59088C91B398E330099F8CB /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
+		C59088CB1B398E340099F8CB /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		C59088CC1B398E350099F8CB /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
 		C5BA1B731B26F890006D80BC /* TodayExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = TodayExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		C5BA1B781B26F890006D80BC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C5FFE3D21B1857CE007D317D /* HyperTimeLogger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HyperTimeLogger.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -345,6 +350,7 @@
 		73BC62248BFB3B8402AF0871 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				C59088CE1B39900A0099F8CB /* Supporting Files */,
 				73BC6DC4214A1ACD61303FC1 /* Src */,
 			);
 			path = Common;
@@ -631,6 +637,14 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		C59088CE1B39900A0099F8CB /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				C59088CA1B398E330099F8CB /* Localizable.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
 		C5BA1B761B26F890006D80BC /* TodayExtension */ = {
 			isa = PBXGroup;
 			children = (
@@ -815,6 +829,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C53370711B397E520095549E /* MainInterface.storyboard in Resources */,
+				C59088CD1B398FE20099F8CB /* Localizable.strings in Resources */,
 				C59088C11B398C220099F8CB /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -826,6 +841,7 @@
 				73BC697836C7BC71A9FAEE26 /* clock_transparent.png in Resources */,
 				73BC617D5432B3204E578CF4 /* settings.png in Resources */,
 				73BC6CC003E2DB538E6F16DE /* settings@2x.png in Resources */,
+				C59088C81B398E330099F8CB /* Localizable.strings in Resources */,
 				C59088BA1B398BD10099F8CB /* InfoPlist.strings in Resources */,
 				C58B38621B395FB7006C7AE7 /* Main.storyboard in Resources */,
 				C51F13121B32C5B2001F452F /* add.png in Resources */,
@@ -1089,6 +1105,17 @@
 				C59088C51B398C240099F8CB /* ru */,
 			);
 			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		C59088CA1B398E330099F8CB /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C59088C91B398E330099F8CB /* Base */,
+				C59088CB1B398E340099F8CB /* en */,
+				C59088CC1B398E350099F8CB /* ru */,
+			);
+			name = Localizable.strings;
+			path = ../HyperTimeLogger;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

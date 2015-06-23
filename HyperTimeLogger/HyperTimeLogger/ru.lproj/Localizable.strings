@@ -1,0 +1,25 @@
+/* 
+  Localizable.strings
+  HyperTimeLogger
+
+  Created by Maxim Pervushin on 23/06/15.
+  Copyright (c) 2015 Maxim Pervushin. All rights reserved.
+*/
+
+"Sleep" = "Сон";
+
+"Personal" = "Личное";
+
+"Road" = "Дорога";
+
+"Work" = "Работа";
+
+"Improvement" = "Самосовершенствование";
+
+"Recreation" = "Отдых";
+
+"Time Waste" = "Трата времени";
+
+"Reports: %lu" = "Отчетов: %lu";
+
+"%02ld:%02ld:%02ld" = "%02ld:%02ld:%02ld";
