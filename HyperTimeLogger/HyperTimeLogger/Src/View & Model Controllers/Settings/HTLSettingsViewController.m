@@ -61,7 +61,6 @@
 }
 
 - (IBAction)generateTestDataButtonAction:(id)sender {
-    // TODO: Check if storage is not empty
     [self generateTestData];
 }
 
@@ -73,11 +72,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.modelController = [HTLSettingsModelController modelControllerWithContentChangedBlock:^{
-        dispatch_async(dispatch_get_main_queue(), ^{
-           // TODO: updateUI;
-        });
-    }];
+    self.modelController = [HTLSettingsModelController modelControllerWithContentChangedBlock:nil];
 }
 
 #pragma mark - MFMailComposeViewControllerDelegate

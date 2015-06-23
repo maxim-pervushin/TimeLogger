@@ -14,29 +14,46 @@
 #import "HTLSqliteStorageProvider+Deserialization.h"
 #import "NSDate+HTLComponents.h"
 
-// TODO: Set storage path when storge provider initialized.
-static NSString *const kApplicationGroup = @"group.timelogger";
-static NSString *const kStorageFileName = @"time_logger_storage.db";
 
 @interface HTLSqliteStorageProvider ()
 
+@property(nonatomic, copy) NSURL *storageFolderURL;
+@property(nonatomic, copy) NSString *storageFileName;
 @property(nonatomic, strong) NSCache *cache;
 @property(nonatomic, strong) DTFolderMonitor *folderMonitor;
 
 @end
 
 @implementation HTLSqliteStorageProvider
+@synthesize storageFolderURL = storageFolderURL_;
+@synthesize storageFileName = storageFileName_;
 @synthesize cache = cache_;
 @synthesize folderMonitor = folderMonitor_;
 
 #pragma mark - HTLSqliteStorageProvider
 
-- (NSURL *)storageFileFolderURL {
-    return [[NSFileManager defaultManager] containerURLForSecurityApplicationGroupIdentifier:kApplicationGroup];
++ (instancetype)sqliteStorageProviderWithStorageFolderURL:(NSURL *)storageFolderURL storageFileName:(NSString *)storageFileName {
+    return [[self alloc] initWithStorageFolderURL:storageFolderURL storageFileName:storageFileName];
+}
+
+- (instancetype)initWithStorageFolderURL:(NSURL *)storageFolderURL storageFileName:(NSString *)storageFileName {
+    self = [super init];
+    if (self) {
+        storageFolderURL_ = [storageFolderURL copy];
+        storageFileName_ = [storageFileName copy];
+        cache_ = [NSCache new];
+        __weak __typeof(self) weakSelf = self;
+        folderMonitor_ = [DTFolderMonitor folderMonitorForURL:storageFolderURL_ block:^{
+            [weakSelf clearCaches];
+            [[NSNotificationCenter defaultCenter] postNotificationName:kHTLStorageProviderChangedNotification object:nil];
+        }];
+        [self.folderMonitor startMonitoring];
+    }
+    return self;
 }
 
 - (NSString *)storageFilePath {
-    return [self.storageFileFolderURL URLByAppendingPathComponent:kStorageFileName].path;
+    return [self.storageFolderURL URLByAppendingPathComponent:self.storageFileName].path;
 }
 
 - (FMDatabase *)databaseOpen {
@@ -468,21 +485,6 @@ static NSString *const kStorageFileName = @"time_logger_storage.db";
     [resultSet close];
 
     return [NSArray arrayWithArray:completions];
-}
-
-#pragma mark - NSObject
-
-- (instancetype)init {
-    self = [super init];
-    if (self) {
-        cache_ = [NSCache new];
-        folderMonitor_ = [DTFolderMonitor folderMonitorForURL:self.storageFileFolderURL block:^{
-            [self clearCaches];
-            [[NSNotificationCenter defaultCenter] postNotificationName:kHTLStorageProviderChangedNotification object:nil];
-        }];
-        [folderMonitor_ startMonitoring];
-    }
-    return self;
 }
 
 #pragma mark - HTLStorageProvider

@@ -16,6 +16,8 @@
 
 
 static NSString *const kAddReportURL = @"timelogger://add";
+static NSString *const kApplicationGroup = @"group.timelogger";
+static NSString *const kStorageFileName = @"time_logger_storage.db";
 
 
 @interface HTLAppDelegate ()
@@ -34,7 +36,11 @@ static NSString *const kAddReportURL = @"timelogger://add";
 }
 
 - (void)initializeContentManager {
-    self.contentManager = [HTLContentManager contentManagerWithStorageProvider:[HTLSqliteStorageProvider new] exportProvider:[HTLCSVStringExportProvider new]];
+    NSURL *storageFolderURL = [[NSFileManager defaultManager] containerURLForSecurityApplicationGroupIdentifier:kApplicationGroup];
+    HTLSqliteStorageProvider *sqliteStorageProvider =
+            [HTLSqliteStorageProvider sqliteStorageProviderWithStorageFolderURL:storageFolderURL
+                                                                storageFileName:kStorageFileName];
+    self.contentManager = [HTLContentManager contentManagerWithStorageProvider:sqliteStorageProvider exportProvider:[HTLCSVStringExportProvider new]];
 }
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {

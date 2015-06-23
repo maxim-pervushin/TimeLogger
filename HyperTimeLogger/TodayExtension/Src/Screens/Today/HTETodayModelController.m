@@ -15,6 +15,10 @@
 #import "HTLSqliteStorageProvider.h"
 
 
+static NSString *const kApplicationGroup = @"group.timelogger";
+static NSString *const kStorageFileName = @"time_logger_storage.db";
+
+
 @interface HTETodayModelController ()
 
 @property(nonatomic, strong) HTLContentManager *contentManager;
@@ -73,7 +77,11 @@
 - (instancetype)init {
     self = [super init];
     if (self) {
-        contentManager_ = [HTLContentManager contentManagerWithStorageProvider:[HTLSqliteStorageProvider new] exportProvider:[HTLCSVStringExportProvider new]];
+        NSURL *storageFolderURL = [[NSFileManager defaultManager] containerURLForSecurityApplicationGroupIdentifier:kApplicationGroup];
+        HTLSqliteStorageProvider *sqliteStorageProvider =
+                [HTLSqliteStorageProvider sqliteStorageProviderWithStorageFolderURL:storageFolderURL
+                                                                    storageFileName:kStorageFileName];
+        contentManager_ = [HTLContentManager contentManagerWithStorageProvider:sqliteStorageProvider exportProvider:[HTLCSVStringExportProvider new]];
         [self subscribe];
     }
     return self;

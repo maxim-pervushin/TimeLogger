@@ -8,6 +8,10 @@
 
 @interface HTLSqliteStorageProvider : NSObject <HTLStorageProvider>
 
++ (instancetype)sqliteStorageProviderWithStorageFolderURL:(NSURL *)storageFolderURL storageFileName:(NSString *)storageFileName;
+
+- (instancetype)initWithStorageFolderURL:(NSURL *)storageFolderURL storageFileName:(NSString *)storageFileName;
+
 - (NSString *)storageFilePath;
 
 @end
