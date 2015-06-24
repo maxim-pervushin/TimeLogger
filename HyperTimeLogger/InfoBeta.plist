@@ -68,9 +68,9 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
-    <key>VersionIdentifier</key>
-    <string></string>
-    <key>VersionSymbol</key>
-    <string></string>
+	<key>VersionIdentifier</key>
+	<string>beta</string>
+	<key>VersionSymbol</key>
+	<string>β</string>
 </dict>
 </plist>

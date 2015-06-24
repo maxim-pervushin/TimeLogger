@@ -47,6 +47,8 @@
 			</dict>
 		</array>
 	</dict>
+	<key>LSApplicationCategoryType</key>
+	<string></string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>UILaunchStoryboardName</key>
@@ -68,9 +70,9 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
-    <key>VersionIdentifier</key>
-    <string></string>
-    <key>VersionSymbol</key>
-    <string></string>
+	<key>VersionIdentifier</key>
+	<string>alpha</string>
+	<key>VersionSymbol</key>
+	<string>α</string>
 </dict>
 </plist>

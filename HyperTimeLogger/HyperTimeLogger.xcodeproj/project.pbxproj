@@ -80,8 +80,125 @@
 		73BC6FAB452C5DBF4EC4D193 /* HTLEditReportModelController.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6F6B107E3546F7EBAE5C /* HTLEditReportModelController.m */; };
 		73BC6FB04C767843085BD236 /* HTLWordCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6D5199B0C7EF65D8A836 /* HTLWordCell.m */; };
 		73BC6FD7408B118ECB13B295 /* testdata_en.json in Resources */ = {isa = PBXBuildFile; fileRef = 73BC61D37DB350A79F19F0DD /* testdata_en.json */; };
+		C51402D51B3ADB9600C6A448 /* InfoAlphaPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C51402D11B3ADB9600C6A448 /* InfoAlphaPlist.strings */; };
+		C51402D71B3ADB9F00C6A448 /* InfoBetaPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C51402D31B3ADB9600C6A448 /* InfoBetaPlist.strings */; };
+		C51402DE1B3ADEC400C6A448 /* HyperTimeLogger Alpha.entitlements in Resources */ = {isa = PBXBuildFile; fileRef = C51402DD1B3ADEC400C6A448 /* HyperTimeLogger Alpha.entitlements */; };
 		C516A6CC1B3A8F2A0018F022 /* HTLRoundButton.m in Sources */ = {isa = PBXBuildFile; fileRef = C516A6CB1B3A8F2A0018F022 /* HTLRoundButton.m */; };
 		C516A6CD1B3A8F2A0018F022 /* HTLRoundButton.m in Sources */ = {isa = PBXBuildFile; fileRef = C516A6CB1B3A8F2A0018F022 /* HTLRoundButton.m */; };
+		C516A6D31B3AD18E0018F022 /* NSDate+HTLComponents.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6F6EE1E455D98426F705 /* NSDate+HTLComponents.m */; };
+		C516A6D41B3AD18E0018F022 /* HTLReportDto+Helpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6F771B4A63AA8FABCDF5 /* HTLReportDto+Helpers.m */; };
+		C516A6D51B3AD18E0018F022 /* HTLReportDto.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6A41E76EE6DBA2B7B791 /* HTLReportDto.m */; };
+		C516A6D61B3AD18E0018F022 /* HTLCategoryDto.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC660F9035AF2D12D68B11 /* HTLCategoryDto.m */; };
+		C516A6D71B3AD18E0018F022 /* HTLActionDto.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC648635BCE062AF18E634 /* HTLActionDto.m */; };
+		C516A6D81B3AD18E0018F022 /* HTLCompletionDto.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC612AAFD0BFC06B406EC4 /* HTLCompletionDto.m */; };
+		C516A6D91B3AD18E0018F022 /* HTLDateSectionDto.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC66709A1F2D03B601899D /* HTLDateSectionDto.m */; };
+		C516A6DA1B3AD18E0018F022 /* HTLReportExtendedDto.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC666118C4F574F66F741D /* HTLReportExtendedDto.m */; };
+		C516A6DB1B3AD18E0018F022 /* HTLSqliteStorageProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC686334D59793FEFA2E86 /* HTLSqliteStorageProvider.m */; };
+		C516A6DC1B3AD18E0018F022 /* HTLContentManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6F1E0AC02A596C78B942 /* HTLContentManager.m */; };
+		C516A6DD1B3AD18E0018F022 /* DTFolderMonitor.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6C4782FCAEADF81D13DD /* DTFolderMonitor.m */; };
+		C516A6DE1B3AD18E0018F022 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC658C5988656B19048ABE /* main.m */; };
+		C516A6DF1B3AD18E0018F022 /* HTLRoundButton.m in Sources */ = {isa = PBXBuildFile; fileRef = C516A6CB1B3A8F2A0018F022 /* HTLRoundButton.m */; };
+		C516A6E01B3AD18E0018F022 /* HTLCircleButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6396FF8919F2C1A22A95 /* HTLCircleButton.m */; };
+		C516A6E11B3AD18E0018F022 /* HTLBackgroundView.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC69C3F2154ED17C55C345 /* HTLBackgroundView.m */; };
+		C516A6E21B3AD18E0018F022 /* HTLNavigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC675BA63D17605F56B715 /* HTLNavigationBar.m */; };
+		C516A6E31B3AD18E0018F022 /* HTLAddButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6CED2DD0EDA6469CEEBA /* HTLAddButton.m */; };
+		C516A6E41B3AD18E0018F022 /* HTLWordCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6D5199B0C7EF65D8A836 /* HTLWordCell.m */; };
+		C516A6E51B3AD18E0018F022 /* HTLCategoryCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6BF188BC4B62EBAED386 /* HTLCategoryCell.m */; };
+		C516A6E61B3AD18E0018F022 /* HTLReportExtendedCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6096955E043B729051F4 /* HTLReportExtendedCell.m */; };
+		C516A6E71B3AD18E0018F022 /* HTLCompletionTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6597BF0ADA89652FD15C /* HTLCompletionTableViewCell.m */; };
+		C516A6E81B3AD18E0018F022 /* HTLCompletionCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6A799292EFF1A3FDE4D4 /* HTLCompletionCollectionViewCell.m */; };
+		C516A6E91B3AD18E0018F022 /* HTLDateSectionHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC615392383318004C30BA /* HTLDateSectionHeader.m */; };
+		C516A6EA1B3AD18E0018F022 /* HTLCSVStringExportProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6FEC821B2D22ACD250CD /* HTLCSVStringExportProvider.m */; };
+		C516A6EB1B3AD18E0018F022 /* HTLAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC62BD6319224D876880BD /* HTLAppDelegate.m */; };
+		C516A6EC1B3AD18E0018F022 /* HTLSqliteStorageProvider+Deserialization.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6D1F71AFEE603353B859 /* HTLSqliteStorageProvider+Deserialization.m */; };
+		C516A6ED1B3AD18E0018F022 /* HTLSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC69788FA88BEA8DAF03AC /* HTLSettingsViewController.m */; };
+		C516A6EE1B3AD18E0018F022 /* HTLSettingsModelController.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6E516EB62290DD7B243C /* HTLSettingsModelController.m */; };
+		C516A6EF1B3AD18E0018F022 /* HTLStatisticsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6B86F0BBBAD9C3ECC490 /* HTLStatisticsViewController.m */; };
+		C516A6F01B3AD18E0018F022 /* HTLReportListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6E168D88E254C8F6A4CE /* HTLReportListViewController.m */; };
+		C516A6F11B3AD18E0018F022 /* HTLReportListModelController.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6F28EAC2335F9576CA6C /* HTLReportListModelController.m */; };
+		C516A6F21B3AD18E0018F022 /* HTLEditReportViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6B659C1F2AF2CF606296 /* HTLEditReportViewController.m */; };
+		C516A6F31B3AD18E0018F022 /* HTLEditReportModelController.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6F6B107E3546F7EBAE5C /* HTLEditReportModelController.m */; };
+		C516A6F41B3AD18E0018F022 /* HTLStatisticsModelController.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC64B38D1BC62AB8562034 /* HTLStatisticsModelController.m */; };
+		C516A6F51B3AD18E0018F022 /* HTLModelController.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6B2EF7D4AAB16D0EC09A /* HTLModelController.m */; };
+		C516A6F61B3AD18E0018F022 /* HTLPieChartCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6E4CD1FE08E15C414BAC /* HTLPieChartCell.m */; };
+		C516A6F71B3AD18E0018F022 /* HTLStatisticsItemCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC68B935DD2C83FA55C77F /* HTLStatisticsItemCell.m */; };
+		C516A6F81B3AD18E0018F022 /* HTLStatisticsItemDto.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC68639DDCA8BD7C16A37A /* HTLStatisticsItemDto.m */; };
+		C516A6F91B3AD18E0018F022 /* HTLSettingsModelController+TestData.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC61A9C99CE0428963C88B /* HTLSettingsModelController+TestData.m */; };
+		C516A6FB1B3AD18E0018F022 /* clock_transparent.png in Resources */ = {isa = PBXBuildFile; fileRef = 73BC68B4BB6FD2C16DCFD83A /* clock_transparent.png */; };
+		C516A6FC1B3AD18E0018F022 /* settings.png in Resources */ = {isa = PBXBuildFile; fileRef = 73BC6F7DCFA8D0EF70DD39E0 /* settings.png */; };
+		C516A6FD1B3AD18E0018F022 /* settings@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 73BC6A22878FD4F414CF5C2A /* settings@2x.png */; };
+		C516A6FE1B3AD18E0018F022 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = C59088CA1B398E330099F8CB /* Localizable.strings */; };
+		C516A7001B3AD18E0018F022 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C58B385F1B395FB7006C7AE7 /* Main.storyboard */; };
+		C516A7011B3AD18E0018F022 /* add.png in Resources */ = {isa = PBXBuildFile; fileRef = C51F13111B32C5B2001F452F /* add.png */; };
+		C516A7021B3AD18E0018F022 /* settings@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 73BC6B415FC214ECAF121C50 /* settings@3x.png */; };
+		C516A7031B3AD18E0018F022 /* statistics@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = C51F130D1B32C592001F452F /* statistics@3x.png */; };
+		C516A7041B3AD18E0018F022 /* statistics@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C51F130C1B32C592001F452F /* statistics@2x.png */; };
+		C516A7051B3AD18E0018F022 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 73BC6FBF1D739E2158DA64F6 /* Images.xcassets */; };
+		C516A7061B3AD18E0018F022 /* DateSectionHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 73BC6ED6CA4E40EF0A86A0D6 /* DateSectionHeader.xib */; };
+		C516A7071B3AD18E0018F022 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = C58B385D1B395FB7006C7AE7 /* LaunchScreen.xib */; };
+		C516A7081B3AD18E0018F022 /* statistics.png in Resources */ = {isa = PBXBuildFile; fileRef = C51F130B1B32C592001F452F /* statistics.png */; };
+		C516A7091B3AD18E0018F022 /* testdata_ru.json in Resources */ = {isa = PBXBuildFile; fileRef = 73BC61C5C5E177824633170B /* testdata_ru.json */; };
+		C516A70A1B3AD18E0018F022 /* testdata_en.json in Resources */ = {isa = PBXBuildFile; fileRef = 73BC61D37DB350A79F19F0DD /* testdata_en.json */; };
+		C516A70E1B3AD18E0018F022 /* Pods_HyperTimeLogger.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73BC64D990F65D9E25A88C68 /* Pods_HyperTimeLogger.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		C516A70F1B3AD18E0018F022 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C56ED4EC1B38217F00221171 /* Crashlytics.framework */; };
+		C516A7101B3AD18E0018F022 /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C56ED4EB1B38217F00221171 /* Fabric.framework */; };
+		C516A71E1B3AD2590018F022 /* NSDate+HTLComponents.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6F6EE1E455D98426F705 /* NSDate+HTLComponents.m */; };
+		C516A71F1B3AD2590018F022 /* HTLReportDto+Helpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6F771B4A63AA8FABCDF5 /* HTLReportDto+Helpers.m */; };
+		C516A7201B3AD2590018F022 /* HTLReportDto.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6A41E76EE6DBA2B7B791 /* HTLReportDto.m */; };
+		C516A7211B3AD2590018F022 /* HTLCategoryDto.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC660F9035AF2D12D68B11 /* HTLCategoryDto.m */; };
+		C516A7221B3AD2590018F022 /* HTLActionDto.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC648635BCE062AF18E634 /* HTLActionDto.m */; };
+		C516A7231B3AD2590018F022 /* HTLCompletionDto.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC612AAFD0BFC06B406EC4 /* HTLCompletionDto.m */; };
+		C516A7241B3AD2590018F022 /* HTLDateSectionDto.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC66709A1F2D03B601899D /* HTLDateSectionDto.m */; };
+		C516A7251B3AD2590018F022 /* HTLReportExtendedDto.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC666118C4F574F66F741D /* HTLReportExtendedDto.m */; };
+		C516A7261B3AD2590018F022 /* HTLSqliteStorageProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC686334D59793FEFA2E86 /* HTLSqliteStorageProvider.m */; };
+		C516A7271B3AD2590018F022 /* HTLContentManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6F1E0AC02A596C78B942 /* HTLContentManager.m */; };
+		C516A7281B3AD2590018F022 /* DTFolderMonitor.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6C4782FCAEADF81D13DD /* DTFolderMonitor.m */; };
+		C516A7291B3AD2590018F022 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC658C5988656B19048ABE /* main.m */; };
+		C516A72A1B3AD2590018F022 /* HTLRoundButton.m in Sources */ = {isa = PBXBuildFile; fileRef = C516A6CB1B3A8F2A0018F022 /* HTLRoundButton.m */; };
+		C516A72B1B3AD2590018F022 /* HTLCircleButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6396FF8919F2C1A22A95 /* HTLCircleButton.m */; };
+		C516A72C1B3AD2590018F022 /* HTLBackgroundView.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC69C3F2154ED17C55C345 /* HTLBackgroundView.m */; };
+		C516A72D1B3AD2590018F022 /* HTLNavigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC675BA63D17605F56B715 /* HTLNavigationBar.m */; };
+		C516A72E1B3AD2590018F022 /* HTLAddButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6CED2DD0EDA6469CEEBA /* HTLAddButton.m */; };
+		C516A72F1B3AD2590018F022 /* HTLWordCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6D5199B0C7EF65D8A836 /* HTLWordCell.m */; };
+		C516A7301B3AD2590018F022 /* HTLCategoryCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6BF188BC4B62EBAED386 /* HTLCategoryCell.m */; };
+		C516A7311B3AD2590018F022 /* HTLReportExtendedCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6096955E043B729051F4 /* HTLReportExtendedCell.m */; };
+		C516A7321B3AD2590018F022 /* HTLCompletionTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6597BF0ADA89652FD15C /* HTLCompletionTableViewCell.m */; };
+		C516A7331B3AD2590018F022 /* HTLCompletionCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6A799292EFF1A3FDE4D4 /* HTLCompletionCollectionViewCell.m */; };
+		C516A7341B3AD2590018F022 /* HTLDateSectionHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC615392383318004C30BA /* HTLDateSectionHeader.m */; };
+		C516A7351B3AD2590018F022 /* HTLCSVStringExportProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6FEC821B2D22ACD250CD /* HTLCSVStringExportProvider.m */; };
+		C516A7361B3AD2590018F022 /* HTLAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC62BD6319224D876880BD /* HTLAppDelegate.m */; };
+		C516A7371B3AD2590018F022 /* HTLSqliteStorageProvider+Deserialization.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6D1F71AFEE603353B859 /* HTLSqliteStorageProvider+Deserialization.m */; };
+		C516A7381B3AD2590018F022 /* HTLSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC69788FA88BEA8DAF03AC /* HTLSettingsViewController.m */; };
+		C516A7391B3AD2590018F022 /* HTLSettingsModelController.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6E516EB62290DD7B243C /* HTLSettingsModelController.m */; };
+		C516A73A1B3AD2590018F022 /* HTLStatisticsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6B86F0BBBAD9C3ECC490 /* HTLStatisticsViewController.m */; };
+		C516A73B1B3AD2590018F022 /* HTLReportListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6E168D88E254C8F6A4CE /* HTLReportListViewController.m */; };
+		C516A73C1B3AD2590018F022 /* HTLReportListModelController.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6F28EAC2335F9576CA6C /* HTLReportListModelController.m */; };
+		C516A73D1B3AD2590018F022 /* HTLEditReportViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6B659C1F2AF2CF606296 /* HTLEditReportViewController.m */; };
+		C516A73E1B3AD2590018F022 /* HTLEditReportModelController.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6F6B107E3546F7EBAE5C /* HTLEditReportModelController.m */; };
+		C516A73F1B3AD2590018F022 /* HTLStatisticsModelController.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC64B38D1BC62AB8562034 /* HTLStatisticsModelController.m */; };
+		C516A7401B3AD2590018F022 /* HTLModelController.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6B2EF7D4AAB16D0EC09A /* HTLModelController.m */; };
+		C516A7411B3AD2590018F022 /* HTLPieChartCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6E4CD1FE08E15C414BAC /* HTLPieChartCell.m */; };
+		C516A7421B3AD2590018F022 /* HTLStatisticsItemCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC68B935DD2C83FA55C77F /* HTLStatisticsItemCell.m */; };
+		C516A7431B3AD2590018F022 /* HTLStatisticsItemDto.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC68639DDCA8BD7C16A37A /* HTLStatisticsItemDto.m */; };
+		C516A7441B3AD2590018F022 /* HTLSettingsModelController+TestData.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC61A9C99CE0428963C88B /* HTLSettingsModelController+TestData.m */; };
+		C516A7461B3AD2590018F022 /* clock_transparent.png in Resources */ = {isa = PBXBuildFile; fileRef = 73BC68B4BB6FD2C16DCFD83A /* clock_transparent.png */; };
+		C516A7471B3AD2590018F022 /* settings.png in Resources */ = {isa = PBXBuildFile; fileRef = 73BC6F7DCFA8D0EF70DD39E0 /* settings.png */; };
+		C516A7481B3AD2590018F022 /* settings@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 73BC6A22878FD4F414CF5C2A /* settings@2x.png */; };
+		C516A7491B3AD2590018F022 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = C59088CA1B398E330099F8CB /* Localizable.strings */; };
+		C516A74B1B3AD2590018F022 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C58B385F1B395FB7006C7AE7 /* Main.storyboard */; };
+		C516A74C1B3AD2590018F022 /* add.png in Resources */ = {isa = PBXBuildFile; fileRef = C51F13111B32C5B2001F452F /* add.png */; };
+		C516A74D1B3AD2590018F022 /* settings@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 73BC6B415FC214ECAF121C50 /* settings@3x.png */; };
+		C516A74E1B3AD2590018F022 /* statistics@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = C51F130D1B32C592001F452F /* statistics@3x.png */; };
+		C516A74F1B3AD2590018F022 /* statistics@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C51F130C1B32C592001F452F /* statistics@2x.png */; };
+		C516A7501B3AD2590018F022 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 73BC6FBF1D739E2158DA64F6 /* Images.xcassets */; };
+		C516A7511B3AD2590018F022 /* DateSectionHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 73BC6ED6CA4E40EF0A86A0D6 /* DateSectionHeader.xib */; };
+		C516A7521B3AD2590018F022 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = C58B385D1B395FB7006C7AE7 /* LaunchScreen.xib */; };
+		C516A7531B3AD2590018F022 /* statistics.png in Resources */ = {isa = PBXBuildFile; fileRef = C51F130B1B32C592001F452F /* statistics.png */; };
+		C516A7541B3AD2590018F022 /* testdata_ru.json in Resources */ = {isa = PBXBuildFile; fileRef = 73BC61C5C5E177824633170B /* testdata_ru.json */; };
+		C516A7551B3AD2590018F022 /* testdata_en.json in Resources */ = {isa = PBXBuildFile; fileRef = 73BC61D37DB350A79F19F0DD /* testdata_en.json */; };
+		C516A7591B3AD2590018F022 /* Pods_HyperTimeLogger.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73BC64D990F65D9E25A88C68 /* Pods_HyperTimeLogger.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		C516A75A1B3AD2590018F022 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C56ED4EC1B38217F00221171 /* Crashlytics.framework */; };
+		C516A75B1B3AD2590018F022 /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C56ED4EB1B38217F00221171 /* Fabric.framework */; };
 		C51F130E1B32C592001F452F /* statistics.png in Resources */ = {isa = PBXBuildFile; fileRef = C51F130B1B32C592001F452F /* statistics.png */; };
 		C51F130F1B32C592001F452F /* statistics@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C51F130C1B32C592001F452F /* statistics@2x.png */; };
 		C51F13101B32C592001F452F /* statistics@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = C51F130D1B32C592001F452F /* statistics@3x.png */; };
@@ -92,9 +209,9 @@
 		C56ED4EE1B38217F00221171 /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C56ED4EB1B38217F00221171 /* Fabric.framework */; };
 		C56ED4F11B38217F00221171 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C56ED4EC1B38217F00221171 /* Crashlytics.framework */; };
 		C56ED4F21B38217F00221171 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C56ED4EC1B38217F00221171 /* Crashlytics.framework */; };
+		C57A37C21B3AE0E20017B6EC /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C59088BC1B398BD10099F8CB /* InfoPlist.strings */; };
 		C58B38611B395FB7006C7AE7 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = C58B385D1B395FB7006C7AE7 /* LaunchScreen.xib */; };
 		C58B38621B395FB7006C7AE7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C58B385F1B395FB7006C7AE7 /* Main.storyboard */; };
-		C59088BA1B398BD10099F8CB /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C59088BC1B398BD10099F8CB /* InfoPlist.strings */; };
 		C59088C11B398C220099F8CB /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C59088C31B398C220099F8CB /* InfoPlist.strings */; };
 		C59088C81B398E330099F8CB /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = C59088CA1B398E330099F8CB /* Localizable.strings */; };
 		C59088CD1B398FE20099F8CB /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = C59088CA1B398E330099F8CB /* Localizable.strings */; };
@@ -158,6 +275,7 @@
 		73BC63407702DDDB04CF58F7 /* HTLDateSectionDto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTLDateSectionDto.h; sourceTree = "<group>"; };
 		73BC6396FF8919F2C1A22A95 /* HTLCircleButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTLCircleButton.m; sourceTree = "<group>"; };
 		73BC63DA891A05E05D6EB4CC /* HTLCompletionCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTLCompletionCollectionViewCell.h; sourceTree = "<group>"; };
+		73BC6419C401C3CF700A833C /* InfoBeta.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = InfoBeta.plist; sourceTree = SOURCE_ROOT; };
 		73BC642D0A6375B6BC652163 /* HTLStorageProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTLStorageProvider.h; sourceTree = "<group>"; };
 		73BC648635BCE062AF18E634 /* HTLActionDto.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTLActionDto.m; sourceTree = "<group>"; };
 		73BC64B38D1BC62AB8562034 /* HTLStatisticsModelController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTLStatisticsModelController.m; sourceTree = "<group>"; };
@@ -168,6 +286,7 @@
 		73BC657527EC1255C199221C /* HTLReportListModelController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTLReportListModelController.h; sourceTree = "<group>"; };
 		73BC658C5988656B19048ABE /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		73BC6597BF0ADA89652FD15C /* HTLCompletionTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTLCompletionTableViewCell.m; sourceTree = "<group>"; };
+		73BC65B40591E07190DA29C5 /* InfoAlpha.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = InfoAlpha.plist; sourceTree = SOURCE_ROOT; };
 		73BC65FC45499E71FA1DDD91 /* DTFolderMonitor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DTFolderMonitor.h; sourceTree = "<group>"; };
 		73BC660F9035AF2D12D68B11 /* HTLCategoryDto.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTLCategoryDto.m; sourceTree = "<group>"; };
 		73BC666118C4F574F66F741D /* HTLReportExtendedDto.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTLReportExtendedDto.m; sourceTree = "<group>"; };
@@ -191,7 +310,6 @@
 		73BC693996F5418B34AAA1E5 /* HTLSettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTLSettingsViewController.h; sourceTree = "<group>"; };
 		73BC69788FA88BEA8DAF03AC /* HTLSettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTLSettingsViewController.m; sourceTree = "<group>"; };
 		73BC699EDAD3D271F8F3A424 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.info; path = Info.plist; sourceTree = "<group>"; };
-		73BC69BF6547501D592BC360 /* HyperTimeLogger.entitlements */ = {isa = PBXFileReference; lastKnownFileType = file.entitlements; path = HyperTimeLogger.entitlements; sourceTree = "<group>"; };
 		73BC69C3F2154ED17C55C345 /* HTLBackgroundView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTLBackgroundView.m; sourceTree = "<group>"; };
 		73BC6A08B8F5E4EB350AA2FD /* HTLEditReportViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTLEditReportViewController.h; sourceTree = "<group>"; };
 		73BC6A22878FD4F414CF5C2A /* settings@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "settings@2x.png"; sourceTree = "<group>"; };
@@ -207,6 +325,7 @@
 		73BC6B86F0BBBAD9C3ECC490 /* HTLStatisticsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTLStatisticsViewController.m; sourceTree = "<group>"; };
 		73BC6B8E25A8D300C95D3491 /* HTETodayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTETodayViewController.m; sourceTree = "<group>"; };
 		73BC6BF188BC4B62EBAED386 /* HTLCategoryCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTLCategoryCell.m; sourceTree = "<group>"; };
+		73BC6C1DFB2CE3B3D2D59CDF /* HyperTimeLogger.entitlements */ = {isa = PBXFileReference; lastKnownFileType = file.entitlements; path = HyperTimeLogger.entitlements; sourceTree = SOURCE_ROOT; };
 		73BC6C4782FCAEADF81D13DD /* DTFolderMonitor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DTFolderMonitor.m; sourceTree = "<group>"; };
 		73BC6C705D0378287850972F /* HTETodayModelController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTETodayModelController.m; sourceTree = "<group>"; };
 		73BC6CB3E44ADE3599C48F2D /* HTLStatisticsItemCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTLStatisticsItemCell.h; sourceTree = "<group>"; };
@@ -232,10 +351,20 @@
 		73BC6F7DCFA8D0EF70DD39E0 /* settings.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = settings.png; sourceTree = "<group>"; };
 		73BC6FB0EFED7B84F71E676E /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = ../../../../../Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator.sdk/System/Library/Frameworks/NotificationCenter.framework; sourceTree = "<group>"; };
 		73BC6FBF1D739E2158DA64F6 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		73BC6FC1BF69805EB3F823DF /* HyperTimeLogger Beta.entitlements */ = {isa = PBXFileReference; lastKnownFileType = file.entitlements; path = "HyperTimeLogger Beta.entitlements"; sourceTree = SOURCE_ROOT; };
 		73BC6FEC821B2D22ACD250CD /* HTLCSVStringExportProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTLCSVStringExportProvider.m; sourceTree = "<group>"; };
 		C080C216BEBCCD26E4BC3451 /* Pods-HyperTimeLogger.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HyperTimeLogger.release.xcconfig"; path = "../Pods/Target Support Files/Pods-HyperTimeLogger/Pods-HyperTimeLogger.release.xcconfig"; sourceTree = "<group>"; };
+		C51402D21B3ADB9600C6A448 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/InfoAlphaPlist.strings; sourceTree = "<group>"; };
+		C51402D41B3ADB9600C6A448 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/InfoBetaPlist.strings; sourceTree = "<group>"; };
+		C51402D81B3ADBA800C6A448 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoAlphaPlist.strings; sourceTree = "<group>"; };
+		C51402D91B3ADBA900C6A448 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/InfoAlphaPlist.strings; sourceTree = "<group>"; };
+		C51402DA1B3ADBAF00C6A448 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoBetaPlist.strings; sourceTree = "<group>"; };
+		C51402DB1B3ADBB000C6A448 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/InfoBetaPlist.strings; sourceTree = "<group>"; };
+		C51402DD1B3ADEC400C6A448 /* HyperTimeLogger Alpha.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "HyperTimeLogger Alpha.entitlements"; sourceTree = "<group>"; };
 		C516A6CA1B3A8F2A0018F022 /* HTLRoundButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTLRoundButton.h; sourceTree = "<group>"; };
 		C516A6CB1B3A8F2A0018F022 /* HTLRoundButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTLRoundButton.m; sourceTree = "<group>"; };
+		C516A7171B3AD18E0018F022 /* HyperTimeLogger Beta.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "HyperTimeLogger Beta.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C516A7621B3AD2590018F022 /* HyperTimeLogger Alpha.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "HyperTimeLogger Alpha.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C51F130B1B32C592001F452F /* statistics.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = statistics.png; sourceTree = "<group>"; };
 		C51F130C1B32C592001F452F /* statistics@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "statistics@2x.png"; sourceTree = "<group>"; };
 		C51F130D1B32C592001F452F /* statistics@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "statistics@3x.png"; sourceTree = "<group>"; };
@@ -277,6 +406,26 @@
 				73BC6F0D931166EADD7E2E4F /* Pods_HyperTimeLogger.framework in Frameworks */,
 				C56ED4F11B38217F00221171 /* Crashlytics.framework in Frameworks */,
 				C56ED4ED1B38217F00221171 /* Fabric.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C516A70D1B3AD18E0018F022 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C516A70E1B3AD18E0018F022 /* Pods_HyperTimeLogger.framework in Frameworks */,
+				C516A70F1B3AD18E0018F022 /* Crashlytics.framework in Frameworks */,
+				C516A7101B3AD18E0018F022 /* Fabric.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C516A7581B3AD2590018F022 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C516A7591B3AD2590018F022 /* Pods_HyperTimeLogger.framework in Frameworks */,
+				C516A75A1B3AD2590018F022 /* Crashlytics.framework in Frameworks */,
+				C516A75B1B3AD2590018F022 /* Fabric.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -424,9 +573,16 @@
 		73BC67EF96ADA167B4859159 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				C51402DD1B3ADEC400C6A448 /* HyperTimeLogger Alpha.entitlements */,
+				73BC6FC1BF69805EB3F823DF /* HyperTimeLogger Beta.entitlements */,
+				73BC6C1DFB2CE3B3D2D59CDF /* HyperTimeLogger.entitlements */,
+				73BC65B40591E07190DA29C5 /* InfoAlpha.plist */,
+				73BC6419C401C3CF700A833C /* InfoBeta.plist */,
 				73BC699EDAD3D271F8F3A424 /* Info.plist */,
-				73BC658C5988656B19048ABE /* main.m */,
+				C51402D11B3ADB9600C6A448 /* InfoAlphaPlist.strings */,
+				C51402D31B3ADB9600C6A448 /* InfoBetaPlist.strings */,
 				C59088BC1B398BD10099F8CB /* InfoPlist.strings */,
+				73BC658C5988656B19048ABE /* main.m */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -613,7 +769,6 @@
 			isa = PBXGroup;
 			children = (
 				73BC680E65C87515CE45F909 /* Res */,
-				73BC69BF6547501D592BC360 /* HyperTimeLogger.entitlements */,
 				73BC67EF96ADA167B4859159 /* Supporting Files */,
 				73BC61D53D7649DDE8385BD3 /* PrefixHeader.pch */,
 				73BC617060FD99991CF17331 /* Src */,
@@ -712,6 +867,8 @@
 				C5FFE3D21B1857CE007D317D /* HyperTimeLogger.app */,
 				C5FFE3EB1B1857CE007D317D /* HyperTimeLoggerTests.xctest */,
 				C5BA1B731B26F890006D80BC /* TodayExtension.appex */,
+				C516A7171B3AD18E0018F022 /* HyperTimeLogger Beta.app */,
+				C516A7621B3AD2590018F022 /* HyperTimeLogger Alpha.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -736,6 +893,48 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		C516A6CE1B3AD18E0018F022 /* HyperTimeLogger Beta */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C516A7141B3AD18E0018F022 /* Build configuration list for PBXNativeTarget "HyperTimeLogger Beta" */;
+			buildPhases = (
+				C516A6D11B3AD18E0018F022 /* Check Pods Manifest.lock */,
+				C516A6D21B3AD18E0018F022 /* Sources */,
+				C516A6FA1B3AD18E0018F022 /* Resources */,
+				C516A70D1B3AD18E0018F022 /* Frameworks */,
+				C516A7111B3AD18E0018F022 /* Embed Pods Frameworks */,
+				C516A7121B3AD18E0018F022 /* Copy Pods Resources */,
+				C516A7131B3AD18E0018F022 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "HyperTimeLogger Beta";
+			productName = HyperTimeLogger;
+			productReference = C516A7171B3AD18E0018F022 /* HyperTimeLogger Beta.app */;
+			productType = "com.apple.product-type.application";
+		};
+		C516A7191B3AD2590018F022 /* HyperTimeLogger Alpha */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C516A75F1B3AD2590018F022 /* Build configuration list for PBXNativeTarget "HyperTimeLogger Alpha" */;
+			buildPhases = (
+				C516A71C1B3AD2590018F022 /* Check Pods Manifest.lock */,
+				C516A71D1B3AD2590018F022 /* Sources */,
+				C516A7451B3AD2590018F022 /* Resources */,
+				C516A7581B3AD2590018F022 /* Frameworks */,
+				C516A75C1B3AD2590018F022 /* Embed Pods Frameworks */,
+				C516A75D1B3AD2590018F022 /* Copy Pods Resources */,
+				C516A75E1B3AD2590018F022 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "HyperTimeLogger Alpha";
+			productName = HyperTimeLogger;
+			productReference = C516A7621B3AD2590018F022 /* HyperTimeLogger Alpha.app */;
+			productType = "com.apple.product-type.application";
+		};
 		C5BA1B721B26F890006D80BC /* TodayExtension */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = C5BA1B831B26F890006D80BC /* Build configuration list for PBXNativeTarget "TodayExtension" */;
@@ -806,6 +1005,22 @@
 				LastUpgradeCheck = 0630;
 				ORGANIZATIONNAME = "Maxim Pervushin";
 				TargetAttributes = {
+					C516A6CE1B3AD18E0018F022 = {
+						DevelopmentTeam = FRM2L78456;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
+					};
+					C516A7191B3AD2590018F022 = {
+						DevelopmentTeam = FRM2L78456;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
+					};
 					C5BA1B721B26F890006D80BC = {
 						CreatedOnToolsVersion = 6.3.2;
 						DevelopmentTeam = FRM2L78456;
@@ -844,6 +1059,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
+				C516A7191B3AD2590018F022 /* HyperTimeLogger Alpha */,
+				C516A6CE1B3AD18E0018F022 /* HyperTimeLogger Beta */,
 				C5FFE3D11B1857CD007D317D /* HyperTimeLogger */,
 				C5FFE3EA1B1857CE007D317D /* HyperTimeLoggerTests */,
 				C5BA1B721B26F890006D80BC /* TodayExtension */,
@@ -852,6 +1069,53 @@
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		C516A6FA1B3AD18E0018F022 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C516A6FB1B3AD18E0018F022 /* clock_transparent.png in Resources */,
+				C516A6FC1B3AD18E0018F022 /* settings.png in Resources */,
+				C516A6FD1B3AD18E0018F022 /* settings@2x.png in Resources */,
+				C516A6FE1B3AD18E0018F022 /* Localizable.strings in Resources */,
+				C516A7001B3AD18E0018F022 /* Main.storyboard in Resources */,
+				C516A7011B3AD18E0018F022 /* add.png in Resources */,
+				C516A7021B3AD18E0018F022 /* settings@3x.png in Resources */,
+				C516A7031B3AD18E0018F022 /* statistics@3x.png in Resources */,
+				C516A7041B3AD18E0018F022 /* statistics@2x.png in Resources */,
+				C516A7051B3AD18E0018F022 /* Images.xcassets in Resources */,
+				C51402D71B3ADB9F00C6A448 /* InfoBetaPlist.strings in Resources */,
+				C516A7061B3AD18E0018F022 /* DateSectionHeader.xib in Resources */,
+				C516A7071B3AD18E0018F022 /* LaunchScreen.xib in Resources */,
+				C516A7081B3AD18E0018F022 /* statistics.png in Resources */,
+				C516A7091B3AD18E0018F022 /* testdata_ru.json in Resources */,
+				C516A70A1B3AD18E0018F022 /* testdata_en.json in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C516A7451B3AD2590018F022 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C516A7461B3AD2590018F022 /* clock_transparent.png in Resources */,
+				C516A7471B3AD2590018F022 /* settings.png in Resources */,
+				C516A7481B3AD2590018F022 /* settings@2x.png in Resources */,
+				C516A7491B3AD2590018F022 /* Localizable.strings in Resources */,
+				C51402DE1B3ADEC400C6A448 /* HyperTimeLogger Alpha.entitlements in Resources */,
+				C516A74B1B3AD2590018F022 /* Main.storyboard in Resources */,
+				C516A74C1B3AD2590018F022 /* add.png in Resources */,
+				C516A74D1B3AD2590018F022 /* settings@3x.png in Resources */,
+				C516A74E1B3AD2590018F022 /* statistics@3x.png in Resources */,
+				C516A74F1B3AD2590018F022 /* statistics@2x.png in Resources */,
+				C516A7501B3AD2590018F022 /* Images.xcassets in Resources */,
+				C516A7511B3AD2590018F022 /* DateSectionHeader.xib in Resources */,
+				C516A7521B3AD2590018F022 /* LaunchScreen.xib in Resources */,
+				C516A7531B3AD2590018F022 /* statistics.png in Resources */,
+				C516A7541B3AD2590018F022 /* testdata_ru.json in Resources */,
+				C51402D51B3ADB9600C6A448 /* InfoAlphaPlist.strings in Resources */,
+				C516A7551B3AD2590018F022 /* testdata_en.json in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		C5BA1B711B26F890006D80BC /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -867,10 +1131,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				73BC697836C7BC71A9FAEE26 /* clock_transparent.png in Resources */,
+				C57A37C21B3AE0E20017B6EC /* InfoPlist.strings in Resources */,
 				73BC617D5432B3204E578CF4 /* settings.png in Resources */,
 				73BC6CC003E2DB538E6F16DE /* settings@2x.png in Resources */,
 				C59088C81B398E330099F8CB /* Localizable.strings in Resources */,
-				C59088BA1B398BD10099F8CB /* InfoPlist.strings in Resources */,
 				C58B38621B395FB7006C7AE7 /* Main.storyboard in Resources */,
 				C51F13121B32C5B2001F452F /* add.png in Resources */,
 				73BC6D42F5DEFED44D50CF72 /* settings@3x.png in Resources */,
@@ -955,6 +1219,122 @@
 			shellScript = "\"${SRCROOT}/../Pods/Target Support Files/Pods-TodayExtension/Pods-TodayExtension-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		C516A6D11B3AD18E0018F022 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		C516A7111B3AD18E0018F022 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/../Pods/Target Support Files/Pods-HyperTimeLogger/Pods-HyperTimeLogger-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C516A7121B3AD18E0018F022 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/../Pods/Target Support Files/Pods-HyperTimeLogger/Pods-HyperTimeLogger-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C516A7131B3AD18E0018F022 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "./Dependencies/Vendor/Fabric.framework/run e83e0095e24774f93f86cd8f53b5743615ff236b ee344f57d2c4470643f18815f88b8e8f5665090f6cbe9dae15562ba9bd36fb4a";
+		};
+		C516A71C1B3AD2590018F022 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		C516A75C1B3AD2590018F022 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/../Pods/Target Support Files/Pods-HyperTimeLogger/Pods-HyperTimeLogger-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C516A75D1B3AD2590018F022 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/../Pods/Target Support Files/Pods-HyperTimeLogger/Pods-HyperTimeLogger-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C516A75E1B3AD2590018F022 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "./Dependencies/Vendor/Fabric.framework/run e83e0095e24774f93f86cd8f53b5743615ff236b ee344f57d2c4470643f18815f88b8e8f5665090f6cbe9dae15562ba9bd36fb4a";
+		};
 		C56ED4EA1B38214400221171 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -986,6 +1366,98 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		C516A6D21B3AD18E0018F022 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C516A6D31B3AD18E0018F022 /* NSDate+HTLComponents.m in Sources */,
+				C516A6D41B3AD18E0018F022 /* HTLReportDto+Helpers.m in Sources */,
+				C516A6D51B3AD18E0018F022 /* HTLReportDto.m in Sources */,
+				C516A6D61B3AD18E0018F022 /* HTLCategoryDto.m in Sources */,
+				C516A6D71B3AD18E0018F022 /* HTLActionDto.m in Sources */,
+				C516A6D81B3AD18E0018F022 /* HTLCompletionDto.m in Sources */,
+				C516A6D91B3AD18E0018F022 /* HTLDateSectionDto.m in Sources */,
+				C516A6DA1B3AD18E0018F022 /* HTLReportExtendedDto.m in Sources */,
+				C516A6DB1B3AD18E0018F022 /* HTLSqliteStorageProvider.m in Sources */,
+				C516A6DC1B3AD18E0018F022 /* HTLContentManager.m in Sources */,
+				C516A6DD1B3AD18E0018F022 /* DTFolderMonitor.m in Sources */,
+				C516A6DE1B3AD18E0018F022 /* main.m in Sources */,
+				C516A6DF1B3AD18E0018F022 /* HTLRoundButton.m in Sources */,
+				C516A6E01B3AD18E0018F022 /* HTLCircleButton.m in Sources */,
+				C516A6E11B3AD18E0018F022 /* HTLBackgroundView.m in Sources */,
+				C516A6E21B3AD18E0018F022 /* HTLNavigationBar.m in Sources */,
+				C516A6E31B3AD18E0018F022 /* HTLAddButton.m in Sources */,
+				C516A6E41B3AD18E0018F022 /* HTLWordCell.m in Sources */,
+				C516A6E51B3AD18E0018F022 /* HTLCategoryCell.m in Sources */,
+				C516A6E61B3AD18E0018F022 /* HTLReportExtendedCell.m in Sources */,
+				C516A6E71B3AD18E0018F022 /* HTLCompletionTableViewCell.m in Sources */,
+				C516A6E81B3AD18E0018F022 /* HTLCompletionCollectionViewCell.m in Sources */,
+				C516A6E91B3AD18E0018F022 /* HTLDateSectionHeader.m in Sources */,
+				C516A6EA1B3AD18E0018F022 /* HTLCSVStringExportProvider.m in Sources */,
+				C516A6EB1B3AD18E0018F022 /* HTLAppDelegate.m in Sources */,
+				C516A6EC1B3AD18E0018F022 /* HTLSqliteStorageProvider+Deserialization.m in Sources */,
+				C516A6ED1B3AD18E0018F022 /* HTLSettingsViewController.m in Sources */,
+				C516A6EE1B3AD18E0018F022 /* HTLSettingsModelController.m in Sources */,
+				C516A6EF1B3AD18E0018F022 /* HTLStatisticsViewController.m in Sources */,
+				C516A6F01B3AD18E0018F022 /* HTLReportListViewController.m in Sources */,
+				C516A6F11B3AD18E0018F022 /* HTLReportListModelController.m in Sources */,
+				C516A6F21B3AD18E0018F022 /* HTLEditReportViewController.m in Sources */,
+				C516A6F31B3AD18E0018F022 /* HTLEditReportModelController.m in Sources */,
+				C516A6F41B3AD18E0018F022 /* HTLStatisticsModelController.m in Sources */,
+				C516A6F51B3AD18E0018F022 /* HTLModelController.m in Sources */,
+				C516A6F61B3AD18E0018F022 /* HTLPieChartCell.m in Sources */,
+				C516A6F71B3AD18E0018F022 /* HTLStatisticsItemCell.m in Sources */,
+				C516A6F81B3AD18E0018F022 /* HTLStatisticsItemDto.m in Sources */,
+				C516A6F91B3AD18E0018F022 /* HTLSettingsModelController+TestData.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C516A71D1B3AD2590018F022 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C516A71E1B3AD2590018F022 /* NSDate+HTLComponents.m in Sources */,
+				C516A71F1B3AD2590018F022 /* HTLReportDto+Helpers.m in Sources */,
+				C516A7201B3AD2590018F022 /* HTLReportDto.m in Sources */,
+				C516A7211B3AD2590018F022 /* HTLCategoryDto.m in Sources */,
+				C516A7221B3AD2590018F022 /* HTLActionDto.m in Sources */,
+				C516A7231B3AD2590018F022 /* HTLCompletionDto.m in Sources */,
+				C516A7241B3AD2590018F022 /* HTLDateSectionDto.m in Sources */,
+				C516A7251B3AD2590018F022 /* HTLReportExtendedDto.m in Sources */,
+				C516A7261B3AD2590018F022 /* HTLSqliteStorageProvider.m in Sources */,
+				C516A7271B3AD2590018F022 /* HTLContentManager.m in Sources */,
+				C516A7281B3AD2590018F022 /* DTFolderMonitor.m in Sources */,
+				C516A7291B3AD2590018F022 /* main.m in Sources */,
+				C516A72A1B3AD2590018F022 /* HTLRoundButton.m in Sources */,
+				C516A72B1B3AD2590018F022 /* HTLCircleButton.m in Sources */,
+				C516A72C1B3AD2590018F022 /* HTLBackgroundView.m in Sources */,
+				C516A72D1B3AD2590018F022 /* HTLNavigationBar.m in Sources */,
+				C516A72E1B3AD2590018F022 /* HTLAddButton.m in Sources */,
+				C516A72F1B3AD2590018F022 /* HTLWordCell.m in Sources */,
+				C516A7301B3AD2590018F022 /* HTLCategoryCell.m in Sources */,
+				C516A7311B3AD2590018F022 /* HTLReportExtendedCell.m in Sources */,
+				C516A7321B3AD2590018F022 /* HTLCompletionTableViewCell.m in Sources */,
+				C516A7331B3AD2590018F022 /* HTLCompletionCollectionViewCell.m in Sources */,
+				C516A7341B3AD2590018F022 /* HTLDateSectionHeader.m in Sources */,
+				C516A7351B3AD2590018F022 /* HTLCSVStringExportProvider.m in Sources */,
+				C516A7361B3AD2590018F022 /* HTLAppDelegate.m in Sources */,
+				C516A7371B3AD2590018F022 /* HTLSqliteStorageProvider+Deserialization.m in Sources */,
+				C516A7381B3AD2590018F022 /* HTLSettingsViewController.m in Sources */,
+				C516A7391B3AD2590018F022 /* HTLSettingsModelController.m in Sources */,
+				C516A73A1B3AD2590018F022 /* HTLStatisticsViewController.m in Sources */,
+				C516A73B1B3AD2590018F022 /* HTLReportListViewController.m in Sources */,
+				C516A73C1B3AD2590018F022 /* HTLReportListModelController.m in Sources */,
+				C516A73D1B3AD2590018F022 /* HTLEditReportViewController.m in Sources */,
+				C516A73E1B3AD2590018F022 /* HTLEditReportModelController.m in Sources */,
+				C516A73F1B3AD2590018F022 /* HTLStatisticsModelController.m in Sources */,
+				C516A7401B3AD2590018F022 /* HTLModelController.m in Sources */,
+				C516A7411B3AD2590018F022 /* HTLPieChartCell.m in Sources */,
+				C516A7421B3AD2590018F022 /* HTLStatisticsItemCell.m in Sources */,
+				C516A7431B3AD2590018F022 /* HTLStatisticsItemDto.m in Sources */,
+				C516A7441B3AD2590018F022 /* HTLSettingsModelController+TestData.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		C5BA1B6F1B26F890006D80BC /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -1089,6 +1561,26 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		C51402D11B3ADB9600C6A448 /* InfoAlphaPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C51402D21B3ADB9600C6A448 /* Base */,
+				C51402D81B3ADBA800C6A448 /* en */,
+				C51402D91B3ADBA900C6A448 /* ru */,
+			);
+			name = InfoAlphaPlist.strings;
+			sourceTree = "<group>";
+		};
+		C51402D31B3ADB9600C6A448 /* InfoBetaPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C51402D41B3ADB9600C6A448 /* Base */,
+				C51402DA1B3ADBAF00C6A448 /* en */,
+				C51402DB1B3ADBB000C6A448 /* ru */,
+			);
+			name = InfoBetaPlist.strings;
+			sourceTree = "<group>";
+		};
 		C533706F1B397E520095549E /* MainInterface.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -1153,6 +1645,94 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		C516A7151B3AD18E0018F022 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5F5BA0F90CC2D946CDD3327B /* Pods-HyperTimeLogger.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "HyperTimeLogger Beta.entitlements";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Dependencies/Vendor",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = HyperTimeLogger/PrefixHeader.pch;
+				INFOPLIST_FILE = InfoBeta.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "HyperTimeLogger Beta";
+				PROVISIONING_PROFILE = "";
+				USER_HEADER_SEARCH_PATHS = "\"${PROJECT_DIR}/../Pods\"/**";
+			};
+			name = Debug;
+		};
+		C516A7161B3AD18E0018F022 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C080C216BEBCCD26E4BC3451 /* Pods-HyperTimeLogger.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "HyperTimeLogger Beta.entitlements";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Dependencies/Vendor",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = HyperTimeLogger/PrefixHeader.pch;
+				INFOPLIST_FILE = InfoBeta.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "HyperTimeLogger Beta";
+				PROVISIONING_PROFILE = "";
+				USER_HEADER_SEARCH_PATHS = "\"${PROJECT_DIR}/../Pods\"/**";
+			};
+			name = Release;
+		};
+		C516A7601B3AD2590018F022 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5F5BA0F90CC2D946CDD3327B /* Pods-HyperTimeLogger.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "HyperTimeLogger Alpha.entitlements";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Dependencies/Vendor",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = HyperTimeLogger/PrefixHeader.pch;
+				INFOPLIST_FILE = InfoAlpha.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "HyperTimeLogger Alpha";
+				PROVISIONING_PROFILE = "";
+				USER_HEADER_SEARCH_PATHS = "\"${PROJECT_DIR}/../Pods\"/**";
+			};
+			name = Debug;
+		};
+		C516A7611B3AD2590018F022 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C080C216BEBCCD26E4BC3451 /* Pods-HyperTimeLogger.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "HyperTimeLogger Alpha.entitlements";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Dependencies/Vendor",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = HyperTimeLogger/PrefixHeader.pch;
+				INFOPLIST_FILE = InfoAlpha.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "HyperTimeLogger Alpha";
+				PROVISIONING_PROFILE = "";
+				USER_HEADER_SEARCH_PATHS = "\"${PROJECT_DIR}/../Pods\"/**";
+			};
+			name = Release;
+		};
 		C5BA1B811B26F890006D80BC /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 617AE9E650925A0499F5E44C /* Pods-TodayExtension.debug.xcconfig */;
@@ -1288,7 +1868,7 @@
 			baseConfigurationReference = 5F5BA0F90CC2D946CDD3327B /* Pods-HyperTimeLogger.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = HyperTimeLogger/HyperTimeLogger.entitlements;
+				CODE_SIGN_ENTITLEMENTS = HyperTimeLogger.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -1310,7 +1890,7 @@
 			baseConfigurationReference = C080C216BEBCCD26E4BC3451 /* Pods-HyperTimeLogger.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = HyperTimeLogger/HyperTimeLogger.entitlements;
+				CODE_SIGN_ENTITLEMENTS = HyperTimeLogger.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -1366,6 +1946,24 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		C516A7141B3AD18E0018F022 /* Build configuration list for PBXNativeTarget "HyperTimeLogger Beta" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C516A7151B3AD18E0018F022 /* Debug */,
+				C516A7161B3AD18E0018F022 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C516A75F1B3AD2590018F022 /* Build configuration list for PBXNativeTarget "HyperTimeLogger Alpha" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C516A7601B3AD2590018F022 /* Debug */,
+				C516A7611B3AD2590018F022 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		C5BA1B831B26F890006D80BC /* Build configuration list for PBXNativeTarget "TodayExtension" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
