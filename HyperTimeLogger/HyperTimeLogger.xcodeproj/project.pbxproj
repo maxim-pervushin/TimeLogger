@@ -24,6 +24,7 @@
 		73BC63F953A4F0A419C9FAB6 /* HTLBackgroundView.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC69C3F2154ED17C55C345 /* HTLBackgroundView.m */; };
 		73BC6436C539FA93E8CB0BFF /* HTLCompletionDto.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC612AAFD0BFC06B406EC4 /* HTLCompletionDto.m */; };
 		73BC645506B4E067A0A25D6D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC658C5988656B19048ABE /* main.m */; };
+		73BC6499B32094530D911FAB /* testdata_ru.json in Resources */ = {isa = PBXBuildFile; fileRef = 73BC61C5C5E177824633170B /* testdata_ru.json */; };
 		73BC65608065C1CBF9F089C0 /* HTLStatisticsItemDto.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC68639DDCA8BD7C16A37A /* HTLStatisticsItemDto.m */; };
 		73BC65AB5A04FEEA2462F6AF /* HTLCompletionCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6A799292EFF1A3FDE4D4 /* HTLCompletionCollectionViewCell.m */; };
 		73BC65EBF2E0EFBE18CE5FAA /* HTLReportExtendedDto.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC666118C4F574F66F741D /* HTLReportExtendedDto.m */; };
@@ -78,6 +79,7 @@
 		73BC6F0D931166EADD7E2E4F /* Pods_HyperTimeLogger.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73BC64D990F65D9E25A88C68 /* Pods_HyperTimeLogger.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		73BC6FAB452C5DBF4EC4D193 /* HTLEditReportModelController.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6F6B107E3546F7EBAE5C /* HTLEditReportModelController.m */; };
 		73BC6FB04C767843085BD236 /* HTLWordCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6D5199B0C7EF65D8A836 /* HTLWordCell.m */; };
+		73BC6FD7408B118ECB13B295 /* testdata_en.json in Resources */ = {isa = PBXBuildFile; fileRef = 73BC61D37DB350A79F19F0DD /* testdata_en.json */; };
 		C516A6CC1B3A8F2A0018F022 /* HTLRoundButton.m in Sources */ = {isa = PBXBuildFile; fileRef = C516A6CB1B3A8F2A0018F022 /* HTLRoundButton.m */; };
 		C516A6CD1B3A8F2A0018F022 /* HTLRoundButton.m in Sources */ = {isa = PBXBuildFile; fileRef = C516A6CB1B3A8F2A0018F022 /* HTLRoundButton.m */; };
 		C51F130E1B32C592001F452F /* statistics.png in Resources */ = {isa = PBXBuildFile; fileRef = C51F130B1B32C592001F452F /* statistics.png */; };
@@ -147,6 +149,8 @@
 		73BC615392383318004C30BA /* HTLDateSectionHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTLDateSectionHeader.m; sourceTree = "<group>"; };
 		73BC6194DBE33DB85E9AFFDA /* HTLSqliteStorageProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTLSqliteStorageProvider.h; sourceTree = "<group>"; };
 		73BC61A9C99CE0428963C88B /* HTLSettingsModelController+TestData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "HTLSettingsModelController+TestData.m"; sourceTree = "<group>"; };
+		73BC61C5C5E177824633170B /* testdata_ru.json */ = {isa = PBXFileReference; lastKnownFileType = file.json; path = testdata_ru.json; sourceTree = "<group>"; };
+		73BC61D37DB350A79F19F0DD /* testdata_en.json */ = {isa = PBXFileReference; lastKnownFileType = file.json; path = testdata_en.json; sourceTree = "<group>"; };
 		73BC61D53D7649DDE8385BD3 /* PrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		73BC622E9691559B4565139E /* Pods_TodayExtension.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Pods_TodayExtension.framework; path = "../../../Library/Caches/AppCode32/DerivedData/HyperTimeLogger-3b7e8ea7/Build/Products/Debug-iphonesimulator/Pods_TodayExtension.framework"; sourceTree = "<group>"; };
 		73BC623BCFD075E99FAA860D /* HTLWordCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTLWordCell.h; sourceTree = "<group>"; };
@@ -543,6 +547,15 @@
 			path = DTFoundation;
 			sourceTree = "<group>";
 		};
+		73BC6B6BBDDF603A1AA9D02C /* TestData */ = {
+			isa = PBXGroup;
+			children = (
+				73BC61C5C5E177824633170B /* testdata_ru.json */,
+				73BC61D37DB350A79F19F0DD /* testdata_en.json */,
+			);
+			path = TestData;
+			sourceTree = "<group>";
+		};
 		73BC6C3FD8FF91AD26080AB4 /* Settings */ = {
 			isa = PBXGroup;
 			children = (
@@ -605,6 +618,7 @@
 				73BC61D53D7649DDE8385BD3 /* PrefixHeader.pch */,
 				73BC617060FD99991CF17331 /* Src */,
 				73BC64EBE7360C9E78BCE3C7 /* UI */,
+				73BC6B6BBDDF603A1AA9D02C /* TestData */,
 			);
 			path = HyperTimeLogger;
 			sourceTree = "<group>";
@@ -682,13 +696,13 @@
 		C5FFE3C91B1857CD007D317D = {
 			isa = PBXGroup;
 			children = (
-				C5FFE3EE1B1857CE007D317D /* HyperTimeLoggerTests */,
-				C5BA1B761B26F890006D80BC /* TodayExtension */,
-				C5FFE3D31B1857CE007D317D /* Products */,
-				884E6DD6E7CF859E8C96B7F3 /* Pods */,
 				73BC62248BFB3B8402AF0871 /* Common */,
 				73BC638E0B41F356D8A5AFDC /* Dependencies */,
 				73BC6EF11D6CD7307BA62A1F /* HyperTimeLogger */,
+				C5FFE3EE1B1857CE007D317D /* HyperTimeLoggerTests */,
+				884E6DD6E7CF859E8C96B7F3 /* Pods */,
+				C5FFE3D31B1857CE007D317D /* Products */,
+				C5BA1B761B26F890006D80BC /* TodayExtension */,
 			);
 			sourceTree = "<group>";
 		};
@@ -866,6 +880,8 @@
 				73BC6D50D0F7419C4DBD8D09 /* DateSectionHeader.xib in Resources */,
 				C58B38611B395FB7006C7AE7 /* LaunchScreen.xib in Resources */,
 				C51F130E1B32C592001F452F /* statistics.png in Resources */,
+				73BC6499B32094530D911FAB /* testdata_ru.json in Resources */,
+				73BC6FD7408B118ECB13B295 /* testdata_en.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

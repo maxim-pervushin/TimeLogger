@@ -33,52 +33,23 @@
 - (BOOL)generateTestData {
     DDLogDebug(@"Generating test data...");
 
-    NSArray *testDataSets = @[
-            // Yesterday
-            @{@"from" : @(28), @"to" : @(727), @"action" : @"Проснулся", @"category" : @"Sleep"},
-            @{@"from" : @(727), @"to" : @(734), @"action" : @"Умылся", @"category" : @"Personal"},
-            @{@"from" : @(734), @"to" : @(750), @"action" : @"Приготовил завтрак", @"category" : @"Personal"},
-            @{@"from" : @(750), @"to" : @(805), @"action" : @"Позавтракал", @"category" : @"Personal"},
-            @{@"from" : @(805), @"to" : @(817), @"action" : @"Убрался", @"category" : @"Personal"},
-            @{@"from" : @(817), @"to" : @(824), @"action" : @"Почистил зубы", @"category" : @"Personal"},
-            @{@"from" : @(824), @"to" : @(840), @"action" : @"Собрался", @"category" : @"Personal"},
-            @{@"from" : @(840), @"to" : @(857), @"action" : @"Пришел в офис", @"category" : @"Road"},
-            @{@"from" : @(857), @"to" : @(926), @"action" : @"Биды на апворк", @"category" : @"Improvement"},
-            @{@"from" : @(926), @"to" : @(1001), @"action" : @"Интернет", @"category" : @"Time Waste"},
-            @{@"from" : @(1001), @"to" : @(1040), @"action" : @"Time Logger", @"category" : @"Work"},
-            @{@"from" : @(1040), @"to" : @(1113), @"action" : @"Интернет", @"category" : @"Time Waste"},
-            @{@"from" : @(1113), @"to" : @(1125), @"action" : @"Time Logger", @"category" : @"Work"},
-            @{@"from" : @(1125), @"to" : @(1135), @"action" : @"Пришел на обед", @"category" : @"Road"},
-            @{@"from" : @(1135), @"to" : @(1315), @"action" : @"Time Logger", @"category" : @"Work"},
-            @{@"from" : @(1315), @"to" : @(1328), @"action" : @"Интернет", @"category" : @"Time Waste"},
-            @{@"from" : @(1328), @"to" : @(1408), @"action" : @"Time Logger", @"category" : @"Work"},
-            @{@"from" : @(1408), @"to" : @(1415), @"action" : @"Интернет", @"category" : @"Time Waste"},
-            @{@"from" : @(1415), @"to" : @(1514), @"action" : @"Time Logger", @"category" : @"Work"},
-            @{@"from" : @(1514), @"to" : @(1529), @"action" : @"Перекусил", @"category" : @"Personal"},
-            @{@"from" : @(1529), @"to" : @(1550), @"action" : @"Time Logger", @"category" : @"Work"},
-            @{@"from" : @(1550), @"to" : @(1605), @"action" : @"Интернет", @"category" : @"Time Waste"},
-            @{@"from" : @(1605), @"to" : @(1638), @"action" : @"Пришел домой", @"category" : @"Road"},
-            @{@"from" : @(1638), @"to" : @(1638), @"action" : @"Собрался на тренировку", @"category" : @"Personal"},
-            @{@"from" : @(1638), @"to" : @(1650), @"action" : @"Пришел на тренировку", @"category" : @"Road"},
-            @{@"from" : @(1650), @"to" : @(1654), @"action" : @"Переоделся", @"category" : @"Personal"},
-            @{@"from" : @(1654), @"to" : @(1818), @"action" : @"Потренировался", @"category" : @"Improvement"},
-            @{@"from" : @(1818), @"to" : @(1833), @"action" : @"Вымылся", @"category" : @"Personal"},
-            @{@"from" : @(1833), @"to" : @(1855), @"action" : @"Пришел домой", @"category" : @"Road"},
-            @{@"from" : @(1855), @"to" : @(2020), @"action" : @"Интернет", @"category" : @"Time Waste"},
-            @{@"from" : @(2020), @"to" : @(2045), @"action" : @"Интернет", @"category" : @"Time Waste"},
-            @{@"from" : @(2045), @"to" : @(2116), @"action" : @"Приготовил ужин", @"category" : @"Personal"},
-            @{@"from" : @(2116), @"to" : @(2213), @"action" : @"Поужинал", @"category" : @"Personal"},
-            @{@"from" : @(2213), @"to" : @(2359), @"action" : @"Интернет", @"category" : @"Time Waste"},
-    ];
+    NSString *languageCode = [NSLocale componentsFromLocaleIdentifier:[NSLocale currentLocale].localeIdentifier][@"kCFLocaleLanguageCodeKey"];
+    if (![languageCode isEqualToString:@"ru"]) {
+        languageCode = @"en";
+    }
+    NSString *fileName = [NSString stringWithFormat:@"testdata_%@", languageCode];
+    NSData *fileData = [NSData dataWithContentsOfFile:[[NSBundle mainBundle] pathForResource:fileName ofType:@"json"]];
+    NSArray *testData = [NSJSONSerialization JSONObjectWithData:fileData options:0 error:nil];
 
-    int repeats = 400; // ~12 month of data
+//    int repeats = 100; // ~3 month of data
+    int repeats = 33;
 
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0), ^{
 
         for (int i = 1; i <= repeats; i++) {
             DDLogDebug(@"%.1f%%", (double) i / (double) repeats * 100);
 
-            for (NSDictionary *testDataSet in testDataSets) {
+            for (NSDictionary *testDataSet in testData) {
                 HTLActionDto *action = [HTLActionDto actionWithIdentifier:[self newIdentifier] title:testDataSet[@"action"]];
                 HTLCategoryDto *category = [HTLCategoryDto categoryWithIdentifier:[self newIdentifier] title:testDataSet[@"category"] color:[UIColor redColor]];
 
