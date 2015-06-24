@@ -17,7 +17,7 @@
 
 static NSString *const kCompletionCellIdentifier = @"CompletionCell";
 // TODO: Load number of completions from defaults
-static const NSUInteger kNumberOfCompletions = 15;
+static const NSUInteger kNumberOfCompletions = 9;
 static const int kCollectionViewRowHeight = 40;
 static const int kCollectionViewMinItemsPerRow = 3;
 

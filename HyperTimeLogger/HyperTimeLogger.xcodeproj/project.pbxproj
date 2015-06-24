@@ -78,6 +78,8 @@
 		73BC6F0D931166EADD7E2E4F /* Pods_HyperTimeLogger.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73BC64D990F65D9E25A88C68 /* Pods_HyperTimeLogger.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		73BC6FAB452C5DBF4EC4D193 /* HTLEditReportModelController.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6F6B107E3546F7EBAE5C /* HTLEditReportModelController.m */; };
 		73BC6FB04C767843085BD236 /* HTLWordCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6D5199B0C7EF65D8A836 /* HTLWordCell.m */; };
+		C516A6CC1B3A8F2A0018F022 /* HTLRoundButton.m in Sources */ = {isa = PBXBuildFile; fileRef = C516A6CB1B3A8F2A0018F022 /* HTLRoundButton.m */; };
+		C516A6CD1B3A8F2A0018F022 /* HTLRoundButton.m in Sources */ = {isa = PBXBuildFile; fileRef = C516A6CB1B3A8F2A0018F022 /* HTLRoundButton.m */; };
 		C51F130E1B32C592001F452F /* statistics.png in Resources */ = {isa = PBXBuildFile; fileRef = C51F130B1B32C592001F452F /* statistics.png */; };
 		C51F130F1B32C592001F452F /* statistics@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C51F130C1B32C592001F452F /* statistics@2x.png */; };
 		C51F13101B32C592001F452F /* statistics@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = C51F130D1B32C592001F452F /* statistics@3x.png */; };
@@ -228,6 +230,8 @@
 		73BC6FBF1D739E2158DA64F6 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		73BC6FEC821B2D22ACD250CD /* HTLCSVStringExportProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTLCSVStringExportProvider.m; sourceTree = "<group>"; };
 		C080C216BEBCCD26E4BC3451 /* Pods-HyperTimeLogger.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HyperTimeLogger.release.xcconfig"; path = "../Pods/Target Support Files/Pods-HyperTimeLogger/Pods-HyperTimeLogger.release.xcconfig"; sourceTree = "<group>"; };
+		C516A6CA1B3A8F2A0018F022 /* HTLRoundButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTLRoundButton.h; sourceTree = "<group>"; };
+		C516A6CB1B3A8F2A0018F022 /* HTLRoundButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTLRoundButton.m; sourceTree = "<group>"; };
 		C51F130B1B32C592001F452F /* statistics.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = statistics.png; sourceTree = "<group>"; };
 		C51F130C1B32C592001F452F /* statistics@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "statistics@2x.png"; sourceTree = "<group>"; };
 		C51F130D1B32C592001F452F /* statistics@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "statistics@3x.png"; sourceTree = "<group>"; };
@@ -557,10 +561,11 @@
 			children = (
 				73BC6F8D22E41320DBD6C564 /* Categories */,
 				73BC69BC6C4A79DEB417EAC5 /* Data Transfer Objects */,
-				73BC69E6339BCA93C05D70DB /* Storage Providers */,
-				73BC6F1E0AC02A596C78B942 /* HTLContentManager.m */,
 				73BC6B0594997D325C305EAE /* HTLContentManager.h */,
+				73BC6F1E0AC02A596C78B942 /* HTLContentManager.m */,
+				73BC69E6339BCA93C05D70DB /* Storage Providers */,
 				73BC6832693513A757B37004 /* View & Model Controllers */,
+				C516A6C91B3A8F2A0018F022 /* Views */,
 			);
 			path = Src;
 			sourceTree = "<group>";
@@ -635,6 +640,15 @@
 				5D95DDDBEB7C458B73BB7321 /* Pods-TodayExtension.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		C516A6C91B3A8F2A0018F022 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				C516A6CA1B3A8F2A0018F022 /* HTLRoundButton.h */,
+				C516A6CB1B3A8F2A0018F022 /* HTLRoundButton.m */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		C59088CE1B39900A0099F8CB /* Supporting Files */ = {
@@ -975,6 +989,7 @@
 				73BC610CA9365423EC183AE7 /* HTETodayModelController.m in Sources */,
 				73BC65AB5A04FEEA2462F6AF /* HTLCompletionCollectionViewCell.m in Sources */,
 				73BC69530AA65A5F73B11569 /* HTLCSVStringExportProvider.m in Sources */,
+				C516A6CD1B3A8F2A0018F022 /* HTLRoundButton.m in Sources */,
 				73BC60A9E3DA6728F9788F57 /* HTLSqliteStorageProvider+Deserialization.m in Sources */,
 				73BC63D7E123A596DFCD6FEC /* HTLModelController.m in Sources */,
 			);
@@ -996,6 +1011,7 @@
 				73BC6D0BCBFFC6D7B897C999 /* HTLContentManager.m in Sources */,
 				73BC611D0DB73478A87E6CAE /* DTFolderMonitor.m in Sources */,
 				73BC645506B4E067A0A25D6D /* main.m in Sources */,
+				C516A6CC1B3A8F2A0018F022 /* HTLRoundButton.m in Sources */,
 				73BC6E87D97E20610C0F256F /* HTLCircleButton.m in Sources */,
 				73BC63F953A4F0A419C9FAB6 /* HTLBackgroundView.m in Sources */,
 				73BC68D041B3B7438345B659 /* HTLNavigationBar.m in Sources */,
