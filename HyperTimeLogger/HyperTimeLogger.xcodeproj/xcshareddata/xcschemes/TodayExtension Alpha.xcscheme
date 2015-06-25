@@ -1,16 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   version = "2.0">
-   <BuildAction
-      parallelizeBuildables = "YES"
-      buildImplicitDependencies = "YES">
+   version = "1.3">
+   <BuildAction>
       <BuildActionEntries>
          <BuildActionEntry
-            buildForTesting = "YES"
-            buildForRunning = "YES"
-            buildForProfiling = "YES"
-            buildForArchiving = "YES"
-            buildForAnalyzing = "YES">
+            buildForRunning = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "C596899E1B3C16270038018D"
@@ -21,61 +15,11 @@
          </BuildActionEntry>
       </BuildActionEntries>
    </BuildAction>
-   <TestAction
-      selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
-      selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
-      shouldUseLaunchSchemeArgsEnv = "YES"
-      buildConfiguration = "Debug">
-      <Testables>
-      </Testables>
-      <MacroExpansion>
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "C516A7191B3AD2590018F022"
-            BuildableName = "HyperTimeLogger Alpha.app"
-            BlueprintName = "HyperTimeLogger Alpha"
-            ReferencedContainer = "container:HyperTimeLogger.xcodeproj">
-         </BuildableReference>
-      </MacroExpansion>
-   </TestAction>
    <LaunchAction
-      selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
-      selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
-      launchStyle = "0"
       useCustomWorkingDirectory = "NO"
-      buildConfiguration = "Debug"
-      ignoresPersistentStateOnLaunch = "NO"
-      debugDocumentVersioning = "YES"
-      allowLocationSimulation = "YES"
-      launchAutomaticallySubstyle = "2">
+      buildConfiguration = "Debug">
       <PathRunnable
-         runnableDebuggingMode = "0"
          FilePath = "/Users/maximpervushin/Library/Developer/Xcode/DerivedData/HyperTimeLogger-bsfpgoehwxaozodzvihiufsbnmyz/Build/Products/TodayExtension Alpha">
       </PathRunnable>
-      <AdditionalOptions>
-      </AdditionalOptions>
    </LaunchAction>
-   <ProfileAction
-      shouldUseLaunchSchemeArgsEnv = "YES"
-      savedToolIdentifier = ""
-      useCustomWorkingDirectory = "NO"
-      buildConfiguration = "Release"
-      debugDocumentVersioning = "YES">
-      <MacroExpansion>
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "C596899E1B3C16270038018D"
-            BuildableName = "TodayExtension copy.appex"
-            BlueprintName = "TodayExtension Alpha"
-            ReferencedContainer = "container:HyperTimeLogger.xcodeproj">
-         </BuildableReference>
-      </MacroExpansion>
-   </ProfileAction>
-   <AnalyzeAction
-      buildConfiguration = "Debug">
-   </AnalyzeAction>
-   <ArchiveAction
-      buildConfiguration = "Release"
-      revealArchiveInOrganizer = "YES">
-   </ArchiveAction>
 </Scheme>

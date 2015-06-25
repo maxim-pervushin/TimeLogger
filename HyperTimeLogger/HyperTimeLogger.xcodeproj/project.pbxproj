@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		08A09D6CFF254D278971FD93 /* Pods_TodayExtension_Alpha.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7AA1C79CBB5574FC200DEF58 /* Pods_TodayExtension_Alpha.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		73BC600E8C599F6D11BBD183 /* HTLCategoryDto.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC660F9035AF2D12D68B11 /* HTLCategoryDto.m */; };
 		73BC60A9E3DA6728F9788F57 /* HTLSqliteStorageProvider+Deserialization.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6D1F71AFEE603353B859 /* HTLSqliteStorageProvider+Deserialization.m */; };
 		73BC610CA9365423EC183AE7 /* HTETodayModelController.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6C705D0378287850972F /* HTETodayModelController.m */; };
@@ -267,6 +268,9 @@
 		C59689F81B3C198D0038018D /* TodayExtension Beta.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = C59689E01B3C16350038018D /* TodayExtension Beta.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		C5BA1B801B26F890006D80BC /* TodayExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = C5BA1B731B26F890006D80BC /* TodayExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		C5FFE3F21B1857CE007D317D /* HyperTimeLoggerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C5FFE3F11B1857CE007D317D /* HyperTimeLoggerTests.m */; };
+		DCB990A0AD4BDB91695015B1 /* Pods_TodayExtension_Beta.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B249305A9E498DC4B54D49C /* Pods_TodayExtension_Beta.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		DCD591975445704C356AA391 /* Pods_HyperTimeLogger_Beta.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E0FF35F54827AF3C20199627 /* Pods_HyperTimeLogger_Beta.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		F56FF5B09C0D2F0F232E0AE1 /* Pods_HyperTimeLogger_Alpha.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00FE358840A04278F552ED9B /* Pods_HyperTimeLogger_Alpha.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -337,8 +341,11 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		00FE358840A04278F552ED9B /* Pods_HyperTimeLogger_Alpha.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HyperTimeLogger_Alpha.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2398C87D3A2A575E1753DBA4 /* Pods-TodayExtension Beta.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TodayExtension Beta.debug.xcconfig"; path = "../Pods/Target Support Files/Pods-TodayExtension Beta/Pods-TodayExtension Beta.debug.xcconfig"; sourceTree = "<group>"; };
 		5D95DDDBEB7C458B73BB7321 /* Pods-TodayExtension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TodayExtension.release.xcconfig"; path = "../Pods/Target Support Files/Pods-TodayExtension/Pods-TodayExtension.release.xcconfig"; sourceTree = "<group>"; };
 		5F5BA0F90CC2D946CDD3327B /* Pods-HyperTimeLogger.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HyperTimeLogger.debug.xcconfig"; path = "../Pods/Target Support Files/Pods-HyperTimeLogger/Pods-HyperTimeLogger.debug.xcconfig"; sourceTree = "<group>"; };
+		5F882D0340B8C246FC68BD73 /* Pods-HyperTimeLogger Beta.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HyperTimeLogger Beta.debug.xcconfig"; path = "../Pods/Target Support Files/Pods-HyperTimeLogger Beta/Pods-HyperTimeLogger Beta.debug.xcconfig"; sourceTree = "<group>"; };
 		617AE9E650925A0499F5E44C /* Pods-TodayExtension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TodayExtension.debug.xcconfig"; path = "../Pods/Target Support Files/Pods-TodayExtension/Pods-TodayExtension.debug.xcconfig"; sourceTree = "<group>"; };
 		73BC6034DE2E0674AFE42546 /* HTLStatisticsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTLStatisticsViewController.h; sourceTree = "<group>"; };
 		73BC6047AEB024122C71236D /* HTLStringExportProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTLStringExportProvider.h; sourceTree = "<group>"; };
@@ -443,6 +450,12 @@
 		73BC6FB0EFED7B84F71E676E /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = ../../../../../Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator.sdk/System/Library/Frameworks/NotificationCenter.framework; sourceTree = "<group>"; };
 		73BC6FBF1D739E2158DA64F6 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		73BC6FEC821B2D22ACD250CD /* HTLCSVStringExportProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTLCSVStringExportProvider.m; sourceTree = "<group>"; };
+		7AA1C79CBB5574FC200DEF58 /* Pods_TodayExtension_Alpha.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TodayExtension_Alpha.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7B249305A9E498DC4B54D49C /* Pods_TodayExtension_Beta.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TodayExtension_Beta.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8C602951969FA7F90F9C956F /* Pods-TodayExtension Alpha.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TodayExtension Alpha.release.xcconfig"; path = "../Pods/Target Support Files/Pods-TodayExtension Alpha/Pods-TodayExtension Alpha.release.xcconfig"; sourceTree = "<group>"; };
+		9311AFEE55D1C8A6CCFD48E6 /* Pods-HyperTimeLogger Alpha.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HyperTimeLogger Alpha.debug.xcconfig"; path = "../Pods/Target Support Files/Pods-HyperTimeLogger Alpha/Pods-HyperTimeLogger Alpha.debug.xcconfig"; sourceTree = "<group>"; };
+		ABA732652AF14AB6266DD34C /* Pods-TodayExtension Alpha.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TodayExtension Alpha.debug.xcconfig"; path = "../Pods/Target Support Files/Pods-TodayExtension Alpha/Pods-TodayExtension Alpha.debug.xcconfig"; sourceTree = "<group>"; };
+		B219E699FF581C2A9F4BE068 /* Pods-HyperTimeLogger Alpha.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HyperTimeLogger Alpha.release.xcconfig"; path = "../Pods/Target Support Files/Pods-HyperTimeLogger Alpha/Pods-HyperTimeLogger Alpha.release.xcconfig"; sourceTree = "<group>"; };
 		C080C216BEBCCD26E4BC3451 /* Pods-HyperTimeLogger.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HyperTimeLogger.release.xcconfig"; path = "../Pods/Target Support Files/Pods-HyperTimeLogger/Pods-HyperTimeLogger.release.xcconfig"; sourceTree = "<group>"; };
 		C516A6CA1B3A8F2A0018F022 /* HTLRoundButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTLRoundButton.h; sourceTree = "<group>"; };
 		C516A6CB1B3A8F2A0018F022 /* HTLRoundButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTLRoundButton.m; sourceTree = "<group>"; };
@@ -494,6 +507,9 @@
 		C5FFE3EB1B1857CE007D317D /* HyperTimeLoggerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HyperTimeLoggerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C5FFE3F01B1857CE007D317D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C5FFE3F11B1857CE007D317D /* HyperTimeLoggerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HyperTimeLoggerTests.m; sourceTree = "<group>"; };
+		D66B8812A60EF84183B354FF /* Pods-TodayExtension Beta.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TodayExtension Beta.release.xcconfig"; path = "../Pods/Target Support Files/Pods-TodayExtension Beta/Pods-TodayExtension Beta.release.xcconfig"; sourceTree = "<group>"; };
+		E0FF35F54827AF3C20199627 /* Pods_HyperTimeLogger_Beta.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HyperTimeLogger_Beta.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E32926B01F80A1304D3E4F8A /* Pods-HyperTimeLogger Beta.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HyperTimeLogger Beta.release.xcconfig"; path = "../Pods/Target Support Files/Pods-HyperTimeLogger Beta/Pods-HyperTimeLogger Beta.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -514,6 +530,7 @@
 				C516A70E1B3AD18E0018F022 /* Pods_HyperTimeLogger.framework in Frameworks */,
 				C516A70F1B3AD18E0018F022 /* Crashlytics.framework in Frameworks */,
 				C516A7101B3AD18E0018F022 /* Fabric.framework in Frameworks */,
+				DCD591975445704C356AA391 /* Pods_HyperTimeLogger_Beta.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -524,6 +541,7 @@
 				C516A7591B3AD2590018F022 /* Pods_HyperTimeLogger.framework in Frameworks */,
 				C516A75A1B3AD2590018F022 /* Crashlytics.framework in Frameworks */,
 				C516A75B1B3AD2590018F022 /* Fabric.framework in Frameworks */,
+				F56FF5B09C0D2F0F232E0AE1 /* Pods_HyperTimeLogger_Alpha.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -533,6 +551,7 @@
 			files = (
 				C59689B41B3C16270038018D /* NotificationCenter.framework in Frameworks */,
 				C59689B51B3C16270038018D /* Pods_TodayExtension.framework in Frameworks */,
+				08A09D6CFF254D278971FD93 /* Pods_TodayExtension_Alpha.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -542,6 +561,7 @@
 			files = (
 				C59689D61B3C16350038018D /* NotificationCenter.framework in Frameworks */,
 				C59689D71B3C16350038018D /* Pods_TodayExtension.framework in Frameworks */,
+				DCB990A0AD4BDB91695015B1 /* Pods_TodayExtension_Beta.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -988,6 +1008,17 @@
 			path = Statistics;
 			sourceTree = "<group>";
 		};
+		834F8DA88188254C86ED9487 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				00FE358840A04278F552ED9B /* Pods_HyperTimeLogger_Alpha.framework */,
+				E0FF35F54827AF3C20199627 /* Pods_HyperTimeLogger_Beta.framework */,
+				7AA1C79CBB5574FC200DEF58 /* Pods_TodayExtension_Alpha.framework */,
+				7B249305A9E498DC4B54D49C /* Pods_TodayExtension_Beta.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		884E6DD6E7CF859E8C96B7F3 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -995,6 +1026,14 @@
 				C080C216BEBCCD26E4BC3451 /* Pods-HyperTimeLogger.release.xcconfig */,
 				617AE9E650925A0499F5E44C /* Pods-TodayExtension.debug.xcconfig */,
 				5D95DDDBEB7C458B73BB7321 /* Pods-TodayExtension.release.xcconfig */,
+				9311AFEE55D1C8A6CCFD48E6 /* Pods-HyperTimeLogger Alpha.debug.xcconfig */,
+				B219E699FF581C2A9F4BE068 /* Pods-HyperTimeLogger Alpha.release.xcconfig */,
+				5F882D0340B8C246FC68BD73 /* Pods-HyperTimeLogger Beta.debug.xcconfig */,
+				E32926B01F80A1304D3E4F8A /* Pods-HyperTimeLogger Beta.release.xcconfig */,
+				ABA732652AF14AB6266DD34C /* Pods-TodayExtension Alpha.debug.xcconfig */,
+				8C602951969FA7F90F9C956F /* Pods-TodayExtension Alpha.release.xcconfig */,
+				2398C87D3A2A575E1753DBA4 /* Pods-TodayExtension Beta.debug.xcconfig */,
+				D66B8812A60EF84183B354FF /* Pods-TodayExtension Beta.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -1036,6 +1075,7 @@
 				884E6DD6E7CF859E8C96B7F3 /* Pods */,
 				C5FFE3D31B1857CE007D317D /* Products */,
 				C5BA1B761B26F890006D80BC /* TodayExtension */,
+				834F8DA88188254C86ED9487 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -1498,7 +1538,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/../Pods/Target Support Files/Pods-HyperTimeLogger/Pods-HyperTimeLogger-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/../Pods/Target Support Files/Pods-HyperTimeLogger Beta/Pods-HyperTimeLogger Beta-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		C516A7121B3AD18E0018F022 /* Copy Pods Resources */ = {
@@ -1513,7 +1553,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/../Pods/Target Support Files/Pods-HyperTimeLogger/Pods-HyperTimeLogger-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/../Pods/Target Support Files/Pods-HyperTimeLogger Beta/Pods-HyperTimeLogger Beta-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		C516A7131B3AD18E0018F022 /* ShellScript */ = {
@@ -1556,7 +1596,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/../Pods/Target Support Files/Pods-HyperTimeLogger/Pods-HyperTimeLogger-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/../Pods/Target Support Files/Pods-HyperTimeLogger Alpha/Pods-HyperTimeLogger Alpha-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		C516A75D1B3AD2590018F022 /* Copy Pods Resources */ = {
@@ -1571,7 +1611,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/../Pods/Target Support Files/Pods-HyperTimeLogger/Pods-HyperTimeLogger-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/../Pods/Target Support Files/Pods-HyperTimeLogger Alpha/Pods-HyperTimeLogger Alpha-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		C516A75E1B3AD2590018F022 /* ShellScript */ = {
@@ -1627,7 +1667,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/../Pods/Target Support Files/Pods-TodayExtension/Pods-TodayExtension-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/../Pods/Target Support Files/Pods-TodayExtension Alpha/Pods-TodayExtension Alpha-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		C59689C11B3C16350038018D /* Check Pods Manifest.lock */ = {
@@ -1657,7 +1697,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/../Pods/Target Support Files/Pods-TodayExtension/Pods-TodayExtension-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/../Pods/Target Support Files/Pods-TodayExtension Beta/Pods-TodayExtension Beta-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		F2F3B8981CEF6CCBB5470609 /* Embed Pods Frameworks */ = {
@@ -2039,10 +2079,10 @@
 /* Begin XCBuildConfiguration section */
 		C516A7151B3AD18E0018F022 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5F5BA0F90CC2D946CDD3327B /* Pods-HyperTimeLogger.debug.xcconfig */;
+			baseConfigurationReference = 5F882D0340B8C246FC68BD73 /* Pods-HyperTimeLogger Beta.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = HyperTimeLogger/Stages/Beta/HyperTimeLogger.entitlements;
+				CODE_SIGN_ENTITLEMENTS = HyperTimeLogger/Versions/Beta/HyperTimeLogger.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -2051,7 +2091,7 @@
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = HyperTimeLogger/Src/PrefixHeader.pch;
-				INFOPLIST_FILE = HyperTimeLogger/Stages/Beta/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/HyperTimeLogger/Versions/Beta/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "HyperTimeLogger Beta";
 				PROVISIONING_PROFILE = "";
@@ -2061,10 +2101,10 @@
 		};
 		C516A7161B3AD18E0018F022 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C080C216BEBCCD26E4BC3451 /* Pods-HyperTimeLogger.release.xcconfig */;
+			baseConfigurationReference = E32926B01F80A1304D3E4F8A /* Pods-HyperTimeLogger Beta.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = HyperTimeLogger/Stages/Beta/HyperTimeLogger.entitlements;
+				CODE_SIGN_ENTITLEMENTS = HyperTimeLogger/Versions/Beta/HyperTimeLogger.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -2073,7 +2113,7 @@
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = HyperTimeLogger/Src/PrefixHeader.pch;
-				INFOPLIST_FILE = HyperTimeLogger/Stages/Beta/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/HyperTimeLogger/Versions/Beta/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "HyperTimeLogger Beta";
 				PROVISIONING_PROFILE = "";
@@ -2083,10 +2123,10 @@
 		};
 		C516A7601B3AD2590018F022 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5F5BA0F90CC2D946CDD3327B /* Pods-HyperTimeLogger.debug.xcconfig */;
+			baseConfigurationReference = 9311AFEE55D1C8A6CCFD48E6 /* Pods-HyperTimeLogger Alpha.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = HyperTimeLogger/Stages/Alpha/HyperTimeLogger.entitlements;
+				CODE_SIGN_ENTITLEMENTS = HyperTimeLogger/Versions/Alpha/HyperTimeLogger.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -2095,7 +2135,7 @@
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = HyperTimeLogger/Src/PrefixHeader.pch;
-				INFOPLIST_FILE = HyperTimeLogger/Stages/Alpha/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/HyperTimeLogger/Versions/Alpha/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "HyperTimeLogger Alpha";
 				PROVISIONING_PROFILE = "";
@@ -2105,10 +2145,10 @@
 		};
 		C516A7611B3AD2590018F022 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C080C216BEBCCD26E4BC3451 /* Pods-HyperTimeLogger.release.xcconfig */;
+			baseConfigurationReference = B219E699FF581C2A9F4BE068 /* Pods-HyperTimeLogger Alpha.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = HyperTimeLogger/Stages/Alpha/HyperTimeLogger.entitlements;
+				CODE_SIGN_ENTITLEMENTS = HyperTimeLogger/Versions/Alpha/HyperTimeLogger.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -2117,7 +2157,7 @@
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = HyperTimeLogger/Src/PrefixHeader.pch;
-				INFOPLIST_FILE = HyperTimeLogger/Stages/Alpha/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/HyperTimeLogger/Versions/Alpha/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "HyperTimeLogger Alpha";
 				PROVISIONING_PROFILE = "";
@@ -2127,9 +2167,9 @@
 		};
 		C59689BC1B3C16270038018D /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 617AE9E650925A0499F5E44C /* Pods-TodayExtension.debug.xcconfig */;
+			baseConfigurationReference = ABA732652AF14AB6266DD34C /* Pods-TodayExtension Alpha.debug.xcconfig */;
 			buildSettings = {
-				CODE_SIGN_ENTITLEMENTS = TodayExtension/Stages/Alpha/TodayExtension.entitlements;
+				CODE_SIGN_ENTITLEMENTS = TodayExtension/Versions/Alpha/TodayExtension.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -2142,7 +2182,7 @@
 					"DEBUG=1",
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = TodayExtension/Stages/Alpha/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/TodayExtension/Versions/Alpha/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_NAME = "TodayExtension Alpha";
 				PROVISIONING_PROFILE = "";
@@ -2153,9 +2193,9 @@
 		};
 		C59689BD1B3C16270038018D /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5D95DDDBEB7C458B73BB7321 /* Pods-TodayExtension.release.xcconfig */;
+			baseConfigurationReference = 8C602951969FA7F90F9C956F /* Pods-TodayExtension Alpha.release.xcconfig */;
 			buildSettings = {
-				CODE_SIGN_ENTITLEMENTS = TodayExtension/Stages/Alpha/TodayExtension.entitlements;
+				CODE_SIGN_ENTITLEMENTS = TodayExtension/Versions/Alpha/TodayExtension.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -2164,7 +2204,7 @@
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = HyperTimeLogger/Src/PrefixHeader.pch;
-				INFOPLIST_FILE = TodayExtension/Stages/Alpha/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/TodayExtension/Versions/Alpha/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_NAME = "TodayExtension Alpha";
 				PROVISIONING_PROFILE = "";
@@ -2175,9 +2215,9 @@
 		};
 		C59689DE1B3C16350038018D /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 617AE9E650925A0499F5E44C /* Pods-TodayExtension.debug.xcconfig */;
+			baseConfigurationReference = 2398C87D3A2A575E1753DBA4 /* Pods-TodayExtension Beta.debug.xcconfig */;
 			buildSettings = {
-				CODE_SIGN_ENTITLEMENTS = TodayExtension/Stages/Beta/TodayExtension.entitlements;
+				CODE_SIGN_ENTITLEMENTS = TodayExtension/Versions/Beta/TodayExtension.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -2190,7 +2230,7 @@
 					"DEBUG=1",
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = TodayExtension/Stages/Beta/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/TodayExtension/Versions/Beta/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_NAME = "TodayExtension Beta";
 				PROVISIONING_PROFILE = "";
@@ -2201,9 +2241,9 @@
 		};
 		C59689DF1B3C16350038018D /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5D95DDDBEB7C458B73BB7321 /* Pods-TodayExtension.release.xcconfig */;
+			baseConfigurationReference = D66B8812A60EF84183B354FF /* Pods-TodayExtension Beta.release.xcconfig */;
 			buildSettings = {
-				CODE_SIGN_ENTITLEMENTS = TodayExtension/Stages/Beta/TodayExtension.entitlements;
+				CODE_SIGN_ENTITLEMENTS = TodayExtension/Versions/Beta/TodayExtension.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -2212,7 +2252,7 @@
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = HyperTimeLogger/Src/PrefixHeader.pch;
-				INFOPLIST_FILE = TodayExtension/Stages/Beta/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/TodayExtension/Versions/Beta/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_NAME = "TodayExtension Beta";
 				PROVISIONING_PROFILE = "";
@@ -2225,7 +2265,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 617AE9E650925A0499F5E44C /* Pods-TodayExtension.debug.xcconfig */;
 			buildSettings = {
-				CODE_SIGN_ENTITLEMENTS = TodayExtension/Stages/Live/TodayExtension.entitlements;
+				CODE_SIGN_ENTITLEMENTS = TodayExtension/Versions/Live/TodayExtension.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -2238,7 +2278,7 @@
 					"DEBUG=1",
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = TodayExtension/Stages/Live/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/TodayExtension/Versions/Live/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
@@ -2251,7 +2291,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 5D95DDDBEB7C458B73BB7321 /* Pods-TodayExtension.release.xcconfig */;
 			buildSettings = {
-				CODE_SIGN_ENTITLEMENTS = TodayExtension/Stages/Live/TodayExtension.entitlements;
+				CODE_SIGN_ENTITLEMENTS = TodayExtension/Versions/Live/TodayExtension.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -2260,7 +2300,7 @@
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = HyperTimeLogger/Src/PrefixHeader.pch;
-				INFOPLIST_FILE = TodayExtension/Stages/Live/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/TodayExtension/Versions/Live/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
@@ -2356,7 +2396,7 @@
 			baseConfigurationReference = 5F5BA0F90CC2D946CDD3327B /* Pods-HyperTimeLogger.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = HyperTimeLogger/Stages/Live/HyperTimeLogger.entitlements;
+				CODE_SIGN_ENTITLEMENTS = HyperTimeLogger/Versions/Live/HyperTimeLogger.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -2365,7 +2405,7 @@
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = HyperTimeLogger/Src/PrefixHeader.pch;
-				INFOPLIST_FILE = HyperTimeLogger/Stages/Live/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/HyperTimeLogger/Versions/Live/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
@@ -2378,7 +2418,7 @@
 			baseConfigurationReference = C080C216BEBCCD26E4BC3451 /* Pods-HyperTimeLogger.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = HyperTimeLogger/Stages/Live/HyperTimeLogger.entitlements;
+				CODE_SIGN_ENTITLEMENTS = HyperTimeLogger/Versions/Live/HyperTimeLogger.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -2387,7 +2427,7 @@
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = HyperTimeLogger/Src/PrefixHeader.pch;
-				INFOPLIST_FILE = HyperTimeLogger/Stages/Live/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/HyperTimeLogger/Versions/Live/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";

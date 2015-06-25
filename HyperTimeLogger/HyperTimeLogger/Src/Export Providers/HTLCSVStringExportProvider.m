@@ -9,7 +9,6 @@
 #import "HTLCategoryDto.h"
 #import "HTLReportDto.h"
 
-
 static NSString *const kDefaultDateFormat = @"yyyy-MM-dd HH:mm:ss ZZZ";
 
 

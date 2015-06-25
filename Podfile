@@ -5,19 +5,28 @@ inhibit_all_warnings!
 
 xcodeproj 'HyperTimeLogger/HyperTimeLogger.xcodeproj'
 
-target :HyperTimeLogger do
-  pod 'CocoaLumberjack'
-  pod 'UIColor+BFPaperColors', :head
-  pod 'HexColors'
-  pod 'FMDB'
-  pod 'XYPieChart'
-  pod 'ZLBalancedFlowLayout'
+app_targets = [:'HyperTimeLogger', :'HyperTimeLogger Alpha', :'HyperTimeLogger Beta']
+
+app_targets.each do |app_target|
+  target app_target do
+    pod 'CocoaLumberjack', '~> 2.0.0'
+    pod 'UIColor+BFPaperColors', :head
+    pod 'HexColors'
+    pod 'FMDB'
+    pod 'XYPieChart'
+    pod 'ZLBalancedFlowLayout'
+  end
 end
 
-target :TodayExtension do
-  pod 'CocoaLumberjack'
-  pod 'UIColor+BFPaperColors', :head
-  pod 'HexColors'
-  pod 'FMDB'
-  pod 'ZLBalancedFlowLayout'
+
+ext_targets = [:'TodayExtension', :'TodayExtension Alpha', :'TodayExtension Beta']
+
+ext_targets.each do |ext_target|
+  target ext_target do
+    pod 'CocoaLumberjack', '~> 2.0.0'
+    pod 'UIColor+BFPaperColors', :head
+    pod 'HexColors'
+    pod 'FMDB'
+    pod 'ZLBalancedFlowLayout'
+  end
 end
