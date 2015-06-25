@@ -6,9 +6,12 @@
 #import "HTLSettingsViewController.h"
 #import "HTLSettingsModelController.h"
 #import "HTLSettingsModelController+TestData.h"
+#import "HTLAppDelegate.h"
 #import <MessageUI/MessageUI.h>
 
 @interface HTLSettingsViewController () <MFMailComposeViewControllerDelegate>
+
+@property(nonatomic, weak) IBOutlet UIButton *generateTestDataButton;
 
 @property(nonatomic, strong) HTLSettingsModelController *modelController;
 
@@ -73,6 +76,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.modelController = [HTLSettingsModelController modelControllerWithContentChangedBlock:nil];
+    self.generateTestDataButton.hidden = [HTLAppVersion isEqualToString:@""];
 }
 
 #pragma mark - MFMailComposeViewControllerDelegate

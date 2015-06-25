@@ -252,6 +252,9 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="generateTestDataButton" destination="p3C-ZV-Aiz" id="EQP-BE-HeC"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="X79-we-1I6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

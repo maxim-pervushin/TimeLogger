@@ -16,9 +16,9 @@
 
 
 static NSString *const kAddReportURL = @"timelogger://add";
+static NSString *const kVersionIdentifierKey = @"VersionIdentifier";
 static NSString *const kApplicationGroup = @"group.timelogger";
 static NSString *const kStorageFileName = @"time_logger_storage.db";
-
 
 @interface HTLAppDelegate ()
 
@@ -31,6 +31,11 @@ static NSString *const kStorageFileName = @"time_logger_storage.db";
 @end
 
 @implementation HTLAppDelegate
+@dynamic appVersion;
+
+- (NSString *)appVersion {
+    return [[NSBundle mainBundle] objectForInfoDictionaryKey:kVersionIdentifierKey];
+}
 
 - (void)initializeCrashReporter {
     [Fabric with:@[CrashlyticsKit]];
@@ -42,9 +47,7 @@ static NSString *const kStorageFileName = @"time_logger_storage.db";
 }
 
 - (void)initializeContentManager {
-    NSString *appVersion = [[NSBundle mainBundle] objectForInfoDictionaryKey:@"VersionIdentifier"];
-    NSString *applicationGroup = [NSString stringWithFormat:@"%@%@", kApplicationGroup, [appVersion isEqualToString:@""] ? @"" : [NSString stringWithFormat:@"-%@", appVersion]];
-    
+    NSString *applicationGroup = [NSString stringWithFormat:@"%@%@", kApplicationGroup, [self.appVersion isEqualToString:@""] ? @"" : [NSString stringWithFormat:@"-%@", self.appVersion]];
     NSURL *storageFolderURL = [[NSFileManager defaultManager] containerURLForSecurityApplicationGroupIdentifier:applicationGroup];
     HTLSqliteStorageProvider *sqliteStorageProvider =
             [HTLSqliteStorageProvider sqliteStorageProviderWithStorageFolderURL:storageFolderURL
