@@ -9,7 +9,7 @@
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
 	<key>CFBundleIdentifier</key>
-	<string>com.maximpervushin.HyperTimeLogger.$(PRODUCT_NAME:rfc1034identifier)</string>
+	<string>com.maximpervushin.HyperTimeLogger-Alpha.$(PRODUCT_NAME:rfc1034identifier)</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleName</key>
@@ -29,5 +29,9 @@
 		<key>NSExtensionPointIdentifier</key>
 		<string>com.apple.widget-extension</string>
 	</dict>
+	<key>VersionIdentifier</key>
+	<string>alpha</string>
+	<key>VersionSymbol</key>
+	<string>α</string>
 </dict>
 </plist>

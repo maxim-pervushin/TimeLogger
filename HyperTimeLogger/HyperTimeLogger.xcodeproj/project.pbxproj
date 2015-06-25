@@ -14,6 +14,7 @@
 		73BC617D5432B3204E578CF4 /* settings.png in Resources */ = {isa = PBXBuildFile; fileRef = 73BC6F7DCFA8D0EF70DD39E0 /* settings.png */; };
 		73BC619C76D5356050DEACF4 /* HTLCircleButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6396FF8919F2C1A22A95 /* HTLCircleButton.m */; };
 		73BC62568DE7117F7D84C604 /* HTLActionDto.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC648635BCE062AF18E634 /* HTLActionDto.m */; };
+		73BC62D548E25B46D3759605 /* HyperTimeLogger.entitlements in Resources */ = {isa = PBXBuildFile; fileRef = 73BC66AAE26BE5005B6B3F36 /* HyperTimeLogger.entitlements */; };
 		73BC62DBB0557CEF66331263 /* HTLReportDto+Helpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6F771B4A63AA8FABCDF5 /* HTLReportDto+Helpers.m */; };
 		73BC63786959F7D83E3E87CF /* HTLSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC69788FA88BEA8DAF03AC /* HTLSettingsViewController.m */; };
 		73BC63A745D1B957781BC3C0 /* NSDate+HTLComponents.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6F6EE1E455D98426F705 /* NSDate+HTLComponents.m */; };
@@ -23,7 +24,6 @@
 		73BC63E583DA471B2D26C36E /* HTLReportDto.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6A41E76EE6DBA2B7B791 /* HTLReportDto.m */; };
 		73BC63F953A4F0A419C9FAB6 /* HTLBackgroundView.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC69C3F2154ED17C55C345 /* HTLBackgroundView.m */; };
 		73BC6436C539FA93E8CB0BFF /* HTLCompletionDto.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC612AAFD0BFC06B406EC4 /* HTLCompletionDto.m */; };
-		73BC645506B4E067A0A25D6D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC658C5988656B19048ABE /* main.m */; };
 		73BC6499B32094530D911FAB /* testdata_ru.json in Resources */ = {isa = PBXBuildFile; fileRef = 73BC61C5C5E177824633170B /* testdata_ru.json */; };
 		73BC65608065C1CBF9F089C0 /* HTLStatisticsItemDto.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC68639DDCA8BD7C16A37A /* HTLStatisticsItemDto.m */; };
 		73BC65AB5A04FEEA2462F6AF /* HTLCompletionCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6A799292EFF1A3FDE4D4 /* HTLCompletionCollectionViewCell.m */; };
@@ -34,6 +34,7 @@
 		73BC66FBEB3FEDA6D59A4EEB /* HTLSqliteStorageProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC686334D59793FEFA2E86 /* HTLSqliteStorageProvider.m */; };
 		73BC673ED541609F1B93818F /* HTLSqliteStorageProvider+Deserialization.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6D1F71AFEE603353B859 /* HTLSqliteStorageProvider+Deserialization.m */; };
 		73BC679BF2C1A1A36939932B /* NSDate+HTLComponents.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6F6EE1E455D98426F705 /* NSDate+HTLComponents.m */; };
+		73BC679DD95BD9F43FE6A2AB /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6B4DA596906232FF8970 /* main.m */; };
 		73BC67A4E0C0CA36BB035D6C /* HTLDateSectionDto.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC66709A1F2D03B601899D /* HTLDateSectionDto.m */; };
 		73BC68033AF8061D639DCFC0 /* HTETodayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6B8E25A8D300C95D3491 /* HTETodayViewController.m */; };
 		73BC683F3F065135DC98F27B /* HTLAddButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6CED2DD0EDA6469CEEBA /* HTLAddButton.m */; };
@@ -47,6 +48,7 @@
 		73BC6919D98B939D1BBDAF28 /* HTLReportDto+Helpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6F771B4A63AA8FABCDF5 /* HTLReportDto+Helpers.m */; };
 		73BC69530AA65A5F73B11569 /* HTLCSVStringExportProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6FEC821B2D22ACD250CD /* HTLCSVStringExportProvider.m */; };
 		73BC697836C7BC71A9FAEE26 /* clock_transparent.png in Resources */ = {isa = PBXBuildFile; fileRef = 73BC68B4BB6FD2C16DCFD83A /* clock_transparent.png */; };
+		73BC698EF025811B34B8B94A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6B4DA596906232FF8970 /* main.m */; };
 		73BC69E4F116C55691C0B6DF /* HTLCSVStringExportProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6FEC821B2D22ACD250CD /* HTLCSVStringExportProvider.m */; };
 		73BC6A05148AF26290542AC6 /* HTLReportDto.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6A41E76EE6DBA2B7B791 /* HTLReportDto.m */; };
 		73BC6A2B52E6295CE27B3C2B /* HTLReportExtendedDto.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC666118C4F574F66F741D /* HTLReportExtendedDto.m */; };
@@ -70,6 +72,7 @@
 		73BC6CC003E2DB538E6F16DE /* settings@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 73BC6A22878FD4F414CF5C2A /* settings@2x.png */; };
 		73BC6D0BCBFFC6D7B897C999 /* HTLContentManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6F1E0AC02A596C78B942 /* HTLContentManager.m */; };
 		73BC6D42F5DEFED44D50CF72 /* settings@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 73BC6B415FC214ECAF121C50 /* settings@3x.png */; };
+		73BC6D4AAD99665A10565079 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6B4DA596906232FF8970 /* main.m */; };
 		73BC6D50D0F7419C4DBD8D09 /* DateSectionHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 73BC6ED6CA4E40EF0A86A0D6 /* DateSectionHeader.xib */; };
 		73BC6D96930A9DDA7825C490 /* HTLCompletionCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6A799292EFF1A3FDE4D4 /* HTLCompletionCollectionViewCell.m */; };
 		73BC6E37E01E454ABCF88F75 /* HTLActionDto.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC648635BCE062AF18E634 /* HTLActionDto.m */; };
@@ -80,9 +83,6 @@
 		73BC6FAB452C5DBF4EC4D193 /* HTLEditReportModelController.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6F6B107E3546F7EBAE5C /* HTLEditReportModelController.m */; };
 		73BC6FB04C767843085BD236 /* HTLWordCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6D5199B0C7EF65D8A836 /* HTLWordCell.m */; };
 		73BC6FD7408B118ECB13B295 /* testdata_en.json in Resources */ = {isa = PBXBuildFile; fileRef = 73BC61D37DB350A79F19F0DD /* testdata_en.json */; };
-		C51402D51B3ADB9600C6A448 /* InfoAlphaPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C51402D11B3ADB9600C6A448 /* InfoAlphaPlist.strings */; };
-		C51402D71B3ADB9F00C6A448 /* InfoBetaPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C51402D31B3ADB9600C6A448 /* InfoBetaPlist.strings */; };
-		C51402DE1B3ADEC400C6A448 /* HyperTimeLogger Alpha.entitlements in Resources */ = {isa = PBXBuildFile; fileRef = C51402DD1B3ADEC400C6A448 /* HyperTimeLogger Alpha.entitlements */; };
 		C516A6CC1B3A8F2A0018F022 /* HTLRoundButton.m in Sources */ = {isa = PBXBuildFile; fileRef = C516A6CB1B3A8F2A0018F022 /* HTLRoundButton.m */; };
 		C516A6CD1B3A8F2A0018F022 /* HTLRoundButton.m in Sources */ = {isa = PBXBuildFile; fileRef = C516A6CB1B3A8F2A0018F022 /* HTLRoundButton.m */; };
 		C516A6D31B3AD18E0018F022 /* NSDate+HTLComponents.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6F6EE1E455D98426F705 /* NSDate+HTLComponents.m */; };
@@ -96,7 +96,6 @@
 		C516A6DB1B3AD18E0018F022 /* HTLSqliteStorageProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC686334D59793FEFA2E86 /* HTLSqliteStorageProvider.m */; };
 		C516A6DC1B3AD18E0018F022 /* HTLContentManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6F1E0AC02A596C78B942 /* HTLContentManager.m */; };
 		C516A6DD1B3AD18E0018F022 /* DTFolderMonitor.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6C4782FCAEADF81D13DD /* DTFolderMonitor.m */; };
-		C516A6DE1B3AD18E0018F022 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC658C5988656B19048ABE /* main.m */; };
 		C516A6DF1B3AD18E0018F022 /* HTLRoundButton.m in Sources */ = {isa = PBXBuildFile; fileRef = C516A6CB1B3A8F2A0018F022 /* HTLRoundButton.m */; };
 		C516A6E01B3AD18E0018F022 /* HTLCircleButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6396FF8919F2C1A22A95 /* HTLCircleButton.m */; };
 		C516A6E11B3AD18E0018F022 /* HTLBackgroundView.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC69C3F2154ED17C55C345 /* HTLBackgroundView.m */; };
@@ -153,7 +152,6 @@
 		C516A7261B3AD2590018F022 /* HTLSqliteStorageProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC686334D59793FEFA2E86 /* HTLSqliteStorageProvider.m */; };
 		C516A7271B3AD2590018F022 /* HTLContentManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6F1E0AC02A596C78B942 /* HTLContentManager.m */; };
 		C516A7281B3AD2590018F022 /* DTFolderMonitor.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6C4782FCAEADF81D13DD /* DTFolderMonitor.m */; };
-		C516A7291B3AD2590018F022 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC658C5988656B19048ABE /* main.m */; };
 		C516A72A1B3AD2590018F022 /* HTLRoundButton.m in Sources */ = {isa = PBXBuildFile; fileRef = C516A6CB1B3A8F2A0018F022 /* HTLRoundButton.m */; };
 		C516A72B1B3AD2590018F022 /* HTLCircleButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6396FF8919F2C1A22A95 /* HTLCircleButton.m */; };
 		C516A72C1B3AD2590018F022 /* HTLBackgroundView.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC69C3F2154ED17C55C345 /* HTLBackgroundView.m */; };
@@ -205,21 +203,87 @@
 		C51F13121B32C5B2001F452F /* add.png in Resources */ = {isa = PBXBuildFile; fileRef = C51F13111B32C5B2001F452F /* add.png */; };
 		C53370711B397E520095549E /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C533706F1B397E520095549E /* MainInterface.storyboard */; };
 		C53370781B397FC50095549E /* DTFolderMonitor.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6C4782FCAEADF81D13DD /* DTFolderMonitor.m */; };
+		C55912531B3C06B8002593BE /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C55912511B3C06B8002593BE /* InfoPlist.strings */; };
+		C55912591B3C0853002593BE /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C55912571B3C0853002593BE /* InfoPlist.strings */; };
+		C559125E1B3C0867002593BE /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C559125C1B3C0867002593BE /* InfoPlist.strings */; };
+		C55912611B3C0923002593BE /* HyperTimeLogger.entitlements in Resources */ = {isa = PBXBuildFile; fileRef = 73BC61D0A4CD7A364641B3B2 /* HyperTimeLogger.entitlements */; };
+		C55912621B3C0925002593BE /* HyperTimeLogger.entitlements in Resources */ = {isa = PBXBuildFile; fileRef = 73BC6D1ED9D0EB10CE1BD107 /* HyperTimeLogger.entitlements */; };
 		C56ED4ED1B38217F00221171 /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C56ED4EB1B38217F00221171 /* Fabric.framework */; };
 		C56ED4EE1B38217F00221171 /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C56ED4EB1B38217F00221171 /* Fabric.framework */; };
 		C56ED4F11B38217F00221171 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C56ED4EC1B38217F00221171 /* Crashlytics.framework */; };
 		C56ED4F21B38217F00221171 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C56ED4EC1B38217F00221171 /* Crashlytics.framework */; };
-		C57A37C21B3AE0E20017B6EC /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C59088BC1B398BD10099F8CB /* InfoPlist.strings */; };
 		C58B38611B395FB7006C7AE7 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = C58B385D1B395FB7006C7AE7 /* LaunchScreen.xib */; };
 		C58B38621B395FB7006C7AE7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C58B385F1B395FB7006C7AE7 /* Main.storyboard */; };
-		C59088C11B398C220099F8CB /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C59088C31B398C220099F8CB /* InfoPlist.strings */; };
 		C59088C81B398E330099F8CB /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = C59088CA1B398E330099F8CB /* Localizable.strings */; };
 		C59088CD1B398FE20099F8CB /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = C59088CA1B398E330099F8CB /* Localizable.strings */; };
+		C59689A11B3C16270038018D /* NSDate+HTLComponents.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6F6EE1E455D98426F705 /* NSDate+HTLComponents.m */; };
+		C59689A21B3C16270038018D /* HTLReportDto+Helpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6F771B4A63AA8FABCDF5 /* HTLReportDto+Helpers.m */; };
+		C59689A31B3C16270038018D /* HTLReportDto.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6A41E76EE6DBA2B7B791 /* HTLReportDto.m */; };
+		C59689A41B3C16270038018D /* HTLCategoryDto.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC660F9035AF2D12D68B11 /* HTLCategoryDto.m */; };
+		C59689A51B3C16270038018D /* HTLActionDto.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC648635BCE062AF18E634 /* HTLActionDto.m */; };
+		C59689A61B3C16270038018D /* HTLCompletionDto.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC612AAFD0BFC06B406EC4 /* HTLCompletionDto.m */; };
+		C59689A71B3C16270038018D /* HTLDateSectionDto.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC66709A1F2D03B601899D /* HTLDateSectionDto.m */; };
+		C59689A81B3C16270038018D /* HTLReportExtendedDto.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC666118C4F574F66F741D /* HTLReportExtendedDto.m */; };
+		C59689A91B3C16270038018D /* HTLSqliteStorageProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC686334D59793FEFA2E86 /* HTLSqliteStorageProvider.m */; };
+		C59689AA1B3C16270038018D /* HTLContentManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6F1E0AC02A596C78B942 /* HTLContentManager.m */; };
+		C59689AB1B3C16270038018D /* DTFolderMonitor.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6C4782FCAEADF81D13DD /* DTFolderMonitor.m */; };
+		C59689AC1B3C16270038018D /* HTETodayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6B8E25A8D300C95D3491 /* HTETodayViewController.m */; };
+		C59689AD1B3C16270038018D /* HTETodayModelController.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6C705D0378287850972F /* HTETodayModelController.m */; };
+		C59689AE1B3C16270038018D /* HTLCompletionCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6A799292EFF1A3FDE4D4 /* HTLCompletionCollectionViewCell.m */; };
+		C59689AF1B3C16270038018D /* HTLCSVStringExportProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6FEC821B2D22ACD250CD /* HTLCSVStringExportProvider.m */; };
+		C59689B01B3C16270038018D /* HTLRoundButton.m in Sources */ = {isa = PBXBuildFile; fileRef = C516A6CB1B3A8F2A0018F022 /* HTLRoundButton.m */; };
+		C59689B11B3C16270038018D /* HTLSqliteStorageProvider+Deserialization.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6D1F71AFEE603353B859 /* HTLSqliteStorageProvider+Deserialization.m */; };
+		C59689B21B3C16270038018D /* HTLModelController.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6B2EF7D4AAB16D0EC09A /* HTLModelController.m */; };
+		C59689B41B3C16270038018D /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73BC6FB0EFED7B84F71E676E /* NotificationCenter.framework */; };
+		C59689B51B3C16270038018D /* Pods_TodayExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73BC622E9691559B4565139E /* Pods_TodayExtension.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		C59689B71B3C16270038018D /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C533706F1B397E520095549E /* MainInterface.storyboard */; };
+		C59689B81B3C16270038018D /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = C59088CA1B398E330099F8CB /* Localizable.strings */; };
+		C59689C31B3C16350038018D /* NSDate+HTLComponents.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6F6EE1E455D98426F705 /* NSDate+HTLComponents.m */; };
+		C59689C41B3C16350038018D /* HTLReportDto+Helpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6F771B4A63AA8FABCDF5 /* HTLReportDto+Helpers.m */; };
+		C59689C51B3C16350038018D /* HTLReportDto.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6A41E76EE6DBA2B7B791 /* HTLReportDto.m */; };
+		C59689C61B3C16350038018D /* HTLCategoryDto.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC660F9035AF2D12D68B11 /* HTLCategoryDto.m */; };
+		C59689C71B3C16350038018D /* HTLActionDto.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC648635BCE062AF18E634 /* HTLActionDto.m */; };
+		C59689C81B3C16350038018D /* HTLCompletionDto.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC612AAFD0BFC06B406EC4 /* HTLCompletionDto.m */; };
+		C59689C91B3C16350038018D /* HTLDateSectionDto.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC66709A1F2D03B601899D /* HTLDateSectionDto.m */; };
+		C59689CA1B3C16350038018D /* HTLReportExtendedDto.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC666118C4F574F66F741D /* HTLReportExtendedDto.m */; };
+		C59689CB1B3C16350038018D /* HTLSqliteStorageProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC686334D59793FEFA2E86 /* HTLSqliteStorageProvider.m */; };
+		C59689CC1B3C16350038018D /* HTLContentManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6F1E0AC02A596C78B942 /* HTLContentManager.m */; };
+		C59689CD1B3C16350038018D /* DTFolderMonitor.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6C4782FCAEADF81D13DD /* DTFolderMonitor.m */; };
+		C59689CE1B3C16350038018D /* HTETodayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6B8E25A8D300C95D3491 /* HTETodayViewController.m */; };
+		C59689CF1B3C16350038018D /* HTETodayModelController.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6C705D0378287850972F /* HTETodayModelController.m */; };
+		C59689D01B3C16350038018D /* HTLCompletionCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6A799292EFF1A3FDE4D4 /* HTLCompletionCollectionViewCell.m */; };
+		C59689D11B3C16350038018D /* HTLCSVStringExportProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6FEC821B2D22ACD250CD /* HTLCSVStringExportProvider.m */; };
+		C59689D21B3C16350038018D /* HTLRoundButton.m in Sources */ = {isa = PBXBuildFile; fileRef = C516A6CB1B3A8F2A0018F022 /* HTLRoundButton.m */; };
+		C59689D31B3C16350038018D /* HTLSqliteStorageProvider+Deserialization.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6D1F71AFEE603353B859 /* HTLSqliteStorageProvider+Deserialization.m */; };
+		C59689D41B3C16350038018D /* HTLModelController.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6B2EF7D4AAB16D0EC09A /* HTLModelController.m */; };
+		C59689D61B3C16350038018D /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73BC6FB0EFED7B84F71E676E /* NotificationCenter.framework */; };
+		C59689D71B3C16350038018D /* Pods_TodayExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73BC622E9691559B4565139E /* Pods_TodayExtension.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		C59689D91B3C16350038018D /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C533706F1B397E520095549E /* MainInterface.storyboard */; };
+		C59689DA1B3C16350038018D /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = C59088CA1B398E330099F8CB /* Localizable.strings */; };
+		C59689E41B3C18220038018D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C59689E21B3C18220038018D /* InfoPlist.strings */; };
+		C59689E91B3C18460038018D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C59689E71B3C18460038018D /* InfoPlist.strings */; };
+		C59689EE1B3C18660038018D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C59689EC1B3C18660038018D /* InfoPlist.strings */; };
+		C59689F41B3C19860038018D /* TodayExtension Alpha.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = C59689BE1B3C16270038018D /* TodayExtension Alpha.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		C59689F81B3C198D0038018D /* TodayExtension Beta.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = C59689E01B3C16350038018D /* TodayExtension Beta.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		C5BA1B801B26F890006D80BC /* TodayExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = C5BA1B731B26F890006D80BC /* TodayExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		C5FFE3F21B1857CE007D317D /* HyperTimeLoggerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C5FFE3F11B1857CE007D317D /* HyperTimeLoggerTests.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		C59689F51B3C19860038018D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C5FFE3CA1B1857CD007D317D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C596899E1B3C16270038018D;
+			remoteInfo = "TodayExtension Alpha";
+		};
+		C59689F91B3C198D0038018D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C5FFE3CA1B1857CD007D317D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C59689C01B3C16350038018D;
+			remoteInfo = "TodayExtension Beta";
+		};
 		C5BA1B7E1B26F890006D80BC /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = C5FFE3CA1B1857CD007D317D /* Project object */;
@@ -237,6 +301,28 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
+		C59689F71B3C19860038018D /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				C59689F41B3C19860038018D /* TodayExtension Alpha.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C59689FB1B3C198D0038018D /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				C59689F81B3C198D0038018D /* TodayExtension Beta.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		C5BA1B841B26F890006D80BC /* Embed App Extensions */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -267,15 +353,14 @@
 		73BC6194DBE33DB85E9AFFDA /* HTLSqliteStorageProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTLSqliteStorageProvider.h; sourceTree = "<group>"; };
 		73BC61A9C99CE0428963C88B /* HTLSettingsModelController+TestData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "HTLSettingsModelController+TestData.m"; sourceTree = "<group>"; };
 		73BC61C5C5E177824633170B /* testdata_ru.json */ = {isa = PBXFileReference; lastKnownFileType = file.json; path = testdata_ru.json; sourceTree = "<group>"; };
+		73BC61D0A4CD7A364641B3B2 /* HyperTimeLogger.entitlements */ = {isa = PBXFileReference; lastKnownFileType = file.entitlements; path = HyperTimeLogger.entitlements; sourceTree = "<group>"; };
 		73BC61D37DB350A79F19F0DD /* testdata_en.json */ = {isa = PBXFileReference; lastKnownFileType = file.json; path = testdata_en.json; sourceTree = "<group>"; };
-		73BC61D53D7649DDE8385BD3 /* PrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		73BC622E9691559B4565139E /* Pods_TodayExtension.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Pods_TodayExtension.framework; path = "../../../Library/Caches/AppCode32/DerivedData/HyperTimeLogger-3b7e8ea7/Build/Products/Debug-iphonesimulator/Pods_TodayExtension.framework"; sourceTree = "<group>"; };
 		73BC623BCFD075E99FAA860D /* HTLWordCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTLWordCell.h; sourceTree = "<group>"; };
 		73BC62BD6319224D876880BD /* HTLAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTLAppDelegate.m; sourceTree = "<group>"; };
 		73BC63407702DDDB04CF58F7 /* HTLDateSectionDto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTLDateSectionDto.h; sourceTree = "<group>"; };
 		73BC6396FF8919F2C1A22A95 /* HTLCircleButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTLCircleButton.m; sourceTree = "<group>"; };
 		73BC63DA891A05E05D6EB4CC /* HTLCompletionCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTLCompletionCollectionViewCell.h; sourceTree = "<group>"; };
-		73BC6419C401C3CF700A833C /* InfoBeta.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = InfoBeta.plist; sourceTree = SOURCE_ROOT; };
 		73BC642D0A6375B6BC652163 /* HTLStorageProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTLStorageProvider.h; sourceTree = "<group>"; };
 		73BC648635BCE062AF18E634 /* HTLActionDto.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTLActionDto.m; sourceTree = "<group>"; };
 		73BC64B38D1BC62AB8562034 /* HTLStatisticsModelController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTLStatisticsModelController.m; sourceTree = "<group>"; };
@@ -284,24 +369,27 @@
 		73BC6556E962FBAFD5448885 /* HTLReportExtendedDto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTLReportExtendedDto.h; sourceTree = "<group>"; };
 		73BC656F19F67BA6578AE7DC /* HTLSettingsModelController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTLSettingsModelController.h; sourceTree = "<group>"; };
 		73BC657527EC1255C199221C /* HTLReportListModelController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTLReportListModelController.h; sourceTree = "<group>"; };
-		73BC658C5988656B19048ABE /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		73BC6597BF0ADA89652FD15C /* HTLCompletionTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTLCompletionTableViewCell.m; sourceTree = "<group>"; };
-		73BC65B40591E07190DA29C5 /* InfoAlpha.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = InfoAlpha.plist; sourceTree = SOURCE_ROOT; };
 		73BC65FC45499E71FA1DDD91 /* DTFolderMonitor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DTFolderMonitor.h; sourceTree = "<group>"; };
 		73BC660F9035AF2D12D68B11 /* HTLCategoryDto.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTLCategoryDto.m; sourceTree = "<group>"; };
+		73BC6619E2BFF808511873B5 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.info; path = Info.plist; sourceTree = "<group>"; };
 		73BC666118C4F574F66F741D /* HTLReportExtendedDto.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTLReportExtendedDto.m; sourceTree = "<group>"; };
 		73BC66709A1F2D03B601899D /* HTLDateSectionDto.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTLDateSectionDto.m; sourceTree = "<group>"; };
 		73BC669236F7FD0A9AA838FA /* HTLCSVStringExportProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTLCSVStringExportProvider.h; sourceTree = "<group>"; };
+		73BC66AAE26BE5005B6B3F36 /* HyperTimeLogger.entitlements */ = {isa = PBXFileReference; lastKnownFileType = file.entitlements; path = HyperTimeLogger.entitlements; sourceTree = "<group>"; };
 		73BC6721C1F8610DAB796DB4 /* HTLPieChartCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTLPieChartCell.h; sourceTree = "<group>"; };
+		73BC67257BC246FE8E488EE9 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.info; path = Info.plist; sourceTree = "<group>"; };
 		73BC672CAAD267B51798D558 /* HTLSettingsModelController+TestData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "HTLSettingsModelController+TestData.h"; sourceTree = "<group>"; };
 		73BC674C459A467E5BBE9DE3 /* HTLStatisticsModelController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTLStatisticsModelController.h; sourceTree = "<group>"; };
 		73BC675BA63D17605F56B715 /* HTLNavigationBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTLNavigationBar.m; sourceTree = "<group>"; };
+		73BC675CBCFB6D6ED03FCEEC /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.info; path = Info.plist; sourceTree = "<group>"; };
 		73BC67B2DC0CBCFD95BC63E9 /* HTLModelController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTLModelController.h; sourceTree = "<group>"; };
 		73BC681B64B78D2126E3F273 /* HTLReportExtendedCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTLReportExtendedCell.h; sourceTree = "<group>"; };
 		73BC683230DB63BFBED239E8 /* HTLCircleButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTLCircleButton.h; sourceTree = "<group>"; };
 		73BC684DB010D412F9E74A52 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		73BC686334D59793FEFA2E86 /* HTLSqliteStorageProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTLSqliteStorageProvider.m; sourceTree = "<group>"; };
 		73BC68639DDCA8BD7C16A37A /* HTLStatisticsItemDto.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTLStatisticsItemDto.m; sourceTree = "<group>"; };
+		73BC68877A11CD82AB9F0321 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.info; path = Info.plist; sourceTree = "<group>"; };
 		73BC689EF761C62FCF4A8AAF /* HTLAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTLAppDelegate.h; sourceTree = "<group>"; };
 		73BC68B4BB6FD2C16DCFD83A /* clock_transparent.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = clock_transparent.png; sourceTree = "<group>"; };
 		73BC68B935DD2C83FA55C77F /* HTLStatisticsItemCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTLStatisticsItemCell.m; sourceTree = "<group>"; };
@@ -309,27 +397,29 @@
 		73BC68E1ADEA25FA08EDEEDF /* HTLBackgroundView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTLBackgroundView.h; sourceTree = "<group>"; };
 		73BC693996F5418B34AAA1E5 /* HTLSettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTLSettingsViewController.h; sourceTree = "<group>"; };
 		73BC69788FA88BEA8DAF03AC /* HTLSettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTLSettingsViewController.m; sourceTree = "<group>"; };
-		73BC699EDAD3D271F8F3A424 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.info; path = Info.plist; sourceTree = "<group>"; };
 		73BC69C3F2154ED17C55C345 /* HTLBackgroundView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTLBackgroundView.m; sourceTree = "<group>"; };
 		73BC6A08B8F5E4EB350AA2FD /* HTLEditReportViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTLEditReportViewController.h; sourceTree = "<group>"; };
 		73BC6A22878FD4F414CF5C2A /* settings@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "settings@2x.png"; sourceTree = "<group>"; };
 		73BC6A41E76EE6DBA2B7B791 /* HTLReportDto.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTLReportDto.m; sourceTree = "<group>"; };
 		73BC6A799292EFF1A3FDE4D4 /* HTLCompletionCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTLCompletionCollectionViewCell.m; sourceTree = "<group>"; };
 		73BC6ACDFC039D8AAE2C5C57 /* HTLReportDto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTLReportDto.h; sourceTree = "<group>"; };
+		73BC6AD5E7AB90AA7FBB9715 /* PrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		73BC6AF703B69F7D9811A489 /* NSDate+HTLComponents.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+HTLComponents.h"; sourceTree = "<group>"; };
 		73BC6B0594997D325C305EAE /* HTLContentManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTLContentManager.h; sourceTree = "<group>"; };
 		73BC6B08F919C64D44AF4915 /* HTLDateSectionHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTLDateSectionHeader.h; sourceTree = "<group>"; };
 		73BC6B2EF7D4AAB16D0EC09A /* HTLModelController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTLModelController.m; sourceTree = "<group>"; };
 		73BC6B415FC214ECAF121C50 /* settings@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "settings@3x.png"; sourceTree = "<group>"; };
+		73BC6B4DA596906232FF8970 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		73BC6B659C1F2AF2CF606296 /* HTLEditReportViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTLEditReportViewController.m; sourceTree = "<group>"; };
 		73BC6B86F0BBBAD9C3ECC490 /* HTLStatisticsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTLStatisticsViewController.m; sourceTree = "<group>"; };
 		73BC6B8E25A8D300C95D3491 /* HTETodayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTETodayViewController.m; sourceTree = "<group>"; };
+		73BC6BE6B628DC71E15F4935 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.info; path = Info.plist; sourceTree = "<group>"; };
 		73BC6BF188BC4B62EBAED386 /* HTLCategoryCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTLCategoryCell.m; sourceTree = "<group>"; };
-		73BC6C1DFB2CE3B3D2D59CDF /* HyperTimeLogger.entitlements */ = {isa = PBXFileReference; lastKnownFileType = file.entitlements; path = HyperTimeLogger.entitlements; sourceTree = SOURCE_ROOT; };
 		73BC6C4782FCAEADF81D13DD /* DTFolderMonitor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DTFolderMonitor.m; sourceTree = "<group>"; };
 		73BC6C705D0378287850972F /* HTETodayModelController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTETodayModelController.m; sourceTree = "<group>"; };
 		73BC6CB3E44ADE3599C48F2D /* HTLStatisticsItemCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTLStatisticsItemCell.h; sourceTree = "<group>"; };
 		73BC6CED2DD0EDA6469CEEBA /* HTLAddButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTLAddButton.m; sourceTree = "<group>"; };
+		73BC6D1ED9D0EB10CE1BD107 /* HyperTimeLogger.entitlements */ = {isa = PBXFileReference; lastKnownFileType = file.entitlements; path = HyperTimeLogger.entitlements; sourceTree = "<group>"; };
 		73BC6D1F71AFEE603353B859 /* HTLSqliteStorageProvider+Deserialization.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "HTLSqliteStorageProvider+Deserialization.m"; sourceTree = "<group>"; };
 		73BC6D503DBAD8F16F5B080E /* HTLReportListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTLReportListViewController.h; sourceTree = "<group>"; };
 		73BC6D5199B0C7EF65D8A836 /* HTLWordCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTLWordCell.m; sourceTree = "<group>"; };
@@ -339,6 +429,7 @@
 		73BC6E2B7C419500D51BE784 /* HTLEditReportModelController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTLEditReportModelController.h; sourceTree = "<group>"; };
 		73BC6E4CD1FE08E15C414BAC /* HTLPieChartCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTLPieChartCell.m; sourceTree = "<group>"; };
 		73BC6E516EB62290DD7B243C /* HTLSettingsModelController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTLSettingsModelController.m; sourceTree = "<group>"; };
+		73BC6E57D1CF2B9726285238 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.info; path = Info.plist; sourceTree = "<group>"; };
 		73BC6E8BD579B5F8E32C09A6 /* HTLActionDto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTLActionDto.h; sourceTree = "<group>"; };
 		73BC6EB5C216FBFA08B74E51 /* HTLAddButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTLAddButton.h; sourceTree = "<group>"; };
 		73BC6ED6CA4E40EF0A86A0D6 /* DateSectionHeader.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DateSectionHeader.xib; sourceTree = "<group>"; };
@@ -351,16 +442,8 @@
 		73BC6F7DCFA8D0EF70DD39E0 /* settings.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = settings.png; sourceTree = "<group>"; };
 		73BC6FB0EFED7B84F71E676E /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = ../../../../../Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator.sdk/System/Library/Frameworks/NotificationCenter.framework; sourceTree = "<group>"; };
 		73BC6FBF1D739E2158DA64F6 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		73BC6FC1BF69805EB3F823DF /* HyperTimeLogger Beta.entitlements */ = {isa = PBXFileReference; lastKnownFileType = file.entitlements; path = "HyperTimeLogger Beta.entitlements"; sourceTree = SOURCE_ROOT; };
 		73BC6FEC821B2D22ACD250CD /* HTLCSVStringExportProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTLCSVStringExportProvider.m; sourceTree = "<group>"; };
 		C080C216BEBCCD26E4BC3451 /* Pods-HyperTimeLogger.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HyperTimeLogger.release.xcconfig"; path = "../Pods/Target Support Files/Pods-HyperTimeLogger/Pods-HyperTimeLogger.release.xcconfig"; sourceTree = "<group>"; };
-		C51402D21B3ADB9600C6A448 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/InfoAlphaPlist.strings; sourceTree = "<group>"; };
-		C51402D41B3ADB9600C6A448 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/InfoBetaPlist.strings; sourceTree = "<group>"; };
-		C51402D81B3ADBA800C6A448 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoAlphaPlist.strings; sourceTree = "<group>"; };
-		C51402D91B3ADBA900C6A448 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/InfoAlphaPlist.strings; sourceTree = "<group>"; };
-		C51402DA1B3ADBAF00C6A448 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoBetaPlist.strings; sourceTree = "<group>"; };
-		C51402DB1B3ADBB000C6A448 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/InfoBetaPlist.strings; sourceTree = "<group>"; };
-		C51402DD1B3ADEC400C6A448 /* HyperTimeLogger Alpha.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "HyperTimeLogger Alpha.entitlements"; sourceTree = "<group>"; };
 		C516A6CA1B3A8F2A0018F022 /* HTLRoundButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTLRoundButton.h; sourceTree = "<group>"; };
 		C516A6CB1B3A8F2A0018F022 /* HTLRoundButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTLRoundButton.m; sourceTree = "<group>"; };
 		C516A7171B3AD18E0018F022 /* HyperTimeLogger Beta.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "HyperTimeLogger Beta.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -372,26 +455,41 @@
 		C53370701B397E520095549E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
 		C53370721B397E5C0095549E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/MainInterface.strings; sourceTree = "<group>"; };
 		C53370731B397E5F0095549E /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/MainInterface.strings; sourceTree = "<group>"; };
+		C55912521B3C06B8002593BE /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		C55912541B3C06BE002593BE /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		C55912551B3C06C1002593BE /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		C55912581B3C0853002593BE /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		C559125A1B3C0856002593BE /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		C559125B1B3C0859002593BE /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		C559125D1B3C0867002593BE /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		C559125F1B3C086B002593BE /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		C55912601B3C086D002593BE /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		C56ED4EB1B38217F00221171 /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = "<group>"; };
 		C56ED4EC1B38217F00221171 /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
-		C57EA5791B27021600B97F65 /* TodayExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = TodayExtension.entitlements; sourceTree = "<group>"; };
 		C58B385E1B395FB7006C7AE7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		C58B38601B395FB7006C7AE7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C58B38641B395FDB006C7AE7 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
 		C58B38661B395FE0006C7AE7 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Main.strings; sourceTree = "<group>"; };
 		C58B38681B396076006C7AE7 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		C58B386A1B396078006C7AE7 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
-		C59088BB1B398BD10099F8CB /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		C59088BD1B398BD30099F8CB /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		C59088BE1B398BD40099F8CB /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		C59088C21B398C220099F8CB /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		C59088C41B398C230099F8CB /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		C59088C51B398C240099F8CB /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		C59088C91B398E330099F8CB /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
 		C59088CB1B398E340099F8CB /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		C59088CC1B398E350099F8CB /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
+		C59689BE1B3C16270038018D /* TodayExtension Alpha.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "TodayExtension Alpha.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C59689E01B3C16350038018D /* TodayExtension Beta.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "TodayExtension Beta.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C59689E31B3C18220038018D /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		C59689E51B3C182A0038018D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		C59689E61B3C182C0038018D /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		C59689E81B3C18460038018D /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		C59689EA1B3C184A0038018D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		C59689EB1B3C184D0038018D /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		C59689ED1B3C18660038018D /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		C59689EF1B3C186B0038018D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		C59689F01B3C186E0038018D /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		C59689F11B3C18C70038018D /* TodayExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = file.entitlements; path = TodayExtension.entitlements; sourceTree = "<group>"; };
+		C59689F21B3C18FC0038018D /* TodayExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = file.entitlements; path = TodayExtension.entitlements; sourceTree = "<group>"; };
+		C59689F31B3C19030038018D /* TodayExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = file.entitlements; path = TodayExtension.entitlements; sourceTree = "<group>"; };
 		C5BA1B731B26F890006D80BC /* TodayExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = TodayExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
-		C5BA1B781B26F890006D80BC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C5FFE3D21B1857CE007D317D /* HyperTimeLogger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HyperTimeLogger.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C5FFE3EB1B1857CE007D317D /* HyperTimeLoggerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HyperTimeLoggerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C5FFE3F01B1857CE007D317D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -426,6 +524,24 @@
 				C516A7591B3AD2590018F022 /* Pods_HyperTimeLogger.framework in Frameworks */,
 				C516A75A1B3AD2590018F022 /* Crashlytics.framework in Frameworks */,
 				C516A75B1B3AD2590018F022 /* Fabric.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C59689B31B3C16270038018D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C59689B41B3C16270038018D /* NotificationCenter.framework in Frameworks */,
+				C59689B51B3C16270038018D /* Pods_TodayExtension.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C59689D51B3C16350038018D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C59689D61B3C16350038018D /* NotificationCenter.framework in Frameworks */,
+				C59689D71B3C16350038018D /* Pods_TodayExtension.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -480,6 +596,8 @@
 				73BC689EF761C62FCF4A8AAF /* HTLAppDelegate.h */,
 				73BC62BD6319224D876880BD /* HTLAppDelegate.m */,
 				73BC62D67E6B6DE79F2310E9 /* View & Model Controllers */,
+				73BC6B4DA596906232FF8970 /* main.m */,
+				73BC6AD5E7AB90AA7FBB9715 /* PrefixHeader.pch */,
 			);
 			path = Src;
 			sourceTree = "<group>";
@@ -533,6 +651,16 @@
 			path = Dependencies;
 			sourceTree = "<group>";
 		};
+		73BC639F2C5AEF9CBA443885 /* Versions */ = {
+			isa = PBXGroup;
+			children = (
+				73BC65D555C34C05D8025A14 /* Alpha */,
+				73BC6D2FFE3BFB60FB7747D3 /* Beta */,
+				73BC6962C60F0AB1DC65AB5C /* Live */,
+			);
+			path = Versions;
+			sourceTree = "<group>";
+		};
 		73BC64EBE7360C9E78BCE3C7 /* UI */ = {
 			isa = PBXGroup;
 			children = (
@@ -541,6 +669,26 @@
 				73BC6ED6CA4E40EF0A86A0D6 /* DateSectionHeader.xib */,
 			);
 			path = UI;
+			sourceTree = "<group>";
+		};
+		73BC65AF5FC8CE322C94158E /* Alpha */ = {
+			isa = PBXGroup;
+			children = (
+				C59689F11B3C18C70038018D /* TodayExtension.entitlements */,
+				C59689E21B3C18220038018D /* InfoPlist.strings */,
+				73BC67257BC246FE8E488EE9 /* Info.plist */,
+			);
+			path = Alpha;
+			sourceTree = "<group>";
+		};
+		73BC65D555C34C05D8025A14 /* Alpha */ = {
+			isa = PBXGroup;
+			children = (
+				73BC66AAE26BE5005B6B3F36 /* HyperTimeLogger.entitlements */,
+				73BC6619E2BFF808511873B5 /* Info.plist */,
+				C55912511B3C06B8002593BE /* InfoPlist.strings */,
+			);
+			path = Alpha;
 			sourceTree = "<group>";
 		};
 		73BC665886848CD597251D31 /* Frameworks */ = {
@@ -562,29 +710,22 @@
 			path = Core;
 			sourceTree = "<group>";
 		};
+		73BC669810F422CFF025EC54 /* Beta */ = {
+			isa = PBXGroup;
+			children = (
+				C59689F31B3C19030038018D /* TodayExtension.entitlements */,
+				C59689E71B3C18460038018D /* InfoPlist.strings */,
+				73BC675CBCFB6D6ED03FCEEC /* Info.plist */,
+			);
+			path = Beta;
+			sourceTree = "<group>";
+		};
 		73BC679CF1C0629D469D7895 /* UI */ = {
 			isa = PBXGroup;
 			children = (
 				C533706F1B397E520095549E /* MainInterface.storyboard */,
 			);
 			path = UI;
-			sourceTree = "<group>";
-		};
-		73BC67EF96ADA167B4859159 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				C51402DD1B3ADEC400C6A448 /* HyperTimeLogger Alpha.entitlements */,
-				73BC6FC1BF69805EB3F823DF /* HyperTimeLogger Beta.entitlements */,
-				73BC6C1DFB2CE3B3D2D59CDF /* HyperTimeLogger.entitlements */,
-				73BC65B40591E07190DA29C5 /* InfoAlpha.plist */,
-				73BC6419C401C3CF700A833C /* InfoBeta.plist */,
-				73BC699EDAD3D271F8F3A424 /* Info.plist */,
-				C51402D11B3ADB9600C6A448 /* InfoAlphaPlist.strings */,
-				C51402D31B3ADB9600C6A448 /* InfoBetaPlist.strings */,
-				C59088BC1B398BD10099F8CB /* InfoPlist.strings */,
-				73BC658C5988656B19048ABE /* main.m */,
-			);
-			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
 		73BC680C01076520B3D85144 /* Cells Headers Footers */ = {
@@ -647,6 +788,16 @@
 			path = "Export Providers";
 			sourceTree = "<group>";
 		};
+		73BC6962C60F0AB1DC65AB5C /* Live */ = {
+			isa = PBXGroup;
+			children = (
+				73BC6D1ED9D0EB10CE1BD107 /* HyperTimeLogger.entitlements */,
+				73BC68877A11CD82AB9F0321 /* Info.plist */,
+				C559125C1B3C0867002593BE /* InfoPlist.strings */,
+			);
+			path = Live;
+			sourceTree = "<group>";
+		};
 		73BC69B291D435E6979F09A2 /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -703,6 +854,23 @@
 			path = DTFoundation;
 			sourceTree = "<group>";
 		};
+		73BC6ABAF5CC352C0A2F7D47 /* Supporting Files (Use Subfolders For Each Version) */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "Supporting Files (Use Subfolders For Each Version)";
+			sourceTree = "<group>";
+		};
+		73BC6AD70178CE58AF547D6F /* Live */ = {
+			isa = PBXGroup;
+			children = (
+				C59689F21B3C18FC0038018D /* TodayExtension.entitlements */,
+				C59689EC1B3C18660038018D /* InfoPlist.strings */,
+				73BC6E57D1CF2B9726285238 /* Info.plist */,
+			);
+			path = Live;
+			sourceTree = "<group>";
+		};
 		73BC6B6BBDDF603A1AA9D02C /* TestData */ = {
 			isa = PBXGroup;
 			children = (
@@ -725,6 +893,16 @@
 			path = Settings;
 			sourceTree = "<group>";
 		};
+		73BC6D2FFE3BFB60FB7747D3 /* Beta */ = {
+			isa = PBXGroup;
+			children = (
+				73BC61D0A4CD7A364641B3B2 /* HyperTimeLogger.entitlements */,
+				73BC6BE6B628DC71E15F4935 /* Info.plist */,
+				C55912571B3C0853002593BE /* InfoPlist.strings */,
+			);
+			path = Beta;
+			sourceTree = "<group>";
+		};
 		73BC6DC4214A1ACD61303FC1 /* Src */ = {
 			isa = PBXGroup;
 			children = (
@@ -737,6 +915,16 @@
 				C516A6C91B3A8F2A0018F022 /* Views */,
 			);
 			path = Src;
+			sourceTree = "<group>";
+		};
+		73BC6DCEB3480DDD8EE3397A /* Versions */ = {
+			isa = PBXGroup;
+			children = (
+				73BC65AF5FC8CE322C94158E /* Alpha */,
+				73BC669810F422CFF025EC54 /* Beta */,
+				73BC6AD70178CE58AF547D6F /* Live */,
+			);
+			path = Versions;
 			sourceTree = "<group>";
 		};
 		73BC6E31C152E0DB1E7B2ADE /* Src */ = {
@@ -769,11 +957,11 @@
 			isa = PBXGroup;
 			children = (
 				73BC680E65C87515CE45F909 /* Res */,
-				73BC67EF96ADA167B4859159 /* Supporting Files */,
-				73BC61D53D7649DDE8385BD3 /* PrefixHeader.pch */,
 				73BC617060FD99991CF17331 /* Src */,
 				73BC64EBE7360C9E78BCE3C7 /* UI */,
 				73BC6B6BBDDF603A1AA9D02C /* TestData */,
+				73BC6ABAF5CC352C0A2F7D47 /* Supporting Files (Use Subfolders For Each Version) */,
+				73BC639F2C5AEF9CBA443885 /* Versions */,
 			);
 			path = HyperTimeLogger;
 			sourceTree = "<group>";
@@ -831,21 +1019,11 @@
 		C5BA1B761B26F890006D80BC /* TodayExtension */ = {
 			isa = PBXGroup;
 			children = (
-				C57EA5791B27021600B97F65 /* TodayExtension.entitlements */,
-				C5BA1B771B26F890006D80BC /* Supporting Files */,
 				73BC6E31C152E0DB1E7B2ADE /* Src */,
 				73BC679CF1C0629D469D7895 /* UI */,
+				73BC6DCEB3480DDD8EE3397A /* Versions */,
 			);
 			path = TodayExtension;
-			sourceTree = "<group>";
-		};
-		C5BA1B771B26F890006D80BC /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				C5BA1B781B26F890006D80BC /* Info.plist */,
-				C59088C31B398C220099F8CB /* InfoPlist.strings */,
-			);
-			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
 		C5FFE3C91B1857CD007D317D = {
@@ -869,6 +1047,8 @@
 				C5BA1B731B26F890006D80BC /* TodayExtension.appex */,
 				C516A7171B3AD18E0018F022 /* HyperTimeLogger Beta.app */,
 				C516A7621B3AD2590018F022 /* HyperTimeLogger Alpha.app */,
+				C59689BE1B3C16270038018D /* TodayExtension Alpha.appex */,
+				C59689E01B3C16350038018D /* TodayExtension Beta.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -904,10 +1084,12 @@
 				C516A7111B3AD18E0018F022 /* Embed Pods Frameworks */,
 				C516A7121B3AD18E0018F022 /* Copy Pods Resources */,
 				C516A7131B3AD18E0018F022 /* ShellScript */,
+				C59689FB1B3C198D0038018D /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				C59689FA1B3C198D0038018D /* PBXTargetDependency */,
 			);
 			name = "HyperTimeLogger Beta";
 			productName = HyperTimeLogger;
@@ -925,15 +1107,55 @@
 				C516A75C1B3AD2590018F022 /* Embed Pods Frameworks */,
 				C516A75D1B3AD2590018F022 /* Copy Pods Resources */,
 				C516A75E1B3AD2590018F022 /* ShellScript */,
+				C59689F71B3C19860038018D /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				C59689F61B3C19860038018D /* PBXTargetDependency */,
 			);
 			name = "HyperTimeLogger Alpha";
 			productName = HyperTimeLogger;
 			productReference = C516A7621B3AD2590018F022 /* HyperTimeLogger Alpha.app */;
 			productType = "com.apple.product-type.application";
+		};
+		C596899E1B3C16270038018D /* TodayExtension Alpha */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C59689BB1B3C16270038018D /* Build configuration list for PBXNativeTarget "TodayExtension Alpha" */;
+			buildPhases = (
+				C596899F1B3C16270038018D /* Check Pods Manifest.lock */,
+				C59689A01B3C16270038018D /* Sources */,
+				C59689B31B3C16270038018D /* Frameworks */,
+				C59689B61B3C16270038018D /* Resources */,
+				C59689BA1B3C16270038018D /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "TodayExtension Alpha";
+			productName = TodayExtension;
+			productReference = C59689BE1B3C16270038018D /* TodayExtension Alpha.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+		C59689C01B3C16350038018D /* TodayExtension Beta */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C59689DD1B3C16350038018D /* Build configuration list for PBXNativeTarget "TodayExtension Beta" */;
+			buildPhases = (
+				C59689C11B3C16350038018D /* Check Pods Manifest.lock */,
+				C59689C21B3C16350038018D /* Sources */,
+				C59689D51B3C16350038018D /* Frameworks */,
+				C59689D81B3C16350038018D /* Resources */,
+				C59689DC1B3C16350038018D /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "TodayExtension Beta";
+			productName = TodayExtension;
+			productReference = C59689E01B3C16350038018D /* TodayExtension Beta.appex */;
+			productType = "com.apple.product-type.app-extension";
 		};
 		C5BA1B721B26F890006D80BC /* TodayExtension */ = {
 			isa = PBXNativeTarget;
@@ -1021,6 +1243,12 @@
 							};
 						};
 					};
+					C596899E1B3C16270038018D = {
+						DevelopmentTeam = FRM2L78456;
+					};
+					C59689C01B3C16350038018D = {
+						DevelopmentTeam = FRM2L78456;
+					};
 					C5BA1B721B26F890006D80BC = {
 						CreatedOnToolsVersion = 6.3.2;
 						DevelopmentTeam = FRM2L78456;
@@ -1063,6 +1291,8 @@
 				C516A6CE1B3AD18E0018F022 /* HyperTimeLogger Beta */,
 				C5FFE3D11B1857CD007D317D /* HyperTimeLogger */,
 				C5FFE3EA1B1857CE007D317D /* HyperTimeLoggerTests */,
+				C596899E1B3C16270038018D /* TodayExtension Alpha */,
+				C59689C01B3C16350038018D /* TodayExtension Beta */,
 				C5BA1B721B26F890006D80BC /* TodayExtension */,
 			);
 		};
@@ -1074,6 +1304,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C516A6FB1B3AD18E0018F022 /* clock_transparent.png in Resources */,
+				C55912591B3C0853002593BE /* InfoPlist.strings in Resources */,
 				C516A6FC1B3AD18E0018F022 /* settings.png in Resources */,
 				C516A6FD1B3AD18E0018F022 /* settings@2x.png in Resources */,
 				C516A6FE1B3AD18E0018F022 /* Localizable.strings in Resources */,
@@ -1083,10 +1314,10 @@
 				C516A7031B3AD18E0018F022 /* statistics@3x.png in Resources */,
 				C516A7041B3AD18E0018F022 /* statistics@2x.png in Resources */,
 				C516A7051B3AD18E0018F022 /* Images.xcassets in Resources */,
-				C51402D71B3ADB9F00C6A448 /* InfoBetaPlist.strings in Resources */,
 				C516A7061B3AD18E0018F022 /* DateSectionHeader.xib in Resources */,
 				C516A7071B3AD18E0018F022 /* LaunchScreen.xib in Resources */,
 				C516A7081B3AD18E0018F022 /* statistics.png in Resources */,
+				C55912611B3C0923002593BE /* HyperTimeLogger.entitlements in Resources */,
 				C516A7091B3AD18E0018F022 /* testdata_ru.json in Resources */,
 				C516A70A1B3AD18E0018F022 /* testdata_en.json in Resources */,
 			);
@@ -1100,8 +1331,8 @@
 				C516A7471B3AD2590018F022 /* settings.png in Resources */,
 				C516A7481B3AD2590018F022 /* settings@2x.png in Resources */,
 				C516A7491B3AD2590018F022 /* Localizable.strings in Resources */,
-				C51402DE1B3ADEC400C6A448 /* HyperTimeLogger Alpha.entitlements in Resources */,
 				C516A74B1B3AD2590018F022 /* Main.storyboard in Resources */,
+				C55912531B3C06B8002593BE /* InfoPlist.strings in Resources */,
 				C516A74C1B3AD2590018F022 /* add.png in Resources */,
 				C516A74D1B3AD2590018F022 /* settings@3x.png in Resources */,
 				C516A74E1B3AD2590018F022 /* statistics@3x.png in Resources */,
@@ -1111,8 +1342,28 @@
 				C516A7521B3AD2590018F022 /* LaunchScreen.xib in Resources */,
 				C516A7531B3AD2590018F022 /* statistics.png in Resources */,
 				C516A7541B3AD2590018F022 /* testdata_ru.json in Resources */,
-				C51402D51B3ADB9600C6A448 /* InfoAlphaPlist.strings in Resources */,
 				C516A7551B3AD2590018F022 /* testdata_en.json in Resources */,
+				73BC62D548E25B46D3759605 /* HyperTimeLogger.entitlements in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C59689B61B3C16270038018D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C59689B71B3C16270038018D /* MainInterface.storyboard in Resources */,
+				C59689E41B3C18220038018D /* InfoPlist.strings in Resources */,
+				C59689B81B3C16270038018D /* Localizable.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C59689D81B3C16350038018D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C59689D91B3C16350038018D /* MainInterface.storyboard in Resources */,
+				C59689E91B3C18460038018D /* InfoPlist.strings in Resources */,
+				C59689DA1B3C16350038018D /* Localizable.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1121,8 +1372,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				C53370711B397E520095549E /* MainInterface.storyboard in Resources */,
+				C59689EE1B3C18660038018D /* InfoPlist.strings in Resources */,
 				C59088CD1B398FE20099F8CB /* Localizable.strings in Resources */,
-				C59088C11B398C220099F8CB /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1131,8 +1382,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				73BC697836C7BC71A9FAEE26 /* clock_transparent.png in Resources */,
-				C57A37C21B3AE0E20017B6EC /* InfoPlist.strings in Resources */,
+				C559125E1B3C0867002593BE /* InfoPlist.strings in Resources */,
 				73BC617D5432B3204E578CF4 /* settings.png in Resources */,
+				C55912621B3C0925002593BE /* HyperTimeLogger.entitlements in Resources */,
 				73BC6CC003E2DB538E6F16DE /* settings@2x.png in Resources */,
 				C59088C81B398E330099F8CB /* Localizable.strings in Resources */,
 				C58B38621B395FB7006C7AE7 /* Main.storyboard in Resources */,
@@ -1348,6 +1600,66 @@
 			shellPath = /bin/sh;
 			shellScript = "./Dependencies/Vendor/Fabric.framework/run e83e0095e24774f93f86cd8f53b5743615ff236b ee344f57d2c4470643f18815f88b8e8f5665090f6cbe9dae15562ba9bd36fb4a";
 		};
+		C596899F1B3C16270038018D /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		C59689BA1B3C16270038018D /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/../Pods/Target Support Files/Pods-TodayExtension/Pods-TodayExtension-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C59689C11B3C16350038018D /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		C59689DC1B3C16350038018D /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/../Pods/Target Support Files/Pods-TodayExtension/Pods-TodayExtension-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		F2F3B8981CEF6CCBB5470609 /* Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -1381,7 +1693,6 @@
 				C516A6DB1B3AD18E0018F022 /* HTLSqliteStorageProvider.m in Sources */,
 				C516A6DC1B3AD18E0018F022 /* HTLContentManager.m in Sources */,
 				C516A6DD1B3AD18E0018F022 /* DTFolderMonitor.m in Sources */,
-				C516A6DE1B3AD18E0018F022 /* main.m in Sources */,
 				C516A6DF1B3AD18E0018F022 /* HTLRoundButton.m in Sources */,
 				C516A6E01B3AD18E0018F022 /* HTLCircleButton.m in Sources */,
 				C516A6E11B3AD18E0018F022 /* HTLBackgroundView.m in Sources */,
@@ -1409,6 +1720,7 @@
 				C516A6F71B3AD18E0018F022 /* HTLStatisticsItemCell.m in Sources */,
 				C516A6F81B3AD18E0018F022 /* HTLStatisticsItemDto.m in Sources */,
 				C516A6F91B3AD18E0018F022 /* HTLSettingsModelController+TestData.m in Sources */,
+				73BC6D4AAD99665A10565079 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1427,7 +1739,6 @@
 				C516A7261B3AD2590018F022 /* HTLSqliteStorageProvider.m in Sources */,
 				C516A7271B3AD2590018F022 /* HTLContentManager.m in Sources */,
 				C516A7281B3AD2590018F022 /* DTFolderMonitor.m in Sources */,
-				C516A7291B3AD2590018F022 /* main.m in Sources */,
 				C516A72A1B3AD2590018F022 /* HTLRoundButton.m in Sources */,
 				C516A72B1B3AD2590018F022 /* HTLCircleButton.m in Sources */,
 				C516A72C1B3AD2590018F022 /* HTLBackgroundView.m in Sources */,
@@ -1455,6 +1766,57 @@
 				C516A7421B3AD2590018F022 /* HTLStatisticsItemCell.m in Sources */,
 				C516A7431B3AD2590018F022 /* HTLStatisticsItemDto.m in Sources */,
 				C516A7441B3AD2590018F022 /* HTLSettingsModelController+TestData.m in Sources */,
+				73BC698EF025811B34B8B94A /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C59689A01B3C16270038018D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C59689A11B3C16270038018D /* NSDate+HTLComponents.m in Sources */,
+				C59689A21B3C16270038018D /* HTLReportDto+Helpers.m in Sources */,
+				C59689A31B3C16270038018D /* HTLReportDto.m in Sources */,
+				C59689A41B3C16270038018D /* HTLCategoryDto.m in Sources */,
+				C59689A51B3C16270038018D /* HTLActionDto.m in Sources */,
+				C59689A61B3C16270038018D /* HTLCompletionDto.m in Sources */,
+				C59689A71B3C16270038018D /* HTLDateSectionDto.m in Sources */,
+				C59689A81B3C16270038018D /* HTLReportExtendedDto.m in Sources */,
+				C59689A91B3C16270038018D /* HTLSqliteStorageProvider.m in Sources */,
+				C59689AA1B3C16270038018D /* HTLContentManager.m in Sources */,
+				C59689AB1B3C16270038018D /* DTFolderMonitor.m in Sources */,
+				C59689AC1B3C16270038018D /* HTETodayViewController.m in Sources */,
+				C59689AD1B3C16270038018D /* HTETodayModelController.m in Sources */,
+				C59689AE1B3C16270038018D /* HTLCompletionCollectionViewCell.m in Sources */,
+				C59689AF1B3C16270038018D /* HTLCSVStringExportProvider.m in Sources */,
+				C59689B01B3C16270038018D /* HTLRoundButton.m in Sources */,
+				C59689B11B3C16270038018D /* HTLSqliteStorageProvider+Deserialization.m in Sources */,
+				C59689B21B3C16270038018D /* HTLModelController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C59689C21B3C16350038018D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C59689C31B3C16350038018D /* NSDate+HTLComponents.m in Sources */,
+				C59689C41B3C16350038018D /* HTLReportDto+Helpers.m in Sources */,
+				C59689C51B3C16350038018D /* HTLReportDto.m in Sources */,
+				C59689C61B3C16350038018D /* HTLCategoryDto.m in Sources */,
+				C59689C71B3C16350038018D /* HTLActionDto.m in Sources */,
+				C59689C81B3C16350038018D /* HTLCompletionDto.m in Sources */,
+				C59689C91B3C16350038018D /* HTLDateSectionDto.m in Sources */,
+				C59689CA1B3C16350038018D /* HTLReportExtendedDto.m in Sources */,
+				C59689CB1B3C16350038018D /* HTLSqliteStorageProvider.m in Sources */,
+				C59689CC1B3C16350038018D /* HTLContentManager.m in Sources */,
+				C59689CD1B3C16350038018D /* DTFolderMonitor.m in Sources */,
+				C59689CE1B3C16350038018D /* HTETodayViewController.m in Sources */,
+				C59689CF1B3C16350038018D /* HTETodayModelController.m in Sources */,
+				C59689D01B3C16350038018D /* HTLCompletionCollectionViewCell.m in Sources */,
+				C59689D11B3C16350038018D /* HTLCSVStringExportProvider.m in Sources */,
+				C59689D21B3C16350038018D /* HTLRoundButton.m in Sources */,
+				C59689D31B3C16350038018D /* HTLSqliteStorageProvider+Deserialization.m in Sources */,
+				C59689D41B3C16350038018D /* HTLModelController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1498,7 +1860,6 @@
 				73BC663F4406329510726033 /* HTLSqliteStorageProvider.m in Sources */,
 				73BC6D0BCBFFC6D7B897C999 /* HTLContentManager.m in Sources */,
 				73BC611D0DB73478A87E6CAE /* DTFolderMonitor.m in Sources */,
-				73BC645506B4E067A0A25D6D /* main.m in Sources */,
 				C516A6CC1B3A8F2A0018F022 /* HTLRoundButton.m in Sources */,
 				73BC6E87D97E20610C0F256F /* HTLCircleButton.m in Sources */,
 				73BC63F953A4F0A419C9FAB6 /* HTLBackgroundView.m in Sources */,
@@ -1526,6 +1887,7 @@
 				73BC6E4DED1BEDC0CE46C60D /* HTLStatisticsItemCell.m in Sources */,
 				73BC65608065C1CBF9F089C0 /* HTLStatisticsItemDto.m in Sources */,
 				73BC6ACDC82E718A89E6C930 /* HTLSettingsModelController+TestData.m in Sources */,
+				73BC679DD95BD9F43FE6A2AB /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1548,6 +1910,16 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		C59689F61B3C19860038018D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C596899E1B3C16270038018D /* TodayExtension Alpha */;
+			targetProxy = C59689F51B3C19860038018D /* PBXContainerItemProxy */;
+		};
+		C59689FA1B3C198D0038018D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C59689C01B3C16350038018D /* TodayExtension Beta */;
+			targetProxy = C59689F91B3C198D0038018D /* PBXContainerItemProxy */;
+		};
 		C5BA1B7F1B26F890006D80BC /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = C5BA1B721B26F890006D80BC /* TodayExtension */;
@@ -1561,26 +1933,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		C51402D11B3ADB9600C6A448 /* InfoAlphaPlist.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				C51402D21B3ADB9600C6A448 /* Base */,
-				C51402D81B3ADBA800C6A448 /* en */,
-				C51402D91B3ADBA900C6A448 /* ru */,
-			);
-			name = InfoAlphaPlist.strings;
-			sourceTree = "<group>";
-		};
-		C51402D31B3ADB9600C6A448 /* InfoBetaPlist.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				C51402D41B3ADB9600C6A448 /* Base */,
-				C51402DA1B3ADBAF00C6A448 /* en */,
-				C51402DB1B3ADBB000C6A448 /* ru */,
-			);
-			name = InfoBetaPlist.strings;
-			sourceTree = "<group>";
-		};
 		C533706F1B397E520095549E /* MainInterface.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -1589,6 +1941,36 @@
 				C53370731B397E5F0095549E /* ru */,
 			);
 			name = MainInterface.storyboard;
+			sourceTree = "<group>";
+		};
+		C55912511B3C06B8002593BE /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C55912521B3C06B8002593BE /* Base */,
+				C55912541B3C06BE002593BE /* en */,
+				C55912551B3C06C1002593BE /* ru */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		C55912571B3C0853002593BE /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C55912581B3C0853002593BE /* Base */,
+				C559125A1B3C0856002593BE /* en */,
+				C559125B1B3C0859002593BE /* ru */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		C559125C1B3C0867002593BE /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C559125D1B3C0867002593BE /* Base */,
+				C559125F1B3C086B002593BE /* en */,
+				C55912601B3C086D002593BE /* ru */,
+			);
+			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
 		C58B385D1B395FB7006C7AE7 /* LaunchScreen.xib */ = {
@@ -1611,26 +1993,6 @@
 			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
-		C59088BC1B398BD10099F8CB /* InfoPlist.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				C59088BB1B398BD10099F8CB /* Base */,
-				C59088BD1B398BD30099F8CB /* en */,
-				C59088BE1B398BD40099F8CB /* ru */,
-			);
-			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
-		C59088C31B398C220099F8CB /* InfoPlist.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				C59088C21B398C220099F8CB /* Base */,
-				C59088C41B398C230099F8CB /* en */,
-				C59088C51B398C240099F8CB /* ru */,
-			);
-			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
 		C59088CA1B398E330099F8CB /* Localizable.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -1642,6 +2004,36 @@
 			path = ../HyperTimeLogger;
 			sourceTree = "<group>";
 		};
+		C59689E21B3C18220038018D /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C59689E31B3C18220038018D /* Base */,
+				C59689E51B3C182A0038018D /* en */,
+				C59689E61B3C182C0038018D /* ru */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		C59689E71B3C18460038018D /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C59689E81B3C18460038018D /* Base */,
+				C59689EA1B3C184A0038018D /* en */,
+				C59689EB1B3C184D0038018D /* ru */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		C59689EC1B3C18660038018D /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C59689ED1B3C18660038018D /* Base */,
+				C59689EF1B3C186B0038018D /* en */,
+				C59689F01B3C186E0038018D /* ru */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
@@ -1650,7 +2042,7 @@
 			baseConfigurationReference = 5F5BA0F90CC2D946CDD3327B /* Pods-HyperTimeLogger.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = "HyperTimeLogger Beta.entitlements";
+				CODE_SIGN_ENTITLEMENTS = HyperTimeLogger/Stages/Beta/HyperTimeLogger.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -1658,8 +2050,8 @@
 					"$(PROJECT_DIR)/Dependencies/Vendor",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = HyperTimeLogger/PrefixHeader.pch;
-				INFOPLIST_FILE = InfoBeta.plist;
+				GCC_PREFIX_HEADER = HyperTimeLogger/Src/PrefixHeader.pch;
+				INFOPLIST_FILE = HyperTimeLogger/Stages/Beta/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "HyperTimeLogger Beta";
 				PROVISIONING_PROFILE = "";
@@ -1672,7 +2064,7 @@
 			baseConfigurationReference = C080C216BEBCCD26E4BC3451 /* Pods-HyperTimeLogger.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = "HyperTimeLogger Beta.entitlements";
+				CODE_SIGN_ENTITLEMENTS = HyperTimeLogger/Stages/Beta/HyperTimeLogger.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -1680,8 +2072,8 @@
 					"$(PROJECT_DIR)/Dependencies/Vendor",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = HyperTimeLogger/PrefixHeader.pch;
-				INFOPLIST_FILE = InfoBeta.plist;
+				GCC_PREFIX_HEADER = HyperTimeLogger/Src/PrefixHeader.pch;
+				INFOPLIST_FILE = HyperTimeLogger/Stages/Beta/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "HyperTimeLogger Beta";
 				PROVISIONING_PROFILE = "";
@@ -1694,7 +2086,7 @@
 			baseConfigurationReference = 5F5BA0F90CC2D946CDD3327B /* Pods-HyperTimeLogger.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = "HyperTimeLogger Alpha.entitlements";
+				CODE_SIGN_ENTITLEMENTS = HyperTimeLogger/Stages/Alpha/HyperTimeLogger.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -1702,8 +2094,8 @@
 					"$(PROJECT_DIR)/Dependencies/Vendor",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = HyperTimeLogger/PrefixHeader.pch;
-				INFOPLIST_FILE = InfoAlpha.plist;
+				GCC_PREFIX_HEADER = HyperTimeLogger/Src/PrefixHeader.pch;
+				INFOPLIST_FILE = HyperTimeLogger/Stages/Alpha/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "HyperTimeLogger Alpha";
 				PROVISIONING_PROFILE = "";
@@ -1716,7 +2108,7 @@
 			baseConfigurationReference = C080C216BEBCCD26E4BC3451 /* Pods-HyperTimeLogger.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = "HyperTimeLogger Alpha.entitlements";
+				CODE_SIGN_ENTITLEMENTS = HyperTimeLogger/Stages/Alpha/HyperTimeLogger.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -1724,8 +2116,8 @@
 					"$(PROJECT_DIR)/Dependencies/Vendor",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = HyperTimeLogger/PrefixHeader.pch;
-				INFOPLIST_FILE = InfoAlpha.plist;
+				GCC_PREFIX_HEADER = HyperTimeLogger/Src/PrefixHeader.pch;
+				INFOPLIST_FILE = HyperTimeLogger/Stages/Alpha/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "HyperTimeLogger Alpha";
 				PROVISIONING_PROFILE = "";
@@ -1733,11 +2125,11 @@
 			};
 			name = Release;
 		};
-		C5BA1B811B26F890006D80BC /* Debug */ = {
+		C59689BC1B3C16270038018D /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 617AE9E650925A0499F5E44C /* Pods-TodayExtension.debug.xcconfig */;
 			buildSettings = {
-				CODE_SIGN_ENTITLEMENTS = TodayExtension/TodayExtension.entitlements;
+				CODE_SIGN_ENTITLEMENTS = TodayExtension/Stages/Alpha/TodayExtension.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -1745,12 +2137,108 @@
 					"$(PROJECT_DIR)/Dependencies/Vendor",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = HyperTimeLogger/PrefixHeader.pch;
+				GCC_PREFIX_HEADER = HyperTimeLogger/Src/PrefixHeader.pch;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = TodayExtension/Info.plist;
+				INFOPLIST_FILE = TodayExtension/Stages/Alpha/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_NAME = "TodayExtension Alpha";
+				PROVISIONING_PROFILE = "";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		C59689BD1B3C16270038018D /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5D95DDDBEB7C458B73BB7321 /* Pods-TodayExtension.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = TodayExtension/Stages/Alpha/TodayExtension.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Dependencies/Vendor",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = HyperTimeLogger/Src/PrefixHeader.pch;
+				INFOPLIST_FILE = TodayExtension/Stages/Alpha/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_NAME = "TodayExtension Alpha";
+				PROVISIONING_PROFILE = "";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		C59689DE1B3C16350038018D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 617AE9E650925A0499F5E44C /* Pods-TodayExtension.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = TodayExtension/Stages/Beta/TodayExtension.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Dependencies/Vendor",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = HyperTimeLogger/Src/PrefixHeader.pch;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = TodayExtension/Stages/Beta/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_NAME = "TodayExtension Beta";
+				PROVISIONING_PROFILE = "";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		C59689DF1B3C16350038018D /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5D95DDDBEB7C458B73BB7321 /* Pods-TodayExtension.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = TodayExtension/Stages/Beta/TodayExtension.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Dependencies/Vendor",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = HyperTimeLogger/Src/PrefixHeader.pch;
+				INFOPLIST_FILE = TodayExtension/Stages/Beta/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_NAME = "TodayExtension Beta";
+				PROVISIONING_PROFILE = "";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		C5BA1B811B26F890006D80BC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 617AE9E650925A0499F5E44C /* Pods-TodayExtension.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = TodayExtension/Stages/Live/TodayExtension.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Dependencies/Vendor",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = HyperTimeLogger/Src/PrefixHeader.pch;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = TodayExtension/Stages/Live/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
@@ -1763,7 +2251,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 5D95DDDBEB7C458B73BB7321 /* Pods-TodayExtension.release.xcconfig */;
 			buildSettings = {
-				CODE_SIGN_ENTITLEMENTS = TodayExtension/TodayExtension.entitlements;
+				CODE_SIGN_ENTITLEMENTS = TodayExtension/Stages/Live/TodayExtension.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -1771,8 +2259,8 @@
 					"$(PROJECT_DIR)/Dependencies/Vendor",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = HyperTimeLogger/PrefixHeader.pch;
-				INFOPLIST_FILE = TodayExtension/Info.plist;
+				GCC_PREFIX_HEADER = HyperTimeLogger/Src/PrefixHeader.pch;
+				INFOPLIST_FILE = TodayExtension/Stages/Live/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
@@ -1868,7 +2356,7 @@
 			baseConfigurationReference = 5F5BA0F90CC2D946CDD3327B /* Pods-HyperTimeLogger.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = HyperTimeLogger.entitlements;
+				CODE_SIGN_ENTITLEMENTS = HyperTimeLogger/Stages/Live/HyperTimeLogger.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -1876,8 +2364,8 @@
 					"$(PROJECT_DIR)/Dependencies/Vendor",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = HyperTimeLogger/PrefixHeader.pch;
-				INFOPLIST_FILE = HyperTimeLogger/Info.plist;
+				GCC_PREFIX_HEADER = HyperTimeLogger/Src/PrefixHeader.pch;
+				INFOPLIST_FILE = HyperTimeLogger/Stages/Live/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
@@ -1890,7 +2378,7 @@
 			baseConfigurationReference = C080C216BEBCCD26E4BC3451 /* Pods-HyperTimeLogger.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = HyperTimeLogger.entitlements;
+				CODE_SIGN_ENTITLEMENTS = HyperTimeLogger/Stages/Live/HyperTimeLogger.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -1898,8 +2386,8 @@
 					"$(PROJECT_DIR)/Dependencies/Vendor",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = HyperTimeLogger/PrefixHeader.pch;
-				INFOPLIST_FILE = HyperTimeLogger/Info.plist;
+				GCC_PREFIX_HEADER = HyperTimeLogger/Src/PrefixHeader.pch;
+				INFOPLIST_FILE = HyperTimeLogger/Stages/Live/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
@@ -1960,6 +2448,24 @@
 			buildConfigurations = (
 				C516A7601B3AD2590018F022 /* Debug */,
 				C516A7611B3AD2590018F022 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C59689BB1B3C16270038018D /* Build configuration list for PBXNativeTarget "TodayExtension Alpha" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C59689BC1B3C16270038018D /* Debug */,
+				C59689BD1B3C16270038018D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C59689DD1B3C16350038018D /* Build configuration list for PBXNativeTarget "TodayExtension Beta" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C59689DE1B3C16350038018D /* Debug */,
+				C59689DF1B3C16350038018D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
