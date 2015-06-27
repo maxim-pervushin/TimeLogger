@@ -13,7 +13,7 @@
 #import "HTLCompletionCollectionViewCell.h"
 #import "HTLReportDto.h"
 #import "HTLReportDto+Helpers.h"
-#import <ZLBalancedFlowLayout/ZLBalancedFlowLayout-Swift.h>
+#import "HyperTimeLogger-Swift.h"
 
 
 static NSString *const kCompletionCellIdentifier = @"CompletionCell";

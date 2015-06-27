@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		08A09D6CFF254D278971FD93 /* Pods_TodayExtension_Alpha.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7AA1C79CBB5574FC200DEF58 /* Pods_TodayExtension_Alpha.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		73BC600E8C599F6D11BBD183 /* HTLCategoryDto.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC660F9035AF2D12D68B11 /* HTLCategoryDto.m */; };
 		73BC60A9E3DA6728F9788F57 /* HTLSqliteStorageProvider+Deserialization.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6D1F71AFEE603353B859 /* HTLSqliteStorageProvider+Deserialization.m */; };
 		73BC610CA9365423EC183AE7 /* HTETodayModelController.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6C705D0378287850972F /* HTETodayModelController.m */; };
@@ -25,7 +24,6 @@
 		73BC63E583DA471B2D26C36E /* HTLReportDto.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6A41E76EE6DBA2B7B791 /* HTLReportDto.m */; };
 		73BC63F953A4F0A419C9FAB6 /* HTLBackgroundView.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC69C3F2154ED17C55C345 /* HTLBackgroundView.m */; };
 		73BC6436C539FA93E8CB0BFF /* HTLCompletionDto.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC612AAFD0BFC06B406EC4 /* HTLCompletionDto.m */; };
-		73BC6499B32094530D911FAB /* testdata_ru.json in Resources */ = {isa = PBXBuildFile; fileRef = 73BC61C5C5E177824633170B /* testdata_ru.json */; };
 		73BC65608065C1CBF9F089C0 /* HTLStatisticsItemDto.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC68639DDCA8BD7C16A37A /* HTLStatisticsItemDto.m */; };
 		73BC65AB5A04FEEA2462F6AF /* HTLCompletionCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6A799292EFF1A3FDE4D4 /* HTLCompletionCollectionViewCell.m */; };
 		73BC65EBF2E0EFBE18CE5FAA /* HTLReportExtendedDto.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC666118C4F574F66F741D /* HTLReportExtendedDto.m */; };
@@ -61,7 +59,6 @@
 		73BC6AEDC24B3643325E6F75 /* HTLCategoryDto.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC660F9035AF2D12D68B11 /* HTLCategoryDto.m */; };
 		73BC6B1E338548FE30A4AFAD /* HTLActionDto.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC648635BCE062AF18E634 /* HTLActionDto.m */; };
 		73BC6B5E48C8D2C5D91C39EB /* HTLStatisticsModelController.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC64B38D1BC62AB8562034 /* HTLStatisticsModelController.m */; };
-		73BC6B9AD1668565075E5DF0 /* Pods_TodayExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73BC622E9691559B4565139E /* Pods_TodayExtension.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		73BC6B9FDBFB2EE8267221A9 /* HTLModelController.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6B2EF7D4AAB16D0EC09A /* HTLModelController.m */; };
 		73BC6BB80E74AD1C414F0C8D /* HTLPieChartCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6E4CD1FE08E15C414BAC /* HTLPieChartCell.m */; };
 		73BC6BBDB05B2D670300F209 /* HTLReportExtendedDto.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC666118C4F574F66F741D /* HTLReportExtendedDto.m */; };
@@ -80,10 +77,8 @@
 		73BC6E4DED1BEDC0CE46C60D /* HTLStatisticsItemCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC68B935DD2C83FA55C77F /* HTLStatisticsItemCell.m */; };
 		73BC6E87D97E20610C0F256F /* HTLCircleButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6396FF8919F2C1A22A95 /* HTLCircleButton.m */; };
 		73BC6E8F223111B6EB5A243E /* HTLReportListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6E168D88E254C8F6A4CE /* HTLReportListViewController.m */; };
-		73BC6F0D931166EADD7E2E4F /* Pods_HyperTimeLogger.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73BC64D990F65D9E25A88C68 /* Pods_HyperTimeLogger.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		73BC6FAB452C5DBF4EC4D193 /* HTLEditReportModelController.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6F6B107E3546F7EBAE5C /* HTLEditReportModelController.m */; };
 		73BC6FB04C767843085BD236 /* HTLWordCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6D5199B0C7EF65D8A836 /* HTLWordCell.m */; };
-		73BC6FD7408B118ECB13B295 /* testdata_en.json in Resources */ = {isa = PBXBuildFile; fileRef = 73BC61D37DB350A79F19F0DD /* testdata_en.json */; };
 		C516A6CC1B3A8F2A0018F022 /* HTLRoundButton.m in Sources */ = {isa = PBXBuildFile; fileRef = C516A6CB1B3A8F2A0018F022 /* HTLRoundButton.m */; };
 		C516A6CD1B3A8F2A0018F022 /* HTLRoundButton.m in Sources */ = {isa = PBXBuildFile; fileRef = C516A6CB1B3A8F2A0018F022 /* HTLRoundButton.m */; };
 		C516A6D31B3AD18E0018F022 /* NSDate+HTLComponents.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6F6EE1E455D98426F705 /* NSDate+HTLComponents.m */; };
@@ -139,7 +134,6 @@
 		C516A7081B3AD18E0018F022 /* statistics.png in Resources */ = {isa = PBXBuildFile; fileRef = C51F130B1B32C592001F452F /* statistics.png */; };
 		C516A7091B3AD18E0018F022 /* testdata_ru.json in Resources */ = {isa = PBXBuildFile; fileRef = 73BC61C5C5E177824633170B /* testdata_ru.json */; };
 		C516A70A1B3AD18E0018F022 /* testdata_en.json in Resources */ = {isa = PBXBuildFile; fileRef = 73BC61D37DB350A79F19F0DD /* testdata_en.json */; };
-		C516A70E1B3AD18E0018F022 /* Pods_HyperTimeLogger.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73BC64D990F65D9E25A88C68 /* Pods_HyperTimeLogger.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		C516A70F1B3AD18E0018F022 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C56ED4EC1B38217F00221171 /* Crashlytics.framework */; };
 		C516A7101B3AD18E0018F022 /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C56ED4EB1B38217F00221171 /* Fabric.framework */; };
 		C516A71E1B3AD2590018F022 /* NSDate+HTLComponents.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6F6EE1E455D98426F705 /* NSDate+HTLComponents.m */; };
@@ -195,7 +189,6 @@
 		C516A7531B3AD2590018F022 /* statistics.png in Resources */ = {isa = PBXBuildFile; fileRef = C51F130B1B32C592001F452F /* statistics.png */; };
 		C516A7541B3AD2590018F022 /* testdata_ru.json in Resources */ = {isa = PBXBuildFile; fileRef = 73BC61C5C5E177824633170B /* testdata_ru.json */; };
 		C516A7551B3AD2590018F022 /* testdata_en.json in Resources */ = {isa = PBXBuildFile; fileRef = 73BC61D37DB350A79F19F0DD /* testdata_en.json */; };
-		C516A7591B3AD2590018F022 /* Pods_HyperTimeLogger.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73BC64D990F65D9E25A88C68 /* Pods_HyperTimeLogger.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		C516A75A1B3AD2590018F022 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C56ED4EC1B38217F00221171 /* Crashlytics.framework */; };
 		C516A75B1B3AD2590018F022 /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C56ED4EB1B38217F00221171 /* Fabric.framework */; };
 		C51F130E1B32C592001F452F /* statistics.png in Resources */ = {isa = PBXBuildFile; fileRef = C51F130B1B32C592001F452F /* statistics.png */; };
@@ -213,6 +206,134 @@
 		C56ED4EE1B38217F00221171 /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C56ED4EB1B38217F00221171 /* Fabric.framework */; };
 		C56ED4F11B38217F00221171 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C56ED4EC1B38217F00221171 /* Crashlytics.framework */; };
 		C56ED4F21B38217F00221171 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C56ED4EC1B38217F00221171 /* Crashlytics.framework */; };
+		C582B2E31B3EC8D5005CC526 /* DDAbstractDatabaseLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = C582B2A31B3EC8D5005CC526 /* DDAbstractDatabaseLogger.m */; };
+		C582B2E41B3EC8D5005CC526 /* DDAbstractDatabaseLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = C582B2A31B3EC8D5005CC526 /* DDAbstractDatabaseLogger.m */; };
+		C582B2E51B3EC8D5005CC526 /* DDAbstractDatabaseLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = C582B2A31B3EC8D5005CC526 /* DDAbstractDatabaseLogger.m */; };
+		C582B2E61B3EC8D5005CC526 /* DDAbstractDatabaseLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = C582B2A31B3EC8D5005CC526 /* DDAbstractDatabaseLogger.m */; };
+		C582B2E71B3EC8D5005CC526 /* DDAbstractDatabaseLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = C582B2A31B3EC8D5005CC526 /* DDAbstractDatabaseLogger.m */; };
+		C582B2E81B3EC8D5005CC526 /* DDAbstractDatabaseLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = C582B2A31B3EC8D5005CC526 /* DDAbstractDatabaseLogger.m */; };
+		C582B2E91B3EC8D5005CC526 /* DDAbstractDatabaseLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = C582B2A31B3EC8D5005CC526 /* DDAbstractDatabaseLogger.m */; };
+		C582B2EA1B3EC8D5005CC526 /* DDASLLogCapture.m in Sources */ = {isa = PBXBuildFile; fileRef = C582B2A51B3EC8D5005CC526 /* DDASLLogCapture.m */; };
+		C582B2EB1B3EC8D5005CC526 /* DDASLLogCapture.m in Sources */ = {isa = PBXBuildFile; fileRef = C582B2A51B3EC8D5005CC526 /* DDASLLogCapture.m */; };
+		C582B2EC1B3EC8D5005CC526 /* DDASLLogCapture.m in Sources */ = {isa = PBXBuildFile; fileRef = C582B2A51B3EC8D5005CC526 /* DDASLLogCapture.m */; };
+		C582B2ED1B3EC8D5005CC526 /* DDASLLogCapture.m in Sources */ = {isa = PBXBuildFile; fileRef = C582B2A51B3EC8D5005CC526 /* DDASLLogCapture.m */; };
+		C582B2EE1B3EC8D5005CC526 /* DDASLLogCapture.m in Sources */ = {isa = PBXBuildFile; fileRef = C582B2A51B3EC8D5005CC526 /* DDASLLogCapture.m */; };
+		C582B2EF1B3EC8D5005CC526 /* DDASLLogCapture.m in Sources */ = {isa = PBXBuildFile; fileRef = C582B2A51B3EC8D5005CC526 /* DDASLLogCapture.m */; };
+		C582B2F01B3EC8D5005CC526 /* DDASLLogCapture.m in Sources */ = {isa = PBXBuildFile; fileRef = C582B2A51B3EC8D5005CC526 /* DDASLLogCapture.m */; };
+		C582B2F11B3EC8D5005CC526 /* DDASLLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = C582B2A71B3EC8D5005CC526 /* DDASLLogger.m */; };
+		C582B2F21B3EC8D5005CC526 /* DDASLLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = C582B2A71B3EC8D5005CC526 /* DDASLLogger.m */; };
+		C582B2F31B3EC8D5005CC526 /* DDASLLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = C582B2A71B3EC8D5005CC526 /* DDASLLogger.m */; };
+		C582B2F41B3EC8D5005CC526 /* DDASLLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = C582B2A71B3EC8D5005CC526 /* DDASLLogger.m */; };
+		C582B2F51B3EC8D5005CC526 /* DDASLLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = C582B2A71B3EC8D5005CC526 /* DDASLLogger.m */; };
+		C582B2F61B3EC8D5005CC526 /* DDASLLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = C582B2A71B3EC8D5005CC526 /* DDASLLogger.m */; };
+		C582B2F71B3EC8D5005CC526 /* DDASLLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = C582B2A71B3EC8D5005CC526 /* DDASLLogger.m */; };
+		C582B2F81B3EC8D5005CC526 /* DDFileLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = C582B2AA1B3EC8D5005CC526 /* DDFileLogger.m */; };
+		C582B2F91B3EC8D5005CC526 /* DDFileLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = C582B2AA1B3EC8D5005CC526 /* DDFileLogger.m */; };
+		C582B2FA1B3EC8D5005CC526 /* DDFileLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = C582B2AA1B3EC8D5005CC526 /* DDFileLogger.m */; };
+		C582B2FB1B3EC8D5005CC526 /* DDFileLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = C582B2AA1B3EC8D5005CC526 /* DDFileLogger.m */; };
+		C582B2FC1B3EC8D5005CC526 /* DDFileLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = C582B2AA1B3EC8D5005CC526 /* DDFileLogger.m */; };
+		C582B2FD1B3EC8D5005CC526 /* DDFileLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = C582B2AA1B3EC8D5005CC526 /* DDFileLogger.m */; };
+		C582B2FE1B3EC8D5005CC526 /* DDFileLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = C582B2AA1B3EC8D5005CC526 /* DDFileLogger.m */; };
+		C582B2FF1B3EC8D5005CC526 /* DDLog.m in Sources */ = {isa = PBXBuildFile; fileRef = C582B2AE1B3EC8D5005CC526 /* DDLog.m */; };
+		C582B3001B3EC8D5005CC526 /* DDLog.m in Sources */ = {isa = PBXBuildFile; fileRef = C582B2AE1B3EC8D5005CC526 /* DDLog.m */; };
+		C582B3011B3EC8D5005CC526 /* DDLog.m in Sources */ = {isa = PBXBuildFile; fileRef = C582B2AE1B3EC8D5005CC526 /* DDLog.m */; };
+		C582B3021B3EC8D5005CC526 /* DDLog.m in Sources */ = {isa = PBXBuildFile; fileRef = C582B2AE1B3EC8D5005CC526 /* DDLog.m */; };
+		C582B3031B3EC8D5005CC526 /* DDLog.m in Sources */ = {isa = PBXBuildFile; fileRef = C582B2AE1B3EC8D5005CC526 /* DDLog.m */; };
+		C582B3041B3EC8D5005CC526 /* DDLog.m in Sources */ = {isa = PBXBuildFile; fileRef = C582B2AE1B3EC8D5005CC526 /* DDLog.m */; };
+		C582B3051B3EC8D5005CC526 /* DDLog.m in Sources */ = {isa = PBXBuildFile; fileRef = C582B2AE1B3EC8D5005CC526 /* DDLog.m */; };
+		C582B3061B3EC8D5005CC526 /* DDTTYLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = C582B2B11B3EC8D5005CC526 /* DDTTYLogger.m */; };
+		C582B3071B3EC8D5005CC526 /* DDTTYLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = C582B2B11B3EC8D5005CC526 /* DDTTYLogger.m */; };
+		C582B3081B3EC8D5005CC526 /* DDTTYLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = C582B2B11B3EC8D5005CC526 /* DDTTYLogger.m */; };
+		C582B3091B3EC8D5005CC526 /* DDTTYLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = C582B2B11B3EC8D5005CC526 /* DDTTYLogger.m */; };
+		C582B30A1B3EC8D5005CC526 /* DDTTYLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = C582B2B11B3EC8D5005CC526 /* DDTTYLogger.m */; };
+		C582B30B1B3EC8D5005CC526 /* DDTTYLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = C582B2B11B3EC8D5005CC526 /* DDTTYLogger.m */; };
+		C582B30C1B3EC8D5005CC526 /* DDTTYLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = C582B2B11B3EC8D5005CC526 /* DDTTYLogger.m */; };
+		C582B30D1B3EC8D5005CC526 /* DDContextFilterLogFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = C582B2B41B3EC8D5005CC526 /* DDContextFilterLogFormatter.m */; };
+		C582B30E1B3EC8D5005CC526 /* DDContextFilterLogFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = C582B2B41B3EC8D5005CC526 /* DDContextFilterLogFormatter.m */; };
+		C582B30F1B3EC8D5005CC526 /* DDContextFilterLogFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = C582B2B41B3EC8D5005CC526 /* DDContextFilterLogFormatter.m */; };
+		C582B3101B3EC8D5005CC526 /* DDContextFilterLogFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = C582B2B41B3EC8D5005CC526 /* DDContextFilterLogFormatter.m */; };
+		C582B3111B3EC8D5005CC526 /* DDContextFilterLogFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = C582B2B41B3EC8D5005CC526 /* DDContextFilterLogFormatter.m */; };
+		C582B3121B3EC8D5005CC526 /* DDContextFilterLogFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = C582B2B41B3EC8D5005CC526 /* DDContextFilterLogFormatter.m */; };
+		C582B3131B3EC8D5005CC526 /* DDContextFilterLogFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = C582B2B41B3EC8D5005CC526 /* DDContextFilterLogFormatter.m */; };
+		C582B3141B3EC8D5005CC526 /* DDDispatchQueueLogFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = C582B2B61B3EC8D5005CC526 /* DDDispatchQueueLogFormatter.m */; };
+		C582B3151B3EC8D5005CC526 /* DDDispatchQueueLogFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = C582B2B61B3EC8D5005CC526 /* DDDispatchQueueLogFormatter.m */; };
+		C582B3161B3EC8D5005CC526 /* DDDispatchQueueLogFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = C582B2B61B3EC8D5005CC526 /* DDDispatchQueueLogFormatter.m */; };
+		C582B3171B3EC8D5005CC526 /* DDDispatchQueueLogFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = C582B2B61B3EC8D5005CC526 /* DDDispatchQueueLogFormatter.m */; };
+		C582B3181B3EC8D5005CC526 /* DDDispatchQueueLogFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = C582B2B61B3EC8D5005CC526 /* DDDispatchQueueLogFormatter.m */; };
+		C582B3191B3EC8D5005CC526 /* DDDispatchQueueLogFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = C582B2B61B3EC8D5005CC526 /* DDDispatchQueueLogFormatter.m */; };
+		C582B31A1B3EC8D5005CC526 /* DDDispatchQueueLogFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = C582B2B61B3EC8D5005CC526 /* DDDispatchQueueLogFormatter.m */; };
+		C582B31B1B3EC8D5005CC526 /* DDMultiFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = C582B2B81B3EC8D5005CC526 /* DDMultiFormatter.m */; };
+		C582B31C1B3EC8D5005CC526 /* DDMultiFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = C582B2B81B3EC8D5005CC526 /* DDMultiFormatter.m */; };
+		C582B31D1B3EC8D5005CC526 /* DDMultiFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = C582B2B81B3EC8D5005CC526 /* DDMultiFormatter.m */; };
+		C582B31E1B3EC8D5005CC526 /* DDMultiFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = C582B2B81B3EC8D5005CC526 /* DDMultiFormatter.m */; };
+		C582B31F1B3EC8D5005CC526 /* DDMultiFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = C582B2B81B3EC8D5005CC526 /* DDMultiFormatter.m */; };
+		C582B3201B3EC8D5005CC526 /* DDMultiFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = C582B2B81B3EC8D5005CC526 /* DDMultiFormatter.m */; };
+		C582B3211B3EC8D5005CC526 /* DDMultiFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = C582B2B81B3EC8D5005CC526 /* DDMultiFormatter.m */; };
+		C582B33E1B3EC8D5005CC526 /* FMDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = C582B2C11B3EC8D5005CC526 /* FMDatabase.m */; };
+		C582B33F1B3EC8D5005CC526 /* FMDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = C582B2C11B3EC8D5005CC526 /* FMDatabase.m */; };
+		C582B3401B3EC8D5005CC526 /* FMDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = C582B2C11B3EC8D5005CC526 /* FMDatabase.m */; };
+		C582B3411B3EC8D5005CC526 /* FMDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = C582B2C11B3EC8D5005CC526 /* FMDatabase.m */; };
+		C582B3421B3EC8D5005CC526 /* FMDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = C582B2C11B3EC8D5005CC526 /* FMDatabase.m */; };
+		C582B3431B3EC8D5005CC526 /* FMDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = C582B2C11B3EC8D5005CC526 /* FMDatabase.m */; };
+		C582B3441B3EC8D5005CC526 /* FMDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = C582B2C11B3EC8D5005CC526 /* FMDatabase.m */; };
+		C582B3451B3EC8D5005CC526 /* FMDatabaseAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = C582B2C31B3EC8D5005CC526 /* FMDatabaseAdditions.m */; };
+		C582B3461B3EC8D5005CC526 /* FMDatabaseAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = C582B2C31B3EC8D5005CC526 /* FMDatabaseAdditions.m */; };
+		C582B3471B3EC8D5005CC526 /* FMDatabaseAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = C582B2C31B3EC8D5005CC526 /* FMDatabaseAdditions.m */; };
+		C582B3481B3EC8D5005CC526 /* FMDatabaseAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = C582B2C31B3EC8D5005CC526 /* FMDatabaseAdditions.m */; };
+		C582B3491B3EC8D5005CC526 /* FMDatabaseAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = C582B2C31B3EC8D5005CC526 /* FMDatabaseAdditions.m */; };
+		C582B34A1B3EC8D5005CC526 /* FMDatabaseAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = C582B2C31B3EC8D5005CC526 /* FMDatabaseAdditions.m */; };
+		C582B34B1B3EC8D5005CC526 /* FMDatabaseAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = C582B2C31B3EC8D5005CC526 /* FMDatabaseAdditions.m */; };
+		C582B34C1B3EC8D5005CC526 /* FMDatabasePool.m in Sources */ = {isa = PBXBuildFile; fileRef = C582B2C51B3EC8D5005CC526 /* FMDatabasePool.m */; };
+		C582B34D1B3EC8D5005CC526 /* FMDatabasePool.m in Sources */ = {isa = PBXBuildFile; fileRef = C582B2C51B3EC8D5005CC526 /* FMDatabasePool.m */; };
+		C582B34E1B3EC8D5005CC526 /* FMDatabasePool.m in Sources */ = {isa = PBXBuildFile; fileRef = C582B2C51B3EC8D5005CC526 /* FMDatabasePool.m */; };
+		C582B34F1B3EC8D5005CC526 /* FMDatabasePool.m in Sources */ = {isa = PBXBuildFile; fileRef = C582B2C51B3EC8D5005CC526 /* FMDatabasePool.m */; };
+		C582B3501B3EC8D5005CC526 /* FMDatabasePool.m in Sources */ = {isa = PBXBuildFile; fileRef = C582B2C51B3EC8D5005CC526 /* FMDatabasePool.m */; };
+		C582B3511B3EC8D5005CC526 /* FMDatabasePool.m in Sources */ = {isa = PBXBuildFile; fileRef = C582B2C51B3EC8D5005CC526 /* FMDatabasePool.m */; };
+		C582B3521B3EC8D5005CC526 /* FMDatabasePool.m in Sources */ = {isa = PBXBuildFile; fileRef = C582B2C51B3EC8D5005CC526 /* FMDatabasePool.m */; };
+		C582B3531B3EC8D5005CC526 /* FMDatabaseQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = C582B2C71B3EC8D5005CC526 /* FMDatabaseQueue.m */; };
+		C582B3541B3EC8D5005CC526 /* FMDatabaseQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = C582B2C71B3EC8D5005CC526 /* FMDatabaseQueue.m */; };
+		C582B3551B3EC8D5005CC526 /* FMDatabaseQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = C582B2C71B3EC8D5005CC526 /* FMDatabaseQueue.m */; };
+		C582B3561B3EC8D5005CC526 /* FMDatabaseQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = C582B2C71B3EC8D5005CC526 /* FMDatabaseQueue.m */; };
+		C582B3571B3EC8D5005CC526 /* FMDatabaseQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = C582B2C71B3EC8D5005CC526 /* FMDatabaseQueue.m */; };
+		C582B3581B3EC8D5005CC526 /* FMDatabaseQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = C582B2C71B3EC8D5005CC526 /* FMDatabaseQueue.m */; };
+		C582B3591B3EC8D5005CC526 /* FMDatabaseQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = C582B2C71B3EC8D5005CC526 /* FMDatabaseQueue.m */; };
+		C582B35A1B3EC8D5005CC526 /* FMResultSet.m in Sources */ = {isa = PBXBuildFile; fileRef = C582B2CA1B3EC8D5005CC526 /* FMResultSet.m */; };
+		C582B35B1B3EC8D5005CC526 /* FMResultSet.m in Sources */ = {isa = PBXBuildFile; fileRef = C582B2CA1B3EC8D5005CC526 /* FMResultSet.m */; };
+		C582B35C1B3EC8D5005CC526 /* FMResultSet.m in Sources */ = {isa = PBXBuildFile; fileRef = C582B2CA1B3EC8D5005CC526 /* FMResultSet.m */; };
+		C582B35D1B3EC8D5005CC526 /* FMResultSet.m in Sources */ = {isa = PBXBuildFile; fileRef = C582B2CA1B3EC8D5005CC526 /* FMResultSet.m */; };
+		C582B35E1B3EC8D5005CC526 /* FMResultSet.m in Sources */ = {isa = PBXBuildFile; fileRef = C582B2CA1B3EC8D5005CC526 /* FMResultSet.m */; };
+		C582B35F1B3EC8D5005CC526 /* FMResultSet.m in Sources */ = {isa = PBXBuildFile; fileRef = C582B2CA1B3EC8D5005CC526 /* FMResultSet.m */; };
+		C582B3601B3EC8D5005CC526 /* FMResultSet.m in Sources */ = {isa = PBXBuildFile; fileRef = C582B2CA1B3EC8D5005CC526 /* FMResultSet.m */; };
+		C582B3611B3EC8D5005CC526 /* HexColor.m in Sources */ = {isa = PBXBuildFile; fileRef = C582B2CE1B3EC8D5005CC526 /* HexColor.m */; };
+		C582B3621B3EC8D5005CC526 /* HexColor.m in Sources */ = {isa = PBXBuildFile; fileRef = C582B2CE1B3EC8D5005CC526 /* HexColor.m */; };
+		C582B3631B3EC8D5005CC526 /* HexColor.m in Sources */ = {isa = PBXBuildFile; fileRef = C582B2CE1B3EC8D5005CC526 /* HexColor.m */; };
+		C582B3641B3EC8D5005CC526 /* HexColor.m in Sources */ = {isa = PBXBuildFile; fileRef = C582B2CE1B3EC8D5005CC526 /* HexColor.m */; };
+		C582B3651B3EC8D5005CC526 /* HexColor.m in Sources */ = {isa = PBXBuildFile; fileRef = C582B2CE1B3EC8D5005CC526 /* HexColor.m */; };
+		C582B3661B3EC8D5005CC526 /* HexColor.m in Sources */ = {isa = PBXBuildFile; fileRef = C582B2CE1B3EC8D5005CC526 /* HexColor.m */; };
+		C582B3671B3EC8D5005CC526 /* HexColor.m in Sources */ = {isa = PBXBuildFile; fileRef = C582B2CE1B3EC8D5005CC526 /* HexColor.m */; };
+		C582B3841B3EC8D5005CC526 /* UIColor+BFPaperColors.m in Sources */ = {isa = PBXBuildFile; fileRef = C582B2D61B3EC8D5005CC526 /* UIColor+BFPaperColors.m */; };
+		C582B3851B3EC8D5005CC526 /* UIColor+BFPaperColors.m in Sources */ = {isa = PBXBuildFile; fileRef = C582B2D61B3EC8D5005CC526 /* UIColor+BFPaperColors.m */; };
+		C582B3861B3EC8D5005CC526 /* UIColor+BFPaperColors.m in Sources */ = {isa = PBXBuildFile; fileRef = C582B2D61B3EC8D5005CC526 /* UIColor+BFPaperColors.m */; };
+		C582B3871B3EC8D5005CC526 /* UIColor+BFPaperColors.m in Sources */ = {isa = PBXBuildFile; fileRef = C582B2D61B3EC8D5005CC526 /* UIColor+BFPaperColors.m */; };
+		C582B3881B3EC8D5005CC526 /* UIColor+BFPaperColors.m in Sources */ = {isa = PBXBuildFile; fileRef = C582B2D61B3EC8D5005CC526 /* UIColor+BFPaperColors.m */; };
+		C582B3891B3EC8D5005CC526 /* UIColor+BFPaperColors.m in Sources */ = {isa = PBXBuildFile; fileRef = C582B2D61B3EC8D5005CC526 /* UIColor+BFPaperColors.m */; };
+		C582B38A1B3EC8D5005CC526 /* UIColor+BFPaperColors.m in Sources */ = {isa = PBXBuildFile; fileRef = C582B2D61B3EC8D5005CC526 /* UIColor+BFPaperColors.m */; };
+		C582B3991B3EC8D5005CC526 /* ZLBalancedFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = C582B2DB1B3EC8D5005CC526 /* ZLBalancedFlowLayout.swift */; };
+		C582B39A1B3EC8D5005CC526 /* ZLBalancedFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = C582B2DB1B3EC8D5005CC526 /* ZLBalancedFlowLayout.swift */; };
+		C582B39B1B3EC8D5005CC526 /* ZLBalancedFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = C582B2DB1B3EC8D5005CC526 /* ZLBalancedFlowLayout.swift */; };
+		C582B39C1B3EC8D5005CC526 /* ZLBalancedFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = C582B2DB1B3EC8D5005CC526 /* ZLBalancedFlowLayout.swift */; };
+		C582B39D1B3EC8D5005CC526 /* ZLBalancedFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = C582B2DB1B3EC8D5005CC526 /* ZLBalancedFlowLayout.swift */; };
+		C582B39E1B3EC8D5005CC526 /* ZLBalancedFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = C582B2DB1B3EC8D5005CC526 /* ZLBalancedFlowLayout.swift */; };
+		C582B39F1B3EC8D5005CC526 /* ZLBalancedFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = C582B2DB1B3EC8D5005CC526 /* ZLBalancedFlowLayout.swift */; };
+		C582B3AC1B3EC910005CC526 /* XYPieChart.m in Sources */ = {isa = PBXBuildFile; fileRef = C582B3A51B3EC910005CC526 /* XYPieChart.m */; };
+		C582B3AD1B3EC910005CC526 /* XYPieChart.m in Sources */ = {isa = PBXBuildFile; fileRef = C582B3A51B3EC910005CC526 /* XYPieChart.m */; };
+		C582B3AE1B3EC910005CC526 /* XYPieChart.m in Sources */ = {isa = PBXBuildFile; fileRef = C582B3A51B3EC910005CC526 /* XYPieChart.m */; };
+		C582B3B11B3ECCBA005CC526 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = C582B3AF1B3ECC6A005CC526 /* libsqlite3.dylib */; };
+		C582B3B21B3ECD26005CC526 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = C582B3AF1B3ECC6A005CC526 /* libsqlite3.dylib */; };
+		C582B3B31B3ECD2D005CC526 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = C582B3AF1B3ECC6A005CC526 /* libsqlite3.dylib */; };
+		C582B3B41B3ECD31005CC526 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = C582B3AF1B3ECC6A005CC526 /* libsqlite3.dylib */; };
+		C582B3B51B3ECD38005CC526 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = C582B3AF1B3ECC6A005CC526 /* libsqlite3.dylib */; };
+		C582B3B71B3ED1D8005CC526 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = C582B3AF1B3ECC6A005CC526 /* libsqlite3.dylib */; };
 		C58B38611B395FB7006C7AE7 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = C58B385D1B395FB7006C7AE7 /* LaunchScreen.xib */; };
 		C58B38621B395FB7006C7AE7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C58B385F1B395FB7006C7AE7 /* Main.storyboard */; };
 		C59088C81B398E330099F8CB /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = C59088CA1B398E330099F8CB /* Localizable.strings */; };
@@ -236,7 +357,6 @@
 		C59689B11B3C16270038018D /* HTLSqliteStorageProvider+Deserialization.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6D1F71AFEE603353B859 /* HTLSqliteStorageProvider+Deserialization.m */; };
 		C59689B21B3C16270038018D /* HTLModelController.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6B2EF7D4AAB16D0EC09A /* HTLModelController.m */; };
 		C59689B41B3C16270038018D /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73BC6FB0EFED7B84F71E676E /* NotificationCenter.framework */; };
-		C59689B51B3C16270038018D /* Pods_TodayExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73BC622E9691559B4565139E /* Pods_TodayExtension.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		C59689B71B3C16270038018D /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C533706F1B397E520095549E /* MainInterface.storyboard */; };
 		C59689B81B3C16270038018D /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = C59088CA1B398E330099F8CB /* Localizable.strings */; };
 		C59689C31B3C16350038018D /* NSDate+HTLComponents.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6F6EE1E455D98426F705 /* NSDate+HTLComponents.m */; };
@@ -258,7 +378,6 @@
 		C59689D31B3C16350038018D /* HTLSqliteStorageProvider+Deserialization.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6D1F71AFEE603353B859 /* HTLSqliteStorageProvider+Deserialization.m */; };
 		C59689D41B3C16350038018D /* HTLModelController.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6B2EF7D4AAB16D0EC09A /* HTLModelController.m */; };
 		C59689D61B3C16350038018D /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73BC6FB0EFED7B84F71E676E /* NotificationCenter.framework */; };
-		C59689D71B3C16350038018D /* Pods_TodayExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73BC622E9691559B4565139E /* Pods_TodayExtension.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		C59689D91B3C16350038018D /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C533706F1B397E520095549E /* MainInterface.storyboard */; };
 		C59689DA1B3C16350038018D /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = C59088CA1B398E330099F8CB /* Localizable.strings */; };
 		C59689E41B3C18220038018D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C59689E21B3C18220038018D /* InfoPlist.strings */; };
@@ -268,9 +387,6 @@
 		C59689F81B3C198D0038018D /* TodayExtension Beta.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = C59689E01B3C16350038018D /* TodayExtension Beta.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		C5BA1B801B26F890006D80BC /* TodayExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = C5BA1B731B26F890006D80BC /* TodayExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		C5FFE3F21B1857CE007D317D /* HyperTimeLoggerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C5FFE3F11B1857CE007D317D /* HyperTimeLoggerTests.m */; };
-		DCB990A0AD4BDB91695015B1 /* Pods_TodayExtension_Beta.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B249305A9E498DC4B54D49C /* Pods_TodayExtension_Beta.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
-		DCD591975445704C356AA391 /* Pods_HyperTimeLogger_Beta.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E0FF35F54827AF3C20199627 /* Pods_HyperTimeLogger_Beta.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
-		F56FF5B09C0D2F0F232E0AE1 /* Pods_HyperTimeLogger_Alpha.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00FE358840A04278F552ED9B /* Pods_HyperTimeLogger_Alpha.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -341,12 +457,6 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		00FE358840A04278F552ED9B /* Pods_HyperTimeLogger_Alpha.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HyperTimeLogger_Alpha.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		2398C87D3A2A575E1753DBA4 /* Pods-TodayExtension Beta.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TodayExtension Beta.debug.xcconfig"; path = "../Pods/Target Support Files/Pods-TodayExtension Beta/Pods-TodayExtension Beta.debug.xcconfig"; sourceTree = "<group>"; };
-		5D95DDDBEB7C458B73BB7321 /* Pods-TodayExtension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TodayExtension.release.xcconfig"; path = "../Pods/Target Support Files/Pods-TodayExtension/Pods-TodayExtension.release.xcconfig"; sourceTree = "<group>"; };
-		5F5BA0F90CC2D946CDD3327B /* Pods-HyperTimeLogger.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HyperTimeLogger.debug.xcconfig"; path = "../Pods/Target Support Files/Pods-HyperTimeLogger/Pods-HyperTimeLogger.debug.xcconfig"; sourceTree = "<group>"; };
-		5F882D0340B8C246FC68BD73 /* Pods-HyperTimeLogger Beta.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HyperTimeLogger Beta.debug.xcconfig"; path = "../Pods/Target Support Files/Pods-HyperTimeLogger Beta/Pods-HyperTimeLogger Beta.debug.xcconfig"; sourceTree = "<group>"; };
-		617AE9E650925A0499F5E44C /* Pods-TodayExtension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TodayExtension.debug.xcconfig"; path = "../Pods/Target Support Files/Pods-TodayExtension/Pods-TodayExtension.debug.xcconfig"; sourceTree = "<group>"; };
 		73BC6034DE2E0674AFE42546 /* HTLStatisticsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTLStatisticsViewController.h; sourceTree = "<group>"; };
 		73BC6047AEB024122C71236D /* HTLStringExportProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTLStringExportProvider.h; sourceTree = "<group>"; };
 		73BC608BED34E02C9AAE75C1 /* HTLReportDto+Helpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "HTLReportDto+Helpers.h"; sourceTree = "<group>"; };
@@ -450,13 +560,6 @@
 		73BC6FB0EFED7B84F71E676E /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = ../../../../../Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator.sdk/System/Library/Frameworks/NotificationCenter.framework; sourceTree = "<group>"; };
 		73BC6FBF1D739E2158DA64F6 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		73BC6FEC821B2D22ACD250CD /* HTLCSVStringExportProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTLCSVStringExportProvider.m; sourceTree = "<group>"; };
-		7AA1C79CBB5574FC200DEF58 /* Pods_TodayExtension_Alpha.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TodayExtension_Alpha.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		7B249305A9E498DC4B54D49C /* Pods_TodayExtension_Beta.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TodayExtension_Beta.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		8C602951969FA7F90F9C956F /* Pods-TodayExtension Alpha.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TodayExtension Alpha.release.xcconfig"; path = "../Pods/Target Support Files/Pods-TodayExtension Alpha/Pods-TodayExtension Alpha.release.xcconfig"; sourceTree = "<group>"; };
-		9311AFEE55D1C8A6CCFD48E6 /* Pods-HyperTimeLogger Alpha.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HyperTimeLogger Alpha.debug.xcconfig"; path = "../Pods/Target Support Files/Pods-HyperTimeLogger Alpha/Pods-HyperTimeLogger Alpha.debug.xcconfig"; sourceTree = "<group>"; };
-		ABA732652AF14AB6266DD34C /* Pods-TodayExtension Alpha.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TodayExtension Alpha.debug.xcconfig"; path = "../Pods/Target Support Files/Pods-TodayExtension Alpha/Pods-TodayExtension Alpha.debug.xcconfig"; sourceTree = "<group>"; };
-		B219E699FF581C2A9F4BE068 /* Pods-HyperTimeLogger Alpha.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HyperTimeLogger Alpha.release.xcconfig"; path = "../Pods/Target Support Files/Pods-HyperTimeLogger Alpha/Pods-HyperTimeLogger Alpha.release.xcconfig"; sourceTree = "<group>"; };
-		C080C216BEBCCD26E4BC3451 /* Pods-HyperTimeLogger.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HyperTimeLogger.release.xcconfig"; path = "../Pods/Target Support Files/Pods-HyperTimeLogger/Pods-HyperTimeLogger.release.xcconfig"; sourceTree = "<group>"; };
 		C516A6CA1B3A8F2A0018F022 /* HTLRoundButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTLRoundButton.h; sourceTree = "<group>"; };
 		C516A6CB1B3A8F2A0018F022 /* HTLRoundButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTLRoundButton.m; sourceTree = "<group>"; };
 		C516A7171B3AD18E0018F022 /* HyperTimeLogger Beta.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "HyperTimeLogger Beta.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -479,6 +582,61 @@
 		C55912601B3C086D002593BE /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		C56ED4EB1B38217F00221171 /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = "<group>"; };
 		C56ED4EC1B38217F00221171 /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
+		C582B2A01B3EC8D5005CC526 /* CocoaLumberjack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CocoaLumberjack.h; sourceTree = "<group>"; };
+		C582B2A11B3EC8D5005CC526 /* CocoaLumberjack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CocoaLumberjack.swift; sourceTree = "<group>"; };
+		C582B2A21B3EC8D5005CC526 /* DDAbstractDatabaseLogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDAbstractDatabaseLogger.h; sourceTree = "<group>"; };
+		C582B2A31B3EC8D5005CC526 /* DDAbstractDatabaseLogger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDAbstractDatabaseLogger.m; sourceTree = "<group>"; };
+		C582B2A41B3EC8D5005CC526 /* DDASLLogCapture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDASLLogCapture.h; sourceTree = "<group>"; };
+		C582B2A51B3EC8D5005CC526 /* DDASLLogCapture.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDASLLogCapture.m; sourceTree = "<group>"; };
+		C582B2A61B3EC8D5005CC526 /* DDASLLogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDASLLogger.h; sourceTree = "<group>"; };
+		C582B2A71B3EC8D5005CC526 /* DDASLLogger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDASLLogger.m; sourceTree = "<group>"; };
+		C582B2A81B3EC8D5005CC526 /* DDAssertMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDAssertMacros.h; sourceTree = "<group>"; };
+		C582B2A91B3EC8D5005CC526 /* DDFileLogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDFileLogger.h; sourceTree = "<group>"; };
+		C582B2AA1B3EC8D5005CC526 /* DDFileLogger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDFileLogger.m; sourceTree = "<group>"; };
+		C582B2AB1B3EC8D5005CC526 /* DDLegacyMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDLegacyMacros.h; sourceTree = "<group>"; };
+		C582B2AC1B3EC8D5005CC526 /* DDLog+LOGV.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "DDLog+LOGV.h"; sourceTree = "<group>"; };
+		C582B2AD1B3EC8D5005CC526 /* DDLog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDLog.h; sourceTree = "<group>"; };
+		C582B2AE1B3EC8D5005CC526 /* DDLog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDLog.m; sourceTree = "<group>"; };
+		C582B2AF1B3EC8D5005CC526 /* DDLogMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDLogMacros.h; sourceTree = "<group>"; };
+		C582B2B01B3EC8D5005CC526 /* DDTTYLogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDTTYLogger.h; sourceTree = "<group>"; };
+		C582B2B11B3EC8D5005CC526 /* DDTTYLogger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDTTYLogger.m; sourceTree = "<group>"; };
+		C582B2B31B3EC8D5005CC526 /* DDContextFilterLogFormatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDContextFilterLogFormatter.h; sourceTree = "<group>"; };
+		C582B2B41B3EC8D5005CC526 /* DDContextFilterLogFormatter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDContextFilterLogFormatter.m; sourceTree = "<group>"; };
+		C582B2B51B3EC8D5005CC526 /* DDDispatchQueueLogFormatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDDispatchQueueLogFormatter.h; sourceTree = "<group>"; };
+		C582B2B61B3EC8D5005CC526 /* DDDispatchQueueLogFormatter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDDispatchQueueLogFormatter.m; sourceTree = "<group>"; };
+		C582B2B71B3EC8D5005CC526 /* DDMultiFormatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDMultiFormatter.h; sourceTree = "<group>"; };
+		C582B2B81B3EC8D5005CC526 /* DDMultiFormatter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDMultiFormatter.m; sourceTree = "<group>"; };
+		C582B2B91B3EC8D5005CC526 /* LICENSE.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE.txt; sourceTree = "<group>"; };
+		C582B2BA1B3EC8D5005CC526 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		C582B2BC1B3EC8D5005CC526 /* LICENSE.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE.txt; sourceTree = "<group>"; };
+		C582B2BD1B3EC8D5005CC526 /* README.markdown */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.markdown; sourceTree = "<group>"; };
+		C582B2C01B3EC8D5005CC526 /* FMDatabase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabase.h; sourceTree = "<group>"; };
+		C582B2C11B3EC8D5005CC526 /* FMDatabase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabase.m; sourceTree = "<group>"; };
+		C582B2C21B3EC8D5005CC526 /* FMDatabaseAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabaseAdditions.h; sourceTree = "<group>"; };
+		C582B2C31B3EC8D5005CC526 /* FMDatabaseAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabaseAdditions.m; sourceTree = "<group>"; };
+		C582B2C41B3EC8D5005CC526 /* FMDatabasePool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabasePool.h; sourceTree = "<group>"; };
+		C582B2C51B3EC8D5005CC526 /* FMDatabasePool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabasePool.m; sourceTree = "<group>"; };
+		C582B2C61B3EC8D5005CC526 /* FMDatabaseQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabaseQueue.h; sourceTree = "<group>"; };
+		C582B2C71B3EC8D5005CC526 /* FMDatabaseQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabaseQueue.m; sourceTree = "<group>"; };
+		C582B2C81B3EC8D5005CC526 /* FMDB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDB.h; sourceTree = "<group>"; };
+		C582B2C91B3EC8D5005CC526 /* FMResultSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMResultSet.h; sourceTree = "<group>"; };
+		C582B2CA1B3EC8D5005CC526 /* FMResultSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMResultSet.m; sourceTree = "<group>"; };
+		C582B2CD1B3EC8D5005CC526 /* HexColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HexColor.h; sourceTree = "<group>"; };
+		C582B2CE1B3EC8D5005CC526 /* HexColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HexColor.m; sourceTree = "<group>"; };
+		C582B2CF1B3EC8D5005CC526 /* LICENCE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENCE; sourceTree = "<group>"; };
+		C582B2D01B3EC8D5005CC526 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		C582B2D21B3EC8D5005CC526 /* LICENSE.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = LICENSE.md; sourceTree = "<group>"; };
+		C582B2D31B3EC8D5005CC526 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		C582B2D51B3EC8D5005CC526 /* UIColor+BFPaperColors.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+BFPaperColors.h"; sourceTree = "<group>"; };
+		C582B2D61B3EC8D5005CC526 /* UIColor+BFPaperColors.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+BFPaperColors.m"; sourceTree = "<group>"; };
+		C582B2D81B3EC8D5005CC526 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		C582B2D91B3EC8D5005CC526 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		C582B2DB1B3EC8D5005CC526 /* ZLBalancedFlowLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZLBalancedFlowLayout.swift; sourceTree = "<group>"; };
+		C582B3A11B3EC910005CC526 /* LICENSE.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE.txt; sourceTree = "<group>"; };
+		C582B3A21B3EC910005CC526 /* README.textile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.textile; sourceTree = "<group>"; };
+		C582B3A41B3EC910005CC526 /* XYPieChart.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XYPieChart.h; sourceTree = "<group>"; };
+		C582B3A51B3EC910005CC526 /* XYPieChart.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XYPieChart.m; sourceTree = "<group>"; };
+		C582B3AF1B3ECC6A005CC526 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 		C58B385E1B395FB7006C7AE7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		C58B38601B395FB7006C7AE7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C58B38641B395FDB006C7AE7 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
@@ -507,9 +665,6 @@
 		C5FFE3EB1B1857CE007D317D /* HyperTimeLoggerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HyperTimeLoggerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C5FFE3F01B1857CE007D317D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C5FFE3F11B1857CE007D317D /* HyperTimeLoggerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HyperTimeLoggerTests.m; sourceTree = "<group>"; };
-		D66B8812A60EF84183B354FF /* Pods-TodayExtension Beta.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TodayExtension Beta.release.xcconfig"; path = "../Pods/Target Support Files/Pods-TodayExtension Beta/Pods-TodayExtension Beta.release.xcconfig"; sourceTree = "<group>"; };
-		E0FF35F54827AF3C20199627 /* Pods_HyperTimeLogger_Beta.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HyperTimeLogger_Beta.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		E32926B01F80A1304D3E4F8A /* Pods-HyperTimeLogger Beta.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HyperTimeLogger Beta.release.xcconfig"; path = "../Pods/Target Support Files/Pods-HyperTimeLogger Beta/Pods-HyperTimeLogger Beta.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -517,7 +672,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				73BC6F0D931166EADD7E2E4F /* Pods_HyperTimeLogger.framework in Frameworks */,
+				C582B3B41B3ECD31005CC526 /* libsqlite3.dylib in Frameworks */,
 				C56ED4F11B38217F00221171 /* Crashlytics.framework in Frameworks */,
 				C56ED4ED1B38217F00221171 /* Fabric.framework in Frameworks */,
 			);
@@ -527,10 +682,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C516A70E1B3AD18E0018F022 /* Pods_HyperTimeLogger.framework in Frameworks */,
+				C582B3B31B3ECD2D005CC526 /* libsqlite3.dylib in Frameworks */,
 				C516A70F1B3AD18E0018F022 /* Crashlytics.framework in Frameworks */,
 				C516A7101B3AD18E0018F022 /* Fabric.framework in Frameworks */,
-				DCD591975445704C356AA391 /* Pods_HyperTimeLogger_Beta.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -538,10 +692,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C516A7591B3AD2590018F022 /* Pods_HyperTimeLogger.framework in Frameworks */,
+				C582B3B21B3ECD26005CC526 /* libsqlite3.dylib in Frameworks */,
 				C516A75A1B3AD2590018F022 /* Crashlytics.framework in Frameworks */,
 				C516A75B1B3AD2590018F022 /* Fabric.framework in Frameworks */,
-				F56FF5B09C0D2F0F232E0AE1 /* Pods_HyperTimeLogger_Alpha.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -549,9 +702,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C582B3B11B3ECCBA005CC526 /* libsqlite3.dylib in Frameworks */,
 				C59689B41B3C16270038018D /* NotificationCenter.framework in Frameworks */,
-				C59689B51B3C16270038018D /* Pods_TodayExtension.framework in Frameworks */,
-				08A09D6CFF254D278971FD93 /* Pods_TodayExtension_Alpha.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -559,9 +711,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C582B3B51B3ECD38005CC526 /* libsqlite3.dylib in Frameworks */,
 				C59689D61B3C16350038018D /* NotificationCenter.framework in Frameworks */,
-				C59689D71B3C16350038018D /* Pods_TodayExtension.framework in Frameworks */,
-				DCB990A0AD4BDB91695015B1 /* Pods_TodayExtension_Beta.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -569,8 +720,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C582B3B71B3ED1D8005CC526 /* libsqlite3.dylib in Frameworks */,
 				73BC66E062885277EA135AC0 /* NotificationCenter.framework in Frameworks */,
-				73BC6B9AD1668565075E5DF0 /* Pods_TodayExtension.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -714,6 +865,7 @@
 		73BC665886848CD597251D31 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				C582B3AF1B3ECC6A005CC526 /* libsqlite3.dylib */,
 				73BC6FB0EFED7B84F71E676E /* NotificationCenter.framework */,
 				73BC64D990F65D9E25A88C68 /* Pods_HyperTimeLogger.framework */,
 				73BC622E9691559B4565139E /* Pods_TodayExtension.framework */,
@@ -874,13 +1026,6 @@
 			path = DTFoundation;
 			sourceTree = "<group>";
 		};
-		73BC6ABAF5CC352C0A2F7D47 /* Supporting Files (Use Subfolders For Each Version) */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = "Supporting Files (Use Subfolders For Each Version)";
-			sourceTree = "<group>";
-		};
 		73BC6AD70178CE58AF547D6F /* Live */ = {
 			isa = PBXGroup;
 			children = (
@@ -966,6 +1111,12 @@
 		73BC6EDE9C53A95392DB1EB9 /* Vendor */ = {
 			isa = PBXGroup;
 			children = (
+				C582B3A01B3EC910005CC526 /* XYPieChart */,
+				C582B29E1B3EC8D5005CC526 /* CocoaLumberjack */,
+				C582B2BB1B3EC8D5005CC526 /* FMDB */,
+				C582B2CB1B3EC8D5005CC526 /* HexColors */,
+				C582B2D11B3EC8D5005CC526 /* UIColor+BFPaperColors */,
+				C582B2D71B3EC8D5005CC526 /* ZLBalancedFlowLayout */,
 				C56ED4EB1B38217F00221171 /* Fabric.framework */,
 				C56ED4EC1B38217F00221171 /* Crashlytics.framework */,
 				73BC6A3FB81EA8C7F211F896 /* DTFoundation */,
@@ -980,7 +1131,6 @@
 				73BC617060FD99991CF17331 /* Src */,
 				73BC64EBE7360C9E78BCE3C7 /* UI */,
 				73BC6B6BBDDF603A1AA9D02C /* TestData */,
-				73BC6ABAF5CC352C0A2F7D47 /* Supporting Files (Use Subfolders For Each Version) */,
 				73BC639F2C5AEF9CBA443885 /* Versions */,
 			);
 			path = HyperTimeLogger;
@@ -1008,36 +1158,6 @@
 			path = Statistics;
 			sourceTree = "<group>";
 		};
-		834F8DA88188254C86ED9487 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				00FE358840A04278F552ED9B /* Pods_HyperTimeLogger_Alpha.framework */,
-				E0FF35F54827AF3C20199627 /* Pods_HyperTimeLogger_Beta.framework */,
-				7AA1C79CBB5574FC200DEF58 /* Pods_TodayExtension_Alpha.framework */,
-				7B249305A9E498DC4B54D49C /* Pods_TodayExtension_Beta.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		884E6DD6E7CF859E8C96B7F3 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				5F5BA0F90CC2D946CDD3327B /* Pods-HyperTimeLogger.debug.xcconfig */,
-				C080C216BEBCCD26E4BC3451 /* Pods-HyperTimeLogger.release.xcconfig */,
-				617AE9E650925A0499F5E44C /* Pods-TodayExtension.debug.xcconfig */,
-				5D95DDDBEB7C458B73BB7321 /* Pods-TodayExtension.release.xcconfig */,
-				9311AFEE55D1C8A6CCFD48E6 /* Pods-HyperTimeLogger Alpha.debug.xcconfig */,
-				B219E699FF581C2A9F4BE068 /* Pods-HyperTimeLogger Alpha.release.xcconfig */,
-				5F882D0340B8C246FC68BD73 /* Pods-HyperTimeLogger Beta.debug.xcconfig */,
-				E32926B01F80A1304D3E4F8A /* Pods-HyperTimeLogger Beta.release.xcconfig */,
-				ABA732652AF14AB6266DD34C /* Pods-TodayExtension Alpha.debug.xcconfig */,
-				8C602951969FA7F90F9C956F /* Pods-TodayExtension Alpha.release.xcconfig */,
-				2398C87D3A2A575E1753DBA4 /* Pods-TodayExtension Beta.debug.xcconfig */,
-				D66B8812A60EF84183B354FF /* Pods-TodayExtension Beta.release.xcconfig */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
 		C516A6C91B3A8F2A0018F022 /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -1045,6 +1165,166 @@
 				C516A6CB1B3A8F2A0018F022 /* HTLRoundButton.m */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		C582B29E1B3EC8D5005CC526 /* CocoaLumberjack */ = {
+			isa = PBXGroup;
+			children = (
+				C582B29F1B3EC8D5005CC526 /* Classes */,
+				C582B2B91B3EC8D5005CC526 /* LICENSE.txt */,
+				C582B2BA1B3EC8D5005CC526 /* README.md */,
+			);
+			path = CocoaLumberjack;
+			sourceTree = "<group>";
+		};
+		C582B29F1B3EC8D5005CC526 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				C582B2A01B3EC8D5005CC526 /* CocoaLumberjack.h */,
+				C582B2A11B3EC8D5005CC526 /* CocoaLumberjack.swift */,
+				C582B2A21B3EC8D5005CC526 /* DDAbstractDatabaseLogger.h */,
+				C582B2A31B3EC8D5005CC526 /* DDAbstractDatabaseLogger.m */,
+				C582B2A41B3EC8D5005CC526 /* DDASLLogCapture.h */,
+				C582B2A51B3EC8D5005CC526 /* DDASLLogCapture.m */,
+				C582B2A61B3EC8D5005CC526 /* DDASLLogger.h */,
+				C582B2A71B3EC8D5005CC526 /* DDASLLogger.m */,
+				C582B2A81B3EC8D5005CC526 /* DDAssertMacros.h */,
+				C582B2A91B3EC8D5005CC526 /* DDFileLogger.h */,
+				C582B2AA1B3EC8D5005CC526 /* DDFileLogger.m */,
+				C582B2AB1B3EC8D5005CC526 /* DDLegacyMacros.h */,
+				C582B2AC1B3EC8D5005CC526 /* DDLog+LOGV.h */,
+				C582B2AD1B3EC8D5005CC526 /* DDLog.h */,
+				C582B2AE1B3EC8D5005CC526 /* DDLog.m */,
+				C582B2AF1B3EC8D5005CC526 /* DDLogMacros.h */,
+				C582B2B01B3EC8D5005CC526 /* DDTTYLogger.h */,
+				C582B2B11B3EC8D5005CC526 /* DDTTYLogger.m */,
+				C582B2B21B3EC8D5005CC526 /* Extensions */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		C582B2B21B3EC8D5005CC526 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				C582B2B31B3EC8D5005CC526 /* DDContextFilterLogFormatter.h */,
+				C582B2B41B3EC8D5005CC526 /* DDContextFilterLogFormatter.m */,
+				C582B2B51B3EC8D5005CC526 /* DDDispatchQueueLogFormatter.h */,
+				C582B2B61B3EC8D5005CC526 /* DDDispatchQueueLogFormatter.m */,
+				C582B2B71B3EC8D5005CC526 /* DDMultiFormatter.h */,
+				C582B2B81B3EC8D5005CC526 /* DDMultiFormatter.m */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		C582B2BB1B3EC8D5005CC526 /* FMDB */ = {
+			isa = PBXGroup;
+			children = (
+				C582B2BC1B3EC8D5005CC526 /* LICENSE.txt */,
+				C582B2BD1B3EC8D5005CC526 /* README.markdown */,
+				C582B2BE1B3EC8D5005CC526 /* src */,
+			);
+			path = FMDB;
+			sourceTree = "<group>";
+		};
+		C582B2BE1B3EC8D5005CC526 /* src */ = {
+			isa = PBXGroup;
+			children = (
+				C582B2BF1B3EC8D5005CC526 /* fmdb */,
+			);
+			path = src;
+			sourceTree = "<group>";
+		};
+		C582B2BF1B3EC8D5005CC526 /* fmdb */ = {
+			isa = PBXGroup;
+			children = (
+				C582B2C01B3EC8D5005CC526 /* FMDatabase.h */,
+				C582B2C11B3EC8D5005CC526 /* FMDatabase.m */,
+				C582B2C21B3EC8D5005CC526 /* FMDatabaseAdditions.h */,
+				C582B2C31B3EC8D5005CC526 /* FMDatabaseAdditions.m */,
+				C582B2C41B3EC8D5005CC526 /* FMDatabasePool.h */,
+				C582B2C51B3EC8D5005CC526 /* FMDatabasePool.m */,
+				C582B2C61B3EC8D5005CC526 /* FMDatabaseQueue.h */,
+				C582B2C71B3EC8D5005CC526 /* FMDatabaseQueue.m */,
+				C582B2C81B3EC8D5005CC526 /* FMDB.h */,
+				C582B2C91B3EC8D5005CC526 /* FMResultSet.h */,
+				C582B2CA1B3EC8D5005CC526 /* FMResultSet.m */,
+			);
+			path = fmdb;
+			sourceTree = "<group>";
+		};
+		C582B2CB1B3EC8D5005CC526 /* HexColors */ = {
+			isa = PBXGroup;
+			children = (
+				C582B2CC1B3EC8D5005CC526 /* Classes */,
+				C582B2CF1B3EC8D5005CC526 /* LICENCE */,
+				C582B2D01B3EC8D5005CC526 /* README.md */,
+			);
+			path = HexColors;
+			sourceTree = "<group>";
+		};
+		C582B2CC1B3EC8D5005CC526 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				C582B2CD1B3EC8D5005CC526 /* HexColor.h */,
+				C582B2CE1B3EC8D5005CC526 /* HexColor.m */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		C582B2D11B3EC8D5005CC526 /* UIColor+BFPaperColors */ = {
+			isa = PBXGroup;
+			children = (
+				C582B2D21B3EC8D5005CC526 /* LICENSE.md */,
+				C582B2D31B3EC8D5005CC526 /* README.md */,
+				C582B2D41B3EC8D5005CC526 /* UIColor+BFPaperColors */,
+			);
+			path = "UIColor+BFPaperColors";
+			sourceTree = "<group>";
+		};
+		C582B2D41B3EC8D5005CC526 /* UIColor+BFPaperColors */ = {
+			isa = PBXGroup;
+			children = (
+				C582B2D51B3EC8D5005CC526 /* UIColor+BFPaperColors.h */,
+				C582B2D61B3EC8D5005CC526 /* UIColor+BFPaperColors.m */,
+			);
+			path = "UIColor+BFPaperColors";
+			sourceTree = "<group>";
+		};
+		C582B2D71B3EC8D5005CC526 /* ZLBalancedFlowLayout */ = {
+			isa = PBXGroup;
+			children = (
+				C582B2D81B3EC8D5005CC526 /* LICENSE */,
+				C582B2D91B3EC8D5005CC526 /* README.md */,
+				C582B2DA1B3EC8D5005CC526 /* ZLBalancedFlowLayout */,
+			);
+			path = ZLBalancedFlowLayout;
+			sourceTree = "<group>";
+		};
+		C582B2DA1B3EC8D5005CC526 /* ZLBalancedFlowLayout */ = {
+			isa = PBXGroup;
+			children = (
+				C582B2DB1B3EC8D5005CC526 /* ZLBalancedFlowLayout.swift */,
+			);
+			path = ZLBalancedFlowLayout;
+			sourceTree = "<group>";
+		};
+		C582B3A01B3EC910005CC526 /* XYPieChart */ = {
+			isa = PBXGroup;
+			children = (
+				C582B3A11B3EC910005CC526 /* LICENSE.txt */,
+				C582B3A21B3EC910005CC526 /* README.textile */,
+				C582B3A31B3EC910005CC526 /* XYPieChart */,
+			);
+			path = XYPieChart;
+			sourceTree = "<group>";
+		};
+		C582B3A31B3EC910005CC526 /* XYPieChart */ = {
+			isa = PBXGroup;
+			children = (
+				C582B3A41B3EC910005CC526 /* XYPieChart.h */,
+				C582B3A51B3EC910005CC526 /* XYPieChart.m */,
+			);
+			path = XYPieChart;
 			sourceTree = "<group>";
 		};
 		C59088CE1B39900A0099F8CB /* Supporting Files */ = {
@@ -1072,10 +1352,8 @@
 				73BC638E0B41F356D8A5AFDC /* Dependencies */,
 				73BC6EF11D6CD7307BA62A1F /* HyperTimeLogger */,
 				C5FFE3EE1B1857CE007D317D /* HyperTimeLoggerTests */,
-				884E6DD6E7CF859E8C96B7F3 /* Pods */,
 				C5FFE3D31B1857CE007D317D /* Products */,
 				C5BA1B761B26F890006D80BC /* TodayExtension */,
-				834F8DA88188254C86ED9487 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -1117,12 +1395,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C516A7141B3AD18E0018F022 /* Build configuration list for PBXNativeTarget "HyperTimeLogger Beta" */;
 			buildPhases = (
-				C516A6D11B3AD18E0018F022 /* Check Pods Manifest.lock */,
 				C516A6D21B3AD18E0018F022 /* Sources */,
 				C516A6FA1B3AD18E0018F022 /* Resources */,
 				C516A70D1B3AD18E0018F022 /* Frameworks */,
-				C516A7111B3AD18E0018F022 /* Embed Pods Frameworks */,
-				C516A7121B3AD18E0018F022 /* Copy Pods Resources */,
 				C516A7131B3AD18E0018F022 /* ShellScript */,
 				C59689FB1B3C198D0038018D /* Embed App Extensions */,
 			);
@@ -1140,12 +1415,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C516A75F1B3AD2590018F022 /* Build configuration list for PBXNativeTarget "HyperTimeLogger Alpha" */;
 			buildPhases = (
-				C516A71C1B3AD2590018F022 /* Check Pods Manifest.lock */,
 				C516A71D1B3AD2590018F022 /* Sources */,
 				C516A7451B3AD2590018F022 /* Resources */,
 				C516A7581B3AD2590018F022 /* Frameworks */,
-				C516A75C1B3AD2590018F022 /* Embed Pods Frameworks */,
-				C516A75D1B3AD2590018F022 /* Copy Pods Resources */,
 				C516A75E1B3AD2590018F022 /* ShellScript */,
 				C59689F71B3C19860038018D /* Embed App Extensions */,
 			);
@@ -1163,11 +1435,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C59689BB1B3C16270038018D /* Build configuration list for PBXNativeTarget "TodayExtension Alpha" */;
 			buildPhases = (
-				C596899F1B3C16270038018D /* Check Pods Manifest.lock */,
 				C59689A01B3C16270038018D /* Sources */,
 				C59689B31B3C16270038018D /* Frameworks */,
 				C59689B61B3C16270038018D /* Resources */,
-				C59689BA1B3C16270038018D /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -1182,11 +1452,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C59689DD1B3C16350038018D /* Build configuration list for PBXNativeTarget "TodayExtension Beta" */;
 			buildPhases = (
-				C59689C11B3C16350038018D /* Check Pods Manifest.lock */,
 				C59689C21B3C16350038018D /* Sources */,
 				C59689D51B3C16350038018D /* Frameworks */,
 				C59689D81B3C16350038018D /* Resources */,
-				C59689DC1B3C16350038018D /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -1201,11 +1469,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C5BA1B831B26F890006D80BC /* Build configuration list for PBXNativeTarget "TodayExtension" */;
 			buildPhases = (
-				62E9DE820652FBBDC0479D59 /* Check Pods Manifest.lock */,
 				C5BA1B6F1B26F890006D80BC /* Sources */,
 				C5BA1B701B26F890006D80BC /* Frameworks */,
 				C5BA1B711B26F890006D80BC /* Resources */,
-				898CFCDF6C97D2AA28F77F9C /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -1220,13 +1486,10 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C5FFE3F51B1857CE007D317D /* Build configuration list for PBXNativeTarget "HyperTimeLogger" */;
 			buildPhases = (
-				2841EDF140D8E11107098BA8 /* Check Pods Manifest.lock */,
 				C5FFE3CE1B1857CD007D317D /* Sources */,
 				C5FFE3D01B1857CD007D317D /* Resources */,
 				C5BA1B841B26F890006D80BC /* Embed App Extensions */,
 				5F5C460A30D0748349F01A76 /* Frameworks */,
-				F2F3B8981CEF6CCBB5470609 /* Embed Pods Frameworks */,
-				3FB54796D56242B98B617037 /* Copy Pods Resources */,
 				C56ED4EA1B38214400221171 /* ShellScript */,
 			);
 			buildRules = (
@@ -1309,7 +1572,6 @@
 					};
 					C5FFE3EA1B1857CE007D317D = {
 						CreatedOnToolsVersion = 6.3.2;
-						TestTargetID = C5FFE3D11B1857CD007D317D;
 					};
 				};
 			};
@@ -1436,8 +1698,6 @@
 				73BC6D50D0F7419C4DBD8D09 /* DateSectionHeader.xib in Resources */,
 				C58B38611B395FB7006C7AE7 /* LaunchScreen.xib in Resources */,
 				C51F130E1B32C592001F452F /* statistics.png in Resources */,
-				73BC6499B32094530D911FAB /* testdata_ru.json in Resources */,
-				73BC6FD7408B118ECB13B295 /* testdata_en.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1451,111 +1711,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		2841EDF140D8E11107098BA8 /* Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		3FB54796D56242B98B617037 /* Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/../Pods/Target Support Files/Pods-HyperTimeLogger/Pods-HyperTimeLogger-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		62E9DE820652FBBDC0479D59 /* Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		898CFCDF6C97D2AA28F77F9C /* Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/../Pods/Target Support Files/Pods-TodayExtension/Pods-TodayExtension-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		C516A6D11B3AD18E0018F022 /* Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		C516A7111B3AD18E0018F022 /* Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/../Pods/Target Support Files/Pods-HyperTimeLogger Beta/Pods-HyperTimeLogger Beta-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		C516A7121B3AD18E0018F022 /* Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/../Pods/Target Support Files/Pods-HyperTimeLogger Beta/Pods-HyperTimeLogger Beta-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		C516A7131B3AD18E0018F022 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -1568,51 +1723,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "./Dependencies/Vendor/Fabric.framework/run e83e0095e24774f93f86cd8f53b5743615ff236b ee344f57d2c4470643f18815f88b8e8f5665090f6cbe9dae15562ba9bd36fb4a";
-		};
-		C516A71C1B3AD2590018F022 /* Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		C516A75C1B3AD2590018F022 /* Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/../Pods/Target Support Files/Pods-HyperTimeLogger Alpha/Pods-HyperTimeLogger Alpha-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		C516A75D1B3AD2590018F022 /* Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/../Pods/Target Support Files/Pods-HyperTimeLogger Alpha/Pods-HyperTimeLogger Alpha-resources.sh\"\n";
-			showEnvVarsInLog = 0;
 		};
 		C516A75E1B3AD2590018F022 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -1640,81 +1750,6 @@
 			shellPath = /bin/sh;
 			shellScript = "./Dependencies/Vendor/Fabric.framework/run e83e0095e24774f93f86cd8f53b5743615ff236b ee344f57d2c4470643f18815f88b8e8f5665090f6cbe9dae15562ba9bd36fb4a";
 		};
-		C596899F1B3C16270038018D /* Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		C59689BA1B3C16270038018D /* Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/../Pods/Target Support Files/Pods-TodayExtension Alpha/Pods-TodayExtension Alpha-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		C59689C11B3C16350038018D /* Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		C59689DC1B3C16350038018D /* Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/../Pods/Target Support Files/Pods-TodayExtension Beta/Pods-TodayExtension Beta-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		F2F3B8981CEF6CCBB5470609 /* Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/../Pods/Target Support Files/Pods-HyperTimeLogger/Pods-HyperTimeLogger-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -1723,26 +1758,38 @@
 			buildActionMask = 2147483647;
 			files = (
 				C516A6D31B3AD18E0018F022 /* NSDate+HTLComponents.m in Sources */,
+				C582B2F91B3EC8D5005CC526 /* DDFileLogger.m in Sources */,
 				C516A6D41B3AD18E0018F022 /* HTLReportDto+Helpers.m in Sources */,
 				C516A6D51B3AD18E0018F022 /* HTLReportDto.m in Sources */,
 				C516A6D61B3AD18E0018F022 /* HTLCategoryDto.m in Sources */,
 				C516A6D71B3AD18E0018F022 /* HTLActionDto.m in Sources */,
 				C516A6D81B3AD18E0018F022 /* HTLCompletionDto.m in Sources */,
 				C516A6D91B3AD18E0018F022 /* HTLDateSectionDto.m in Sources */,
+				C582B3851B3EC8D5005CC526 /* UIColor+BFPaperColors.m in Sources */,
 				C516A6DA1B3AD18E0018F022 /* HTLReportExtendedDto.m in Sources */,
 				C516A6DB1B3AD18E0018F022 /* HTLSqliteStorageProvider.m in Sources */,
 				C516A6DC1B3AD18E0018F022 /* HTLContentManager.m in Sources */,
+				C582B3151B3EC8D5005CC526 /* DDDispatchQueueLogFormatter.m in Sources */,
+				C582B34D1B3EC8D5005CC526 /* FMDatabasePool.m in Sources */,
 				C516A6DD1B3AD18E0018F022 /* DTFolderMonitor.m in Sources */,
 				C516A6DF1B3AD18E0018F022 /* HTLRoundButton.m in Sources */,
+				C582B33F1B3EC8D5005CC526 /* FMDatabase.m in Sources */,
 				C516A6E01B3AD18E0018F022 /* HTLCircleButton.m in Sources */,
 				C516A6E11B3AD18E0018F022 /* HTLBackgroundView.m in Sources */,
+				C582B39A1B3EC8D5005CC526 /* ZLBalancedFlowLayout.swift in Sources */,
+				C582B3001B3EC8D5005CC526 /* DDLog.m in Sources */,
+				C582B31C1B3EC8D5005CC526 /* DDMultiFormatter.m in Sources */,
 				C516A6E21B3AD18E0018F022 /* HTLNavigationBar.m in Sources */,
 				C516A6E31B3AD18E0018F022 /* HTLAddButton.m in Sources */,
 				C516A6E41B3AD18E0018F022 /* HTLWordCell.m in Sources */,
+				C582B2E41B3EC8D5005CC526 /* DDAbstractDatabaseLogger.m in Sources */,
 				C516A6E51B3AD18E0018F022 /* HTLCategoryCell.m in Sources */,
+				C582B30E1B3EC8D5005CC526 /* DDContextFilterLogFormatter.m in Sources */,
 				C516A6E61B3AD18E0018F022 /* HTLReportExtendedCell.m in Sources */,
 				C516A6E71B3AD18E0018F022 /* HTLCompletionTableViewCell.m in Sources */,
 				C516A6E81B3AD18E0018F022 /* HTLCompletionCollectionViewCell.m in Sources */,
+				C582B35B1B3EC8D5005CC526 /* FMResultSet.m in Sources */,
+				C582B3541B3EC8D5005CC526 /* FMDatabaseQueue.m in Sources */,
 				C516A6E91B3AD18E0018F022 /* HTLDateSectionHeader.m in Sources */,
 				C516A6EA1B3AD18E0018F022 /* HTLCSVStringExportProvider.m in Sources */,
 				C516A6EB1B3AD18E0018F022 /* HTLAppDelegate.m in Sources */,
@@ -1750,7 +1797,10 @@
 				C516A6ED1B3AD18E0018F022 /* HTLSettingsViewController.m in Sources */,
 				C516A6EE1B3AD18E0018F022 /* HTLSettingsModelController.m in Sources */,
 				C516A6EF1B3AD18E0018F022 /* HTLStatisticsViewController.m in Sources */,
+				C582B3071B3EC8D5005CC526 /* DDTTYLogger.m in Sources */,
 				C516A6F01B3AD18E0018F022 /* HTLReportListViewController.m in Sources */,
+				C582B2F21B3EC8D5005CC526 /* DDASLLogger.m in Sources */,
+				C582B2EB1B3EC8D5005CC526 /* DDASLLogCapture.m in Sources */,
 				C516A6F11B3AD18E0018F022 /* HTLReportListModelController.m in Sources */,
 				C516A6F21B3AD18E0018F022 /* HTLEditReportViewController.m in Sources */,
 				C516A6F31B3AD18E0018F022 /* HTLEditReportModelController.m in Sources */,
@@ -1759,7 +1809,10 @@
 				C516A6F61B3AD18E0018F022 /* HTLPieChartCell.m in Sources */,
 				C516A6F71B3AD18E0018F022 /* HTLStatisticsItemCell.m in Sources */,
 				C516A6F81B3AD18E0018F022 /* HTLStatisticsItemDto.m in Sources */,
+				C582B3461B3EC8D5005CC526 /* FMDatabaseAdditions.m in Sources */,
+				C582B3621B3EC8D5005CC526 /* HexColor.m in Sources */,
 				C516A6F91B3AD18E0018F022 /* HTLSettingsModelController+TestData.m in Sources */,
+				C582B3AD1B3EC910005CC526 /* XYPieChart.m in Sources */,
 				73BC6D4AAD99665A10565079 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1769,26 +1822,38 @@
 			buildActionMask = 2147483647;
 			files = (
 				C516A71E1B3AD2590018F022 /* NSDate+HTLComponents.m in Sources */,
+				C582B2F81B3EC8D5005CC526 /* DDFileLogger.m in Sources */,
 				C516A71F1B3AD2590018F022 /* HTLReportDto+Helpers.m in Sources */,
 				C516A7201B3AD2590018F022 /* HTLReportDto.m in Sources */,
 				C516A7211B3AD2590018F022 /* HTLCategoryDto.m in Sources */,
 				C516A7221B3AD2590018F022 /* HTLActionDto.m in Sources */,
 				C516A7231B3AD2590018F022 /* HTLCompletionDto.m in Sources */,
 				C516A7241B3AD2590018F022 /* HTLDateSectionDto.m in Sources */,
+				C582B3841B3EC8D5005CC526 /* UIColor+BFPaperColors.m in Sources */,
 				C516A7251B3AD2590018F022 /* HTLReportExtendedDto.m in Sources */,
 				C516A7261B3AD2590018F022 /* HTLSqliteStorageProvider.m in Sources */,
 				C516A7271B3AD2590018F022 /* HTLContentManager.m in Sources */,
+				C582B3141B3EC8D5005CC526 /* DDDispatchQueueLogFormatter.m in Sources */,
+				C582B34C1B3EC8D5005CC526 /* FMDatabasePool.m in Sources */,
 				C516A7281B3AD2590018F022 /* DTFolderMonitor.m in Sources */,
 				C516A72A1B3AD2590018F022 /* HTLRoundButton.m in Sources */,
+				C582B33E1B3EC8D5005CC526 /* FMDatabase.m in Sources */,
 				C516A72B1B3AD2590018F022 /* HTLCircleButton.m in Sources */,
 				C516A72C1B3AD2590018F022 /* HTLBackgroundView.m in Sources */,
+				C582B3991B3EC8D5005CC526 /* ZLBalancedFlowLayout.swift in Sources */,
+				C582B2FF1B3EC8D5005CC526 /* DDLog.m in Sources */,
+				C582B31B1B3EC8D5005CC526 /* DDMultiFormatter.m in Sources */,
 				C516A72D1B3AD2590018F022 /* HTLNavigationBar.m in Sources */,
 				C516A72E1B3AD2590018F022 /* HTLAddButton.m in Sources */,
 				C516A72F1B3AD2590018F022 /* HTLWordCell.m in Sources */,
+				C582B2E31B3EC8D5005CC526 /* DDAbstractDatabaseLogger.m in Sources */,
 				C516A7301B3AD2590018F022 /* HTLCategoryCell.m in Sources */,
+				C582B30D1B3EC8D5005CC526 /* DDContextFilterLogFormatter.m in Sources */,
 				C516A7311B3AD2590018F022 /* HTLReportExtendedCell.m in Sources */,
 				C516A7321B3AD2590018F022 /* HTLCompletionTableViewCell.m in Sources */,
 				C516A7331B3AD2590018F022 /* HTLCompletionCollectionViewCell.m in Sources */,
+				C582B35A1B3EC8D5005CC526 /* FMResultSet.m in Sources */,
+				C582B3531B3EC8D5005CC526 /* FMDatabaseQueue.m in Sources */,
 				C516A7341B3AD2590018F022 /* HTLDateSectionHeader.m in Sources */,
 				C516A7351B3AD2590018F022 /* HTLCSVStringExportProvider.m in Sources */,
 				C516A7361B3AD2590018F022 /* HTLAppDelegate.m in Sources */,
@@ -1796,7 +1861,10 @@
 				C516A7381B3AD2590018F022 /* HTLSettingsViewController.m in Sources */,
 				C516A7391B3AD2590018F022 /* HTLSettingsModelController.m in Sources */,
 				C516A73A1B3AD2590018F022 /* HTLStatisticsViewController.m in Sources */,
+				C582B3061B3EC8D5005CC526 /* DDTTYLogger.m in Sources */,
 				C516A73B1B3AD2590018F022 /* HTLReportListViewController.m in Sources */,
+				C582B2F11B3EC8D5005CC526 /* DDASLLogger.m in Sources */,
+				C582B2EA1B3EC8D5005CC526 /* DDASLLogCapture.m in Sources */,
 				C516A73C1B3AD2590018F022 /* HTLReportListModelController.m in Sources */,
 				C516A73D1B3AD2590018F022 /* HTLEditReportViewController.m in Sources */,
 				C516A73E1B3AD2590018F022 /* HTLEditReportModelController.m in Sources */,
@@ -1805,7 +1873,10 @@
 				C516A7411B3AD2590018F022 /* HTLPieChartCell.m in Sources */,
 				C516A7421B3AD2590018F022 /* HTLStatisticsItemCell.m in Sources */,
 				C516A7431B3AD2590018F022 /* HTLStatisticsItemDto.m in Sources */,
+				C582B3451B3EC8D5005CC526 /* FMDatabaseAdditions.m in Sources */,
+				C582B3611B3EC8D5005CC526 /* HexColor.m in Sources */,
 				C516A7441B3AD2590018F022 /* HTLSettingsModelController+TestData.m in Sources */,
+				C582B3AC1B3EC910005CC526 /* XYPieChart.m in Sources */,
 				73BC698EF025811B34B8B94A /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1816,21 +1887,38 @@
 			files = (
 				C59689A11B3C16270038018D /* NSDate+HTLComponents.m in Sources */,
 				C59689A21B3C16270038018D /* HTLReportDto+Helpers.m in Sources */,
+				C582B2FC1B3EC8D5005CC526 /* DDFileLogger.m in Sources */,
 				C59689A31B3C16270038018D /* HTLReportDto.m in Sources */,
+				C582B3881B3EC8D5005CC526 /* UIColor+BFPaperColors.m in Sources */,
 				C59689A41B3C16270038018D /* HTLCategoryDto.m in Sources */,
 				C59689A51B3C16270038018D /* HTLActionDto.m in Sources */,
 				C59689A61B3C16270038018D /* HTLCompletionDto.m in Sources */,
 				C59689A71B3C16270038018D /* HTLDateSectionDto.m in Sources */,
 				C59689A81B3C16270038018D /* HTLReportExtendedDto.m in Sources */,
+				C582B35E1B3EC8D5005CC526 /* FMResultSet.m in Sources */,
 				C59689A91B3C16270038018D /* HTLSqliteStorageProvider.m in Sources */,
+				C582B2EE1B3EC8D5005CC526 /* DDASLLogCapture.m in Sources */,
+				C582B30A1B3EC8D5005CC526 /* DDTTYLogger.m in Sources */,
 				C59689AA1B3C16270038018D /* HTLContentManager.m in Sources */,
+				C582B3031B3EC8D5005CC526 /* DDLog.m in Sources */,
 				C59689AB1B3C16270038018D /* DTFolderMonitor.m in Sources */,
+				C582B3651B3EC8D5005CC526 /* HexColor.m in Sources */,
+				C582B3501B3EC8D5005CC526 /* FMDatabasePool.m in Sources */,
+				C582B39D1B3EC8D5005CC526 /* ZLBalancedFlowLayout.swift in Sources */,
 				C59689AC1B3C16270038018D /* HTETodayViewController.m in Sources */,
 				C59689AD1B3C16270038018D /* HTETodayModelController.m in Sources */,
+				C582B2F51B3EC8D5005CC526 /* DDASLLogger.m in Sources */,
 				C59689AE1B3C16270038018D /* HTLCompletionCollectionViewCell.m in Sources */,
+				C582B3421B3EC8D5005CC526 /* FMDatabase.m in Sources */,
+				C582B3111B3EC8D5005CC526 /* DDContextFilterLogFormatter.m in Sources */,
+				C582B3181B3EC8D5005CC526 /* DDDispatchQueueLogFormatter.m in Sources */,
+				C582B3491B3EC8D5005CC526 /* FMDatabaseAdditions.m in Sources */,
+				C582B2E71B3EC8D5005CC526 /* DDAbstractDatabaseLogger.m in Sources */,
 				C59689AF1B3C16270038018D /* HTLCSVStringExportProvider.m in Sources */,
 				C59689B01B3C16270038018D /* HTLRoundButton.m in Sources */,
+				C582B31F1B3EC8D5005CC526 /* DDMultiFormatter.m in Sources */,
 				C59689B11B3C16270038018D /* HTLSqliteStorageProvider+Deserialization.m in Sources */,
+				C582B3571B3EC8D5005CC526 /* FMDatabaseQueue.m in Sources */,
 				C59689B21B3C16270038018D /* HTLModelController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1841,21 +1929,38 @@
 			files = (
 				C59689C31B3C16350038018D /* NSDate+HTLComponents.m in Sources */,
 				C59689C41B3C16350038018D /* HTLReportDto+Helpers.m in Sources */,
+				C582B2FD1B3EC8D5005CC526 /* DDFileLogger.m in Sources */,
 				C59689C51B3C16350038018D /* HTLReportDto.m in Sources */,
+				C582B3891B3EC8D5005CC526 /* UIColor+BFPaperColors.m in Sources */,
 				C59689C61B3C16350038018D /* HTLCategoryDto.m in Sources */,
 				C59689C71B3C16350038018D /* HTLActionDto.m in Sources */,
 				C59689C81B3C16350038018D /* HTLCompletionDto.m in Sources */,
 				C59689C91B3C16350038018D /* HTLDateSectionDto.m in Sources */,
 				C59689CA1B3C16350038018D /* HTLReportExtendedDto.m in Sources */,
+				C582B35F1B3EC8D5005CC526 /* FMResultSet.m in Sources */,
 				C59689CB1B3C16350038018D /* HTLSqliteStorageProvider.m in Sources */,
+				C582B2EF1B3EC8D5005CC526 /* DDASLLogCapture.m in Sources */,
+				C582B30B1B3EC8D5005CC526 /* DDTTYLogger.m in Sources */,
 				C59689CC1B3C16350038018D /* HTLContentManager.m in Sources */,
+				C582B3041B3EC8D5005CC526 /* DDLog.m in Sources */,
 				C59689CD1B3C16350038018D /* DTFolderMonitor.m in Sources */,
+				C582B3661B3EC8D5005CC526 /* HexColor.m in Sources */,
+				C582B3511B3EC8D5005CC526 /* FMDatabasePool.m in Sources */,
+				C582B39E1B3EC8D5005CC526 /* ZLBalancedFlowLayout.swift in Sources */,
 				C59689CE1B3C16350038018D /* HTETodayViewController.m in Sources */,
 				C59689CF1B3C16350038018D /* HTETodayModelController.m in Sources */,
+				C582B2F61B3EC8D5005CC526 /* DDASLLogger.m in Sources */,
 				C59689D01B3C16350038018D /* HTLCompletionCollectionViewCell.m in Sources */,
+				C582B3431B3EC8D5005CC526 /* FMDatabase.m in Sources */,
+				C582B3121B3EC8D5005CC526 /* DDContextFilterLogFormatter.m in Sources */,
+				C582B3191B3EC8D5005CC526 /* DDDispatchQueueLogFormatter.m in Sources */,
+				C582B34A1B3EC8D5005CC526 /* FMDatabaseAdditions.m in Sources */,
+				C582B2E81B3EC8D5005CC526 /* DDAbstractDatabaseLogger.m in Sources */,
 				C59689D11B3C16350038018D /* HTLCSVStringExportProvider.m in Sources */,
 				C59689D21B3C16350038018D /* HTLRoundButton.m in Sources */,
+				C582B3201B3EC8D5005CC526 /* DDMultiFormatter.m in Sources */,
 				C59689D31B3C16350038018D /* HTLSqliteStorageProvider+Deserialization.m in Sources */,
+				C582B3581B3EC8D5005CC526 /* FMDatabaseQueue.m in Sources */,
 				C59689D41B3C16350038018D /* HTLModelController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1866,21 +1971,38 @@
 			files = (
 				73BC679BF2C1A1A36939932B /* NSDate+HTLComponents.m in Sources */,
 				73BC6919D98B939D1BBDAF28 /* HTLReportDto+Helpers.m in Sources */,
+				C582B2FE1B3EC8D5005CC526 /* DDFileLogger.m in Sources */,
 				73BC63E583DA471B2D26C36E /* HTLReportDto.m in Sources */,
+				C582B38A1B3EC8D5005CC526 /* UIColor+BFPaperColors.m in Sources */,
 				73BC688E05940C6C7A19AEFE /* HTLCategoryDto.m in Sources */,
 				73BC62568DE7117F7D84C604 /* HTLActionDto.m in Sources */,
 				73BC6436C539FA93E8CB0BFF /* HTLCompletionDto.m in Sources */,
 				73BC6BCFC083BDB023D12F96 /* HTLDateSectionDto.m in Sources */,
 				73BC6BBDB05B2D670300F209 /* HTLReportExtendedDto.m in Sources */,
+				C582B3601B3EC8D5005CC526 /* FMResultSet.m in Sources */,
 				73BC66FBEB3FEDA6D59A4EEB /* HTLSqliteStorageProvider.m in Sources */,
+				C582B2F01B3EC8D5005CC526 /* DDASLLogCapture.m in Sources */,
+				C582B30C1B3EC8D5005CC526 /* DDTTYLogger.m in Sources */,
 				73BC6C6045A93032F36ED35A /* HTLContentManager.m in Sources */,
+				C582B3051B3EC8D5005CC526 /* DDLog.m in Sources */,
 				C53370781B397FC50095549E /* DTFolderMonitor.m in Sources */,
+				C582B3671B3EC8D5005CC526 /* HexColor.m in Sources */,
+				C582B3521B3EC8D5005CC526 /* FMDatabasePool.m in Sources */,
+				C582B39F1B3EC8D5005CC526 /* ZLBalancedFlowLayout.swift in Sources */,
 				73BC68033AF8061D639DCFC0 /* HTETodayViewController.m in Sources */,
 				73BC610CA9365423EC183AE7 /* HTETodayModelController.m in Sources */,
+				C582B2F71B3EC8D5005CC526 /* DDASLLogger.m in Sources */,
 				73BC65AB5A04FEEA2462F6AF /* HTLCompletionCollectionViewCell.m in Sources */,
+				C582B3441B3EC8D5005CC526 /* FMDatabase.m in Sources */,
+				C582B3131B3EC8D5005CC526 /* DDContextFilterLogFormatter.m in Sources */,
+				C582B31A1B3EC8D5005CC526 /* DDDispatchQueueLogFormatter.m in Sources */,
+				C582B34B1B3EC8D5005CC526 /* FMDatabaseAdditions.m in Sources */,
+				C582B2E91B3EC8D5005CC526 /* DDAbstractDatabaseLogger.m in Sources */,
 				73BC69530AA65A5F73B11569 /* HTLCSVStringExportProvider.m in Sources */,
 				C516A6CD1B3A8F2A0018F022 /* HTLRoundButton.m in Sources */,
+				C582B3211B3EC8D5005CC526 /* DDMultiFormatter.m in Sources */,
 				73BC60A9E3DA6728F9788F57 /* HTLSqliteStorageProvider+Deserialization.m in Sources */,
+				C582B3591B3EC8D5005CC526 /* FMDatabaseQueue.m in Sources */,
 				73BC63D7E123A596DFCD6FEC /* HTLModelController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1890,26 +2012,38 @@
 			buildActionMask = 2147483647;
 			files = (
 				73BC63A745D1B957781BC3C0 /* NSDate+HTLComponents.m in Sources */,
+				C582B2FA1B3EC8D5005CC526 /* DDFileLogger.m in Sources */,
 				73BC68D75AF9520DFA1BB170 /* HTLReportDto+Helpers.m in Sources */,
 				73BC663B16F6B52EE9662BF9 /* HTLReportDto.m in Sources */,
 				73BC600E8C599F6D11BBD183 /* HTLCategoryDto.m in Sources */,
 				73BC6B1E338548FE30A4AFAD /* HTLActionDto.m in Sources */,
 				73BC6BF4CEB14B9FDFD57BAE /* HTLCompletionDto.m in Sources */,
 				73BC67A4E0C0CA36BB035D6C /* HTLDateSectionDto.m in Sources */,
+				C582B3861B3EC8D5005CC526 /* UIColor+BFPaperColors.m in Sources */,
 				73BC6A2B52E6295CE27B3C2B /* HTLReportExtendedDto.m in Sources */,
 				73BC663F4406329510726033 /* HTLSqliteStorageProvider.m in Sources */,
 				73BC6D0BCBFFC6D7B897C999 /* HTLContentManager.m in Sources */,
+				C582B3161B3EC8D5005CC526 /* DDDispatchQueueLogFormatter.m in Sources */,
+				C582B34E1B3EC8D5005CC526 /* FMDatabasePool.m in Sources */,
 				73BC611D0DB73478A87E6CAE /* DTFolderMonitor.m in Sources */,
 				C516A6CC1B3A8F2A0018F022 /* HTLRoundButton.m in Sources */,
+				C582B3401B3EC8D5005CC526 /* FMDatabase.m in Sources */,
 				73BC6E87D97E20610C0F256F /* HTLCircleButton.m in Sources */,
 				73BC63F953A4F0A419C9FAB6 /* HTLBackgroundView.m in Sources */,
+				C582B39B1B3EC8D5005CC526 /* ZLBalancedFlowLayout.swift in Sources */,
+				C582B3011B3EC8D5005CC526 /* DDLog.m in Sources */,
+				C582B31D1B3EC8D5005CC526 /* DDMultiFormatter.m in Sources */,
 				73BC68D041B3B7438345B659 /* HTLNavigationBar.m in Sources */,
 				73BC683F3F065135DC98F27B /* HTLAddButton.m in Sources */,
 				73BC6FB04C767843085BD236 /* HTLWordCell.m in Sources */,
+				C582B2E51B3EC8D5005CC526 /* DDAbstractDatabaseLogger.m in Sources */,
 				73BC6ACF153F24B101D5596E /* HTLCategoryCell.m in Sources */,
+				C582B30F1B3EC8D5005CC526 /* DDContextFilterLogFormatter.m in Sources */,
 				73BC6A40B1C27D0F21D567DE /* HTLReportExtendedCell.m in Sources */,
 				73BC68952D802890D47F3381 /* HTLCompletionTableViewCell.m in Sources */,
 				73BC6D96930A9DDA7825C490 /* HTLCompletionCollectionViewCell.m in Sources */,
+				C582B35C1B3EC8D5005CC526 /* FMResultSet.m in Sources */,
+				C582B3551B3EC8D5005CC526 /* FMDatabaseQueue.m in Sources */,
 				73BC63E32C89489EBDFD05E0 /* HTLDateSectionHeader.m in Sources */,
 				73BC69E4F116C55691C0B6DF /* HTLCSVStringExportProvider.m in Sources */,
 				73BC686682E53ABD3DCB152B /* HTLAppDelegate.m in Sources */,
@@ -1917,7 +2051,10 @@
 				73BC63786959F7D83E3E87CF /* HTLSettingsViewController.m in Sources */,
 				73BC6A38F00033FFAF9A4769 /* HTLSettingsModelController.m in Sources */,
 				73BC63D51F415B3D2950F6A6 /* HTLStatisticsViewController.m in Sources */,
+				C582B3081B3EC8D5005CC526 /* DDTTYLogger.m in Sources */,
 				73BC6E8F223111B6EB5A243E /* HTLReportListViewController.m in Sources */,
+				C582B2F31B3EC8D5005CC526 /* DDASLLogger.m in Sources */,
+				C582B2EC1B3EC8D5005CC526 /* DDASLLogCapture.m in Sources */,
 				73BC68546859BB9B9464FFD0 /* HTLReportListModelController.m in Sources */,
 				73BC6C75E24784AC052671E5 /* HTLEditReportViewController.m in Sources */,
 				73BC6FAB452C5DBF4EC4D193 /* HTLEditReportModelController.m in Sources */,
@@ -1926,7 +2063,10 @@
 				73BC6BB80E74AD1C414F0C8D /* HTLPieChartCell.m in Sources */,
 				73BC6E4DED1BEDC0CE46C60D /* HTLStatisticsItemCell.m in Sources */,
 				73BC65608065C1CBF9F089C0 /* HTLStatisticsItemDto.m in Sources */,
+				C582B3471B3EC8D5005CC526 /* FMDatabaseAdditions.m in Sources */,
+				C582B3631B3EC8D5005CC526 /* HexColor.m in Sources */,
 				73BC6ACDC82E718A89E6C930 /* HTLSettingsModelController+TestData.m in Sources */,
+				C582B3AE1B3EC910005CC526 /* XYPieChart.m in Sources */,
 				73BC679DD95BD9F43FE6A2AB /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1935,15 +2075,32 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C582B3101B3EC8D5005CC526 /* DDContextFilterLogFormatter.m in Sources */,
+				C582B3021B3EC8D5005CC526 /* DDLog.m in Sources */,
+				C582B3091B3EC8D5005CC526 /* DDTTYLogger.m in Sources */,
 				C5FFE3F21B1857CE007D317D /* HyperTimeLoggerTests.m in Sources */,
+				C582B31E1B3EC8D5005CC526 /* DDMultiFormatter.m in Sources */,
+				C582B35D1B3EC8D5005CC526 /* FMResultSet.m in Sources */,
 				73BC62DBB0557CEF66331263 /* HTLReportDto+Helpers.m in Sources */,
 				73BC6A05148AF26290542AC6 /* HTLReportDto.m in Sources */,
+				C582B2FB1B3EC8D5005CC526 /* DDFileLogger.m in Sources */,
+				C582B3411B3EC8D5005CC526 /* FMDatabase.m in Sources */,
+				C582B3561B3EC8D5005CC526 /* FMDatabaseQueue.m in Sources */,
+				C582B3481B3EC8D5005CC526 /* FMDatabaseAdditions.m in Sources */,
+				C582B2E61B3EC8D5005CC526 /* DDAbstractDatabaseLogger.m in Sources */,
 				73BC6AEDC24B3643325E6F75 /* HTLCategoryDto.m in Sources */,
+				C582B34F1B3EC8D5005CC526 /* FMDatabasePool.m in Sources */,
 				73BC6E37E01E454ABCF88F75 /* HTLActionDto.m in Sources */,
+				C582B2ED1B3EC8D5005CC526 /* DDASLLogCapture.m in Sources */,
+				C582B39C1B3EC8D5005CC526 /* ZLBalancedFlowLayout.swift in Sources */,
+				C582B3171B3EC8D5005CC526 /* DDDispatchQueueLogFormatter.m in Sources */,
 				73BC6C3879C2267F06376B2E /* HTLDateSectionDto.m in Sources */,
 				73BC65EBF2E0EFBE18CE5FAA /* HTLReportExtendedDto.m in Sources */,
+				C582B2F41B3EC8D5005CC526 /* DDASLLogger.m in Sources */,
 				73BC619C76D5356050DEACF4 /* HTLCircleButton.m in Sources */,
 				73BC6B9FDBFB2EE8267221A9 /* HTLModelController.m in Sources */,
+				C582B3641B3EC8D5005CC526 /* HexColor.m in Sources */,
+				C582B3871B3EC8D5005CC526 /* UIColor+BFPaperColors.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2079,7 +2236,6 @@
 /* Begin XCBuildConfiguration section */
 		C516A7151B3AD18E0018F022 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5F882D0340B8C246FC68BD73 /* Pods-HyperTimeLogger Beta.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = HyperTimeLogger/Versions/Beta/HyperTimeLogger.entitlements;
@@ -2101,7 +2257,6 @@
 		};
 		C516A7161B3AD18E0018F022 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E32926B01F80A1304D3E4F8A /* Pods-HyperTimeLogger Beta.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = HyperTimeLogger/Versions/Beta/HyperTimeLogger.entitlements;
@@ -2123,7 +2278,6 @@
 		};
 		C516A7601B3AD2590018F022 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 9311AFEE55D1C8A6CCFD48E6 /* Pods-HyperTimeLogger Alpha.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = HyperTimeLogger/Versions/Alpha/HyperTimeLogger.entitlements;
@@ -2145,7 +2299,6 @@
 		};
 		C516A7611B3AD2590018F022 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B219E699FF581C2A9F4BE068 /* Pods-HyperTimeLogger Alpha.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = HyperTimeLogger/Versions/Alpha/HyperTimeLogger.entitlements;
@@ -2167,11 +2320,11 @@
 		};
 		C59689BC1B3C16270038018D /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = ABA732652AF14AB6266DD34C /* Pods-TodayExtension Alpha.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = TodayExtension/Versions/Alpha/TodayExtension.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Dependencies/Vendor",
@@ -2193,11 +2346,11 @@
 		};
 		C59689BD1B3C16270038018D /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 8C602951969FA7F90F9C956F /* Pods-TodayExtension Alpha.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = TodayExtension/Versions/Alpha/TodayExtension.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Dependencies/Vendor",
@@ -2215,11 +2368,11 @@
 		};
 		C59689DE1B3C16350038018D /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2398C87D3A2A575E1753DBA4 /* Pods-TodayExtension Beta.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = TodayExtension/Versions/Beta/TodayExtension.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Dependencies/Vendor",
@@ -2241,11 +2394,11 @@
 		};
 		C59689DF1B3C16350038018D /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D66B8812A60EF84183B354FF /* Pods-TodayExtension Beta.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = TodayExtension/Versions/Beta/TodayExtension.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Dependencies/Vendor",
@@ -2263,11 +2416,11 @@
 		};
 		C5BA1B811B26F890006D80BC /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 617AE9E650925A0499F5E44C /* Pods-TodayExtension.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = TodayExtension/Versions/Live/TodayExtension.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Dependencies/Vendor",
@@ -2289,11 +2442,11 @@
 		};
 		C5BA1B821B26F890006D80BC /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5D95DDDBEB7C458B73BB7321 /* Pods-TodayExtension.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = TodayExtension/Versions/Live/TodayExtension.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Dependencies/Vendor",
@@ -2329,6 +2482,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -2349,6 +2503,7 @@
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
+				SWIFT_OBJC_INTERFACE_HEADER_NAME = "HyperTimeLogger-Swift.h";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -2373,6 +2528,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -2386,6 +2542,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
+				SWIFT_OBJC_INTERFACE_HEADER_NAME = "HyperTimeLogger-Swift.h";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 			};
@@ -2393,7 +2550,6 @@
 		};
 		C5FFE3F61B1857CE007D317D /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5F5BA0F90CC2D946CDD3327B /* Pods-HyperTimeLogger.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = HyperTimeLogger/Versions/Live/HyperTimeLogger.entitlements;
@@ -2415,7 +2571,6 @@
 		};
 		C5FFE3F71B1857CE007D317D /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C080C216BEBCCD26E4BC3451 /* Pods-HyperTimeLogger.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = HyperTimeLogger/Versions/Live/HyperTimeLogger.entitlements;
@@ -2438,7 +2593,6 @@
 		C5FFE3F91B1857CE007D317D /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
@@ -2451,14 +2605,12 @@
 				INFOPLIST_FILE = HyperTimeLoggerTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/HyperTimeLogger.app/HyperTimeLogger";
 			};
 			name = Debug;
 		};
 		C5FFE3FA1B1857CE007D317D /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
@@ -2467,7 +2619,6 @@
 				INFOPLIST_FILE = HyperTimeLoggerTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/HyperTimeLogger.app/HyperTimeLogger";
 			};
 			name = Release;
 		};

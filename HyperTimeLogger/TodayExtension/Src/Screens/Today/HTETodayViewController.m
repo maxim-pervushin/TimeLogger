@@ -13,7 +13,10 @@
 #import "HTLReportDto+Helpers.h"
 #import "HTLReportExtendedDto.h"
 #import <NotificationCenter/NotificationCenter.h>
-#import <ZLBalancedFlowLayout/ZLBalancedFlowLayout-Swift.h>
+#import "HyperTimeLogger-Swift.h"
+//#import "ZLBalancedFlowLayout-Swift.h"
+//#import <ZLBalancedFlowLayout>
+//#import "ZLBalancedFlowLayout-Swift.h"
 
 static NSString *const kCompletionCellIdentifier = @"CompletionCell";
 // TODO: Load number of completions from defaults

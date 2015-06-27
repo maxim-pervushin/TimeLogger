@@ -403,7 +403,7 @@
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Z5m-Y5-2Fx">
                                 <rect key="frame" x="0.0" y="64" width="320" height="286"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                <collectionViewLayout key="collectionViewLayout" id="tNU-L3-bST" customClass="ZLBalancedFlowLayout" customModule="ZLBalancedFlowLayout"/>
+                                <collectionViewLayout key="collectionViewLayout" id="tNU-L3-bST" customClass="ZLBalancedFlowLayout" customModule="HyperTimeLogger" customModuleProvider="target"/>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CompletionCell" id="wyi-Bt-jx7" customClass="HTLCompletionCollectionViewCell">
                                         <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>

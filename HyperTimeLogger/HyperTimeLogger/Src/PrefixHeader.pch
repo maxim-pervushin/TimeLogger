@@ -9,7 +9,7 @@
 #ifndef HyperTimeLogger_PrefixHeader_pch
 #define HyperTimeLogger_PrefixHeader_pch
 
-#import "CocoaLumberjack/CocoaLumberjack.h"
+#import "CocoaLumberjack.h"
 #import "UIColor+BFPaperColors.h"
 
 #endif
