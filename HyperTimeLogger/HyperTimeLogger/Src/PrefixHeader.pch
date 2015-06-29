@@ -1,0 +1,15 @@
+//
+//  PrefixHeader.pch
+//  HyperTimeLogger
+//
+//  Created by Maxim Pervushin on 08/06/15.
+//  Copyright (c) 2015 Maxim Pervushin. All rights reserved.
+//
+
+#ifndef HyperTimeLogger_PrefixHeader_pch
+#define HyperTimeLogger_PrefixHeader_pch
+
+#import "CocoaLumberjack.h"
+#import "UIColor+BFPaperColors.h"
+
+#endif

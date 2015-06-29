@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Scheme
+   version = "1.3">
+   <BuildAction>
+      <BuildActionEntries>
+         <BuildActionEntry
+            buildForRunning = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "C59689C01B3C16350038018D"
+               BuildableName = "TodayExtension Beta.appex"
+               BlueprintName = "TodayExtension Beta"
+               ReferencedContainer = "container:HyperTimeLogger.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
+      </BuildActionEntries>
+   </BuildAction>
+   <LaunchAction
+      useCustomWorkingDirectory = "NO"
+      buildConfiguration = "Debug">
+      <PathRunnable
+         FilePath = "/Users/maximpervushin/Library/Developer/Xcode/DerivedData/HyperTimeLogger-bsfpgoehwxaozodzvihiufsbnmyz/Build/Products/TodayExtension Beta">
+      </PathRunnable>
+   </LaunchAction>
+</Scheme>
