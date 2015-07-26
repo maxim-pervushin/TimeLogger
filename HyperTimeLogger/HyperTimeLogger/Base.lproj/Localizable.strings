@@ -23,3 +23,9 @@
 "Reports: %lu" = "Reports: %lu";
 
 "%02ld:%02ld:%02ld" = "%02ld:%02ld:%02ld";
+
+"Send Mail" = "Send Mail";
+
+"Copy to Pasteboard" = "Copy to Pasteboard";
+
+"Cancel" = "Cancel";
