@@ -1527,7 +1527,9 @@
 			isa = PBXProject;
 			attributes = {
 				CLASSPREFIX = HTL;
-				LastUpgradeCheck = 0630;
+				LastSwiftMigration = 0700;
+				LastSwiftUpdateCheck = 0700;
+				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = "Maxim Pervushin";
 				TargetAttributes = {
 					C516A6CE1B3AD18E0018F022 = {
@@ -2249,6 +2251,7 @@
 				GCC_PREFIX_HEADER = HyperTimeLogger/Src/PrefixHeader.pch;
 				INFOPLIST_FILE = "$(SRCROOT)/HyperTimeLogger/Versions/Beta/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.maximpervushin.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "HyperTimeLogger Beta";
 				PROVISIONING_PROFILE = "";
 				USER_HEADER_SEARCH_PATHS = "\"${PROJECT_DIR}/../Pods\"/**";
@@ -2270,6 +2273,7 @@
 				GCC_PREFIX_HEADER = HyperTimeLogger/Src/PrefixHeader.pch;
 				INFOPLIST_FILE = "$(SRCROOT)/HyperTimeLogger/Versions/Beta/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.maximpervushin.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "HyperTimeLogger Beta";
 				PROVISIONING_PROFILE = "";
 				USER_HEADER_SEARCH_PATHS = "\"${PROJECT_DIR}/../Pods\"/**";
@@ -2291,6 +2295,7 @@
 				GCC_PREFIX_HEADER = HyperTimeLogger/Src/PrefixHeader.pch;
 				INFOPLIST_FILE = "$(SRCROOT)/HyperTimeLogger/Versions/Alpha/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.maximpervushin.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "HyperTimeLogger Alpha";
 				PROVISIONING_PROFILE = "";
 				USER_HEADER_SEARCH_PATHS = "\"${PROJECT_DIR}/../Pods\"/**";
@@ -2312,6 +2317,7 @@
 				GCC_PREFIX_HEADER = HyperTimeLogger/Src/PrefixHeader.pch;
 				INFOPLIST_FILE = "$(SRCROOT)/HyperTimeLogger/Versions/Alpha/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.maximpervushin.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "HyperTimeLogger Alpha";
 				PROVISIONING_PROFILE = "";
 				USER_HEADER_SEARCH_PATHS = "\"${PROJECT_DIR}/../Pods\"/**";
@@ -2337,6 +2343,7 @@
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/TodayExtension/Versions/Alpha/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.maximpervushin.HyperTimeLogger-Alpha.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "TodayExtension Alpha";
 				PROVISIONING_PROFILE = "";
 				SKIP_INSTALL = YES;
@@ -2359,6 +2366,7 @@
 				GCC_PREFIX_HEADER = HyperTimeLogger/Src/PrefixHeader.pch;
 				INFOPLIST_FILE = "$(SRCROOT)/TodayExtension/Versions/Alpha/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.maximpervushin.HyperTimeLogger-Alpha.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "TodayExtension Alpha";
 				PROVISIONING_PROFILE = "";
 				SKIP_INSTALL = YES;
@@ -2385,6 +2393,7 @@
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/TodayExtension/Versions/Beta/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.maximpervushin.HyperTimeLogger-Beta.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "TodayExtension Beta";
 				PROVISIONING_PROFILE = "";
 				SKIP_INSTALL = YES;
@@ -2407,6 +2416,7 @@
 				GCC_PREFIX_HEADER = HyperTimeLogger/Src/PrefixHeader.pch;
 				INFOPLIST_FILE = "$(SRCROOT)/TodayExtension/Versions/Beta/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.maximpervushin.HyperTimeLogger-Beta.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "TodayExtension Beta";
 				PROVISIONING_PROFILE = "";
 				SKIP_INSTALL = YES;
@@ -2433,6 +2443,7 @@
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/TodayExtension/Versions/Live/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.maximpervushin.HyperTimeLogger.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SKIP_INSTALL = YES;
@@ -2455,6 +2466,7 @@
 				GCC_PREFIX_HEADER = HyperTimeLogger/Src/PrefixHeader.pch;
 				INFOPLIST_FILE = "$(SRCROOT)/TodayExtension/Versions/Live/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.maximpervushin.HyperTimeLogger.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SKIP_INSTALL = YES;
@@ -2484,6 +2496,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -2563,6 +2576,7 @@
 				GCC_PREFIX_HEADER = HyperTimeLogger/Src/PrefixHeader.pch;
 				INFOPLIST_FILE = "$(SRCROOT)/HyperTimeLogger/Versions/Live/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.maximpervushin.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				USER_HEADER_SEARCH_PATHS = "\"${PROJECT_DIR}/../Pods\"/**";
@@ -2584,6 +2598,7 @@
 				GCC_PREFIX_HEADER = HyperTimeLogger/Src/PrefixHeader.pch;
 				INFOPLIST_FILE = "$(SRCROOT)/HyperTimeLogger/Versions/Live/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.maximpervushin.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				USER_HEADER_SEARCH_PATHS = "\"${PROJECT_DIR}/../Pods\"/**";
@@ -2604,6 +2619,7 @@
 				);
 				INFOPLIST_FILE = HyperTimeLoggerTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.maximpervushin.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -2618,6 +2634,7 @@
 				);
 				INFOPLIST_FILE = HyperTimeLoggerTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.maximpervushin.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
