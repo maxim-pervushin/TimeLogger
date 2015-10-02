@@ -386,6 +386,7 @@
 		C59689F41B3C19860038018D /* TodayExtension Alpha.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = C59689BE1B3C16270038018D /* TodayExtension Alpha.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		C59689F81B3C198D0038018D /* TodayExtension Beta.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = C59689E01B3C16350038018D /* TodayExtension Beta.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		C5BA1B801B26F890006D80BC /* TodayExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = C5BA1B731B26F890006D80BC /* TodayExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		C5F512FE1BBF344D002F887E /* TODOs.txt in Resources */ = {isa = PBXBuildFile; fileRef = C5F512FD1BBF344D002F887E /* TODOs.txt */; settings = {ASSET_TAGS = (); }; };
 		C5FFE3F21B1857CE007D317D /* HyperTimeLoggerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C5FFE3F11B1857CE007D317D /* HyperTimeLoggerTests.m */; };
 /* End PBXBuildFile section */
 
@@ -661,6 +662,7 @@
 		C59689F21B3C18FC0038018D /* TodayExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = file.entitlements; path = TodayExtension.entitlements; sourceTree = "<group>"; };
 		C59689F31B3C19030038018D /* TodayExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = file.entitlements; path = TodayExtension.entitlements; sourceTree = "<group>"; };
 		C5BA1B731B26F890006D80BC /* TodayExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = TodayExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		C5F512FD1BBF344D002F887E /* TODOs.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = TODOs.txt; sourceTree = "<group>"; };
 		C5FFE3D21B1857CE007D317D /* HyperTimeLogger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HyperTimeLogger.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C5FFE3EB1B1857CE007D317D /* HyperTimeLoggerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HyperTimeLoggerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C5FFE3F01B1857CE007D317D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -1348,6 +1350,7 @@
 		C5FFE3C91B1857CD007D317D = {
 			isa = PBXGroup;
 			children = (
+				C5F512FD1BBF344D002F887E /* TODOs.txt */,
 				73BC62248BFB3B8402AF0871 /* Common */,
 				73BC638E0B41F356D8A5AFDC /* Dependencies */,
 				73BC6EF11D6CD7307BA62A1F /* HyperTimeLogger */,
@@ -1635,6 +1638,7 @@
 				C516A7471B3AD2590018F022 /* settings.png in Resources */,
 				C516A7481B3AD2590018F022 /* settings@2x.png in Resources */,
 				C516A7491B3AD2590018F022 /* Localizable.strings in Resources */,
+				C5F512FE1BBF344D002F887E /* TODOs.txt in Resources */,
 				C516A74B1B3AD2590018F022 /* Main.storyboard in Resources */,
 				C55912531B3C06B8002593BE /* InfoPlist.strings in Resources */,
 				C516A74C1B3AD2590018F022 /* add.png in Resources */,

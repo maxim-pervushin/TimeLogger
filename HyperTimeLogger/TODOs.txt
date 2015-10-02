@@ -1,0 +1,19 @@
+//
+//  TODOs.txt
+//  HyperTimeLogger
+//
+//  Created by Maxim Pervushin on 03/10/15.
+//  Copyright (c) 2015 Maxim Pervushin. All rights reserved.
+//
+
+
+// TODO: Use category without description(action). It seems categories should be enough.
+
+// TODO: From the Today screen user should be able to select one of the categories and enter or select description.
+//    1. Use completion;
+//    2. Use picker;
+//    3. User custom view controller with list of descriptions and textfield to add new one.
+
+// TODO: Themes. At least light and dark.
+
+// TODO: Logs. Pie charts? Bar charts by day. Horizontal bar charts.
