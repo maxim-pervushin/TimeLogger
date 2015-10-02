@@ -6,11 +6,11 @@
 #import <UIKit/UIKit.h>
 
 
-@class HTLReportExtendedDto;
+@class HTLReportExtended;
 
 
 @interface HTLReportExtendedCell : UITableViewCell
 
-- (void)configureWithReport:(HTLReportExtendedDto *)reportExtended;
+- (void)configureWithReport:(HTLReportExtended *)reportExtended;
 
 @end

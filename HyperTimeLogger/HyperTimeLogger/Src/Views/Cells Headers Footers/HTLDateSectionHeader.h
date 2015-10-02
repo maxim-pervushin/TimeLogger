@@ -6,7 +6,7 @@
 #import <UIKit/UIKit.h>
 
 
-@class HTLDateSectionDto;
+@class HTLDateSection;
 @protocol HTLDateSectionHeaderDelegate;
 
 
@@ -14,13 +14,13 @@
 
 @property(nonatomic, weak) id <HTLDateSectionHeaderDelegate> delegate;
 
-- (void)configureWithDateSection:(HTLDateSectionDto *)dateSection;
+- (void)configureWithDateSection:(HTLDateSection *)dateSection;
 
 @end
 
 
 @protocol HTLDateSectionHeaderDelegate <NSObject>
 
-- (void)dateSectionHeader:(HTLDateSectionHeader *)dateSectionHeader showStatisticsForDateSection:(HTLDateSectionDto *)dateSection;
+- (void)dateSectionHeader:(HTLDateSectionHeader *)dateSectionHeader showStatisticsForDateSection:(HTLDateSection *)dateSection;
 
 @end

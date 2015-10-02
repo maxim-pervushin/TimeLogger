@@ -6,14 +6,14 @@
 #import <Foundation/Foundation.h>
 
 
-@class HTLCategoryDto;
+@class HTLCategory;
 
 
 @interface HTLStatisticsItemDto : NSObject <NSCopying>
 
-+ (instancetype)statisticsItemWithCategory:(HTLCategoryDto *)category totalTime:(NSTimeInterval)totalTime totalReports:(NSUInteger)totalReports;
++ (instancetype)statisticsItemWithCategory:(HTLCategory *)category totalTime:(NSTimeInterval)totalTime totalReports:(NSUInteger)totalReports;
 
-- (instancetype)initWithCategory:(HTLCategoryDto *)category totalTime:(NSTimeInterval)totalTime totalReports:(NSUInteger)totalReports;
+- (instancetype)initWithCategory:(HTLCategory *)category totalTime:(NSTimeInterval)totalTime totalReports:(NSUInteger)totalReports;
 
 - (id)copyWithZone:(NSZone *)zone;
 
@@ -23,7 +23,7 @@
 
 - (NSUInteger)hash;
 
-@property(nonatomic, readonly) HTLCategoryDto *category;
+@property(nonatomic, readonly) HTLCategory *category;
 @property(nonatomic, readonly) NSTimeInterval totalTime;
 @property(nonatomic, readonly) NSUInteger totalReports;
 

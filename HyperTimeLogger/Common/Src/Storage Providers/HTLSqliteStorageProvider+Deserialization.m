@@ -3,37 +3,37 @@
 // Copyright (c) 2015 Maxim Pervushin. All rights reserved.
 //
 
-#import "HTLReportDto.h"
-#import "HTLDateSectionDto.h"
+#import "HTLReport.h"
+#import "HTLDateSection.h"
 #import "NSDate+HTLComponents.h"
-#import "HTLCompletionDto.h"
+#import "HTLCompletion.h"
 #import "HexColor.h"
 #import "FMDB.h"
-#import "HTLReportExtendedDto.h"
+#import "HTLReportExtended.h"
 #import "HTLSqliteStorageProvider.h"
 #import "HTLSqliteStorageProvider+Deserialization.h"
 
 
 @implementation HTLSqliteStorageProvider (Deserialization)
 
-- (HTLActionDto *)actionWithResultSet:(FMResultSet *)resultSet {
-    return [HTLActionDto actionWithIdentifier:[resultSet stringForColumn:@"actionIdentifier"]
-                                        title:[resultSet stringForColumn:@"actionTitle"]];
+- (HTLAction *)unpackAction:(FMResultSet *)resultSet {
+    return [HTLAction actionWithIdentifier:[resultSet stringForColumn:@"actionIdentifier"]
+                                     title:[resultSet stringForColumn:@"actionTitle"]];
 }
 
-- (HTLCategoryDto *)categoryWithResultSet:(FMResultSet *)resultSet {
-    return [HTLCategoryDto categoryWithIdentifier:[resultSet stringForColumn:@"categoryIdentifier"]
-                                            title:[resultSet stringForColumn:@"categoryTitle"]
-                                            color:[UIColor colorWithHexString:[resultSet stringForColumn:@"categoryColor"]]];
+- (HTLCategory *)unpackCategory:(FMResultSet *)resultSet {
+    return [HTLCategory categoryWithIdentifier:[resultSet stringForColumn:@"categoryIdentifier"]
+                                         title:[resultSet stringForColumn:@"categoryTitle"]
+                                         color:[UIColor colorWithHexString:[resultSet stringForColumn:@"categoryColor"]]];
 }
 
-- (HTLDateSectionDto *)dateSectionWithResultSet:(FMResultSet *)resultSet {
-    return [HTLDateSectionDto dateSectionWithDateString:[resultSet stringForColumn:@"endDate"]
-                                             timeString:[resultSet stringForColumn:@"endTime"]
-                                               timeZone:[resultSet stringForColumn:@"endZone"]];
+- (HTLDateSection *)unpackDateSection:(FMResultSet *)resultSet {
+    return [HTLDateSection dateSectionWithDateString:[resultSet stringForColumn:@"endDate"]
+                                          timeString:[resultSet stringForColumn:@"endTime"]
+                                            timeZone:[resultSet stringForColumn:@"endZone"]];
 }
 
-- (HTLReportDto *)reportWithResultSet:(FMResultSet *)resultSet {
+- (HTLReport *)unpackReport:(FMResultSet *)resultSet {
 
     NSDate *startDate = [NSDate dateWithDateString:[resultSet stringForColumn:@"reportStartDate"]
                                         timeString:[resultSet stringForColumn:@"reportStartTime"]
@@ -43,23 +43,23 @@
                                       timeString:[resultSet stringForColumn:@"reportEndTime"]
                                   timeZoneString:[resultSet stringForColumn:@"reportEndZone"]];
 
-    return [HTLReportDto reportWithIdentifier:[resultSet stringForColumn:@"identifier"]
-                             actionIdentifier:[resultSet stringForColumn:@"actionIdentifier"]
-                           categoryIdentifier:[resultSet stringForColumn:@"categoryIdentifier"]
-                                    startDate:startDate
-                                      endDate:endDate];
+    return [HTLReport reportWithIdentifier:[resultSet stringForColumn:@"identifier"]
+                          actionIdentifier:[resultSet stringForColumn:@"actionIdentifier"]
+                        categoryIdentifier:[resultSet stringForColumn:@"categoryIdentifier"]
+                                 startDate:startDate
+                                   endDate:endDate];
 }
 
-- (HTLReportExtendedDto *)reportExtendedWithResultSet:(FMResultSet *)resultSet {
-    return [HTLReportExtendedDto reportExtendedWithReport:[self reportWithResultSet:resultSet]
-                                                   action:[self actionWithResultSet:resultSet]
-                                                 category:[self categoryWithResultSet:resultSet]];
+- (HTLReportExtended *)unpackReportExtended:(FMResultSet *)resultSet {
+    return [HTLReportExtended reportExtendedWithReport:[self unpackReport:resultSet]
+                                                action:[self unpackAction:resultSet]
+                                              category:[self unpackCategory:resultSet]];
 }
 
-- (HTLCompletionDto *)completionWithResultSet:(FMResultSet *)resultSet {
-    return [HTLCompletionDto completionWithAction:[self actionWithResultSet:resultSet]
-                                         category:[self categoryWithResultSet:resultSet]
-                                           weight:(NSUInteger) [resultSet intForColumn:@"weight"]];
+- (HTLCompletion *)unpackCompletion:(FMResultSet *)resultSet {
+    return [HTLCompletion completionWithAction:[self unpackAction:resultSet]
+                                      category:[self unpackCategory:resultSet]
+                                        weight:(NSUInteger) [resultSet intForColumn:@"weight"]];
 }
 
 @end

@@ -3,7 +3,7 @@
 // Copyright (c) 2015 Maxim Pervushin. All rights reserved.
 //
 
-#import "HTLCategoryDto.h"
+#import "HTLCategory.h"
 #import "HTLStatisticsItemCell.h"
 
 @implementation HTLStatisticsItemDto
@@ -13,11 +13,11 @@
 
 #pragma mark - HTLStatisticsItemDto
 
-+ (instancetype)statisticsItemWithCategory:(HTLCategoryDto *)category totalTime:(NSTimeInterval)totalTime totalReports:(NSUInteger)totalReports {
++ (instancetype)statisticsItemWithCategory:(HTLCategory *)category totalTime:(NSTimeInterval)totalTime totalReports:(NSUInteger)totalReports {
     return [[self alloc] initWithCategory:category totalTime:totalTime totalReports:totalReports];
 }
 
-- (instancetype)initWithCategory:(HTLCategoryDto *)category totalTime:(NSTimeInterval)totalTime totalReports:(NSUInteger)totalReports {
+- (instancetype)initWithCategory:(HTLCategory *)category totalTime:(NSTimeInterval)totalTime totalReports:(NSUInteger)totalReports {
     self = [super init];
     if (self) {
         category_ = [category copy];

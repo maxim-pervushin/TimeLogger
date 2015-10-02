@@ -4,10 +4,10 @@
 //
 
 #import "HTLReportExtendedCell.h"
-#import "HTLActionDto.h"
-#import "HTLCategoryDto.h"
-#import "HTLReportExtendedDto.h"
-#import "HTLReportDto+Helpers.h"
+#import "HTLAction.h"
+#import "HTLCategory.h"
+#import "HTLReportExtended.h"
+#import "HTLReport+Helpers.h"
 
 @interface HTLReportExtendedCell ()
 
@@ -21,7 +21,7 @@
 
 @implementation HTLReportExtendedCell
 
-- (void)configureWithReport:(HTLReportExtendedDto *)reportExtended {
+- (void)configureWithReport:(HTLReportExtended *)reportExtended {
     NSString *title;
     NSString *category;
     NSString *date;

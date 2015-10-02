@@ -6,11 +6,11 @@
 #import <UIKit/UIKit.h>
 
 
-@class HTLCompletionDto;
+@class HTLCompletion;
 
 
 @interface HTLCompletionTableViewCell : UITableViewCell
 
-- (void)configureWithCompletion:(HTLCompletionDto *)completion;
+- (void)configureWithCompletion:(HTLCompletion *)completion;
 
 @end

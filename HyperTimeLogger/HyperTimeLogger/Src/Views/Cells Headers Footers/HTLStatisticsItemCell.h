@@ -7,7 +7,7 @@
 #include "HTLStatisticsItemDto.h"
 
 
-@class HTLCategoryDto;
+@class HTLCategory;
 
 
 @interface HTLStatisticsItemCell : UITableViewCell

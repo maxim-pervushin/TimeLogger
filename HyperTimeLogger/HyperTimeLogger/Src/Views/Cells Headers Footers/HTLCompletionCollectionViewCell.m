@@ -4,10 +4,10 @@
 //
 
 #import "HTLCompletionCollectionViewCell.h"
-#import "HTLCompletionDto.h"
+#import "HTLCompletion.h"
 #import "UIColor+BFPaperColors.h"
-#import "HTLCategoryDto.h"
-#import "HTLActionDto.h"
+#import "HTLCategory.h"
+#import "HTLAction.h"
 
 @interface HTLCompletionCollectionViewCell ()
 
@@ -19,7 +19,7 @@
 
 @implementation HTLCompletionCollectionViewCell
 
-- (void)configureWithCompletion:(HTLCompletionDto *)completion {
+- (void)configureWithCompletion:(HTLCompletion *)completion {
     if (completion) {
         self.actionTitleLabel.text = completion.action.title;
         self.categoryTitleLabel.text = completion.category.localizedTitle;

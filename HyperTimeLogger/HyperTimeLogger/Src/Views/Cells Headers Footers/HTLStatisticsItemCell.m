@@ -4,7 +4,7 @@
 //
 
 #import "HTLStatisticsItemCell.h"
-#import "HTLCategoryDto.h"
+#import "HTLCategory.h"
 
 
 @interface HTLStatisticsItemCell ()

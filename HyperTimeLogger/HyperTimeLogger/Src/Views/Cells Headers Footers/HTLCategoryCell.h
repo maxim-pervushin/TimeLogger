@@ -6,13 +6,13 @@
 #import <UIKit/UIKit.h>
 
 
-@class HTLCategoryDto;
+@class HTLCategory;
 
 
 @interface HTLCategoryCell : UICollectionViewCell
 
-- (void)configureWithCategory:(HTLCategoryDto *)category;
+- (void)configureWithCategory:(HTLCategory *)category;
 
-+ (CGFloat)widthWithCategory:(HTLCategoryDto *)category;
++ (CGFloat)widthWithCategory:(HTLCategory *)category;
 
 @end
