@@ -642,7 +642,7 @@
 
     NSArray *cached = [self.cache objectForKey:cacheKey];
     if (cached) {
-        DDLogVerbose(@"Retrieving cached Last Report End Date");
+        DDLogVerbose(@"Retrieving cached Reports Extended");
         return cached;
     }
 

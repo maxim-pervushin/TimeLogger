@@ -1,5 +1,5 @@
 //
-//  HTLReportListViewController.m
+//  HTLReportListViewController_New.m
 //  HyperTimeLogger
 //
 //  Created by Maxim Pervushin on 29/05/15.
@@ -49,7 +49,7 @@ static const float kHeaderHeight = 35.0f;
 
 @implementation HTLReportListViewController
 
-#pragma mark - HTLReportListViewController
+#pragma mark - HTLReportListViewController_New
 
 - (IBAction)addButtonPanGesture:(UIPanGestureRecognizer *)panGestureRecognizer {
     if (panGestureRecognizer.state == UIGestureRecognizerStateBegan) {

@@ -1,5 +1,5 @@
 //
-//  HTLReportListViewController.h
+//  HTLReportListViewController_New.h
 //  HyperTimeLogger
 //
 //  Created by Maxim Pervushin on 29/05/15.
