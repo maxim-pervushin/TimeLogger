@@ -64,7 +64,7 @@ static NSString *const kStorageFileName = @"time_logger_storage.db";
 - (void)subscribe {
     __weak __typeof(self) weakSelf = self;
     [[NSNotificationCenter defaultCenter] addObserverForName:kHTLStorageProviderChangedNotification object:nil queue:nil usingBlock:^(NSNotification *note) {
-        [weakSelf contentChanged];
+        [weakSelf dataChanged];
     }];
 }
 

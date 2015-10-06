@@ -8,7 +8,7 @@
 
 #import "HTETodayDataSource.h"
 #import "HTETodayViewController.h"
-#import "HTLCompletionCollectionViewCell.h"
+//#import "HTLCompletionCollectionViewCell.h"
 #import "HTLCompletion.h"
 #import "HTLReport+Helpers.h"
 #import "HTLReportExtended.h"
@@ -113,9 +113,10 @@ static const int kCollectionViewMinItemsPerRow = 3;
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
-    HTLCompletionCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:kCompletionCellIdentifier forIndexPath:indexPath];
-    [cell configureWithCompletion:[self.dataSource completions:kNumberOfCompletions][(NSUInteger) indexPath.row]];
-    return cell;
+//    HTLCompletionCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:kCompletionCellIdentifier forIndexPath:indexPath];
+//    [cell configureWithCompletion:[self.dataSource completions:kNumberOfCompletions][(NSUInteger) indexPath.row]];
+//    return cell;
+    return nil;
 }
 
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {

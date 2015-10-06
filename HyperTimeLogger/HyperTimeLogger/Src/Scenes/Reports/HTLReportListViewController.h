@@ -6,5 +6,5 @@
 #import <UIKit/UIKit.h>
 
 
-@interface HTLSettingsViewController : UITableViewController
+@interface HTLReportListViewController : UITableViewController
 @end

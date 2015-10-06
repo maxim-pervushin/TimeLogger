@@ -3,11 +3,8 @@
 // Copyright (c) 2015 Maxim Pervushin. All rights reserved.
 //
 
-#import "HTLDataSource.h"
+#import <UIKit/UIKit.h>
 
 
-@interface HTLSettingsDataSource : HTLDataSource
-
-- (BOOL)generateTestData;
-
+@interface HTLCategoriesTableViewController : UITableViewController
 @end

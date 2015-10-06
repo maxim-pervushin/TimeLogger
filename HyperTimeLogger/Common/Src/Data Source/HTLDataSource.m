@@ -22,7 +22,7 @@
     return instance;
 }
 
-- (void)contentChanged {
+- (void)dataChanged {
     if (self.contentChangedBlock) {
         self.contentChangedBlock();
     }

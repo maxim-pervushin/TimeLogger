@@ -13,6 +13,6 @@ typedef void (^HTLDataSourceChangedBlock)();
 
 + (instancetype)dataSourceWithContentChangedBlock:(HTLDataSourceChangedBlock)block;
 
-- (void)contentChanged;
+- (void)dataChanged;
 
 @end
