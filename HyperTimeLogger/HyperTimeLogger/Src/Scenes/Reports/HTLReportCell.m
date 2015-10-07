@@ -4,9 +4,7 @@
 //
 
 #import "HTLReportCell.h"
-#import "HTLReportExtended.h"
 #import "HTLReport+Helpers.h"
-#import "HTLCategory.h"
 
 
 static NSString *const kDefaultIdentifier = @"HTLReportCell";
@@ -27,7 +25,7 @@ static NSString *const kDefaultIdentifier = @"HTLReportCell";
     return kDefaultIdentifier;
 }
 
-- (void)setReport:(HTLReportExtended *)report {
+- (void)setReport:(HTLReport *)report {
     if (report_ != report) {
         report_ = [report copy];
     }
@@ -38,7 +36,7 @@ static NSString *const kDefaultIdentifier = @"HTLReportCell";
     if (self.report) {
         self.categoryTitleLabel.text = self.report.category.title;
         self.categoryTitleLabel.textColor = self.report.category.color;
-        self.reportDurationLabel.text = self.report.report.durationString;
+        self.reportDurationLabel.text = self.report.durationString;
         self.reportDurationLabel.textColor = self.report.category.color;
         self.categoryColorView.backgroundColor = self.report.category.color;
     } else {

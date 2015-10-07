@@ -10,8 +10,6 @@
 
 + (instancetype)sqliteStorageProviderWithStorageFolderURL:(NSURL *)storageFolderURL storageFileName:(NSString *)storageFileName;
 
-- (instancetype)initWithStorageFolderURL:(NSURL *)storageFolderURL storageFileName:(NSString *)storageFileName;
-
 - (NSString *)storageFilePath;
 
 @end

@@ -8,15 +8,9 @@
 
 #import "HTETodayDataSource.h"
 #import "HTETodayViewController.h"
-//#import "HTLCompletionCollectionViewCell.h"
-#import "HTLCompletion.h"
-#import "HTLReport+Helpers.h"
-#import "HTLReportExtended.h"
 #import <NotificationCenter/NotificationCenter.h>
 #import "HyperTimeLogger-Swift.h"
-//#import "ZLBalancedFlowLayout-Swift.h"
-//#import <ZLBalancedFlowLayout>
-//#import "ZLBalancedFlowLayout-Swift.h"
+#import "HTLReport.h"
 
 static NSString *const kCompletionCellIdentifier = @"CompletionCell";
 // TODO: Load number of completions from defaults
@@ -51,12 +45,12 @@ static const int kCollectionViewMinItemsPerRow = 3;
 }
 
 - (void)updateUI {
-    HTLReportExtended *reportExtended = self.dataSource.lastReportExtended;
-    if (reportExtended) {
-        self.lastReportActionTitleLabel.text = reportExtended.action.title;
-        self.lastReportCategoryTitleLabel.text = reportExtended.category.title;
-        self.lastReportDurationLabel.text = reportExtended.report.durationString;
-        self.lastReportEndDateLabel.text = reportExtended.report.endDateString;
+    HTLReport *lastReport = self.dataSource.lastReport;
+    if (lastReport) {
+//        self.lastReportActionTitleLabel.text = lastReport.action.title;
+//        self.lastReportCategoryTitleLabel.text = lastReport.category.title;
+//        self.lastReportDurationLabel.text = lastReport.report.durationString;
+//        self.lastReportEndDateLabel.text = lastReport.report.endDateString;
     } else {
         self.lastReportActionTitleLabel.text = @"";
         self.lastReportCategoryTitleLabel.text = @"";
@@ -109,7 +103,8 @@ static const int kCollectionViewMinItemsPerRow = 3;
 #pragma mark - UICollectionViewDataSource
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-    return [self.dataSource completions:kNumberOfCompletions].count;
+//    return [self.dataSource completions:kNumberOfCompletions].count;
+    return 0;
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
@@ -124,8 +119,8 @@ static const int kCollectionViewMinItemsPerRow = 3;
 }
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
-    HTLCompletion *completion = [self.dataSource completions:kNumberOfCompletions][(NSUInteger) indexPath.row];
-    [self.dataSource createReportWithCompletion:completion];
+//    HTLCompletion *completion = [self.dataSource completions:kNumberOfCompletions][(NSUInteger) indexPath.row];
+//    [self.dataSource createReportWithCompletion:completion];
     [collectionView deselectItemAtIndexPath:indexPath animated:YES];
 }
 

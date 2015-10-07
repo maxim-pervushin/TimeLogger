@@ -95,6 +95,7 @@
 }
 
 - (NSString *)fulldateStringLocalized {
+    // TODO: Replace self.timeString and self.timeZoneString with empty strings.
     return [[HTLDateSection fullFormatter] stringFromDate:[NSDate dateWithDateString:self.dateString timeString:self.timeString timeZoneString:self.timeZoneString]];
 }
 

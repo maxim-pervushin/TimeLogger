@@ -6,24 +6,18 @@
 #import "HTLReport.h"
 #import "HTLDateSection.h"
 #import "NSDate+HTLComponents.h"
-#import "HTLCompletion.h"
 #import "HexColor.h"
 #import "FMDB.h"
-#import "HTLReportExtended.h"
 #import "HTLSqliteStorageProvider.h"
 #import "HTLSqliteStorageProvider+Deserialization.h"
 
 
 @implementation HTLSqliteStorageProvider (Deserialization)
 
-- (HTLAction *)unpackAction:(FMResultSet *)resultSet {
-    return [HTLAction actionWithIdentifier:[resultSet stringForColumn:@"actionIdentifier"]
-                                     title:[resultSet stringForColumn:@"actionTitle"]];
-}
-
 - (HTLCategory *)unpackCategory:(FMResultSet *)resultSet {
     return [HTLCategory categoryWithIdentifier:[resultSet stringForColumn:@"categoryIdentifier"]
                                          title:[resultSet stringForColumn:@"categoryTitle"]
+                                      subTitle:[resultSet stringForColumn:@"categorySubTitle"]
                                          color:[UIColor colorWithHexString:[resultSet stringForColumn:@"categoryColor"]]];
 }
 
@@ -43,23 +37,12 @@
                                       timeString:[resultSet stringForColumn:@"reportEndTime"]
                                   timeZoneString:[resultSet stringForColumn:@"reportEndZone"]];
 
-    return [HTLReport reportWithIdentifier:[resultSet stringForColumn:@"identifier"]
-                          actionIdentifier:[resultSet stringForColumn:@"actionIdentifier"]
-                        categoryIdentifier:[resultSet stringForColumn:@"categoryIdentifier"]
-                                 startDate:startDate
-                                   endDate:endDate];
-}
+    HTLCategory *category = [HTLCategory categoryWithIdentifier:[resultSet stringForColumn:@"reportCategoryIdentifier"]
+                                                          title:[resultSet stringForColumn:@"reportCategoryTitle"]
+                                                       subTitle:[resultSet stringForColumn:@"reportCategorySubTitle"]
+                                                          color:[UIColor colorWithHexString:[resultSet stringForColumn:@"reportCategoryColor"]]];
 
-- (HTLReportExtended *)unpackReportExtended:(FMResultSet *)resultSet {
-    return [HTLReportExtended reportExtendedWithReport:[self unpackReport:resultSet]
-                                                action:[self unpackAction:resultSet]
-                                              category:[self unpackCategory:resultSet]];
-}
-
-- (HTLCompletion *)unpackCompletion:(FMResultSet *)resultSet {
-    return [HTLCompletion completionWithAction:[self unpackAction:resultSet]
-                                      category:[self unpackCategory:resultSet]
-                                        weight:(NSUInteger) [resultSet intForColumn:@"weight"]];
+    return [HTLReport reportWithCategory:category startDate:startDate endDate:endDate];
 }
 
 @end

@@ -5,13 +5,13 @@
 
 #import <UIKit/UIKit.h>
 
-@class HTLReportExtended;
+@class HTLReport;
 
 
 @interface HTLReportCell : UITableViewCell
 
 + (NSString *)defaultIdentifier;
 
-@property (nonatomic, copy) HTLReportExtended *report;
+@property (nonatomic, copy) HTLReport *report;
 
 @end

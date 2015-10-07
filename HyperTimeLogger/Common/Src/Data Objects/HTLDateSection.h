@@ -6,21 +6,12 @@
 #import <Foundation/Foundation.h>
 
 
-@interface HTLDateSection : NSObject <NSCopying>
+@interface HTLDateSection : NSObject <NSCopying, NSObject>
 
 + (instancetype)dateSectionWithDateString:(NSString *)dateString timeString:(NSString *)timeString timeZone:(NSString *)timeZone;
 
-- (id)copyWithZone:(nullable NSZone *)zone;
-
-- (BOOL)isEqual:(id)other;
-
-- (BOOL)isEqualToSection:(HTLDateSection *)section;
-
-- (NSUInteger)hash;
-
-- (NSString *)description;
-
 @property(nonatomic, readonly) NSString *dateString;
+// TODO: Do we need time and timeZone here?
 @property(nonatomic, readonly) NSString *timeString;
 @property(nonatomic, readonly) NSString *timeZoneString;
 

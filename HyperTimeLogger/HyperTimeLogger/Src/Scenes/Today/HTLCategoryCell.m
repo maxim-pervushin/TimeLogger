@@ -33,7 +33,7 @@ static NSString *const kDefaultIdentifier = @"HTLCategoryCell";
 
 - (void)reloadData {
     if (self.category) {
-        self.categoryTitleLabel.text = self.category.localizedTitle;
+        self.categoryTitleLabel.text = NSLocalizedString(self.category.title, nil);
         self.categoryTitleLabel.textColor = self.category.color;
         self.categoryColorView.backgroundColor = self.category.color;
     } else {

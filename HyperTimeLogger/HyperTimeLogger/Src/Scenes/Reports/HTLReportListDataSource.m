@@ -5,7 +5,6 @@
 
 #import "HTLReportListDataSource.h"
 #import "HTLDateSection.h"
-#import "HTLReportExtended.h"
 #import "HTLAppDelegate.h"
 #import "HTLContentManager.h"
 
@@ -72,7 +71,7 @@
 }
 
 - (HTLReportExtended *)reportAtIndexPath:(NSIndexPath *)indexPath {
-    return [HTLAppContentManger reportsExtendedWithDateSection:self.selectedDateSection category:nil][(NSUInteger) indexPath.row];
+    return [HTLAppContentManger reportsWithDateSection:self.selectedDateSection category:nil][(NSUInteger) indexPath.row];
 }
 
 - (void)reloadData {
@@ -80,7 +79,7 @@
     if (!self.dateSections) {
         resetIndex = YES;
     }
-    self.dateSections = [HTLAppContentManger reportSections];
+    self.dateSections = [HTLAppContentManger dateSections];
     if (resetIndex || self.currentDateSectionIndex >= self.dateSections.count) {
         self.currentDateSectionIndex = self.dateSections.count - 1;
     }

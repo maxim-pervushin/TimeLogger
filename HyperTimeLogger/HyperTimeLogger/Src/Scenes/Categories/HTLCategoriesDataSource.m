@@ -20,7 +20,7 @@
 }
 
 - (BOOL)deleteCategoryAtIndexPath:(NSIndexPath *)indexPath {
-    return NO;
+    return [HTLAppContentManger deleteCategory:[self categoryAtIndexPath:indexPath]];
 }
 
 - (BOOL)saveCategory:(HTLCategory *)category {

@@ -7,22 +7,14 @@
 #import "HTLSqliteStorageProvider.h"
 
 @class FMResultSet;
-@class HTLAction;
-@class HTLCompletion;
 @class HTLReport;
 
 @interface HTLSqliteStorageProvider (Deserialization)
-
-- (HTLAction *)unpackAction:(FMResultSet *)resultSet;
 
 - (HTLCategory *)unpackCategory:(FMResultSet *)resultSet;
 
 - (HTLDateSection *)unpackDateSection:(FMResultSet *)resultSet;
 
 - (HTLReport *)unpackReport:(FMResultSet *)resultSet;
-
-- (HTLReportExtended *)unpackReportExtended:(FMResultSet *)resultSet;
-
-- (HTLCompletion *)unpackCompletion:(FMResultSet *)resultSet;
 
 @end

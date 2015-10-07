@@ -4,6 +4,7 @@
 //
 
 #import "HTLCategoryEditor.h"
+#import "HTLCategory.h"
 
 
 @implementation HTLCategoryEditor
@@ -37,6 +38,7 @@
 
     return [HTLCategory categoryWithIdentifier:self.originalCategory ? self.originalCategory.identifier : [NSUUID new].UUIDString
                                          title:self.title
+                                         subTitle:self.subTitle
                                          color:self.color];
 }
 

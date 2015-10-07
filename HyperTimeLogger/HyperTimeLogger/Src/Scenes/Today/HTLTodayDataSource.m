@@ -7,8 +7,6 @@
 #import "HTLCategory.h"
 #import "HTLAppDelegate.h"
 #import "HTLContentManager.h"
-#import "HTLReportExtended.h"
-#import "HTLAction.h"
 #import "HTLReport.h"
 
 
@@ -47,20 +45,13 @@
     }
 
     NSDate *lastReportEndDate = [HTLAppContentManger lastReportEndDate];
+    if (!lastReportEndDate) {
+        lastReportEndDate = [NSDate new];
+    }
 
-    HTLAction *action = [HTLAction actionWithIdentifier:[[NSUUID new] UUIDString]
-                                                  title:@""];
-    HTLReport *report = [HTLReport reportWithIdentifier:[[NSUUID new] UUIDString]
-                                       actionIdentifier:action.identifier
-                                     categoryIdentifier:category.identifier
-                                              startDate:lastReportEndDate ? lastReportEndDate : [NSDate new]
-                                                endDate:[NSDate new]];
+    HTLReport *report = [HTLReport reportWithCategory:category startDate:lastReportEndDate endDate:[NSDate new]];
 
-    HTLReportExtended *reportExtended = [HTLReportExtended reportExtendedWithReport:report
-                                                                             action:action
-                                                                           category:category];
-
-    return [HTLAppContentManger saveReportExtended:reportExtended];
+    return [HTLAppContentManger saveReport:report];
 }
 
 - (void)subscribe {

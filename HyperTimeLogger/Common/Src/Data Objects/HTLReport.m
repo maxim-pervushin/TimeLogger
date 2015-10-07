@@ -7,24 +7,20 @@
 
 
 @implementation HTLReport
-@synthesize identifier = identifier_;
-@synthesize actionIdentifier = actionIdentifier_;
-@synthesize categoryIdentifier = categoryIdentifier_;
+@synthesize category = category_;
 @synthesize startDate = startDate_;
 @synthesize endDate = endDate_;
 
 #pragma mark - HTLReport
 
-+ (instancetype)reportWithIdentifier:(HTLReportIdentifier)identifier actionIdentifier:(HTLActionIdentifier)actionIdentifier categoryIdentifier:(HTLCategoryIdentifier)categoryIdentifier startDate:(NSDate *)startDate endDate:(NSDate *)endDate {
-    return [[self alloc] initWithIdentifier:identifier actionIdentifier:actionIdentifier categoryIdentifier:categoryIdentifier startDate:startDate endDate:endDate];
++ (instancetype)reportWithCategory:(HTLCategory *)category startDate:(NSDate *)startDate endDate:(NSDate *)endDate {
+    return [[self alloc] initWithCategory:category startDate:startDate endDate:endDate];
 }
 
-- (instancetype)initWithIdentifier:(HTLReportIdentifier)identifier actionIdentifier:(HTLActionIdentifier)actionIdentifier categoryIdentifier:(HTLCategoryIdentifier)categoryIdentifier startDate:(NSDate *)startDate endDate:(NSDate *)endDate {
+- (instancetype)initWithCategory:(HTLCategory *)category startDate:(NSDate *)startDate endDate:(NSDate *)endDate {
     self = [super init];
     if (self) {
-        identifier_ = [identifier copy];
-        actionIdentifier_ = [actionIdentifier copy];
-        categoryIdentifier_ = [categoryIdentifier copy];
+        category_ = [category copy];
         startDate_ = [startDate copy];
         endDate_ = [endDate copy];
     }
@@ -37,9 +33,7 @@
     HTLReport *copy = [[[self class] allocWithZone:zone] init];
 
     if (copy != nil) {
-        copy->identifier_ = identifier_;
-        copy->actionIdentifier_ = actionIdentifier_;
-        copy->categoryIdentifier_ = categoryIdentifier_;
+        copy->category_ = category_;
         copy->startDate_ = startDate_;
         copy->endDate_ = endDate_;
     }
@@ -63,11 +57,7 @@
         return YES;
     if (report == nil)
         return NO;
-    if (self.identifier != report.identifier && ![self.identifier isEqualToString:report.identifier])
-        return NO;
-    if (self.actionIdentifier != report.actionIdentifier && ![self.actionIdentifier isEqualToString:report.actionIdentifier])
-        return NO;
-    if (self.categoryIdentifier != report.categoryIdentifier && ![self.categoryIdentifier isEqualToString:report.categoryIdentifier])
+    if (self.category != report.category && ![self.category isEqual:report.category])
         return NO;
     if (self.startDate != report.startDate && ![self.startDate isEqualToDate:report.startDate])
         return NO;
@@ -77,9 +67,7 @@
 }
 
 - (NSUInteger)hash {
-    NSUInteger hash = [self.identifier hash];
-    hash = hash * 31u + [self.actionIdentifier hash];
-    hash = hash * 31u + [self.categoryIdentifier hash];
+    NSUInteger hash = [self.category hash];
     hash = hash * 31u + [self.startDate hash];
     hash = hash * 31u + [self.endDate hash];
     return hash;
@@ -89,9 +77,7 @@
 
 - (NSString *)description {
     NSMutableString *description = [NSMutableString stringWithFormat:@"<%@: ", NSStringFromClass([self class])];
-    [description appendFormat:@"self.identifier=%@", self.identifier];
-    [description appendFormat:@", self.actionIdentifier=%@", self.actionIdentifier];
-    [description appendFormat:@", self.categoryIdentifier=%@", self.categoryIdentifier];
+    [description appendFormat:@"self.category=%@", self.category];
     [description appendFormat:@", self.startDate=%@", self.startDate];
     [description appendFormat:@", self.endDate=%@", self.endDate];
     [description appendString:@">"];

@@ -7,12 +7,13 @@
 #import <Foundation/Foundation.h>
 
 
+// TODO: Use delegation here
 static NSString *const kHTLStorageProviderChangedNotification = @"HTLStorageProviderChangedNotification";
 
 
-@class HTLReportExtended;
 @class HTLCategory;
 @class HTLDateSection;
+@class HTLReport;
 
 
 @protocol HTLStorageProvider <NSObject>
@@ -27,26 +28,24 @@ static NSString *const kHTLStorageProviderChangedNotification = @"HTLStorageProv
 
 - (BOOL)saveCategory:(HTLCategory *)category;
 
-// Report sections
+- (BOOL)deleteCategory:(HTLCategory *)category;
 
-- (NSUInteger)numberOfReportSections;
+// Date sections
 
-- (NSArray *)reportSections;
+- (NSUInteger)numberOfDateSections;
+
+- (NSArray *)dateSections;
 
 // Reports
 
 - (NSUInteger)numberOfReportsWithDateSection:(HTLDateSection *)dateSection;
 
-- (NSArray *)reportsExtendedWithDateSection:(HTLDateSection *)dateSection category:(HTLCategory *)category;
+- (NSArray *)reportsWithDateSection:(HTLDateSection *)dateSection category:(HTLCategory *)category;
 
-- (BOOL)saveReportExtended:(HTLReportExtended *)reportExtended;
+- (BOOL)saveReport:(HTLReport *)report;
 
 - (NSDate *)lastReportEndDate;
 
-- (HTLReportExtended *)lastReportExtended;
-
-// Completions
-
-- (NSArray *)completionsWithText:(NSString *)text;
+- (HTLReport *)lastReport;
 
 @end

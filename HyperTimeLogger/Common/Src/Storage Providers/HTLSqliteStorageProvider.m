@@ -5,12 +5,9 @@
 
 #import "DTFolderMonitor.h"
 #import "FMDB.h"
-#import "HTLAction.h"
 #import "HTLCategory.h"
-#import "HTLCompletion.h"
 #import "HTLDateSection.h"
 #import "HTLReport.h"
-#import "HTLReportExtended.h"
 #import "HTLSqliteStorageProvider+Deserialization.h"
 #import "NSDate+HTLComponents.h"
 
@@ -75,17 +72,10 @@
         }
 
         BOOL result = [database executeUpdate:
-                @"CREATE TABLE action("
-                        "identifier TEXT PRIMARY KEY, "
-                        "title TEXT "
-                        ");"];
-
-        DDLogVerbose(@"action table created: %@", result ? @"YES" : @"NO");
-
-        result = [database executeUpdate:
                 @"CREATE TABLE category("
                         "identifier TEXT PRIMARY KEY, "
                         "title TEXT, "
+                        "subTitle TEXT, "
                         "color TEXT"
                         ");"];
 
@@ -93,9 +83,10 @@
 
         result = [database executeUpdate:
                 @"CREATE TABLE report("
-                        "identifier TEXT PRIMARY KEY, "
-                        "actionIdentifier TEXT, "
                         "categoryIdentifier TEXT, "
+                        "categoryTitle TEXT, "
+                        "categorySubTitle TEXT, "
+                        "categoryColor TEXT, "
                         "startDate TEXT, "
                         "startTime TEXT, "
                         "startZone TEXT, "
@@ -128,6 +119,7 @@
     NSString *queryString = [NSString stringWithFormat:@"SELECT "
                                                                "category.identifier AS categoryIdentifier, "
                                                                "category.title AS categoryTitle, "
+                                                               "category.subTitle AS categorySubTitle, "
                                                                "category.color AS categoryColor "
                                                                "FROM category "
                                                                "%@ "
@@ -153,47 +145,12 @@
     return [categories copy];
 }
 
-- (HTLAction *)actionWithTitle:(NSString *)title database:(FMDatabase *)database {
-    FMResultSet *resultSet = [database executeQuery:
-                    @"SELECT "
-                            "identifier AS actionIdentifier, "
-                            "title AS actionTitle "
-                            "FROM action "
-                            "WHERE title = :title "
-                            "LIMIT 1;"
-                            withParameterDictionary:@{
-                                    @"title" : title ? title : @""
-                            }];
-
-    HTLAction *result;
-    if ([resultSet next]) {
-        result = [self unpackAction:resultSet];
-    }
-    return result;
-}
-
-- (HTLAction *)storeAction:(HTLAction *)action database:(FMDatabase *)database {
-    BOOL success = [database executeUpdate:@"INSERT OR REPLACE INTO action VALUES (:identifier, :title);"
-                   withParameterDictionary:@{
-                           @"identifier" : action.identifier,
-                           @"title" : action.title
-                   }];
-
-    if (success) {
-        DDLogVerbose(@"Action %@ successfully inserted.", action);
-        return action;
-    } else {
-        DDLogError(@"Unable to insert action %@.", action);
-        return nil;
-    }
-}
-
 - (NSUInteger)numberOfCategoriesWithDateSection:(HTLDateSection *)dateSection database:(FMDatabase *)database {
     NSMutableString *whereString = [NSMutableString new];
     if (dateSection) {
         [whereString appendString:
                 @"INNER JOIN report ON report.categoryIdentifier = category.identifier "
-                        "WHERE report.endDate = :dateSectionDate "
+                        "WHERE report.endDate = :endDate "
         ];
     }
 
@@ -206,7 +163,7 @@
 
     NSMutableDictionary *parameters = [NSMutableDictionary new];
     if (dateSection) {
-        parameters[@"dateSectionDate"] = dateSection.dateString;
+        parameters[@"endDate"] = dateSection.dateString;
     }
 
     FMResultSet *resultSet = [database executeQuery:queryString withParameterDictionary:parameters];
@@ -225,6 +182,7 @@
                     @"SELECT "
                             "identifier AS categoryIdentifier, "
                             "title AS categoryTitle, "
+                            "subTitle AS categorySubTitle, "
                             "color AS categoryColor "
                             "FROM category "
                             "WHERE title = :title "
@@ -240,24 +198,38 @@
     return result;
 }
 
-- (HTLCategory *)storeCategory:(HTLCategory *)category database:(FMDatabase *)database {
-    BOOL success = [database executeUpdate:@"INSERT OR REPLACE INTO category VALUES (:identifier, :title, :color)"
+- (BOOL)deleteCategory:(HTLCategory *)category database:(FMDatabase *)database {
+    BOOL success = [database executeUpdate:@"DELETE FROM category WHERE identifier = :identifier"
+                   withParameterDictionary:@{
+                           @"identifier" : category.identifier
+                   }];
+
+    if (success) {
+        DDLogVerbose(@"Category %@ successfully inserted.", category);
+    } else {
+        DDLogError(@"Unable to insert category %@.", category);
+    }
+    return success;
+}
+
+- (BOOL)saveCategory:(HTLCategory *)category database:(FMDatabase *)database {
+    BOOL success = [database executeUpdate:@"INSERT OR REPLACE INTO category VALUES (:identifier, :title, :subTitle, :color)"
                    withParameterDictionary:@{
                            @"identifier" : category.identifier,
                            @"title" : category.title,
+                           @"subTitle" : category.subTitle ? category.subTitle : @"",
                            @"color" : [UIColor hexStringFromRGBColor:category.color]
                    }];
 
     if (success) {
         DDLogVerbose(@"Category %@ successfully inserted.", category);
-        return category;
     } else {
         DDLogError(@"Unable to insert category %@.", category);
-        return nil;
     }
+    return success;
 }
 
-- (HTLReport *)storeReport:(HTLReport *)report database:(FMDatabase *)database {
+- (BOOL)saveReport:(HTLReport *)report database:(FMDatabase *)database {
     NSString *startDateString;
     NSString *startTimeString;
     NSString *startTimeZoneString;
@@ -268,11 +240,12 @@
     NSString *endTimeZoneString;
     [report.endDate getDateString:&endDateString timeString:&endTimeString timeZoneString:&endTimeZoneString];
 
-    BOOL success = [database executeUpdate:@"INSERT OR REPLACE INTO report VALUES (:identifier, :actionIdentifier, :categoryIdentifier, :startDate, :startTime, :startZone, :endDate, :endTime, :endZone)"
+    BOOL success = [database executeUpdate:@"INSERT OR REPLACE INTO report VALUES (:categoryIdentifier, :categoryTitle, :categorySubTitle, :categoryColor, :startDate, :startTime, :startZone, :endDate, :endTime, :endZone)"
                    withParameterDictionary:@{
-                           @"identifier" : report.identifier,
-                           @"actionIdentifier" : report.actionIdentifier,
-                           @"categoryIdentifier" : report.categoryIdentifier,
+                           @"categoryIdentifier" : report.category.identifier,
+                           @"categoryTitle" : report.category.title,
+                           @"categorySubTitle" : report.category.subTitle,
+                           @"categoryColor" : [UIColor hexStringFromRGBColor:report.category.color],
                            @"startDate" : startDateString,
                            @"startTime" : startTimeString,
                            @"startZone" : startTimeZoneString,
@@ -283,11 +256,10 @@
 
     if (success) {
         DDLogVerbose(@"Report %@ successfully inserted.", report);
-        return report;
     } else {
         DDLogError(@"Unable to insert report %@.", report);
-        return nil;
     }
+    return success;
 }
 
 - (NSUInteger)numberOfReportSectionsInDatabase:(FMDatabase *)database {
@@ -302,7 +274,7 @@
     return result;
 }
 
-- (NSArray *)findAllReportSectionsInDatabase:(FMDatabase *)database {
+- (NSArray *)dateSectionsInDatabase:(FMDatabase *)database {
 
     FMResultSet *resultSet = [database executeQuery:
             @"SELECT "
@@ -328,7 +300,7 @@
 - (NSUInteger)numberOfReportsWithDateSection:(HTLDateSection *)dateSection database:(FMDatabase *)database {
     NSMutableString *whereString = [NSMutableString new];
     if (dateSection) {
-        [whereString appendString:@"WHERE report.endDate = :dateSectionDate "
+        [whereString appendString:@"WHERE report.endDate = :endDate "
         ];
     }
 
@@ -341,7 +313,7 @@
 
     NSMutableDictionary *parameters = [NSMutableDictionary new];
     if (dateSection) {
-        parameters[@"dateSectionDate"] = dateSection.dateString;
+        parameters[@"endDate"] = dateSection.dateString;
     }
 
 
@@ -356,24 +328,23 @@
     return result;
 }
 
-- (NSArray *)reportsExtendedWithDateSection:(HTLDateSection *)dateSection category:(HTLCategory *)category database:(FMDatabase *)database {
+- (NSArray *)reportsWithDateSection:(HTLDateSection *)dateSection category:(HTLCategory *)category database:(FMDatabase *)database {
 
     NSMutableString *whereString = [NSMutableString new];
     if (dateSection) {
         [whereString appendString:@"WHERE report.endDate = :endDate "];
     }
     if (category) {
-        [whereString appendFormat:@"%@ report.categoryIdentifier = :categoryIdentifier", whereString.length > 0 ? @"AND" : @"WHERE"];
+        // TODO: Compare by category title and subtitle
+        [whereString appendFormat:@"%@ report.categoryIdentifier = :reportCategoryIdentifier", whereString.length > 0 ? @"AND" : @"WHERE"];
     }
 
     NSString *queryString =
             [NSString stringWithFormat:@"SELECT "
-                                               "report.identifier AS identifier, "
-                                               "actionIdentifier, "
-                                               "action.title AS actionTitle, "
-                                               "categoryIdentifier, "
-                                               "category.title AS categoryTitle, "
-                                               "category.color AS categoryColor, "
+                                               "report.categoryIdentifier AS reportCategoryIdentifier, "
+                                               "report.categoryTitle AS reportCategoryTitle, "
+                                               "report.categorySubTitle AS reportCategorySubTitle, "
+                                               "report.categoryColor AS reportCategoryColor, "
                                                "report.startDate AS reportStartDate, "
                                                "report.startTime AS reportStartTime, "
                                                "report.startZone AS reportStartZone, "
@@ -381,8 +352,6 @@
                                                "report.endTime AS reportEndTime, "
                                                "report.endZone AS reportEndZone "
                                                "FROM report "
-                                               "INNER JOIN category ON report.categoryIdentifier = category.identifier "
-                                               "INNER JOIN action ON report.actionIdentifier = action.identifier "
                                                "%@ "
                                                "ORDER BY report.endDate ASC, report.endTime ASC "
                                                ";", whereString];
@@ -392,21 +361,21 @@
         parameters[@"endDate"] = dateSection.dateString;
     }
     if (category) {
-        parameters[@"categoryIdentifier"] = category.identifier;
+        parameters[@"reportCategoryIdentifier"] = category.identifier;
     }
 
     FMResultSet *resultSet = [database executeQuery:queryString withParameterDictionary:parameters];
 
-    NSMutableArray *reportsExtended = [NSMutableArray new];
+    NSMutableArray *reports = [NSMutableArray new];
     while ([resultSet next]) {
-        HTLReportExtended *reportExtended = [self unpackReportExtended:resultSet];
-        if (reportExtended) {
-            [reportsExtended addObject:reportExtended];
+        HTLReport *report = [self unpackReport:resultSet];
+        if (report) {
+            [reports addObject:report];
         }
     }
     [resultSet close];
 
-    return [reportsExtended copy];
+    return [reports copy];
 }
 
 - (NSDate *)lastReportEndDateInDatabase:(FMDatabase *)database {
@@ -430,7 +399,7 @@
     return lastReportEndDate;
 }
 
-- (HTLReportExtended *)lastReportExtendedInDatabase:(FMDatabase *)database {
+- (HTLReport *)lastReportInDatabase:(FMDatabase *)database {
     FMResultSet *resultSet = [database executeQuery:
             @"SELECT "
                     "report.identifier AS identifier, "
@@ -450,41 +419,13 @@
                     "INNER JOIN action ON report.actionIdentifier = action.identifier "
                     "ORDER BY report.startDate DESC, report.startTime DESC LIMIT 1;"];
 
-    HTLReportExtended *lastReportExtended;
+    HTLReport *lastReport;
     if ([resultSet next]) {
-        lastReportExtended = [self unpackReportExtended:resultSet];
+        lastReport = [self unpackReport:resultSet];
     }
     [resultSet close];
 
-    return lastReportExtended;
-}
-
-- (NSArray *)completionsWithPattern:(NSString *)pattern database:(FMDatabase *)database {
-    FMResultSet *resultSet = [database executeQuery:@"SELECT "
-                    "actionIdentifier, "
-                    "action.title AS actionTitle, "
-                    "categoryIdentifier, "
-                    "category.title AS categoryTitle, "
-                    "category.color AS categoryColor, "
-                    "COUNT(action.title) as weight "
-                    "FROM report "
-                    "INNER JOIN category ON report.categoryIdentifier = category.identifier "
-                    "INNER JOIN action ON report.actionIdentifier = action.identifier "
-                    "WHERE action.title LIKE :pattern "
-                    "GROUP BY action.title "
-                    "ORDER BY weight DESC;"
-                            withParameterDictionary:@{@"pattern" : [NSString stringWithFormat:@"%%%@%%", pattern]}];
-
-    NSMutableArray *completions = [NSMutableArray new];
-    while ([resultSet next]) {
-        HTLCompletion *completion = [self unpackCompletion:resultSet];
-        if (completion) {
-            [completions addObject:completion];
-        }
-    }
-    [resultSet close];
-
-    return [NSArray arrayWithArray:completions];
+    return lastReport;
 }
 
 #pragma mark - HTLStorageProvider
@@ -558,8 +499,7 @@
 
     [self clearCaches];
 
-    HTLCategory *added = [self storeCategory:category database:database];
-    if (!added) {
+    if (![self saveCategory:category database:database]) {
         [database close];
         return NO;
     }
@@ -568,7 +508,24 @@
     return YES;
 }
 
-- (NSUInteger)numberOfReportSections {
+- (BOOL)deleteCategory:(HTLCategory *)category {
+    if (!category) {
+        return NO;
+    }
+
+    FMDatabase *database = self.databaseOpen;
+    if (!database) {
+        return NO;
+    }
+
+    [self clearCaches];
+
+    BOOL deleted = [self deleteCategory:category database:database];
+    [database close];
+    return deleted;
+}
+
+- (NSUInteger)numberOfDateSections {
     NSString *cacheKey = NSStringFromSelector(_cmd);
     NSNumber *cached = [self.cache objectForKey:cacheKey];
     if (cached) {
@@ -589,7 +546,7 @@
     return result;
 }
 
-- (NSArray *)reportSections {
+- (NSArray *)dateSections {
     NSString *cacheKey = NSStringFromSelector(_cmd);
     NSArray *cached = [self.cache objectForKey:cacheKey];
     if (cached) {
@@ -601,7 +558,7 @@
         return @[];
     }
 
-    NSArray *reportSections = [self findAllReportSectionsInDatabase:database];
+    NSArray *reportSections = [self dateSectionsInDatabase:database];
 
     [database close];
 
@@ -634,7 +591,7 @@
     return result;
 }
 
-- (NSArray *)reportsExtendedWithDateSection:(HTLDateSection *)dateSection category:(HTLCategory *)category {
+- (NSArray *)reportsWithDateSection:(HTLDateSection *)dateSection category:(HTLCategory *)category {
     NSString *cacheKey = [NSString stringWithFormat:@"%@_%@_%@",
                                                     NSStringFromSelector(_cmd),
                                                     dateSection ? @(dateSection.hash) : @"",
@@ -651,7 +608,7 @@
         return @[];
     }
 
-    NSArray *reportsExtended = [self reportsExtendedWithDateSection:dateSection category:category database:database];
+    NSArray *reportsExtended = [self reportsWithDateSection:dateSection category:category database:database];
 
     [database close];
 
@@ -662,8 +619,8 @@
     return result;
 }
 
-- (BOOL)saveReportExtended:(HTLReportExtended *)reportExtended {
-    if (!reportExtended) {
+- (BOOL)saveReport:(HTLReport *)report {
+    if (!report) {
         return NO;
     }
 
@@ -674,31 +631,13 @@
 
     [self clearCaches];
 
-    HTLAction *action = [self actionWithTitle:reportExtended.action.title database:database];
-    if (!action) {
-        action = [self storeAction:reportExtended.action database:database];
-    }
-    if (!action) {
+    HTLCategory *category = [self categoryWithTitle:report.category.title database:database];
+    if (!category && ![self saveCategory:report.category database:database]) {
         [database close];
         return NO;
     }
 
-    HTLCategory *category = [self categoryWithTitle:reportExtended.category.title database:database];
-    if (!category) {
-        category = [self storeCategory:reportExtended.category database:database];
-    }
-    if (!category) {
-        [database close];
-        return NO;
-    }
-
-    HTLReport *report = [HTLReport reportWithIdentifier:reportExtended.report.identifier
-                                       actionIdentifier:action.identifier
-                                     categoryIdentifier:category.identifier
-                                              startDate:reportExtended.report.startDate
-                                                endDate:reportExtended.report.endDate];
-    HTLReport *storedReport = [self storeReport:report database:database];
-    if (!storedReport) {
+    if (![self saveReport:report database:database]) {
         [database close];
         return NO;
     }
@@ -732,11 +671,11 @@
     return lastReportEndDate;
 }
 
-- (HTLReportExtended *)lastReportExtended {
+- (HTLReport *)lastReport {
     NSString *cacheKey = NSStringFromSelector(_cmd);
-    HTLReportExtended *cached = [self.cache objectForKey:cacheKey];
+    HTLReport *cached = [self.cache objectForKey:cacheKey];
     if (cached) {
-        DDLogVerbose(@"Retrieving cached Last Report Extended");
+        DDLogVerbose(@"Retrieving cached Last Report");
         return cached;
     }
 
@@ -745,38 +684,15 @@
         return nil;
     }
 
-    HTLReportExtended *lastReportExtended = [self lastReportExtendedInDatabase:database];
+    HTLReport *lastReport = [self lastReportInDatabase:database];
 
     [database close];
 
-    if (lastReportExtended) {
-        [self.cache setObject:lastReportExtended forKey:cacheKey];
+    if (lastReport) {
+        [self.cache setObject:lastReport forKey:cacheKey];
     }
 
-    return lastReportExtended;
-}
-
-- (NSArray *)completionsWithText:(NSString *)text {
-    NSString *pattern = text ? text : @"";
-    NSString *cacheKey = [NSString stringWithFormat:@"%@_%@", NSStringFromSelector(_cmd), pattern];
-    NSArray *cached = [self.cache objectForKey:cacheKey];
-    if (cached) {
-        DDLogVerbose(@"Retrieving cached Completions for pattern %@", pattern);
-        return cached;
-    }
-
-    FMDatabase *database = self.databaseOpen;
-    if (!database) {
-        return @[];
-    }
-
-    NSArray *completions = [self completionsWithPattern:pattern database:database];
-
-    [database close];
-
-    [self.cache setObject:completions forKey:cacheKey];
-
-    return completions;
+    return lastReport;
 }
 
 @end

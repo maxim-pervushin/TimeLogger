@@ -4,10 +4,9 @@
 //
 
 #import "HTLCSVStringExportProvider.h"
-#import "HTLReportExtended.h"
-#import "HTLAction.h"
 #import "HTLCategory.h"
 #import "HTLReport.h"
+#import "DDLogMacros.h"
 
 static NSString *const kDefaultDateFormat = @"yyyy-MM-dd HH:mm:ss ZZZ";
 
@@ -32,18 +31,18 @@ static NSString *const kDefaultDateFormat = @"yyyy-MM-dd HH:mm:ss ZZZ";
 
 - (NSString *)exportReportsExtended:(NSArray *)reportsExtended {
     NSMutableString *csvString = [NSMutableString new];
-    for (HTLReportExtended *reportExtended in reportsExtended) {
-        if (![reportExtended isKindOfClass:[HTLReportExtended class]]) {
-            DDLogError(@"Invalid class: %@", reportExtended);
-            continue;
-        }
-
-        [csvString appendFormat:@"%@\t%@\t%@\t%@\n",
-                        [[self defaultDateFormatter] stringFromDate:reportExtended.report.startDate],
-                        [[self defaultDateFormatter] stringFromDate:reportExtended.report.endDate],
-                        reportExtended.action.title,
-                        reportExtended.category.localizedTitle];
-    }
+//    for (HTLReportExtended *reportExtended in reportsExtended) {
+//        if (![reportExtended isKindOfClass:[HTLReportExtended class]]) {
+//            DDLogError(@"Invalid class: %@", reportExtended);
+//            continue;
+//        }
+//
+//        [csvString appendFormat:@"%@\t%@\t%@\t%@\n",
+//                        [[self defaultDateFormatter] stringFromDate:reportExtended.report.startDate],
+//                        [[self defaultDateFormatter] stringFromDate:reportExtended.report.endDate],
+//                        reportExtended.action.title,
+//                        NSLocalizedString(reportExtended.category.title, nil)];
+//    }
     return [csvString copy];
 }
 

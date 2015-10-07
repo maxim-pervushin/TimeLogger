@@ -12,11 +12,11 @@
 @implementation HTLReportDateListDataSource
 
 - (NSUInteger)numberOfDateSections {
-    return HTLAppContentManger.numberOfReportSections;
+    return HTLAppContentManger.numberOfDateSections;
 }
 
 - (HTLDateSection *)dateSectionAtIndexPath:(NSIndexPath *)indexPath {
-    return HTLAppContentManger.reportSections[(NSUInteger) indexPath.row];
+    return HTLAppContentManger.dateSections[(NSUInteger) indexPath.row];
 }
 
 @end

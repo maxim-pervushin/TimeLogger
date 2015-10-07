@@ -9,30 +9,14 @@
 typedef NSString *HTLCategoryIdentifier;
 
 
-@interface HTLCategory : NSObject <NSCopying>
+// TODO: Rename to Activity?
+@interface HTLCategory : NSObject <NSCopying, NSObject>
 
-+ (instancetype)categoryWithIdentifier:(HTLCategoryIdentifier)identifier title:(NSString *)title color:(UIColor *)color;
-
-- (id)copyWithZone:(nullable NSZone *)zone;
-
-- (BOOL)isEqual:(id)other;
-
-- (BOOL)isEqualToCategory:(HTLCategory *)category;
-
-- (NSUInteger)hash;
-
-- (NSString *)description;
++ (instancetype)categoryWithIdentifier:(HTLCategoryIdentifier)identifier title:(NSString *)title subTitle:(NSString *)subTitle color:(UIColor *)color;
 
 @property(nonatomic, readonly) HTLCategoryIdentifier identifier;
 @property(nonatomic, readonly) NSString *title;
+@property(nonatomic, readonly) NSString *subTitle;
 @property(nonatomic, readonly) UIColor *color;
-
-@end
-
-
-@interface HTLCategory (Localized)
-
-// TODO: Delete and use NSLocalizedString at place
-@property(nonatomic, readonly) NSString *localizedTitle;
 
 @end

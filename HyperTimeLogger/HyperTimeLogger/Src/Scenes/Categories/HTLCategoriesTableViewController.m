@@ -62,6 +62,17 @@
     return cell;
 }
 
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (editingStyle == UITableViewCellEditingStyleDelete) {
+        if ([self.dataSource deleteCategoryAtIndexPath:indexPath]) {
+            [tableView beginUpdates];
+            [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
+            [tableView endUpdates];
+            //[self reloadData];
+        }
+    }
+}
+
 #pragma mark - HTLEditCategoryViewControllerDelegate_New
 
 - (void)editCategoryViewController:(HTLEditCategoryViewController *)viewController finishedWithCategory:(HTLCategory *)category {

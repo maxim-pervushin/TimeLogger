@@ -3,13 +3,12 @@
 // Copyright (c) 2015 Maxim Pervushin. All rights reserved.
 //
 
+#import "HTLStorageProvider.h"
 #import "HTLContentManager.h"
 #import "HTLReport.h"
-#import "HTLSqliteStorageProvider.h"
 #import "HTLCSVStringExportProvider.h"
-#import "HTLReportExtended.h"
 #import "HTLDateSection.h"
-#import "HTLStringExportProvider.h"
+#import "UIColor+BFPaperColors.h"
 
 
 @interface HTLContentManager ()
@@ -35,13 +34,13 @@
     // Check categories.
     if ([self.storageProvider categoriesWithDateSection:nil].count == 0) {
         NSArray *initialCategories = @[
-                [HTLCategory categoryWithIdentifier:@"0" title:@"Sleep" color:[UIColor paperColorDeepPurple]],
-                [HTLCategory categoryWithIdentifier:@"1" title:@"Personal" color:[UIColor paperColorIndigo]],
-                [HTLCategory categoryWithIdentifier:@"2" title:@"Road" color:[UIColor paperColorRed]],
-                [HTLCategory categoryWithIdentifier:@"3" title:@"Work" color:[UIColor paperColorLightGreen]],
-                [HTLCategory categoryWithIdentifier:@"4" title:@"Improvement" color:[UIColor paperColorDeepOrange]],
-                [HTLCategory categoryWithIdentifier:@"5" title:@"Recreation" color:[UIColor paperColorCyan]],
-                [HTLCategory categoryWithIdentifier:@"6" title:@"Time Waste" color:[UIColor paperColorBrown]]
+                [HTLCategory categoryWithIdentifier:@"0" title:@"Sleep" subTitle:@"" color:[UIColor paperColorDeepPurple]],
+                [HTLCategory categoryWithIdentifier:@"1" title:@"Personal" subTitle:@"" color:[UIColor paperColorIndigo]],
+                [HTLCategory categoryWithIdentifier:@"2" title:@"Road" subTitle:@"" color:[UIColor paperColorRed]],
+                [HTLCategory categoryWithIdentifier:@"3" title:@"Work" subTitle:@"" color:[UIColor paperColorLightGreen]],
+                [HTLCategory categoryWithIdentifier:@"4" title:@"Improvement" subTitle:@"" color:[UIColor paperColorDeepOrange]],
+                [HTLCategory categoryWithIdentifier:@"5" title:@"Recreation" subTitle:@"" color:[UIColor paperColorCyan]],
+                [HTLCategory categoryWithIdentifier:@"6" title:@"Time Waste" subTitle:@"" color:[UIColor paperColorBrown]]
         ];
 
         for (HTLCategory *category in initialCategories) {
@@ -68,40 +67,40 @@
     return [self.storageProvider saveCategory:category];
 }
 
-- (NSArray *)completionsWithText:(NSString *)text {
-    return [self.storageProvider completionsWithText:text];
+- (BOOL)deleteCategory:(HTLCategory *)category {
+    return [self.storageProvider deleteCategory:category];
 }
 
-- (NSUInteger)numberOfReportSections {
-    return [self.storageProvider numberOfReportSections];
+- (NSUInteger)numberOfDateSections {
+    return [self.storageProvider numberOfDateSections];
 }
 
-- (NSArray *)reportSections {
-    return [self.storageProvider reportSections];
+- (NSArray *)dateSections {
+    return [self.storageProvider dateSections];
 }
 
 - (NSUInteger)numberOfReportsWithDateSection:(HTLDateSection *)dateSection {
     return [self.storageProvider numberOfReportsWithDateSection:dateSection];
 }
 
-- (NSArray *)reportsExtendedWithDateSection:(HTLDateSection *)dateSection category:(HTLCategory *)category {
-    return [self.storageProvider reportsExtendedWithDateSection:dateSection category:category];
+- (NSArray *)reportsWithDateSection:(HTLDateSection *)dateSection category:(HTLCategory *)category {
+    return [self.storageProvider reportsWithDateSection:dateSection category:category];
 }
 
-- (BOOL)saveReportExtended:(HTLReportExtended *)reportExtended {
-    return [self.storageProvider saveReportExtended:reportExtended];
+- (BOOL)saveReport:(HTLReport *)report {
+    return [self.storageProvider saveReport:report];
 }
 
 - (NSString *)exportDataToCSV {
-    return [self.csvStringExportProvider exportReportsExtended:[self.storageProvider reportsExtendedWithDateSection:nil category:nil]];
+    return [self.csvStringExportProvider exportReportsExtended:[self.storageProvider reportsWithDateSection:nil category:nil]];
 }
 
 - (NSDate *)lastReportEndDate {
     return [self.storageProvider lastReportEndDate];
 }
 
-- (HTLReportExtended *)lastReportExtended {
-    return [self.storageProvider lastReportExtended];
+- (HTLReport *)lastReport {
+    return [self.storageProvider lastReport];
 }
 
 @end

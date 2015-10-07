@@ -5,10 +5,7 @@
 
 #import "HTETodayDataSource.h"
 #import "HTLContentManager.h"
-#import "HTLReportExtended.h"
-#import "HTLCompletion.h"
 #import "HTLCategory.h"
-#import "HTLAction.h"
 #import "HTLReport.h"
 #import "HTLAppDelegate.h"
 #import "HTLCSVStringExportProvider.h"
@@ -35,30 +32,28 @@ static NSString *const kStorageFileName = @"time_logger_storage.db";
 
 #pragma mark - HTETodayModelController
 
-- (NSArray *)completions:(NSUInteger)numberOfCompletions {
-    NSArray *completions = [self.contentManager completionsWithText:nil];
-    NSMutableArray *result = [NSMutableArray new];
-    for (NSUInteger i = 0; i < completions.count && i < numberOfCompletions; i++) {
-        [result addObject:completions[i]];
-    }
-    return [result copy];
-}
+//- (NSArray *)completions:(NSUInteger)numberOfCompletions {
+////    NSArray *completions = [self.contentManager completionsWithText:nil];
+////    NSMutableArray *result = [NSMutableArray new];
+////    for (NSUInteger i = 0; i < completions.count && i < numberOfCompletions; i++) {
+////        [result addObject:completions[i]];
+////    }
+////    return [result copy];
+//    return @[];
+//}
+//
+//- (BOOL)createReportWithCompletion:(HTLCompletion *)completion {
+////    NSDate *startDate = self.contentManager.lastReportEndDate;
+////    HTLReport *report = [HTLReport reportWithCategory:[NSUUID UUID].UUIDString startDate:startDate ? startDate : [NSDate new] endDate:[NSDate new]];
+////    HTLReportExtended *reportExtended =
+////            [HTLReportExtended reportExtendedWithReport:report action:completion.action category:completion.category];
+////
+////    return [self.contentManager saveReport:reportExtended];
+//    return NO;
+//}
 
-- (BOOL)createReportWithCompletion:(HTLCompletion *)completion {
-    NSDate *startDate = self.contentManager.lastReportEndDate;
-    HTLReport *report = [HTLReport reportWithIdentifier:[NSUUID UUID].UUIDString
-                                       actionIdentifier:completion.action.identifier
-                                     categoryIdentifier:completion.category.identifier
-                                              startDate:startDate ? startDate : [NSDate new]
-                                                endDate:[NSDate new]];
-    HTLReportExtended *reportExtended =
-            [HTLReportExtended reportExtendedWithReport:report action:completion.action category:completion.category];
-
-    return [self.contentManager saveReportExtended:reportExtended];
-}
-
-- (HTLReportExtended *)lastReportExtended {
-    return self.contentManager.lastReportExtended;
+- (HTLReport *)lastReport {
+    return self.contentManager.lastReport;
 }
 
 - (void)subscribe {

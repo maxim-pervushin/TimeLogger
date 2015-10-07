@@ -17,6 +17,7 @@
 
 @property(nonatomic, copy) HTLCategoryIdentifier identifier;
 @property(nonatomic, copy) NSString *title;
+@property(nonatomic, copy) NSString *subTitle;
 @property(nonatomic, strong) UIColor *color;
 
 @end

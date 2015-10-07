@@ -5,15 +5,13 @@
 
 #import <Foundation/Foundation.h>
 #import "HTLCategory.h"
-#import "HTLAction.h"
 
 
 typedef NSString *HTLReportIdentifier;
 
+@interface HTLReport : NSObject <NSCopying, NSObject>
 
-@interface HTLReport : NSObject <NSCopying>
-
-+ (instancetype)reportWithIdentifier:(HTLReportIdentifier)identifier actionIdentifier:(HTLActionIdentifier)actionIdentifier categoryIdentifier:(HTLCategoryIdentifier)categoryIdentifier startDate:(NSDate *)startDate endDate:(NSDate *)endDate;
++ (instancetype)reportWithCategory:(HTLCategory *)category startDate:(NSDate *)startDate endDate:(NSDate *)endDate;
 
 - (id)copyWithZone:(nullable NSZone *)zone;
 
@@ -25,9 +23,7 @@ typedef NSString *HTLReportIdentifier;
 
 - (NSString *)description;
 
-@property(nonatomic, readonly) HTLReportIdentifier identifier;
-@property(nonatomic, readonly) HTLActionIdentifier actionIdentifier;
-@property(nonatomic, readonly) HTLCategoryIdentifier categoryIdentifier;
+@property(nonatomic, readonly) HTLCategory *category;
 @property(nonatomic, readonly) NSDate *startDate;
 @property(nonatomic, readonly) NSDate *endDate;
 

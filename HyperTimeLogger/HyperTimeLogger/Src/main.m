@@ -6,7 +6,6 @@
 //  Copyright (c) 2015 Maxim Pervushin. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
 #import "HTLAppDelegate.h"
 
 int main(int argc, char * argv[]) {
