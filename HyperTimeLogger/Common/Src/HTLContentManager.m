@@ -16,7 +16,7 @@
 @property(nonatomic, strong) id <HTLStorageProvider> storageProvider;
 @property(nonatomic, strong) HTLCSVStringExportProvider *csvStringExportProvider;
 
-- (void)initializeStorage;
+//- (void)initializeStorage;
 
 @end
 
@@ -26,48 +26,56 @@
     HTLContentManager *contentManager = [HTLContentManager new];
     contentManager.storageProvider=  storageProvider;
     contentManager.csvStringExportProvider = exportProvider;
-    [contentManager initializeStorage];
+//    [contentManager initializeStorage];
     return contentManager;
 }
 
-- (void)initializeStorage {
-    // Check categories.
-    if ([self.storageProvider categoriesWithDateSection:nil].count == 0) {
-        NSArray *initialCategories = @[
-                [HTLCategory categoryWithIdentifier:@"0" title:@"Sleep" subTitle:@"" color:[UIColor paperColorDeepPurple]],
-                [HTLCategory categoryWithIdentifier:@"1" title:@"Personal" subTitle:@"" color:[UIColor paperColorIndigo]],
-                [HTLCategory categoryWithIdentifier:@"2" title:@"Road" subTitle:@"" color:[UIColor paperColorRed]],
-                [HTLCategory categoryWithIdentifier:@"3" title:@"Work" subTitle:@"" color:[UIColor paperColorLightGreen]],
-                [HTLCategory categoryWithIdentifier:@"4" title:@"Improvement" subTitle:@"" color:[UIColor paperColorDeepOrange]],
-                [HTLCategory categoryWithIdentifier:@"5" title:@"Recreation" subTitle:@"" color:[UIColor paperColorCyan]],
-                [HTLCategory categoryWithIdentifier:@"6" title:@"Time Waste" subTitle:@"" color:[UIColor paperColorBrown]]
-        ];
-
-        for (HTLCategory *category in initialCategories) {
-            [self.storageProvider saveCategory:category];
-        }
-    }
-}
+//- (void)initializeStorage {
+//    // Check categories.
+//    if (self.storageProvider.customCategories.count == 0) {
+//        NSArray *initialCategories = @[
+//                [HTLActivity categoryWithTitle:@"Sleep" subTitle:@"" color:[UIColor paperColorDeepPurple]],
+//                [HTLActivity categoryWithTitle:@"Personal" subTitle:@"" color:[UIColor paperColorIndigo]],
+//                [HTLActivity categoryWithTitle:@"Road" subTitle:@"" color:[UIColor paperColorRed]],
+//                [HTLActivity categoryWithTitle:@"Work" subTitle:@"" color:[UIColor paperColorLightGreen]],
+//                [HTLActivity categoryWithTitle:@"Improvement" subTitle:@"" color:[UIColor paperColorDeepOrange]],
+//                [HTLActivity categoryWithTitle:@"Recreation" subTitle:@"" color:[UIColor paperColorCyan]],
+//                [HTLActivity categoryWithTitle:@"Time Waste" subTitle:@"" color:[UIColor paperColorBrown]]
+//        ];
+//
+//        for (HTLActivity *category in initialCategories) {
+//            [self.storageProvider saveCategory:category];
+//        }
+//    }
+//}
 
 - (BOOL)clear {
     BOOL result = [self.storageProvider clear];
-    [self initializeStorage];
+//    [self initializeStorage];
     return result;
 }
 
-- (NSUInteger)numberOfCategoriesWithDateSection:(HTLDateSection *)dateSection {
-    return [self.storageProvider numberOfCategoriesWithDateSection:dateSection];
+- (NSArray *)mandatoryCategories {
+    return self.storageProvider.mandatoryCategories;
 }
 
-- (NSArray *)categoriesWithDateSection:(HTLDateSection *)dateSection {
-    return [self.storageProvider categoriesWithDateSection:dateSection];
+- (NSArray *)customCategories {
+    return self.storageProvider.customCategories;
 }
 
-- (BOOL)saveCategory:(HTLCategory *)category {
+//- (NSUInteger)numberOfCategoriesWithDateSection:(HTLDateSection *)dateSection {
+//    return [self.storageProvider numberOfCategoriesWithDateSection:dateSection];
+//}
+//
+//- (NSArray *)categoriesWithDateSection:(HTLDateSection *)dateSection {
+//    return [self.storageProvider categoriesWithDateSection:dateSection];
+//}
+
+- (BOOL)saveCategory:(HTLActivity *)category {
     return [self.storageProvider saveCategory:category];
 }
 
-- (BOOL)deleteCategory:(HTLCategory *)category {
+- (BOOL)deleteCategory:(HTLActivity *)category {
     return [self.storageProvider deleteCategory:category];
 }
 
@@ -83,7 +91,7 @@
     return [self.storageProvider numberOfReportsWithDateSection:dateSection];
 }
 
-- (NSArray *)reportsWithDateSection:(HTLDateSection *)dateSection category:(HTLCategory *)category {
+- (NSArray *)reportsWithDateSection:(HTLDateSection *)dateSection category:(HTLActivity *)category {
     return [self.storageProvider reportsWithDateSection:dateSection category:category];
 }
 
@@ -101,6 +109,10 @@
 
 - (HTLReport *)lastReport {
     return [self.storageProvider lastReport];
+}
+
+- (NSArray *)statisticsWithDateSection:(HTLDateSection *)dateSection {
+    return [self.storageProvider statisticsWithDateSection:dateSection];
 }
 
 @end

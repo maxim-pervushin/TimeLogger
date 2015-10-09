@@ -5,17 +5,23 @@
 
 #import "HTLDataSource.h"
 
-@class HTLCategory;
-@class HTLReportExtended;
+@class HTLActivity;
 
 
 @interface HTLTodayDataSource : HTLDataSource
 
 @property(nonatomic, readonly) NSTimeInterval currentInterval;
-@property(nonatomic, readonly) NSUInteger numberOfCategories;
 
-- (HTLCategory *)categoryAtIndexPath:(NSIndexPath *)indexPath;
+- (NSUInteger)numberOfMandatoryCategories;
 
-- (BOOL)saveReportWithCategoryAtIndexPath:(NSIndexPath *)indexPath;
+- (NSUInteger)numberOfCustomCategories;
+
+- (HTLActivity *)mandatoryCategoryAtIndex:(NSInteger)index;
+
+- (HTLActivity *)customCategoryAtIndex:(NSInteger)index;
+
+- (BOOL)saveReportWithMandatoryCategoryAtIndex:(NSInteger)index;
+
+- (BOOL)saveReportWithCustomCategoryAtIndex:(NSInteger)index;
 
 @end

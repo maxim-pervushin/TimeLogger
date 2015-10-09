@@ -5,7 +5,7 @@
 
 #import "HTETodayDataSource.h"
 #import "HTLContentManager.h"
-#import "HTLCategory.h"
+#import "HTLActivity.h"
 #import "HTLReport.h"
 #import "HTLAppDelegate.h"
 #import "HTLCSVStringExportProvider.h"

@@ -4,7 +4,7 @@
 //
 
 #import "HTLTodayDataSource.h"
-#import "HTLCategory.h"
+#import "HTLActivity.h"
 #import "HTLAppDelegate.h"
 #import "HTLContentManager.h"
 #import "HTLReport.h"
@@ -29,17 +29,31 @@
     return [[NSDate new] timeIntervalSinceDate:lastReportEndDate];
 }
 
-- (NSUInteger)numberOfCategories {
-    return [HTLAppContentManger numberOfCategoriesWithDateSection:nil];
+- (NSUInteger)numberOfMandatoryCategories {
+    return HTLAppContentManger.mandatoryCategories.count;
 }
 
-- (HTLCategory *)categoryAtIndexPath:(NSIndexPath *)indexPath {
-
-    return [HTLAppContentManger categoriesWithDateSection:nil][(NSUInteger) indexPath.row];
+- (NSUInteger)numberOfCustomCategories {
+    return HTLAppContentManger.customCategories.count;
 }
 
-- (BOOL)saveReportWithCategoryAtIndexPath:(NSIndexPath *)indexPath {
-    HTLCategory *category = [self categoryAtIndexPath:indexPath];
+- (HTLActivity *)mandatoryCategoryAtIndex:(NSInteger)index {
+    return HTLAppContentManger.mandatoryCategories[(NSUInteger) index];
+}
+
+- (HTLActivity *)customCategoryAtIndex:(NSInteger)index {
+    return HTLAppContentManger.customCategories[(NSUInteger) index];
+}
+
+- (BOOL)saveReportWithMandatoryCategoryAtIndex:(NSInteger)index {
+    return [self saveReportWithCategory:[self mandatoryCategoryAtIndex:index]];
+}
+
+- (BOOL)saveReportWithCustomCategoryAtIndex:(NSInteger)index {
+    return [self saveReportWithCategory:[self customCategoryAtIndex:index]];
+}
+
+- (BOOL)saveReportWithCategory:(HTLActivity *)category {
     if (!category) {
         return NO;
     }

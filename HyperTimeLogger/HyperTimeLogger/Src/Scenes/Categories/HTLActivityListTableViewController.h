@@ -6,5 +6,5 @@
 #import <UIKit/UIKit.h>
 
 
-@interface HTLCategoriesTableViewController : UITableViewController
+@interface HTLActivityListTableViewController : UITableViewController
 @end

@@ -6,7 +6,7 @@
 #import "HTLDataSource.h"
 
 @class HTLDateSection;
-@class HTLReportExtended;
+@class HTLReport;
 
 
 @interface HTLReportListDataSource : HTLDataSource
@@ -23,6 +23,8 @@
 
 - (NSUInteger)numberOfReports;
 
-- (HTLReportExtended *)reportAtIndexPath:(NSIndexPath *)indexPath;
+- (HTLReport *)reportAtIndexPath:(NSIndexPath *)indexPath;
+
+- (void)reloadStatistics;
 
 @end

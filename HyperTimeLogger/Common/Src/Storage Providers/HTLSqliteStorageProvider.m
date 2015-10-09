@@ -5,11 +5,13 @@
 
 #import "DTFolderMonitor.h"
 #import "FMDB.h"
-#import "HTLCategory.h"
+#import "HTLActivity.h"
 #import "HTLDateSection.h"
 #import "HTLReport.h"
 #import "HTLSqliteStorageProvider+Deserialization.h"
 #import "NSDate+HTLComponents.h"
+#import "HTLStatisticsItem.h"
+#import "HTLReport+Helpers.h"
 
 
 @interface HTLSqliteStorageProvider ()
@@ -73,7 +75,6 @@
 
         BOOL result = [database executeUpdate:
                 @"CREATE TABLE category("
-                        "identifier TEXT PRIMARY KEY, "
                         "title TEXT, "
                         "subTitle TEXT, "
                         "color TEXT"
@@ -83,7 +84,6 @@
 
         result = [database executeUpdate:
                 @"CREATE TABLE report("
-                        "categoryIdentifier TEXT, "
                         "categoryTitle TEXT, "
                         "categorySubTitle TEXT, "
                         "categoryColor TEXT, "
@@ -107,35 +107,21 @@
 
 #pragma mark - DB
 
-- (NSArray *)categoriesWithDateSection:(HTLDateSection *)dateSection database:(FMDatabase *)database {
+- (NSArray *)customCategoriesInDatabase:(FMDatabase *)database {
 
-    NSMutableString *whereString = [NSMutableString new];
-    if (dateSection) {
-        [whereString appendString:
-                @"INNER JOIN report ON report.categoryIdentifier = category.identifier "
-                        "WHERE report.endDate = :endDate "];
-    }
+    NSString *query = @"SELECT "
+            "title AS categoryTitle, "
+            "subTitle AS categorySubTitle, "
+            "color AS categoryColor "
+            "FROM category "
+            "GROUP BY title "
+            "ORDER BY title;";
 
-    NSString *queryString = [NSString stringWithFormat:@"SELECT "
-                                                               "category.identifier AS categoryIdentifier, "
-                                                               "category.title AS categoryTitle, "
-                                                               "category.subTitle AS categorySubTitle, "
-                                                               "category.color AS categoryColor "
-                                                               "FROM category "
-                                                               "%@ "
-                                                               "GROUP BY category.identifier "
-                                                               "ORDER BY category.identifier;", whereString];
-
-    NSMutableDictionary *parameters = [NSMutableDictionary new];
-    if (dateSection) {
-        parameters[@"endDate"] = dateSection.dateString;
-    }
-
-    FMResultSet *resultSet = [database executeQuery:queryString withParameterDictionary:parameters];
+    FMResultSet *resultSet = [database executeQuery:query withParameterDictionary:@{}];
 
     NSMutableArray *categories = [NSMutableArray new];
     while ([resultSet next]) {
-        HTLCategory *category = [self unpackCategory:resultSet];
+        HTLActivity *category = [self unpackActivity:resultSet];
         if (category) {
             [categories addObject:category];
         }
@@ -145,91 +131,54 @@
     return [categories copy];
 }
 
-- (NSUInteger)numberOfCategoriesWithDateSection:(HTLDateSection *)dateSection database:(FMDatabase *)database {
-    NSMutableString *whereString = [NSMutableString new];
-    if (dateSection) {
-        [whereString appendString:
-                @"INNER JOIN report ON report.categoryIdentifier = category.identifier "
-                        "WHERE report.endDate = :endDate "
-        ];
-    }
+- (BOOL)deleteCategory:(HTLActivity *)category database:(FMDatabase *)database {
 
-    NSString *queryString = [NSString stringWithFormat:@"SELECT "
-                                                               "COUNT(*) AS count "
-                                                               "FROM category "
-                                                               "%@"
-                                                               ";",
-                                                       whereString];
+    NSString *query = @"DELETE "
+            "FROM category "
+            "WHERE title = :title "
+            "AND subTitle = :subTitle "
+            "AND color = :color;";
 
-    NSMutableDictionary *parameters = [NSMutableDictionary new];
-    if (dateSection) {
-        parameters[@"endDate"] = dateSection.dateString;
-    }
+    NSDictionary *parameters = @{
+            @"title" : category.title,
+            @"subTitle" : category.subTitle,
+            @"color" : [UIColor hexStringFromRGBColor:category.color]
+    };
 
-    FMResultSet *resultSet = [database executeQuery:queryString withParameterDictionary:parameters];
-
-    NSUInteger result = 0;
-    if ([resultSet next]) {
-        result = (NSUInteger) [resultSet intForColumn:@"count"];
-    }
-    [resultSet close];
-
-    return result;
-}
-
-- (HTLCategory *)categoryWithTitle:(NSString *)title database:(FMDatabase *)database {
-    FMResultSet *resultSet = [database executeQuery:
-                    @"SELECT "
-                            "identifier AS categoryIdentifier, "
-                            "title AS categoryTitle, "
-                            "subTitle AS categorySubTitle, "
-                            "color AS categoryColor "
-                            "FROM category "
-                            "WHERE title = :title "
-                            "LIMIT 1;"
-                            withParameterDictionary:@{
-                                    @"title" : title ? title : @""
-                            }];
-
-    HTLCategory *result;
-    if ([resultSet next]) {
-        result = [self unpackCategory:resultSet];
-    }
-    return result;
-}
-
-- (BOOL)deleteCategory:(HTLCategory *)category database:(FMDatabase *)database {
-    BOOL success = [database executeUpdate:@"DELETE FROM category WHERE identifier = :identifier"
-                   withParameterDictionary:@{
-                           @"identifier" : category.identifier
-                   }];
+    BOOL success = [database executeUpdate:query withParameterDictionary:parameters];
 
     if (success) {
         DDLogVerbose(@"Category %@ successfully inserted.", category);
     } else {
         DDLogError(@"Unable to insert category %@.", category);
     }
+
     return success;
 }
 
-- (BOOL)saveCategory:(HTLCategory *)category database:(FMDatabase *)database {
-    BOOL success = [database executeUpdate:@"INSERT OR REPLACE INTO category VALUES (:identifier, :title, :subTitle, :color)"
-                   withParameterDictionary:@{
-                           @"identifier" : category.identifier,
-                           @"title" : category.title,
-                           @"subTitle" : category.subTitle ? category.subTitle : @"",
-                           @"color" : [UIColor hexStringFromRGBColor:category.color]
-                   }];
+- (BOOL)saveCategory:(HTLActivity *)category database:(FMDatabase *)database {
+
+    NSString *query = @"INSERT OR REPLACE INTO category VALUES (:title, :subTitle, :color)";
+
+    NSDictionary *parameters = @{
+            @"title" : category.title ? category.title : @"",
+            @"subTitle" : category.subTitle ? category.subTitle : @"",
+            @"color" : category.color ? [UIColor hexStringFromRGBColor:category.color] : @""
+    };
+
+    BOOL success = [database executeUpdate:query withParameterDictionary:parameters];
 
     if (success) {
         DDLogVerbose(@"Category %@ successfully inserted.", category);
     } else {
         DDLogError(@"Unable to insert category %@.", category);
     }
+
     return success;
 }
 
 - (BOOL)saveReport:(HTLReport *)report database:(FMDatabase *)database {
+
     NSString *startDateString;
     NSString *startTimeString;
     NSString *startTimeZoneString;
@@ -240,29 +189,43 @@
     NSString *endTimeZoneString;
     [report.endDate getDateString:&endDateString timeString:&endTimeString timeZoneString:&endTimeZoneString];
 
-    BOOL success = [database executeUpdate:@"INSERT OR REPLACE INTO report VALUES (:categoryIdentifier, :categoryTitle, :categorySubTitle, :categoryColor, :startDate, :startTime, :startZone, :endDate, :endTime, :endZone)"
-                   withParameterDictionary:@{
-                           @"categoryIdentifier" : report.category.identifier,
-                           @"categoryTitle" : report.category.title,
-                           @"categorySubTitle" : report.category.subTitle,
-                           @"categoryColor" : [UIColor hexStringFromRGBColor:report.category.color],
-                           @"startDate" : startDateString,
-                           @"startTime" : startTimeString,
-                           @"startZone" : startTimeZoneString,
-                           @"endDate" : endDateString,
-                           @"endTime" : endTimeString,
-                           @"endZone" : endTimeZoneString,
-                   }];
+    NSString *query = @"INSERT OR REPLACE "
+            "INTO report VALUES ("
+            ":categoryTitle, "
+            ":categorySubTitle, "
+            ":categoryColor, "
+            ":startDate, "
+            ":startTime, "
+            ":startZone, "
+            ":endDate, "
+            ":endTime, "
+            ":endZone)";
+
+    NSDictionary *parameters = @{
+            @"categoryTitle" : report.category.title,
+            @"categorySubTitle" : report.category.subTitle,
+            @"categoryColor" : [UIColor hexStringFromRGBColor:report.category.color],
+            @"startDate" : startDateString,
+            @"startTime" : startTimeString,
+            @"startZone" : startTimeZoneString,
+            @"endDate" : endDateString,
+            @"endTime" : endTimeString,
+            @"endZone" : endTimeZoneString,
+    };
+
+    BOOL success = [database executeUpdate:query withParameterDictionary:parameters];
 
     if (success) {
         DDLogVerbose(@"Report %@ successfully inserted.", report);
     } else {
         DDLogError(@"Unable to insert report %@.", report);
     }
+
     return success;
 }
 
-- (NSUInteger)numberOfReportSectionsInDatabase:(FMDatabase *)database {
+- (NSUInteger)numberOfDateSectionsInDatabase:(FMDatabase *)database {
+
     FMResultSet *resultSet = [database executeQuery:@"SELECT COUNT(DISTINCT endDate) as count FROM report"];
 
     NSUInteger result = 0;
@@ -276,14 +239,9 @@
 
 - (NSArray *)dateSectionsInDatabase:(FMDatabase *)database {
 
-    FMResultSet *resultSet = [database executeQuery:
-            @"SELECT "
-                    "endDate, "
-                    "endTime, "
-                    "endZone "
-                    "FROM report "
-                    "GROUP BY endDate "
-                    "ORDER BY endDate ASC;"];
+    NSString *query = @"SELECT endDate, endTime, endZone FROM report GROUP BY endDate ORDER BY endDate ASC;";
+
+    FMResultSet *resultSet = [database executeQuery:query];
 
     NSMutableArray *sections = [NSMutableArray new];
     while ([resultSet next]) {
@@ -294,30 +252,21 @@
     }
     [resultSet close];
 
-    return [NSArray arrayWithArray:sections];
+    return [sections copy];
 }
 
 - (NSUInteger)numberOfReportsWithDateSection:(HTLDateSection *)dateSection database:(FMDatabase *)database {
+
     NSMutableString *whereString = [NSMutableString new];
-    if (dateSection) {
-        [whereString appendString:@"WHERE report.endDate = :endDate "
-        ];
-    }
-
-    NSString *queryString = [NSString stringWithFormat:@"SELECT "
-                                                               "COUNT(*) AS count "
-                                                               "FROM report "
-                                                               "%@"
-                                                               ";",
-                                                       whereString];
-
     NSMutableDictionary *parameters = [NSMutableDictionary new];
     if (dateSection) {
+        [whereString appendString:@"WHERE report.endDate = :endDate "];
         parameters[@"endDate"] = dateSection.dateString;
     }
 
+    NSString *query = [NSString stringWithFormat:@"SELECT COUNT(*) AS count FROM report %@;", whereString];
 
-    FMResultSet *resultSet = [database executeQuery:queryString withParameterDictionary:parameters];
+    FMResultSet *resultSet = [database executeQuery:query withParameterDictionary:parameters];
 
     NSUInteger result = 0;
     if ([resultSet next]) {
@@ -328,43 +277,38 @@
     return result;
 }
 
-- (NSArray *)reportsWithDateSection:(HTLDateSection *)dateSection category:(HTLCategory *)category database:(FMDatabase *)database {
+- (NSArray *)reportsWithDateSection:(HTLDateSection *)dateSection category:(HTLActivity *)category database:(FMDatabase *)database {
 
     NSMutableString *whereString = [NSMutableString new];
-    if (dateSection) {
-        [whereString appendString:@"WHERE report.endDate = :endDate "];
-    }
-    if (category) {
-        // TODO: Compare by category title and subtitle
-        [whereString appendFormat:@"%@ report.categoryIdentifier = :reportCategoryIdentifier", whereString.length > 0 ? @"AND" : @"WHERE"];
-    }
-
-    NSString *queryString =
-            [NSString stringWithFormat:@"SELECT "
-                                               "report.categoryIdentifier AS reportCategoryIdentifier, "
-                                               "report.categoryTitle AS reportCategoryTitle, "
-                                               "report.categorySubTitle AS reportCategorySubTitle, "
-                                               "report.categoryColor AS reportCategoryColor, "
-                                               "report.startDate AS reportStartDate, "
-                                               "report.startTime AS reportStartTime, "
-                                               "report.startZone AS reportStartZone, "
-                                               "report.endDate AS reportEndDate, "
-                                               "report.endTime AS reportEndTime, "
-                                               "report.endZone AS reportEndZone "
-                                               "FROM report "
-                                               "%@ "
-                                               "ORDER BY report.endDate ASC, report.endTime ASC "
-                                               ";", whereString];
-
     NSMutableDictionary *parameters = [NSMutableDictionary new];
     if (dateSection) {
+        [whereString appendString:@"WHERE endDate = :endDate "];
         parameters[@"endDate"] = dateSection.dateString;
     }
     if (category) {
-        parameters[@"reportCategoryIdentifier"] = category.identifier;
+        [whereString appendFormat:@"%@ categoryTitle = :categoryTitle AND categorySubTitle = :categorySubTitle AND categoryColor = :categoryColor", whereString.length > 0 ? @"AND" : @"WHERE"];
+        parameters[@"categoryTitle"] = category.title;
+        parameters[@"categorySubTitle"] = category.subTitle;
+        parameters[@"categoryColor"] = category.color;
     }
 
-    FMResultSet *resultSet = [database executeQuery:queryString withParameterDictionary:parameters];
+    NSString *query =
+            [NSString stringWithFormat:@"SELECT "
+                                               "categoryTitle AS categoryTitle, "
+                                               "categorySubTitle AS categorySubTitle, "
+                                               "categoryColor AS categoryColor, "
+                                               "startDate AS startDate, "
+                                               "startTime AS startTime, "
+                                               "startZone AS startZone, "
+                                               "endDate AS endDate, "
+                                               "endTime AS endTime, "
+                                               "endZone AS endZone "
+                                               "FROM report "
+                                               "%@ "
+                                               "ORDER BY endDate ASC, endTime ASC "
+                                               ";", whereString];
+
+    FMResultSet *resultSet = [database executeQuery:query withParameterDictionary:parameters];
 
     NSMutableArray *reports = [NSMutableArray new];
     while ([resultSet next]) {
@@ -381,18 +325,18 @@
 - (NSDate *)lastReportEndDateInDatabase:(FMDatabase *)database {
     FMResultSet *resultSet = [database executeQuery:
             @"SELECT "
-                    "endDate AS reportEndDate, "
-                    "endTime AS reportEndTime, "
-                    "endZone AS reportEndZone "
+                    "endDate AS endDate, "
+                    "endTime AS endTime, "
+                    "endZone AS endZone "
                     "FROM report "
                     "ORDER BY endDate DESC, endTime DESC "
                     "LIMIT 1;"];
 
     NSDate *lastReportEndDate;
     while ([resultSet next]) {
-        lastReportEndDate = [NSDate dateWithDateString:[resultSet stringForColumn:@"reportEndDate"]
-                                            timeString:[resultSet stringForColumn:@"reportEndTime"]
-                                        timeZoneString:[resultSet stringForColumn:@"reportEndZone"]];
+        lastReportEndDate = [NSDate dateWithDateString:[resultSet stringForColumn:@"endDate"]
+                                            timeString:[resultSet stringForColumn:@"endTime"]
+                                        timeZoneString:[resultSet stringForColumn:@"endZone"]];
     }
     [resultSet close];
 
@@ -402,22 +346,17 @@
 - (HTLReport *)lastReportInDatabase:(FMDatabase *)database {
     FMResultSet *resultSet = [database executeQuery:
             @"SELECT "
-                    "report.identifier AS identifier, "
-                    "actionIdentifier, "
-                    "action.title AS actionTitle, "
-                    "categoryIdentifier, "
-                    "category.title AS categoryTitle, "
-                    "category.color AS categoryColor, "
-                    "report.startDate AS reportStartDate, "
-                    "report.startTime AS reportStartTime, "
-                    "report.startZone AS reportStartZone, "
-                    "report.endDate AS reportEndDate, "
-                    "report.endTime AS reportEndTime, "
-                    "report.endZone AS reportEndZone "
+                    "categoryTitle AS categoryTitle, "
+                    "categorySubTitle AS categorySubTitle, "
+                    "categoryColor AS categoryColor, "
+                    "startDate AS startDate, "
+                    "startTime AS startTime, "
+                    "startZone AS startZone, "
+                    "endDate AS endDate, "
+                    "endTime AS endTime, "
+                    "endZone AS endZone "
                     "FROM report "
-                    "INNER JOIN category ON report.categoryIdentifier = category.identifier "
-                    "INNER JOIN action ON report.actionIdentifier = action.identifier "
-                    "ORDER BY report.startDate DESC, report.startTime DESC LIMIT 1;"];
+                    "ORDER BY endDate DESC, endTime DESC LIMIT 1;"];
 
     HTLReport *lastReport;
     if ([resultSet next]) {
@@ -426,6 +365,79 @@
     [resultSet close];
 
     return lastReport;
+}
+
+- (NSArray *)statisticsWithDateSection:(HTLDateSection *)dateSection database:(FMDatabase *)database {
+
+    NSMutableDictionary *endDateParameters = [NSMutableDictionary new];
+    if (dateSection) {
+        endDateParameters[@"endDate"] = dateSection.dateString;
+    }
+
+    NSMutableArray *categories = [[self customCategories] mutableCopy];
+    [categories addObjectsFromArray:[self mandatoryCategories]];
+
+    NSMutableArray *result = [NSMutableArray new];
+    for (HTLActivity *category in categories) {
+
+        NSMutableDictionary *parameters = [@{
+                @"categoryTitle" : category.title,
+                @"categorySubTitle" : category.subTitle,
+                @"categoryColor" : [UIColor hexStringFromRGBColor:category.color]
+        } mutableCopy];
+        [parameters addEntriesFromDictionary:endDateParameters];
+
+        NSMutableString *filter = [NSMutableString new];
+        for (NSString *parameter in parameters.allKeys) {
+            if (filter.length == 0) {
+                [filter appendFormat:@"WHERE %@ = :%@ ", parameter, parameter];
+            } else {
+                [filter appendFormat:@"AND %@ = :%@ ", parameter, parameter];
+            }
+        }
+
+        NSString *query = [NSString stringWithFormat:@"SELECT "
+                                                             "categoryTitle AS categoryTitle, "
+                                                             "categorySubTitle AS categorySubTitle, "
+                                                             "categoryColor AS categoryColor, "
+                                                             "startDate AS startDate, "
+                                                             "startTime AS startTime, "
+                                                             "startZone AS startZone, "
+                                                             "endDate AS endDate, "
+                                                             "endTime AS endTime, "
+                                                             "endZone AS endZone "
+                                                             "FROM report %@;", filter];
+
+        FMResultSet *resultSet = [database executeQuery:query withParameterDictionary:parameters];
+
+        NSTimeInterval totalTime = 0;
+        NSUInteger totalReports = 0;
+        while ([resultSet next]) {
+            HTLReport *report = [self unpackReport:resultSet];
+            if (report) {
+                totalTime += report.duration;
+            }
+            totalReports++;
+        }
+        [resultSet close];
+
+        [result addObject:[HTLStatisticsItem statisticsItemWithCategory:category
+                                                              totalTime:totalTime
+                                                           totalReports:totalReports]];
+    }
+
+    return [result copy];
+//    NSString *query = [NSString stringWithFormat:@"SELECT COUNT(*) AS count FROM report %@;", endDateFilter];
+
+//    FMResultSet *resultSet = [database executeQuery:query withParameterDictionary:endDateParameters];
+
+//    NSUInteger result = 0;
+//    if ([resultSet next]) {
+//        result = (NSUInteger) [resultSet intForColumn:@"count"];
+//    }
+//    [resultSet close];
+//
+//    return result;
 }
 
 #pragma mark - HTLStorageProvider
@@ -440,37 +452,35 @@
     return result;
 }
 
-- (NSUInteger)numberOfCategoriesWithDateSection:(HTLDateSection *)dateSection {
-    NSString *cacheKey = [NSString stringWithFormat:@"%@_%@",
-                                                    NSStringFromSelector(_cmd),
-                                                    dateSection ? @(dateSection.hash) : @""];
-    NSNumber *cached = [self.cache objectForKey:cacheKey];
+- (NSArray *)mandatoryCategories {
+    NSString *cacheKey = NSStringFromSelector(_cmd);
+    NSArray *cached = [self.cache objectForKey:cacheKey];
     if (cached) {
-        DDLogVerbose(@"Retrieving cached Number of Categories for Date Section %@", dateSection);
-        return cached.unsignedIntegerValue;
+        DDLogVerbose(@"Retrieving cached Mandatory Categories");
+        return cached;
     }
 
-    FMDatabase *database = self.databaseOpen;
-    if (!database) {
-        return 0;
-    }
+    NSArray *result = @[
+            [HTLActivity categoryWithTitle:@"Sleep" subTitle:@"" color:[UIColor paperColorDeepPurple]],
+            [HTLActivity categoryWithTitle:@"Personal" subTitle:@"" color:[UIColor paperColorIndigo]],
+            [HTLActivity categoryWithTitle:@"Road" subTitle:@"" color:[UIColor paperColorRed]],
+            [HTLActivity categoryWithTitle:@"Work" subTitle:@"" color:[UIColor paperColorLightGreen]],
+            [HTLActivity categoryWithTitle:@"Improvement" subTitle:@"" color:[UIColor paperColorDeepOrange]],
+            [HTLActivity categoryWithTitle:@"Recreation" subTitle:@"" color:[UIColor paperColorCyan]],
+            [HTLActivity categoryWithTitle:@"Time Waste" subTitle:@"" color:[UIColor paperColorBrown]]
+    ];
 
-    NSUInteger result = [self numberOfCategoriesWithDateSection:dateSection database:database];
-
-    [database close];
-
-    [self.cache setObject:@(result) forKey:cacheKey];
+    [self.cache setObject:result forKey:cacheKey];
 
     return result;
 }
 
-- (NSArray *)categoriesWithDateSection:(HTLDateSection *)dateSection {
-    NSString *cacheKey = [NSString stringWithFormat:@"%@_%@",
-                                                    NSStringFromSelector(_cmd),
-                                                    dateSection ? @(dateSection.hash) : @""];
-    NSArray *cachedCategories = [self.cache objectForKey:cacheKey];
-    if (cachedCategories) {
-        return cachedCategories;
+- (NSArray *)customCategories {
+    NSString *cacheKey = NSStringFromSelector(_cmd);
+    NSArray *cached = [self.cache objectForKey:cacheKey];
+    if (cached) {
+        DDLogVerbose(@"Retrieving cached Custom Categories");
+        return cached;
     }
 
     FMDatabase *database = self.databaseOpen;
@@ -478,16 +488,63 @@
         return @[];
     }
 
-    NSArray *categories = [self categoriesWithDateSection:dateSection database:database];
+    NSArray *result = [self customCategoriesInDatabase:database];
 
     [database close];
 
-    [self.cache setObject:categories forKey:cacheKey];
+    [self.cache setObject:result forKey:cacheKey];
 
-    return categories;
+    return result;
 }
 
-- (BOOL)saveCategory:(HTLCategory *)category {
+//- (NSUInteger)numberOfCategoriesWithDateSection:(HTLDateSection *)dateSection {
+//    NSString *cacheKey = [NSString stringWithFormat:@"%@_%@",
+//                                                    NSStringFromSelector(_cmd),
+//                                                    dateSection ? @(dateSection.hash) : @""];
+//    NSNumber *cached = [self.cache objectForKey:cacheKey];
+//    if (cached) {
+//        DDLogVerbose(@"Retrieving cached Number of Categories for Date Section %@", dateSection);
+//        return cached.unsignedIntegerValue;
+//    }
+//
+//    FMDatabase *database = self.databaseOpen;
+//    if (!database) {
+//        return 0;
+//    }
+//
+//    NSUInteger result = [self numberOfCategoriesWithDateSection:dateSection database:database];
+//
+//    [database close];
+//
+//    [self.cache setObject:@(result) forKey:cacheKey];
+//
+//    return result;
+//}
+//
+//- (NSArray *)categoriesWithDateSection:(HTLDateSection *)dateSection {
+//    NSString *cacheKey = [NSString stringWithFormat:@"%@_%@",
+//                                                    NSStringFromSelector(_cmd),
+//                                                    dateSection ? @(dateSection.hash) : @""];
+//    NSArray *cachedCategories = [self.cache objectForKey:cacheKey];
+//    if (cachedCategories) {
+//        return cachedCategories;
+//    }
+//
+//    FMDatabase *database = self.databaseOpen;
+//    if (!database) {
+//        return @[];
+//    }
+//
+//    NSArray *categories = [self categoriesWithDateSection:dateSection database:database];
+//
+//    [database close];
+//
+//    [self.cache setObject:categories forKey:cacheKey];
+//
+//    return categories;
+//}
+
+- (BOOL)saveCategory:(HTLActivity *)category {
     if (!category) {
         return NO;
     }
@@ -508,7 +565,7 @@
     return YES;
 }
 
-- (BOOL)deleteCategory:(HTLCategory *)category {
+- (BOOL)deleteCategory:(HTLActivity *)category {
     if (!category) {
         return NO;
     }
@@ -537,7 +594,7 @@
         return 0;
     }
 
-    NSUInteger result = [self numberOfReportSectionsInDatabase:database];
+    NSUInteger result = [self numberOfDateSectionsInDatabase:database];
 
     [database close];
 
@@ -591,7 +648,7 @@
     return result;
 }
 
-- (NSArray *)reportsWithDateSection:(HTLDateSection *)dateSection category:(HTLCategory *)category {
+- (NSArray *)reportsWithDateSection:(HTLDateSection *)dateSection category:(HTLActivity *)category {
     NSString *cacheKey = [NSString stringWithFormat:@"%@_%@_%@",
                                                     NSStringFromSelector(_cmd),
                                                     dateSection ? @(dateSection.hash) : @"",
@@ -630,12 +687,6 @@
     }
 
     [self clearCaches];
-
-    HTLCategory *category = [self categoryWithTitle:report.category.title database:database];
-    if (!category && ![self saveCategory:report.category database:database]) {
-        [database close];
-        return NO;
-    }
 
     if (![self saveReport:report database:database]) {
         [database close];
@@ -693,6 +744,30 @@
     }
 
     return lastReport;
+}
+
+- (NSArray *)statisticsWithDateSection:(HTLDateSection *)dateSection {
+    NSString *cacheKey = [NSString stringWithFormat:@"%@_%@",
+                                                    NSStringFromSelector(_cmd),
+                                                    dateSection ? @(dateSection.hash) : @""];
+    NSArray *cached = [self.cache objectForKey:cacheKey];
+    if (cached) {
+        DDLogVerbose(@"Retrieving cached Statistics for Date Section %@", dateSection);
+        return cached;
+    }
+
+    FMDatabase *database = self.databaseOpen;
+    if (!database) {
+        return @[];
+    }
+
+    NSArray *result = [self statisticsWithDateSection:dateSection database:database];
+
+    [database close];
+
+    [self.cache setObject:result forKey:cacheKey];
+
+    return result;
 }
 
 @end

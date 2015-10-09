@@ -93,7 +93,7 @@
         <!--Categories Table View Controller-->
         <scene sceneID="suW-bX-4yd">
             <objects>
-                <tableViewController id="9bW-HC-HzA" customClass="HTLCategoriesTableViewController" sceneMemberID="viewController">
+                <tableViewController id="9bW-HC-HzA" customClass="HTLActivityListTableViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="IZj-GC-va8">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -180,7 +180,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Enter Something Here..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bXN-aZ-k31">
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Title..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bXN-aZ-k31">
                                                     <rect key="frame" x="8" y="8" width="584" height="27"/>
                                                     <animations/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -202,10 +202,41 @@
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
+                            <tableViewSection headerTitle="Subtitle" id="fh9-pI-u8N">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="UIG-Pn-Tcz">
+                                        <rect key="frame" x="0.0" y="209" width="600" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="UIG-Pn-Tcz" id="kCT-lx-pce">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Subtitle..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="flx-pj-cdU">
+                                                    <rect key="frame" x="8" y="8" width="584" height="27"/>
+                                                    <animations/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits"/>
+                                                    <connections>
+                                                        <action selector="subTitleTextFieldEditingChanged:" destination="uTR-ZT-mga" eventType="editingChanged" id="njM-wr-A0T"/>
+                                                    </connections>
+                                                </textField>
+                                            </subviews>
+                                            <animations/>
+                                            <constraints>
+                                                <constraint firstItem="flx-pj-cdU" firstAttribute="leading" secondItem="kCT-lx-pce" secondAttribute="leadingMargin" id="EaH-sc-0Xq"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="flx-pj-cdU" secondAttribute="bottom" id="amD-yf-CMc"/>
+                                                <constraint firstItem="flx-pj-cdU" firstAttribute="top" secondItem="kCT-lx-pce" secondAttribute="topMargin" id="nJN-AC-MwX"/>
+                                                <constraint firstItem="flx-pj-cdU" firstAttribute="trailing" secondItem="kCT-lx-pce" secondAttribute="trailingMargin" id="vOE-nV-p4g"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <animations/>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
                             <tableViewSection headerTitle="Color" id="jDY-1O-EH3">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="216" id="GaF-LJ-ozR">
-                                        <rect key="frame" x="0.0" y="209" width="600" height="216"/>
+                                        <rect key="frame" x="0.0" y="304" width="600" height="216"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="GaF-LJ-ozR" id="wzV-7x-6Cx">
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="215"/>

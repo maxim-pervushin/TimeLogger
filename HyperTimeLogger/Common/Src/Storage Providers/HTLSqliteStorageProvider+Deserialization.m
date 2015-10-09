@@ -14,11 +14,10 @@
 
 @implementation HTLSqliteStorageProvider (Deserialization)
 
-- (HTLCategory *)unpackCategory:(FMResultSet *)resultSet {
-    return [HTLCategory categoryWithIdentifier:[resultSet stringForColumn:@"categoryIdentifier"]
-                                         title:[resultSet stringForColumn:@"categoryTitle"]
-                                      subTitle:[resultSet stringForColumn:@"categorySubTitle"]
-                                         color:[UIColor colorWithHexString:[resultSet stringForColumn:@"categoryColor"]]];
+- (HTLActivity *)unpackActivity:(FMResultSet *)resultSet {
+    return [HTLActivity categoryWithTitle:[resultSet stringForColumn:@"categoryTitle"]
+                                 subTitle:[resultSet stringForColumn:@"categorySubTitle"]
+                                    color:[UIColor colorWithHexString:[resultSet stringForColumn:@"categoryColor"]]];
 }
 
 - (HTLDateSection *)unpackDateSection:(FMResultSet *)resultSet {
@@ -29,18 +28,15 @@
 
 - (HTLReport *)unpackReport:(FMResultSet *)resultSet {
 
-    NSDate *startDate = [NSDate dateWithDateString:[resultSet stringForColumn:@"reportStartDate"]
-                                        timeString:[resultSet stringForColumn:@"reportStartTime"]
-                                    timeZoneString:[resultSet stringForColumn:@"reportStartZone"]];
+    NSDate *startDate = [NSDate dateWithDateString:[resultSet stringForColumn:@"startDate"]
+                                        timeString:[resultSet stringForColumn:@"startTime"]
+                                    timeZoneString:[resultSet stringForColumn:@"startZone"]];
 
-    NSDate *endDate = [NSDate dateWithDateString:[resultSet stringForColumn:@"reportEndDate"]
-                                      timeString:[resultSet stringForColumn:@"reportEndTime"]
-                                  timeZoneString:[resultSet stringForColumn:@"reportEndZone"]];
+    NSDate *endDate = [NSDate dateWithDateString:[resultSet stringForColumn:@"endDate"]
+                                      timeString:[resultSet stringForColumn:@"endTime"]
+                                  timeZoneString:[resultSet stringForColumn:@"endZone"]];
 
-    HTLCategory *category = [HTLCategory categoryWithIdentifier:[resultSet stringForColumn:@"reportCategoryIdentifier"]
-                                                          title:[resultSet stringForColumn:@"reportCategoryTitle"]
-                                                       subTitle:[resultSet stringForColumn:@"reportCategorySubTitle"]
-                                                          color:[UIColor colorWithHexString:[resultSet stringForColumn:@"reportCategoryColor"]]];
+    HTLActivity *category = [self unpackActivity:resultSet];
 
     return [HTLReport reportWithCategory:category startDate:startDate endDate:endDate];
 }

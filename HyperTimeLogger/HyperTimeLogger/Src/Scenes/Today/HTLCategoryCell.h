@@ -5,13 +5,13 @@
 
 #import <UIKit/UIKit.h>
 
-@class HTLCategory;
+@class HTLActivity;
 
 
 @interface HTLCategoryCell : UITableViewCell
 
 + (NSString *)defaultIdentifier;
 
-@property (nonatomic, copy) HTLCategory *category;
+@property (nonatomic, copy) HTLActivity *category;
 
 @end

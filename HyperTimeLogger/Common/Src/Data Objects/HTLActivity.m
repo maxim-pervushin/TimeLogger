@@ -3,24 +3,22 @@
 // Copyright (c) 2015 Maxim Pervushin. All rights reserved.
 //
 
-#import "HTLCategory.h"
+#import "HTLActivity.h"
 #import "HTLReport.h"
 
 
-@implementation HTLCategory
-@synthesize identifier = identifier_;
+@implementation HTLActivity
 @synthesize title = title_;
 @synthesize subTitle = subTitle_;
 @synthesize color = color_;
 
-+ (instancetype)categoryWithIdentifier:(HTLCategoryIdentifier)identifier title:(NSString *)title  subTitle:(NSString *)subTitle color:(UIColor *)color {
-    return [[self alloc] initWithIdentifier:identifier title:title subTitle:subTitle color:color];
++ (instancetype)categoryWithTitle:(NSString *)title subTitle:(NSString *)subTitle color:(UIColor *)color {
+    return [[self alloc] initWithTitle:title subTitle:subTitle color:color];
 }
 
-- (instancetype)initWithIdentifier:(HTLCategoryIdentifier)identifier title:(NSString *)title  subTitle:(NSString *)subTitle color:(UIColor *)color {
+- (instancetype)initWithTitle:(NSString *)title subTitle:(NSString *)subTitle color:(UIColor *)color {
     self = [super init];
     if (self) {
-        identifier_ = [identifier copy];
         title_ = [title copy];
         subTitle_ = [subTitle copy];
         color_ = [color copy];
@@ -31,10 +29,9 @@
 #pragma mark - NSCopying
 
 - (id)copyWithZone:(nullable NSZone *)zone {
-    HTLCategory *copy = [[[self class] allocWithZone:zone] init];
+    HTLActivity *copy = [[[self class] allocWithZone:zone] init];
 
     if (copy != nil) {
-        copy->identifier_ = identifier_;
         copy->title_ = title_;
         copy->subTitle_ = subTitle_;
         copy->color_ = color_;
@@ -51,28 +48,25 @@
     if (!other || ![[other class] isEqual:[self class]])
         return NO;
 
-    return [self isEqualToCategory:other];
+    return [self isEqualToActivity:other];
 }
 
-- (BOOL)isEqualToCategory:(HTLCategory *)category {
-    if (self == category)
+- (BOOL)isEqualToActivity:(HTLActivity *)activity {
+    if (self == activity)
         return YES;
-    if (category == nil)
+    if (activity == nil)
         return NO;
-    if (self.identifier != category.identifier && ![self.identifier isEqualToString:category.identifier])
+    if (self.title != activity.title && ![self.title isEqualToString:activity.title])
         return NO;
-    if (self.title != category.title && ![self.title isEqualToString:category.title])
+    if (self.subTitle != activity.subTitle && ![self.subTitle isEqualToString:activity.subTitle])
         return NO;
-    if (self.subTitle != category.subTitle && ![self.subTitle isEqualToString:category.subTitle])
-        return NO;
-    if (self.color != category.color && ![self.color isEqual:category.color])
+    if (self.color != activity.color && ![self.color isEqual:activity.color])
         return NO;
     return YES;
 }
 
 - (NSUInteger)hash {
-    NSUInteger hash = [self.identifier hash];
-    hash = hash * 31u + [self.title hash];
+    NSUInteger hash = [self.title hash];
     hash = hash * 31u + [self.subTitle hash];
     hash = hash * 31u + [self.color hash];
     return hash;
@@ -82,8 +76,7 @@
 
 - (NSString *)description {
     NSMutableString *description = [NSMutableString stringWithFormat:@"<%@: ", NSStringFromClass([self class])];
-    [description appendFormat:@"self.identifier=%@", self.identifier];
-    [description appendFormat:@", self.title=%@", self.title];
+    [description appendFormat:@"self.title=%@", self.title];
     [description appendFormat:@", self.subTitle=%@", self.subTitle];
     [description appendFormat:@", self.color=%@", self.color];
     [description appendString:@">"];

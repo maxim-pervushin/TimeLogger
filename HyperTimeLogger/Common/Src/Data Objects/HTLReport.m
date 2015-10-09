@@ -13,11 +13,11 @@
 
 #pragma mark - HTLReport
 
-+ (instancetype)reportWithCategory:(HTLCategory *)category startDate:(NSDate *)startDate endDate:(NSDate *)endDate {
++ (instancetype)reportWithCategory:(HTLActivity *)category startDate:(NSDate *)startDate endDate:(NSDate *)endDate {
     return [[self alloc] initWithCategory:category startDate:startDate endDate:endDate];
 }
 
-- (instancetype)initWithCategory:(HTLCategory *)category startDate:(NSDate *)startDate endDate:(NSDate *)endDate {
+- (instancetype)initWithCategory:(HTLActivity *)category startDate:(NSDate *)startDate endDate:(NSDate *)endDate {
     self = [super init];
     if (self) {
         category_ = [category copy];

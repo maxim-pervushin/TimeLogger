@@ -8,6 +8,7 @@
 #import "HTLDateSection.h"
 #import "HTLReportCell.h"
 #import "HTLReportDateListViewController.h"
+#import "HTLStatisticsHeader.h"
 
 
 @interface HTLReportListViewController () <HTLReportDateListViewControllerDelegate>
@@ -59,12 +60,12 @@
 
 - (nullable UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
     // TODO: Use custom view
-    UILabel *header = (id) [tableView dequeueReusableHeaderFooterViewWithIdentifier:@"Header"];
-    if (!header) {
-        header = [UILabel new];
-        header.text = @"TEST";
-        header.backgroundColor = [UIColor greenColor];
-    }
+    HTLStatisticsHeader *header = (id) [tableView dequeueReusableHeaderFooterViewWithIdentifier:@"Header"];
+//    if (!header) {
+//        header = [[HTLStatisticsHeader alloc] ini];
+//        header.text = @"TEST";
+//        header.backgroundColor = [UIColor greenColor];
+//    }
 
     return header;
 }
@@ -85,11 +86,16 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+
+    UINib *sectionHeaderNib = [UINib nibWithNibName:@"HTLStatisticsHeader" bundle:nil];
+    [self.tableView registerNib:sectionHeaderNib forHeaderFooterViewReuseIdentifier:@"Header"];
+
     __weak __typeof(self) weakSelf = self;
     self.dataSource = [HTLReportListDataSource dataSourceWithContentChangedBlock:^{
         [weakSelf reloadData];
     }];
     [self reloadData];
+    [self.dataSource reloadStatistics];
 }
 
 #pragma mark - HTLReportDateListViewControllerDelegate_New

@@ -3,27 +3,26 @@
 // Copyright (c) 2015 Maxim Pervushin. All rights reserved.
 //
 
-#import "HTLCategoriesTableViewController.h"
-#import "HTLCategoriesDataSource.h"
+#import "HTLActivityListTableViewController.h"
+#import "HTLActivityListDataSource.h"
 #import "HTLCategoryCell.h"
 #import "HTLEditCategoryViewController.h"
 
 
-@interface HTLCategoriesTableViewController () <HTLEditCategoryViewControllerDelegate>
-
-@property(nonatomic, readonly) HTLCategoriesDataSource *dataSource;
+@interface HTLActivityListTableViewController () <HTLEditCategoryViewControllerDelegate> {
+    HTLActivityListDataSource *dataSource_;
+}
 
 @end
 
-@implementation HTLCategoriesTableViewController
-@synthesize dataSource = dataSource_;
+@implementation HTLActivityListTableViewController
 
 #pragma mark - HTLEditCategoriesViewController_New
 
-- (HTLCategoriesDataSource *)dataSource {
+- (HTLActivityListDataSource *)dataSource {
     if (!dataSource_) {
         __weak __typeof(self) weakSelf = self;
-        dataSource_ = [HTLCategoriesDataSource dataSourceWithContentChangedBlock:^{
+        dataSource_ = [HTLActivityListDataSource dataSourceWithContentChangedBlock:^{
             [weakSelf reloadData];
         }];
     }
@@ -45,37 +44,52 @@
         editCategoryViewController.delegate = self;
         NSIndexPath *indexPath = self.tableView.indexPathForSelectedRow;
         if (indexPath) {
-            editCategoryViewController.originalCategory = [self.dataSource categoryAtIndexPath:indexPath];
+            editCategoryViewController.originalCategory = [self.dataSource customCategoryAtIndexPath:indexPath];
         }
     }
 }
 
 #pragma mark - UITableViewController
 
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    return 2;
+}
+
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return self.dataSource.numberOfCategories;
+    return section == 0 ? self.dataSource.numberOfCustomCategories : self.dataSource.numberOfMandatoryCategories;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     HTLCategoryCell *cell = (id) [tableView dequeueReusableCellWithIdentifier:[HTLCategoryCell defaultIdentifier] forIndexPath:indexPath];
-    cell.category = [self.dataSource categoryAtIndexPath:indexPath];
+    cell.category = indexPath.section == 0 ? [self.dataSource customCategoryAtIndexPath:indexPath] : [self.dataSource mandatoryCategoryAtIndexPath:indexPath];
     return cell;
 }
 
+- (nullable NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
+    return section == 0 ? @"Custom" : @"Mandatory";
+}
+
+- (UITableViewCellEditingStyle)tableView:(UITableView *)tableView editingStyleForRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (indexPath.section == 0) {
+        return UITableViewCellEditingStyleDelete;
+    } else {
+        return UITableViewCellEditingStyleNone;
+    }
+}
+
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        if ([self.dataSource deleteCategoryAtIndexPath:indexPath]) {
+    if (editingStyle == UITableViewCellEditingStyleDelete && indexPath.section == 0) {
+        if ([self.dataSource deleteCustomCategoryAtIndexPath:indexPath]) {
             [tableView beginUpdates];
             [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
             [tableView endUpdates];
-            //[self reloadData];
         }
     }
 }
 
 #pragma mark - HTLEditCategoryViewControllerDelegate_New
 
-- (void)editCategoryViewController:(HTLEditCategoryViewController *)viewController finishedWithCategory:(HTLCategory *)category {
+- (void)editCategoryViewController:(HTLEditCategoryViewController *)viewController finishedWithCategory:(HTLActivity *)category {
     [self.dataSource saveCategory:category];
     [self reloadData];
     [self.navigationController popViewControllerAnimated:YES];

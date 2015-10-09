@@ -4,18 +4,17 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "HTLCategory.h"
+#import "HTLActivity.h"
 
-@class HTLCategory;
+@class HTLActivity;
 
 
 @interface HTLCategoryEditor : NSObject
 
-@property(nonatomic, copy) HTLCategory *originalCategory;
+@property(nonatomic, copy) HTLActivity *originalCategory;
 @property(nonatomic, readonly) BOOL canSave;
-@property(nonatomic, readonly) HTLCategory *updatedCategory;
+@property(nonatomic, readonly) HTLActivity *updatedCategory;
 
-@property(nonatomic, copy) HTLCategoryIdentifier identifier;
 @property(nonatomic, copy) NSString *title;
 @property(nonatomic, copy) NSString *subTitle;
 @property(nonatomic, strong) UIColor *color;

@@ -4,7 +4,7 @@
 //
 
 #import "HTLCSVStringExportProvider.h"
-#import "HTLCategory.h"
+#import "HTLActivity.h"
 #import "HTLReport.h"
 #import "DDLogMacros.h"
 

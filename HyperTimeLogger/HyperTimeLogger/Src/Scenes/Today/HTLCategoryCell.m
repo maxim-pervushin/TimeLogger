@@ -4,7 +4,7 @@
 //
 
 #import "HTLCategoryCell.h"
-#import "HTLCategory.h"
+#import "HTLActivity.h"
 
 
 static NSString *const kDefaultIdentifier = @"HTLCategoryCell";
@@ -24,7 +24,7 @@ static NSString *const kDefaultIdentifier = @"HTLCategoryCell";
     return kDefaultIdentifier;
 }
 
-- (void)setCategory:(HTLCategory *)category {
+- (void)setCategory:(HTLActivity *)category {
     if (category_ != category) {
         category_ = [category copy];
     }

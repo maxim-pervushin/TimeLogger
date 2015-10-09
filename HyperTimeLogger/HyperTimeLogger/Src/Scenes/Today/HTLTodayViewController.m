@@ -54,19 +54,27 @@
 
 #pragma mark - UITableViewController
 
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    return 2;
+}
+
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return self.dataSource.numberOfCategories;
+    return section == 0 ? self.dataSource.numberOfCustomCategories : self.dataSource.numberOfMandatoryCategories;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     HTLCategoryCell *cell = (HTLCategoryCell *) [tableView dequeueReusableCellWithIdentifier:[HTLCategoryCell defaultIdentifier] forIndexPath:indexPath];
-    cell.category = [self.dataSource categoryAtIndexPath:indexPath];
+    cell.category = indexPath.section == 0 ? [self.dataSource customCategoryAtIndex:indexPath.row] : [self.dataSource mandatoryCategoryAtIndex:indexPath.row];
     return cell;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    [self.dataSource saveReportWithCategoryAtIndexPath:indexPath];
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    if (indexPath.section == 0) {
+        [self.dataSource saveReportWithCustomCategoryAtIndex:indexPath.row];
+    } else {
+        [self.dataSource saveReportWithMandatoryCategoryAtIndex:indexPath.row];
+    }
     [self reloadTitle];
 }
 

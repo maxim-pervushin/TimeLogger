@@ -4,26 +4,16 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "HTLCategory.h"
+#import "HTLActivity.h"
 
 
 typedef NSString *HTLReportIdentifier;
 
 @interface HTLReport : NSObject <NSCopying, NSObject>
 
-+ (instancetype)reportWithCategory:(HTLCategory *)category startDate:(NSDate *)startDate endDate:(NSDate *)endDate;
++ (instancetype)reportWithCategory:(HTLActivity *)category startDate:(NSDate *)startDate endDate:(NSDate *)endDate;
 
-- (id)copyWithZone:(nullable NSZone *)zone;
-
-- (BOOL)isEqual:(id)other;
-
-- (BOOL)isEqualToReport:(HTLReport *)report;
-
-- (NSUInteger)hash;
-
-- (NSString *)description;
-
-@property(nonatomic, readonly) HTLCategory *category;
+@property(nonatomic, readonly) HTLActivity *category;
 @property(nonatomic, readonly) NSDate *startDate;
 @property(nonatomic, readonly) NSDate *endDate;
 

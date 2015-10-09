@@ -10,6 +10,7 @@
 @interface HTLEditCategoryViewController () <UIPickerViewDataSource, UIPickerViewDelegate>
 
 @property(nonatomic, weak) IBOutlet UITextField *titleTextField;
+@property(nonatomic, weak) IBOutlet UITextField *subTitleTextField;
 @property(nonatomic, weak) IBOutlet UIBarButtonItem *saveButton;
 
 @property(nonatomic, strong, readonly) HTLCategoryEditor *editor;
@@ -37,13 +38,18 @@
     [self reloadData];
 }
 
+- (IBAction)subTitleTextFieldEditingChanged:(id)sender {
+    self.editor.subTitle = self.subTitleTextField.text;
+    [self reloadData];
+}
+
 #pragma mark - HTLEditCategoryViewController_New
 
-- (HTLCategory *)originalCategory {
+- (HTLActivity *)originalCategory {
     return self.editor.originalCategory;
 }
 
-- (void)setOriginalCategory:(HTLCategory *)originalCategory {
+- (void)setOriginalCategory:(HTLActivity *)originalCategory {
     [self.editor setOriginalCategory:originalCategory];
     [self reloadData];
 }

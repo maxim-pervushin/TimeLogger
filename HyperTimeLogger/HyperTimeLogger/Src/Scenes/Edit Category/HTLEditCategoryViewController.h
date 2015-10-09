@@ -5,19 +5,19 @@
 
 #import <UIKit/UIKit.h>
 
-@class HTLCategory;
+@class HTLActivity;
 @class HTLEditCategoryViewController;
 
 
 @protocol HTLEditCategoryViewControllerDelegate
 
-- (void)editCategoryViewController:(HTLEditCategoryViewController *)viewController finishedWithCategory:(HTLCategory *)category;
+- (void)editCategoryViewController:(HTLEditCategoryViewController *)viewController finishedWithCategory:(HTLActivity *)category;
 
 @end
 
 @interface HTLEditCategoryViewController : UITableViewController
 
 @property(nonatomic, weak) id <HTLEditCategoryViewControllerDelegate> delegate;
-@property(nonatomic, copy) HTLCategory *originalCategory;
+@property(nonatomic, copy) HTLActivity *originalCategory;
 
 @end

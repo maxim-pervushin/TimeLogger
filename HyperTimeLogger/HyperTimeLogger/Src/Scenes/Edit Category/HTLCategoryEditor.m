@@ -4,7 +4,6 @@
 //
 
 #import "HTLCategoryEditor.h"
-#import "HTLCategory.h"
 
 
 @implementation HTLCategoryEditor
@@ -12,10 +11,10 @@
 @dynamic canSave;
 @dynamic updatedCategory;
 
-- (void)setOriginalCategory:(HTLCategory *)originalCategory {
+- (void)setOriginalCategory:(HTLActivity *)originalCategory {
     originalCategory_ = [originalCategory copy];
-    self.identifier = [originalCategory_.identifier copy];
     self.title = [originalCategory_.title copy];
+    self.subTitle = [originalCategory_.subTitle copy];
     self.color = originalCategory_.color;
 }
 
@@ -24,22 +23,19 @@
         return NO;
     }
 
-    if (self.originalCategory && [self.originalCategory.title isEqual:self.title] && [self.originalCategory.color isEqual:self.color]) {
+    if (self.originalCategory && [self.originalCategory.title isEqual:self.title] && [self.originalCategory.subTitle isEqual:self.subTitle] && [self.originalCategory.color isEqual:self.color]) {
         return NO;
     }
 
     return YES;
 }
 
-- (HTLCategory *)updatedCategory {
+- (HTLActivity *)updatedCategory {
     if (!self.canSave) {
         return nil;
     }
 
-    return [HTLCategory categoryWithIdentifier:self.originalCategory ? self.originalCategory.identifier : [NSUUID new].UUIDString
-                                         title:self.title
-                                         subTitle:self.subTitle
-                                         color:self.color];
+    return [HTLActivity categoryWithTitle:self.title subTitle:self.subTitle color:self.color];
 }
 
 @end

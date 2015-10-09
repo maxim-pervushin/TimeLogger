@@ -11,7 +11,7 @@
 static NSString *const kHTLStorageProviderChangedNotification = @"HTLStorageProviderChangedNotification";
 
 
-@class HTLCategory;
+@class HTLActivity;
 @class HTLDateSection;
 @class HTLReport;
 
@@ -22,13 +22,17 @@ static NSString *const kHTLStorageProviderChangedNotification = @"HTLStorageProv
 
 // Categories
 
-- (NSUInteger)numberOfCategoriesWithDateSection:(HTLDateSection *)dateSection;
+- (NSArray *)mandatoryCategories;
 
-- (NSArray *)categoriesWithDateSection:(HTLDateSection *)dateSection;
+- (NSArray *)customCategories;
 
-- (BOOL)saveCategory:(HTLCategory *)category;
+//- (NSUInteger)numberOfCategoriesWithDateSection:(HTLDateSection *)dateSection;
+//
+//- (NSArray *)categoriesWithDateSection:(HTLDateSection *)dateSection;
 
-- (BOOL)deleteCategory:(HTLCategory *)category;
+- (BOOL)saveCategory:(HTLActivity *)category;
+
+- (BOOL)deleteCategory:(HTLActivity *)category;
 
 // Date sections
 
@@ -40,12 +44,16 @@ static NSString *const kHTLStorageProviderChangedNotification = @"HTLStorageProv
 
 - (NSUInteger)numberOfReportsWithDateSection:(HTLDateSection *)dateSection;
 
-- (NSArray *)reportsWithDateSection:(HTLDateSection *)dateSection category:(HTLCategory *)category;
+- (NSArray *)reportsWithDateSection:(HTLDateSection *)dateSection category:(HTLActivity *)category;
 
 - (BOOL)saveReport:(HTLReport *)report;
 
 - (NSDate *)lastReportEndDate;
 
 - (HTLReport *)lastReport;
+
+// Statistics
+
+- (NSArray *)statisticsWithDateSection:(HTLDateSection *)dateSection;
 
 @end
