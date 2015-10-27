@@ -28,11 +28,16 @@
 		73BC6306BF2CF0FFADD45FBF /* HTLSettingsDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6238BD871F780937A2AA /* HTLSettingsDataSource.m */; };
 		73BC6360F018D6435D54647A /* HTLReportListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6ACE2F8A2E6E659B559F /* HTLReportListViewController.m */; };
 		73BC6376674A15727C7DDEA1 /* HTLReportDateListDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC64E6892993AF3EAB4FC6 /* HTLReportDateListDataSource.m */; };
+		73BC638C8807EE4CAB9EAB28 /* HTLToday_NewDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC69C6A701615D532CA288 /* HTLToday_NewDataSource.m */; };
 		73BC63A745D1B957781BC3C0 /* NSDate+HTLComponents.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6F6EE1E455D98426F705 /* NSDate+HTLComponents.m */; };
 		73BC63D7E123A596DFCD6FEC /* HTLDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6B2EF7D4AAB16D0EC09A /* HTLDataSource.m */; };
+		73BC63D7FF602787D8490B85 /* HTLTodayViewController_New.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC67EAA68B80628BFE54A4 /* HTLTodayViewController_New.m */; };
 		73BC63E109E2CF7198F1575A /* HTLReportCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC66C01A84D1D22A43B996 /* HTLReportCell.m */; };
 		73BC63E583DA471B2D26C36E /* HTLReport.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6A41E76EE6DBA2B7B791 /* HTLReport.m */; };
+		73BC640C41D76EF0D30C8DA7 /* HTLActivityCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC627D803BF6DFB71DB376 /* HTLActivityCell.m */; };
+		73BC64FAF04470F3A48E443D /* HTLToday_NewDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC69C6A701615D532CA288 /* HTLToday_NewDataSource.m */; };
 		73BC653BC4AEAF73F918F0B0 /* HTLEditCategoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6DBF52626BCC61B42B76 /* HTLEditCategoryViewController.m */; };
+		73BC6544409D94A6FB553559 /* HTLTodayViewController_New.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC67EAA68B80628BFE54A4 /* HTLTodayViewController_New.m */; };
 		73BC65C9546D4C1AE6909599 /* HTLReportCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC66C01A84D1D22A43B996 /* HTLReportCell.m */; };
 		73BC663B16F6B52EE9662BF9 /* HTLReport.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6A41E76EE6DBA2B7B791 /* HTLReport.m */; };
 		73BC663F4406329510726033 /* HTLSqliteStorageProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC686334D59793FEFA2E86 /* HTLSqliteStorageProvider.m */; };
@@ -40,6 +45,7 @@
 		73BC66FBEB3FEDA6D59A4EEB /* HTLSqliteStorageProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC686334D59793FEFA2E86 /* HTLSqliteStorageProvider.m */; };
 		73BC6711AD3E28609D968C2F /* HTLSettingsDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6238BD871F780937A2AA /* HTLSettingsDataSource.m */; };
 		73BC673ED541609F1B93818F /* HTLSqliteStorageProvider+Deserialization.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6D1F71AFEE603353B859 /* HTLSqliteStorageProvider+Deserialization.m */; };
+		73BC6740C19F12ECBFF1197A /* HTLActivityCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC627D803BF6DFB71DB376 /* HTLActivityCell.m */; };
 		73BC674B2D1CD47837E7A3B1 /* HTLActivityListDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6AD3F6831141DEE01CAC /* HTLActivityListDataSource.m */; };
 		73BC6788733B4B6486B9C4E3 /* HTLReportDateListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6F0C9E566AEAAEAE635A /* HTLReportDateListViewController.m */; };
 		73BC679838650B6E28896277 /* HTLReportListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6ACE2F8A2E6E659B559F /* HTLReportListViewController.m */; };
@@ -55,6 +61,7 @@
 		73BC68BD5C6BF2A0BA095605 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 73BC6FBF1D739E2158DA64F6 /* Images.xcassets */; };
 		73BC68CB7A462C6EA29E4A74 /* HTLCategoryCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC67C66E14B291573A73C2 /* HTLCategoryCell.m */; };
 		73BC68D75AF9520DFA1BB170 /* HTLReport+Helpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6F771B4A63AA8FABCDF5 /* HTLReport+Helpers.m */; };
+		73BC68E15F67562D619DCE08 /* HTLTodayViewController_New.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC67EAA68B80628BFE54A4 /* HTLTodayViewController_New.m */; };
 		73BC6919D98B939D1BBDAF28 /* HTLReport+Helpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6F771B4A63AA8FABCDF5 /* HTLReport+Helpers.m */; };
 		73BC69374B58054406461876 /* HTLStatisticsHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC61903FBA9332F94D6B7E /* HTLStatisticsHeader.m */; };
 		73BC694ED74736EF858A5DC3 /* HTLReportDateListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6F0C9E566AEAAEAE635A /* HTLReportDateListViewController.m */; };
@@ -97,6 +104,8 @@
 		73BC6E5D406483D67F4C561F /* HTLSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6AE742267ED19FB46A1A /* HTLSettingsViewController.m */; };
 		73BC6E8FF7996B76AA9A98F4 /* HTLReportListDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6A8034329BA3E2F993E7 /* HTLReportListDataSource.m */; };
 		73BC6F23CEED50713B2A76D6 /* HTLSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6AE742267ED19FB46A1A /* HTLSettingsViewController.m */; };
+		73BC6F305DA77212A9C95BB6 /* HTLToday_NewDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC69C6A701615D532CA288 /* HTLToday_NewDataSource.m */; };
+		73BC6F992A037518653F4D2A /* HTLActivityCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC627D803BF6DFB71DB376 /* HTLActivityCell.m */; };
 		73BC6FDC67844771B186F588 /* HTLActivityListTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6F7C4D1D96670253BDF2 /* HTLActivityListTableViewController.m */; };
 		C516A6CC1B3A8F2A0018F022 /* HTLRoundButton.m in Sources */ = {isa = PBXBuildFile; fileRef = C516A6CB1B3A8F2A0018F022 /* HTLRoundButton.m */; };
 		C516A6CD1B3A8F2A0018F022 /* HTLRoundButton.m in Sources */ = {isa = PBXBuildFile; fileRef = C516A6CB1B3A8F2A0018F022 /* HTLRoundButton.m */; };
@@ -354,6 +363,9 @@
 		C59689F41B3C19860038018D /* TodayExtension Alpha.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = C59689BE1B3C16270038018D /* TodayExtension Alpha.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		C59689F81B3C198D0038018D /* TodayExtension Beta.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = C59689E01B3C16350038018D /* TodayExtension Beta.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		C5BA1B801B26F890006D80BC /* TodayExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = C5BA1B731B26F890006D80BC /* TodayExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		C5C361C71BD512490070055F /* TableLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5C361C61BD512490070055F /* TableLayout.swift */; settings = {ASSET_TAGS = (); }; };
+		C5C361C81BD512490070055F /* TableLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5C361C61BD512490070055F /* TableLayout.swift */; settings = {ASSET_TAGS = (); }; };
+		C5C361C91BD512490070055F /* TableLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5C361C61BD512490070055F /* TableLayout.swift */; settings = {ASSET_TAGS = (); }; };
 		C5F512FE1BBF344D002F887E /* TODOs.txt in Resources */ = {isa = PBXBuildFile; fileRef = C5F512FD1BBF344D002F887E /* TODOs.txt */; settings = {ASSET_TAGS = (); }; };
 		C5FFE3F21B1857CE007D317D /* HyperTimeLoggerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C5FFE3F11B1857CE007D317D /* HyperTimeLoggerTests.m */; };
 /* End PBXBuildFile section */
@@ -439,9 +451,11 @@
 		73BC61D0A4CD7A364641B3B2 /* HyperTimeLogger.entitlements */ = {isa = PBXFileReference; lastKnownFileType = file.entitlements; path = HyperTimeLogger.entitlements; sourceTree = "<group>"; };
 		73BC61D37DB350A79F19F0DD /* testdata_en.json */ = {isa = PBXFileReference; lastKnownFileType = file.json; path = testdata_en.json; sourceTree = "<group>"; };
 		73BC61D63ED1C7A5DB8B4EC3 /* HTLActivityListTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTLActivityListTableViewController.h; sourceTree = "<group>"; };
+		73BC61FC4B9054CC18FC1047 /* HTLTodayViewController_New.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTLTodayViewController_New.h; sourceTree = "<group>"; };
 		73BC620F2DDE8ED18D1BBCBD /* HTLReportDateListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTLReportDateListViewController.h; sourceTree = "<group>"; };
 		73BC6238BD871F780937A2AA /* HTLSettingsDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTLSettingsDataSource.m; sourceTree = "<group>"; };
 		73BC6277A870524020CF0CE9 /* HTLStatisticsHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTLStatisticsHeader.h; sourceTree = "<group>"; };
+		73BC627D803BF6DFB71DB376 /* HTLActivityCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTLActivityCell.m; sourceTree = "<group>"; };
 		73BC62BD6319224D876880BD /* HTLAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTLAppDelegate.m; sourceTree = "<group>"; };
 		73BC63407702DDDB04CF58F7 /* HTLDateSection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTLDateSection.h; sourceTree = "<group>"; };
 		73BC642D0A6375B6BC652163 /* HTLStorageProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTLStorageProvider.h; sourceTree = "<group>"; };
@@ -452,6 +466,7 @@
 		73BC660E803ED4C064EEE1A3 /* HTLCategoryEditor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTLCategoryEditor.h; sourceTree = "<group>"; };
 		73BC660F9035AF2D12D68B11 /* HTLActivity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTLActivity.m; sourceTree = "<group>"; };
 		73BC6619E2BFF808511873B5 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.info; path = Info.plist; sourceTree = "<group>"; };
+		73BC661B63EA8AB951F4F292 /* HTLToday_NewDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTLToday_NewDataSource.h; sourceTree = "<group>"; };
 		73BC66709A1F2D03B601899D /* HTLDateSection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTLDateSection.m; sourceTree = "<group>"; };
 		73BC669236F7FD0A9AA838FA /* HTLCSVStringExportProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTLCSVStringExportProvider.h; sourceTree = "<group>"; };
 		73BC66AAE26BE5005B6B3F36 /* HyperTimeLogger.entitlements */ = {isa = PBXFileReference; lastKnownFileType = file.entitlements; path = HyperTimeLogger.entitlements; sourceTree = "<group>"; };
@@ -461,6 +476,7 @@
 		73BC677E841E0C7EEA17C8F4 /* HTLActivityListDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTLActivityListDataSource.h; sourceTree = "<group>"; };
 		73BC67B2DC0CBCFD95BC63E9 /* HTLDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTLDataSource.h; sourceTree = "<group>"; };
 		73BC67C66E14B291573A73C2 /* HTLCategoryCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTLCategoryCell.m; sourceTree = "<group>"; };
+		73BC67EAA68B80628BFE54A4 /* HTLTodayViewController_New.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTLTodayViewController_New.m; sourceTree = "<group>"; };
 		73BC684DB010D412F9E74A52 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		73BC686334D59793FEFA2E86 /* HTLSqliteStorageProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTLSqliteStorageProvider.m; sourceTree = "<group>"; };
 		73BC68877A11CD82AB9F0321 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.info; path = Info.plist; sourceTree = "<group>"; };
@@ -469,6 +485,7 @@
 		73BC68D3CDD0771C14BB49B2 /* HTLStatisticsItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTLStatisticsItem.m; sourceTree = "<group>"; };
 		73BC690F0FD5F1316528ADBE /* HTLSettingsDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTLSettingsDataSource.h; sourceTree = "<group>"; };
 		73BC6956442436FCF69A78F8 /* HTLReportListDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTLReportListDataSource.h; sourceTree = "<group>"; };
+		73BC69C6A701615D532CA288 /* HTLToday_NewDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTLToday_NewDataSource.m; sourceTree = "<group>"; };
 		73BC6A22878FD4F414CF5C2A /* settings@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "settings@2x.png"; sourceTree = "<group>"; };
 		73BC6A41E76EE6DBA2B7B791 /* HTLReport.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTLReport.m; sourceTree = "<group>"; };
 		73BC6A8034329BA3E2F993E7 /* HTLReportListDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTLReportListDataSource.m; sourceTree = "<group>"; };
@@ -496,6 +513,7 @@
 		73BC6D6BFFE1DD9ED9D91649 /* HTETodayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTETodayViewController.h; sourceTree = "<group>"; };
 		73BC6D8D551F158310341166 /* HTLReportCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTLReportCell.h; sourceTree = "<group>"; };
 		73BC6DBF52626BCC61B42B76 /* HTLEditCategoryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTLEditCategoryViewController.m; sourceTree = "<group>"; };
+		73BC6E52C8E9183CBB092523 /* HTLActivityCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTLActivityCell.h; sourceTree = "<group>"; };
 		73BC6E57D1CF2B9726285238 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.info; path = Info.plist; sourceTree = "<group>"; };
 		73BC6E6D42DA294AFD4E94E7 /* HTLStatisticsItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTLStatisticsItem.h; sourceTree = "<group>"; };
 		73BC6ED6CA4E40EF0A86A0D6 /* DateSectionHeader.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DateSectionHeader.xib; sourceTree = "<group>"; };
@@ -613,6 +631,7 @@
 		C59689F21B3C18FC0038018D /* TodayExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = file.entitlements; path = TodayExtension.entitlements; sourceTree = "<group>"; };
 		C59689F31B3C19030038018D /* TodayExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = file.entitlements; path = TodayExtension.entitlements; sourceTree = "<group>"; };
 		C5BA1B731B26F890006D80BC /* TodayExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = TodayExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		C5C361C61BD512490070055F /* TableLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableLayout.swift; sourceTree = "<group>"; };
 		C5F512FD1BBF344D002F887E /* TODOs.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = TODOs.txt; sourceTree = "<group>"; };
 		C5FFE3D21B1857CE007D317D /* HyperTimeLogger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HyperTimeLogger.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C5FFE3EB1B1857CE007D317D /* HyperTimeLoggerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HyperTimeLoggerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -802,6 +821,7 @@
 				73BC63DF2E5CBA01580B4C51 /* Categories */,
 				73BC673732E30DB85889AE73 /* Report Dates */,
 				73BC6EC6D23B0BAD96353243 /* Edit Category */,
+				73BC6DB7EF02DAEA43B87E36 /* Today_New */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -989,6 +1009,20 @@
 				C55912571B3C0853002593BE /* InfoPlist.strings */,
 			);
 			path = Beta;
+			sourceTree = "<group>";
+		};
+		73BC6DB7EF02DAEA43B87E36 /* Today_New */ = {
+			isa = PBXGroup;
+			children = (
+				73BC67EAA68B80628BFE54A4 /* HTLTodayViewController_New.m */,
+				73BC61FC4B9054CC18FC1047 /* HTLTodayViewController_New.h */,
+				73BC69C6A701615D532CA288 /* HTLToday_NewDataSource.m */,
+				73BC661B63EA8AB951F4F292 /* HTLToday_NewDataSource.h */,
+				73BC627D803BF6DFB71DB376 /* HTLActivityCell.m */,
+				73BC6E52C8E9183CBB092523 /* HTLActivityCell.h */,
+				C5C361C61BD512490070055F /* TableLayout.swift */,
+			);
+			path = Today_New;
 			sourceTree = "<group>";
 		};
 		73BC6DC4214A1ACD61303FC1 /* Src */ = {
@@ -1700,6 +1734,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C5C361C81BD512490070055F /* TableLayout.swift in Sources */,
 				C516A6D31B3AD18E0018F022 /* NSDate+HTLComponents.m in Sources */,
 				C582B2F91B3EC8D5005CC526 /* DDFileLogger.m in Sources */,
 				C516A6D41B3AD18E0018F022 /* HTLReport+Helpers.m in Sources */,
@@ -1749,6 +1784,9 @@
 				73BC6711AD3E28609D968C2F /* HTLSettingsDataSource.m in Sources */,
 				73BC619943AD7B64FDE26312 /* HTLStatisticsItem.m in Sources */,
 				73BC62DBEB901CF8BC5BADE9 /* HTLStatisticsHeader.m in Sources */,
+				73BC6544409D94A6FB553559 /* HTLTodayViewController_New.m in Sources */,
+				73BC638C8807EE4CAB9EAB28 /* HTLToday_NewDataSource.m in Sources */,
+				73BC640C41D76EF0D30C8DA7 /* HTLActivityCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1756,6 +1794,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C5C361C71BD512490070055F /* TableLayout.swift in Sources */,
 				C516A71E1B3AD2590018F022 /* NSDate+HTLComponents.m in Sources */,
 				C582B2F81B3EC8D5005CC526 /* DDFileLogger.m in Sources */,
 				C516A71F1B3AD2590018F022 /* HTLReport+Helpers.m in Sources */,
@@ -1805,6 +1844,9 @@
 				73BC6306BF2CF0FFADD45FBF /* HTLSettingsDataSource.m in Sources */,
 				73BC6ACB08FA93B24B74FDEC /* HTLStatisticsItem.m in Sources */,
 				73BC69374B58054406461876 /* HTLStatisticsHeader.m in Sources */,
+				73BC63D7FF602787D8490B85 /* HTLTodayViewController_New.m in Sources */,
+				73BC6F305DA77212A9C95BB6 /* HTLToday_NewDataSource.m in Sources */,
+				73BC6F992A037518653F4D2A /* HTLActivityCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1929,6 +1971,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C5C361C91BD512490070055F /* TableLayout.swift in Sources */,
 				73BC63A745D1B957781BC3C0 /* NSDate+HTLComponents.m in Sources */,
 				C582B2FA1B3EC8D5005CC526 /* DDFileLogger.m in Sources */,
 				73BC68D75AF9520DFA1BB170 /* HTLReport+Helpers.m in Sources */,
@@ -1978,6 +2021,9 @@
 				73BC61BA71E3D1E9F57AACC3 /* HTLSettingsDataSource.m in Sources */,
 				73BC6B0996710BF0CBFE15AE /* HTLStatisticsItem.m in Sources */,
 				73BC6D213D728E1E394999CD /* HTLStatisticsHeader.m in Sources */,
+				73BC68E15F67562D619DCE08 /* HTLTodayViewController_New.m in Sources */,
+				73BC64FAF04470F3A48E443D /* HTLToday_NewDataSource.m in Sources */,
+				73BC6740C19F12ECBFF1197A /* HTLActivityCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

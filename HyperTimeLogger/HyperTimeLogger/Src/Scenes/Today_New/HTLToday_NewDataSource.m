@@ -1,24 +1,21 @@
 //
-// Created by Maxim Pervushin on 05/10/15.
+// Created by Maxim Pervushin on 09/10/15.
 // Copyright (c) 2015 Maxim Pervushin. All rights reserved.
 //
 
-#import "HTLTodayDataSource.h"
-#import "HTLActivity.h"
-#import "HTLAppDelegate.h"
-#import "HTLContentManager.h"
+#import "HTLToday_NewDataSource.h"
 #import "HTLReport.h"
+#import "HTLContentManager.h"
+#import "HTLAppDelegate.h"
 
 
-@interface HTLTodayDataSource ()
+@interface HTLToday_NewDataSource ()
 
 - (void)subscribe;
 
 - (void)unsubscribe;
 
-@end
-
-@implementation HTLTodayDataSource
+@end@implementation HTLToday_NewDataSource
 
 - (NSTimeInterval)currentInterval {
     NSDate *lastReportEndDate = [HTLAppContentManger lastReportEndDate];
@@ -29,28 +26,18 @@
     return [[NSDate new] timeIntervalSinceDate:lastReportEndDate];
 }
 
-- (NSUInteger)numberOfMandatoryCategories {
-    return HTLAppContentManger.mandatoryCategories.count;
+- (NSUInteger)numberOfActivities {
+    return HTLAppContentManger.customCategories.count + HTLAppContentManger.mandatoryCategories.count;
 }
 
-- (NSUInteger)numberOfCustomCategories {
-    return HTLAppContentManger.customCategories.count;
+- (HTLActivity *)activityAtIndex:(NSInteger)index {
+    NSMutableArray *activities = [HTLAppContentManger.customCategories mutableCopy];
+    [activities addObjectsFromArray:HTLAppContentManger.mandatoryCategories];
+    return activities[(NSUInteger) index];
 }
 
-- (HTLActivity *)mandatoryCategoryAtIndex:(NSInteger)index {
-    return HTLAppContentManger.mandatoryCategories[(NSUInteger) index];
-}
-
-- (HTLActivity *)customCategoryAtIndex:(NSInteger)index {
-    return HTLAppContentManger.customCategories[(NSUInteger) index];
-}
-
-- (BOOL)saveReportWithMandatoryCategoryAtIndex:(NSInteger)index {
-    return [self saveReportWithActivity:[self mandatoryCategoryAtIndex:index]];
-}
-
-- (BOOL)saveReportWithCustomCategoryAtIndex:(NSInteger)index {
-    return [self saveReportWithActivity:[self customCategoryAtIndex:index]];
+- (BOOL)saveReportWithActivityAtIndex:(NSInteger)index {
+    return [self saveReportWithActivity:[self activityAtIndex:index]];
 }
 
 - (BOOL)saveReportWithActivity:(HTLActivity *)category {
