@@ -4,7 +4,7 @@
 //
 
 #import "HTLCSVStringExportProvider.h"
-#import "HTLActivity.h"
+#import "HTLMark.h"
 #import "HTLReport.h"
 #import "DDLogMacros.h"
 
@@ -41,7 +41,7 @@ static NSString *const kDefaultDateFormat = @"yyyy-MM-dd HH:mm:ss ZZZ";
 //                        [[self defaultDateFormatter] stringFromDate:reportExtended.report.startDate],
 //                        [[self defaultDateFormatter] stringFromDate:reportExtended.report.endDate],
 //                        reportExtended.action.title,
-//                        NSLocalizedString(reportExtended.category.title, nil)];
+//                        NSLocalizedString(reportExtended.mark.title, nil)];
 //    }
     return [csvString copy];
 }

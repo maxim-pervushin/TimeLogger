@@ -11,7 +11,7 @@ BFPaperColors
 
 About
 ---------
-_UIColor+BFPaperColors_ is a category for _UIColor_ that adds class methods to conveniently produce **over 240 new colors** designed for flat or semi-flat interface designs by [Google's Material Design Labs](http://www.google.com/design/spec/style/color.html).
+_UIColor+BFPaperColors_ is a mark for _UIColor_ that adds class methods to conveniently produce **over 240 new colors** designed for flat or semi-flat interface designs by [Google's Material Design Labs](http://www.google.com/design/spec/style/color.html).
 
 Changes
 ---------
@@ -80,7 +80,7 @@ Cocoapods
 CocoaPods are the best way to manage library dependencies in Objective-C projects.
 Learn more at http://cocoapods.org
 
-Add this to your podfile to add the UIColor+BFPaperColors category to your project.
+Add this to your podfile to add the UIColor+BFPaperColors mark to your project.
 ```ruby
 platform :ios, '7.0'
 pod 'UIColor+BFPaperColors', :head

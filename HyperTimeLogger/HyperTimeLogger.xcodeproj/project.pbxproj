@@ -7,91 +7,106 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		73BC600B9246F5D02511B4B0 /* HTLTodayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6F9C9DD5E6375ED0CD1F /* HTLTodayViewController.m */; };
-		73BC600E8C599F6D11BBD183 /* HTLActivity.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC660F9035AF2D12D68B11 /* HTLActivity.m */; };
+		73BC600E8C599F6D11BBD183 /* HTLMark.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC660F9035AF2D12D68B11 /* HTLMark.m */; };
+		73BC604925A2EAE28E0E132F /* HTLTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6950A53D6644A947DEC1 /* HTLTextField.m */; };
 		73BC604EB0119CC2DCBA6299 /* HTLCategoryEditor.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6177D050107771234F92 /* HTLCategoryEditor.m */; };
+		73BC60629A1368C839228363 /* NSDate+HTL.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC67B06453FFE89AF35E72 /* NSDate+HTL.m */; };
 		73BC60A9E3DA6728F9788F57 /* HTLSqliteStorageProvider+Deserialization.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6D1F71AFEE603353B859 /* HTLSqliteStorageProvider+Deserialization.m */; };
 		73BC610CA9365423EC183AE7 /* HTETodayDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6C705D0378287850972F /* HTETodayDataSource.m */; };
 		73BC611D0DB73478A87E6CAE /* DTFolderMonitor.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6C4782FCAEADF81D13DD /* DTFolderMonitor.m */; };
-		73BC61247437015C0452950E /* HTLActivityListDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6AD3F6831141DEE01CAC /* HTLActivityListDataSource.m */; };
+		73BC61247437015C0452950E /* HTLMarkListDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6AD3F6831141DEE01CAC /* HTLMarkListDataSource.m */; };
+		73BC612718199CCDB8431B78 /* HTLReportView.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC65F70BCA0217513D9383 /* HTLReportView.m */; };
 		73BC615E0C54DADC7944E5CF /* HTLReportDateListDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC64E6892993AF3EAB4FC6 /* HTLReportDateListDataSource.m */; };
 		73BC617D5432B3204E578CF4 /* settings.png in Resources */ = {isa = PBXBuildFile; fileRef = 73BC6F7DCFA8D0EF70DD39E0 /* settings.png */; };
+		73BC6188BED40CCA85C7C8D4 /* HTLColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC679105C314E9710FB636 /* HTLColor.m */; };
 		73BC619943AD7B64FDE26312 /* HTLStatisticsItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC68D3CDD0771C14BB49B2 /* HTLStatisticsItem.m */; };
 		73BC61BA71E3D1E9F57AACC3 /* HTLSettingsDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6238BD871F780937A2AA /* HTLSettingsDataSource.m */; };
 		73BC61BE0DB4571AEDAA870B /* HTLEditCategoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6DBF52626BCC61B42B76 /* HTLEditCategoryViewController.m */; };
-		73BC61F4A9575FFD564163D9 /* HTLCategoryCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC67C66E14B291573A73C2 /* HTLCategoryCell.m */; };
-		73BC6257536344C3E272A312 /* HTLActivityListTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6F7C4D1D96670253BDF2 /* HTLActivityListTableViewController.m */; };
+		73BC6257536344C3E272A312 /* HTLMarkListTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6F7C4D1D96670253BDF2 /* HTLMarkListTableViewController.m */; };
 		73BC628D5CC062A1C7A4FB1B /* HTLDateSectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6CFF1F750703F5FD8059 /* HTLDateSectionCell.m */; };
+		73BC62B1FD7EDC8EB59B79E4 /* HTLThemeManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC62AA807AB750CCBE6889 /* HTLThemeManager.m */; };
 		73BC62D548E25B46D3759605 /* HyperTimeLogger.entitlements in Resources */ = {isa = PBXBuildFile; fileRef = 73BC66AAE26BE5005B6B3F36 /* HyperTimeLogger.entitlements */; };
 		73BC62DBB0557CEF66331263 /* HTLReport+Helpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6F771B4A63AA8FABCDF5 /* HTLReport+Helpers.m */; };
 		73BC62DBEB901CF8BC5BADE9 /* HTLStatisticsHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC61903FBA9332F94D6B7E /* HTLStatisticsHeader.m */; };
 		73BC6306BF2CF0FFADD45FBF /* HTLSettingsDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6238BD871F780937A2AA /* HTLSettingsDataSource.m */; };
 		73BC6360F018D6435D54647A /* HTLReportListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6ACE2F8A2E6E659B559F /* HTLReportListViewController.m */; };
 		73BC6376674A15727C7DDEA1 /* HTLReportDateListDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC64E6892993AF3EAB4FC6 /* HTLReportDateListDataSource.m */; };
-		73BC638C8807EE4CAB9EAB28 /* HTLToday_NewDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC69C6A701615D532CA288 /* HTLToday_NewDataSource.m */; };
+		73BC638C8807EE4CAB9EAB28 /* HTLTodayDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC69C6A701615D532CA288 /* HTLTodayDataSource.m */; };
+		73BC639BEB828768825EB5C7 /* HTLMemoryStorageProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6E74AB99637D8FFB3475 /* HTLMemoryStorageProvider.m */; };
 		73BC63A745D1B957781BC3C0 /* NSDate+HTLComponents.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6F6EE1E455D98426F705 /* NSDate+HTLComponents.m */; };
 		73BC63D7E123A596DFCD6FEC /* HTLDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6B2EF7D4AAB16D0EC09A /* HTLDataSource.m */; };
-		73BC63D7FF602787D8490B85 /* HTLTodayViewController_New.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC67EAA68B80628BFE54A4 /* HTLTodayViewController_New.m */; };
-		73BC63E109E2CF7198F1575A /* HTLReportCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC66C01A84D1D22A43B996 /* HTLReportCell.m */; };
+		73BC63D7FF602787D8490B85 /* HTLTodayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC67EAA68B80628BFE54A4 /* HTLTodayViewController.m */; };
+		73BC63E109E2CF7198F1575A /* HTLReportTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC66C01A84D1D22A43B996 /* HTLReportTableViewCell.m */; };
 		73BC63E583DA471B2D26C36E /* HTLReport.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6A41E76EE6DBA2B7B791 /* HTLReport.m */; };
-		73BC640C41D76EF0D30C8DA7 /* HTLActivityCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC627D803BF6DFB71DB376 /* HTLActivityCell.m */; };
-		73BC64FAF04470F3A48E443D /* HTLToday_NewDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC69C6A701615D532CA288 /* HTLToday_NewDataSource.m */; };
+		73BC640C41D76EF0D30C8DA7 /* HTLMarkCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC627D803BF6DFB71DB376 /* HTLMarkCollectionViewCell.m */; };
+		73BC6411AD3D5908732828F7 /* HTLTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6950A53D6644A947DEC1 /* HTLTextField.m */; };
+		73BC64E330CE14AE038B1F58 /* HTLLineView.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC656412B770162C38B718 /* HTLLineView.m */; };
+		73BC64FAF04470F3A48E443D /* HTLTodayDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC69C6A701615D532CA288 /* HTLTodayDataSource.m */; };
 		73BC653BC4AEAF73F918F0B0 /* HTLEditCategoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6DBF52626BCC61B42B76 /* HTLEditCategoryViewController.m */; };
-		73BC6544409D94A6FB553559 /* HTLTodayViewController_New.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC67EAA68B80628BFE54A4 /* HTLTodayViewController_New.m */; };
-		73BC65C9546D4C1AE6909599 /* HTLReportCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC66C01A84D1D22A43B996 /* HTLReportCell.m */; };
+		73BC6544409D94A6FB553559 /* HTLTodayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC67EAA68B80628BFE54A4 /* HTLTodayViewController.m */; };
+		73BC655A533720F240E2C53E /* NSDate+HTL.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC67B06453FFE89AF35E72 /* NSDate+HTL.m */; };
+		73BC65C9546D4C1AE6909599 /* HTLReportTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC66C01A84D1D22A43B996 /* HTLReportTableViewCell.m */; };
+		73BC661E651443F9B1570D21 /* HTLColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC679105C314E9710FB636 /* HTLColor.m */; };
 		73BC663B16F6B52EE9662BF9 /* HTLReport.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6A41E76EE6DBA2B7B791 /* HTLReport.m */; };
 		73BC663F4406329510726033 /* HTLSqliteStorageProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC686334D59793FEFA2E86 /* HTLSqliteStorageProvider.m */; };
+		73BC6656FE1D79015E287981 /* HTLColorPickerTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC67AA864757C5B1299286 /* HTLColorPickerTableView.m */; };
 		73BC66E062885277EA135AC0 /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73BC6FB0EFED7B84F71E676E /* NotificationCenter.framework */; };
 		73BC66FBEB3FEDA6D59A4EEB /* HTLSqliteStorageProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC686334D59793FEFA2E86 /* HTLSqliteStorageProvider.m */; };
 		73BC6711AD3E28609D968C2F /* HTLSettingsDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6238BD871F780937A2AA /* HTLSettingsDataSource.m */; };
 		73BC673ED541609F1B93818F /* HTLSqliteStorageProvider+Deserialization.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6D1F71AFEE603353B859 /* HTLSqliteStorageProvider+Deserialization.m */; };
-		73BC6740C19F12ECBFF1197A /* HTLActivityCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC627D803BF6DFB71DB376 /* HTLActivityCell.m */; };
-		73BC674B2D1CD47837E7A3B1 /* HTLActivityListDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6AD3F6831141DEE01CAC /* HTLActivityListDataSource.m */; };
+		73BC6740C19F12ECBFF1197A /* HTLMarkCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC627D803BF6DFB71DB376 /* HTLMarkCollectionViewCell.m */; };
+		73BC674909A6014DCE382853 /* HTLMarkEditor.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC616FC8A3BF0A4D98FE6D /* HTLMarkEditor.m */; };
+		73BC674B2D1CD47837E7A3B1 /* HTLMarkListDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6AD3F6831141DEE01CAC /* HTLMarkListDataSource.m */; };
 		73BC6788733B4B6486B9C4E3 /* HTLReportDateListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6F0C9E566AEAAEAE635A /* HTLReportDateListViewController.m */; };
+		73BC6796746E9E53B6AFE3CC /* HTLMarkEditor.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC616FC8A3BF0A4D98FE6D /* HTLMarkEditor.m */; };
 		73BC679838650B6E28896277 /* HTLReportListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6ACE2F8A2E6E659B559F /* HTLReportListViewController.m */; };
 		73BC679BF2C1A1A36939932B /* NSDate+HTLComponents.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6F6EE1E455D98426F705 /* NSDate+HTLComponents.m */; };
 		73BC679DD95BD9F43FE6A2AB /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6B4DA596906232FF8970 /* main.m */; };
 		73BC67A4E0C0CA36BB035D6C /* HTLDateSection.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC66709A1F2D03B601899D /* HTLDateSection.m */; };
 		73BC67C0E8198E0EFD9A3E8E /* HTLReportDateListDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC64E6892993AF3EAB4FC6 /* HTLReportDateListDataSource.m */; };
+		73BC67F03E9CEEAE64172B5B /* HTLColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC679105C314E9710FB636 /* HTLColor.m */; };
 		73BC68033AF8061D639DCFC0 /* HTETodayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6B8E25A8D300C95D3491 /* HTETodayViewController.m */; };
 		73BC680CED8D9D3411D8386F /* HTLReportListDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6A8034329BA3E2F993E7 /* HTLReportListDataSource.m */; };
-		73BC6860D534879D5B9D0C77 /* HTLTodayDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC648B17F402B7799C657E /* HTLTodayDataSource.m */; };
 		73BC686682E53ABD3DCB152B /* HTLAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC62BD6319224D876880BD /* HTLAppDelegate.m */; };
-		73BC688E05940C6C7A19AEFE /* HTLActivity.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC660F9035AF2D12D68B11 /* HTLActivity.m */; };
+		73BC688E05940C6C7A19AEFE /* HTLMark.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC660F9035AF2D12D68B11 /* HTLMark.m */; };
+		73BC68A7E5E242920D6A3142 /* HTLTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6950A53D6644A947DEC1 /* HTLTextField.m */; };
 		73BC68BD5C6BF2A0BA095605 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 73BC6FBF1D739E2158DA64F6 /* Images.xcassets */; };
-		73BC68CB7A462C6EA29E4A74 /* HTLCategoryCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC67C66E14B291573A73C2 /* HTLCategoryCell.m */; };
+		73BC68C1482CA4CAE4BC2A72 /* HTLReportEditor.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC62A905AF9B6666122AC9 /* HTLReportEditor.m */; };
 		73BC68D75AF9520DFA1BB170 /* HTLReport+Helpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6F771B4A63AA8FABCDF5 /* HTLReport+Helpers.m */; };
-		73BC68E15F67562D619DCE08 /* HTLTodayViewController_New.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC67EAA68B80628BFE54A4 /* HTLTodayViewController_New.m */; };
+		73BC68E15F67562D619DCE08 /* HTLTodayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC67EAA68B80628BFE54A4 /* HTLTodayViewController.m */; };
 		73BC6919D98B939D1BBDAF28 /* HTLReport+Helpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6F771B4A63AA8FABCDF5 /* HTLReport+Helpers.m */; };
 		73BC69374B58054406461876 /* HTLStatisticsHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC61903FBA9332F94D6B7E /* HTLStatisticsHeader.m */; };
+		73BC6941ED8F31A2668CABED /* HTLLineView.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC656412B770162C38B718 /* HTLLineView.m */; };
 		73BC694ED74736EF858A5DC3 /* HTLReportDateListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6F0C9E566AEAAEAE635A /* HTLReportDateListViewController.m */; };
 		73BC69530AA65A5F73B11569 /* HTLCSVStringExportProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6FEC821B2D22ACD250CD /* HTLCSVStringExportProvider.m */; };
 		73BC697836C7BC71A9FAEE26 /* clock_transparent.png in Resources */ = {isa = PBXBuildFile; fileRef = 73BC68B4BB6FD2C16DCFD83A /* clock_transparent.png */; };
 		73BC698EF025811B34B8B94A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6B4DA596906232FF8970 /* main.m */; };
-		73BC69A4B714EC7F4D53C033 /* HTLTodayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6F9C9DD5E6375ED0CD1F /* HTLTodayViewController.m */; };
 		73BC69B15C0D1465F18DF8F1 /* HTLCategoryEditor.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6177D050107771234F92 /* HTLCategoryEditor.m */; };
 		73BC69E44207EAC86F663664 /* HTLDateSectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6CFF1F750703F5FD8059 /* HTLDateSectionCell.m */; };
 		73BC69E4F116C55691C0B6DF /* HTLCSVStringExportProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6FEC821B2D22ACD250CD /* HTLCSVStringExportProvider.m */; };
 		73BC6A05148AF26290542AC6 /* HTLReport.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6A41E76EE6DBA2B7B791 /* HTLReport.m */; };
-		73BC6A56D387AF14555F0003 /* HTLActivityListDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6AD3F6831141DEE01CAC /* HTLActivityListDataSource.m */; };
+		73BC6A56D387AF14555F0003 /* HTLMarkListDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6AD3F6831141DEE01CAC /* HTLMarkListDataSource.m */; };
+		73BC6A6E82FD64D3F87C008B /* HTLMemoryStorageProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6E74AB99637D8FFB3475 /* HTLMemoryStorageProvider.m */; };
 		73BC6AC1C3C34AB23E8A3D42 /* HTLDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6B2EF7D4AAB16D0EC09A /* HTLDataSource.m */; };
 		73BC6AC9B188D26D1FC3E6F3 /* HTLReportListDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6A8034329BA3E2F993E7 /* HTLReportListDataSource.m */; };
 		73BC6ACB08FA93B24B74FDEC /* HTLStatisticsItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC68D3CDD0771C14BB49B2 /* HTLStatisticsItem.m */; };
-		73BC6AEDC24B3643325E6F75 /* HTLActivity.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC660F9035AF2D12D68B11 /* HTLActivity.m */; };
+		73BC6AEDC24B3643325E6F75 /* HTLMark.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC660F9035AF2D12D68B11 /* HTLMark.m */; };
 		73BC6B0996710BF0CBFE15AE /* HTLStatisticsItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC68D3CDD0771C14BB49B2 /* HTLStatisticsItem.m */; };
-		73BC6B40DFFA46CA083B4E87 /* HTLTodayDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC648B17F402B7799C657E /* HTLTodayDataSource.m */; };
+		73BC6B618B8EAB6383312197 /* HTLReportView.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC65F70BCA0217513D9383 /* HTLReportView.m */; };
 		73BC6B8AE372441B2276DDFF /* HTLReportListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6ACE2F8A2E6E659B559F /* HTLReportListViewController.m */; };
+		73BC6B94BC5418DA3A8A5DE1 /* HTLThemeManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC62AA807AB750CCBE6889 /* HTLThemeManager.m */; };
 		73BC6B9FDBFB2EE8267221A9 /* HTLDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6B2EF7D4AAB16D0EC09A /* HTLDataSource.m */; };
 		73BC6BCFC083BDB023D12F96 /* HTLDateSection.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC66709A1F2D03B601899D /* HTLDateSection.m */; };
 		73BC6BE1B527EF4BBF9A396F /* HTLEditCategoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6DBF52626BCC61B42B76 /* HTLEditCategoryViewController.m */; };
-		73BC6BFD498CD6733A746EC6 /* HTLCategoryCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC67C66E14B291573A73C2 /* HTLCategoryCell.m */; };
-		73BC6C1FB24DBC3A2734339F /* HTLTodayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6F9C9DD5E6375ED0CD1F /* HTLTodayViewController.m */; };
 		73BC6C3879C2267F06376B2E /* HTLDateSection.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC66709A1F2D03B601899D /* HTLDateSection.m */; };
+		73BC6C57E25AD34F4F65E925 /* HTLColorPickerTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC67AA864757C5B1299286 /* HTLColorPickerTableView.m */; };
 		73BC6C6045A93032F36ED35A /* HTLContentManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6F1E0AC02A596C78B942 /* HTLContentManager.m */; };
 		73BC6C61B1FAE4B8878BD557 /* HTLReportDateListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6F0C9E566AEAAEAE635A /* HTLReportDateListViewController.m */; };
-		73BC6CA2865FACBB5C204DA6 /* HTLActivityListTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6F7C4D1D96670253BDF2 /* HTLActivityListTableViewController.m */; };
-		73BC6CBC37B3832AF5200FF6 /* HTLTodayDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC648B17F402B7799C657E /* HTLTodayDataSource.m */; };
+		73BC6C7F67A5F9B5A906528F /* HTLMarkEditor.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC616FC8A3BF0A4D98FE6D /* HTLMarkEditor.m */; };
+		73BC6C87C89B64AFAF39FF01 /* HTLReportEditor.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC62A905AF9B6666122AC9 /* HTLReportEditor.m */; };
+		73BC6CA2865FACBB5C204DA6 /* HTLMarkListTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6F7C4D1D96670253BDF2 /* HTLMarkListTableViewController.m */; };
 		73BC6CC003E2DB538E6F16DE /* settings@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 73BC6A22878FD4F414CF5C2A /* settings@2x.png */; };
+		73BC6CD19727C9D4BD6CC20B /* HTLColorPickerTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC67AA864757C5B1299286 /* HTLColorPickerTableView.m */; };
 		73BC6D0BCBFFC6D7B897C999 /* HTLContentManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6F1E0AC02A596C78B942 /* HTLContentManager.m */; };
 		73BC6D140EFB923F573A104A /* HTLDateSectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6CFF1F750703F5FD8059 /* HTLDateSectionCell.m */; };
 		73BC6D213D728E1E394999CD /* HTLStatisticsHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC61903FBA9332F94D6B7E /* HTLStatisticsHeader.m */; };
@@ -100,19 +115,25 @@
 		73BC6D50D0F7419C4DBD8D09 /* DateSectionHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 73BC6ED6CA4E40EF0A86A0D6 /* DateSectionHeader.xib */; };
 		73BC6D7162BF46B66D13576B /* HTLCategoryEditor.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6177D050107771234F92 /* HTLCategoryEditor.m */; };
 		73BC6D9AF0777F4A283936F2 /* HTLSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6AE742267ED19FB46A1A /* HTLSettingsViewController.m */; };
-		73BC6DFD006300F761790E3F /* HTLReportCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC66C01A84D1D22A43B996 /* HTLReportCell.m */; };
+		73BC6DF49FE48E1B50A6E34B /* HTLReportView.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC65F70BCA0217513D9383 /* HTLReportView.m */; };
+		73BC6DFD006300F761790E3F /* HTLReportTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC66C01A84D1D22A43B996 /* HTLReportTableViewCell.m */; };
 		73BC6E5D406483D67F4C561F /* HTLSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6AE742267ED19FB46A1A /* HTLSettingsViewController.m */; };
 		73BC6E8FF7996B76AA9A98F4 /* HTLReportListDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6A8034329BA3E2F993E7 /* HTLReportListDataSource.m */; };
+		73BC6EA2C835B3F9752554CD /* HTLReportEditor.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC62A905AF9B6666122AC9 /* HTLReportEditor.m */; };
+		73BC6EBE809F363C7F32D4B3 /* HTLThemeManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC62AA807AB750CCBE6889 /* HTLThemeManager.m */; };
+		73BC6F1BB196AD385484C68C /* NSDate+HTL.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC67B06453FFE89AF35E72 /* NSDate+HTL.m */; };
 		73BC6F23CEED50713B2A76D6 /* HTLSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6AE742267ED19FB46A1A /* HTLSettingsViewController.m */; };
-		73BC6F305DA77212A9C95BB6 /* HTLToday_NewDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC69C6A701615D532CA288 /* HTLToday_NewDataSource.m */; };
-		73BC6F992A037518653F4D2A /* HTLActivityCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC627D803BF6DFB71DB376 /* HTLActivityCell.m */; };
-		73BC6FDC67844771B186F588 /* HTLActivityListTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6F7C4D1D96670253BDF2 /* HTLActivityListTableViewController.m */; };
+		73BC6F305DA77212A9C95BB6 /* HTLTodayDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC69C6A701615D532CA288 /* HTLTodayDataSource.m */; };
+		73BC6F76CB341C6F9C945856 /* HTLLineView.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC656412B770162C38B718 /* HTLLineView.m */; };
+		73BC6F992A037518653F4D2A /* HTLMarkCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC627D803BF6DFB71DB376 /* HTLMarkCollectionViewCell.m */; };
+		73BC6FCDA5B5E1F71A7FCF44 /* HTLMemoryStorageProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6E74AB99637D8FFB3475 /* HTLMemoryStorageProvider.m */; };
+		73BC6FDC67844771B186F588 /* HTLMarkListTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6F7C4D1D96670253BDF2 /* HTLMarkListTableViewController.m */; };
 		C516A6CC1B3A8F2A0018F022 /* HTLRoundButton.m in Sources */ = {isa = PBXBuildFile; fileRef = C516A6CB1B3A8F2A0018F022 /* HTLRoundButton.m */; };
 		C516A6CD1B3A8F2A0018F022 /* HTLRoundButton.m in Sources */ = {isa = PBXBuildFile; fileRef = C516A6CB1B3A8F2A0018F022 /* HTLRoundButton.m */; };
 		C516A6D31B3AD18E0018F022 /* NSDate+HTLComponents.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6F6EE1E455D98426F705 /* NSDate+HTLComponents.m */; };
 		C516A6D41B3AD18E0018F022 /* HTLReport+Helpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6F771B4A63AA8FABCDF5 /* HTLReport+Helpers.m */; };
 		C516A6D51B3AD18E0018F022 /* HTLReport.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6A41E76EE6DBA2B7B791 /* HTLReport.m */; };
-		C516A6D61B3AD18E0018F022 /* HTLActivity.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC660F9035AF2D12D68B11 /* HTLActivity.m */; };
+		C516A6D61B3AD18E0018F022 /* HTLMark.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC660F9035AF2D12D68B11 /* HTLMark.m */; };
 		C516A6D91B3AD18E0018F022 /* HTLDateSection.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC66709A1F2D03B601899D /* HTLDateSection.m */; };
 		C516A6DB1B3AD18E0018F022 /* HTLSqliteStorageProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC686334D59793FEFA2E86 /* HTLSqliteStorageProvider.m */; };
 		C516A6DC1B3AD18E0018F022 /* HTLContentManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6F1E0AC02A596C78B942 /* HTLContentManager.m */; };
@@ -142,7 +163,7 @@
 		C516A71E1B3AD2590018F022 /* NSDate+HTLComponents.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6F6EE1E455D98426F705 /* NSDate+HTLComponents.m */; };
 		C516A71F1B3AD2590018F022 /* HTLReport+Helpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6F771B4A63AA8FABCDF5 /* HTLReport+Helpers.m */; };
 		C516A7201B3AD2590018F022 /* HTLReport.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6A41E76EE6DBA2B7B791 /* HTLReport.m */; };
-		C516A7211B3AD2590018F022 /* HTLActivity.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC660F9035AF2D12D68B11 /* HTLActivity.m */; };
+		C516A7211B3AD2590018F022 /* HTLMark.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC660F9035AF2D12D68B11 /* HTLMark.m */; };
 		C516A7241B3AD2590018F022 /* HTLDateSection.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC66709A1F2D03B601899D /* HTLDateSection.m */; };
 		C516A7261B3AD2590018F022 /* HTLSqliteStorageProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC686334D59793FEFA2E86 /* HTLSqliteStorageProvider.m */; };
 		C516A7271B3AD2590018F022 /* HTLContentManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6F1E0AC02A596C78B942 /* HTLContentManager.m */; };
@@ -173,12 +194,24 @@
 		C51F130F1B32C592001F452F /* statistics@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C51F130C1B32C592001F452F /* statistics@2x.png */; };
 		C51F13101B32C592001F452F /* statistics@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = C51F130D1B32C592001F452F /* statistics@3x.png */; };
 		C51F13121B32C5B2001F452F /* add.png in Resources */ = {isa = PBXBuildFile; fileRef = C51F13111B32C5B2001F452F /* add.png */; };
-		C526F9831BC68AA80026E1EF /* HTLStatisticsItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC68D3CDD0771C14BB49B2 /* HTLStatisticsItem.m */; settings = {ASSET_TAGS = (); }; };
-		C526F9841BC68AA80026E1EF /* HTLStatisticsItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC68D3CDD0771C14BB49B2 /* HTLStatisticsItem.m */; settings = {ASSET_TAGS = (); }; };
-		C526F9851BC68AA90026E1EF /* HTLStatisticsItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC68D3CDD0771C14BB49B2 /* HTLStatisticsItem.m */; settings = {ASSET_TAGS = (); }; };
-		C526F9861BC68AA90026E1EF /* HTLStatisticsItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC68D3CDD0771C14BB49B2 /* HTLStatisticsItem.m */; settings = {ASSET_TAGS = (); }; };
+		C526F9831BC68AA80026E1EF /* HTLStatisticsItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC68D3CDD0771C14BB49B2 /* HTLStatisticsItem.m */; };
+		C526F9841BC68AA80026E1EF /* HTLStatisticsItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC68D3CDD0771C14BB49B2 /* HTLStatisticsItem.m */; };
+		C526F9851BC68AA90026E1EF /* HTLStatisticsItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC68D3CDD0771C14BB49B2 /* HTLStatisticsItem.m */; };
+		C526F9861BC68AA90026E1EF /* HTLStatisticsItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC68D3CDD0771C14BB49B2 /* HTLStatisticsItem.m */; };
 		C53370711B397E520095549E /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C533706F1B397E520095549E /* MainInterface.storyboard */; };
 		C53370781B397FC50095549E /* DTFolderMonitor.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6C4782FCAEADF81D13DD /* DTFolderMonitor.m */; };
+		C53EFD631BEB7E4D005F42E1 /* .gitkeep in Resources */ = {isa = PBXBuildFile; fileRef = C53EFD5D1BEB7E4D005F42E1 /* .gitkeep */; };
+		C53EFD641BEB7E4D005F42E1 /* .gitkeep in Resources */ = {isa = PBXBuildFile; fileRef = C53EFD5D1BEB7E4D005F42E1 /* .gitkeep */; };
+		C53EFD651BEB7E4D005F42E1 /* .gitkeep in Resources */ = {isa = PBXBuildFile; fileRef = C53EFD5D1BEB7E4D005F42E1 /* .gitkeep */; };
+		C53EFD661BEB7E4D005F42E1 /* edit_button.png in Resources */ = {isa = PBXBuildFile; fileRef = C53EFD5E1BEB7E4D005F42E1 /* edit_button.png */; };
+		C53EFD671BEB7E4D005F42E1 /* edit_button.png in Resources */ = {isa = PBXBuildFile; fileRef = C53EFD5E1BEB7E4D005F42E1 /* edit_button.png */; };
+		C53EFD681BEB7E4D005F42E1 /* edit_button.png in Resources */ = {isa = PBXBuildFile; fileRef = C53EFD5E1BEB7E4D005F42E1 /* edit_button.png */; };
+		C53EFD691BEB7E4D005F42E1 /* .gitkeep in Resources */ = {isa = PBXBuildFile; fileRef = C53EFD601BEB7E4D005F42E1 /* .gitkeep */; };
+		C53EFD6A1BEB7E4D005F42E1 /* .gitkeep in Resources */ = {isa = PBXBuildFile; fileRef = C53EFD601BEB7E4D005F42E1 /* .gitkeep */; };
+		C53EFD6B1BEB7E4D005F42E1 /* .gitkeep in Resources */ = {isa = PBXBuildFile; fileRef = C53EFD601BEB7E4D005F42E1 /* .gitkeep */; };
+		C53EFD6C1BEB7E4D005F42E1 /* JJMaterialTextfield.m in Sources */ = {isa = PBXBuildFile; fileRef = C53EFD621BEB7E4D005F42E1 /* JJMaterialTextfield.m */; };
+		C53EFD6D1BEB7E4D005F42E1 /* JJMaterialTextfield.m in Sources */ = {isa = PBXBuildFile; fileRef = C53EFD621BEB7E4D005F42E1 /* JJMaterialTextfield.m */; };
+		C53EFD6E1BEB7E4D005F42E1 /* JJMaterialTextfield.m in Sources */ = {isa = PBXBuildFile; fileRef = C53EFD621BEB7E4D005F42E1 /* JJMaterialTextfield.m */; };
 		C55912531B3C06B8002593BE /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C55912511B3C06B8002593BE /* InfoPlist.strings */; };
 		C55912591B3C0853002593BE /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C55912571B3C0853002593BE /* InfoPlist.strings */; };
 		C559125E1B3C0867002593BE /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C559125C1B3C0867002593BE /* InfoPlist.strings */; };
@@ -188,9 +221,9 @@
 		C56ED4EE1B38217F00221171 /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C56ED4EB1B38217F00221171 /* Fabric.framework */; };
 		C56ED4F11B38217F00221171 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C56ED4EC1B38217F00221171 /* Crashlytics.framework */; };
 		C56ED4F21B38217F00221171 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C56ED4EC1B38217F00221171 /* Crashlytics.framework */; };
-		C57213241BC53FA90096E502 /* HTLStatisticsHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = C57213231BC53FA90096E502 /* HTLStatisticsHeader.xib */; settings = {ASSET_TAGS = (); }; };
-		C57213251BC53FA90096E502 /* HTLStatisticsHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = C57213231BC53FA90096E502 /* HTLStatisticsHeader.xib */; settings = {ASSET_TAGS = (); }; };
-		C57213261BC53FA90096E502 /* HTLStatisticsHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = C57213231BC53FA90096E502 /* HTLStatisticsHeader.xib */; settings = {ASSET_TAGS = (); }; };
+		C57213241BC53FA90096E502 /* HTLStatisticsHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = C57213231BC53FA90096E502 /* HTLStatisticsHeader.xib */; };
+		C57213251BC53FA90096E502 /* HTLStatisticsHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = C57213231BC53FA90096E502 /* HTLStatisticsHeader.xib */; };
+		C57213261BC53FA90096E502 /* HTLStatisticsHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = C57213231BC53FA90096E502 /* HTLStatisticsHeader.xib */; };
 		C582B2E31B3EC8D5005CC526 /* DDAbstractDatabaseLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = C582B2A31B3EC8D5005CC526 /* DDAbstractDatabaseLogger.m */; };
 		C582B2E41B3EC8D5005CC526 /* DDAbstractDatabaseLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = C582B2A31B3EC8D5005CC526 /* DDAbstractDatabaseLogger.m */; };
 		C582B2E51B3EC8D5005CC526 /* DDAbstractDatabaseLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = C582B2A31B3EC8D5005CC526 /* DDAbstractDatabaseLogger.m */; };
@@ -326,7 +359,7 @@
 		C59689A11B3C16270038018D /* NSDate+HTLComponents.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6F6EE1E455D98426F705 /* NSDate+HTLComponents.m */; };
 		C59689A21B3C16270038018D /* HTLReport+Helpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6F771B4A63AA8FABCDF5 /* HTLReport+Helpers.m */; };
 		C59689A31B3C16270038018D /* HTLReport.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6A41E76EE6DBA2B7B791 /* HTLReport.m */; };
-		C59689A41B3C16270038018D /* HTLActivity.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC660F9035AF2D12D68B11 /* HTLActivity.m */; };
+		C59689A41B3C16270038018D /* HTLMark.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC660F9035AF2D12D68B11 /* HTLMark.m */; };
 		C59689A71B3C16270038018D /* HTLDateSection.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC66709A1F2D03B601899D /* HTLDateSection.m */; };
 		C59689A91B3C16270038018D /* HTLSqliteStorageProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC686334D59793FEFA2E86 /* HTLSqliteStorageProvider.m */; };
 		C59689AA1B3C16270038018D /* HTLContentManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6F1E0AC02A596C78B942 /* HTLContentManager.m */; };
@@ -343,7 +376,7 @@
 		C59689C31B3C16350038018D /* NSDate+HTLComponents.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6F6EE1E455D98426F705 /* NSDate+HTLComponents.m */; };
 		C59689C41B3C16350038018D /* HTLReport+Helpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6F771B4A63AA8FABCDF5 /* HTLReport+Helpers.m */; };
 		C59689C51B3C16350038018D /* HTLReport.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6A41E76EE6DBA2B7B791 /* HTLReport.m */; };
-		C59689C61B3C16350038018D /* HTLActivity.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC660F9035AF2D12D68B11 /* HTLActivity.m */; };
+		C59689C61B3C16350038018D /* HTLMark.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC660F9035AF2D12D68B11 /* HTLMark.m */; };
 		C59689C91B3C16350038018D /* HTLDateSection.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC66709A1F2D03B601899D /* HTLDateSection.m */; };
 		C59689CB1B3C16350038018D /* HTLSqliteStorageProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC686334D59793FEFA2E86 /* HTLSqliteStorageProvider.m */; };
 		C59689CC1B3C16350038018D /* HTLContentManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6F1E0AC02A596C78B942 /* HTLContentManager.m */; };
@@ -363,10 +396,10 @@
 		C59689F41B3C19860038018D /* TodayExtension Alpha.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = C59689BE1B3C16270038018D /* TodayExtension Alpha.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		C59689F81B3C198D0038018D /* TodayExtension Beta.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = C59689E01B3C16350038018D /* TodayExtension Beta.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		C5BA1B801B26F890006D80BC /* TodayExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = C5BA1B731B26F890006D80BC /* TodayExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		C5C361C71BD512490070055F /* TableLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5C361C61BD512490070055F /* TableLayout.swift */; settings = {ASSET_TAGS = (); }; };
-		C5C361C81BD512490070055F /* TableLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5C361C61BD512490070055F /* TableLayout.swift */; settings = {ASSET_TAGS = (); }; };
-		C5C361C91BD512490070055F /* TableLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5C361C61BD512490070055F /* TableLayout.swift */; settings = {ASSET_TAGS = (); }; };
-		C5F512FE1BBF344D002F887E /* TODOs.txt in Resources */ = {isa = PBXBuildFile; fileRef = C5F512FD1BBF344D002F887E /* TODOs.txt */; settings = {ASSET_TAGS = (); }; };
+		C5C361C71BD512490070055F /* TableLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5C361C61BD512490070055F /* TableLayout.swift */; };
+		C5C361C81BD512490070055F /* TableLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5C361C61BD512490070055F /* TableLayout.swift */; };
+		C5C361C91BD512490070055F /* TableLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5C361C61BD512490070055F /* TableLayout.swift */; };
+		C5F512FE1BBF344D002F887E /* TODOs.txt in Resources */ = {isa = PBXBuildFile; fileRef = C5F512FD1BBF344D002F887E /* TODOs.txt */; };
 		C5FFE3F21B1857CE007D317D /* HyperTimeLoggerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C5FFE3F11B1857CE007D317D /* HyperTimeLoggerTests.m */; };
 /* End PBXBuildFile section */
 
@@ -443,40 +476,50 @@
 		73BC60D8E14BA9A8914C949B /* HTLReportDateListDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTLReportDateListDataSource.h; sourceTree = "<group>"; };
 		73BC60F50DF43992ADE82594 /* HTLSqliteStorageProvider+Deserialization.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "HTLSqliteStorageProvider+Deserialization.h"; sourceTree = "<group>"; };
 		73BC610AB2D35DF7CDDB6DA5 /* HTLSettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTLSettingsViewController.h; sourceTree = "<group>"; };
+		73BC616FC8A3BF0A4D98FE6D /* HTLMarkEditor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTLMarkEditor.m; sourceTree = "<group>"; };
 		73BC6177D050107771234F92 /* HTLCategoryEditor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTLCategoryEditor.m; sourceTree = "<group>"; };
 		73BC61903FBA9332F94D6B7E /* HTLStatisticsHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTLStatisticsHeader.m; sourceTree = "<group>"; };
 		73BC6194DBE33DB85E9AFFDA /* HTLSqliteStorageProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTLSqliteStorageProvider.h; sourceTree = "<group>"; };
-		73BC61B8D721850F567E636C /* HTLTodayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTLTodayViewController.h; sourceTree = "<group>"; };
 		73BC61C5C5E177824633170B /* testdata_ru.json */ = {isa = PBXFileReference; lastKnownFileType = file.json; path = testdata_ru.json; sourceTree = "<group>"; };
 		73BC61D0A4CD7A364641B3B2 /* HyperTimeLogger.entitlements */ = {isa = PBXFileReference; lastKnownFileType = file.entitlements; path = HyperTimeLogger.entitlements; sourceTree = "<group>"; };
 		73BC61D37DB350A79F19F0DD /* testdata_en.json */ = {isa = PBXFileReference; lastKnownFileType = file.json; path = testdata_en.json; sourceTree = "<group>"; };
-		73BC61D63ED1C7A5DB8B4EC3 /* HTLActivityListTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTLActivityListTableViewController.h; sourceTree = "<group>"; };
-		73BC61FC4B9054CC18FC1047 /* HTLTodayViewController_New.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTLTodayViewController_New.h; sourceTree = "<group>"; };
+		73BC61D63ED1C7A5DB8B4EC3 /* HTLMarkListTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTLMarkListTableViewController.h; sourceTree = "<group>"; };
+		73BC61FC4B9054CC18FC1047 /* HTLTodayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTLTodayViewController.h; sourceTree = "<group>"; };
 		73BC620F2DDE8ED18D1BBCBD /* HTLReportDateListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTLReportDateListViewController.h; sourceTree = "<group>"; };
 		73BC6238BD871F780937A2AA /* HTLSettingsDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTLSettingsDataSource.m; sourceTree = "<group>"; };
 		73BC6277A870524020CF0CE9 /* HTLStatisticsHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTLStatisticsHeader.h; sourceTree = "<group>"; };
-		73BC627D803BF6DFB71DB376 /* HTLActivityCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTLActivityCell.m; sourceTree = "<group>"; };
+		73BC627D803BF6DFB71DB376 /* HTLMarkCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTLMarkCollectionViewCell.m; sourceTree = "<group>"; };
+		73BC62A905AF9B6666122AC9 /* HTLReportEditor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTLReportEditor.m; sourceTree = "<group>"; };
+		73BC62AA807AB750CCBE6889 /* HTLThemeManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTLThemeManager.m; sourceTree = "<group>"; };
 		73BC62BD6319224D876880BD /* HTLAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTLAppDelegate.m; sourceTree = "<group>"; };
+		73BC62C4E1B81E872089E21E /* HTLLineView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTLLineView.h; sourceTree = "<group>"; };
+		73BC62E16CAF02D099B1981E /* HTLColorPickerTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTLColorPickerTableView.h; sourceTree = "<group>"; };
+		73BC631DCC99ABB5C294C581 /* HTLMarkEditor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTLMarkEditor.h; sourceTree = "<group>"; };
 		73BC63407702DDDB04CF58F7 /* HTLDateSection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTLDateSection.h; sourceTree = "<group>"; };
 		73BC642D0A6375B6BC652163 /* HTLStorageProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTLStorageProvider.h; sourceTree = "<group>"; };
-		73BC648B17F402B7799C657E /* HTLTodayDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTLTodayDataSource.m; sourceTree = "<group>"; };
 		73BC64E454A17ED44DEA7F42 /* HTETodayDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTETodayDataSource.h; sourceTree = "<group>"; };
 		73BC64E6892993AF3EAB4FC6 /* HTLReportDateListDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTLReportDateListDataSource.m; sourceTree = "<group>"; };
+		73BC656412B770162C38B718 /* HTLLineView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTLLineView.m; sourceTree = "<group>"; };
+		73BC65754B711E078C28136C /* HTLReportEditor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTLReportEditor.h; sourceTree = "<group>"; };
+		73BC65F70BCA0217513D9383 /* HTLReportView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTLReportView.m; sourceTree = "<group>"; };
 		73BC65FC45499E71FA1DDD91 /* DTFolderMonitor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DTFolderMonitor.h; sourceTree = "<group>"; };
 		73BC660E803ED4C064EEE1A3 /* HTLCategoryEditor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTLCategoryEditor.h; sourceTree = "<group>"; };
-		73BC660F9035AF2D12D68B11 /* HTLActivity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTLActivity.m; sourceTree = "<group>"; };
+		73BC660F9035AF2D12D68B11 /* HTLMark.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTLMark.m; sourceTree = "<group>"; };
 		73BC6619E2BFF808511873B5 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.info; path = Info.plist; sourceTree = "<group>"; };
-		73BC661B63EA8AB951F4F292 /* HTLToday_NewDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTLToday_NewDataSource.h; sourceTree = "<group>"; };
+		73BC661B63EA8AB951F4F292 /* HTLTodayDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTLTodayDataSource.h; sourceTree = "<group>"; };
 		73BC66709A1F2D03B601899D /* HTLDateSection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTLDateSection.m; sourceTree = "<group>"; };
 		73BC669236F7FD0A9AA838FA /* HTLCSVStringExportProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTLCSVStringExportProvider.h; sourceTree = "<group>"; };
 		73BC66AAE26BE5005B6B3F36 /* HyperTimeLogger.entitlements */ = {isa = PBXFileReference; lastKnownFileType = file.entitlements; path = HyperTimeLogger.entitlements; sourceTree = "<group>"; };
-		73BC66C01A84D1D22A43B996 /* HTLReportCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTLReportCell.m; sourceTree = "<group>"; };
+		73BC66C01A84D1D22A43B996 /* HTLReportTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTLReportTableViewCell.m; sourceTree = "<group>"; };
 		73BC67257BC246FE8E488EE9 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.info; path = Info.plist; sourceTree = "<group>"; };
 		73BC675CBCFB6D6ED03FCEEC /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.info; path = Info.plist; sourceTree = "<group>"; };
-		73BC677E841E0C7EEA17C8F4 /* HTLActivityListDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTLActivityListDataSource.h; sourceTree = "<group>"; };
+		73BC67680CF294FB502CBBC9 /* HTLChangesObserver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTLChangesObserver.h; sourceTree = "<group>"; };
+		73BC677E841E0C7EEA17C8F4 /* HTLMarkListDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTLMarkListDataSource.h; sourceTree = "<group>"; };
+		73BC679105C314E9710FB636 /* HTLColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTLColor.m; sourceTree = "<group>"; };
+		73BC67AA864757C5B1299286 /* HTLColorPickerTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTLColorPickerTableView.m; sourceTree = "<group>"; };
+		73BC67B06453FFE89AF35E72 /* NSDate+HTL.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+HTL.m"; sourceTree = "<group>"; };
 		73BC67B2DC0CBCFD95BC63E9 /* HTLDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTLDataSource.h; sourceTree = "<group>"; };
-		73BC67C66E14B291573A73C2 /* HTLCategoryCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTLCategoryCell.m; sourceTree = "<group>"; };
-		73BC67EAA68B80628BFE54A4 /* HTLTodayViewController_New.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTLTodayViewController_New.m; sourceTree = "<group>"; };
+		73BC67EAA68B80628BFE54A4 /* HTLTodayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTLTodayViewController.m; sourceTree = "<group>"; };
 		73BC684DB010D412F9E74A52 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		73BC686334D59793FEFA2E86 /* HTLSqliteStorageProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTLSqliteStorageProvider.m; sourceTree = "<group>"; };
 		73BC68877A11CD82AB9F0321 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.info; path = Info.plist; sourceTree = "<group>"; };
@@ -484,15 +527,18 @@
 		73BC68B4BB6FD2C16DCFD83A /* clock_transparent.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = clock_transparent.png; sourceTree = "<group>"; };
 		73BC68D3CDD0771C14BB49B2 /* HTLStatisticsItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTLStatisticsItem.m; sourceTree = "<group>"; };
 		73BC690F0FD5F1316528ADBE /* HTLSettingsDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTLSettingsDataSource.h; sourceTree = "<group>"; };
+		73BC6950A53D6644A947DEC1 /* HTLTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTLTextField.m; sourceTree = "<group>"; };
 		73BC6956442436FCF69A78F8 /* HTLReportListDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTLReportListDataSource.h; sourceTree = "<group>"; };
-		73BC69C6A701615D532CA288 /* HTLToday_NewDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTLToday_NewDataSource.m; sourceTree = "<group>"; };
+		73BC695E8A9695806CE86938 /* HTLThemeManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTLThemeManager.h; sourceTree = "<group>"; };
+		73BC697AACF049F3F5DAD97F /* HTLColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTLColor.h; sourceTree = "<group>"; };
+		73BC69ACB7A5C024FAFDE7F0 /* HTLMemoryStorageProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTLMemoryStorageProvider.h; sourceTree = "<group>"; };
+		73BC69C6A701615D532CA288 /* HTLTodayDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTLTodayDataSource.m; sourceTree = "<group>"; };
 		73BC6A22878FD4F414CF5C2A /* settings@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "settings@2x.png"; sourceTree = "<group>"; };
 		73BC6A41E76EE6DBA2B7B791 /* HTLReport.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTLReport.m; sourceTree = "<group>"; };
 		73BC6A8034329BA3E2F993E7 /* HTLReportListDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTLReportListDataSource.m; sourceTree = "<group>"; };
-		73BC6A86F47EAFF753E73384 /* HTLTodayDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTLTodayDataSource.h; sourceTree = "<group>"; };
 		73BC6ACDFC039D8AAE2C5C57 /* HTLReport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTLReport.h; sourceTree = "<group>"; };
 		73BC6ACE2F8A2E6E659B559F /* HTLReportListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTLReportListViewController.m; sourceTree = "<group>"; };
-		73BC6AD3F6831141DEE01CAC /* HTLActivityListDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTLActivityListDataSource.m; sourceTree = "<group>"; };
+		73BC6AD3F6831141DEE01CAC /* HTLMarkListDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTLMarkListDataSource.m; sourceTree = "<group>"; };
 		73BC6AD5E7AB90AA7FBB9715 /* PrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		73BC6AE742267ED19FB46A1A /* HTLSettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTLSettingsViewController.m; sourceTree = "<group>"; };
 		73BC6AEE5B4C05CD03325340 /* HTLEditCategoryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTLEditCategoryViewController.h; sourceTree = "<group>"; };
@@ -504,28 +550,30 @@
 		73BC6B8E25A8D300C95D3491 /* HTETodayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTETodayViewController.m; sourceTree = "<group>"; };
 		73BC6BAA394614ACCF770A33 /* HTLReportListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTLReportListViewController.h; sourceTree = "<group>"; };
 		73BC6BE6B628DC71E15F4935 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.info; path = Info.plist; sourceTree = "<group>"; };
+		73BC6C2BB200B279082E8397 /* HTLReportView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTLReportView.h; sourceTree = "<group>"; };
 		73BC6C4782FCAEADF81D13DD /* DTFolderMonitor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DTFolderMonitor.m; sourceTree = "<group>"; };
 		73BC6C705D0378287850972F /* HTETodayDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTETodayDataSource.m; sourceTree = "<group>"; };
+		73BC6CC3BAF320C8C716414A /* HTLTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTLTextField.h; sourceTree = "<group>"; };
+		73BC6CD408583B0991DC07F9 /* NSDate+HTL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+HTL.h"; sourceTree = "<group>"; };
 		73BC6CE0EE3CE3B061EE59BA /* HTLDateSectionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTLDateSectionCell.h; sourceTree = "<group>"; };
 		73BC6CFF1F750703F5FD8059 /* HTLDateSectionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTLDateSectionCell.m; sourceTree = "<group>"; };
 		73BC6D1ED9D0EB10CE1BD107 /* HyperTimeLogger.entitlements */ = {isa = PBXFileReference; lastKnownFileType = file.entitlements; path = HyperTimeLogger.entitlements; sourceTree = "<group>"; };
 		73BC6D1F71AFEE603353B859 /* HTLSqliteStorageProvider+Deserialization.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "HTLSqliteStorageProvider+Deserialization.m"; sourceTree = "<group>"; };
 		73BC6D6BFFE1DD9ED9D91649 /* HTETodayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTETodayViewController.h; sourceTree = "<group>"; };
-		73BC6D8D551F158310341166 /* HTLReportCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTLReportCell.h; sourceTree = "<group>"; };
+		73BC6D8D551F158310341166 /* HTLReportTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTLReportTableViewCell.h; sourceTree = "<group>"; };
 		73BC6DBF52626BCC61B42B76 /* HTLEditCategoryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTLEditCategoryViewController.m; sourceTree = "<group>"; };
-		73BC6E52C8E9183CBB092523 /* HTLActivityCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTLActivityCell.h; sourceTree = "<group>"; };
+		73BC6E52C8E9183CBB092523 /* HTLMarkCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTLMarkCollectionViewCell.h; sourceTree = "<group>"; };
 		73BC6E57D1CF2B9726285238 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.info; path = Info.plist; sourceTree = "<group>"; };
 		73BC6E6D42DA294AFD4E94E7 /* HTLStatisticsItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTLStatisticsItem.h; sourceTree = "<group>"; };
+		73BC6E74AB99637D8FFB3475 /* HTLMemoryStorageProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTLMemoryStorageProvider.m; sourceTree = "<group>"; };
 		73BC6ED6CA4E40EF0A86A0D6 /* DateSectionHeader.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DateSectionHeader.xib; sourceTree = "<group>"; };
 		73BC6F0C9E566AEAAEAE635A /* HTLReportDateListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTLReportDateListViewController.m; sourceTree = "<group>"; };
 		73BC6F1E0AC02A596C78B942 /* HTLContentManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTLContentManager.m; sourceTree = "<group>"; };
-		73BC6F5BBFCD10B7AF4F574A /* HTLActivity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTLActivity.h; sourceTree = "<group>"; };
+		73BC6F5BBFCD10B7AF4F574A /* HTLMark.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTLMark.h; sourceTree = "<group>"; };
 		73BC6F6EE1E455D98426F705 /* NSDate+HTLComponents.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+HTLComponents.m"; sourceTree = "<group>"; };
 		73BC6F771B4A63AA8FABCDF5 /* HTLReport+Helpers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "HTLReport+Helpers.m"; sourceTree = "<group>"; };
-		73BC6F7C4D1D96670253BDF2 /* HTLActivityListTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTLActivityListTableViewController.m; sourceTree = "<group>"; };
+		73BC6F7C4D1D96670253BDF2 /* HTLMarkListTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTLMarkListTableViewController.m; sourceTree = "<group>"; };
 		73BC6F7DCFA8D0EF70DD39E0 /* settings.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = settings.png; sourceTree = "<group>"; };
-		73BC6F7E5BF55E4B87CF64EC /* HTLCategoryCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTLCategoryCell.h; sourceTree = "<group>"; };
-		73BC6F9C9DD5E6375ED0CD1F /* HTLTodayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTLTodayViewController.m; sourceTree = "<group>"; };
 		73BC6FB0EFED7B84F71E676E /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = ../../../../../Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator.sdk/System/Library/Frameworks/NotificationCenter.framework; sourceTree = "<group>"; };
 		73BC6FBF1D739E2158DA64F6 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		73BC6FEC821B2D22ACD250CD /* HTLCSVStringExportProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTLCSVStringExportProvider.m; sourceTree = "<group>"; };
@@ -540,6 +588,11 @@
 		C53370701B397E520095549E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
 		C53370721B397E5C0095549E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/MainInterface.strings; sourceTree = "<group>"; };
 		C53370731B397E5F0095549E /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/MainInterface.strings; sourceTree = "<group>"; };
+		C53EFD5D1BEB7E4D005F42E1 /* .gitkeep */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
+		C53EFD5E1BEB7E4D005F42E1 /* edit_button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = edit_button.png; sourceTree = "<group>"; };
+		C53EFD601BEB7E4D005F42E1 /* .gitkeep */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
+		C53EFD611BEB7E4D005F42E1 /* JJMaterialTextfield.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JJMaterialTextfield.h; sourceTree = "<group>"; };
+		C53EFD621BEB7E4D005F42E1 /* JJMaterialTextfield.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JJMaterialTextfield.m; sourceTree = "<group>"; };
 		C55912521B3C06B8002593BE /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		C55912541B3C06BE002593BE /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		C55912551B3C06C1002593BE /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/InfoPlist.strings; sourceTree = "<group>"; };
@@ -709,6 +762,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		73BC609203C0AF93887301C5 /* Themes */ = {
+			isa = PBXGroup;
+			children = (
+				73BC62AA807AB750CCBE6889 /* HTLThemeManager.m */,
+				73BC695E8A9695806CE86938 /* HTLThemeManager.h */,
+			);
+			path = Themes;
+			sourceTree = "<group>";
+		};
 		73BC617060FD99991CF17331 /* Src */ = {
 			isa = PBXGroup;
 			children = (
@@ -718,6 +780,8 @@
 				73BC6B4DA596906232FF8970 /* main.m */,
 				73BC6AD5E7AB90AA7FBB9715 /* PrefixHeader.pch */,
 				73BC6606397FE32854BE2CE9 /* Scenes */,
+				73BC680B672BD85CD98C062A /* Controls */,
+				73BC609203C0AF93887301C5 /* Themes */,
 			);
 			path = Src;
 			sourceTree = "<group>";
@@ -773,10 +837,10 @@
 		73BC63DF2E5CBA01580B4C51 /* Categories */ = {
 			isa = PBXGroup;
 			children = (
-				73BC6F7C4D1D96670253BDF2 /* HTLActivityListTableViewController.m */,
-				73BC61D63ED1C7A5DB8B4EC3 /* HTLActivityListTableViewController.h */,
-				73BC6AD3F6831141DEE01CAC /* HTLActivityListDataSource.m */,
-				73BC677E841E0C7EEA17C8F4 /* HTLActivityListDataSource.h */,
+				73BC6F7C4D1D96670253BDF2 /* HTLMarkListTableViewController.m */,
+				73BC61D63ED1C7A5DB8B4EC3 /* HTLMarkListTableViewController.h */,
+				73BC6AD3F6831141DEE01CAC /* HTLMarkListDataSource.m */,
+				73BC677E841E0C7EEA17C8F4 /* HTLMarkListDataSource.h */,
 			);
 			path = Categories;
 			sourceTree = "<group>";
@@ -815,13 +879,12 @@
 		73BC6606397FE32854BE2CE9 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
-				73BC6DF893AC99A551BA8B26 /* Today */,
 				73BC670E98F40340FC25D2DF /* Reports */,
 				73BC66A6DEF9F8913ECA0354 /* Settings */,
 				73BC63DF2E5CBA01580B4C51 /* Categories */,
 				73BC673732E30DB85889AE73 /* Report Dates */,
 				73BC6EC6D23B0BAD96353243 /* Edit Category */,
-				73BC6DB7EF02DAEA43B87E36 /* Today_New */,
+				73BC6DB7EF02DAEA43B87E36 /* Today */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -872,8 +935,8 @@
 				73BC6BAA394614ACCF770A33 /* HTLReportListViewController.h */,
 				73BC6A8034329BA3E2F993E7 /* HTLReportListDataSource.m */,
 				73BC6956442436FCF69A78F8 /* HTLReportListDataSource.h */,
-				73BC66C01A84D1D22A43B996 /* HTLReportCell.m */,
-				73BC6D8D551F158310341166 /* HTLReportCell.h */,
+				73BC66C01A84D1D22A43B996 /* HTLReportTableViewCell.m */,
+				73BC6D8D551F158310341166 /* HTLReportTableViewCell.h */,
 				73BC61903FBA9332F94D6B7E /* HTLStatisticsHeader.m */,
 				73BC6277A870524020CF0CE9 /* HTLStatisticsHeader.h */,
 			);
@@ -899,6 +962,15 @@
 				C533706F1B397E520095549E /* MainInterface.storyboard */,
 			);
 			path = UI;
+			sourceTree = "<group>";
+		};
+		73BC680B672BD85CD98C062A /* Controls */ = {
+			isa = PBXGroup;
+			children = (
+				73BC6950A53D6644A947DEC1 /* HTLTextField.m */,
+				73BC6CC3BAF320C8C716414A /* HTLTextField.h */,
+			);
+			path = Controls;
 			sourceTree = "<group>";
 		};
 		73BC680E65C87515CE45F909 /* Res */ = {
@@ -951,8 +1023,8 @@
 			children = (
 				73BC6A41E76EE6DBA2B7B791 /* HTLReport.m */,
 				73BC6ACDFC039D8AAE2C5C57 /* HTLReport.h */,
-				73BC660F9035AF2D12D68B11 /* HTLActivity.m */,
-				73BC6F5BBFCD10B7AF4F574A /* HTLActivity.h */,
+				73BC660F9035AF2D12D68B11 /* HTLMark.m */,
+				73BC6F5BBFCD10B7AF4F574A /* HTLMark.h */,
 				73BC66709A1F2D03B601899D /* HTLDateSection.m */,
 				73BC63407702DDDB04CF58F7 /* HTLDateSection.h */,
 				73BC68D3CDD0771C14BB49B2 /* HTLStatisticsItem.m */,
@@ -969,6 +1041,9 @@
 				73BC6194DBE33DB85E9AFFDA /* HTLSqliteStorageProvider.h */,
 				73BC6D1F71AFEE603353B859 /* HTLSqliteStorageProvider+Deserialization.m */,
 				73BC60F50DF43992ADE82594 /* HTLSqliteStorageProvider+Deserialization.h */,
+				73BC6E74AB99637D8FFB3475 /* HTLMemoryStorageProvider.m */,
+				73BC69ACB7A5C024FAFDE7F0 /* HTLMemoryStorageProvider.h */,
+				73BC67680CF294FB502CBBC9 /* HTLChangesObserver.h */,
 			);
 			path = "Storage Providers";
 			sourceTree = "<group>";
@@ -1011,18 +1086,26 @@
 			path = Beta;
 			sourceTree = "<group>";
 		};
-		73BC6DB7EF02DAEA43B87E36 /* Today_New */ = {
+		73BC6DB7EF02DAEA43B87E36 /* Today */ = {
 			isa = PBXGroup;
 			children = (
-				73BC67EAA68B80628BFE54A4 /* HTLTodayViewController_New.m */,
-				73BC61FC4B9054CC18FC1047 /* HTLTodayViewController_New.h */,
-				73BC69C6A701615D532CA288 /* HTLToday_NewDataSource.m */,
-				73BC661B63EA8AB951F4F292 /* HTLToday_NewDataSource.h */,
-				73BC627D803BF6DFB71DB376 /* HTLActivityCell.m */,
-				73BC6E52C8E9183CBB092523 /* HTLActivityCell.h */,
+				73BC67EAA68B80628BFE54A4 /* HTLTodayViewController.m */,
+				73BC61FC4B9054CC18FC1047 /* HTLTodayViewController.h */,
+				73BC69C6A701615D532CA288 /* HTLTodayDataSource.m */,
+				73BC661B63EA8AB951F4F292 /* HTLTodayDataSource.h */,
+				73BC627D803BF6DFB71DB376 /* HTLMarkCollectionViewCell.m */,
+				73BC6E52C8E9183CBB092523 /* HTLMarkCollectionViewCell.h */,
 				C5C361C61BD512490070055F /* TableLayout.swift */,
+				73BC67AA864757C5B1299286 /* HTLColorPickerTableView.m */,
+				73BC62E16CAF02D099B1981E /* HTLColorPickerTableView.h */,
+				73BC65F70BCA0217513D9383 /* HTLReportView.m */,
+				73BC6C2BB200B279082E8397 /* HTLReportView.h */,
+				73BC62A905AF9B6666122AC9 /* HTLReportEditor.m */,
+				73BC65754B711E078C28136C /* HTLReportEditor.h */,
+				73BC616FC8A3BF0A4D98FE6D /* HTLMarkEditor.m */,
+				73BC631DCC99ABB5C294C581 /* HTLMarkEditor.h */,
 			);
-			path = Today_New;
+			path = Today;
 			sourceTree = "<group>";
 		};
 		73BC6DC4214A1ACD61303FC1 /* Src */ = {
@@ -1047,19 +1130,6 @@
 				73BC6AD70178CE58AF547D6F /* Live */,
 			);
 			path = Versions;
-			sourceTree = "<group>";
-		};
-		73BC6DF893AC99A551BA8B26 /* Today */ = {
-			isa = PBXGroup;
-			children = (
-				73BC6F9C9DD5E6375ED0CD1F /* HTLTodayViewController.m */,
-				73BC61B8D721850F567E636C /* HTLTodayViewController.h */,
-				73BC648B17F402B7799C657E /* HTLTodayDataSource.m */,
-				73BC6A86F47EAFF753E73384 /* HTLTodayDataSource.h */,
-				73BC67C66E14B291573A73C2 /* HTLCategoryCell.m */,
-				73BC6F7E5BF55E4B87CF64EC /* HTLCategoryCell.h */,
-			);
-			path = Today;
 			sourceTree = "<group>";
 		};
 		73BC6E31C152E0DB1E7B2ADE /* Src */ = {
@@ -1092,6 +1162,7 @@
 		73BC6EDE9C53A95392DB1EB9 /* Vendor */ = {
 			isa = PBXGroup;
 			children = (
+				C53EFD5B1BEB7E4D005F42E1 /* JJMaterialTextField */,
 				C582B3A01B3EC910005CC526 /* XYPieChart */,
 				C582B29E1B3EC8D5005CC526 /* CocoaLumberjack */,
 				C582B2BB1B3EC8D5005CC526 /* FMDB */,
@@ -1124,6 +1195,10 @@
 				73BC6AF703B69F7D9811A489 /* NSDate+HTLComponents.h */,
 				73BC6F771B4A63AA8FABCDF5 /* HTLReport+Helpers.m */,
 				73BC608BED34E02C9AAE75C1 /* HTLReport+Helpers.h */,
+				73BC679105C314E9710FB636 /* HTLColor.m */,
+				73BC697AACF049F3F5DAD97F /* HTLColor.h */,
+				73BC67B06453FFE89AF35E72 /* NSDate+HTL.m */,
+				73BC6CD408583B0991DC07F9 /* NSDate+HTL.h */,
 			);
 			path = Categories;
 			sourceTree = "<group>";
@@ -1133,8 +1208,38 @@
 			children = (
 				C516A6CA1B3A8F2A0018F022 /* HTLRoundButton.h */,
 				C516A6CB1B3A8F2A0018F022 /* HTLRoundButton.m */,
+				73BC656412B770162C38B718 /* HTLLineView.m */,
+				73BC62C4E1B81E872089E21E /* HTLLineView.h */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		C53EFD5B1BEB7E4D005F42E1 /* JJMaterialTextField */ = {
+			isa = PBXGroup;
+			children = (
+				C53EFD5C1BEB7E4D005F42E1 /* Assets */,
+				C53EFD5F1BEB7E4D005F42E1 /* Classes */,
+			);
+			path = JJMaterialTextField;
+			sourceTree = "<group>";
+		};
+		C53EFD5C1BEB7E4D005F42E1 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				C53EFD5D1BEB7E4D005F42E1 /* .gitkeep */,
+				C53EFD5E1BEB7E4D005F42E1 /* edit_button.png */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
+		C53EFD5F1BEB7E4D005F42E1 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				C53EFD601BEB7E4D005F42E1 /* .gitkeep */,
+				C53EFD611BEB7E4D005F42E1 /* JJMaterialTextfield.h */,
+				C53EFD621BEB7E4D005F42E1 /* JJMaterialTextfield.m */,
+			);
+			path = Classes;
 			sourceTree = "<group>";
 		};
 		C582B29E1B3EC8D5005CC526 /* CocoaLumberjack */ = {
@@ -1582,7 +1687,9 @@
 				C55912591B3C0853002593BE /* InfoPlist.strings in Resources */,
 				C57213251BC53FA90096E502 /* HTLStatisticsHeader.xib in Resources */,
 				C516A6FC1B3AD18E0018F022 /* settings.png in Resources */,
+				C53EFD641BEB7E4D005F42E1 /* .gitkeep in Resources */,
 				C516A6FD1B3AD18E0018F022 /* settings@2x.png in Resources */,
+				C53EFD6A1BEB7E4D005F42E1 /* .gitkeep in Resources */,
 				C516A6FE1B3AD18E0018F022 /* Localizable.strings in Resources */,
 				C516A7001B3AD18E0018F022 /* Main.storyboard in Resources */,
 				C516A7011B3AD18E0018F022 /* add.png in Resources */,
@@ -1596,6 +1703,7 @@
 				C55912611B3C0923002593BE /* HyperTimeLogger.entitlements in Resources */,
 				C516A7091B3AD18E0018F022 /* testdata_ru.json in Resources */,
 				C516A70A1B3AD18E0018F022 /* testdata_en.json in Resources */,
+				C53EFD671BEB7E4D005F42E1 /* edit_button.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1610,10 +1718,13 @@
 				C516A7491B3AD2590018F022 /* Localizable.strings in Resources */,
 				C5F512FE1BBF344D002F887E /* TODOs.txt in Resources */,
 				C516A74B1B3AD2590018F022 /* Main.storyboard in Resources */,
+				C53EFD631BEB7E4D005F42E1 /* .gitkeep in Resources */,
 				C55912531B3C06B8002593BE /* InfoPlist.strings in Resources */,
 				C516A74C1B3AD2590018F022 /* add.png in Resources */,
+				C53EFD661BEB7E4D005F42E1 /* edit_button.png in Resources */,
 				C516A74D1B3AD2590018F022 /* settings@3x.png in Resources */,
 				C516A74E1B3AD2590018F022 /* statistics@3x.png in Resources */,
+				C53EFD691BEB7E4D005F42E1 /* .gitkeep in Resources */,
 				C516A74F1B3AD2590018F022 /* statistics@2x.png in Resources */,
 				C516A7501B3AD2590018F022 /* Images.xcassets in Resources */,
 				C516A7511B3AD2590018F022 /* DateSectionHeader.xib in Resources */,
@@ -1663,13 +1774,16 @@
 				C559125E1B3C0867002593BE /* InfoPlist.strings in Resources */,
 				73BC617D5432B3204E578CF4 /* settings.png in Resources */,
 				C55912621B3C0925002593BE /* HyperTimeLogger.entitlements in Resources */,
+				C53EFD6B1BEB7E4D005F42E1 /* .gitkeep in Resources */,
 				C57213261BC53FA90096E502 /* HTLStatisticsHeader.xib in Resources */,
 				73BC6CC003E2DB538E6F16DE /* settings@2x.png in Resources */,
 				C59088C81B398E330099F8CB /* Localizable.strings in Resources */,
+				C53EFD681BEB7E4D005F42E1 /* edit_button.png in Resources */,
 				C58B38621B395FB7006C7AE7 /* Main.storyboard in Resources */,
 				C51F13121B32C5B2001F452F /* add.png in Resources */,
 				73BC6D42F5DEFED44D50CF72 /* settings@3x.png in Resources */,
 				C51F13101B32C592001F452F /* statistics@3x.png in Resources */,
+				C53EFD651BEB7E4D005F42E1 /* .gitkeep in Resources */,
 				C51F130F1B32C592001F452F /* statistics@2x.png in Resources */,
 				73BC68BD5C6BF2A0BA095605 /* Images.xcassets in Resources */,
 				73BC6D50D0F7419C4DBD8D09 /* DateSectionHeader.xib in Resources */,
@@ -1738,8 +1852,9 @@
 				C516A6D31B3AD18E0018F022 /* NSDate+HTLComponents.m in Sources */,
 				C582B2F91B3EC8D5005CC526 /* DDFileLogger.m in Sources */,
 				C516A6D41B3AD18E0018F022 /* HTLReport+Helpers.m in Sources */,
+				C53EFD6D1BEB7E4D005F42E1 /* JJMaterialTextfield.m in Sources */,
 				C516A6D51B3AD18E0018F022 /* HTLReport.m in Sources */,
-				C516A6D61B3AD18E0018F022 /* HTLActivity.m in Sources */,
+				C516A6D61B3AD18E0018F022 /* HTLMark.m in Sources */,
 				C516A6D91B3AD18E0018F022 /* HTLDateSection.m in Sources */,
 				C582B3851B3EC8D5005CC526 /* UIColor+BFPaperColors.m in Sources */,
 				C516A6DB1B3AD18E0018F022 /* HTLSqliteStorageProvider.m in Sources */,
@@ -1767,26 +1882,33 @@
 				C582B3621B3EC8D5005CC526 /* HexColor.m in Sources */,
 				C582B3AD1B3EC910005CC526 /* XYPieChart.m in Sources */,
 				73BC6D4AAD99665A10565079 /* main.m in Sources */,
-				73BC6C1FB24DBC3A2734339F /* HTLTodayViewController.m in Sources */,
-				73BC6CBC37B3832AF5200FF6 /* HTLTodayDataSource.m in Sources */,
-				73BC6BFD498CD6733A746EC6 /* HTLCategoryCell.m in Sources */,
 				73BC679838650B6E28896277 /* HTLReportListViewController.m in Sources */,
 				73BC6E8FF7996B76AA9A98F4 /* HTLReportListDataSource.m in Sources */,
-				73BC63E109E2CF7198F1575A /* HTLReportCell.m in Sources */,
+				73BC63E109E2CF7198F1575A /* HTLReportTableViewCell.m in Sources */,
 				73BC6F23CEED50713B2A76D6 /* HTLSettingsViewController.m in Sources */,
 				73BC6C61B1FAE4B8878BD557 /* HTLReportDateListViewController.m in Sources */,
 				73BC6376674A15727C7DDEA1 /* HTLReportDateListDataSource.m in Sources */,
 				73BC6D140EFB923F573A104A /* HTLDateSectionCell.m in Sources */,
-				73BC6257536344C3E272A312 /* HTLActivityListTableViewController.m in Sources */,
-				73BC6A56D387AF14555F0003 /* HTLActivityListDataSource.m in Sources */,
+				73BC6257536344C3E272A312 /* HTLMarkListTableViewController.m in Sources */,
+				73BC6A56D387AF14555F0003 /* HTLMarkListDataSource.m in Sources */,
 				73BC653BC4AEAF73F918F0B0 /* HTLEditCategoryViewController.m in Sources */,
 				73BC69B15C0D1465F18DF8F1 /* HTLCategoryEditor.m in Sources */,
 				73BC6711AD3E28609D968C2F /* HTLSettingsDataSource.m in Sources */,
 				73BC619943AD7B64FDE26312 /* HTLStatisticsItem.m in Sources */,
 				73BC62DBEB901CF8BC5BADE9 /* HTLStatisticsHeader.m in Sources */,
-				73BC6544409D94A6FB553559 /* HTLTodayViewController_New.m in Sources */,
-				73BC638C8807EE4CAB9EAB28 /* HTLToday_NewDataSource.m in Sources */,
-				73BC640C41D76EF0D30C8DA7 /* HTLActivityCell.m in Sources */,
+				73BC6544409D94A6FB553559 /* HTLTodayViewController.m in Sources */,
+				73BC638C8807EE4CAB9EAB28 /* HTLTodayDataSource.m in Sources */,
+				73BC640C41D76EF0D30C8DA7 /* HTLMarkCollectionViewCell.m in Sources */,
+				73BC639BEB828768825EB5C7 /* HTLMemoryStorageProvider.m in Sources */,
+				73BC6CD19727C9D4BD6CC20B /* HTLColorPickerTableView.m in Sources */,
+				73BC612718199CCDB8431B78 /* HTLReportView.m in Sources */,
+				73BC6941ED8F31A2668CABED /* HTLLineView.m in Sources */,
+				73BC6EA2C835B3F9752554CD /* HTLReportEditor.m in Sources */,
+				73BC6796746E9E53B6AFE3CC /* HTLMarkEditor.m in Sources */,
+				73BC661E651443F9B1570D21 /* HTLColor.m in Sources */,
+				73BC604925A2EAE28E0E132F /* HTLTextField.m in Sources */,
+				73BC62B1FD7EDC8EB59B79E4 /* HTLThemeManager.m in Sources */,
+				73BC60629A1368C839228363 /* NSDate+HTL.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1798,8 +1920,9 @@
 				C516A71E1B3AD2590018F022 /* NSDate+HTLComponents.m in Sources */,
 				C582B2F81B3EC8D5005CC526 /* DDFileLogger.m in Sources */,
 				C516A71F1B3AD2590018F022 /* HTLReport+Helpers.m in Sources */,
+				C53EFD6C1BEB7E4D005F42E1 /* JJMaterialTextfield.m in Sources */,
 				C516A7201B3AD2590018F022 /* HTLReport.m in Sources */,
-				C516A7211B3AD2590018F022 /* HTLActivity.m in Sources */,
+				C516A7211B3AD2590018F022 /* HTLMark.m in Sources */,
 				C516A7241B3AD2590018F022 /* HTLDateSection.m in Sources */,
 				C582B3841B3EC8D5005CC526 /* UIColor+BFPaperColors.m in Sources */,
 				C516A7261B3AD2590018F022 /* HTLSqliteStorageProvider.m in Sources */,
@@ -1827,26 +1950,33 @@
 				C582B3611B3EC8D5005CC526 /* HexColor.m in Sources */,
 				C582B3AC1B3EC910005CC526 /* XYPieChart.m in Sources */,
 				73BC698EF025811B34B8B94A /* main.m in Sources */,
-				73BC69A4B714EC7F4D53C033 /* HTLTodayViewController.m in Sources */,
-				73BC6860D534879D5B9D0C77 /* HTLTodayDataSource.m in Sources */,
-				73BC68CB7A462C6EA29E4A74 /* HTLCategoryCell.m in Sources */,
 				73BC6360F018D6435D54647A /* HTLReportListViewController.m in Sources */,
 				73BC6AC9B188D26D1FC3E6F3 /* HTLReportListDataSource.m in Sources */,
-				73BC6DFD006300F761790E3F /* HTLReportCell.m in Sources */,
+				73BC6DFD006300F761790E3F /* HTLReportTableViewCell.m in Sources */,
 				73BC6E5D406483D67F4C561F /* HTLSettingsViewController.m in Sources */,
 				73BC6788733B4B6486B9C4E3 /* HTLReportDateListViewController.m in Sources */,
 				73BC615E0C54DADC7944E5CF /* HTLReportDateListDataSource.m in Sources */,
 				73BC628D5CC062A1C7A4FB1B /* HTLDateSectionCell.m in Sources */,
-				73BC6FDC67844771B186F588 /* HTLActivityListTableViewController.m in Sources */,
-				73BC674B2D1CD47837E7A3B1 /* HTLActivityListDataSource.m in Sources */,
+				73BC6FDC67844771B186F588 /* HTLMarkListTableViewController.m in Sources */,
+				73BC674B2D1CD47837E7A3B1 /* HTLMarkListDataSource.m in Sources */,
 				73BC61BE0DB4571AEDAA870B /* HTLEditCategoryViewController.m in Sources */,
 				73BC604EB0119CC2DCBA6299 /* HTLCategoryEditor.m in Sources */,
 				73BC6306BF2CF0FFADD45FBF /* HTLSettingsDataSource.m in Sources */,
 				73BC6ACB08FA93B24B74FDEC /* HTLStatisticsItem.m in Sources */,
 				73BC69374B58054406461876 /* HTLStatisticsHeader.m in Sources */,
-				73BC63D7FF602787D8490B85 /* HTLTodayViewController_New.m in Sources */,
-				73BC6F305DA77212A9C95BB6 /* HTLToday_NewDataSource.m in Sources */,
-				73BC6F992A037518653F4D2A /* HTLActivityCell.m in Sources */,
+				73BC63D7FF602787D8490B85 /* HTLTodayViewController.m in Sources */,
+				73BC6F305DA77212A9C95BB6 /* HTLTodayDataSource.m in Sources */,
+				73BC6F992A037518653F4D2A /* HTLMarkCollectionViewCell.m in Sources */,
+				73BC6A6E82FD64D3F87C008B /* HTLMemoryStorageProvider.m in Sources */,
+				73BC6656FE1D79015E287981 /* HTLColorPickerTableView.m in Sources */,
+				73BC6DF49FE48E1B50A6E34B /* HTLReportView.m in Sources */,
+				73BC64E330CE14AE038B1F58 /* HTLLineView.m in Sources */,
+				73BC6C87C89B64AFAF39FF01 /* HTLReportEditor.m in Sources */,
+				73BC6C7F67A5F9B5A906528F /* HTLMarkEditor.m in Sources */,
+				73BC67F03E9CEEAE64172B5B /* HTLColor.m in Sources */,
+				73BC6411AD3D5908732828F7 /* HTLTextField.m in Sources */,
+				73BC6B94BC5418DA3A8A5DE1 /* HTLThemeManager.m in Sources */,
+				73BC6F1BB196AD385484C68C /* NSDate+HTL.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1859,7 +1989,7 @@
 				C582B2FC1B3EC8D5005CC526 /* DDFileLogger.m in Sources */,
 				C59689A31B3C16270038018D /* HTLReport.m in Sources */,
 				C582B3881B3EC8D5005CC526 /* UIColor+BFPaperColors.m in Sources */,
-				C59689A41B3C16270038018D /* HTLActivity.m in Sources */,
+				C59689A41B3C16270038018D /* HTLMark.m in Sources */,
 				C59689A71B3C16270038018D /* HTLDateSection.m in Sources */,
 				C582B35E1B3EC8D5005CC526 /* FMResultSet.m in Sources */,
 				C59689A91B3C16270038018D /* HTLSqliteStorageProvider.m in Sources */,
@@ -1898,7 +2028,7 @@
 				C582B2FD1B3EC8D5005CC526 /* DDFileLogger.m in Sources */,
 				C59689C51B3C16350038018D /* HTLReport.m in Sources */,
 				C582B3891B3EC8D5005CC526 /* UIColor+BFPaperColors.m in Sources */,
-				C59689C61B3C16350038018D /* HTLActivity.m in Sources */,
+				C59689C61B3C16350038018D /* HTLMark.m in Sources */,
 				C59689C91B3C16350038018D /* HTLDateSection.m in Sources */,
 				C582B35F1B3EC8D5005CC526 /* FMResultSet.m in Sources */,
 				C59689CB1B3C16350038018D /* HTLSqliteStorageProvider.m in Sources */,
@@ -1937,7 +2067,7 @@
 				C582B2FE1B3EC8D5005CC526 /* DDFileLogger.m in Sources */,
 				73BC63E583DA471B2D26C36E /* HTLReport.m in Sources */,
 				C582B38A1B3EC8D5005CC526 /* UIColor+BFPaperColors.m in Sources */,
-				73BC688E05940C6C7A19AEFE /* HTLActivity.m in Sources */,
+				73BC688E05940C6C7A19AEFE /* HTLMark.m in Sources */,
 				73BC6BCFC083BDB023D12F96 /* HTLDateSection.m in Sources */,
 				C582B3601B3EC8D5005CC526 /* FMResultSet.m in Sources */,
 				73BC66FBEB3FEDA6D59A4EEB /* HTLSqliteStorageProvider.m in Sources */,
@@ -1975,8 +2105,9 @@
 				73BC63A745D1B957781BC3C0 /* NSDate+HTLComponents.m in Sources */,
 				C582B2FA1B3EC8D5005CC526 /* DDFileLogger.m in Sources */,
 				73BC68D75AF9520DFA1BB170 /* HTLReport+Helpers.m in Sources */,
+				C53EFD6E1BEB7E4D005F42E1 /* JJMaterialTextfield.m in Sources */,
 				73BC663B16F6B52EE9662BF9 /* HTLReport.m in Sources */,
-				73BC600E8C599F6D11BBD183 /* HTLActivity.m in Sources */,
+				73BC600E8C599F6D11BBD183 /* HTLMark.m in Sources */,
 				73BC67A4E0C0CA36BB035D6C /* HTLDateSection.m in Sources */,
 				C582B3861B3EC8D5005CC526 /* UIColor+BFPaperColors.m in Sources */,
 				73BC663F4406329510726033 /* HTLSqliteStorageProvider.m in Sources */,
@@ -2004,26 +2135,33 @@
 				C582B3631B3EC8D5005CC526 /* HexColor.m in Sources */,
 				C582B3AE1B3EC910005CC526 /* XYPieChart.m in Sources */,
 				73BC679DD95BD9F43FE6A2AB /* main.m in Sources */,
-				73BC600B9246F5D02511B4B0 /* HTLTodayViewController.m in Sources */,
-				73BC6B40DFFA46CA083B4E87 /* HTLTodayDataSource.m in Sources */,
-				73BC61F4A9575FFD564163D9 /* HTLCategoryCell.m in Sources */,
 				73BC6B8AE372441B2276DDFF /* HTLReportListViewController.m in Sources */,
 				73BC680CED8D9D3411D8386F /* HTLReportListDataSource.m in Sources */,
-				73BC65C9546D4C1AE6909599 /* HTLReportCell.m in Sources */,
+				73BC65C9546D4C1AE6909599 /* HTLReportTableViewCell.m in Sources */,
 				73BC6D9AF0777F4A283936F2 /* HTLSettingsViewController.m in Sources */,
 				73BC694ED74736EF858A5DC3 /* HTLReportDateListViewController.m in Sources */,
 				73BC67C0E8198E0EFD9A3E8E /* HTLReportDateListDataSource.m in Sources */,
 				73BC69E44207EAC86F663664 /* HTLDateSectionCell.m in Sources */,
-				73BC6CA2865FACBB5C204DA6 /* HTLActivityListTableViewController.m in Sources */,
-				73BC61247437015C0452950E /* HTLActivityListDataSource.m in Sources */,
+				73BC6CA2865FACBB5C204DA6 /* HTLMarkListTableViewController.m in Sources */,
+				73BC61247437015C0452950E /* HTLMarkListDataSource.m in Sources */,
 				73BC6BE1B527EF4BBF9A396F /* HTLEditCategoryViewController.m in Sources */,
 				73BC6D7162BF46B66D13576B /* HTLCategoryEditor.m in Sources */,
 				73BC61BA71E3D1E9F57AACC3 /* HTLSettingsDataSource.m in Sources */,
 				73BC6B0996710BF0CBFE15AE /* HTLStatisticsItem.m in Sources */,
 				73BC6D213D728E1E394999CD /* HTLStatisticsHeader.m in Sources */,
-				73BC68E15F67562D619DCE08 /* HTLTodayViewController_New.m in Sources */,
-				73BC64FAF04470F3A48E443D /* HTLToday_NewDataSource.m in Sources */,
-				73BC6740C19F12ECBFF1197A /* HTLActivityCell.m in Sources */,
+				73BC68E15F67562D619DCE08 /* HTLTodayViewController.m in Sources */,
+				73BC64FAF04470F3A48E443D /* HTLTodayDataSource.m in Sources */,
+				73BC6740C19F12ECBFF1197A /* HTLMarkCollectionViewCell.m in Sources */,
+				73BC6FCDA5B5E1F71A7FCF44 /* HTLMemoryStorageProvider.m in Sources */,
+				73BC6C57E25AD34F4F65E925 /* HTLColorPickerTableView.m in Sources */,
+				73BC6B618B8EAB6383312197 /* HTLReportView.m in Sources */,
+				73BC6F76CB341C6F9C945856 /* HTLLineView.m in Sources */,
+				73BC68C1482CA4CAE4BC2A72 /* HTLReportEditor.m in Sources */,
+				73BC674909A6014DCE382853 /* HTLMarkEditor.m in Sources */,
+				73BC6188BED40CCA85C7C8D4 /* HTLColor.m in Sources */,
+				73BC68A7E5E242920D6A3142 /* HTLTextField.m in Sources */,
+				73BC6EBE809F363C7F32D4B3 /* HTLThemeManager.m in Sources */,
+				73BC655A533720F240E2C53E /* NSDate+HTL.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2045,7 +2183,7 @@
 				C582B3561B3EC8D5005CC526 /* FMDatabaseQueue.m in Sources */,
 				C582B3481B3EC8D5005CC526 /* FMDatabaseAdditions.m in Sources */,
 				C582B2E61B3EC8D5005CC526 /* DDAbstractDatabaseLogger.m in Sources */,
-				73BC6AEDC24B3643325E6F75 /* HTLActivity.m in Sources */,
+				73BC6AEDC24B3643325E6F75 /* HTLMark.m in Sources */,
 				C582B34F1B3EC8D5005CC526 /* FMDatabasePool.m in Sources */,
 				C582B2ED1B3EC8D5005CC526 /* DDASLLogCapture.m in Sources */,
 				C582B39C1B3EC8D5005CC526 /* ZLBalancedFlowLayout.swift in Sources */,

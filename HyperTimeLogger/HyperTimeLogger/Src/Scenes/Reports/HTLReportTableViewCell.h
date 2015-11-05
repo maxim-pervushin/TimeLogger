@@ -5,13 +5,13 @@
 
 #import <UIKit/UIKit.h>
 
-@class HTLActivity;
+@class HTLReport;
 
 
-@interface HTLCategoryCell : UITableViewCell
+@interface HTLReportTableViewCell : UITableViewCell
 
 + (NSString *)defaultIdentifier;
 
-@property (nonatomic, copy) HTLActivity *category;
+@property (nonatomic, copy) HTLReport *report;
 
 @end

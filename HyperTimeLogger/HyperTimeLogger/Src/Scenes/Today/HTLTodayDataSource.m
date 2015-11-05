@@ -1,13 +1,12 @@
 //
-// Created by Maxim Pervushin on 05/10/15.
+// Created by Maxim Pervushin on 09/10/15.
 // Copyright (c) 2015 Maxim Pervushin. All rights reserved.
 //
 
 #import "HTLTodayDataSource.h"
-#import "HTLActivity.h"
-#import "HTLAppDelegate.h"
-#import "HTLContentManager.h"
 #import "HTLReport.h"
+#import "HTLContentManager.h"
+#import "HTLAppDelegate.h"
 
 
 @interface HTLTodayDataSource ()
@@ -19,6 +18,16 @@
 @end
 
 @implementation HTLTodayDataSource
+@dynamic lastReportEndDate;
+@dynamic lastReport;
+
+- (HTLReport *)lastReport {
+    return [HTLAppContentManger lastReport];
+}
+
+- (NSDate *)lastReportEndDate {
+    return [HTLAppContentManger lastReportEndDate];
+}
 
 - (NSTimeInterval)currentInterval {
     NSDate *lastReportEndDate = [HTLAppContentManger lastReportEndDate];
@@ -29,32 +38,22 @@
     return [[NSDate new] timeIntervalSinceDate:lastReportEndDate];
 }
 
-- (NSUInteger)numberOfMandatoryCategories {
-    return HTLAppContentManger.mandatoryCategories.count;
+- (NSUInteger)numberOfMarks {
+    return HTLAppContentManger.customMarks.count + HTLAppContentManger.mandatoryMarks.count;
 }
 
-- (NSUInteger)numberOfCustomCategories {
-    return HTLAppContentManger.customCategories.count;
+- (HTLMark *)markAtIndex:(NSInteger)index {
+    NSMutableArray *activities = [HTLAppContentManger.customMarks mutableCopy];
+    [activities addObjectsFromArray:HTLAppContentManger.mandatoryMarks];
+    return activities[(NSUInteger) index];
 }
 
-- (HTLActivity *)mandatoryCategoryAtIndex:(NSInteger)index {
-    return HTLAppContentManger.mandatoryCategories[(NSUInteger) index];
+- (BOOL)saveReportWithMarkAtIndex:(NSInteger)index {
+    return [self saveReportWithMark:[self markAtIndex:index]];
 }
 
-- (HTLActivity *)customCategoryAtIndex:(NSInteger)index {
-    return HTLAppContentManger.customCategories[(NSUInteger) index];
-}
-
-- (BOOL)saveReportWithMandatoryCategoryAtIndex:(NSInteger)index {
-    return [self saveReportWithActivity:[self mandatoryCategoryAtIndex:index]];
-}
-
-- (BOOL)saveReportWithCustomCategoryAtIndex:(NSInteger)index {
-    return [self saveReportWithActivity:[self customCategoryAtIndex:index]];
-}
-
-- (BOOL)saveReportWithActivity:(HTLActivity *)category {
-    if (!category) {
+- (BOOL)saveReportWithMark:(HTLMark *)mark {
+    if (!mark) {
         return NO;
     }
 
@@ -63,20 +62,24 @@
         lastReportEndDate = [NSDate new];
     }
 
-    HTLReport *report = [HTLReport reportWithCategory:category startDate:lastReportEndDate endDate:[NSDate new]];
+    HTLReport *report = [HTLReport reportWithMark:mark startDate:lastReportEndDate endDate:[NSDate new]];
 
+    return [self saveReport:report];
+}
+
+- (BOOL)saveReport:(HTLReport *)report {
     return [HTLAppContentManger saveReport:report];
 }
 
 - (void)subscribe {
     __weak __typeof(self) weakSelf = self;
-    [[NSNotificationCenter defaultCenter] addObserverForName:kHTLStorageProviderChangedNotification object:nil queue:nil usingBlock:^(NSNotification *note) {
+    [[NSNotificationCenter defaultCenter] addObserverForName:[HTLContentManager changedNotification] object:nil queue:nil usingBlock:^(NSNotification *note) {
         [weakSelf dataChanged];
     }];
 }
 
 - (void)unsubscribe {
-    [[NSNotificationCenter defaultCenter] removeObserver:self name:kHTLStorageProviderChangedNotification object:nil];
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:[HTLContentManager changedNotification] object:nil];
 };
 
 #pragma mark - NSObject

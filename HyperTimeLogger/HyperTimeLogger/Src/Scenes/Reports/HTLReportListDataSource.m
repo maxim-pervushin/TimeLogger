@@ -78,7 +78,7 @@
 }
 
 - (HTLReport *)reportAtIndexPath:(NSIndexPath *)indexPath {
-    return [HTLAppContentManger reportsWithDateSection:self.selectedDateSection category:nil][(NSUInteger) indexPath.row];
+    return [HTLAppContentManger reportsWithDateSection:self.selectedDateSection mark:nil][(NSUInteger) indexPath.row];
 }
 
 - (void)reloadStatistics {
@@ -87,7 +87,7 @@
 
         NSLog(@"Calculating statistics for date section...");
         weakSelf.statistics = [HTLAppContentManger statisticsWithDateSection:weakSelf.selectedDateSection];
-        NSLog(@"Done.");
+//        NSLog(@"Done: %@", weakSelf.statistics);
 
         NSLog(@"Calculating global statistics...");
         [HTLAppContentManger statisticsWithDateSection:nil];
@@ -100,9 +100,9 @@
 //        NSMutableArray *categoriesCalculated = [NSMutableArray new];
 //        NSMutableDictionary *statisticsByCategoryCalculated = [NSMutableDictionary new];
 //        NSLog(@"Calculating statistics...");
-//        for (HTLActivity *category in categories) {
+//        for (HTLMark *mark in categories) {
 //            NSArray *reports = [HTLAppContentManger reportsWithDateSection:weakSelf.selectedDateSection
-//                                                                  category:category];
+//                                                                  mark:mark];
 //
 //            NSTimeInterval totalTime = 0;
 //            NSUInteger totalReports = 0;
@@ -111,13 +111,13 @@
 //                totalReports++;
 //            }
 //
-//            HTLStatisticsItem *statisticsItem = [HTLStatisticsItem statisticsItemWithCategory:category totalTime:totalTime totalReports:totalReports];
+//            HTLStatisticsItem *statisticsItem = [HTLStatisticsItem statisticsItemWithCategory:mark totalTime:totalTime totalReports:totalReports];
 //
 //            NSLog(@"%@", statisticsItem);
 //
 //            if (statisticsItem) {
-//                [categoriesCalculated addObject:category];
-//                NSString *key = [NSString stringWithFormat:@"%@", @(category.hash)];
+//                [categoriesCalculated addObject:mark];
+//                NSString *key = [NSString stringWithFormat:@"%@", @(mark.hash)];
 //                statisticsByCategoryCalculated[key] = statisticsItem;
 //            }
 //        }
@@ -146,13 +146,13 @@
 
 - (void)subscribe {
     __weak __typeof(self) weakSelf = self;
-    [[NSNotificationCenter defaultCenter] addObserverForName:kHTLStorageProviderChangedNotification object:nil queue:nil usingBlock:^(NSNotification *note) {
+    [[NSNotificationCenter defaultCenter] addObserverForName:[HTLContentManager changedNotification] object:nil queue:nil usingBlock:^(NSNotification *note) {
         [weakSelf reloadData];
     }];
 }
 
 - (void)unsubscribe {
-    [[NSNotificationCenter defaultCenter] removeObserver:self name:kHTLStorageProviderChangedNotification object:nil];
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:[HTLContentManager changedNotification] object:nil];
 };
 
 #pragma mark - NSObject

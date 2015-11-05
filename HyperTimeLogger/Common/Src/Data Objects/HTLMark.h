@@ -6,9 +6,9 @@
 #import <UIKit/UIKit.h>
 
 
-@interface HTLActivity : NSObject <NSCopying, NSObject>
+@interface HTLMark : NSObject <NSCopying, NSObject>
 
-+ (instancetype)categoryWithTitle:(NSString *)title subTitle:(NSString *)subTitle color:(UIColor *)color;
++ (instancetype)markWithTitle:(NSString *)title subTitle:(NSString *)subTitle color:(UIColor *)color;
 
 @property(nonatomic, readonly) NSString *title;
 @property(nonatomic, readonly) NSString *subTitle;

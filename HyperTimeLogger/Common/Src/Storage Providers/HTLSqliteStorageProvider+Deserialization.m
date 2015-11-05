@@ -14,10 +14,10 @@
 
 @implementation HTLSqliteStorageProvider (Deserialization)
 
-- (HTLActivity *)unpackActivity:(FMResultSet *)resultSet {
-    return [HTLActivity categoryWithTitle:[resultSet stringForColumn:@"categoryTitle"]
-                                 subTitle:[resultSet stringForColumn:@"categorySubTitle"]
-                                    color:[UIColor colorWithHexString:[resultSet stringForColumn:@"categoryColor"]]];
+- (HTLMark *)unpackActivity:(FMResultSet *)resultSet {
+    return [HTLMark markWithTitle:[resultSet stringForColumn:@"categoryTitle"]
+                         subTitle:[resultSet stringForColumn:@"categorySubTitle"]
+                            color:[UIColor colorWithHexString:[resultSet stringForColumn:@"categoryColor"]]];
 }
 
 - (HTLDateSection *)unpackDateSection:(FMResultSet *)resultSet {
@@ -36,9 +36,9 @@
                                       timeString:[resultSet stringForColumn:@"endTime"]
                                   timeZoneString:[resultSet stringForColumn:@"endZone"]];
 
-    HTLActivity *category = [self unpackActivity:resultSet];
+    HTLMark *category = [self unpackActivity:resultSet];
 
-    return [HTLReport reportWithCategory:category startDate:startDate endDate:endDate];
+    return [HTLReport reportWithMark:category startDate:startDate endDate:endDate];
 }
 
 @end

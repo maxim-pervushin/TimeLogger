@@ -6,7 +6,7 @@
 #import "HTLReportListViewController.h"
 #import "HTLReportListDataSource.h"
 #import "HTLDateSection.h"
-#import "HTLReportCell.h"
+#import "HTLReportTableViewCell.h"
 #import "HTLReportDateListViewController.h"
 #import "HTLStatisticsHeader.h"
 
@@ -53,7 +53,7 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    HTLReportCell *cell = (id) [tableView dequeueReusableCellWithIdentifier:[HTLReportCell defaultIdentifier] forIndexPath:indexPath];
+    HTLReportTableViewCell *cell = (id) [tableView dequeueReusableCellWithIdentifier:[HTLReportTableViewCell defaultIdentifier] forIndexPath:indexPath];
     cell.report = [self.dataSource reportAtIndexPath:indexPath];
     return cell;
 }

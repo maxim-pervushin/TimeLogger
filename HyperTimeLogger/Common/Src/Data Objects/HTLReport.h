@@ -4,16 +4,14 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "HTLActivity.h"
+#import "HTLMark.h"
 
-
-typedef NSString *HTLReportIdentifier;
 
 @interface HTLReport : NSObject <NSCopying, NSObject>
 
-+ (instancetype)reportWithCategory:(HTLActivity *)category startDate:(NSDate *)startDate endDate:(NSDate *)endDate;
++ (instancetype)reportWithMark:(HTLMark *)mark startDate:(NSDate *)startDate endDate:(NSDate *)endDate;
 
-@property(nonatomic, readonly) HTLActivity *category;
+@property(nonatomic, readonly) HTLMark *mark;
 @property(nonatomic, readonly) NSDate *startDate;
 @property(nonatomic, readonly) NSDate *endDate;
 

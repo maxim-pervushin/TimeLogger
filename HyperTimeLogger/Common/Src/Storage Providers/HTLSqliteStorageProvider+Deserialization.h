@@ -11,7 +11,7 @@
 
 @interface HTLSqliteStorageProvider (Deserialization)
 
-- (HTLActivity *)unpackActivity:(FMResultSet *)resultSet;
+- (HTLMark *)unpackActivity:(FMResultSet *)resultSet;
 
 - (HTLDateSection *)unpackDateSection:(FMResultSet *)resultSet;
 

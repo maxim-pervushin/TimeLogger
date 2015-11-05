@@ -5,14 +5,14 @@
 
 #import <Foundation/Foundation.h>
 
-@class HTLActivity;
+@class HTLMark;
 
 
 @interface HTLStatisticsItem : NSObject <NSCopying, NSObject>
 
-+ (instancetype)statisticsItemWithCategory:(HTLActivity *)category totalTime:(NSTimeInterval)totalTime totalReports:(NSUInteger)totalReports;
++ (instancetype)statisticsItemWithMark:(HTLMark *)mark totalTime:(NSTimeInterval)totalTime totalReports:(NSUInteger)totalReports;
 
-@property(nonatomic, readonly) HTLActivity *category;
+@property(nonatomic, readonly) HTLMark *mark;
 @property(nonatomic, readonly) NSTimeInterval totalTime;
 @property(nonatomic, readonly) NSUInteger totalReports;
 

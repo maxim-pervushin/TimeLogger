@@ -7,20 +7,20 @@
 
 
 @implementation HTLReport
-@synthesize category = category_;
+@synthesize mark = mark_;
 @synthesize startDate = startDate_;
 @synthesize endDate = endDate_;
 
 #pragma mark - HTLReport
 
-+ (instancetype)reportWithCategory:(HTLActivity *)category startDate:(NSDate *)startDate endDate:(NSDate *)endDate {
-    return [[self alloc] initWithCategory:category startDate:startDate endDate:endDate];
++ (instancetype)reportWithMark:(HTLMark *)mark startDate:(NSDate *)startDate endDate:(NSDate *)endDate {
+    return [[self alloc] initWithMark:mark startDate:startDate endDate:endDate];
 }
 
-- (instancetype)initWithCategory:(HTLActivity *)category startDate:(NSDate *)startDate endDate:(NSDate *)endDate {
+- (instancetype)initWithMark:(HTLMark *)mark startDate:(NSDate *)startDate endDate:(NSDate *)endDate {
     self = [super init];
     if (self) {
-        category_ = [category copy];
+        mark_ = [mark copy];
         startDate_ = [startDate copy];
         endDate_ = [endDate copy];
     }
@@ -33,7 +33,7 @@
     HTLReport *copy = [[[self class] allocWithZone:zone] init];
 
     if (copy != nil) {
-        copy->category_ = category_;
+        copy->mark_ = mark_;
         copy->startDate_ = startDate_;
         copy->endDate_ = endDate_;
     }
@@ -57,7 +57,7 @@
         return YES;
     if (report == nil)
         return NO;
-    if (self.category != report.category && ![self.category isEqual:report.category])
+    if (self.mark != report.mark && ![self.mark isEqual:report.mark])
         return NO;
     if (self.startDate != report.startDate && ![self.startDate isEqualToDate:report.startDate])
         return NO;
@@ -67,7 +67,7 @@
 }
 
 - (NSUInteger)hash {
-    NSUInteger hash = [self.category hash];
+    NSUInteger hash = [self.mark hash];
     hash = hash * 31u + [self.startDate hash];
     hash = hash * 31u + [self.endDate hash];
     return hash;
@@ -77,7 +77,7 @@
 
 - (NSString *)description {
     NSMutableString *description = [NSMutableString stringWithFormat:@"<%@: ", NSStringFromClass([self class])];
-    [description appendFormat:@"self.category=%@", self.category];
+    [description appendFormat:@"self.mark=%@", self.mark];
     [description appendFormat:@", self.startDate=%@", self.startDate];
     [description appendFormat:@", self.endDate=%@", self.endDate];
     [description appendString:@">"];

@@ -5,7 +5,7 @@
 
 #import "HTETodayDataSource.h"
 #import "HTLContentManager.h"
-#import "HTLActivity.h"
+#import "HTLMark.h"
 #import "HTLReport.h"
 #import "HTLAppDelegate.h"
 #import "HTLCSVStringExportProvider.h"
@@ -46,7 +46,7 @@ static NSString *const kStorageFileName = @"time_logger_storage.db";
 ////    NSDate *startDate = self.contentManager.lastReportEndDate;
 ////    HTLReport *report = [HTLReport reportWithCategory:[NSUUID UUID].UUIDString startDate:startDate ? startDate : [NSDate new] endDate:[NSDate new]];
 ////    HTLReportExtended *reportExtended =
-////            [HTLReportExtended reportExtendedWithReport:report action:completion.action category:completion.category];
+////            [HTLReportExtended reportExtendedWithReport:report action:completion.action mark:completion.mark];
 ////
 ////    return [self.contentManager saveReport:reportExtended];
 //    return NO;
@@ -58,13 +58,13 @@ static NSString *const kStorageFileName = @"time_logger_storage.db";
 
 - (void)subscribe {
     __weak __typeof(self) weakSelf = self;
-    [[NSNotificationCenter defaultCenter] addObserverForName:kHTLStorageProviderChangedNotification object:nil queue:nil usingBlock:^(NSNotification *note) {
+    [[NSNotificationCenter defaultCenter] addObserverForName:[HTLContentManager changedNotification] object:nil queue:nil usingBlock:^(NSNotification *note) {
         [weakSelf dataChanged];
     }];
 }
 
 - (void)unsubscribe {
-    [[NSNotificationCenter defaultCenter] removeObserver:self name:kHTLStorageProviderChangedNotification object:nil];
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:[HTLContentManager changedNotification] object:nil];
 };
 
 #pragma mark - NSObject

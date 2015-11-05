@@ -3,26 +3,27 @@
 // Copyright (c) 2015 Maxim Pervushin. All rights reserved.
 //
 
-#import "HTLActivityListTableViewController.h"
-#import "HTLActivityListDataSource.h"
-#import "HTLCategoryCell.h"
+#import "HTLMarkListTableViewController.h"
+#import "HTLMarkListDataSource.h"
+#import "HTLMarkCollectionViewCell.h"
 #import "HTLEditCategoryViewController.h"
+#import "HTLMark.h"
 
 
-@interface HTLActivityListTableViewController () <HTLEditCategoryViewControllerDelegate> {
-    HTLActivityListDataSource *dataSource_;
+@interface HTLMarkListTableViewController () <HTLEditCategoryViewControllerDelegate> {
+    HTLMarkListDataSource *dataSource_;
 }
 
 @end
 
-@implementation HTLActivityListTableViewController
+@implementation HTLMarkListTableViewController
 
-#pragma mark - HTLEditCategoriesViewController_New
+#pragma mark - HTLMarkListTableViewController
 
-- (HTLActivityListDataSource *)dataSource {
+- (HTLMarkListDataSource *)dataSource {
     if (!dataSource_) {
         __weak __typeof(self) weakSelf = self;
-        dataSource_ = [HTLActivityListDataSource dataSourceWithContentChangedBlock:^{
+        dataSource_ = [HTLMarkListDataSource dataSourceWithContentChangedBlock:^{
             [weakSelf reloadData];
         }];
     }
@@ -44,7 +45,7 @@
         editCategoryViewController.delegate = self;
         NSIndexPath *indexPath = self.tableView.indexPathForSelectedRow;
         if (indexPath) {
-            editCategoryViewController.originalCategory = [self.dataSource customCategoryAtIndexPath:indexPath];
+            editCategoryViewController.originalCategory = [self.dataSource customMarkAtIndexPath:indexPath];
         }
     }
 }
@@ -60,13 +61,28 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    HTLCategoryCell *cell = (id) [tableView dequeueReusableCellWithIdentifier:[HTLCategoryCell defaultIdentifier] forIndexPath:indexPath];
-    cell.category = indexPath.section == 0 ? [self.dataSource customCategoryAtIndexPath:indexPath] : [self.dataSource mandatoryCategoryAtIndexPath:indexPath];
+    HTLMark *mark = indexPath.section == 0 ? [self.dataSource customMarkAtIndexPath:indexPath] : [self.dataSource mandatoryMarkAtIndexPath:indexPath];
+    HTLMarkTableViewCell *cell;
+    if (mark.subTitle.length > 0) {
+        cell = (HTLMarkTableViewCell *) [tableView dequeueReusableCellWithIdentifier:[HTLMarkTableViewCell defaultIdentifierWithSubTitle] forIndexPath:indexPath];
+    } else {
+        cell = (HTLMarkTableViewCell *) [tableView dequeueReusableCellWithIdentifier:[HTLMarkTableViewCell defaultIdentifier] forIndexPath:indexPath];
+    }
+    cell.mark = mark;
     return cell;
 }
 
 - (nullable NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
     return section == 0 ? @"Custom" : @"Mandatory";
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    HTLMark *mark = indexPath.section == 0 ? [self.dataSource customMarkAtIndexPath:indexPath] : [self.dataSource mandatoryMarkAtIndexPath:indexPath];
+    if (mark.subTitle.length > 0) {
+        return 55.0;
+    } else {
+        return 44.0;
+    }
 }
 
 - (UITableViewCellEditingStyle)tableView:(UITableView *)tableView editingStyleForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -89,7 +105,7 @@
 
 #pragma mark - HTLEditCategoryViewControllerDelegate_New
 
-- (void)editCategoryViewController:(HTLEditCategoryViewController *)viewController finishedWithCategory:(HTLActivity *)category {
+- (void)editCategoryViewController:(HTLEditCategoryViewController *)viewController finishedWithCategory:(HTLMark *)category {
     [self.dataSource saveCategory:category];
     [self reloadData];
     [self.navigationController popViewControllerAnimated:YES];

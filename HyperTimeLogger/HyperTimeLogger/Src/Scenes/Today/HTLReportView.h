@@ -1,5 +1,5 @@
 //
-// Created by Maxim Pervushin on 05/10/15.
+// Created by Maxim Pervushin on 03/11/15.
 // Copyright (c) 2015 Maxim Pervushin. All rights reserved.
 //
 
@@ -7,10 +7,7 @@
 
 @class HTLReport;
 
-
-@interface HTLReportCell : UITableViewCell
-
-+ (NSString *)defaultIdentifier;
+@interface HTLReportView: UIView
 
 @property (nonatomic, copy) HTLReport *report;
 

@@ -1,27 +1,29 @@
 //
-// Created by Maxim Pervushin on 05/10/15.
+// Created by Maxim Pervushin on 09/10/15.
 // Copyright (c) 2015 Maxim Pervushin. All rights reserved.
 //
 
 #import "HTLDataSource.h"
 
-@class HTLActivity;
-
+@class HTLMark;
+@class HTLReport;
 
 @interface HTLTodayDataSource : HTLDataSource
 
+@property(nonatomic, readonly) NSDate *lastReportEndDate;
+
+@property(nonatomic, readonly) HTLReport *lastReport;
+
 @property(nonatomic, readonly) NSTimeInterval currentInterval;
 
-- (NSUInteger)numberOfMandatoryCategories;
+- (NSUInteger)numberOfMarks;
 
-- (NSUInteger)numberOfCustomCategories;
+- (HTLMark *)markAtIndex:(NSInteger)index;
 
-- (HTLActivity *)mandatoryCategoryAtIndex:(NSInteger)index;
+- (BOOL)saveReportWithMarkAtIndex:(NSInteger)index;
 
-- (HTLActivity *)customCategoryAtIndex:(NSInteger)index;
+- (BOOL)saveReportWithMark:(HTLMark *)mark;
 
-- (BOOL)saveReportWithMandatoryCategoryAtIndex:(NSInteger)index;
-
-- (BOOL)saveReportWithCustomCategoryAtIndex:(NSInteger)index;
+- (BOOL)saveReport:(HTLReport *)report;
 
 @end

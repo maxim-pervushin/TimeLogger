@@ -48,7 +48,7 @@ static const int kCollectionViewMinItemsPerRow = 3;
     HTLReport *lastReport = self.dataSource.lastReport;
     if (lastReport) {
 //        self.lastReportActionTitleLabel.text = lastReport.action.title;
-//        self.lastReportCategoryTitleLabel.text = lastReport.category.title;
+//        self.lastReportCategoryTitleLabel.text = lastReport.mark.title;
 //        self.lastReportDurationLabel.text = lastReport.report.durationString;
 //        self.lastReportEndDateLabel.text = lastReport.report.endDateString;
     } else {

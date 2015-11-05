@@ -45,11 +45,11 @@
 
 #pragma mark - HTLEditCategoryViewController_New
 
-- (HTLActivity *)originalCategory {
+- (HTLMark *)originalCategory {
     return self.editor.originalCategory;
 }
 
-- (void)setOriginalCategory:(HTLActivity *)originalCategory {
+- (void)setOriginalCategory:(HTLMark *)originalCategory {
     [self.editor setOriginalCategory:originalCategory];
     [self reloadData];
 }

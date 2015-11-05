@@ -11,6 +11,8 @@
 #import "HTLContentManager.h"
 #import "HTLSqliteStorageProvider.h"
 #import "HTLCSVStringExportProvider.h"
+#import "HTLMemoryStorageProvider.h"
+#import "HTLThemeManager.h"
 #import <Fabric/Fabric.h>
 #import <Crashlytics/Crashlytics.h>
 
@@ -49,10 +51,18 @@ static NSString *const kStorageFileName = @"time_logger_storage.db";
 - (void)initializeContentManager {
     NSString *applicationGroup = [NSString stringWithFormat:@"%@%@", kApplicationGroup, [self.appVersion isEqualToString:@""] ? @"" : [NSString stringWithFormat:@"-%@", self.appVersion]];
     NSURL *storageFolderURL = [[NSFileManager defaultManager] containerURLForSecurityApplicationGroupIdentifier:applicationGroup];
-    HTLSqliteStorageProvider *sqliteStorageProvider =
-            [HTLSqliteStorageProvider sqliteStorageProviderWithStorageFolderURL:storageFolderURL
-                                                                storageFileName:kStorageFileName];
-    self.contentManager = [HTLContentManager contentManagerWithStorageProvider:sqliteStorageProvider exportProvider:[HTLCSVStringExportProvider new]];
+//    HTLSqliteStorageProvider *sqliteStorageProvider =
+//            [HTLSqliteStorageProvider sqliteStorageProviderWithStorageFolderURL:storageFolderURL
+//                                                                storageFileName:kStorageFileName];
+//    self.contentManager = [HTLContentManager contentManagerWithStorageProvider:sqliteStorageProvider exportProvider:[HTLCSVStringExportProvider new]];
+
+    HTLMemoryStorageProvider *storageProvider = [HTLMemoryStorageProvider new];
+    self.contentManager = [HTLContentManager contentManagerWithStorageProvider:storageProvider exportProvider:[HTLCSVStringExportProvider new]];
+    storageProvider.changesObserver = self.contentManager;
+}
+
+- (void)initializeThemeManager {
+    self.themeManager = [HTLThemeManager new];
 }
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
@@ -60,6 +70,7 @@ static NSString *const kStorageFileName = @"time_logger_storage.db";
     [self initializeCrashReporter];
     [self initializeLoggers];
     [self initializeContentManager];
+    [self initializeThemeManager];
 
     return YES;
 }

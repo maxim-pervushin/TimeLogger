@@ -11,6 +11,7 @@
 
 @end
 
+// TODO: Use HTLChangesObserver?
 
 @implementation HTLDataSource
 

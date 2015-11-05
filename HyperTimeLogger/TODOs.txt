@@ -7,7 +7,7 @@
 //
 
 
-// TODO: Use category without description(action). It seems categories should be enough.
+// TODO: Use mark without description(action). It seems categories should be enough.
 
 // TODO: From the Today screen user should be able to select one of the categories and enter or select description.
 //    1. Use completion;
@@ -17,3 +17,8 @@
 // TODO: Themes. At least light and dark.
 
 // TODO: Logs. Pie charts? Bar charts by day. Horizontal bar charts.
+
+// TODO: Autosave report in 5..4..3..2..1..0..Saved!
+// TODO: User can save manually.
+// TODO: User have time to add tags.
+// TODO: If user removed all tags no need to save.

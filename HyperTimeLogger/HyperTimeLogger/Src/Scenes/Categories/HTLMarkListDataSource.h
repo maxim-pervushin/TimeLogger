@@ -6,21 +6,21 @@
 #import "HTLDataSource.h"
 
 
-@class HTLActivity;
+@class HTLMark;
 
 
-@interface HTLActivityListDataSource : HTLDataSource
+@interface HTLMarkListDataSource : HTLDataSource
 
 - (NSUInteger)numberOfMandatoryCategories;
 
 - (NSUInteger)numberOfCustomCategories;
 
-- (HTLActivity *)mandatoryCategoryAtIndexPath:(NSIndexPath *)indexPath;
+- (HTLMark *)mandatoryMarkAtIndexPath:(NSIndexPath *)indexPath;
 
-- (HTLActivity *)customCategoryAtIndexPath:(NSIndexPath *)indexPath;
+- (HTLMark *)customMarkAtIndexPath:(NSIndexPath *)indexPath;
 
 - (BOOL)deleteCustomCategoryAtIndexPath:(NSIndexPath *)indexPath;
 
-- (BOOL)saveCategory:(HTLActivity *)category;
+- (BOOL)saveCategory:(HTLMark *)category;
 
 @end

@@ -10,10 +10,12 @@
 
 
 #define HTLAppContentManger ((HTLAppDelegate *)[UIApplication sharedApplication].delegate).contentManager
+#define HTLAppThemeManger ((HTLAppDelegate *)[UIApplication sharedApplication].delegate).themeManager
 #define HTLAppVersion ((HTLAppDelegate *)[UIApplication sharedApplication].delegate).appVersion
 
 
 @class HTLContentManager;
+@class HTLThemeManager;
 
 
 static NSString *const kHTLAppDelegateAddReportURLReceived = @"HTLAppDelegateAddReportURLReceived";
@@ -22,6 +24,7 @@ static NSString *const kHTLAppDelegateAddReportURLReceived = @"HTLAppDelegateAdd
 
 @property(nonatomic, strong) UIWindow *window;
 @property(nonatomic, strong) HTLContentManager *contentManager;
+@property(nonatomic, strong) HTLThemeManager *themeManager;
 @property(nonatomic, readonly) NSString *appVersion;
 
 @end

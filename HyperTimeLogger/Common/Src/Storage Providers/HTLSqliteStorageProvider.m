@@ -5,7 +5,7 @@
 
 #import "DTFolderMonitor.h"
 #import "FMDB.h"
-#import "HTLActivity.h"
+#import "HTLMark.h"
 #import "HTLDateSection.h"
 #import "HTLReport.h"
 #import "HTLSqliteStorageProvider+Deserialization.h"
@@ -44,7 +44,8 @@
         __weak __typeof(self) weakSelf = self;
         folderMonitor_ = [DTFolderMonitor folderMonitorForURL:storageFolderURL_ block:^{
             [weakSelf clearCaches];
-            [[NSNotificationCenter defaultCenter] postNotificationName:kHTLStorageProviderChangedNotification object:nil];
+            // TODO: Notify changed
+//            [[NSNotificationCenter defaultCenter] postNotificationName:kHTLStorageProviderChangedNotification object:nil];
         }];
         [self.folderMonitor startMonitoring];
     }
@@ -58,6 +59,7 @@
 - (FMDatabase *)databaseOpen {
     [self checkStorage];
     FMDatabase *database = [FMDatabase databaseWithPath:[self storageFilePath]];
+    DDLogVerbose(@"%@", [self storageFilePath]) ;
     if (![database open]) {
         DDLogError(@"Unable to open database.");
         return nil;
@@ -74,13 +76,13 @@
         }
 
         BOOL result = [database executeUpdate:
-                @"CREATE TABLE category("
+                @"CREATE TABLE mark("
                         "title TEXT, "
                         "subTitle TEXT, "
                         "color TEXT"
                         ");"];
 
-        DDLogVerbose(@"category table created: %@", result ? @"YES" : @"NO");
+        DDLogVerbose(@"mark table created: %@", result ? @"YES" : @"NO");
 
         result = [database executeUpdate:
                 @"CREATE TABLE report("
@@ -113,7 +115,7 @@
             "title AS categoryTitle, "
             "subTitle AS categorySubTitle, "
             "color AS categoryColor "
-            "FROM category "
+            "FROM mark "
             "GROUP BY title "
             "ORDER BY title;";
 
@@ -121,7 +123,7 @@
 
     NSMutableArray *categories = [NSMutableArray new];
     while ([resultSet next]) {
-        HTLActivity *category = [self unpackActivity:resultSet];
+        HTLMark *category = [self unpackActivity:resultSet];
         if (category) {
             [categories addObject:category];
         }
@@ -131,10 +133,10 @@
     return [categories copy];
 }
 
-- (BOOL)deleteCategory:(HTLActivity *)category database:(FMDatabase *)database {
+- (BOOL)deleteCategory:(HTLMark *)category database:(FMDatabase *)database {
 
     NSString *query = @"DELETE "
-            "FROM category "
+            "FROM mark "
             "WHERE title = :title "
             "AND subTitle = :subTitle "
             "AND color = :color;";
@@ -150,15 +152,15 @@
     if (success) {
         DDLogVerbose(@"Category %@ successfully inserted.", category);
     } else {
-        DDLogError(@"Unable to insert category %@.", category);
+        DDLogError(@"Unable to insert mark %@.", category);
     }
 
     return success;
 }
 
-- (BOOL)saveCategory:(HTLActivity *)category database:(FMDatabase *)database {
+- (BOOL)saveCategory:(HTLMark *)category database:(FMDatabase *)database {
 
-    NSString *query = @"INSERT OR REPLACE INTO category VALUES (:title, :subTitle, :color)";
+    NSString *query = @"INSERT OR REPLACE INTO mark VALUES (:title, :subTitle, :color)";
 
     NSDictionary *parameters = @{
             @"title" : category.title ? category.title : @"",
@@ -171,7 +173,7 @@
     if (success) {
         DDLogVerbose(@"Category %@ successfully inserted.", category);
     } else {
-        DDLogError(@"Unable to insert category %@.", category);
+        DDLogError(@"Unable to insert mark %@.", category);
     }
 
     return success;
@@ -202,9 +204,9 @@
             ":endZone)";
 
     NSDictionary *parameters = @{
-            @"categoryTitle" : report.category.title,
-            @"categorySubTitle" : report.category.subTitle,
-            @"categoryColor" : [UIColor hexStringFromRGBColor:report.category.color],
+            @"categoryTitle" : report.mark.title,
+            @"categorySubTitle" : report.mark.subTitle,
+            @"categoryColor" : [UIColor hexStringFromRGBColor:report.mark.color],
             @"startDate" : startDateString,
             @"startTime" : startTimeString,
             @"startZone" : startTimeZoneString,
@@ -277,7 +279,7 @@
     return result;
 }
 
-- (NSArray *)reportsWithDateSection:(HTLDateSection *)dateSection category:(HTLActivity *)category database:(FMDatabase *)database {
+- (NSArray *)reportsWithDateSection:(HTLDateSection *)dateSection category:(HTLMark *)category database:(FMDatabase *)database {
 
     NSMutableString *whereString = [NSMutableString new];
     NSMutableDictionary *parameters = [NSMutableDictionary new];
@@ -374,11 +376,11 @@
         endDateParameters[@"endDate"] = dateSection.dateString;
     }
 
-    NSMutableArray *categories = [[self customCategories] mutableCopy];
-    [categories addObjectsFromArray:[self mandatoryCategories]];
+    NSMutableArray *categories = [[self customMarks] mutableCopy];
+    [categories addObjectsFromArray:[self mandatoryMarks]];
 
     NSMutableArray *result = [NSMutableArray new];
-    for (HTLActivity *category in categories) {
+    for (HTLMark *category in categories) {
 
         NSMutableDictionary *parameters = [@{
                 @"categoryTitle" : category.title,
@@ -421,9 +423,9 @@
         }
         [resultSet close];
 
-        [result addObject:[HTLStatisticsItem statisticsItemWithCategory:category
-                                                              totalTime:totalTime
-                                                           totalReports:totalReports]];
+        [result addObject:[HTLStatisticsItem statisticsItemWithMark:category
+                                                          totalTime:totalTime
+                                                       totalReports:totalReports]];
     }
 
     return [result copy];
@@ -452,7 +454,7 @@
     return result;
 }
 
-- (NSArray *)mandatoryCategories {
+- (NSArray *)mandatoryMarks {
     NSString *cacheKey = NSStringFromSelector(_cmd);
     NSArray *cached = [self.cache objectForKey:cacheKey];
     if (cached) {
@@ -461,13 +463,13 @@
     }
 
     NSArray *result = @[
-            [HTLActivity categoryWithTitle:@"Sleep" subTitle:@"" color:[UIColor paperColorDeepPurple]],
-            [HTLActivity categoryWithTitle:@"Personal" subTitle:@"" color:[UIColor paperColorIndigo]],
-            [HTLActivity categoryWithTitle:@"Road" subTitle:@"" color:[UIColor paperColorRed]],
-            [HTLActivity categoryWithTitle:@"Work" subTitle:@"" color:[UIColor paperColorLightGreen]],
-            [HTLActivity categoryWithTitle:@"Improvement" subTitle:@"" color:[UIColor paperColorDeepOrange]],
-            [HTLActivity categoryWithTitle:@"Recreation" subTitle:@"" color:[UIColor paperColorCyan]],
-            [HTLActivity categoryWithTitle:@"Time Waste" subTitle:@"" color:[UIColor paperColorBrown]]
+            [HTLMark markWithTitle:@"Sleep" subTitle:@"" color:[UIColor paperColorDeepPurple]],
+            [HTLMark markWithTitle:@"Personal" subTitle:@"" color:[UIColor paperColorIndigo]],
+            [HTLMark markWithTitle:@"Road" subTitle:@"" color:[UIColor paperColorRed]],
+            [HTLMark markWithTitle:@"Work" subTitle:@"" color:[UIColor paperColorLightGreen]],
+            [HTLMark markWithTitle:@"Improvement" subTitle:@"" color:[UIColor paperColorDeepOrange]],
+            [HTLMark markWithTitle:@"Recreation" subTitle:@"" color:[UIColor paperColorCyan]],
+            [HTLMark markWithTitle:@"Time Waste" subTitle:@"" color:[UIColor paperColorBrown]]
     ];
 
     [self.cache setObject:result forKey:cacheKey];
@@ -475,7 +477,7 @@
     return result;
 }
 
-- (NSArray *)customCategories {
+- (NSArray *)customMarks {
     NSString *cacheKey = NSStringFromSelector(_cmd);
     NSArray *cached = [self.cache objectForKey:cacheKey];
     if (cached) {
@@ -544,8 +546,8 @@
 //    return categories;
 //}
 
-- (BOOL)saveCategory:(HTLActivity *)category {
-    if (!category) {
+- (BOOL)saveMark:(HTLMark *)mark {
+    if (!mark) {
         return NO;
     }
 
@@ -556,7 +558,7 @@
 
     [self clearCaches];
 
-    if (![self saveCategory:category database:database]) {
+    if (![self saveCategory:mark database:database]) {
         [database close];
         return NO;
     }
@@ -565,8 +567,8 @@
     return YES;
 }
 
-- (BOOL)deleteCategory:(HTLActivity *)category {
-    if (!category) {
+- (BOOL)deleteMark:(HTLMark *)mark {
+    if (!mark) {
         return NO;
     }
 
@@ -577,7 +579,7 @@
 
     [self clearCaches];
 
-    BOOL deleted = [self deleteCategory:category database:database];
+    BOOL deleted = [self deleteCategory:mark database:database];
     [database close];
     return deleted;
 }
@@ -648,11 +650,11 @@
     return result;
 }
 
-- (NSArray *)reportsWithDateSection:(HTLDateSection *)dateSection category:(HTLActivity *)category {
+- (NSArray *)reportsWithDateSection:(HTLDateSection *)dateSection mark:(HTLMark *)mark {
     NSString *cacheKey = [NSString stringWithFormat:@"%@_%@_%@",
                                                     NSStringFromSelector(_cmd),
                                                     dateSection ? @(dateSection.hash) : @"",
-                                                    category ? @(category.hash) : @""];
+                                                    mark ? @(mark.hash) : @""];
 
     NSArray *cached = [self.cache objectForKey:cacheKey];
     if (cached) {
@@ -665,7 +667,7 @@
         return @[];
     }
 
-    NSArray *reportsExtended = [self reportsWithDateSection:dateSection category:category database:database];
+    NSArray *reportsExtended = [self reportsWithDateSection:dateSection category:mark database:database];
 
     [database close];
 

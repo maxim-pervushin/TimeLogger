@@ -5,7 +5,7 @@
 
 #import "HTLSettingsDataSource.h"
 #import "HTLAppDelegate.h"
-#import "HTLActivity.h"
+#import "HTLMark.h"
 #import "NSDate+HTLComponents.h"
 #import "HTLReport+Helpers.h"
 #import "HTLContentManager.h"
@@ -51,7 +51,7 @@
 
             for (NSDictionary *testDataSet in testData) {
                 //HTLAction *action = [HTLAction actionWithIdentifier:[self newIdentifier] title:testDataSet[@"action"]];
-                HTLActivity *category = [HTLActivity categoryWithTitle:testDataSet[@"categoryTitle"] subTitle:testDataSet[@"categorySubTitle"] color:[UIColor redColor]];
+                HTLMark *category = [HTLMark markWithTitle:testDataSet[@"categoryTitle"] subTitle:testDataSet[@"categorySubTitle"] color:[UIColor redColor]];
 
                 NSInteger from = ((NSNumber *) testDataSet[@"from"]).integerValue;
                 NSInteger fromHours = from / 100;
@@ -64,7 +64,7 @@
                 NSDate *endDate = [self yesterdayHours:toHours - 24 * (i - 1) minutes:toMinutes];
 
 
-                HTLReport *report = [HTLReport reportWithCategory:category startDate:startDate endDate:endDate];
+                HTLReport *report = [HTLReport reportWithMark:category startDate:startDate endDate:endDate];
 
                 [HTLAppContentManger saveReport:report];
             }

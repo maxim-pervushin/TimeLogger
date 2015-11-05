@@ -9,10 +9,6 @@
 
 - (NSTimeInterval)duration;
 
-- (NSString *)durationString;
-
-- (NSString *)startDateString;
-
-- (NSString *)endDateString;
+//- (NSString *)durationString;
 
 @end

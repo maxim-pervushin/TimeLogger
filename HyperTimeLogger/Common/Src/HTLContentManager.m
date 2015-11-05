@@ -8,75 +8,49 @@
 #import "HTLReport.h"
 #import "HTLCSVStringExportProvider.h"
 #import "HTLDateSection.h"
-#import "UIColor+BFPaperColors.h"
 
+
+static NSString *const kChangedNotification = @"HTLContentManagerChangedNotification";
 
 @interface HTLContentManager ()
 
 @property(nonatomic, strong) id <HTLStorageProvider> storageProvider;
 @property(nonatomic, strong) HTLCSVStringExportProvider *csvStringExportProvider;
 
-//- (void)initializeStorage;
-
 @end
 
 @implementation HTLContentManager
 
++ (NSString *)changedNotification {
+    return kChangedNotification;
+}
+
 + (instancetype)contentManagerWithStorageProvider:(id <HTLStorageProvider>)storageProvider exportProvider:(id <HTLStringExportProvider>)exportProvider {
     HTLContentManager *contentManager = [HTLContentManager new];
-    contentManager.storageProvider=  storageProvider;
+    contentManager.storageProvider = storageProvider;
     contentManager.csvStringExportProvider = exportProvider;
-//    [contentManager initializeStorage];
     return contentManager;
 }
 
-//- (void)initializeStorage {
-//    // Check categories.
-//    if (self.storageProvider.customCategories.count == 0) {
-//        NSArray *initialCategories = @[
-//                [HTLActivity categoryWithTitle:@"Sleep" subTitle:@"" color:[UIColor paperColorDeepPurple]],
-//                [HTLActivity categoryWithTitle:@"Personal" subTitle:@"" color:[UIColor paperColorIndigo]],
-//                [HTLActivity categoryWithTitle:@"Road" subTitle:@"" color:[UIColor paperColorRed]],
-//                [HTLActivity categoryWithTitle:@"Work" subTitle:@"" color:[UIColor paperColorLightGreen]],
-//                [HTLActivity categoryWithTitle:@"Improvement" subTitle:@"" color:[UIColor paperColorDeepOrange]],
-//                [HTLActivity categoryWithTitle:@"Recreation" subTitle:@"" color:[UIColor paperColorCyan]],
-//                [HTLActivity categoryWithTitle:@"Time Waste" subTitle:@"" color:[UIColor paperColorBrown]]
-//        ];
-//
-//        for (HTLActivity *category in initialCategories) {
-//            [self.storageProvider saveCategory:category];
-//        }
-//    }
-//}
-
 - (BOOL)clear {
     BOOL result = [self.storageProvider clear];
-//    [self initializeStorage];
     return result;
 }
 
-- (NSArray *)mandatoryCategories {
-    return self.storageProvider.mandatoryCategories;
+- (NSArray *)mandatoryMarks {
+    return self.storageProvider.mandatoryMarks;
 }
 
-- (NSArray *)customCategories {
-    return self.storageProvider.customCategories;
+- (NSArray *)customMarks {
+    return self.storageProvider.customMarks;
 }
 
-//- (NSUInteger)numberOfCategoriesWithDateSection:(HTLDateSection *)dateSection {
-//    return [self.storageProvider numberOfCategoriesWithDateSection:dateSection];
-//}
-//
-//- (NSArray *)categoriesWithDateSection:(HTLDateSection *)dateSection {
-//    return [self.storageProvider categoriesWithDateSection:dateSection];
-//}
-
-- (BOOL)saveCategory:(HTLActivity *)category {
-    return [self.storageProvider saveCategory:category];
+- (BOOL)saveMark:(HTLMark *)mark {
+    return [self.storageProvider saveMark:mark];
 }
 
-- (BOOL)deleteCategory:(HTLActivity *)category {
-    return [self.storageProvider deleteCategory:category];
+- (BOOL)deleteMark:(HTLMark *)mark {
+    return [self.storageProvider deleteMark:mark];
 }
 
 - (NSUInteger)numberOfDateSections {
@@ -91,8 +65,8 @@
     return [self.storageProvider numberOfReportsWithDateSection:dateSection];
 }
 
-- (NSArray *)reportsWithDateSection:(HTLDateSection *)dateSection category:(HTLActivity *)category {
-    return [self.storageProvider reportsWithDateSection:dateSection category:category];
+- (NSArray *)reportsWithDateSection:(HTLDateSection *)dateSection mark:(HTLMark *)mark {
+    return [self.storageProvider reportsWithDateSection:dateSection mark:mark];
 }
 
 - (BOOL)saveReport:(HTLReport *)report {
@@ -100,7 +74,7 @@
 }
 
 - (NSString *)exportDataToCSV {
-    return [self.csvStringExportProvider exportReportsExtended:[self.storageProvider reportsWithDateSection:nil category:nil]];
+    return [self.csvStringExportProvider exportReportsExtended:[self.storageProvider reportsWithDateSection:nil mark:nil]];
 }
 
 - (NSDate *)lastReportEndDate {
@@ -113,6 +87,12 @@
 
 - (NSArray *)statisticsWithDateSection:(HTLDateSection *)dateSection {
     return [self.storageProvider statisticsWithDateSection:dateSection];
+}
+
+#pragma mark - HTLChangesObserver
+
+- (void)changed:(id)object {
+    [[NSNotificationCenter defaultCenter] postNotificationName:[self.class changedNotification] object:self];
 }
 
 @end

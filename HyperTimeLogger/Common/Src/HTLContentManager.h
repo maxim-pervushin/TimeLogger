@@ -5,11 +5,14 @@
 
 #import <Foundation/Foundation.h>
 #import "HTLStorageProvider.h"
+#import "HTLChangesObserver.h"
 
 @protocol HTLStringExportProvider;
 
 
-@interface HTLContentManager : NSObject <HTLStorageProvider>
+@interface HTLContentManager : NSObject <HTLStorageProvider, HTLChangesObserver>
+
++ (NSString *)changedNotification;
 
 + (instancetype)contentManagerWithStorageProvider:(id <HTLStorageProvider>)storageProvider exportProvider:(id <HTLStringExportProvider>)exportProvider;
 

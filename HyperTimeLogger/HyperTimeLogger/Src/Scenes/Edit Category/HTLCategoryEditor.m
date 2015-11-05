@@ -11,7 +11,7 @@
 @dynamic canSave;
 @dynamic updatedCategory;
 
-- (void)setOriginalCategory:(HTLActivity *)originalCategory {
+- (void)setOriginalCategory:(HTLMark *)originalCategory {
     originalCategory_ = [originalCategory copy];
     self.title = [originalCategory_.title copy];
     self.subTitle = [originalCategory_.subTitle copy];
@@ -30,12 +30,12 @@
     return YES;
 }
 
-- (HTLActivity *)updatedCategory {
+- (HTLMark *)updatedCategory {
     if (!self.canSave) {
         return nil;
     }
 
-    return [HTLActivity categoryWithTitle:self.title subTitle:self.subTitle color:self.color];
+    return [HTLMark markWithTitle:self.title subTitle:self.subTitle color:self.color];
 }
 
 @end

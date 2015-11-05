@@ -3,16 +3,16 @@
 // Copyright (c) 2015 Maxim Pervushin. All rights reserved.
 //
 
-#import "HTLActivity.h"
+#import "HTLMark.h"
 #import "HTLReport.h"
 
 
-@implementation HTLActivity
+@implementation HTLMark
 @synthesize title = title_;
 @synthesize subTitle = subTitle_;
 @synthesize color = color_;
 
-+ (instancetype)categoryWithTitle:(NSString *)title subTitle:(NSString *)subTitle color:(UIColor *)color {
++ (instancetype)markWithTitle:(NSString *)title subTitle:(NSString *)subTitle color:(UIColor *)color {
     return [[self alloc] initWithTitle:title subTitle:subTitle color:color];
 }
 
@@ -29,7 +29,7 @@
 #pragma mark - NSCopying
 
 - (id)copyWithZone:(nullable NSZone *)zone {
-    HTLActivity *copy = [[[self class] allocWithZone:zone] init];
+    HTLMark *copy = [[[self class] allocWithZone:zone] init];
 
     if (copy != nil) {
         copy->title_ = title_;
@@ -51,7 +51,7 @@
     return [self isEqualToActivity:other];
 }
 
-- (BOOL)isEqualToActivity:(HTLActivity *)activity {
+- (BOOL)isEqualToActivity:(HTLMark *)activity {
     if (self == activity)
         return YES;
     if (activity == nil)

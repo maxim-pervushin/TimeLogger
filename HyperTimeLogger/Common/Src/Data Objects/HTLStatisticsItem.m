@@ -4,23 +4,23 @@
 //
 
 #import "HTLStatisticsItem.h"
-#import "HTLActivity.h"
+#import "HTLMark.h"
 
 
 @implementation HTLStatisticsItem
-@synthesize category = category_;
+@synthesize mark = mark_;
 @synthesize totalTime = totalTime_;
 @synthesize totalReports = totalReports_;
 
-+ (instancetype)statisticsItemWithCategory:(HTLActivity *)category totalTime:(NSTimeInterval)totalTime totalReports:(NSUInteger)totalReports {
-    return [[self alloc] initWithCategory:category totalTime:totalTime totalReports:totalReports];
++ (instancetype)statisticsItemWithMark:(HTLMark *)mark totalTime:(NSTimeInterval)totalTime totalReports:(NSUInteger)totalReports {
+    return [[self alloc] initWithCategory:mark totalTime:totalTime totalReports:totalReports];
 
 }
 
-- (instancetype)initWithCategory:(HTLActivity *)category totalTime:(NSTimeInterval)totalTime totalReports:(NSUInteger)totalReports {
+- (instancetype)initWithCategory:(HTLMark *)category totalTime:(NSTimeInterval)totalTime totalReports:(NSUInteger)totalReports {
     self = [super init];
     if (self) {
-        category_ = [category copy];
+        mark_ = [category copy];
         totalTime_ = totalTime;
         totalReports_ = totalReports;
     }
@@ -34,7 +34,7 @@
     HTLStatisticsItem *copy = [[[self class] allocWithZone:zone] init];
 
     if (copy != nil) {
-        copy->category_ = category_;
+        copy->mark_ = mark_;
         copy->totalTime_ = totalTime_;
         copy->totalReports_ = totalReports_;
     }
@@ -58,7 +58,7 @@
         return YES;
     if (item == nil)
         return NO;
-    if (self.category != item.category && ![self.category isEqual:item.category])
+    if (self.mark != item.mark && ![self.mark isEqual:item.mark])
         return NO;
     if (self.totalTime != item.totalTime)
         return NO;
@@ -68,7 +68,7 @@
 }
 
 - (NSUInteger)hash {
-    NSUInteger hash = [self.category hash];
+    NSUInteger hash = [self.mark hash];
     hash = hash * 31u + [[NSNumber numberWithDouble:self.totalTime] hash];
     hash = hash * 31u + self.totalReports;
     return hash;
@@ -78,7 +78,7 @@
 
 - (NSString *)description {
     NSMutableString *description = [NSMutableString stringWithFormat:@"<%@: ", NSStringFromClass([self class])];
-    [description appendFormat:@"self.category=%@", self.category];
+    [description appendFormat:@"self.mark=%@", self.mark];
     [description appendFormat:@", self.totalTime=%lf", self.totalTime];
     [description appendFormat:@", self.totalReports=%u", self.totalReports];
     [description appendString:@">"];
