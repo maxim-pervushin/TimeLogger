@@ -84,7 +84,7 @@
                                         <size key="customSize" width="162" height="105"/>
                                         <connections>
                                             <outlet property="actionTitleLabel" destination="s4o-LW-GfR" id="jqg-bY-4Um"/>
-                                            <outlet property="categoryTitleLabel" destination="iyL-lK-kGP" id="0nC-jk-vgN"/>
+                                            <outlet property="titleLabel" destination="iyL-lK-kGP" id="0nC-jk-vgN"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>

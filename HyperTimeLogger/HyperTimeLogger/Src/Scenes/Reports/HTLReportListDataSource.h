@@ -11,7 +11,8 @@
 
 @interface HTLReportListDataSource : HTLDataSource
 
-@property (nonatomic, assign) HTLDateSection *selectedDateSection;
+@property(nonatomic, assign) HTLDateSection *selectedDateSection;
+@property(nonatomic, readonly) NSArray *statistics;
 
 - (BOOL)hasPreviousDateSection;
 

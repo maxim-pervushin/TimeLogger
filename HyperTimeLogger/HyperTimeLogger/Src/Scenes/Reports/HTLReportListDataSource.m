@@ -82,53 +82,30 @@
 }
 
 - (void)reloadStatistics {
-    __weak __typeof(self) weakSelf = self;
-    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0), ^{
 
+    __weak __typeof(self) weakSelf = self;
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0), ^{
         NSLog(@"Calculating statistics for date section...");
         weakSelf.statistics = [HTLAppContentManger statisticsWithDateSection:weakSelf.selectedDateSection];
-//        NSLog(@"Done: %@", weakSelf.statistics);
-
+        //        NSLog(@"Done: %@", weakSelf.statistics);
+        
         NSLog(@"Calculating global statistics...");
         [HTLAppContentManger statisticsWithDateSection:nil];
         NSLog(@"Done.");
-
-
-        //NSLog(@"Statistics: %@", weakSelf.statistics);
-
-//        NSArray *categories = [HTLAppContentManger categoriesWithDateSection:weakSelf.selectedDateSection];
-//        NSMutableArray *categoriesCalculated = [NSMutableArray new];
-//        NSMutableDictionary *statisticsByCategoryCalculated = [NSMutableDictionary new];
-//        NSLog(@"Calculating statistics...");
-//        for (HTLMark *mark in categories) {
-//            NSArray *reports = [HTLAppContentManger reportsWithDateSection:weakSelf.selectedDateSection
-//                                                                  mark:mark];
-//
-//            NSTimeInterval totalTime = 0;
-//            NSUInteger totalReports = 0;
-//            for (HTLReport *report in reports) {
-//                totalTime += [report.endDate timeIntervalSinceDate:report.startDate];
-//                totalReports++;
-//            }
-//
-//            HTLStatisticsItem *statisticsItem = [HTLStatisticsItem statisticsItemWithCategory:mark totalTime:totalTime totalReports:totalReports];
-//
-//            NSLog(@"%@", statisticsItem);
-//
-//            if (statisticsItem) {
-//                [categoriesCalculated addObject:mark];
-//                NSString *key = [NSString stringWithFormat:@"%@", @(mark.hash)];
-//                statisticsByCategoryCalculated[key] = statisticsItem;
-//            }
-//        }
-//
-//        weakSelf.categoriesSaved = [categoriesCalculated copy];
-//        weakSelf.statisticsByCategorySaved = [statisticsByCategoryCalculated copy];
-//
-//        NSLog(@"Statistics calculated.");
-
         [weakSelf dataChanged];
     });
+    
+//    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0), ^{
+//
+//        NSLog(@"Calculating statistics for date section...");
+//        weakSelf.statistics = [HTLAppContentManger statisticsWithDateSection:weakSelf.selectedDateSection];
+////        NSLog(@"Done: %@", weakSelf.statistics);
+//
+//        NSLog(@"Calculating global statistics...");
+//        [HTLAppContentManger statisticsWithDateSection:nil];
+//        NSLog(@"Done.");
+//        [weakSelf dataChanged];
+//    });
 }
 
 - (void)reloadData {

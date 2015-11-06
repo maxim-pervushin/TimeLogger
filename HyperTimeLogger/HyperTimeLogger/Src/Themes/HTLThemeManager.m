@@ -5,6 +5,7 @@
 
 #import "HTLThemeManager.h"
 #import "HTLRoundButton.h"
+#import "HTLLineView.h"
 
 
 @implementation HTLThemeManager
@@ -18,6 +19,7 @@
     [[HTLRoundButton appearance] setTitleColor:theme.normalControlTitleColor forState:UIControlStateNormal];
     [[HTLRoundButton appearance] setTitleColor:theme.normalControlTitleColor forState:UIControlStateSelected];
     [[HTLRoundButton appearance] setTitleColor:theme.disabledControlTitleColor forState:UIControlStateDisabled];
+
 }
 
 - (instancetype)init {

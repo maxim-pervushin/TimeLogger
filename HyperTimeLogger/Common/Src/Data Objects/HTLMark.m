@@ -9,7 +9,7 @@
 
 @implementation HTLMark
 @synthesize title = title_;
-@synthesize subTitle = subTitle_;
+@synthesize subtitle = subTitle_;
 @synthesize color = color_;
 
 + (instancetype)markWithTitle:(NSString *)title subTitle:(NSString *)subTitle color:(UIColor *)color {
@@ -58,7 +58,7 @@
         return NO;
     if (self.title != activity.title && ![self.title isEqualToString:activity.title])
         return NO;
-    if (self.subTitle != activity.subTitle && ![self.subTitle isEqualToString:activity.subTitle])
+    if (self.subtitle != activity.subtitle && ![self.subtitle isEqualToString:activity.subtitle])
         return NO;
     if (self.color != activity.color && ![self.color isEqual:activity.color])
         return NO;
@@ -67,7 +67,7 @@
 
 - (NSUInteger)hash {
     NSUInteger hash = [self.title hash];
-    hash = hash * 31u + [self.subTitle hash];
+    hash = hash * 31u + [self.subtitle hash];
     hash = hash * 31u + [self.color hash];
     return hash;
 }
@@ -77,7 +77,7 @@
 - (NSString *)description {
     NSMutableString *description = [NSMutableString stringWithFormat:@"<%@: ", NSStringFromClass([self class])];
     [description appendFormat:@"self.title=%@", self.title];
-    [description appendFormat:@", self.subTitle=%@", self.subTitle];
+    [description appendFormat:@", self.subtitle=%@", self.subtitle];
     [description appendFormat:@", self.color=%@", self.color];
     [description appendString:@">"];
     return description;

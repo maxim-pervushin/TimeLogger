@@ -14,7 +14,7 @@
 - (void)setOriginalCategory:(HTLMark *)originalCategory {
     originalCategory_ = [originalCategory copy];
     self.title = [originalCategory_.title copy];
-    self.subTitle = [originalCategory_.subTitle copy];
+    self.subTitle = [originalCategory_.subtitle copy];
     self.color = originalCategory_.color;
 }
 
@@ -23,7 +23,7 @@
         return NO;
     }
 
-    if (self.originalCategory && [self.originalCategory.title isEqual:self.title] && [self.originalCategory.subTitle isEqual:self.subTitle] && [self.originalCategory.color isEqual:self.color]) {
+    if (self.originalCategory && [self.originalCategory.title isEqual:self.title] && [self.originalCategory.subtitle isEqual:self.subTitle] && [self.originalCategory.color isEqual:self.color]) {
         return NO;
     }
 

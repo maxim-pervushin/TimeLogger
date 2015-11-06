@@ -11,7 +11,7 @@
 + (instancetype)markWithTitle:(NSString *)title subTitle:(NSString *)subTitle color:(UIColor *)color;
 
 @property(nonatomic, readonly) NSString *title;
-@property(nonatomic, readonly) NSString *subTitle;
+@property(nonatomic, readonly) NSString *subtitle;
 @property(nonatomic, readonly) UIColor *color;
 
 @end

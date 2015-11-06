@@ -9,19 +9,23 @@
 #import "HTLReportTableViewCell.h"
 #import "HTLReportDateListViewController.h"
 #import "HTLStatisticsHeader.h"
+#import "HTLReport.h"
 
 
-@interface HTLReportListViewController () <HTLReportDateListViewControllerDelegate>
+@interface HTLReportListViewController () <HTLReportDateListViewControllerDelegate> {
+    HTLReportListDataSource *_dataSource;
+}
 
 @property(nonatomic, weak) IBOutlet UIBarButtonItem *previousDateSectionButton;
 @property(nonatomic, weak) IBOutlet UIButton *currentDateSectionButton;
 @property(nonatomic, weak) IBOutlet UIBarButtonItem *nextDateSectionButton;
 
-@property(nonatomic, strong) HTLReportListDataSource *dataSource;
+@property(nonatomic, readonly) HTLReportListDataSource *dataSource;
 
 @end
 
 @implementation HTLReportListViewController
+@dynamic dataSource;
 
 #pragma mark - HTLReportListViewController_New @IB
 
@@ -35,15 +39,33 @@
 
 #pragma mark - HTLReportListViewController_New
 
-- (void)reloadData {
-    self.previousDateSectionButton.enabled = self.dataSource.hasPreviousDateSection;
-    self.nextDateSectionButton.enabled = self.dataSource.hasNextDateSection;
+- (HTLReportListDataSource *)dataSource {
+    if (!_dataSource) {
+        __weak __typeof(self) weakSelf = self;
+        _dataSource = [HTLReportListDataSource dataSourceWithContentChangedBlock:^{
+            [weakSelf updateUI];
+        }];
 
-    [self.currentDateSectionButton setTitle:self.dataSource.selectedDateSection.fulldateStringLocalized forState:UIControlStateNormal];
+    }
+    return _dataSource;
+}
 
-    self.title = self.dataSource.selectedDateSection.fulldateStringLocalized;
+- (void)updateUI {
+    if (!self.isViewLoaded) {
+        return;
+    }
 
-    [self.tableView reloadData];
+    __weak __typeof(self) weakSelf = self;
+    dispatch_async(dispatch_get_main_queue(), ^{
+        weakSelf.previousDateSectionButton.enabled = weakSelf.dataSource.hasPreviousDateSection;
+        weakSelf.nextDateSectionButton.enabled = weakSelf.dataSource.hasNextDateSection;
+
+        [weakSelf.currentDateSectionButton setTitle:weakSelf.dataSource.selectedDateSection.fulldateStringLocalized forState:UIControlStateNormal];
+
+        weakSelf.title = weakSelf.dataSource.selectedDateSection.fulldateStringLocalized;
+
+        [weakSelf.tableView reloadData];
+    });
 }
 
 #pragma mark - UITableViewController
@@ -53,25 +75,25 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    HTLReportTableViewCell *cell = (id) [tableView dequeueReusableCellWithIdentifier:[HTLReportTableViewCell defaultIdentifier] forIndexPath:indexPath];
-    cell.report = [self.dataSource reportAtIndexPath:indexPath];
+    HTLReport *report = [self.dataSource reportAtIndexPath:indexPath];
+    HTLReportTableViewCell *cell;
+    if (report.mark.subtitle.length > 0) {
+        cell = (id) [tableView dequeueReusableCellWithIdentifier:[HTLReportTableViewCell defaultIdentifierWithSubtitle] forIndexPath:indexPath];
+    } else {
+        cell = (id) [tableView dequeueReusableCellWithIdentifier:[HTLReportTableViewCell defaultIdentifier] forIndexPath:indexPath];
+    }
+    cell.report = report;
     return cell;
 }
 
 - (nullable UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
-    // TODO: Use custom view
     HTLStatisticsHeader *header = (id) [tableView dequeueReusableHeaderFooterViewWithIdentifier:@"Header"];
-//    if (!header) {
-//        header = [[HTLStatisticsHeader alloc] ini];
-//        header.text = @"TEST";
-//        header.backgroundColor = [UIColor greenColor];
-//    }
-
+    header.statistics = self.dataSource.statistics;
     return header;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
-    return 150;
+    return 100;
 }
 
 #pragma mark - UIViewController
@@ -90,11 +112,15 @@
     UINib *sectionHeaderNib = [UINib nibWithNibName:@"HTLStatisticsHeader" bundle:nil];
     [self.tableView registerNib:sectionHeaderNib forHeaderFooterViewReuseIdentifier:@"Header"];
 
-    __weak __typeof(self) weakSelf = self;
-    self.dataSource = [HTLReportListDataSource dataSourceWithContentChangedBlock:^{
-        [weakSelf reloadData];
-    }];
-    [self reloadData];
+//    __weak __typeof(self) weakSelf = self;
+//    self.dataSource = [HTLReportListDataSource dataSourceWithContentChangedBlock:^{
+//        [weakSelf updateUI];
+//    }];
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    [self updateUI];
     [self.dataSource reloadStatistics];
 }
 

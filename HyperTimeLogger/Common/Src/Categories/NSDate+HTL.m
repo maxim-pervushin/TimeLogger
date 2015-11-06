@@ -21,7 +21,8 @@ NSString *HTLDurationFullString(NSTimeInterval timeInterval) {
     static dispatch_once_t once = 0;
     dispatch_once(&once, ^{
         formatter = [NSDateFormatter new];
-        formatter.dateStyle = NSDateFormatterShortStyle;
+//        formatter.dateStyle = NSDateFormatterShortStyle;
+        formatter.dateStyle = NSDateFormatterNoStyle;
         formatter.timeStyle = NSDateFormatterShortStyle;
         formatter.timeZone = [NSTimeZone localTimeZone];
     });

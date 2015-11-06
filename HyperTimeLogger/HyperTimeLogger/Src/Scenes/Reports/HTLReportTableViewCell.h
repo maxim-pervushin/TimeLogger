@@ -12,6 +12,8 @@
 
 + (NSString *)defaultIdentifier;
 
++ (NSString *)defaultIdentifierWithSubtitle;
+
 @property (nonatomic, copy) HTLReport *report;
 
 @end

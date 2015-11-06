@@ -7,4 +7,7 @@
 
 
 @interface HTLStatisticsHeader : UITableViewHeaderFooterView
+
+@property(nonatomic, strong) NSArray *statistics;
+
 @end

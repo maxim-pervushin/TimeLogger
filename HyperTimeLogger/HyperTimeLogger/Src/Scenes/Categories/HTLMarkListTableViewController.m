@@ -63,7 +63,7 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     HTLMark *mark = indexPath.section == 0 ? [self.dataSource customMarkAtIndexPath:indexPath] : [self.dataSource mandatoryMarkAtIndexPath:indexPath];
     HTLMarkTableViewCell *cell;
-    if (mark.subTitle.length > 0) {
+    if (mark.subtitle.length > 0) {
         cell = (HTLMarkTableViewCell *) [tableView dequeueReusableCellWithIdentifier:[HTLMarkTableViewCell defaultIdentifierWithSubTitle] forIndexPath:indexPath];
     } else {
         cell = (HTLMarkTableViewCell *) [tableView dequeueReusableCellWithIdentifier:[HTLMarkTableViewCell defaultIdentifier] forIndexPath:indexPath];
@@ -78,7 +78,7 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     HTLMark *mark = indexPath.section == 0 ? [self.dataSource customMarkAtIndexPath:indexPath] : [self.dataSource mandatoryMarkAtIndexPath:indexPath];
-    if (mark.subTitle.length > 0) {
+    if (mark.subtitle.length > 0) {
         return 55.0;
     } else {
         return 44.0;

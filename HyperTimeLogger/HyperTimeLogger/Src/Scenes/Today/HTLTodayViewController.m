@@ -9,107 +9,33 @@
 #import "HTLMarkCollectionViewCell.h"
 #import "HTLMark.h"
 #import "HTLReportEditor.h"
-#import "HTLColorPickerTableView.h"
 #import "HTLReport.h"
-#import "HTLMarkEditor.h"
 #import "NSDate+HTL.h"
 #import "HTLEditReportTableViewController.h"
 
 
 static const int kHeaderHeight = 90;
-static const int kTopContainerHeight = 140;
 
 
 @interface HTLTodayViewController () <UICollectionViewDataSource, UICollectionViewDelegate, HTLEditReportTableViewControllerDelegate> {
-    BOOL _editorVisible;
     HTLTodayDataSource *_dataSource;
-    HTLReportEditor *_reportEditor;
 }
-
-@property(nonatomic, weak) IBOutlet UIView *dimView;
 
 @property(nonatomic, weak) IBOutlet UIView *headerContainer;
 @property(nonatomic, weak) IBOutlet NSLayoutConstraint *headerHeightConstraint;
-
-@property(nonatomic, weak) IBOutlet UIView *topContainer;
-@property(nonatomic, weak) IBOutlet NSLayoutConstraint *topHeightConstraint;
-
 @property(nonatomic, weak) IBOutlet UIView *centerContainer;
 @property(nonatomic, weak) IBOutlet NSLayoutConstraint *centerToSuperviewConstraint;
-
-@property(nonatomic, weak) IBOutlet UIView *bottomContainer;
-@property(nonatomic, weak) IBOutlet NSLayoutConstraint *bottomHeightConstraint;
-
-@property(nonatomic, weak) IBOutlet NSLayoutConstraint *topToCenterConstraint;
-@property(nonatomic, weak) IBOutlet NSLayoutConstraint *centerToBottomConstraint;
-
-
 @property(nonatomic, weak) IBOutlet HTLReportView *lastReportView;
-@property(nonatomic, weak) IBOutlet UILabel *customReportDatesLabel;
-@property(nonatomic, weak) IBOutlet UILabel *customReportDurationLabel;
 @property(nonatomic, weak) IBOutlet UILabel *countdownLabel;
 @property(nonatomic, weak) IBOutlet UICollectionView *marksCollectionView;
 
-@property(nonatomic, weak) IBOutlet UIButton *saveButton;
-@property(nonatomic, weak) IBOutlet UITextField *titleTextView;
-@property(nonatomic, weak) IBOutlet UITextField *subTitleTextView;
-@property(nonatomic, weak) IBOutlet HTLColorPickerTableView *colorPickerView;
-
-
-@property(assign) BOOL editorVisible;
-
 @property(nonatomic, strong) NSTimer *timer;
-@property(nonatomic, readonly) HTLReportEditor *reportEditor;
 
 @end
 
 @implementation HTLTodayViewController
-@dynamic editorVisible;
-@dynamic reportEditor;
 
-#pragma mark - HTLTodayViewController_New @IB
-
-- (IBAction)cancelButtonAction:(id)sender {
-    self.editorVisible = NO;
-    [self.titleTextView resignFirstResponder];
-    [self.subTitleTextView resignFirstResponder];
-}
-
-- (IBAction)saveButtonAction:(id)sender {
-    if ([self.dataSource saveReport:self.reportEditor.report]) {
-        self.editorVisible = NO;
-        [self.titleTextView resignFirstResponder];
-        [self.subTitleTextView resignFirstResponder];
-    }
-}
-
-//- (IBAction)customMarkButtonAction:(id)sender {
-//    self.reportEditor.startDate = self.dataSource.lastReportEndDate;
-//    self.reportEditor.endDate = [NSDate new];
-//    self.editorVisible = YES;
-//    [self.titleTextView becomeFirstResponder];
-//}
-
-- (IBAction)titleTextFieldEditingChanged:(id)sender {
-    self.reportEditor.markEditor.title = self.titleTextView.text;
-    self.reportEditor.markEditor.color = self.colorPickerView.color;
-}
-
-- (IBAction)subTitleTextFieldEditingChanged:(id)sender {
-    self.reportEditor.markEditor.subTitle = self.subTitleTextView.text;
-    self.reportEditor.markEditor.color = self.colorPickerView.color;
-}
-
-#pragma mark - HTLTodayViewController_New
-
-- (BOOL)editorVisible {
-    return _editorVisible;
-}
-
-- (void)setEditorVisible:(BOOL)editorVisible {
-    _editorVisible = editorVisible;
-    [self updateUIAnimated:YES];
-}
+#pragma mark - HTLTodayViewController
 
 - (HTLTodayDataSource *)dataSource {
     if (!_dataSource) {
@@ -122,64 +48,27 @@ static const int kTopContainerHeight = 140;
     return _dataSource;
 }
 
-- (HTLReportEditor *)reportEditor {
-    if (!_reportEditor) {
-        __weak __typeof(self) weakSelf = self;
-        _reportEditor = [HTLReportEditor editorWithChangedBlock:^{
-            [weakSelf updateUIAnimated:YES];
-        }];
-        [weakSelf updateUIAnimated:YES];
-    }
-    return _reportEditor;
-}
-
 - (void)updateUIAnimated:(BOOL)animated {
     if (!self.isViewLoaded) {
         return;
     }
 
-    self.saveButton.enabled = self.reportEditor.report != nil;
-    self.customReportDatesLabel.text = [NSString stringWithFormat:@"%@ → %@", self.reportEditor.startDate.shortString, self.reportEditor.endDate.shortString];
-    self.customReportDurationLabel.text = HTLDurationFullString([self.reportEditor.endDate timeIntervalSinceDate:self.reportEditor.startDate]);
-
     self.lastReportView.report = self.dataSource.lastReport;
     BOOL headerVisible = self.lastReportView.report != nil;
-
-    if (self.editorVisible) {
-        self.marksCollectionView.dataSource = nil;
-        self.marksCollectionView.delegate = nil;
-    } else {
-        self.marksCollectionView.dataSource = self;
-        self.marksCollectionView.delegate = self;
-    }
 
     __weak __typeof(self) weakSelf = self;
     dispatch_async(dispatch_get_main_queue(), ^{
         [weakSelf.view layoutIfNeeded];
 
-        if (headerVisible && !weakSelf.editorVisible) {
+        if (headerVisible) {
             weakSelf.centerToSuperviewConstraint.constant = kHeaderHeight;
             weakSelf.headerContainer.hidden = false;
         } else {
-            weakSelf.centerToSuperviewConstraint.constant = weakSelf.editorVisible ? kTopContainerHeight : 0;
+            weakSelf.centerToSuperviewConstraint.constant = 0;
             weakSelf.headerContainer.hidden = !headerVisible;
         }
 
-        weakSelf.topHeightConstraint.constant = kTopContainerHeight;
-        weakSelf.bottomHeightConstraint.constant = weakSelf.view.bounds.size.height - kTopContainerHeight;
         weakSelf.headerHeightConstraint.constant = kHeaderHeight;
-
-        if (weakSelf.editorVisible) {
-            [weakSelf.view bringSubviewToFront:weakSelf.centerContainer];
-            [weakSelf.view bringSubviewToFront:weakSelf.dimView];
-            [weakSelf.view bringSubviewToFront:weakSelf.topContainer];
-            [weakSelf.view bringSubviewToFront:weakSelf.bottomContainer];
-            weakSelf.topToCenterConstraint.constant = 0;
-            weakSelf.centerToBottomConstraint.constant = -weakSelf.centerContainer.frame.size.height;
-        } else {
-            weakSelf.topToCenterConstraint.constant = weakSelf.topHeightConstraint.constant * 2;
-            weakSelf.centerToBottomConstraint.constant = weakSelf.bottomHeightConstraint.constant * 2;
-        }
 
         [UIView animateWithDuration:animated ? 0.5 : 0
                               delay:0
@@ -188,7 +77,6 @@ static const int kTopContainerHeight = 140;
                             options:UIViewAnimationOptionLayoutSubviews
                          animations:^{
                              [weakSelf.view layoutIfNeeded];
-                             weakSelf.dimView.alpha = weakSelf.editorVisible ? 1 : 0;
                          }
                          completion:nil];
     });
@@ -224,7 +112,6 @@ static const int kTopContainerHeight = 140;
 
     self.marksCollectionView.dataSource = self;
     self.marksCollectionView.delegate = self;
-
 }
 
 
@@ -234,7 +121,6 @@ static const int kTopContainerHeight = 140;
 
     self.marksCollectionView.dataSource = nil;
     self.marksCollectionView.delegate = nil;
-
 }
 
 - (void)viewDidLoad {
@@ -254,7 +140,7 @@ static const int kTopContainerHeight = 140;
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     HTLMark *mark = [self.dataSource markAtIndex:indexPath.row];
-    HTLMarkCollectionViewCell *cell = (HTLMarkCollectionViewCell *) [collectionView dequeueReusableCellWithReuseIdentifier:mark.subTitle.length > 0 ? [HTLMarkCollectionViewCell defaultIdentifierWithSubTitle] : [HTLMarkCollectionViewCell defaultIdentifier] forIndexPath:indexPath];
+    HTLMarkCollectionViewCell *cell = (HTLMarkCollectionViewCell *) [collectionView dequeueReusableCellWithReuseIdentifier:mark.subtitle.length > 0 ? [HTLMarkCollectionViewCell defaultIdentifierWithSubTitle] : [HTLMarkCollectionViewCell defaultIdentifier] forIndexPath:indexPath];
     cell.mark = mark;
     return cell;
 }

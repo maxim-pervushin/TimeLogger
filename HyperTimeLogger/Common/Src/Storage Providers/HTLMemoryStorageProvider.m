@@ -63,7 +63,7 @@
 //        DDLogDebug(@"%.1f%%", (double) i / (double) repeats * 100);
 //
 //        for (NSDictionary *testDataSet in testData) {
-//            HTLMark *mark = [HTLMark markWithTitle:testDataSet[@"categoryTitle"] subTitle:testDataSet[@"categorySubTitle"] color:[UIColor redColor]];
+//            HTLMark *mark = [HTLMark markWithTitle:testDataSet[@"categoryTitle"] subtitle:testDataSet[@"categorySubTitle"] color:[UIColor redColor]];
 //
 //            NSInteger from = ((NSNumber *) testDataSet[@"from"]).integerValue;
 //            NSInteger fromHours = from / 100;

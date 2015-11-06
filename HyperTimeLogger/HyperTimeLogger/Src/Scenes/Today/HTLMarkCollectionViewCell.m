@@ -40,7 +40,7 @@
     if (self.mark) {
         self.markTitleLabel.text = self.mark.title;
         self.markTitleLabel.textColor = self.mark.color;
-        self.markSubTitleLabel.text = self.mark.subTitle;
+        self.markSubTitleLabel.text = self.mark.subtitle;
         self.markSubTitleLabel.textColor = self.mark.color;
     } else {
         self.markTitleLabel.text = @"[ERROR]";
@@ -93,7 +93,7 @@
     if (self.mark) {
         self.markTitleLabel.text = self.mark.title;
         self.markTitleLabel.textColor = self.mark.color;
-        self.markSubTitleLabel.text = self.mark.subTitle;
+        self.markSubTitleLabel.text = self.mark.subtitle;
         self.markSubTitleLabel.textColor = self.mark.color;
     } else {
         self.markTitleLabel.text = @"[ERROR]";

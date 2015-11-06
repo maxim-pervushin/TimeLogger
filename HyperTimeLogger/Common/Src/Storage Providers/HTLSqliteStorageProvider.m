@@ -78,7 +78,7 @@
         BOOL result = [database executeUpdate:
                 @"CREATE TABLE mark("
                         "title TEXT, "
-                        "subTitle TEXT, "
+                        "subtitle TEXT, "
                         "color TEXT"
                         ");"];
 
@@ -113,7 +113,7 @@
 
     NSString *query = @"SELECT "
             "title AS categoryTitle, "
-            "subTitle AS categorySubTitle, "
+            "subtitle AS categorySubTitle, "
             "color AS categoryColor "
             "FROM mark "
             "GROUP BY title "
@@ -138,12 +138,12 @@
     NSString *query = @"DELETE "
             "FROM mark "
             "WHERE title = :title "
-            "AND subTitle = :subTitle "
+            "AND subtitle = :subtitle "
             "AND color = :color;";
 
     NSDictionary *parameters = @{
             @"title" : category.title,
-            @"subTitle" : category.subTitle,
+            @"subtitle" : category.subtitle,
             @"color" : [UIColor hexStringFromRGBColor:category.color]
     };
 
@@ -160,11 +160,11 @@
 
 - (BOOL)saveCategory:(HTLMark *)category database:(FMDatabase *)database {
 
-    NSString *query = @"INSERT OR REPLACE INTO mark VALUES (:title, :subTitle, :color)";
+    NSString *query = @"INSERT OR REPLACE INTO mark VALUES (:title, :subtitle, :color)";
 
     NSDictionary *parameters = @{
             @"title" : category.title ? category.title : @"",
-            @"subTitle" : category.subTitle ? category.subTitle : @"",
+            @"subtitle" : category.subtitle ? category.subtitle : @"",
             @"color" : category.color ? [UIColor hexStringFromRGBColor:category.color] : @""
     };
 
@@ -205,7 +205,7 @@
 
     NSDictionary *parameters = @{
             @"categoryTitle" : report.mark.title,
-            @"categorySubTitle" : report.mark.subTitle,
+            @"categorySubTitle" : report.mark.subtitle,
             @"categoryColor" : [UIColor hexStringFromRGBColor:report.mark.color],
             @"startDate" : startDateString,
             @"startTime" : startTimeString,
@@ -290,7 +290,7 @@
     if (category) {
         [whereString appendFormat:@"%@ categoryTitle = :categoryTitle AND categorySubTitle = :categorySubTitle AND categoryColor = :categoryColor", whereString.length > 0 ? @"AND" : @"WHERE"];
         parameters[@"categoryTitle"] = category.title;
-        parameters[@"categorySubTitle"] = category.subTitle;
+        parameters[@"categorySubTitle"] = category.subtitle;
         parameters[@"categoryColor"] = category.color;
     }
 
@@ -384,7 +384,7 @@
 
         NSMutableDictionary *parameters = [@{
                 @"categoryTitle" : category.title,
-                @"categorySubTitle" : category.subTitle,
+                @"categorySubTitle" : category.subtitle,
                 @"categoryColor" : [UIColor hexStringFromRGBColor:category.color]
         } mutableCopy];
         [parameters addEntriesFromDictionary:endDateParameters];
