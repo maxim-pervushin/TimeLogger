@@ -10,9 +10,9 @@
 
 - (void)configure {
     [self enableMaterialPlaceHolder:YES];
-    self.errorColor = [UIColor colorWithRed:0.910 green:0.329 blue:0.271 alpha:1.000]; // FLAT RED COLOR
-    self.lineColor = [UIColor colorWithRed:0.482 green:0.800 blue:1.000 alpha:1.000];
-    self.tintColor = [UIColor colorWithRed:0.482 green:0.800 blue:1.000 alpha:1.000];
+    self.errorColor = [UIColor paperColorRed];
+    self.lineColor = [UIColor paperColorBrown];
+    self.tintColor = [UIColor paperColorBrown];
 }
 
 - (instancetype)initWithFrame:(CGRect)frame {

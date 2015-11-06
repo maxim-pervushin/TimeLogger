@@ -13,13 +13,14 @@
 #import "HTLReport.h"
 #import "HTLMarkEditor.h"
 #import "NSDate+HTL.h"
+#import "HTLEditReportTableViewController.h"
 
 
-static const int kHeaderHeight = 70;
+static const int kHeaderHeight = 90;
 static const int kTopContainerHeight = 140;
 
 
-@interface HTLTodayViewController () <UICollectionViewDataSource, UICollectionViewDelegate> {
+@interface HTLTodayViewController () <UICollectionViewDataSource, UICollectionViewDelegate, HTLEditReportTableViewControllerDelegate> {
     BOOL _editorVisible;
     HTLTodayDataSource *_dataSource;
     HTLReportEditor *_reportEditor;
@@ -82,12 +83,12 @@ static const int kTopContainerHeight = 140;
     }
 }
 
-- (IBAction)customMarkButtonAction:(id)sender {
-    self.reportEditor.startDate = self.dataSource.lastReportEndDate;
-    self.reportEditor.endDate = [NSDate new];
-    self.editorVisible = YES;
-    [self.titleTextView becomeFirstResponder];
-}
+//- (IBAction)customMarkButtonAction:(id)sender {
+//    self.reportEditor.startDate = self.dataSource.lastReportEndDate;
+//    self.reportEditor.endDate = [NSDate new];
+//    self.editorVisible = YES;
+//    [self.titleTextView becomeFirstResponder];
+//}
 
 - (IBAction)titleTextFieldEditingChanged:(id)sender {
     self.reportEditor.markEditor.title = self.titleTextView.text;
@@ -201,16 +202,39 @@ static const int kTopContainerHeight = 140;
     self.countdownLabel.text = HTLDurationFullString(self.dataSource.currentInterval);
 }
 
+#pragma mark - UIViewController
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([segue.destinationViewController isKindOfClass:[UINavigationController class]]) {
+        UINavigationController *navigationController = (UINavigationController *) segue.destinationViewController;
+
+        if ([navigationController.topViewController isKindOfClass:[HTLEditReportTableViewController class]]) {
+            HTLEditReportTableViewController *editReportTableViewController = (HTLEditReportTableViewController *) navigationController.topViewController;
+            editReportTableViewController.reportEditor.startDate = self.dataSource.lastReportEndDate;
+            editReportTableViewController.reportEditor.endDate = [NSDate new];
+            editReportTableViewController.delegate = self;
+        }
+    }
+}
+
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     self.timer = [NSTimer scheduledTimerWithTimeInterval:0.5 target:self selector:@selector(timerAction:) userInfo:nil repeats:YES];
     [self.timer fire];
+
+    self.marksCollectionView.dataSource = self;
+    self.marksCollectionView.delegate = self;
+
 }
 
 
 - (void)viewDidDisappear:(BOOL)animated {
     [super viewDidDisappear:animated];
     [self.timer invalidate];
+
+    self.marksCollectionView.dataSource = nil;
+    self.marksCollectionView.delegate = nil;
+
 }
 
 - (void)viewDidLoad {
@@ -238,6 +262,17 @@ static const int kTopContainerHeight = 140;
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
     [self.dataSource saveReportWithMarkAtIndex:indexPath.row];
     [collectionView deselectItemAtIndexPath:indexPath animated:YES];
+}
+
+#pragma mark - HTLEditReportTableViewControllerDelegate
+
+- (void)editReportTableViewControllerDidCancel:(HTLEditReportTableViewController *)viewController {
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+- (void)editReportTableViewController:(HTLEditReportTableViewController *)viewController didFinishEditingWithReport:(HTLReport *)report {
+    [self dismissViewControllerAnimated:YES completion:nil];
+    [self.dataSource saveReport:report];
 }
 
 @end

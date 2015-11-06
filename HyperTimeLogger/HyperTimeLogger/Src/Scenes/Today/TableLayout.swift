@@ -10,7 +10,7 @@ import UIKit
 
 class TableLayout: UICollectionViewLayout {
     
-    var numberOfColumns: Int = 3
+    var numberOfColumns: Int = 2
     
     var rowHeight = CGFloat(50)
     
