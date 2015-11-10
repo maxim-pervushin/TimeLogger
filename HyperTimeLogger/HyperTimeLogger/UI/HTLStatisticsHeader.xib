@@ -22,7 +22,7 @@
                     <animations/>
                     <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="1" id="cN9-0G-cNf"/>
+                        <constraint firstAttribute="height" constant="1" placeholder="YES" id="cN9-0G-cNf"/>
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Bc5-DG-NGQ" userLabel="Chart Container">
