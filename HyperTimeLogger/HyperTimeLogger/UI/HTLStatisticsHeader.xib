@@ -12,6 +12,11 @@
             <rect key="frame" x="0.0" y="0.0" width="459" height="310"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MFc-Ru-8Jv" userLabel="Background View">
+                    <rect key="frame" x="0.0" y="0.0" width="459" height="309"/>
+                    <animations/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hUD-E8-r4K" customClass="HTLLineView">
                     <rect key="frame" x="0.0" y="309" width="459" height="1"/>
                     <animations/>
@@ -21,10 +26,10 @@
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Bc5-DG-NGQ" userLabel="Chart Container">
-                    <rect key="frame" x="8" y="8" width="443" height="294"/>
+                    <rect key="frame" x="8" y="8" width="443" height="293"/>
                     <subviews>
                         <view contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="wJU-Tf-Mbm" customClass="XYPieChart">
-                            <rect key="frame" x="75" y="0.0" width="294" height="294"/>
+                            <rect key="frame" x="75" y="0.0" width="293" height="293"/>
                             <animations/>
                             <constraints>
                                 <constraint firstAttribute="width" secondItem="wJU-Tf-Mbm" secondAttribute="height" multiplier="1:1" id="Lrh-q0-kna"/>
@@ -52,12 +57,16 @@
             <constraints>
                 <constraint firstItem="Bc5-DG-NGQ" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="8" id="1QB-zj-ZHw"/>
                 <constraint firstItem="hUD-E8-r4K" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="25K-yx-KYw"/>
+                <constraint firstAttribute="trailing" secondItem="MFc-Ru-8Jv" secondAttribute="trailing" id="5tX-UG-h8b"/>
                 <constraint firstItem="Bc5-DG-NGQ" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="8" id="8nn-fm-nPQ"/>
                 <constraint firstAttribute="trailing" secondItem="Bc5-DG-NGQ" secondAttribute="trailing" constant="8" id="8tE-8p-9jS"/>
                 <constraint firstItem="hgu-eL-zBf" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="9gr-Gc-4LD"/>
                 <constraint firstItem="hgu-eL-zBf" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="BUG-KS-dj9"/>
-                <constraint firstAttribute="bottom" secondItem="Bc5-DG-NGQ" secondAttribute="bottom" constant="8" id="c1K-m2-raW"/>
+                <constraint firstItem="MFc-Ru-8Jv" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="I4C-4g-lq5"/>
+                <constraint firstItem="hUD-E8-r4K" firstAttribute="top" secondItem="MFc-Ru-8Jv" secondAttribute="bottom" id="Khj-2X-Tch"/>
+                <constraint firstItem="MFc-Ru-8Jv" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="akD-pY-pcu"/>
                 <constraint firstAttribute="trailing" secondItem="hUD-E8-r4K" secondAttribute="trailing" id="ieo-BQ-tZC"/>
+                <constraint firstItem="hUD-E8-r4K" firstAttribute="top" secondItem="Bc5-DG-NGQ" secondAttribute="bottom" constant="8" id="izo-ON-buo"/>
                 <constraint firstAttribute="bottom" secondItem="hUD-E8-r4K" secondAttribute="bottom" id="lmX-I8-ahA"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>

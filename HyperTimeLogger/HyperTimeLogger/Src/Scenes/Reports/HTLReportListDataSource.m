@@ -108,6 +108,10 @@
 //    });
 }
 
+- (BOOL)saveReport:(HTLReport *)report {
+    return [HTLAppContentManger saveReport:report];
+}
+
 - (void)reloadData {
     BOOL resetIndex = NO;
     if (!self.dateSections) {

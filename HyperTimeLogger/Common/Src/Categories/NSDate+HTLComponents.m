@@ -64,5 +64,8 @@
     return [[NSDate fullFormatter] dateFromString:assembled];
 }
 
++ (NSDate *)dateWithDateString:(NSString *)dateString {
+    return [[NSDate dateComponentFormatter] dateFromString:dateString];
+}
 
 @end

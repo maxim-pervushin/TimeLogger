@@ -10,6 +10,7 @@
 
 @interface HTLReportEditor () {
     HTLMarkEditor *_markEditor;
+    NSString *_identifier;
     NSDate *_startDate;
     NSDate *_endDate;
 }
@@ -22,6 +23,7 @@
 
 @implementation HTLReportEditor
 @dynamic markEditor;
+@dynamic identifier;
 @dynamic startDate;
 @dynamic endDate;
 @dynamic report;
@@ -44,15 +46,24 @@
     return _markEditor;
 }
 
+- (NSString *)identifier {
+    return _identifier;
+}
+
+- (void)setIdentifier:(NSString *)identifier {
+    if (![_identifier isEqual:identifier]) {
+        _identifier = [identifier copy];
+    }
+    [self changed];
+}
+
 - (NSDate *)startDate {
     return _startDate;
 }
 
 - (void)setStartDate:(NSDate *)startDate {
-    if (startDate) {
+    if (![_startDate isEqual:startDate]) {
         _startDate = [startDate copy];
-    } else {
-        _startDate = nil;
     }
     [self changed];
 }
@@ -62,11 +73,17 @@
 }
 
 - (void)setEndDate:(NSDate *)endDate {
-    if (endDate) {
+    if (![_endDate isEqual:endDate]) {
         _endDate = [endDate copy];
-    } else {
-        _endDate = nil;
     }
+    [self changed];
+}
+
+- (void)setReport:(HTLReport *)report {
+    self.markEditor.mark = report.mark;
+    self.identifier = report.identifier;
+    self.startDate = report.startDate;
+    self.endDate = report.endDate;
     [self changed];
 }
 
@@ -75,7 +92,11 @@
         return nil;
     }
 
-    return [HTLReport reportWithMark:self.markEditor.mark startDate:self.startDate endDate:self.endDate];
+    if (self.identifier.length == 0) {
+        return [HTLReport reportWithMark:self.markEditor.mark startDate:self.startDate endDate:self.endDate];
+    } else {
+        return [HTLReport reportWithIdentifier:self.identifier mark:self.markEditor.mark startDate:self.startDate endDate:self.endDate];
+    }
 }
 
 - (void)changed {
@@ -83,16 +104,6 @@
         self.changedBlock();
     }
 }
-
-- (NSString *)description {
-    NSMutableString *description = [NSMutableString stringWithFormat:@"<%@: ", NSStringFromClass([self class])];
-    [description appendFormat:@"_markEditor=%@", _markEditor];
-    [description appendFormat:@", _startDate=%@", _startDate];
-    [description appendFormat:@", _endDate=%@", _endDate];
-    [description appendString:@">"];
-    return description;
-}
-
 
 @end;
 

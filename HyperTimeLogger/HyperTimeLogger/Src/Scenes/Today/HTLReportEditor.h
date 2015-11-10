@@ -13,13 +13,12 @@ typedef void (^HTLEditorChangedBlock)();
 
 + (instancetype)editorWithChangedBlock:(HTLEditorChangedBlock)block;
 
-- (NSString *)description;
-
 @property(nonatomic, readonly) HTLMarkEditor *markEditor;
+@property(nonatomic, copy) NSString *identifier;
 @property(nonatomic, copy) NSDate *startDate;
 @property(nonatomic, copy) NSDate *endDate;
 
-@property(nonatomic, readonly) HTLReport *report;
+@property(nonatomic, copy) HTLReport *report;
 
 @end;
 

@@ -14,10 +14,10 @@ typedef void (^HTLEditorChangedBlock)();
 - (NSString *)description;
 
 @property(nonatomic, copy) NSString *title;
-@property(nonatomic, copy) NSString *subTitle;
+@property(nonatomic, copy) NSString *subtitle;
 @property(nonatomic, copy) UIColor *color;
 
-@property(nonatomic, readonly) HTLMark *mark;
+@property(nonatomic, copy) HTLMark *mark;
 
 @end
 

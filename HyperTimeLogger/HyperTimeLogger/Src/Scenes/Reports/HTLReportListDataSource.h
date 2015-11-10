@@ -28,4 +28,6 @@
 
 - (void)reloadStatistics;
 
+- (BOOL)saveReport:(HTLReport *)report;
+
 @end

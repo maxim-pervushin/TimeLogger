@@ -16,11 +16,11 @@ static NSString *const kDefaultIdentifierWithSubtitle = @"HTLReportTableViewCell
     HTLReport *_report;
 }
 
+@property(nonatomic, weak) IBOutlet UIView *colorView;
 @property(nonatomic, weak) IBOutlet UILabel *titleLabel;
 @property(nonatomic, weak) IBOutlet UILabel *subtitleLabel;
 @property(nonatomic, weak) IBOutlet UILabel *durationLabel;
 @property(nonatomic, weak) IBOutlet UILabel *datesLabel;
-@property(nonatomic, weak) IBOutlet UIView *colorView;
 
 @end
 
@@ -48,17 +48,17 @@ static NSString *const kDefaultIdentifierWithSubtitle = @"HTLReportTableViewCell
 
 - (void)updateUI {
     if (self.report && self.report.mark) {
+        self.colorView.backgroundColor = self.report.mark.color;
         self.titleLabel.text = self.report.mark.title;
         self.subtitleLabel.text = self.report.mark.subtitle;
         self.durationLabel.text = HTLDurationFullString(self.report.duration);
         self.datesLabel.text = [NSString stringWithFormat:@"%@ → %@", self.report.startDate.shortString, self.report.endDate.shortString];
-        self.colorView.backgroundColor = self.report.mark.color;
     } else {
+        self.colorView.backgroundColor = [UIColor blackColor];
         self.titleLabel.text = @"";
         self.subtitleLabel.text = @"";
         self.durationLabel.text = @"";
         self.datesLabel.text = @"";
-        self.colorView.backgroundColor = [UIColor blackColor];
     }
 }
 

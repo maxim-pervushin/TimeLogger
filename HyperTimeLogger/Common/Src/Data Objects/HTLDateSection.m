@@ -88,15 +88,20 @@
 @implementation HTLDateSection (Helpers)
 
 + (NSDateFormatter *)fullFormatter {
-    NSDateFormatter *formatter = [NSDateFormatter new];
-    formatter.dateStyle = NSDateFormatterFullStyle;
-    formatter.timeStyle = NSDateFormatterNoStyle;
+    // TODO: Move to NSDate category
+    static NSDateFormatter *formatter;
+    static dispatch_once_t token = 0;
+    dispatch_once(&token, ^{
+        formatter = [NSDateFormatter new];
+        formatter.dateFormat = @"yyyy-MM-dd";
+        formatter.dateStyle = NSDateFormatterMediumStyle;
+        formatter.doesRelativeDateFormatting = YES;
+    });
     return formatter;
 }
 
 - (NSString *)fulldateStringLocalized {
-    // TODO: Replace self.timeString and self.timeZoneString with empty strings.
-    return [[HTLDateSection fullFormatter] stringFromDate:[NSDate dateWithDateString:self.dateString timeString:self.timeString timeZoneString:self.timeZoneString]];
+    return [[HTLDateSection fullFormatter] stringFromDate:[NSDate dateWithDateString:self.dateString]];
 }
 
 @end

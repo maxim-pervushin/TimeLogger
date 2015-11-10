@@ -12,7 +12,8 @@
 
 @interface HTLMemoryStorageProvider () {
     NSMutableSet *_marks;
-    NSMutableSet *_reports;
+//    NSMutableSet *_reports;
+    NSMutableDictionary *_reportsById;
     NSDate *_launchDate;
 }
 
@@ -95,7 +96,8 @@
     self = [super init];
     if (self) {
         _marks = [NSMutableSet new];
-        _reports = [NSMutableSet new];
+//        _reports = [NSMutableSet new];
+        _reportsById = [NSMutableDictionary new];
         _launchDate = [NSDate new];
         [self initializeTestData];
     }
@@ -106,7 +108,8 @@
 
 - (BOOL)clear {
     [_marks removeAllObjects];
-    [_reports removeAllObjects];
+//    [_reports removeAllObjects];
+    [_reportsById removeAllObjects];
     return YES;
 }
 
@@ -147,7 +150,8 @@
 
 - (NSArray *)dateSections {
     NSMutableSet *dateSections = [NSMutableSet new];
-    for (HTLReport *report in _reports) {
+//    for (HTLReport *report in _reports) {
+    for (HTLReport *report in _reportsById.allValues) {
         NSString *dateString;
         NSString *timeString;
         NSString *timeZoneString;
@@ -163,7 +167,8 @@
 }
 
 - (NSArray *)reportsWithDateSection:(HTLDateSection *)dateSection mark:(HTLMark *)mark {
-    NSSet *filtered = [_reports filteredSetUsingPredicate:[NSPredicate predicateWithBlock:^BOOL(HTLReport *report, NSDictionary *bindings) {
+//    NSSet *filtered = [_reports filteredSetUsingPredicate:[NSPredicate predicateWithBlock:^BOOL(HTLReport *report, NSDictionary *bindings) {
+    NSArray *filtered = [_reportsById.allValues filteredArrayUsingPredicate:[NSPredicate predicateWithBlock:^BOOL(HTLReport *report, NSDictionary *bindings) {
         if (mark && ![mark isEqual:report.mark]) {
             return NO;
         }
@@ -190,7 +195,8 @@
     if (![[self mandatoryMarks] containsObject:report.mark]) {
         [_marks addObject:report.mark];
     }
-    [_reports addObject:report];
+//    [_reports addObject:report];
+    _reportsById[report.identifier] = report;
     [self changed];
     return YES;
 }
@@ -204,7 +210,8 @@
 }
 
 - (HTLReport *)lastReport {
-    return [[_reports sortedArrayUsingDescriptors:@[[NSSortDescriptor sortDescriptorWithKey:@"endDate" ascending:YES]]] lastObject];
+//    return [[_reports sortedArrayUsingDescriptors:@[[NSSortDescriptor sortDescriptorWithKey:@"endDate" ascending:YES]]] lastObject];
+    return [[_reportsById.allValues sortedArrayUsingDescriptors:@[[NSSortDescriptor sortDescriptorWithKey:@"endDate" ascending:YES]]] lastObject];
 }
 
 - (NSArray *)statisticsWithDateSection:(HTLDateSection *)dateSection {

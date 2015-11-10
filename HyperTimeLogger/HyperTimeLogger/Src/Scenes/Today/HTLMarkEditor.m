@@ -8,7 +8,7 @@
 
 @interface HTLMarkEditor () {
     NSString *_title;
-    NSString *_subTitle;
+    NSString *_subtitle;
     UIColor *_color;
 }
 
@@ -16,9 +16,11 @@
 
 - (void)changed;
 
-@end@implementation HTLMarkEditor
+@end
+
+@implementation HTLMarkEditor
 @dynamic title;
-@dynamic subTitle;
+@dynamic subtitle;
 @dynamic color;
 @dynamic mark;
 
@@ -43,15 +45,15 @@
     [self changed];
 }
 
-- (NSString *)subTitle {
-    return _subTitle;
+- (NSString *)subtitle {
+    return _subtitle;
 }
 
-- (void)setSubTitle:(NSString *)subTitle {
-    if (subTitle) {
-        _subTitle = [subTitle copy];
+- (void)setSubtitle:(NSString *)subtitle {
+    if (subtitle) {
+        _subtitle = [subtitle copy];
     } else {
-        _subTitle = nil;
+        _subtitle = nil;
     }
     [self changed];
 }
@@ -69,12 +71,19 @@
     [self changed];
 }
 
+- (void)setMark:(HTLMark *)mark {
+    self.title = mark.title;
+    self.subtitle = mark.subtitle;
+    self.color = mark.color;
+    [self changed];
+}
+
 - (HTLMark *)mark {
     if (self.title.length == 0 || !self.color) {
         return nil;
     }
 
-    return [HTLMark markWithTitle:self.title subTitle:self.subTitle color:self.color];
+    return [HTLMark markWithTitle:self.title subTitle:self.subtitle color:self.color];
 }
 
 - (void)changed {
@@ -86,7 +95,7 @@
 - (NSString *)description {
     NSMutableString *description = [NSMutableString stringWithFormat:@"<%@: ", NSStringFromClass([self class])];
     [description appendFormat:@"_title=%@", _title];
-    [description appendFormat:@", _subTitle=%@", _subTitle];
+    [description appendFormat:@", _subtitle=%@", _subtitle];
     [description appendFormat:@", _color=%@", _color];
     [description appendString:@">"];
     return description;

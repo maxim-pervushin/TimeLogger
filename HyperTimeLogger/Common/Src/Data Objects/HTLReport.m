@@ -7,32 +7,44 @@
 
 
 @implementation HTLReport
+@synthesize identifier = identifier_;
 @synthesize mark = mark_;
 @synthesize startDate = startDate_;
 @synthesize endDate = endDate_;
 
 #pragma mark - HTLReport
 
-+ (instancetype)reportWithMark:(HTLMark *)mark startDate:(NSDate *)startDate endDate:(NSDate *)endDate {
-    return [[self alloc] initWithMark:mark startDate:startDate endDate:endDate];
++ (instancetype)reportWithIdentifier:(NSString *)identifier mark:(HTLMark *)mark startDate:(NSDate *)startDate endDate:(NSDate *)endDate {
+    return [[self alloc] initWithIdentifier:identifier mark:mark startDate:startDate endDate:endDate];
 }
 
-- (instancetype)initWithMark:(HTLMark *)mark startDate:(NSDate *)startDate endDate:(NSDate *)endDate {
++ (instancetype)reportWithMark:(HTLMark *)mark startDate:(NSDate *)startDate endDate:(NSDate *)endDate {
+    return [self reportWithIdentifier:[NSUUID UUID].UUIDString mark:mark startDate:startDate endDate:endDate];
+}
+
+- (instancetype)initWithIdentifier:(NSString *)identifier mark:(HTLMark *)mark startDate:(NSDate *)startDate endDate:(NSDate *)endDate {
+    if (identifier.length == 0) {
+        return nil;
+    }
+
     self = [super init];
     if (self) {
+        identifier_ = [identifier copy];
         mark_ = [mark copy];
         startDate_ = [startDate copy];
         endDate_ = [endDate copy];
     }
     return self;
+
 }
 
 #pragma mark - NSCopying
 
-- (id)copyWithZone:(nullable NSZone *)zone {
+- (id)copyWithZone:(NSZone *)zone {
     HTLReport *copy = [[[self class] allocWithZone:zone] init];
 
     if (copy != nil) {
+        copy->identifier_ = identifier_;
         copy->mark_ = mark_;
         copy->startDate_ = startDate_;
         copy->endDate_ = endDate_;
@@ -57,6 +69,8 @@
         return YES;
     if (report == nil)
         return NO;
+    if (self.identifier != report.identifier && ![self.identifier isEqualToString:report.identifier])
+        return NO;
     if (self.mark != report.mark && ![self.mark isEqual:report.mark])
         return NO;
     if (self.startDate != report.startDate && ![self.startDate isEqualToDate:report.startDate])
@@ -67,7 +81,8 @@
 }
 
 - (NSUInteger)hash {
-    NSUInteger hash = [self.mark hash];
+    NSUInteger hash = [self.identifier hash];
+    hash = hash * 31u + [self.mark hash];
     hash = hash * 31u + [self.startDate hash];
     hash = hash * 31u + [self.endDate hash];
     return hash;
@@ -77,7 +92,8 @@
 
 - (NSString *)description {
     NSMutableString *description = [NSMutableString stringWithFormat:@"<%@: ", NSStringFromClass([self class])];
-    [description appendFormat:@"self.mark=%@", self.mark];
+    [description appendFormat:@"self.identifier=%@", self.identifier];
+    [description appendFormat:@", self.mark=%@", self.mark];
     [description appendFormat:@", self.startDate=%@", self.startDate];
     [description appendFormat:@", self.endDate=%@", self.endDate];
     [description appendString:@">"];

@@ -28,7 +28,7 @@
 
 #pragma mark - NSCopying
 
-- (id)copyWithZone:(nullable NSZone *)zone {
+- (id)copyWithZone:(NSZone *)zone {
     HTLMark *copy = [[[self class] allocWithZone:zone] init];
 
     if (copy != nil) {
@@ -48,19 +48,19 @@
     if (!other || ![[other class] isEqual:[self class]])
         return NO;
 
-    return [self isEqualToActivity:other];
+    return [self isEqualToMark:other];
 }
 
-- (BOOL)isEqualToActivity:(HTLMark *)activity {
-    if (self == activity)
+- (BOOL)isEqualToMark:(HTLMark *)mark {
+    if (self == mark)
         return YES;
-    if (activity == nil)
+    if (mark == nil)
         return NO;
-    if (self.title != activity.title && ![self.title isEqualToString:activity.title])
+    if (self.title != mark.title && ![self.title isEqualToString:mark.title])
         return NO;
-    if (self.subtitle != activity.subtitle && ![self.subtitle isEqualToString:activity.subtitle])
+    if (self.subtitle != mark.subtitle && ![self.subtitle isEqualToString:mark.subtitle])
         return NO;
-    if (self.color != activity.color && ![self.color isEqual:activity.color])
+    if (self.color != mark.color && ![self.color isEqual:mark.color])
         return NO;
     return YES;
 }

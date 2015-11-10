@@ -10,9 +10,11 @@
 #import "HTLReportDateListViewController.h"
 #import "HTLStatisticsHeader.h"
 #import "HTLReport.h"
+#import "HTLEditReportTableViewController.h"
+#import "HTLReportEditor.h"
 
 
-@interface HTLReportListViewController () <HTLReportDateListViewControllerDelegate> {
+@interface HTLReportListViewController () <HTLReportDateListViewControllerDelegate, HTLEditReportTableViewControllerDelegate> {
     HTLReportListDataSource *_dataSource;
 }
 
@@ -61,7 +63,6 @@
         weakSelf.nextDateSectionButton.enabled = weakSelf.dataSource.hasNextDateSection;
 
         [weakSelf.currentDateSectionButton setTitle:weakSelf.dataSource.selectedDateSection.fulldateStringLocalized forState:UIControlStateNormal];
-
         weakSelf.title = weakSelf.dataSource.selectedDateSection.fulldateStringLocalized;
 
         [weakSelf.tableView reloadData];
@@ -103,6 +104,20 @@
         HTLReportDateListViewController *reportDateListViewController = (HTLReportDateListViewController *) segue.destinationViewController;
         reportDateListViewController.selectedDateSection = self.dataSource.selectedDateSection;
         reportDateListViewController.delegate = self;
+
+    } else if ([segue.destinationViewController isKindOfClass:[UINavigationController class]]) {
+        UINavigationController *navigationController = (UINavigationController *) segue.destinationViewController;
+
+        if ([navigationController.topViewController isKindOfClass:[HTLEditReportTableViewController class]]) {
+            HTLEditReportTableViewController *editReportTableViewController = (HTLEditReportTableViewController *) navigationController.topViewController;
+            NSIndexPath *selected = [self.tableView indexPathForSelectedRow];
+            if (selected) {
+                HTLReport *report = [self.dataSource reportAtIndexPath:selected];
+                editReportTableViewController.reportEditor.report = report;
+            }
+
+            editReportTableViewController.delegate = self;
+        }
     }
 }
 
@@ -124,11 +139,22 @@
     [self.dataSource reloadStatistics];
 }
 
-#pragma mark - HTLReportDateListViewControllerDelegate_New
+#pragma mark - HTLReportDateListViewControllerDelegate
 
 - (void)reportDateListViewController:(HTLReportDateListViewController *)viewController didSelectedDateSection:(HTLDateSection *)dateSection {
     self.dataSource.selectedDateSection = dateSection;
     [self.navigationController popViewControllerAnimated:YES];
+}
+
+#pragma mark - HTLEditReportTableViewControllerDelegate
+
+- (void)editReportTableViewControllerDidCancel:(HTLEditReportTableViewController *)viewController {
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+- (void)editReportTableViewController:(HTLEditReportTableViewController *)viewController didFinishEditingWithReport:(HTLReport *)report {
+    [self dismissViewControllerAnimated:YES completion:nil];
+    [self.dataSource saveReport:report];
 }
 
 @end

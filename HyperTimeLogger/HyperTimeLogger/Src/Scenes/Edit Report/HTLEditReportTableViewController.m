@@ -19,7 +19,7 @@
 @property(nonatomic, weak) IBOutlet UILabel *reportDatesLabel;
 @property(nonatomic, weak) IBOutlet UILabel *reportDurationLabel;
 @property(nonatomic, weak) IBOutlet UITextField *titleTextField;
-@property(nonatomic, weak) IBOutlet UITextField *subTitleTextField;
+@property(nonatomic, weak) IBOutlet UITextField *subtitleTextField;
 @property(nonatomic, weak) IBOutlet HTLColorPickerCollectionView *colorPicker;
 
 @end
@@ -42,7 +42,7 @@
 }
 
 - (IBAction)subTitleTextFieldEditingChanged:(id)sender {
-    self.reportEditor.markEditor.subTitle = self.subTitleTextField.text;
+    self.reportEditor.markEditor.subtitle = self.subtitleTextField.text;
 }
 
 #pragma mark - HTLEditReportTableViewController
@@ -63,6 +63,8 @@
     }
 
     self.saveButton.enabled = self.reportEditor.report != nil;
+    self.titleTextField.text = self.reportEditor.markEditor.title;
+    self.subtitleTextField.text = self.reportEditor.markEditor.subtitle;
     self.reportDatesLabel.text = [NSString stringWithFormat:@"%@ → %@", self.reportEditor.startDate.shortString, self.reportEditor.endDate.shortString];
     self.reportDurationLabel.text = [NSString stringWithFormat:NSLocalizedString(@"Duration: %@", @"Duration Format"), HTLDurationFullString([self.reportEditor.endDate timeIntervalSinceDate:self.reportEditor.startDate])] ;
 }
@@ -83,7 +85,7 @@
 - (void)viewWillDisappear:(BOOL)animated {
     [super viewWillDisappear:animated];
     [self.titleTextField resignFirstResponder];
-    [self.subTitleTextField resignFirstResponder];
+    [self.subtitleTextField resignFirstResponder];
 }
 
 #pragma mark - HTLColorPickerCollectionViewDelegate

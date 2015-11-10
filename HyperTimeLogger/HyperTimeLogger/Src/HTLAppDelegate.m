@@ -7,9 +7,7 @@
 //
 
 #import "HTLAppDelegate.h"
-#import "CocoaLumberjack.h"
 #import "HTLContentManager.h"
-#import "HTLSqliteStorageProvider.h"
 #import "HTLCSVStringExportProvider.h"
 #import "HTLMemoryStorageProvider.h"
 #import "HTLThemeManager.h"
@@ -50,7 +48,7 @@ static NSString *const kStorageFileName = @"time_logger_storage.db";
 
 - (void)initializeContentManager {
     NSString *applicationGroup = [NSString stringWithFormat:@"%@%@", kApplicationGroup, [self.appVersion isEqualToString:@""] ? @"" : [NSString stringWithFormat:@"-%@", self.appVersion]];
-    NSURL *storageFolderURL = [[NSFileManager defaultManager] containerURLForSecurityApplicationGroupIdentifier:applicationGroup];
+//    NSURL *storageFolderURL = [[NSFileManager defaultManager] containerURLForSecurityApplicationGroupIdentifier:applicationGroup];
 //    HTLSqliteStorageProvider *sqliteStorageProvider =
 //            [HTLSqliteStorageProvider sqliteStorageProviderWithStorageFolderURL:storageFolderURL
 //                                                                storageFileName:kStorageFileName];
