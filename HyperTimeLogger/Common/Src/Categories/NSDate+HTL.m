@@ -49,4 +49,22 @@ NSString *HTLDurationFullString(NSTimeInterval timeInterval) {
     return [self.mediumDateFormatter stringFromDate:self];
 }
 
+- (NSString *)stringWithFormat:(NSString *)format {
+    static NSMutableDictionary *formattersByFormat;
+    static dispatch_once_t once = 0;
+    dispatch_once(&once, ^{
+        formattersByFormat = [NSMutableDictionary new];
+    });
+
+    NSDateFormatter *formatter = formattersByFormat[format];
+    if (!formatter) {
+        formatter = [NSDateFormatter new];
+        formatter.dateFormat = format;
+        formatter.timeZone = [NSTimeZone localTimeZone];
+        formattersByFormat[format] = formatter;
+    }
+
+    return [formatter stringFromDate:self];
+}
+
 @end

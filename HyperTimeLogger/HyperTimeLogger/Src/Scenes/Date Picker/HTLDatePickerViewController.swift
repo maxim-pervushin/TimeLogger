@@ -6,8 +6,10 @@
 import UIKit
 
 //public protocol HTLDatePickerViewControllerDelegate: class {
+
 @objc public protocol HTLDatePickerViewControllerDelegate {
     func datePickerViewControllerDidCancel(viewController: HTLDatePickerViewController)
+
     func datePickerViewController(viewController: HTLDatePickerViewController, didPickDate date: NSDate)
 }
 
@@ -30,36 +32,48 @@ public final class HTLDatePickerViewController: UIViewController, CVCalendarView
         super.viewDidLayoutSubviews()
         calendarMenuView.commitMenuViewUpdate()
         calendarView.commitCalendarViewUpdate()
+        updateTitle()
     }
-    
-    /// Required method to implement!
+
+    private func updateTitle() {
+        if let date = calendarView.presentedDate.convertedDate() {
+            title = date.stringWithFormat("MMMM, yyyy")
+        }
+    }
+
+    // MARK: - CVCalendarViewDelegate, CVCalendarMenuViewDelegate, CVCalendarViewAppearanceDelegate
+
     public func presentationMode() -> CalendarMode {
         return .MonthView
     }
-    
-    /// Required method to implement!
+
     public func firstWeekday() -> Weekday {
         return .Monday
     }
-    
+
     public func shouldShowWeekdaysOut() -> Bool {
-        return true
+        return false
     }
-    
+
     public func shouldAnimateResizing() -> Bool {
-        return true // Default value is true
+        return false
     }
-    
+
+    public func shouldAutoSelectDayOnWeekChange() -> Bool {
+        return false
+    }
+
+    public func shouldAutoSelectDayOnMonthChange() -> Bool {
+        return false
+    }
+
     public func didSelectDayView(dayView: DayView) {
         if let date = dayView.date.convertedDate() {
             datePickerDelegate?.datePickerViewController(self, didPickDate: date)
         }
     }
-    
-//    public func didSelectDayView(dayView: DayView, animationDidFinish: Bool) {
-//        if let date = dayView.date.convertedDate() {
-//            datePickerDelegate?.datePickerViewController(self, didPickDate: date)
-//        }
-//    }
 
+    public func presentedDateUpdated(date: CVDate) {
+        updateTitle()
+    }
 }

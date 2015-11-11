@@ -23,6 +23,7 @@
                         <segue destination="cic-tJ-jb8" kind="relationship" relationship="viewControllers" id="P2G-2d-Cgr"/>
                         <segue destination="DK6-vr-UUm" kind="relationship" relationship="viewControllers" id="Q2Y-Ss-iiB"/>
                         <segue destination="iaK-Zj-ZCF" kind="relationship" relationship="viewControllers" id="Feq-cd-vpm"/>
+                        <segue destination="P7X-vg-Cs1" kind="relationship" relationship="viewControllers" id="yhD-td-UV2"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eXA-1g-Kk1" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -662,7 +663,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="COP-n9-c2y" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1004" y="-1130"/>
+            <point key="canvasLocation" x="732" y="-946"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Lyk-0U-oCZ">
@@ -744,7 +745,6 @@
                                 <action selector="cancelButtonAction:" destination="att-oz-5a2" id="1o6-Ed-HXa"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="Today" id="aQ5-GI-o02"/>
                     </navigationItem>
                     <connections>
                         <outlet property="calendarMenuView" destination="pps-AH-m0D" id="nqG-To-t2G"/>
@@ -1152,6 +1152,56 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XV3-i0-cNf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-90" y="-204"/>
+        </scene>
+        <!--Root View Controller-->
+        <scene sceneID="kRe-e5-DyZ">
+            <objects>
+                <tableViewController id="BwD-q0-NUX" customClass="HTLStatisticsTableViewController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="8wr-9E-sD7">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="a59-Af-LFu">
+                                <rect key="frame" x="0.0" y="92" width="600" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="a59-Af-LFu" id="9gL-yN-QTF">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <animations/>
+                                </tableViewCellContentView>
+                                <animations/>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="BwD-q0-NUX" id="ROL-VB-8Zx"/>
+                            <outlet property="delegate" destination="BwD-q0-NUX" id="g5n-l7-xwT"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Root View Controller" id="Znt-aF-yFO"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="is6-Lj-KMN" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-86" y="548"/>
+        </scene>
+        <!--Statistics-->
+        <scene sceneID="6xf-MS-cG5">
+            <objects>
+                <navigationController id="P7X-vg-Cs1" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Statistics" id="xxI-K8-Dtm"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="rlp-CF-8he">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <animations/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="BwD-q0-NUX" kind="relationship" relationship="rootViewController" id="WTv-QV-2qd"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="awf-hO-yS6" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-906" y="548"/>
         </scene>
         <!--Item-->
         <scene sceneID="F2L-oQ-eHp">

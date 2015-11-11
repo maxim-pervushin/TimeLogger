@@ -13,4 +13,6 @@ NSString *HTLDurationFullString(NSTimeInterval timeInterval);
 
 - (NSString *)mediumString;
 
+- (NSString *)stringWithFormat:(NSString *)format;
+
 @end
