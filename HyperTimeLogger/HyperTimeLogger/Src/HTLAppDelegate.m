@@ -11,6 +11,7 @@
 #import "HTLCSVStringExportProvider.h"
 #import "HTLMemoryStorageProvider.h"
 #import "HTLThemeManager.h"
+#import "HTLJsonStorageProvider.h"
 #import <Fabric/Fabric.h>
 #import <Crashlytics/Crashlytics.h>
 
@@ -48,13 +49,18 @@ static NSString *const kStorageFileName = @"time_logger_storage.db";
 
 - (void)initializeContentManager {
     NSString *applicationGroup = [NSString stringWithFormat:@"%@%@", kApplicationGroup, [self.appVersion isEqualToString:@""] ? @"" : [NSString stringWithFormat:@"-%@", self.appVersion]];
-//    NSURL *storageFolderURL = [[NSFileManager defaultManager] containerURLForSecurityApplicationGroupIdentifier:applicationGroup];
+
+//    [Parse setApplicationId:@"aQOwqENo97J1kytqlvN6uTdDPfhtuG5Ups5gDNjg"
+//                  clientKey:@"UNmINBV5r7dmN6Fnm4bOrknrfAT2ciZmS7YFd77z"];
+
+    NSURL *storageFolderURL = [[NSFileManager defaultManager] containerURLForSecurityApplicationGroupIdentifier:applicationGroup];
 //    HTLSqliteStorageProvider *sqliteStorageProvider =
 //            [HTLSqliteStorageProvider sqliteStorageProviderWithStorageFolderURL:storageFolderURL
 //                                                                storageFileName:kStorageFileName];
 //    self.contentManager = [HTLContentManager contentManagerWithStorageProvider:sqliteStorageProvider exportProvider:[HTLCSVStringExportProvider new]];
 
-    HTLMemoryStorageProvider *storageProvider = [HTLMemoryStorageProvider new];
+//    HTLMemoryStorageProvider *storageProvider = [HTLMemoryStorageProvider new];
+    HTLJsonStorageProvider *storageProvider = [HTLJsonStorageProvider jsonStorageProviderWithStorageFolderURL:storageFolderURL storageFileName:kStorageFileName ];
     self.contentManager = [HTLContentManager contentManagerWithStorageProvider:storageProvider exportProvider:[HTLCSVStringExportProvider new]];
     storageProvider.changesObserver = self.contentManager;
 }
@@ -67,6 +73,7 @@ static NSString *const kStorageFileName = @"time_logger_storage.db";
 
     [self initializeCrashReporter];
     [self initializeLoggers];
+    [self initializeContentManager];
     [self initializeContentManager];
     [self initializeThemeManager];
 

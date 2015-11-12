@@ -24,10 +24,6 @@
 
 #pragma mark - NSObject
 
-- (NSString *)newIdentifier {
-    return [NSUUID UUID].UUIDString;
-}
-
 - (NSDate *)yesterdayHours:(NSInteger)hours minutes:(NSInteger)minutes {
     NSDate *yesterday = [[NSDate new] dateByAddingTimeInterval:-86400.0];
 
@@ -80,44 +76,6 @@
     [self saveMark:[HTLMark markWithTitle:@"Work" subTitle:@"logger" color:[UIColor paperColorLightGreen400]]];
     [self saveMark:[HTLMark markWithTitle:@"Improvement" subTitle:@"english" color:[UIColor paperColorDeepOrange300]]];
     [self saveMark:[HTLMark markWithTitle:@"Improvement" subTitle:@"algorithms" color:[UIColor paperColorDeepOrange400]]];
-
-//    DDLogDebug(@"Generating test data...");
-//
-//    NSString *languageCode = [NSLocale componentsFromLocaleIdentifier:[NSLocale currentLocale].localeIdentifier][@"kCFLocaleLanguageCodeKey"];
-//    if (![languageCode isEqualToString:@"ru"]) {
-//        languageCode = @"en";
-//    }
-//    NSString *fileName = [NSString stringWithFormat:@"testdata_%@", languageCode];
-//    NSData *fileData = [NSData dataWithContentsOfFile:[[NSBundle mainBundle] pathForResource:fileName ofType:@"json"]];
-//    NSArray *testData = [NSJSONSerialization JSONObjectWithData:fileData options:0 error:nil];
-//
-////    int repeats = 100; // ~3 month of data
-//    int repeats = 33;
-//
-//    for (int i = 1; i <= repeats; i++) {
-//        DDLogDebug(@"%.1f%%", (double) i / (double) repeats * 100);
-//
-//        for (NSDictionary *testDataSet in testData) {
-//            HTLMark *mark = [HTLMark markWithTitle:testDataSet[@"categoryTitle"] subtitle:testDataSet[@"categorySubTitle"] color:[UIColor redColor]];
-//
-//            NSInteger from = ((NSNumber *) testDataSet[@"from"]).integerValue;
-//            NSInteger fromHours = from / 100;
-//            NSInteger fromMinutes = from - fromHours * 100;
-//            NSDate *startDate = [self yesterdayHours:fromHours - 24 * (i - 1) minutes:fromMinutes];
-//
-//            NSInteger to = ((NSNumber *) testDataSet[@"to"]).integerValue;
-//            NSInteger toHours = to / 100;
-//            NSInteger toMinutes = to - toHours * 100;
-//            NSDate *endDate = [self yesterdayHours:toHours - 24 * (i - 1) minutes:toMinutes];
-//
-//
-//            HTLReport *report = [HTLReport reportWithMark:mark startDate:startDate endDate:endDate];
-//
-//            [self saveReport:report];
-//        }
-//    }
-//
-//    DDLogDebug(@"Test data generated...");
 }
 
 - (void)changed {
