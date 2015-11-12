@@ -414,6 +414,18 @@
 		C59689EE1B3C18660038018D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C59689EC1B3C18660038018D /* InfoPlist.strings */; };
 		C59689F41B3C19860038018D /* TodayExtension Alpha.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = C59689BE1B3C16270038018D /* TodayExtension Alpha.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		C59689F81B3C198D0038018D /* TodayExtension Beta.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = C59689E01B3C16350038018D /* TodayExtension Beta.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		C59A83FB1BF4B96000183614 /* HTLJsonStorageProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6D39B3F01B06611349B1 /* HTLJsonStorageProvider.m */; };
+		C59A83FC1BF4B96000183614 /* HTLJsonStorageProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6D39B3F01B06611349B1 /* HTLJsonStorageProvider.m */; };
+		C59A83FD1BF4B96100183614 /* HTLJsonStorageProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6D39B3F01B06611349B1 /* HTLJsonStorageProvider.m */; };
+		C59A83FE1BF4B96700183614 /* HTLMemoryCacheProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC67C57765EBBCCE83F885 /* HTLMemoryCacheProvider.m */; };
+		C59A83FF1BF4B96700183614 /* HTLMemoryCacheProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC67C57765EBBCCE83F885 /* HTLMemoryCacheProvider.m */; };
+		C59A84001BF4B96700183614 /* HTLMemoryCacheProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC67C57765EBBCCE83F885 /* HTLMemoryCacheProvider.m */; };
+		C59A84011BF4B97100183614 /* NSDate+HTL.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC67B06453FFE89AF35E72 /* NSDate+HTL.m */; };
+		C59A84021BF4B97100183614 /* NSDate+HTL.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC67B06453FFE89AF35E72 /* NSDate+HTL.m */; };
+		C59A84031BF4B97200183614 /* NSDate+HTL.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC67B06453FFE89AF35E72 /* NSDate+HTL.m */; };
+		C59A84041BF4BB2D00183614 /* HTLMarkCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC627D803BF6DFB71DB376 /* HTLMarkCollectionViewCell.m */; };
+		C59A84051BF4BB2D00183614 /* HTLMarkCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC627D803BF6DFB71DB376 /* HTLMarkCollectionViewCell.m */; };
+		C59A84061BF4BB2E00183614 /* HTLMarkCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC627D803BF6DFB71DB376 /* HTLMarkCollectionViewCell.m */; };
 		C5BA1B801B26F890006D80BC /* TodayExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = C5BA1B731B26F890006D80BC /* TodayExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		C5C361C71BD512490070055F /* TableLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5C361C61BD512490070055F /* TableLayout.swift */; };
 		C5C361C81BD512490070055F /* TableLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5C361C61BD512490070055F /* TableLayout.swift */; };
@@ -2276,6 +2288,7 @@
 				C59689A21B3C16270038018D /* HTLReport+Helpers.m in Sources */,
 				C582B2FC1B3EC8D5005CC526 /* DDFileLogger.m in Sources */,
 				C59689A31B3C16270038018D /* HTLReport.m in Sources */,
+				C59A84011BF4B97100183614 /* NSDate+HTL.m in Sources */,
 				C582B3881B3EC8D5005CC526 /* UIColor+BFPaperColors.m in Sources */,
 				C59689A41B3C16270038018D /* HTLMark.m in Sources */,
 				C59689A71B3C16270038018D /* HTLDateSection.m in Sources */,
@@ -2285,11 +2298,13 @@
 				C582B30A1B3EC8D5005CC526 /* DDTTYLogger.m in Sources */,
 				C59689AA1B3C16270038018D /* HTLContentManager.m in Sources */,
 				C582B3031B3EC8D5005CC526 /* DDLog.m in Sources */,
+				C59A83FE1BF4B96700183614 /* HTLMemoryCacheProvider.m in Sources */,
 				C59689AB1B3C16270038018D /* DTFolderMonitor.m in Sources */,
 				C582B3651B3EC8D5005CC526 /* HexColor.m in Sources */,
 				C582B3501B3EC8D5005CC526 /* FMDatabasePool.m in Sources */,
 				C526F9851BC68AA90026E1EF /* HTLStatisticsItem.m in Sources */,
 				C582B39D1B3EC8D5005CC526 /* ZLBalancedFlowLayout.swift in Sources */,
+				C59A84061BF4BB2E00183614 /* HTLMarkCollectionViewCell.m in Sources */,
 				C59689AC1B3C16270038018D /* HTETodayViewController.m in Sources */,
 				C59689AD1B3C16270038018D /* HTETodayDataSource.m in Sources */,
 				C582B2F51B3EC8D5005CC526 /* DDASLLogger.m in Sources */,
@@ -2299,6 +2314,7 @@
 				C582B3491B3EC8D5005CC526 /* FMDatabaseAdditions.m in Sources */,
 				C582B2E71B3EC8D5005CC526 /* DDAbstractDatabaseLogger.m in Sources */,
 				C59689AF1B3C16270038018D /* HTLCSVStringExportProvider.m in Sources */,
+				C59A83FB1BF4B96000183614 /* HTLJsonStorageProvider.m in Sources */,
 				C59689B01B3C16270038018D /* HTLRoundButton.m in Sources */,
 				C582B31F1B3EC8D5005CC526 /* DDMultiFormatter.m in Sources */,
 				C59689B11B3C16270038018D /* HTLSqliteStorageProvider+Deserialization.m in Sources */,
@@ -2315,6 +2331,7 @@
 				C59689C41B3C16350038018D /* HTLReport+Helpers.m in Sources */,
 				C582B2FD1B3EC8D5005CC526 /* DDFileLogger.m in Sources */,
 				C59689C51B3C16350038018D /* HTLReport.m in Sources */,
+				C59A84021BF4B97100183614 /* NSDate+HTL.m in Sources */,
 				C582B3891B3EC8D5005CC526 /* UIColor+BFPaperColors.m in Sources */,
 				C59689C61B3C16350038018D /* HTLMark.m in Sources */,
 				C59689C91B3C16350038018D /* HTLDateSection.m in Sources */,
@@ -2324,11 +2341,13 @@
 				C582B30B1B3EC8D5005CC526 /* DDTTYLogger.m in Sources */,
 				C59689CC1B3C16350038018D /* HTLContentManager.m in Sources */,
 				C582B3041B3EC8D5005CC526 /* DDLog.m in Sources */,
+				C59A83FF1BF4B96700183614 /* HTLMemoryCacheProvider.m in Sources */,
 				C59689CD1B3C16350038018D /* DTFolderMonitor.m in Sources */,
 				C582B3661B3EC8D5005CC526 /* HexColor.m in Sources */,
 				C582B3511B3EC8D5005CC526 /* FMDatabasePool.m in Sources */,
 				C526F9841BC68AA80026E1EF /* HTLStatisticsItem.m in Sources */,
 				C582B39E1B3EC8D5005CC526 /* ZLBalancedFlowLayout.swift in Sources */,
+				C59A84051BF4BB2D00183614 /* HTLMarkCollectionViewCell.m in Sources */,
 				C59689CE1B3C16350038018D /* HTETodayViewController.m in Sources */,
 				C59689CF1B3C16350038018D /* HTETodayDataSource.m in Sources */,
 				C582B2F61B3EC8D5005CC526 /* DDASLLogger.m in Sources */,
@@ -2338,6 +2357,7 @@
 				C582B34A1B3EC8D5005CC526 /* FMDatabaseAdditions.m in Sources */,
 				C582B2E81B3EC8D5005CC526 /* DDAbstractDatabaseLogger.m in Sources */,
 				C59689D11B3C16350038018D /* HTLCSVStringExportProvider.m in Sources */,
+				C59A83FC1BF4B96000183614 /* HTLJsonStorageProvider.m in Sources */,
 				C59689D21B3C16350038018D /* HTLRoundButton.m in Sources */,
 				C582B3201B3EC8D5005CC526 /* DDMultiFormatter.m in Sources */,
 				C59689D31B3C16350038018D /* HTLSqliteStorageProvider+Deserialization.m in Sources */,
@@ -2354,6 +2374,7 @@
 				73BC6919D98B939D1BBDAF28 /* HTLReport+Helpers.m in Sources */,
 				C582B2FE1B3EC8D5005CC526 /* DDFileLogger.m in Sources */,
 				73BC63E583DA471B2D26C36E /* HTLReport.m in Sources */,
+				C59A84031BF4B97200183614 /* NSDate+HTL.m in Sources */,
 				C582B38A1B3EC8D5005CC526 /* UIColor+BFPaperColors.m in Sources */,
 				73BC688E05940C6C7A19AEFE /* HTLMark.m in Sources */,
 				73BC6BCFC083BDB023D12F96 /* HTLDateSection.m in Sources */,
@@ -2363,11 +2384,13 @@
 				C582B30C1B3EC8D5005CC526 /* DDTTYLogger.m in Sources */,
 				73BC6C6045A93032F36ED35A /* HTLContentManager.m in Sources */,
 				C582B3051B3EC8D5005CC526 /* DDLog.m in Sources */,
+				C59A84001BF4B96700183614 /* HTLMemoryCacheProvider.m in Sources */,
 				C53370781B397FC50095549E /* DTFolderMonitor.m in Sources */,
 				C582B3671B3EC8D5005CC526 /* HexColor.m in Sources */,
 				C582B3521B3EC8D5005CC526 /* FMDatabasePool.m in Sources */,
 				C526F9831BC68AA80026E1EF /* HTLStatisticsItem.m in Sources */,
 				C582B39F1B3EC8D5005CC526 /* ZLBalancedFlowLayout.swift in Sources */,
+				C59A84041BF4BB2D00183614 /* HTLMarkCollectionViewCell.m in Sources */,
 				73BC68033AF8061D639DCFC0 /* HTETodayViewController.m in Sources */,
 				73BC610CA9365423EC183AE7 /* HTETodayDataSource.m in Sources */,
 				C582B2F71B3EC8D5005CC526 /* DDASLLogger.m in Sources */,
@@ -2377,6 +2400,7 @@
 				C582B34B1B3EC8D5005CC526 /* FMDatabaseAdditions.m in Sources */,
 				C582B2E91B3EC8D5005CC526 /* DDAbstractDatabaseLogger.m in Sources */,
 				73BC69530AA65A5F73B11569 /* HTLCSVStringExportProvider.m in Sources */,
+				C59A83FD1BF4B96100183614 /* HTLJsonStorageProvider.m in Sources */,
 				C516A6CD1B3A8F2A0018F022 /* HTLRoundButton.m in Sources */,
 				C582B3211B3EC8D5005CC526 /* DDMultiFormatter.m in Sources */,
 				73BC60A9E3DA6728F9788F57 /* HTLSqliteStorageProvider+Deserialization.m in Sources */,

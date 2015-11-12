@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="M4Y-Lb-cyx">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9060" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="M4Y-Lb-cyx">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -17,60 +18,70 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="253" verticalHuggingPriority="253" text="[Action Title]" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kJM-Gl-n53">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="253" verticalHuggingPriority="253" misplaced="YES" text="[Action Title]" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kJM-Gl-n53">
                                 <rect key="frame" x="8" y="16" width="231" height="18"/>
+                                <animations/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="[Category Title]" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kv1-VZ-j6R">
-                                <rect key="frame" x="8" y="38" width="237" height="366"/>
+                                <rect key="frame" x="8" y="38" width="235" height="366"/>
+                                <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="254" verticalHuggingPriority="254" text="[Duration]" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d92-bg-y0l">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="254" verticalHuggingPriority="254" misplaced="YES" text="[Duration]" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d92-bg-y0l">
                                 <rect key="frame" x="243" y="16" width="69" height="18"/>
+                                <animations/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="252" text="[End Date]" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jvf-G5-adf">
-                                <rect key="frame" x="249" y="38" width="63" height="366"/>
+                                <rect key="frame" x="247" y="38" width="65" height="366"/>
+                                <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" alpha="0.75" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="A5V-Wu-ayH">
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="A5V-Wu-ayH">
                                 <rect key="frame" x="8" y="412" width="304" height="120"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.5" colorSpace="calibratedWhite"/>
+                                <animations/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="120" id="bKn-sU-KGu" userLabel="Collection View Height"/>
                                 </constraints>
                                 <collectionViewLayout key="collectionViewLayout" id="DKQ-Aa-ibg" customClass="ZLBalancedFlowLayout" customModule="TodayExtension" customModuleProvider="target"/>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CompletionCell" id="6ZW-sP-DP0" customClass="HTLCompletionCollectionViewCell">
-                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="HTLMarkCellWithSubTitle" id="6ZW-sP-DP0" customClass="HTLMarkCollectionViewCell">
+                                        <rect key="frame" x="0.0" y="0.0" width="120" height="70"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="162" height="105"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="120" height="70"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="[Action Title]" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="s4o-LW-GfR" userLabel="Action Title Label">
-                                                    <rect key="frame" x="4" y="4" width="154" height="48"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="s4o-LW-GfR" userLabel="Action Title Label">
+                                                    <rect key="frame" x="4" y="4" width="112" height="30"/>
+                                                    <animations/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="[Category Title]" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="iyL-lK-kGP" userLabel="Category Title Label">
-                                                    <rect key="frame" x="4" y="54" width="154" height="47"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Subtitle" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="iyL-lK-kGP" userLabel="Category Title Label">
+                                                    <rect key="frame" x="4" y="36" width="112" height="30"/>
+                                                    <animations/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
+                                            <animations/>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
+                                        <animations/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstItem="s4o-LW-GfR" firstAttribute="leading" secondItem="6ZW-sP-DP0" secondAttribute="leadingMargin" constant="-4" id="2ww-tX-G4q"/>
                                             <constraint firstAttribute="trailingMargin" secondItem="s4o-LW-GfR" secondAttribute="trailing" constant="-4" id="6je-kD-gjg"/>
@@ -81,10 +92,41 @@
                                             <constraint firstItem="iyL-lK-kGP" firstAttribute="top" secondItem="s4o-LW-GfR" secondAttribute="bottom" constant="2" id="rKa-qD-9Lg"/>
                                             <constraint firstItem="iyL-lK-kGP" firstAttribute="height" secondItem="s4o-LW-GfR" secondAttribute="height" id="s9L-HR-fhF"/>
                                         </constraints>
-                                        <size key="customSize" width="162" height="105"/>
+                                        <size key="customSize" width="120" height="70"/>
                                         <connections>
-                                            <outlet property="actionTitleLabel" destination="s4o-LW-GfR" id="jqg-bY-4Um"/>
-                                            <outlet property="titleLabel" destination="iyL-lK-kGP" id="0nC-jk-vgN"/>
+                                            <outlet property="markSubTitleLabel" destination="iyL-lK-kGP" id="mh2-U9-szA"/>
+                                            <outlet property="markTitleLabel" destination="s4o-LW-GfR" id="FpO-Kd-Mtb"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="HTLMarkCollectionViewCell" id="cc2-3w-6u7" customClass="HTLMarkCollectionViewCell">
+                                        <rect key="frame" x="184" y="0.0" width="120" height="70"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="120" height="70"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="RaJ-t2-ozk" userLabel="Action Title Label">
+                                                    <rect key="frame" x="8" y="8" width="104" height="62"/>
+                                                    <animations/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <animations/>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                        <animations/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="trailingMargin" secondItem="RaJ-t2-ozk" secondAttribute="trailing" id="VUY-hj-AMh"/>
+                                            <constraint firstItem="RaJ-t2-ozk" firstAttribute="top" secondItem="cc2-3w-6u7" secondAttribute="topMargin" id="Yi9-JF-sU8"/>
+                                            <constraint firstItem="RaJ-t2-ozk" firstAttribute="leading" secondItem="cc2-3w-6u7" secondAttribute="leadingMargin" id="iEs-rv-vGA"/>
+                                            <constraint firstAttribute="bottom" secondItem="RaJ-t2-ozk" secondAttribute="bottom" id="wi3-Db-Om2"/>
+                                        </constraints>
+                                        <size key="customSize" width="120" height="70"/>
+                                        <connections>
+                                            <outlet property="markTitleLabel" destination="RaJ-t2-ozk" id="S0G-At-lfE"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -95,12 +137,13 @@
                             </collectionView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R0o-zm-Gr8" customClass="HTLRoundButton">
                                 <rect key="frame" x="8" y="540" width="304" height="40"/>
+                                <animations/>
                                 <color key="backgroundColor" white="0.0" alpha="0.5" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="zaJ-Xk-Mwc"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
-                                <state key="normal" title="Add Custom...">
+                                <state key="normal" title="Custom Mark">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -108,6 +151,7 @@
                                 </connections>
                             </button>
                         </subviews>
+                        <animations/>
                         <constraints>
                             <constraint firstItem="kJM-Gl-n53" firstAttribute="top" secondItem="d92-bg-y0l" secondAttribute="top" id="6Zz-Gq-Aci"/>
                             <constraint firstItem="jvf-G5-adf" firstAttribute="leading" secondItem="kv1-VZ-j6R" secondAttribute="trailing" constant="4" id="6fS-ee-8gC"/>
@@ -152,9 +196,4 @@
             <point key="canvasLocation" x="516" y="285"/>
         </scene>
     </scenes>
-    <simulatedMetricsContainer key="defaultSimulatedMetrics">
-        <simulatedStatusBarMetrics key="statusBar"/>
-        <simulatedOrientationMetrics key="orientation"/>
-        <simulatedScreenMetrics key="destination" type="retina4"/>
-    </simulatedMetricsContainer>
 </document>

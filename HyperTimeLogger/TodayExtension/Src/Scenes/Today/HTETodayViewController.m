@@ -11,6 +11,9 @@
 #import <NotificationCenter/NotificationCenter.h>
 #import "HyperTimeLogger-Swift.h"
 #import "HTLReport.h"
+#import "HTLReport+Helpers.h"
+#import "NSDate+HTL.h"
+#import "HTLMarkCollectionViewCell.h"
 
 static NSString *const kCompletionCellIdentifier = @"CompletionCell";
 // TODO: Load number of completions from defaults
@@ -47,10 +50,10 @@ static const int kCollectionViewMinItemsPerRow = 3;
 - (void)updateUI {
     HTLReport *lastReport = self.dataSource.lastReport;
     if (lastReport) {
-//        self.lastReportActionTitleLabel.text = lastReport.action.title;
-//        self.lastReportCategoryTitleLabel.text = lastReport.mark.title;
-//        self.lastReportDurationLabel.text = lastReport.report.durationString;
-//        self.lastReportEndDateLabel.text = lastReport.report.endDateString;
+        self.lastReportActionTitleLabel.text = lastReport.mark.title;
+        self.lastReportCategoryTitleLabel.text = lastReport.mark.subtitle;
+        self.lastReportDurationLabel.text = HTLDurationFullString(lastReport.duration);
+        self.lastReportEndDateLabel.text = [NSString stringWithFormat:@"%@ → %@", lastReport.startDate.shortString, lastReport.endDate.shortString];
     } else {
         self.lastReportActionTitleLabel.text = @"";
         self.lastReportCategoryTitleLabel.text = @"";
@@ -103,15 +106,14 @@ static const int kCollectionViewMinItemsPerRow = 3;
 #pragma mark - UICollectionViewDataSource
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-//    return [self.dataSource completions:kNumberOfCompletions].count;
-    return 0;
+    return self.dataSource.numberOfMarks;
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
-//    HTLCompletionCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:kCompletionCellIdentifier forIndexPath:indexPath];
-//    [cell configureWithCompletion:[self.dataSource completions:kNumberOfCompletions][(NSUInteger) indexPath.row]];
-//    return cell;
-    return nil;
+    HTLMark *mark = [self.dataSource markAtIndex:indexPath.row];
+    HTLMarkCollectionViewCell *cell = (HTLMarkCollectionViewCell *) [collectionView dequeueReusableCellWithReuseIdentifier:mark.subtitle.length > 0 ? [HTLMarkCollectionViewCell defaultIdentifierWithSubTitle] : [HTLMarkCollectionViewCell defaultIdentifier] forIndexPath:indexPath];
+    cell.mark = mark;
+    return cell;
 }
 
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
@@ -119,8 +121,7 @@ static const int kCollectionViewMinItemsPerRow = 3;
 }
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
-//    HTLCompletion *completion = [self.dataSource completions:kNumberOfCompletions][(NSUInteger) indexPath.row];
-//    [self.dataSource createReportWithCompletion:completion];
+    [self.dataSource saveReportWithMarkAtIndex:indexPath.row];
     [collectionView deselectItemAtIndexPath:indexPath animated:YES];
 }
 

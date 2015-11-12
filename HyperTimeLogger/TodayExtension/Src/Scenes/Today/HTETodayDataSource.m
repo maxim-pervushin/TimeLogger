@@ -5,15 +5,16 @@
 
 #import "HTETodayDataSource.h"
 #import "HTLContentManager.h"
-#import "HTLMark.h"
 #import "HTLReport.h"
-#import "HTLAppDelegate.h"
 #import "HTLCSVStringExportProvider.h"
-#import "HTLSqliteStorageProvider.h"
+#import "HTLMemoryCacheProvider.h"
+#import "HTLJsonStorageProvider.h"
+#import "HTLMark.h"
 
 
 static NSString *const kApplicationGroup = @"group.timelogger";
 static NSString *const kStorageFileName = @"time_logger_storage.db";
+static NSString *const kVersionIdentifierKey = @"VersionIdentifier";
 
 
 @interface HTETodayDataSource ()
@@ -32,28 +33,54 @@ static NSString *const kStorageFileName = @"time_logger_storage.db";
 
 #pragma mark - HTETodayModelController
 
-//- (NSArray *)completions:(NSUInteger)numberOfCompletions {
-////    NSArray *completions = [self.contentManager completionsWithText:nil];
-////    NSMutableArray *result = [NSMutableArray new];
-////    for (NSUInteger i = 0; i < completions.count && i < numberOfCompletions; i++) {
-////        [result addObject:completions[i]];
-////    }
-////    return [result copy];
-//    return @[];
-//}
-//
-//- (BOOL)createReportWithCompletion:(HTLCompletion *)completion {
-////    NSDate *startDate = self.contentManager.lastReportEndDate;
-////    HTLReport *report = [HTLReport reportWithCategory:[NSUUID UUID].UUIDString startDate:startDate ? startDate : [NSDate new] endDate:[NSDate new]];
-////    HTLReportExtended *reportExtended =
-////            [HTLReportExtended reportExtendedWithReport:report action:completion.action mark:completion.mark];
-////
-////    return [self.contentManager saveReport:reportExtended];
-//    return NO;
-//}
-
 - (HTLReport *)lastReport {
-    return self.contentManager.lastReport;
+    return [self.contentManager lastReport];
+}
+
+- (NSDate *)lastReportEndDate {
+    return [self.contentManager lastReportEndDate];
+}
+
+- (NSTimeInterval)currentInterval {
+    NSDate *lastReportEndDate = [self.contentManager lastReportEndDate];
+    if (!lastReportEndDate) {
+        return 0;
+    }
+
+    return [[NSDate new] timeIntervalSinceDate:lastReportEndDate];
+}
+
+- (NSUInteger)numberOfMarks {
+    return self.contentManager.customMarks.count + self.contentManager.mandatoryMarks.count;
+}
+
+- (HTLMark *)markAtIndex:(NSInteger)index {
+    NSMutableArray *activities = [self.contentManager.customMarks mutableCopy];
+    [activities addObjectsFromArray:self.contentManager.mandatoryMarks];
+    return activities[(NSUInteger) index];
+}
+
+- (BOOL)saveReportWithMarkAtIndex:(NSInteger)index {
+    return [self saveReportWithMark:[self markAtIndex:index]];
+}
+
+- (BOOL)saveReportWithMark:(HTLMark *)mark {
+    if (!mark) {
+        return NO;
+    }
+
+    NSDate *lastReportEndDate = [self.contentManager lastReportEndDate];
+    if (!lastReportEndDate) {
+        lastReportEndDate = [NSDate new];
+    }
+
+    HTLReport *report = [HTLReport reportWithMark:mark startDate:lastReportEndDate endDate:[NSDate new]];
+
+    return [self saveReport:report];
+}
+
+- (BOOL)saveReport:(HTLReport *)report {
+    return [self.contentManager saveReport:report];
 }
 
 - (void)subscribe {
@@ -67,19 +94,40 @@ static NSString *const kStorageFileName = @"time_logger_storage.db";
     [[NSNotificationCenter defaultCenter] removeObserver:self name:[HTLContentManager changedNotification] object:nil];
 };
 
+- (NSString *)appVersion {
+    return [[NSBundle mainBundle] objectForInfoDictionaryKey:kVersionIdentifierKey];
+}
+
+- (void)initializeContentManager {
+    NSString *applicationGroup = [NSString stringWithFormat:@"%@%@", kApplicationGroup, [self.appVersion isEqualToString:@""] ? @"" : [NSString stringWithFormat:@"-%@", self.appVersion]];
+
+    NSURL *storageFolderURL = [[NSFileManager defaultManager] containerURLForSecurityApplicationGroupIdentifier:applicationGroup];
+
+    HTLJsonStorageProvider *storageProvider = [HTLJsonStorageProvider jsonStorageProviderWithStorageFolderURL:storageFolderURL storageFileName:kStorageFileName];
+
+    HTLMemoryCacheProvider *cacheProvider = [HTLMemoryCacheProvider memoryCacheProviderWithStorageProvider:storageProvider];
+
+    storageProvider.changesObserver = cacheProvider;
+
+    self.contentManager = [HTLContentManager contentManagerWithStorageProvider:cacheProvider exportProvider:[HTLCSVStringExportProvider new]];
+
+    cacheProvider.changesObserver = self.contentManager;
+}
+
 #pragma mark - NSObject
 
 - (instancetype)init {
     self = [super init];
     if (self) {
-        NSString *appVersion = [[NSBundle mainBundle] objectForInfoDictionaryKey:@"VersionIdentifier"];
-        NSString *applicationGroup = [NSString stringWithFormat:@"%@%@", kApplicationGroup, [appVersion isEqualToString:@""] ? @"" : [NSString stringWithFormat:@"-%@", appVersion]];
-
-        NSURL *storageFolderURL = [[NSFileManager defaultManager] containerURLForSecurityApplicationGroupIdentifier:applicationGroup];
-        HTLSqliteStorageProvider *sqliteStorageProvider =
-                [HTLSqliteStorageProvider sqliteStorageProviderWithStorageFolderURL:storageFolderURL
-                                                                    storageFileName:kStorageFileName];
-        contentManager_ = [HTLContentManager contentManagerWithStorageProvider:sqliteStorageProvider exportProvider:[HTLCSVStringExportProvider new]];
+//        NSString *appVersion = [[NSBundle mainBundle] objectForInfoDictionaryKey:@"VersionIdentifier"];
+//        NSString *applicationGroup = [NSString stringWithFormat:@"%@%@", kApplicationGroup, [appVersion isEqualToString:@""] ? @"" : [NSString stringWithFormat:@"-%@", appVersion]];
+//
+//        NSURL *storageFolderURL = [[NSFileManager defaultManager] containerURLForSecurityApplicationGroupIdentifier:applicationGroup];
+//        HTLSqliteStorageProvider *sqliteStorageProvider =
+//                [HTLSqliteStorageProvider sqliteStorageProviderWithStorageFolderURL:storageFolderURL
+//                                                                    storageFileName:kStorageFileName];
+//        contentManager_ = [HTLContentManager contentManagerWithStorageProvider:sqliteStorageProvider exportProvider:[HTLCSVStringExportProvider new]];
+        [self initializeContentManager];
         [self subscribe];
     }
     return self;

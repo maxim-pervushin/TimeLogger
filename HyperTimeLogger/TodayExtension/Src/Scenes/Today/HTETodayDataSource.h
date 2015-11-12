@@ -7,13 +7,24 @@
 #import "HTLDataSource.h"
 
 @class HTLReport;
+@class HTLMark;
 
 @interface HTETodayDataSource : HTLDataSource
 
-//- (NSArray *)completions:(NSUInteger)numberOfCompletions;
-//
-//- (BOOL)createReportWithCompletion:(HTLCompletion *)completion;
+@property(nonatomic, readonly) NSDate *lastReportEndDate;
 
-- (HTLReport *)lastReport;
+@property(nonatomic, readonly) HTLReport *lastReport;
+
+@property(nonatomic, readonly) NSTimeInterval currentInterval;
+
+- (NSUInteger)numberOfMarks;
+
+- (HTLMark *)markAtIndex:(NSInteger)index;
+
+- (BOOL)saveReportWithMarkAtIndex:(NSInteger)index;
+
+- (BOOL)saveReportWithMark:(HTLMark *)mark;
+
+- (BOOL)saveReport:(HTLReport *)report;
 
 @end
