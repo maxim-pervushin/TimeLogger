@@ -42,11 +42,13 @@
         self.markTitleLabel.textColor = self.mark.color;
         self.markSubTitleLabel.text = self.mark.subtitle;
         self.markSubTitleLabel.textColor = self.mark.color;
+        self.backgroundColor = [self.mark.color colorWithAlphaComponent:0.15];
     } else {
-        self.markTitleLabel.text = @"[ERROR]";
+        self.markTitleLabel.text = @"";
         self.markTitleLabel.textColor = [UIColor blackColor];
         self.markSubTitleLabel.text = @"";
         self.markSubTitleLabel.textColor = [UIColor blackColor];
+        self.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:0.15];
     }
 }
 

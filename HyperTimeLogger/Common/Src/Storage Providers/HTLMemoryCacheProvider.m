@@ -30,6 +30,22 @@
     return self;
 }
 
+- (id)objectForKey:(NSString *)key cache:(NSCache *)cache {
+    if (!key || !cache) {
+        return nil;
+    }
+
+    return [cache objectForKey:key];
+}
+
+- (void)setObject:(id)object forKey:(NSString *)key cache:(NSCache *)cache {
+    if (!key || !object || !cache) {
+        return;
+    }
+
+    [cache setObject:object forKey:key];
+}
+
 #pragma mark <HTLStorageProvider>
 
 - (BOOL)clear {
@@ -40,23 +56,23 @@
 
 - (NSArray *)mandatoryMarks {
     NSString *key = NSStringFromSelector(_cmd);
-    NSArray *cached = [_marksCache objectForKey:key];
+    NSArray *cached = [self objectForKey:key cache:_marksCache];
     if (cached) {
         return cached;
     }
     NSArray *result = [_storageProvider mandatoryMarks];
-    [_marksCache setObject:result forKey:key];
+    [self setObject:result forKey:key cache:_marksCache];
     return result;
 }
 
 - (NSArray *)customMarks {
     NSString *key = NSStringFromSelector(_cmd);
-    NSArray *cached = [_marksCache objectForKey:key];
+    NSArray *cached = [self objectForKey:key cache:_marksCache];
     if (cached) {
         return cached;
     }
     NSArray *result = [_storageProvider customMarks];
-    [_marksCache setObject:result forKey:key];
+    [self setObject:result forKey:key cache:_marksCache];
     return result;
 }
 
@@ -82,12 +98,12 @@
 
 - (NSArray *)dateSections {
     NSString *key = NSStringFromSelector(_cmd);
-    NSArray *cached = [_reportsCache objectForKey:key];
+    NSArray *cached = [self objectForKey:key cache:_reportsCache];
     if (cached) {
         return cached;
     }
     NSArray *result = [_storageProvider dateSections];
-    [_reportsCache setObject:result forKey:key];
+    [self setObject:result forKey:key cache:_reportsCache];
     return result;
 }
 
@@ -95,12 +111,12 @@
     NSString *key = [NSString stringWithFormat:@"%@_%@",
                                                NSStringFromSelector(_cmd),
                                                dateSection ? @(dateSection.hash) : @""];
-    NSNumber *cached = [_reportsCache objectForKey:key];
+    NSNumber *cached = [self objectForKey:key cache:_reportsCache];
     if (cached) {
         return cached.unsignedIntegerValue;
     }
     NSUInteger result = [_storageProvider numberOfReportsWithDateSection:dateSection];
-    [_reportsCache setObject:@(result) forKey:key];
+    [self setObject:@(result) forKey:key cache: _reportsCache];
     return result;
 }
 
@@ -109,12 +125,12 @@
                                                NSStringFromSelector(_cmd),
                                                dateSection ? @(dateSection.hash) : @"",
                                                mark ? @(mark.hash) : @""];
-    NSArray *cached = [_reportsCache objectForKey:key];
+    NSArray *cached = [self objectForKey:key cache:_reportsCache];
     if (cached) {
         return cached;
     }
     NSArray *result = [_storageProvider reportsWithDateSection:dateSection mark:mark];
-    [_reportsCache setObject:result forKey:key];
+    [self setObject:result forKey:key cache:_reportsCache];
     return result;
 }
 
@@ -128,23 +144,25 @@
 
 - (NSDate *)lastReportEndDate {
     NSString *key = NSStringFromSelector(_cmd);
-    NSDate *cached = [_reportsCache objectForKey:key];
+    NSDate *cached = [self objectForKey:key cache:_reportsCache];
     if (cached) {
         return cached;
     }
     NSDate *result = [_storageProvider lastReportEndDate];
-    [_reportsCache setObject:result forKey:key];
+    [self setObject:result forKey:key cache:_reportsCache];
     return result;
 }
 
 - (HTLReport *)lastReport {
     NSString *key = NSStringFromSelector(_cmd);
-    HTLReport *cached = [_reportsCache objectForKey:key];
+    HTLReport *cached = [self objectForKey:key cache:_reportsCache];
     if (cached) {
         return cached;
     }
     HTLReport *result = [_storageProvider lastReport];
-    [_reportsCache setObject:result forKey:key];
+    if (result) {
+        [self setObject:result forKey:key cache:_reportsCache];
+    }
     return result;
 }
 
@@ -152,12 +170,12 @@
     NSString *key = [NSString stringWithFormat:@"%@_%@",
                                                NSStringFromSelector(_cmd),
                                                dateSection ? @(dateSection.hash) : @""];
-    NSArray *cached = [_reportsCache objectForKey:key];
+    NSArray *cached = [self objectForKey:key cache:_reportsCache];
     if (cached) {
         return cached;
     }
     NSArray *result = [_storageProvider statisticsWithDateSection:dateSection];
-    [_reportsCache setObject:result forKey:key];
+    [self setObject:result forKey:key cache:_reportsCache];
     return result;
 }
 

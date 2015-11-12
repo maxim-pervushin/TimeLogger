@@ -106,7 +106,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="RaJ-t2-ozk" userLabel="Action Title Label">
-                                                    <rect key="frame" x="8" y="8" width="104" height="62"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="120" height="70"/>
                                                     <animations/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -119,9 +119,9 @@
                                         <animations/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <constraints>
-                                            <constraint firstAttribute="trailingMargin" secondItem="RaJ-t2-ozk" secondAttribute="trailing" id="VUY-hj-AMh"/>
-                                            <constraint firstItem="RaJ-t2-ozk" firstAttribute="top" secondItem="cc2-3w-6u7" secondAttribute="topMargin" id="Yi9-JF-sU8"/>
-                                            <constraint firstItem="RaJ-t2-ozk" firstAttribute="leading" secondItem="cc2-3w-6u7" secondAttribute="leadingMargin" id="iEs-rv-vGA"/>
+                                            <constraint firstAttribute="trailing" secondItem="RaJ-t2-ozk" secondAttribute="trailing" id="VUY-hj-AMh"/>
+                                            <constraint firstItem="RaJ-t2-ozk" firstAttribute="top" secondItem="cc2-3w-6u7" secondAttribute="top" id="Yi9-JF-sU8"/>
+                                            <constraint firstItem="RaJ-t2-ozk" firstAttribute="leading" secondItem="cc2-3w-6u7" secondAttribute="leading" id="iEs-rv-vGA"/>
                                             <constraint firstAttribute="bottom" secondItem="RaJ-t2-ozk" secondAttribute="bottom" id="wi3-Db-Om2"/>
                                         </constraints>
                                         <size key="customSize" width="120" height="70"/>
