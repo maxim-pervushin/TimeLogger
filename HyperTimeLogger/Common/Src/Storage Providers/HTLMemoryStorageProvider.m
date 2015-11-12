@@ -14,6 +14,7 @@
     NSMutableSet *_marks;
     NSMutableDictionary *_reportsById;
     NSDate *_launchDate;
+    NSCache *_cache;
 }
 
 @end
@@ -38,6 +39,40 @@
     NSDate *yesterdayStart = [NSDate dateWithDateString:dateString timeString:@"00:00:00" timeZoneString:timeZoneString];
 
     return [yesterdayStart dateByAddingTimeInterval:hours * 3600 + minutes * 60];
+}
+
+- (void)generateTestData {
+    NSString *languageCode = [NSLocale componentsFromLocaleIdentifier:[NSLocale currentLocale].localeIdentifier][@"kCFLocaleLanguageCodeKey"];
+    if (![languageCode isEqualToString:@"ru"]) {
+        languageCode = @"en";
+    }
+    NSString *fileName = [NSString stringWithFormat:@"testdata_%@", languageCode];
+    NSData *fileData = [NSData dataWithContentsOfFile:[[NSBundle mainBundle] pathForResource:fileName ofType:@"json"]];
+    NSArray *testData = [NSJSONSerialization JSONObjectWithData:fileData options:0 error:nil];
+
+//    DDLogDebug(@"%@", testData);
+
+    NSArray *allMarks = [self.mandatoryMarks arrayByAddingObjectsFromArray:self.customMarks];
+
+    int repeats = 33;
+    for (int i = 1; i <= repeats; i++) {
+        for (NSDictionary *testDataSet in testData) {
+            NSInteger from = ((NSNumber *) testDataSet[@"from"]).integerValue;
+            NSInteger fromHours = from / 100;
+            NSInteger fromMinutes = from - fromHours * 100;
+            NSDate *startDate = [self yesterdayHours:fromHours - 24 * (i - 1) minutes:fromMinutes];
+
+            NSInteger to = ((NSNumber *) testDataSet[@"to"]).integerValue;
+            NSInteger toHours = to / 100;
+            NSInteger toMinutes = to - toHours * 100;
+            NSDate *endDate = [self yesterdayHours:toHours - 24 * (i - 1) minutes:toMinutes];
+
+            HTLMark *mark = allMarks[arc4random() % allMarks.count];
+            HTLReport *report = [HTLReport reportWithMark:mark startDate:startDate endDate:endDate];
+            _reportsById[report.identifier] = report;
+        }
+    }
+    [self changed];
 }
 
 - (void)initializeTestData {
@@ -97,6 +132,7 @@
         _marks = [NSMutableSet new];
         _reportsById = [NSMutableDictionary new];
         _launchDate = [NSDate new];
+        _cache = [NSCache new];
         [self initializeTestData];
     }
     return self;
@@ -163,6 +199,18 @@
 }
 
 - (NSArray *)reportsWithDateSection:(HTLDateSection *)dateSection mark:(HTLMark *)mark {
+    NSString *cacheKey = [NSString stringWithFormat:@"%@_%@_%@",
+                                                    NSStringFromSelector(_cmd),
+                                                    dateSection ? @(dateSection.hash) : @"",
+                                                    mark ? @(mark.hash) : @""];
+    NSArray *cached = [_cache objectForKey:cacheKey];
+    if (cached) {
+        DDLogVerbose(@"Retrieving cached Reports Extended");
+        return cached;
+    }
+
+    DDLogDebug(@"reportsWithDateSection:");
+
     NSArray *filtered = [_reportsById.allValues filteredArrayUsingPredicate:[NSPredicate predicateWithBlock:^BOOL(HTLReport *report, NSDictionary *bindings) {
         if (mark && ![mark isEqual:report.mark]) {
             return NO;
@@ -180,7 +228,12 @@
 
         return YES;
     }]];
-    return [filtered sortedArrayUsingDescriptors:@[[NSSortDescriptor sortDescriptorWithKey:@"endDate" ascending:YES]]];
+
+    NSArray *sorted = [filtered sortedArrayUsingDescriptors:@[[NSSortDescriptor sortDescriptorWithKey:@"endDate" ascending:YES]]];
+
+    [_cache setObject:sorted forKey:cacheKey];
+
+    return sorted;
 }
 
 - (BOOL)saveReport:(HTLReport *)report {

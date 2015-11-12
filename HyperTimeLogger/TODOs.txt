@@ -18,7 +18,4 @@
 
 // TODO: Logs. Pie charts? Bar charts by day. Horizontal bar charts.
 
-// TODO: Autosave report in 5..4..3..2..1..0..Saved!
-// TODO: User can save manually.
-// TODO: User have time to add tags.
-// TODO: If user removed all tags no need to save.
+// TODO: Cache layer with HTLStorageProvider interface
