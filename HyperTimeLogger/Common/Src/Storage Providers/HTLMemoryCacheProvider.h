@@ -6,14 +6,10 @@
 #import "HTLStorageProvider.h"
 #import "HTLChangesObserver.h"
 
+@interface HTLMemoryCacheProvider : NSObject <HTLStorageProvider, HTLChangesObserver>
 
-@interface HTLJsonStorageProvider : NSObject <HTLStorageProvider>
-
-+ (instancetype)jsonStorageProviderWithStorageFolderURL:(NSURL *)storageFolderURL storageFileName:(NSString *)storageFileName;
-
-- (NSString *)storageFilePath;
++ (instancetype)memoryCacheProviderWithStorageProvider:(id <HTLStorageProvider>)storageProvider;
 
 @property (nonatomic, weak) id<HTLChangesObserver> changesObserver;
 
 @end
-

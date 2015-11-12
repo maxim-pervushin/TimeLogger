@@ -7,6 +7,6 @@
 
 @protocol HTLChangesObserver <NSObject>
 
-- (void)changed:(id)id;
+- (void)observableChanged:(id)observable;
 
 @end

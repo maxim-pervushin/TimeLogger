@@ -91,7 +91,7 @@ static NSString *const kChangedNotification = @"HTLContentManagerChangedNotifica
 
 #pragma mark - HTLChangesObserver
 
-- (void)changed:(id)object {
+- (void)observableChanged:(id)obsevable {
     [[NSNotificationCenter defaultCenter] postNotificationName:[self.class changedNotification] object:self];
 }
 

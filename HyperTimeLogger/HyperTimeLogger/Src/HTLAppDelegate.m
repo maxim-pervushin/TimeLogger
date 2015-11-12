@@ -12,9 +12,9 @@
 #import "HTLMemoryStorageProvider.h"
 #import "HTLThemeManager.h"
 #import "HTLJsonStorageProvider.h"
+#import "HTLMemoryCacheProvider.h"
 #import <Fabric/Fabric.h>
 #import <Crashlytics/Crashlytics.h>
-
 
 static NSString *const kAddReportURL = @"timelogger://add";
 static NSString *const kVersionIdentifierKey = @"VersionIdentifier";
@@ -50,19 +50,17 @@ static NSString *const kStorageFileName = @"time_logger_storage.db";
 - (void)initializeContentManager {
     NSString *applicationGroup = [NSString stringWithFormat:@"%@%@", kApplicationGroup, [self.appVersion isEqualToString:@""] ? @"" : [NSString stringWithFormat:@"-%@", self.appVersion]];
 
-//    [Parse setApplicationId:@"aQOwqENo97J1kytqlvN6uTdDPfhtuG5Ups5gDNjg"
-//                  clientKey:@"UNmINBV5r7dmN6Fnm4bOrknrfAT2ciZmS7YFd77z"];
-
     NSURL *storageFolderURL = [[NSFileManager defaultManager] containerURLForSecurityApplicationGroupIdentifier:applicationGroup];
-//    HTLSqliteStorageProvider *sqliteStorageProvider =
-//            [HTLSqliteStorageProvider sqliteStorageProviderWithStorageFolderURL:storageFolderURL
-//                                                                storageFileName:kStorageFileName];
-//    self.contentManager = [HTLContentManager contentManagerWithStorageProvider:sqliteStorageProvider exportProvider:[HTLCSVStringExportProvider new]];
 
-//    HTLMemoryStorageProvider *storageProvider = [HTLMemoryStorageProvider new];
     HTLJsonStorageProvider *storageProvider = [HTLJsonStorageProvider jsonStorageProviderWithStorageFolderURL:storageFolderURL storageFileName:kStorageFileName ];
-    self.contentManager = [HTLContentManager contentManagerWithStorageProvider:storageProvider exportProvider:[HTLCSVStringExportProvider new]];
-    storageProvider.changesObserver = self.contentManager;
+
+    HTLMemoryCacheProvider *cacheProvider = [HTLMemoryCacheProvider memoryCacheProviderWithStorageProvider:storageProvider];
+
+    storageProvider.changesObserver = cacheProvider;
+
+    self.contentManager = [HTLContentManager contentManagerWithStorageProvider:cacheProvider exportProvider:[HTLCSVStringExportProvider new]];
+
+    cacheProvider.changesObserver = self.contentManager;
 }
 
 - (void)initializeThemeManager {

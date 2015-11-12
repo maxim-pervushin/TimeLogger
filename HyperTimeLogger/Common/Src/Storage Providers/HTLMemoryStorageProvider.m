@@ -79,7 +79,7 @@
 }
 
 - (void)changed {
-    [self.changesObserver changed:self];
+    [self.changesObserver observableChanged:self];
 }
 
 #pragma mark - NSObject

@@ -150,7 +150,7 @@
 }
 
 - (void)changed {
-    [self.changesObserver changed:self];
+    [self.changesObserver observableChanged:self];
 }
 
 #pragma mark <HTLStorageProvider>
@@ -278,74 +278,3 @@
 @end
 
 
-@implementation HTLMemoryCacheProvider {
-    NSCache *_cache;
-}
-
-#pragma mark HTLMemoryCacheProvider
-
-- (instancetype)init {
-    self = [super init];
-    if (self) {
-        _cache = [NSCache new];
-    }
-    return self;
-}
-
-#pragma mark <HTLStorageProvider>
-
-- (BOOL)clear {
-    [_cache removeAllObjects];
-    return NO;
-}
-
-- (NSArray *)mandatoryMarks {
-    return nil;
-}
-
-- (NSArray *)customMarks {
-    return nil;
-}
-
-- (BOOL)saveMark:(HTLMark *)mark {
-    return NO;
-}
-
-- (BOOL)deleteMark:(HTLMark *)mark {
-    return NO;
-}
-
-- (NSUInteger)numberOfDateSections {
-    return 0;
-}
-
-- (NSArray *)dateSections {
-    return nil;
-}
-
-- (NSUInteger)numberOfReportsWithDateSection:(HTLDateSection *)dateSection {
-    return 0;
-}
-
-- (NSArray *)reportsWithDateSection:(HTLDateSection *)dateSection mark:(HTLMark *)mark {
-    return nil;
-}
-
-- (BOOL)saveReport:(HTLReport *)report {
-    return NO;
-}
-
-- (NSDate *)lastReportEndDate {
-    return nil;
-}
-
-- (HTLReport *)lastReport {
-    return nil;
-}
-
-- (NSArray *)statisticsWithDateSection:(HTLDateSection *)dateSection {
-    return nil;
-}
-
-
-@end
