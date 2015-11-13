@@ -271,7 +271,7 @@
                                         <rect key="frame" x="0.0" y="21" width="600" height="223"/>
                                         <animations/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <collectionViewLayout key="collectionViewLayout" id="bju-Qk-Xhi" customClass="TableLayout" customModule="HyperTimeLogger" customModuleProvider="target"/>
+                                        <collectionViewLayout key="collectionViewLayout" id="bju-Qk-Xhi" customClass="HTLTableLayout" customModule="HyperTimeLogger" customModuleProvider="target"/>
                                         <cells>
                                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="HTLMarkCollectionViewCell" id="wEB-6t-Pbb" customClass="HTLMarkCollectionViewCell">
                                                 <rect key="frame" x="0.0" y="0.0" width="167" height="50"/>
@@ -1490,7 +1490,7 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="PiF-Yn-4Wb"/>
-        <segue reference="cpk-mK-UeV"/>
+        <segue reference="i36-bO-apR"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.39215686274509803" green="0.26666666666666666" blue="0.21176470588235294" alpha="1" colorSpace="calibratedRGB"/>
 </document>

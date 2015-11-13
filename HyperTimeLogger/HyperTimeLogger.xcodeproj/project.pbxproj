@@ -426,10 +426,13 @@
 		C59A84041BF4BB2D00183614 /* HTLMarkCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC627D803BF6DFB71DB376 /* HTLMarkCollectionViewCell.m */; };
 		C59A84051BF4BB2D00183614 /* HTLMarkCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC627D803BF6DFB71DB376 /* HTLMarkCollectionViewCell.m */; };
 		C59A84061BF4BB2E00183614 /* HTLMarkCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC627D803BF6DFB71DB376 /* HTLMarkCollectionViewCell.m */; };
+		C59A84071BF5E32000183614 /* HTLTableLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5C361C61BD512490070055F /* HTLTableLayout.swift */; };
+		C59A84081BF5E32000183614 /* HTLTableLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5C361C61BD512490070055F /* HTLTableLayout.swift */; };
+		C59A84091BF5E32100183614 /* HTLTableLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5C361C61BD512490070055F /* HTLTableLayout.swift */; };
 		C5BA1B801B26F890006D80BC /* TodayExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = C5BA1B731B26F890006D80BC /* TodayExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		C5C361C71BD512490070055F /* TableLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5C361C61BD512490070055F /* TableLayout.swift */; };
-		C5C361C81BD512490070055F /* TableLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5C361C61BD512490070055F /* TableLayout.swift */; };
-		C5C361C91BD512490070055F /* TableLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5C361C61BD512490070055F /* TableLayout.swift */; };
+		C5C361C71BD512490070055F /* HTLTableLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5C361C61BD512490070055F /* HTLTableLayout.swift */; };
+		C5C361C81BD512490070055F /* HTLTableLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5C361C61BD512490070055F /* HTLTableLayout.swift */; };
+		C5C361C91BD512490070055F /* HTLTableLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5C361C61BD512490070055F /* HTLTableLayout.swift */; };
 		C5F512FE1BBF344D002F887E /* TODOs.txt in Resources */ = {isa = PBXBuildFile; fileRef = C5F512FD1BBF344D002F887E /* TODOs.txt */; };
 		C5FF2ADA1BF221D60047378D /* CVAuxiliaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5FF2ABF1BF221D60047378D /* CVAuxiliaryView.swift */; };
 		C5FF2ADB1BF221D60047378D /* CVAuxiliaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5FF2ABF1BF221D60047378D /* CVAuxiliaryView.swift */; };
@@ -810,7 +813,7 @@
 		C59689F21B3C18FC0038018D /* TodayExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = file.entitlements; path = TodayExtension.entitlements; sourceTree = "<group>"; };
 		C59689F31B3C19030038018D /* TodayExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = file.entitlements; path = TodayExtension.entitlements; sourceTree = "<group>"; };
 		C5BA1B731B26F890006D80BC /* TodayExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = TodayExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
-		C5C361C61BD512490070055F /* TableLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableLayout.swift; sourceTree = "<group>"; };
+		C5C361C61BD512490070055F /* HTLTableLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTLTableLayout.swift; sourceTree = "<group>"; };
 		C5F512FD1BBF344D002F887E /* TODOs.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = TODOs.txt; sourceTree = "<group>"; };
 		C5FF2ABF1BF221D60047378D /* CVAuxiliaryView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CVAuxiliaryView.swift; sourceTree = "<group>"; };
 		C5FF2AC01BF221D60047378D /* CVCalendarContentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CVCalendarContentViewController.swift; sourceTree = "<group>"; };
@@ -1293,7 +1296,7 @@
 				73BC661B63EA8AB951F4F292 /* HTLTodayDataSource.h */,
 				73BC627D803BF6DFB71DB376 /* HTLMarkCollectionViewCell.m */,
 				73BC6E52C8E9183CBB092523 /* HTLMarkCollectionViewCell.h */,
-				C5C361C61BD512490070055F /* TableLayout.swift */,
+				C5C361C61BD512490070055F /* HTLTableLayout.swift */,
 				73BC67AA864757C5B1299286 /* HTLColorPickerTableView.m */,
 				73BC62E16CAF02D099B1981E /* HTLColorPickerTableView.h */,
 				73BC65F70BCA0217513D9383 /* HTLReportView.m */,
@@ -2080,7 +2083,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C5C361C81BD512490070055F /* TableLayout.swift in Sources */,
+				C5C361C81BD512490070055F /* HTLTableLayout.swift in Sources */,
 				C5FF2AF91BF221D60047378D /* CVCalendarView.swift in Sources */,
 				C516A6D31B3AD18E0018F022 /* NSDate+HTLComponents.m in Sources */,
 				C5FF2B111BF221D60047378D /* CVCalendarWeekday.swift in Sources */,
@@ -2182,7 +2185,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C5C361C71BD512490070055F /* TableLayout.swift in Sources */,
+				C5C361C71BD512490070055F /* HTLTableLayout.swift in Sources */,
 				C5FF2AF81BF221D60047378D /* CVCalendarView.swift in Sources */,
 				C516A71E1B3AD2590018F022 /* NSDate+HTLComponents.m in Sources */,
 				C5FF2B101BF221D60047378D /* CVCalendarWeekday.swift in Sources */,
@@ -2284,6 +2287,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C59A84071BF5E32000183614 /* HTLTableLayout.swift in Sources */,
 				C59689A11B3C16270038018D /* NSDate+HTLComponents.m in Sources */,
 				C59689A21B3C16270038018D /* HTLReport+Helpers.m in Sources */,
 				C582B2FC1B3EC8D5005CC526 /* DDFileLogger.m in Sources */,
@@ -2327,6 +2331,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C59A84081BF5E32000183614 /* HTLTableLayout.swift in Sources */,
 				C59689C31B3C16350038018D /* NSDate+HTLComponents.m in Sources */,
 				C59689C41B3C16350038018D /* HTLReport+Helpers.m in Sources */,
 				C582B2FD1B3EC8D5005CC526 /* DDFileLogger.m in Sources */,
@@ -2370,6 +2375,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C59A84091BF5E32100183614 /* HTLTableLayout.swift in Sources */,
 				73BC679BF2C1A1A36939932B /* NSDate+HTLComponents.m in Sources */,
 				73BC6919D98B939D1BBDAF28 /* HTLReport+Helpers.m in Sources */,
 				C582B2FE1B3EC8D5005CC526 /* DDFileLogger.m in Sources */,
@@ -2413,7 +2419,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C5C361C91BD512490070055F /* TableLayout.swift in Sources */,
+				C5C361C91BD512490070055F /* HTLTableLayout.swift in Sources */,
 				C5FF2AFA1BF221D60047378D /* CVCalendarView.swift in Sources */,
 				73BC63A745D1B957781BC3C0 /* NSDate+HTLComponents.m in Sources */,
 				C5FF2B121BF221D60047378D /* CVCalendarWeekday.swift in Sources */,
@@ -2768,7 +2774,7 @@
 				CODE_SIGN_ENTITLEMENTS = TodayExtension/Versions/Alpha/TodayExtension.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				EMBEDDED_CONTENT_CONTAINS_SWIFT = NO;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Dependencies/Vendor",
@@ -2795,7 +2801,7 @@
 				CODE_SIGN_ENTITLEMENTS = TodayExtension/Versions/Alpha/TodayExtension.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				EMBEDDED_CONTENT_CONTAINS_SWIFT = NO;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Dependencies/Vendor",
@@ -2818,7 +2824,7 @@
 				CODE_SIGN_ENTITLEMENTS = TodayExtension/Versions/Beta/TodayExtension.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				EMBEDDED_CONTENT_CONTAINS_SWIFT = NO;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Dependencies/Vendor",
@@ -2845,7 +2851,7 @@
 				CODE_SIGN_ENTITLEMENTS = TodayExtension/Versions/Beta/TodayExtension.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				EMBEDDED_CONTENT_CONTAINS_SWIFT = NO;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Dependencies/Vendor",
@@ -2868,7 +2874,7 @@
 				CODE_SIGN_ENTITLEMENTS = TodayExtension/Versions/Live/TodayExtension.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				EMBEDDED_CONTENT_CONTAINS_SWIFT = NO;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Dependencies/Vendor",
@@ -2895,7 +2901,7 @@
 				CODE_SIGN_ENTITLEMENTS = TodayExtension/Versions/Live/TodayExtension.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				EMBEDDED_CONTENT_CONTAINS_SWIFT = NO;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Dependencies/Vendor",

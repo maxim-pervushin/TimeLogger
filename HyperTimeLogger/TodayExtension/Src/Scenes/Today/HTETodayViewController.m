@@ -79,11 +79,17 @@ static const int kCollectionViewMinItemsPerRow = 3;
     }];
 
     if ([self.collectionView.collectionViewLayout isKindOfClass:[ZLBalancedFlowLayout class]]) {
+        self.lastReportCategoryTitleLabel.text = @"ZLBalancedFlowLayout";
         ZLBalancedFlowLayout *balancedFlowLayout = (ZLBalancedFlowLayout *) self.collectionView.collectionViewLayout;
         balancedFlowLayout.minimumLineSpacing = 0;
         balancedFlowLayout.minimumInteritemSpacing = 0;
         balancedFlowLayout.rowHeight = kCollectionViewRowHeight;
         balancedFlowLayout.enforcesRowHeight = YES;
+    }
+
+    if ([self.collectionView.collectionViewLayout isKindOfClass:[HTLTableLayout class]]) {
+        HTLTableLayout *layout = (HTLTableLayout *) self.collectionView.collectionViewLayout;
+        layout.numberOfColumns = 2;
     }
 }
 

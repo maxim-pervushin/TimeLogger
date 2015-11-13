@@ -1,5 +1,5 @@
 //
-//  TableLayout.swift
+//  HTLTableLayout.swift
 //  HyperTimeLogger
 //
 //  Created by Maxim Pervushin on 19/10/15.
@@ -8,9 +8,19 @@
 
 import UIKit
 
-class TableLayout: UICollectionViewLayout {
-    
-    var numberOfColumns: Int = 2
+class HTLTableLayout: UICollectionViewLayout {
+
+    private var _numberOfColumns: Int = 2
+
+    var numberOfColumns: Int {
+        set {
+            _numberOfColumns = newValue < 2 ? 2 : newValue
+            invalidateLayout()
+        }
+        get {
+            return _numberOfColumns
+        }
+    }
     
     var rowHeight = CGFloat(50)
     

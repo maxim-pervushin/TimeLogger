@@ -53,7 +53,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="120" id="bKn-sU-KGu" userLabel="Collection View Height"/>
                                 </constraints>
-                                <collectionViewLayout key="collectionViewLayout" id="DKQ-Aa-ibg" customClass="ZLBalancedFlowLayout" customModule="TodayExtension" customModuleProvider="target"/>
+                                <collectionViewLayout key="collectionViewLayout" id="DKQ-Aa-ibg" customClass="HTLTableLayout" customModule="TodayExtension" customModuleProvider="target"/>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="HTLMarkCellWithSubTitle" id="6ZW-sP-DP0" customClass="HTLMarkCollectionViewCell">
                                         <rect key="frame" x="0.0" y="0.0" width="120" height="70"/>
