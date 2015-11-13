@@ -128,7 +128,7 @@ static const int kHeaderHeight = 90;
 
     if ([self.marksCollectionView.collectionViewLayout isKindOfClass:[HTLTableLayout class]]) {
         HTLTableLayout *layout = (HTLTableLayout *) self.marksCollectionView.collectionViewLayout;
-        layout.numberOfColumns = 2;
+        layout.maxNumberOfColumns = 2;
     }
 
     [self updateUIAnimated:NO];
@@ -136,9 +136,9 @@ static const int kHeaderHeight = 90;
 
 #pragma mark - UICollectionViewDataSource, UICollectionViewDelegate
 
-- (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
-    return 1;
-}
+//- (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
+//    return 1;
+//}
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
     return self.dataSource.numberOfMarks;

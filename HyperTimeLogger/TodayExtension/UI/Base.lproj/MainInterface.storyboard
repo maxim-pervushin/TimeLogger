@@ -18,7 +18,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="450"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="moD-MK-UEt">
+                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="moD-MK-UEt">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="20"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Recent Report" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2b8-9J-Hzf">
@@ -39,10 +39,13 @@
                                     <constraint firstAttribute="height" constant="20" id="oIc-jL-GU9"/>
                                 </constraints>
                             </view>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="A5V-Wu-ayH">
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="A5V-Wu-ayH">
                                 <rect key="frame" x="8" y="72" width="304" height="322"/>
                                 <animations/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="300" id="Z1w-1g-frP"/>
+                                </constraints>
                                 <collectionViewLayout key="collectionViewLayout" id="DKQ-Aa-ibg" customClass="HTLTableLayout" customModule="TodayExtension" customModuleProvider="target"/>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="HTLMarkCellWithSubTitle" id="6ZW-sP-DP0" customClass="HTLMarkCollectionViewCell">
@@ -52,14 +55,14 @@
                                             <rect key="frame" x="0.0" y="0.0" width="120" height="70"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="s4o-LW-GfR" userLabel="Action Title Label">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.75" translatesAutoresizingMaskIntoConstraints="NO" id="s4o-LW-GfR" userLabel="Action Title Label">
                                                     <rect key="frame" x="4" y="4" width="112" height="30"/>
                                                     <animations/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Subtitle" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="iyL-lK-kGP" userLabel="Category Title Label">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Subtitle" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.75" translatesAutoresizingMaskIntoConstraints="NO" id="iyL-lK-kGP" userLabel="Category Title Label">
                                                     <rect key="frame" x="4" y="36" width="112" height="30"/>
                                                     <animations/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
@@ -78,7 +81,7 @@
                                             <constraint firstAttribute="bottomMargin" secondItem="iyL-lK-kGP" secondAttribute="bottom" constant="-4" id="6rW-s6-G0R"/>
                                             <constraint firstItem="iyL-lK-kGP" firstAttribute="trailing" secondItem="s4o-LW-GfR" secondAttribute="trailing" id="LLa-RA-X6n"/>
                                             <constraint firstItem="iyL-lK-kGP" firstAttribute="leading" secondItem="s4o-LW-GfR" secondAttribute="leading" id="Zru-eV-Dm1"/>
-                                            <constraint firstItem="s4o-LW-GfR" firstAttribute="top" secondItem="6ZW-sP-DP0" secondAttribute="topMargin" constant="-4" id="mgL-ex-Q8c"/>
+                                            <constraint firstItem="s4o-LW-GfR" firstAttribute="top" secondItem="6ZW-sP-DP0" secondAttribute="top" constant="4" id="mgL-ex-Q8c"/>
                                             <constraint firstItem="iyL-lK-kGP" firstAttribute="top" secondItem="s4o-LW-GfR" secondAttribute="bottom" constant="2" id="rKa-qD-9Lg"/>
                                             <constraint firstItem="iyL-lK-kGP" firstAttribute="height" secondItem="s4o-LW-GfR" secondAttribute="height" id="s9L-HR-fhF"/>
                                         </constraints>
@@ -95,7 +98,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="120" height="70"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="RaJ-t2-ozk" userLabel="Action Title Label">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.75" translatesAutoresizingMaskIntoConstraints="NO" id="RaJ-t2-ozk" userLabel="Action Title Label">
                                                     <rect key="frame" x="0.0" y="0.0" width="120" height="70"/>
                                                     <animations/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
@@ -125,7 +128,7 @@
                                     <outlet property="delegate" destination="M4Y-Lb-cyx" id="mIN-2w-7gg"/>
                                 </connections>
                             </collectionView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6Sd-vs-aVj" customClass="HTLReportView">
+                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6Sd-vs-aVj" customClass="HTLReportView">
                                 <rect key="frame" x="0.0" y="20" width="320" height="44"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AS3-ry-CVZ" customClass="HTLLineView">
@@ -142,7 +145,7 @@
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mLg-GV-HWK">
+                                    <view alpha="0.5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mLg-GV-HWK">
                                         <rect key="frame" x="8" y="4" width="15" height="35"/>
                                         <animations/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -214,7 +217,7 @@
                                 </constraints>
                                 <state key="normal" title="Custom Mark"/>
                                 <connections>
-                                    <action selector="addCustomAction:" destination="M4Y-Lb-cyx" eventType="touchUpInside" id="yjc-jD-Kmy"/>
+                                    <action selector="customMarkButtonAction:" destination="M4Y-Lb-cyx" eventType="touchUpInside" id="yjc-jD-Kmy"/>
                                 </connections>
                             </button>
                         </subviews>
