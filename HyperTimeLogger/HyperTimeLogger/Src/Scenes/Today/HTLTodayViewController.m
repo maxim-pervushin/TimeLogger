@@ -43,7 +43,7 @@ static const int kHeaderHeight = 90;
         _dataSource = [HTLTodayDataSource dataSourceWithContentChangedBlock:^{
             [weakSelf updateUIAnimated:YES];
         }];
-        [weakSelf updateUIAnimated:YES];
+        [weakSelf updateUIAnimated:NO];
     }
     return _dataSource;
 }
@@ -112,6 +112,7 @@ static const int kHeaderHeight = 90;
 
     self.marksCollectionView.dataSource = self;
     self.marksCollectionView.delegate = self;
+    [self.marksCollectionView reloadData];
 }
 
 
@@ -130,15 +131,9 @@ static const int kHeaderHeight = 90;
         HTLTableLayout *layout = (HTLTableLayout *) self.marksCollectionView.collectionViewLayout;
         layout.maxNumberOfColumns = 2;
     }
-
-    [self updateUIAnimated:NO];
 }
 
 #pragma mark - UICollectionViewDataSource, UICollectionViewDelegate
-
-//- (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
-//    return 1;
-//}
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
     return self.dataSource.numberOfMarks;
