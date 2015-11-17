@@ -77,6 +77,7 @@
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     HTLColorCollectionViewCell *cell = (HTLColorCollectionViewCell *) [collectionView dequeueReusableCellWithReuseIdentifier:[HTLColorCollectionViewCell defaultIdentifier] forIndexPath:indexPath];
     cell.color = [HTLColor colors][(NSUInteger) indexPath.row];
+//    [cell setIsAccessibilityElement:YES];
     return cell;
 }
 
@@ -110,12 +111,30 @@
     _color = color;
     self.backgroundColor = _color.color;
     self.colorNameLabel.text = _color.name;
+//    self.colorNameLabel.accessibilityIdentifier = _color.name;
+//    self.accessibilityIdentifier = _color.name;
+    self.checkmarkImageView.accessibilityIdentifier = _color.name;
     self.colorNameLabel.textColor = _color.textColor;
+    self.backgroundView.accessibilityIdentifier = _color.name;
 }
 
 - (void)setSelected:(BOOL)selected {
 
     self.checkmarkImageView.image = selected ? [UIImage imageNamed:@"checkmark"] : nil;
 }
+
+//- (BOOL)isAccessibilityElement {
+//    return YES;
+//}
+//
+//- (UIAccessibilityTraits)accessibilityTraits {
+//    return super.accessibilityTraits | UIAccessibilityTraitButton;
+//}
+//
+//- (void)accessibilityElementDidBecomeFocused {
+//    UICollectionView *collectionView = (UICollectionView *) self.superview;
+//    [collectionView scrollToItemAtIndexPath:[collectionView indexPathForCell:self] atScrollPosition:UICollectionViewScrollPositionCenteredHorizontally | UICollectionViewScrollPositionCenteredVertically animated:NO];
+//    UIAccessibilityPostNotification(UIAccessibilityLayoutChangedNotification, nil);
+//}
 
 @end

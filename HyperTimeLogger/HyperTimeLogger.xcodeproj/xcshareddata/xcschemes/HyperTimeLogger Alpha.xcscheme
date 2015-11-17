@@ -28,7 +28,26 @@
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "C54CAD0F1BFA67BF00CA7A5A"
+               BuildableName = "HyperTimeLogger AlphaUITests.xctest"
+               BlueprintName = "HyperTimeLogger AlphaUITests"
+               ReferencedContainer = "container:HyperTimeLogger.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
+      <MacroExpansion>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "C516A7191B3AD2590018F022"
+            BuildableName = "HyperTimeLogger Alpha.app"
+            BlueprintName = "HyperTimeLogger Alpha"
+            ReferencedContainer = "container:HyperTimeLogger.xcodeproj">
+         </BuildableReference>
+      </MacroExpansion>
       <AdditionalOptions>
       </AdditionalOptions>
    </TestAction>
@@ -63,6 +82,15 @@
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
       debugDocumentVersioning = "YES">
+      <MacroExpansion>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "C516A7191B3AD2590018F022"
+            BuildableName = "HyperTimeLogger Alpha.app"
+            BlueprintName = "HyperTimeLogger Alpha"
+            ReferencedContainer = "container:HyperTimeLogger.xcodeproj">
+         </BuildableReference>
+      </MacroExpansion>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">

@@ -46,10 +46,13 @@
 		73BC63E583DA471B2D26C36E /* HTLReport.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6A41E76EE6DBA2B7B791 /* HTLReport.m */; };
 		73BC640C41D76EF0D30C8DA7 /* HTLMarkCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC627D803BF6DFB71DB376 /* HTLMarkCollectionViewCell.m */; };
 		73BC6411AD3D5908732828F7 /* HTLTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6950A53D6644A947DEC1 /* HTLTextField.m */; };
+		73BC642EB7DA889CE6C9A0A1 /* HTLGridLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6FAEE8E17387DE1CF1AF /* HTLGridLayout.swift */; };
 		73BC64352110D8FBF0905C25 /* HTLJsonStorageProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6D39B3F01B06611349B1 /* HTLJsonStorageProvider.m */; };
 		73BC64E330CE14AE038B1F58 /* HTLLineView.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC656412B770162C38B718 /* HTLLineView.m */; };
 		73BC64E38F8FBA946C044E9C /* HTLColorPickerCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6D655114EB35E50E8C86 /* HTLColorPickerCollectionView.m */; };
+		73BC64F7D6872E88455F5EC2 /* HTLGridLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6FAEE8E17387DE1CF1AF /* HTLGridLayout.swift */; };
 		73BC64FAF04470F3A48E443D /* HTLTodayDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC69C6A701615D532CA288 /* HTLTodayDataSource.m */; };
+		73BC64FD5388F01898CC2561 /* HTLGridLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6FAEE8E17387DE1CF1AF /* HTLGridLayout.swift */; };
 		73BC6527642BFBB4D572ACB4 /* HTLDebugTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC60BE6ED2D8FE09E06E23 /* HTLDebugTableViewController.m */; };
 		73BC653BC4AEAF73F918F0B0 /* HTLEditCategoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6DBF52626BCC61B42B76 /* HTLEditCategoryViewController.m */; };
 		73BC6544409D94A6FB553559 /* HTLTodayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC67EAA68B80628BFE54A4 /* HTLTodayViewController.m */; };
@@ -94,11 +97,13 @@
 		73BC697836C7BC71A9FAEE26 /* clock_transparent.png in Resources */ = {isa = PBXBuildFile; fileRef = 73BC68B4BB6FD2C16DCFD83A /* clock_transparent.png */; };
 		73BC698EF025811B34B8B94A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6B4DA596906232FF8970 /* main.m */; };
 		73BC69B15C0D1465F18DF8F1 /* HTLCategoryEditor.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6177D050107771234F92 /* HTLCategoryEditor.m */; };
+		73BC69C4BD0AC486A9028157 /* HTLGridLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6FAEE8E17387DE1CF1AF /* HTLGridLayout.swift */; };
 		73BC69E44207EAC86F663664 /* HTLDateSectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6CFF1F750703F5FD8059 /* HTLDateSectionCell.m */; };
 		73BC69E4F116C55691C0B6DF /* HTLCSVStringExportProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6FEC821B2D22ACD250CD /* HTLCSVStringExportProvider.m */; };
 		73BC6A05148AF26290542AC6 /* HTLReport.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6A41E76EE6DBA2B7B791 /* HTLReport.m */; };
 		73BC6A56D387AF14555F0003 /* HTLMarkListDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6AD3F6831141DEE01CAC /* HTLMarkListDataSource.m */; };
 		73BC6A6E82FD64D3F87C008B /* HTLMemoryStorageProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6E74AB99637D8FFB3475 /* HTLMemoryStorageProvider.m */; };
+		73BC6A92A0AFD2B397806D10 /* HTLGridLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6FAEE8E17387DE1CF1AF /* HTLGridLayout.swift */; };
 		73BC6AC1C3C34AB23E8A3D42 /* HTLDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6B2EF7D4AAB16D0EC09A /* HTLDataSource.m */; };
 		73BC6AC9B188D26D1FC3E6F3 /* HTLReportListDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6A8034329BA3E2F993E7 /* HTLReportListDataSource.m */; };
 		73BC6ACB08FA93B24B74FDEC /* HTLStatisticsItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC68D3CDD0771C14BB49B2 /* HTLStatisticsItem.m */; };
@@ -132,6 +137,7 @@
 		73BC6D50D0F7419C4DBD8D09 /* DateSectionHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 73BC6ED6CA4E40EF0A86A0D6 /* DateSectionHeader.xib */; };
 		73BC6D7162BF46B66D13576B /* HTLCategoryEditor.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6177D050107771234F92 /* HTLCategoryEditor.m */; };
 		73BC6D9AF0777F4A283936F2 /* HTLSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6AE742267ED19FB46A1A /* HTLSettingsViewController.m */; };
+		73BC6DB3292088D7FA21852B /* HTLGridLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6FAEE8E17387DE1CF1AF /* HTLGridLayout.swift */; };
 		73BC6DF49FE48E1B50A6E34B /* HTLReportView.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC65F70BCA0217513D9383 /* HTLReportView.m */; };
 		73BC6DFD006300F761790E3F /* HTLReportTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC66C01A84D1D22A43B996 /* HTLReportTableViewCell.m */; };
 		73BC6E5D406483D67F4C561F /* HTLSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6AE742267ED19FB46A1A /* HTLSettingsViewController.m */; };
@@ -231,6 +237,7 @@
 		C53EFD6C1BEB7E4D005F42E1 /* JJMaterialTextfield.m in Sources */ = {isa = PBXBuildFile; fileRef = C53EFD621BEB7E4D005F42E1 /* JJMaterialTextfield.m */; };
 		C53EFD6D1BEB7E4D005F42E1 /* JJMaterialTextfield.m in Sources */ = {isa = PBXBuildFile; fileRef = C53EFD621BEB7E4D005F42E1 /* JJMaterialTextfield.m */; };
 		C53EFD6E1BEB7E4D005F42E1 /* JJMaterialTextfield.m in Sources */ = {isa = PBXBuildFile; fileRef = C53EFD621BEB7E4D005F42E1 /* JJMaterialTextfield.m */; };
+		C54CAD131BFA67C000CA7A5A /* HyperTimeLogger_AlphaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C54CAD121BFA67C000CA7A5A /* HyperTimeLogger_AlphaUITests.swift */; };
 		C55469001BF5F5160023EC0F /* HTLReportView.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC65F70BCA0217513D9383 /* HTLReportView.m */; };
 		C55469011BF5F5170023EC0F /* HTLReportView.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC65F70BCA0217513D9383 /* HTLReportView.m */; };
 		C55469021BF5F5170023EC0F /* HTLReportView.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC65F70BCA0217513D9383 /* HTLReportView.m */; };
@@ -432,13 +439,7 @@
 		C59A84041BF4BB2D00183614 /* HTLMarkCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC627D803BF6DFB71DB376 /* HTLMarkCollectionViewCell.m */; };
 		C59A84051BF4BB2D00183614 /* HTLMarkCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC627D803BF6DFB71DB376 /* HTLMarkCollectionViewCell.m */; };
 		C59A84061BF4BB2E00183614 /* HTLMarkCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC627D803BF6DFB71DB376 /* HTLMarkCollectionViewCell.m */; };
-		C59A84071BF5E32000183614 /* HTLTableLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5C361C61BD512490070055F /* HTLTableLayout.swift */; };
-		C59A84081BF5E32000183614 /* HTLTableLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5C361C61BD512490070055F /* HTLTableLayout.swift */; };
-		C59A84091BF5E32100183614 /* HTLTableLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5C361C61BD512490070055F /* HTLTableLayout.swift */; };
 		C5BA1B801B26F890006D80BC /* TodayExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = C5BA1B731B26F890006D80BC /* TodayExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		C5C361C71BD512490070055F /* HTLTableLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5C361C61BD512490070055F /* HTLTableLayout.swift */; };
-		C5C361C81BD512490070055F /* HTLTableLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5C361C61BD512490070055F /* HTLTableLayout.swift */; };
-		C5C361C91BD512490070055F /* HTLTableLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5C361C61BD512490070055F /* HTLTableLayout.swift */; };
 		C5F512FE1BBF344D002F887E /* TODOs.txt in Resources */ = {isa = PBXBuildFile; fileRef = C5F512FD1BBF344D002F887E /* TODOs.txt */; };
 		C5FF2ADA1BF221D60047378D /* CVAuxiliaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5FF2ABF1BF221D60047378D /* CVAuxiliaryView.swift */; };
 		C5FF2ADB1BF221D60047378D /* CVAuxiliaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5FF2ABF1BF221D60047378D /* CVAuxiliaryView.swift */; };
@@ -525,6 +526,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		C54CAD151BFA67C000CA7A5A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C5FFE3CA1B1857CD007D317D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C516A7191B3AD2590018F022;
+			remoteInfo = "HyperTimeLogger Alpha";
+		};
 		C59689F51B3C19860038018D /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = C5FFE3CA1B1857CD007D317D /* Project object */;
@@ -708,6 +716,7 @@
 		73BC6F771B4A63AA8FABCDF5 /* HTLReport+Helpers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "HTLReport+Helpers.m"; sourceTree = "<group>"; };
 		73BC6F7C4D1D96670253BDF2 /* HTLMarkListTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTLMarkListTableViewController.m; sourceTree = "<group>"; };
 		73BC6F7DCFA8D0EF70DD39E0 /* settings.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = settings.png; sourceTree = "<group>"; };
+		73BC6FAEE8E17387DE1CF1AF /* HTLGridLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTLGridLayout.swift; sourceTree = "<group>"; };
 		73BC6FB0EFED7B84F71E676E /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = ../../../../../Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator.sdk/System/Library/Frameworks/NotificationCenter.framework; sourceTree = "<group>"; };
 		73BC6FBF1D739E2158DA64F6 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		73BC6FEC821B2D22ACD250CD /* HTLCSVStringExportProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTLCSVStringExportProvider.m; sourceTree = "<group>"; };
@@ -727,6 +736,9 @@
 		C53EFD601BEB7E4D005F42E1 /* .gitkeep */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
 		C53EFD611BEB7E4D005F42E1 /* JJMaterialTextfield.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JJMaterialTextfield.h; sourceTree = "<group>"; };
 		C53EFD621BEB7E4D005F42E1 /* JJMaterialTextfield.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JJMaterialTextfield.m; sourceTree = "<group>"; };
+		C54CAD101BFA67BF00CA7A5A /* HyperTimeLogger AlphaUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "HyperTimeLogger AlphaUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C54CAD121BFA67C000CA7A5A /* HyperTimeLogger_AlphaUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HyperTimeLogger_AlphaUITests.swift; sourceTree = "<group>"; };
+		C54CAD141BFA67C000CA7A5A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C55468F11BF5EE830023EC0F /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
 		C55912521B3C06B8002593BE /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		C55912541B3C06BE002593BE /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
@@ -820,7 +832,6 @@
 		C59689F21B3C18FC0038018D /* TodayExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = file.entitlements; path = TodayExtension.entitlements; sourceTree = "<group>"; };
 		C59689F31B3C19030038018D /* TodayExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = file.entitlements; path = TodayExtension.entitlements; sourceTree = "<group>"; };
 		C5BA1B731B26F890006D80BC /* TodayExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = TodayExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
-		C5C361C61BD512490070055F /* HTLTableLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTLTableLayout.swift; sourceTree = "<group>"; };
 		C5F512FD1BBF344D002F887E /* TODOs.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = TODOs.txt; sourceTree = "<group>"; };
 		C5FF2ABF1BF221D60047378D /* CVAuxiliaryView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CVAuxiliaryView.swift; sourceTree = "<group>"; };
 		C5FF2AC01BF221D60047378D /* CVCalendarContentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CVCalendarContentViewController.swift; sourceTree = "<group>"; };
@@ -883,6 +894,13 @@
 				C582B3B21B3ECD26005CC526 /* libsqlite3.dylib in Frameworks */,
 				C516A75A1B3AD2590018F022 /* Crashlytics.framework in Frameworks */,
 				C516A75B1B3AD2590018F022 /* Fabric.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C54CAD0D1BFA67BF00CA7A5A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1303,7 +1321,6 @@
 				73BC661B63EA8AB951F4F292 /* HTLTodayDataSource.h */,
 				73BC627D803BF6DFB71DB376 /* HTLMarkCollectionViewCell.m */,
 				73BC6E52C8E9183CBB092523 /* HTLMarkCollectionViewCell.h */,
-				C5C361C61BD512490070055F /* HTLTableLayout.swift */,
 				73BC67AA864757C5B1299286 /* HTLColorPickerTableView.m */,
 				73BC62E16CAF02D099B1981E /* HTLColorPickerTableView.h */,
 				73BC65F70BCA0217513D9383 /* HTLReportView.m */,
@@ -1327,6 +1344,7 @@
 				73BC6832693513A757B37004 /* Data Source */,
 				C516A6C91B3A8F2A0018F022 /* Views */,
 				C591EAAA1BF34FC000BB8FA6 /* HyperTimeLogger-BridgingHeader.h */,
+				73BC6FAEE8E17387DE1CF1AF /* HTLGridLayout.swift */,
 			);
 			path = Src;
 			sourceTree = "<group>";
@@ -1450,6 +1468,15 @@
 				C53EFD621BEB7E4D005F42E1 /* JJMaterialTextfield.m */,
 			);
 			path = Classes;
+			sourceTree = "<group>";
+		};
+		C54CAD111BFA67C000CA7A5A /* HyperTimeLogger AlphaUITests */ = {
+			isa = PBXGroup;
+			children = (
+				C54CAD121BFA67C000CA7A5A /* HyperTimeLogger_AlphaUITests.swift */,
+				C54CAD141BFA67C000CA7A5A /* Info.plist */,
+			);
+			path = "HyperTimeLogger AlphaUITests";
 			sourceTree = "<group>";
 		};
 		C55468F01BF5EE830023EC0F /* Frameworks */ = {
@@ -1680,6 +1707,7 @@
 				73BC638E0B41F356D8A5AFDC /* Dependencies */,
 				73BC6EF11D6CD7307BA62A1F /* HyperTimeLogger */,
 				C5FFE3EE1B1857CE007D317D /* HyperTimeLoggerTests */,
+				C54CAD111BFA67C000CA7A5A /* HyperTimeLogger AlphaUITests */,
 				C55468F01BF5EE830023EC0F /* Frameworks */,
 				C5FFE3D31B1857CE007D317D /* Products */,
 				C5BA1B761B26F890006D80BC /* TodayExtension */,
@@ -1696,6 +1724,7 @@
 				C516A7621B3AD2590018F022 /* HyperTimeLogger Alpha.app */,
 				C59689BE1B3C16270038018D /* TodayExtension Alpha.appex */,
 				C59689E01B3C16350038018D /* TodayExtension Beta.appex */,
+				C54CAD101BFA67BF00CA7A5A /* HyperTimeLogger AlphaUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -1759,6 +1788,24 @@
 			productName = HyperTimeLogger;
 			productReference = C516A7621B3AD2590018F022 /* HyperTimeLogger Alpha.app */;
 			productType = "com.apple.product-type.application";
+		};
+		C54CAD0F1BFA67BF00CA7A5A /* HyperTimeLogger AlphaUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C54CAD191BFA67C000CA7A5A /* Build configuration list for PBXNativeTarget "HyperTimeLogger AlphaUITests" */;
+			buildPhases = (
+				C54CAD0C1BFA67BF00CA7A5A /* Sources */,
+				C54CAD0D1BFA67BF00CA7A5A /* Frameworks */,
+				C54CAD0E1BFA67BF00CA7A5A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C54CAD161BFA67C000CA7A5A /* PBXTargetDependency */,
+			);
+			name = "HyperTimeLogger AlphaUITests";
+			productName = "HyperTimeLogger AlphaUITests";
+			productReference = C54CAD101BFA67BF00CA7A5A /* HyperTimeLogger AlphaUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 		C596899E1B3C16270038018D /* TodayExtension Alpha */ = {
 			isa = PBXNativeTarget;
@@ -1877,6 +1924,10 @@
 							};
 						};
 					};
+					C54CAD0F1BFA67BF00CA7A5A = {
+						CreatedOnToolsVersion = 7.1.1;
+						TestTargetID = C516A7191B3AD2590018F022;
+					};
 					C596899E1B3C16270038018D = {
 						DevelopmentTeam = FRM2L78456;
 					};
@@ -1927,6 +1978,7 @@
 				C596899E1B3C16270038018D /* TodayExtension Alpha */,
 				C59689C01B3C16350038018D /* TodayExtension Beta */,
 				C5BA1B721B26F890006D80BC /* TodayExtension */,
+				C54CAD0F1BFA67BF00CA7A5A /* HyperTimeLogger AlphaUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -1984,6 +2036,13 @@
 				C516A7541B3AD2590018F022 /* testdata_ru.json in Resources */,
 				C516A7551B3AD2590018F022 /* testdata_en.json in Resources */,
 				73BC62D548E25B46D3759605 /* HyperTimeLogger.entitlements in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C54CAD0E1BFA67BF00CA7A5A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2099,7 +2158,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C5C361C81BD512490070055F /* HTLTableLayout.swift in Sources */,
 				C5FF2AF91BF221D60047378D /* CVCalendarView.swift in Sources */,
 				C516A6D31B3AD18E0018F022 /* NSDate+HTLComponents.m in Sources */,
 				C5FF2B111BF221D60047378D /* CVCalendarWeekday.swift in Sources */,
@@ -2194,6 +2252,7 @@
 				73BC6CFDEFE29DD3D39AA9E6 /* HTLStatisticsTableViewController.m in Sources */,
 				73BC615C0BF368D6F6A68F28 /* HTLJsonStorageProvider.m in Sources */,
 				73BC6EE20A8E9F01CBE533D4 /* HTLMemoryCacheProvider.m in Sources */,
+				73BC6A92A0AFD2B397806D10 /* HTLGridLayout.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2201,7 +2260,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C5C361C71BD512490070055F /* HTLTableLayout.swift in Sources */,
 				C5FF2AF81BF221D60047378D /* CVCalendarView.swift in Sources */,
 				C516A71E1B3AD2590018F022 /* NSDate+HTLComponents.m in Sources */,
 				C5FF2B101BF221D60047378D /* CVCalendarWeekday.swift in Sources */,
@@ -2296,6 +2354,15 @@
 				73BC67B116FC48ADE599DA17 /* HTLStatisticsTableViewController.m in Sources */,
 				73BC64352110D8FBF0905C25 /* HTLJsonStorageProvider.m in Sources */,
 				73BC6FE8C6742B84A8A38972 /* HTLMemoryCacheProvider.m in Sources */,
+				73BC69C4BD0AC486A9028157 /* HTLGridLayout.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C54CAD0C1BFA67BF00CA7A5A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C54CAD131BFA67C000CA7A5A /* HyperTimeLogger_AlphaUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2303,7 +2370,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C59A84071BF5E32000183614 /* HTLTableLayout.swift in Sources */,
 				C59689A11B3C16270038018D /* NSDate+HTLComponents.m in Sources */,
 				C59689A21B3C16270038018D /* HTLReport+Helpers.m in Sources */,
 				C582B2FC1B3EC8D5005CC526 /* DDFileLogger.m in Sources */,
@@ -2342,6 +2408,7 @@
 				C59689B11B3C16270038018D /* HTLSqliteStorageProvider+Deserialization.m in Sources */,
 				C582B3571B3EC8D5005CC526 /* FMDatabaseQueue.m in Sources */,
 				C59689B21B3C16270038018D /* HTLDataSource.m in Sources */,
+				73BC64F7D6872E88455F5EC2 /* HTLGridLayout.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2349,7 +2416,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C59A84081BF5E32000183614 /* HTLTableLayout.swift in Sources */,
 				C59689C31B3C16350038018D /* NSDate+HTLComponents.m in Sources */,
 				C59689C41B3C16350038018D /* HTLReport+Helpers.m in Sources */,
 				C582B2FD1B3EC8D5005CC526 /* DDFileLogger.m in Sources */,
@@ -2388,6 +2454,7 @@
 				C59689D31B3C16350038018D /* HTLSqliteStorageProvider+Deserialization.m in Sources */,
 				C582B3581B3EC8D5005CC526 /* FMDatabaseQueue.m in Sources */,
 				C59689D41B3C16350038018D /* HTLDataSource.m in Sources */,
+				73BC6DB3292088D7FA21852B /* HTLGridLayout.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2395,7 +2462,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C59A84091BF5E32100183614 /* HTLTableLayout.swift in Sources */,
 				73BC679BF2C1A1A36939932B /* NSDate+HTLComponents.m in Sources */,
 				73BC6919D98B939D1BBDAF28 /* HTLReport+Helpers.m in Sources */,
 				C582B2FE1B3EC8D5005CC526 /* DDFileLogger.m in Sources */,
@@ -2434,6 +2500,7 @@
 				73BC60A9E3DA6728F9788F57 /* HTLSqliteStorageProvider+Deserialization.m in Sources */,
 				C582B3591B3EC8D5005CC526 /* FMDatabaseQueue.m in Sources */,
 				73BC63D7E123A596DFCD6FEC /* HTLDataSource.m in Sources */,
+				73BC64FD5388F01898CC2561 /* HTLGridLayout.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2441,7 +2508,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C5C361C91BD512490070055F /* HTLTableLayout.swift in Sources */,
 				C5FF2AFA1BF221D60047378D /* CVCalendarView.swift in Sources */,
 				73BC63A745D1B957781BC3C0 /* NSDate+HTLComponents.m in Sources */,
 				C5FF2B121BF221D60047378D /* CVCalendarWeekday.swift in Sources */,
@@ -2536,6 +2602,7 @@
 				73BC6B9264AE3A73F0121AA9 /* HTLStatisticsTableViewController.m in Sources */,
 				73BC6CE679B816A7B1FF5ADD /* HTLJsonStorageProvider.m in Sources */,
 				73BC6C307F95639756FE5F0C /* HTLMemoryCacheProvider.m in Sources */,
+				73BC642EB7DA889CE6C9A0A1 /* HTLGridLayout.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2573,6 +2640,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		C54CAD161BFA67C000CA7A5A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C516A7191B3AD2590018F022 /* HyperTimeLogger Alpha */;
+			targetProxy = C54CAD151BFA67C000CA7A5A /* PBXContainerItemProxy */;
+		};
 		C59689F61B3C19860038018D /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = C596899E1B3C16270038018D /* TodayExtension Alpha */;
@@ -2789,6 +2861,34 @@
 				PRODUCT_NAME = "HyperTimeLogger Alpha";
 				PROVISIONING_PROFILE = "";
 				USER_HEADER_SEARCH_PATHS = "\"${PROJECT_DIR}/../Pods\"/**";
+			};
+			name = Release;
+		};
+		C54CAD171BFA67C000CA7A5A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				INFOPLIST_FILE = "HyperTimeLogger AlphaUITests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.maximpervushin.HyperTimeLogger-AlphaUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TEST_TARGET_NAME = "HyperTimeLogger Alpha";
+				USES_XCTRUNNER = YES;
+			};
+			name = Debug;
+		};
+		C54CAD181BFA67C000CA7A5A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = "HyperTimeLogger AlphaUITests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.maximpervushin.HyperTimeLogger-AlphaUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = "HyperTimeLogger Alpha";
+				USES_XCTRUNNER = YES;
 			};
 			name = Release;
 		};
@@ -3129,6 +3229,14 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		C54CAD191BFA67C000CA7A5A /* Build configuration list for PBXNativeTarget "HyperTimeLogger AlphaUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C54CAD171BFA67C000CA7A5A /* Debug */,
+				C54CAD181BFA67C000CA7A5A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 		C59689BB1B3C16270038018D /* Build configuration list for PBXNativeTarget "TodayExtension Alpha" */ = {
 			isa = XCConfigurationList;

@@ -206,6 +206,7 @@
                                         <rect key="frame" x="8" y="72" width="584" height="40"/>
                                         <animations/>
                                         <color key="backgroundColor" red="0.86274509799999999" green="0.86274509799999999" blue="0.86274509799999999" alpha="0.5" colorSpace="calibratedRGB"/>
+                                        <accessibility key="accessibilityConfiguration" identifier="CreateCustomMark" label=""/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="vyN-eh-1wI"/>
                                         </constraints>
@@ -271,7 +272,7 @@
                                         <rect key="frame" x="0.0" y="21" width="600" height="223"/>
                                         <animations/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <collectionViewLayout key="collectionViewLayout" id="bju-Qk-Xhi" customClass="HTLTableLayout" customModule="HyperTimeLogger" customModuleProvider="target"/>
+                                        <collectionViewLayout key="collectionViewLayout" id="bju-Qk-Xhi" customClass="HTLGridLayout" customModule="HyperTimeLogger" customModuleProvider="target"/>
                                         <cells>
                                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="HTLMarkCollectionViewCell" id="wEB-6t-Pbb" customClass="HTLMarkCollectionViewCell">
                                                 <rect key="frame" x="0.0" y="0.0" width="167" height="50"/>
@@ -1278,6 +1279,7 @@
                                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Title" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ZOn-8J-dhf" customClass="HTLTextField">
                                                     <rect key="frame" x="8" y="16" width="584" height="26"/>
                                                     <animations/>
+                                                    <accessibility key="accessibilityConfiguration" identifier="Title"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits"/>
                                                     <connections>
@@ -1305,6 +1307,7 @@
                                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Subtitle" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sBX-zK-WfI" customClass="HTLTextField">
                                                     <rect key="frame" x="8" y="16" width="584" height="26"/>
                                                     <animations/>
+                                                    <accessibility key="accessibilityConfiguration" identifier="Subtitle"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits"/>
                                                     <connections>
@@ -1329,8 +1332,8 @@
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="eOA-Vq-HGG" customClass="HTLColorPickerCollectionView">
-                                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
+                                                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="eOA-Vq-HGG" customClass="HTLColorPickerCollectionView">
+                                                    <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
                                                     <animations/>
                                                     <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="Gwe-L2-TQh">
                                                         <size key="itemSize" width="43" height="43"/>
@@ -1340,15 +1343,27 @@
                                                     </collectionViewFlowLayout>
                                                     <cells>
                                                         <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="HTLColorCollectionViewCell" id="eAd-By-mai" customClass="HTLColorCollectionViewCell">
-                                                            <rect key="frame" x="0.0" y="0.0" width="43" height="43"/>
+                                                            <rect key="frame" x="0.0" y="1" width="43" height="43"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                                                 <rect key="frame" x="0.0" y="0.0" width="43" height="43"/>
                                                                 <autoresizingMask key="autoresizingMask"/>
                                                                 <subviews>
+                                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jN2-Sb-ai4">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="43" height="43"/>
+                                                                        <animations/>
+                                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                                        <accessibility key="accessibilityConfiguration" identifier="" label="ColorCellBackgroundView">
+                                                                            <bool key="isElement" value="YES"/>
+                                                                        </accessibility>
+                                                                    </view>
                                                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="cPf-8X-A0L">
                                                                         <rect key="frame" x="8" y="8" width="27" height="27"/>
                                                                         <animations/>
+                                                                        <accessibility key="accessibilityConfiguration" identifier="ColorCellCheckmarkImageView">
+                                                                            <accessibilityTraits key="traits" button="YES" image="YES"/>
+                                                                            <bool key="isElement" value="YES"/>
+                                                                        </accessibility>
                                                                     </imageView>
                                                                 </subviews>
                                                                 <animations/>
@@ -1356,12 +1371,17 @@
                                                             </view>
                                                             <animations/>
                                                             <constraints>
+                                                                <constraint firstAttribute="bottom" secondItem="jN2-Sb-ai4" secondAttribute="bottom" id="09b-Aq-rI2"/>
                                                                 <constraint firstAttribute="bottom" secondItem="cPf-8X-A0L" secondAttribute="bottom" constant="8" id="BT6-Gl-mw7"/>
                                                                 <constraint firstItem="cPf-8X-A0L" firstAttribute="top" secondItem="eAd-By-mai" secondAttribute="top" constant="8" id="UoZ-bw-jxo"/>
                                                                 <constraint firstAttribute="trailing" secondItem="cPf-8X-A0L" secondAttribute="trailing" constant="8" id="gIx-PH-4xv"/>
+                                                                <constraint firstAttribute="trailing" secondItem="jN2-Sb-ai4" secondAttribute="trailing" id="h3q-Nk-5jK"/>
+                                                                <constraint firstItem="jN2-Sb-ai4" firstAttribute="leading" secondItem="eAd-By-mai" secondAttribute="leading" id="sFI-Er-WCY"/>
                                                                 <constraint firstItem="cPf-8X-A0L" firstAttribute="leading" secondItem="eAd-By-mai" secondAttribute="leading" constant="8" id="wGZ-7n-NaQ"/>
+                                                                <constraint firstItem="jN2-Sb-ai4" firstAttribute="top" secondItem="eAd-By-mai" secondAttribute="top" id="xF2-aj-6uy"/>
                                                             </constraints>
                                                             <connections>
+                                                                <outlet property="backgroundView" destination="jN2-Sb-ai4" id="Ju5-4r-YTT"/>
                                                                 <outlet property="checkmarkImageView" destination="cPf-8X-A0L" id="0gx-fZ-Z32"/>
                                                             </connections>
                                                         </collectionViewCell>
@@ -1377,6 +1397,9 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <animations/>
+                                        <accessibility key="accessibilityConfiguration" label="ColorCell">
+                                            <bool key="isElement" value="YES"/>
+                                        </accessibility>
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>

@@ -12,7 +12,6 @@
 #import "HTLReport.h"
 #import "NSDate+HTL.h"
 #import "HTLEditReportTableViewController.h"
-#import "HyperTimeLogger-Swift.h"
 
 static const int kHeaderHeight = 90;
 
@@ -122,15 +121,6 @@ static const int kHeaderHeight = 90;
 
     self.marksCollectionView.dataSource = nil;
     self.marksCollectionView.delegate = nil;
-}
-
-- (void)viewDidLoad {
-    [super viewDidLoad];
-
-    if ([self.marksCollectionView.collectionViewLayout isKindOfClass:[HTLTableLayout class]]) {
-        HTLTableLayout *layout = (HTLTableLayout *) self.marksCollectionView.collectionViewLayout;
-        layout.maxNumberOfColumns = 2;
-    }
 }
 
 #pragma mark - UICollectionViewDataSource, UICollectionViewDelegate

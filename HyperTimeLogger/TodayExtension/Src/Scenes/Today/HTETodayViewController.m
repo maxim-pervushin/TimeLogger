@@ -66,10 +66,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    if ([self.collectionView.collectionViewLayout isKindOfClass:[HTLTableLayout class]]) {
-        HTLTableLayout *layout = (HTLTableLayout *) self.collectionView.collectionViewLayout;
-        layout.maxNumberOfColumns = 3;
-    }
 }
 
 - (void)viewWillAppear:(BOOL)animated {
