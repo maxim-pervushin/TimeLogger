@@ -76,7 +76,7 @@
 		73BC679BF2C1A1A36939932B /* NSDate+HTLComponents.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6F6EE1E455D98426F705 /* NSDate+HTLComponents.m */; };
 		73BC679DD95BD9F43FE6A2AB /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6B4DA596906232FF8970 /* main.m */; };
 		73BC67A4E0C0CA36BB035D6C /* HTLDateSection.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC66709A1F2D03B601899D /* HTLDateSection.m */; };
-		73BC67B116FC48ADE599DA17 /* HTLStatisticsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6921B4B00BDB9796054D /* HTLStatisticsTableViewController.m */; };
+		73BC67B116FC48ADE599DA17 /* HTLStatisticsListTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6921B4B00BDB9796054D /* HTLStatisticsListTableViewController.m */; };
 		73BC67C0E8198E0EFD9A3E8E /* HTLReportDateListDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC64E6892993AF3EAB4FC6 /* HTLReportDateListDataSource.m */; };
 		73BC67F03E9CEEAE64172B5B /* HTLColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC679105C314E9710FB636 /* HTLColor.m */; };
 		73BC6801CED16A19C42E6EE8 /* HTLDatePickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6D63AE8CF4DA6AF59579 /* HTLDatePickerViewController.swift */; };
@@ -111,7 +111,7 @@
 		73BC6B0996710BF0CBFE15AE /* HTLStatisticsItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC68D3CDD0771C14BB49B2 /* HTLStatisticsItem.m */; };
 		73BC6B618B8EAB6383312197 /* HTLReportView.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC65F70BCA0217513D9383 /* HTLReportView.m */; };
 		73BC6B8AE372441B2276DDFF /* HTLReportListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6ACE2F8A2E6E659B559F /* HTLReportListViewController.m */; };
-		73BC6B9264AE3A73F0121AA9 /* HTLStatisticsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6921B4B00BDB9796054D /* HTLStatisticsTableViewController.m */; };
+		73BC6B9264AE3A73F0121AA9 /* HTLStatisticsListTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6921B4B00BDB9796054D /* HTLStatisticsListTableViewController.m */; };
 		73BC6B94BC5418DA3A8A5DE1 /* HTLThemeManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC62AA807AB750CCBE6889 /* HTLThemeManager.m */; };
 		73BC6B9FDBFB2EE8267221A9 /* HTLDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6B2EF7D4AAB16D0EC09A /* HTLDataSource.m */; };
 		73BC6BCFC083BDB023D12F96 /* HTLDateSection.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC66709A1F2D03B601899D /* HTLDateSection.m */; };
@@ -128,7 +128,7 @@
 		73BC6CC55F6219536AC33891 /* HTLEditReportTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC641135EC4610F8B66891 /* HTLEditReportTableViewController.m */; };
 		73BC6CD19727C9D4BD6CC20B /* HTLColorPickerTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC67AA864757C5B1299286 /* HTLColorPickerTableView.m */; };
 		73BC6CE679B816A7B1FF5ADD /* HTLJsonStorageProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6D39B3F01B06611349B1 /* HTLJsonStorageProvider.m */; };
-		73BC6CFDEFE29DD3D39AA9E6 /* HTLStatisticsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6921B4B00BDB9796054D /* HTLStatisticsTableViewController.m */; };
+		73BC6CFDEFE29DD3D39AA9E6 /* HTLStatisticsListTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6921B4B00BDB9796054D /* HTLStatisticsListTableViewController.m */; };
 		73BC6D0BCBFFC6D7B897C999 /* HTLContentManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6F1E0AC02A596C78B942 /* HTLContentManager.m */; };
 		73BC6D140EFB923F573A104A /* HTLDateSectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6CFF1F750703F5FD8059 /* HTLDateSectionCell.m */; };
 		73BC6D213D728E1E394999CD /* HTLStatisticsHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC61903FBA9332F94D6B7E /* HTLStatisticsHeader.m */; };
@@ -660,7 +660,7 @@
 		73BC68B4BB6FD2C16DCFD83A /* clock_transparent.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = clock_transparent.png; sourceTree = "<group>"; };
 		73BC68D3CDD0771C14BB49B2 /* HTLStatisticsItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTLStatisticsItem.m; sourceTree = "<group>"; };
 		73BC690F0FD5F1316528ADBE /* HTLSettingsDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTLSettingsDataSource.h; sourceTree = "<group>"; };
-		73BC6921B4B00BDB9796054D /* HTLStatisticsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTLStatisticsTableViewController.m; sourceTree = "<group>"; };
+		73BC6921B4B00BDB9796054D /* HTLStatisticsListTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTLStatisticsListTableViewController.m; sourceTree = "<group>"; };
 		73BC6950A53D6644A947DEC1 /* HTLTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTLTextField.m; sourceTree = "<group>"; };
 		73BC6956442436FCF69A78F8 /* HTLReportListDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTLReportListDataSource.h; sourceTree = "<group>"; };
 		73BC695E8A9695806CE86938 /* HTLThemeManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTLThemeManager.h; sourceTree = "<group>"; };
@@ -699,7 +699,7 @@
 		73BC6D63AE8CF4DA6AF59579 /* HTLDatePickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTLDatePickerViewController.swift; sourceTree = "<group>"; };
 		73BC6D655114EB35E50E8C86 /* HTLColorPickerCollectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTLColorPickerCollectionView.m; sourceTree = "<group>"; };
 		73BC6D6BFFE1DD9ED9D91649 /* HTETodayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTETodayViewController.h; sourceTree = "<group>"; };
-		73BC6D74C754D3DAD2E5D837 /* HTLStatisticsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTLStatisticsTableViewController.h; sourceTree = "<group>"; };
+		73BC6D74C754D3DAD2E5D837 /* HTLStatisticsListTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTLStatisticsListTableViewController.h; sourceTree = "<group>"; };
 		73BC6D8D551F158310341166 /* HTLReportTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTLReportTableViewCell.h; sourceTree = "<group>"; };
 		73BC6DBF52626BCC61B42B76 /* HTLEditCategoryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTLEditCategoryViewController.m; sourceTree = "<group>"; };
 		73BC6DD1521ABEE265D6183D /* HTLEditReportTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTLEditReportTableViewController.h; sourceTree = "<group>"; };
@@ -1268,8 +1268,8 @@
 		73BC6A23D4AF9ED92ED33134 /* Statistics */ = {
 			isa = PBXGroup;
 			children = (
-				73BC6921B4B00BDB9796054D /* HTLStatisticsTableViewController.m */,
-				73BC6D74C754D3DAD2E5D837 /* HTLStatisticsTableViewController.h */,
+				73BC6921B4B00BDB9796054D /* HTLStatisticsListTableViewController.m */,
+				73BC6D74C754D3DAD2E5D837 /* HTLStatisticsListTableViewController.h */,
 			);
 			path = Statistics;
 			sourceTree = "<group>";
@@ -2249,7 +2249,7 @@
 				73BC625202CF2688456C56E2 /* HTLEditReportTableViewController.m in Sources */,
 				73BC6234E09D0F9E88BAD850 /* HTLDatePickerViewController.swift in Sources */,
 				73BC61F9B208867E8EDE0E88 /* HTLDebugTableViewController.m in Sources */,
-				73BC6CFDEFE29DD3D39AA9E6 /* HTLStatisticsTableViewController.m in Sources */,
+				73BC6CFDEFE29DD3D39AA9E6 /* HTLStatisticsListTableViewController.m in Sources */,
 				73BC615C0BF368D6F6A68F28 /* HTLJsonStorageProvider.m in Sources */,
 				73BC6EE20A8E9F01CBE533D4 /* HTLMemoryCacheProvider.m in Sources */,
 				73BC6A92A0AFD2B397806D10 /* HTLGridLayout.swift in Sources */,
@@ -2351,7 +2351,7 @@
 				73BC613487FE55332CDAD8DD /* HTLEditReportTableViewController.m in Sources */,
 				73BC603B331F84062B1517AE /* HTLDatePickerViewController.swift in Sources */,
 				73BC6527642BFBB4D572ACB4 /* HTLDebugTableViewController.m in Sources */,
-				73BC67B116FC48ADE599DA17 /* HTLStatisticsTableViewController.m in Sources */,
+				73BC67B116FC48ADE599DA17 /* HTLStatisticsListTableViewController.m in Sources */,
 				73BC64352110D8FBF0905C25 /* HTLJsonStorageProvider.m in Sources */,
 				73BC6FE8C6742B84A8A38972 /* HTLMemoryCacheProvider.m in Sources */,
 				73BC69C4BD0AC486A9028157 /* HTLGridLayout.swift in Sources */,
@@ -2599,7 +2599,7 @@
 				73BC6CC55F6219536AC33891 /* HTLEditReportTableViewController.m in Sources */,
 				73BC6801CED16A19C42E6EE8 /* HTLDatePickerViewController.swift in Sources */,
 				73BC6EAF77A19683BA4F99FA /* HTLDebugTableViewController.m in Sources */,
-				73BC6B9264AE3A73F0121AA9 /* HTLStatisticsTableViewController.m in Sources */,
+				73BC6B9264AE3A73F0121AA9 /* HTLStatisticsListTableViewController.m in Sources */,
 				73BC6CE679B816A7B1FF5ADD /* HTLJsonStorageProvider.m in Sources */,
 				73BC6C307F95639756FE5F0C /* HTLMemoryCacheProvider.m in Sources */,
 				73BC642EB7DA889CE6C9A0A1 /* HTLGridLayout.swift in Sources */,

@@ -19,3 +19,5 @@
 // TODO: Logs. Pie charts? Bar charts by day. Horizontal bar charts.
 
 // TODO: Cache layer with HTLStorageProvider interface
+
+// TODO: Create summary for each category and subcategory

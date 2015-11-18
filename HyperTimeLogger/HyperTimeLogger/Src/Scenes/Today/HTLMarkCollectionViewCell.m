@@ -40,15 +40,22 @@
     if (self.mark) {
         self.markTitleLabel.text = self.mark.title;
         self.markTitleLabel.textColor = self.mark.color;
+        if (self.mark.subtitle.length > 0) {
+            self.markTitleLabel.accessibilityIdentifier = [NSString stringWithFormat:@"%@ %@", self.mark.title, self.mark.subtitle];
+        } else {
+            self.markTitleLabel.accessibilityIdentifier = self.mark.title;
+        }
         self.markSubTitleLabel.text = self.mark.subtitle;
         self.markSubTitleLabel.textColor = self.mark.color;
         self.backgroundColor = [self.mark.color colorWithAlphaComponent:0.15];
     } else {
         self.markTitleLabel.text = @"";
         self.markTitleLabel.textColor = [UIColor blackColor];
+        self.markTitleLabel.accessibilityIdentifier = nil;
         self.markSubTitleLabel.text = @"";
         self.markSubTitleLabel.textColor = [UIColor blackColor];
         self.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:0.15];
+//        self.backgroundView.accessibilityIdentifier = nil;
     }
 }
 

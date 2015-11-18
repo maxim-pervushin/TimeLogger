@@ -71,4 +71,17 @@ class HyperTimeLogger_AlphaUITests: XCTestCase {
 //        app.navigationBars["Edit Report"].buttons["\U0421\U043e\U0445\U0440\U0430\U043d\U0438\U0442\U044c"].tap()
         
     }
+    
+    func test_createMark() {
+        let app = XCUIApplication()
+        app.buttons["Road"].tap()
+        app.buttons["Work"].tap()
+
+        
+//        let collectionViewsQuery = XCUIApplication().collectionViews
+//        collectionViewsQuery.buttons["Road "].tap()
+//        collectionViewsQuery.buttons["Work "].tap()
+        
+        
+    }
 }

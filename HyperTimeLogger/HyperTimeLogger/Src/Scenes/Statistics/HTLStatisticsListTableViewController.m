@@ -3,8 +3,10 @@
 // Copyright (c) 2015 Maxim Pervushin. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "HTLStatisticsListTableViewController.h"
 
 
-@interface HTLStatisticsTableViewController : UITableViewController
+@implementation HTLStatisticsListTableViewController {
+
+}
 @end

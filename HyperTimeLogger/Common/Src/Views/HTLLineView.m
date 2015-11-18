@@ -1,4 +1,4 @@
-//
+ //
 // Created by Maxim Pervushin on 03/11/15.
 // Copyright (c) 2015 Maxim Pervushin. All rights reserved.
 //
@@ -36,14 +36,14 @@
 - (instancetype)initWithFrame:(CGRect)frame {
     self = [super initWithFrame:frame];
     if (self) {
-        self.backgroundColor = [UIColor redColor];
+        self.backgroundColor = [UIColor blackColor];
     }
     return self;
 }
 
 - (void)awakeFromNib {
     [super awakeFromNib];
-    self.backgroundColor = [UIColor redColor];
+    self.backgroundColor = [UIColor blackColor];
 }
 
 @end

@@ -13,7 +13,7 @@
 #import "NSDate+HTL.h"
 #import "HTLEditReportTableViewController.h"
 
-static const int kHeaderHeight = 90;
+static const int kHeaderHeight = 65;
 
 
 @interface HTLTodayViewController () <UICollectionViewDataSource, UICollectionViewDelegate, HTLEditReportTableViewControllerDelegate> {
