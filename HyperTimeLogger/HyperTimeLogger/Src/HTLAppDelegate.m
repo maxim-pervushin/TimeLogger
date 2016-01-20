@@ -9,10 +9,9 @@
 #import "HTLAppDelegate.h"
 #import "HTLContentManager.h"
 #import "HTLCSVStringExportProvider.h"
-#import "HTLMemoryStorageProvider.h"
 #import "HTLThemeManager.h"
-#import "HTLJsonStorageProvider.h"
 #import "HTLMemoryCacheProvider.h"
+#import "HTLParseStorageProvider.h"
 #import <Fabric/Fabric.h>
 #import <Crashlytics/Crashlytics.h>
 
@@ -48,11 +47,16 @@ static NSString *const kStorageFileName = @"time_logger_storage.db";
 }
 
 - (void)initializeContentManager {
+
+//    [Parse setApplicationId:@"wTVLsEA3GGCKokahZCf5ANwDZnzTOoG7uumRzebf" clientKey:@"UIvzQ7l1bINgWErjfx9SeprodWq7S2U97cKBGapY"];
+
     NSString *applicationGroup = [NSString stringWithFormat:@"%@%@", kApplicationGroup, [self.appVersion isEqualToString:@""] ? @"" : [NSString stringWithFormat:@"-%@", self.appVersion]];
 
     NSURL *storageFolderURL = [[NSFileManager defaultManager] containerURLForSecurityApplicationGroupIdentifier:applicationGroup];
 
-    HTLJsonStorageProvider *storageProvider = [HTLJsonStorageProvider jsonStorageProviderWithStorageFolderURL:storageFolderURL storageFileName:kStorageFileName ];
+//    HTLJsonStorageProvider *storageProvider = [HTLJsonStorageProvider jsonStorageProviderWithStorageFolderURL:storageFolderURL storageFileName:kStorageFileName ];
+
+    HTLParseStorageProvider *storageProvider = [HTLParseStorageProvider parseStorageProviderWithApplicationId:@"aQOwqENo97J1kytqlvN6uTdDPfhtuG5Ups5gDNjg" clientKey:@"UNmINBV5r7dmN6Fnm4bOrknrfAT2ciZmS7YFd77z"];
 
     HTLMemoryCacheProvider *cacheProvider = [HTLMemoryCacheProvider memoryCacheProviderWithStorageProvider:storageProvider];
 

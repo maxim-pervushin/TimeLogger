@@ -116,7 +116,7 @@
         return cached.unsignedIntegerValue;
     }
     NSUInteger result = [_storageProvider numberOfReportsWithDateSection:dateSection];
-    [self setObject:@(result) forKey:key cache: _reportsCache];
+    [self setObject:@(result) forKey:key cache:_reportsCache];
     return result;
 }
 
@@ -159,6 +159,7 @@
     if (cached) {
         return cached;
     }
+
     HTLReport *result = [_storageProvider lastReport];
     if (result) {
         [self setObject:result forKey:key cache:_reportsCache];
