@@ -26,7 +26,11 @@ static NSString *const kCategoryCellIdentifier = @"CategoryCell";
 
 @property(nonatomic, weak) IBOutlet UICollectionView *completionsCollectionView;
 @property(nonatomic, weak) IBOutlet UIButton *startDateButton;
+@property(nonatomic, weak) IBOutlet UIDatePicker *startDatePicker;
+@property(nonatomic, weak) IBOutlet NSLayoutConstraint *startDateContainerHeightConstraint;
 @property(nonatomic, weak) IBOutlet UIButton *endDateButton;
+@property(nonatomic, weak) IBOutlet UIDatePicker *endDatePicker;
+@property(nonatomic, weak) IBOutlet NSLayoutConstraint *endDateContainerHeightConstraint;
 @property(nonatomic, weak) IBOutlet UICollectionView *categoriesCollectionView;
 @property(nonatomic, weak) IBOutlet UITextField *textField;
 @property(nonatomic, weak) IBOutlet NSLayoutConstraint *bottomConstraint;
@@ -42,6 +46,10 @@ static NSString *const kCategoryCellIdentifier = @"CategoryCell";
 - (IBAction)cancelButtonAction:(id)sender;
 
 - (IBAction)doneButtonAction:(id)sender;
+
+- (IBAction)startDatePickerValueChanged:(id)sender;
+
+- (IBAction)endDatePickerValueChanged:(id)sender;
 
 - (void)updateUI;
 
@@ -62,11 +70,19 @@ static NSString *const kCategoryCellIdentifier = @"CategoryCell";
 @implementation HTLEditReportViewController
 
 - (IBAction)startDateButtonAction:(id)sender {
-    // Nothing
+    if (self.textField.isFirstResponder) {
+        [self.textField resignFirstResponder];
+    }
+    [self setStartDatePickerVisible:!self.startDatePickerVisible animated:YES];
+    [self setEndDatePickerVisible:NO animated:YES];
 }
 
 - (IBAction)endDateButtonAction:(id)sender {
-    // Nothing
+    if (self.textField.isFirstResponder) {
+        [self.textField resignFirstResponder];
+    }
+    [self setEndDatePickerVisible:!self.endDatePickerVisible animated:YES];
+    [self setStartDatePickerVisible:NO animated:YES];
 }
 
 - (IBAction)textFieldEditingChanged:(id)sender {
@@ -97,6 +113,56 @@ static NSString *const kCategoryCellIdentifier = @"CategoryCell";
     [self dismiss];
 }
 
+- (IBAction)startDatePickerValueChanged:(id)sender {
+    // TODO: set start date in editor
+    NSLog(@"start = %@", self.startDatePicker.date);
+}
+
+- (IBAction)endDatePickerValueChanged:(id)sender {
+    // TODO: set end date in editor
+    NSLog(@"end = %@", self.endDatePicker.date);
+}
+
+- (BOOL)startDatePickerVisible {
+    return self.startDateContainerHeightConstraint.constant > self.startDateButton.frame.size.height;
+}
+
+- (BOOL)endDatePickerVisible {
+    return self.endDateContainerHeightConstraint.constant > self.endDateButton.frame.size.height;
+}
+
+- (void)setStartDatePickerVisible:(BOOL)visible animated:(BOOL)animated {
+    if (visible == self.startDatePickerVisible) {
+        return;
+    }
+    [self.view layoutIfNeeded];
+    if (visible) {
+        self.startDateContainerHeightConstraint.constant = self.startDateButton.frame.size.height + self.startDatePicker.frame.size.height;
+    } else {
+        self.startDateContainerHeightConstraint.constant = self.startDateButton.frame.size.height;
+    }
+    [UIView animateWithDuration:animated ? 0.25 : 0 animations:^{
+        [self.view layoutIfNeeded];
+        self.startDatePicker.alpha = visible ? 1 : 0;
+    }];
+}
+
+- (void)setEndDatePickerVisible:(BOOL)visible animated:(BOOL)animated {
+    if (visible == self.endDatePickerVisible) {
+        return;
+    }
+    [self.view layoutIfNeeded];
+    if (visible) {
+        self.endDateContainerHeightConstraint.constant = self.endDateButton.frame.size.height + self.endDatePicker.frame.size.height;
+    } else {
+        self.endDateContainerHeightConstraint.constant = self.endDateButton.frame.size.height;
+    }
+    [UIView animateWithDuration:animated ? 0.25 : 0 animations:^{
+        [self.view layoutIfNeeded];
+        self.endDatePicker.alpha = visible ? 1 : 0;
+    }];
+}
+
 - (void)updateUI {
     HTLReportExtendedDto *reportExtended = self.modelController.reportExtended;
     if (!reportExtended) {
@@ -106,7 +172,9 @@ static NSString *const kCategoryCellIdentifier = @"CategoryCell";
     self.textField.text = reportExtended.action.title;
 
     [self.startDateButton setTitle:reportExtended.report.startDateString forState:UIControlStateNormal];
+    self.startDatePicker.date = reportExtended.report.startDate;
     [self.endDateButton setTitle:reportExtended.report.endDateString forState:UIControlStateNormal];
+    self.endDatePicker.date = reportExtended.report.endDate;
 
     NSUInteger selectedCategoryIndex = [self.modelController.categories indexOfObject:reportExtended.category];
     NSIndexPath *selectedCategoryIndexPath = [NSIndexPath indexPathForRow:selectedCategoryIndex inSection:0];
@@ -152,7 +220,6 @@ static NSString *const kCategoryCellIdentifier = @"CategoryCell";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-
     __weak __typeof(self) weakSelf = self;
     self.modelController =
             [HTLEditReportModelController modelControllerWithReportExtended:self.reportExtended
@@ -176,6 +243,8 @@ static NSString *const kCategoryCellIdentifier = @"CategoryCell";
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
+    [self setStartDatePickerVisible:NO animated:NO];
+    [self setEndDatePickerVisible:NO animated:NO];
     [self subscribe];
     [self updateUI];
 }
@@ -186,6 +255,10 @@ static NSString *const kCategoryCellIdentifier = @"CategoryCell";
 }
 
 #pragma mark - UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout
+
+- (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
+    return 1;
+}
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
     if (self.categoriesCollectionView == collectionView) {
