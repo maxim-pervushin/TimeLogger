@@ -1527,6 +1527,7 @@
 			isa = PBXProject;
 			attributes = {
 				CLASSPREFIX = HTL;
+				LastSwiftUpdateCheck = 0720;
 				LastUpgradeCheck = 0630;
 				ORGANIZATIONNAME = "Maxim Pervushin";
 				TargetAttributes = {
