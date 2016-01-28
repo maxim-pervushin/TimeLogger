@@ -17,6 +17,8 @@
 
 @property(nonatomic, readonly) NSArray *categories;
 
+@property(nonatomic, readonly) NSDate *startDate;
+
 - (NSArray *)completionsForAction:(HTLActionDto *)action;
 
 - (BOOL)saveReportExtended:(HTLReportExtendedDto *)reportExtended;

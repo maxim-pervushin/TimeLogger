@@ -855,7 +855,7 @@
         <image name="statistics.png" width="22" height="17"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="LVF-Py-ybV"/>
+        <segue reference="Mdt-3j-ht4"/>
         <segue reference="Sif-mw-GqJ"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="1" green="0.50196081399917603" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>

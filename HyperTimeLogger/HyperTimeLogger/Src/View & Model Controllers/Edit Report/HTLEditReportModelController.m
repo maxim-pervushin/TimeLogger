@@ -14,6 +14,7 @@
 
 @implementation HTLEditReportModelController
 @dynamic categories;
+@dynamic startDate;
 
 #pragma mark - HTLCreateReportModelController
 
@@ -21,9 +22,13 @@
     return [HTLAppContentManger findCategoriesWithDateSection:nil];
 }
 
+- (NSDate *)startDate {
+    return [HTLAppContentManger findLastReportEndDate];
+}
+
 - (NSArray *)completionsForAction:(HTLActionDto *)action {
     if (!action) {
-        return @[];
+        return [HTLAppContentManger findCompletionsWithText:nil];
     }
     return [HTLAppContentManger findCompletionsWithText:action.title];
 }

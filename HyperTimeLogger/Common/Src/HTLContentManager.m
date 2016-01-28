@@ -5,17 +5,18 @@
 
 #import "HTLContentManager.h"
 #import "HTLReportDto.h"
-#import "HTLSqliteStorageProvider.h"
 #import "HTLCSVStringExportProvider.h"
 #import "HTLReportExtendedDto.h"
 #import "HTLDateSectionDto.h"
-#import "HTLStringExportProvider.h"
 
 
 @interface HTLContentManager ()
 
 @property(nonatomic, strong) id <HTLStorageProvider> storageProvider;
 @property(nonatomic, strong) HTLCSVStringExportProvider *csvStringExportProvider;
+@property(nonatomic, strong) NSDate *launchDate;
+
+- (void)initializeLaunchDate;
 
 - (void)initializeStorage;
 
@@ -25,10 +26,21 @@
 
 + (instancetype)contentManagerWithStorageProvider:(id <HTLStorageProvider>)storageProvider exportProvider:(id <HTLStringExportProvider>)exportProvider {
     HTLContentManager *contentManager = [HTLContentManager new];
-    contentManager.storageProvider=  storageProvider;
+    contentManager.storageProvider = storageProvider;
     contentManager.csvStringExportProvider = exportProvider;
+    [contentManager initializeLaunchDate];
     [contentManager initializeStorage];
     return contentManager;
+}
+
+- (void)initializeLaunchDate {
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    NSDate *date = [defaults objectForKey:@"launchDate"];
+    if (!date) {
+        date = [NSDate new];
+        [defaults setObject:date forKey:@"launchDate"];
+    }
+    self.launchDate = date;
 }
 
 - (void)initializeStorage {
@@ -97,7 +109,12 @@
 }
 
 - (NSDate *)findLastReportEndDate {
-    return [self.storageProvider findLastReportEndDate];
+    // TODO: If nil == [self.storageProvider findLastReportEndDate] return app launch date
+    NSDate *date = [self.storageProvider findLastReportEndDate];
+    if (!date) {
+        date = self.launchDate;
+    }
+    return date;
 }
 
 - (HTLReportExtendedDto *)findLastReportExtended {

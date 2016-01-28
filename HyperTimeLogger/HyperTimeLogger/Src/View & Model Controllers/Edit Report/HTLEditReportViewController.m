@@ -14,6 +14,7 @@
 #import "HTLReportExtendedDto.h"
 #import "HTLReportExtendedEditor.h"
 #import "HyperTimeLogger-Swift.h"
+#import "NSDate+HTLFormatted.h"
 
 static NSString *const kCompletionCellIdentifier = @"CompletionCell";
 static NSString *const kCategoryCellIdentifier = @"CategoryCell";
@@ -132,6 +133,10 @@ static NSString *const kCategoryCellIdentifier = @"CategoryCell";
 
 - (void)setReportExtended:(HTLReportExtendedDto *)reportExtended {
     self.editor.originalReportExtended = reportExtended;
+    if (!reportExtended) {
+        self.editor.reportStartDate = self.modelController.startDate;
+        self.editor.reportEndDate = [NSDate new];
+    }
 }
 
 - (HTLReportExtendedDto *)reportExtended {
@@ -204,9 +209,6 @@ static NSString *const kCategoryCellIdentifier = @"CategoryCell";
     HTLReportExtendedDto *reportExtended = self.editor.updatedReportExtended;
     if (!reportExtended) {
         reportExtended = self.editor.originalReportExtended;
-        if (!reportExtended) {
-            return;
-        }
     }
 
     __weak __typeof(self) weakSelf = self;
@@ -214,19 +216,26 @@ static NSString *const kCategoryCellIdentifier = @"CategoryCell";
 
         weakSelf.saveButton.enabled = weakSelf.editor.canSave;
 
-        weakSelf.textField.text = reportExtended.action.title;
+        weakSelf.textField.text = reportExtended ? reportExtended.action.title : @"";
 
-        [weakSelf.startDateButton setTitle:reportExtended.report.startDateString forState:UIControlStateNormal];
-        weakSelf.startDatePicker.date = reportExtended.report.startDate;
-        [weakSelf.endDateButton setTitle:reportExtended.report.endDateString forState:UIControlStateNormal];
-        weakSelf.endDatePicker.date = reportExtended.report.endDate;
+        if (weakSelf.editor.reportStartDate) {
+            [weakSelf.startDateButton setTitle:[weakSelf.editor.reportStartDate startDateFullString] forState:UIControlStateNormal];
+            weakSelf.startDatePicker.date = weakSelf.editor.reportStartDate;
+        }
+
+        if (weakSelf.editor.reportEndDate) {
+            [weakSelf.endDateButton setTitle:[weakSelf.editor.reportEndDate endDateFullString] forState:UIControlStateNormal];
+            weakSelf.endDatePicker.date = weakSelf.editor.reportEndDate;
+        }
 
         [weakSelf.completionsCollectionView reloadData];
         [weakSelf.categoriesCollectionView reloadData];
 
-        NSUInteger selectedCategoryIndex = [weakSelf.modelController.categories indexOfObject:reportExtended.category];
-        NSIndexPath *selectedCategoryIndexPath = [NSIndexPath indexPathForRow:selectedCategoryIndex inSection:0];
-        [weakSelf.categoriesCollectionView selectItemAtIndexPath:selectedCategoryIndexPath animated:YES scrollPosition:UICollectionViewScrollPositionCenteredHorizontally];
+        if (weakSelf.editor.category) {
+            NSUInteger selectedCategoryIndex = [weakSelf.modelController.categories indexOfObject:weakSelf.editor.category];
+            NSIndexPath *selectedCategoryIndexPath = [NSIndexPath indexPathForRow:selectedCategoryIndex inSection:0];
+            [weakSelf.categoriesCollectionView selectItemAtIndexPath:selectedCategoryIndexPath animated:YES scrollPosition:UICollectionViewScrollPositionCenteredHorizontally];
+        }
     });
 }
 
@@ -293,7 +302,7 @@ static NSString *const kCategoryCellIdentifier = @"CategoryCell";
     [super viewDidDisappear:animated];
 }
 
-#pragma mark - UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout
+#pragma mark - UICollectionViewDataSource, UICollectionViewDelegate
 
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
     return 1;
@@ -326,16 +335,6 @@ static NSString *const kCategoryCellIdentifier = @"CategoryCell";
     } else {
         [self selectCompletion:[self.modelController completionsForAction:self.editor.action][(NSUInteger) indexPath.row]];
         [collectionView deselectItemAtIndexPath:indexPath animated:YES];
-    }
-}
-
-- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
-    if (self.categoriesCollectionView == collectionView) {
-        CGFloat width = [HTLCategoryCell widthWithCategory:self.modelController.categories[(NSUInteger) indexPath.row]];
-        return CGSizeMake(width, collectionView.bounds.size.height);
-
-    } else {
-        return CGSizeMake(collectionView.bounds.size.width / 2, 40);
     }
 }
 

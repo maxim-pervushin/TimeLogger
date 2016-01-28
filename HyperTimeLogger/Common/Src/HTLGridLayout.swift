@@ -8,7 +8,7 @@ import UIKit
 
 class HTLGridLayout: ZLBalancedFlowLayout {
 
-    private let _columnsCount = CGFloat(3)
+    private let _columnsCount = CGFloat(2)
     private let _rowHeight = CGFloat(50)
 
     override var itemSize: CGSize {

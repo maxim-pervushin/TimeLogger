@@ -138,21 +138,16 @@ static const float kHeaderHeight = 35.0f;
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    if ([segue.identifier isEqualToString:@"EditReport"] && [segue.destinationViewController isKindOfClass:[UINavigationController class]]) {
+    if (([segue.identifier isEqualToString:@"EditReport"] || [segue.identifier isEqualToString:@"CreateReport"]) && [segue.destinationViewController isKindOfClass:[UINavigationController class]]) {
         UINavigationController *navigationController = segue.destinationViewController;
-        HTLEditReportViewController *createReportViewController = (HTLEditReportViewController *) navigationController.topViewController;
+        HTLEditReportViewController *editReportViewController = (HTLEditReportViewController *) navigationController.topViewController;
 
+        HTLReportExtendedDto *reportExtended = nil;
         NSIndexPath *selected = self.tableView.indexPathForSelectedRow;
-        if (!selected) {
-            return;
+        if (selected) {
+            reportExtended = [self.modelController reportsExtendedForDateSectionAtIndex:selected.section][(NSUInteger) selected.row];
         }
-
-        HTLReportExtendedDto *reportExtended = [self.modelController reportsExtendedForDateSectionAtIndex:selected.section][(NSUInteger) selected.row];
-        if (!reportExtended) {
-            return;
-        }
-
-        createReportViewController.reportExtended = reportExtended;
+        editReportViewController.reportExtended = reportExtended;
 
     } else if ([segue.identifier isEqualToString:kShowStatisticsSegueIdentifier]) {
         HTLStatisticsViewController *statisticsViewController = segue.destinationViewController;
