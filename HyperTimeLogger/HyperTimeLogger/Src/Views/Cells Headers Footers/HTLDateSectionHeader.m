@@ -40,8 +40,8 @@
 }
 
 - (void)initializeUI {
-    self.contentView.backgroundColor = [UIColor clearColor];
-    self.backgroundColorView.backgroundColor = [UIColor paperColorGray800];
+//    self.contentView.backgroundColor = [UIColor clearColor];
+//    self.backgroundColorView.backgroundColor = [UIColor paperColorGray800];
     UIImage *image = [[UIImage imageNamed:@"statistics.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
     [self.statisticsButton setImage:image forState:UIControlStateNormal];
     [self.statisticsButton setImage:image forState:UIControlStateSelected];

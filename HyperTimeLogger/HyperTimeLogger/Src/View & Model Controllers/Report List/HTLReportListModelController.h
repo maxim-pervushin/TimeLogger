@@ -15,6 +15,8 @@
 
 @property(nonatomic, readonly) NSArray *reportSections;
 
+@property(nonatomic, readonly) NSDate *startDate;
+
 - (NSUInteger)numberOfReportsForDateSectionAtIndex:(NSInteger)index;
 
 - (NSArray *)reportsExtendedForDateSectionAtIndex:(NSInteger)index;

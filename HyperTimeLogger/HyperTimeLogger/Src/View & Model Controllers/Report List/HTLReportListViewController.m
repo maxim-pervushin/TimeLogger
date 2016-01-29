@@ -14,19 +14,23 @@
 #import "HTLAppDelegate.h"
 #import "HTLEditReportViewController.h"
 #import "HTLStatisticsViewController.h"
+#import "NSDate+HTLFormatted.h"
 
 
 static NSString *const kReportCellIdentifier = @"ReportCell";
 static NSString *const kDateSectionHeaderIdentifier = @"DateSectionHeader";
-static NSString *const kCreateReportSegueIdentifier = @"CreateReport";
+static NSString *const kEditReportSegueIdentifier = @"EditReport";
 static NSString *const kShowStatisticsSegueIdentifier = @"ShowStatistics";
 static const float kAddButtonToBottomDefault = 50.0f;
 static const float kHeaderHeight = 35.0f;
 
 
-@interface HTLReportListViewController () <UITableViewDataSource, UITableViewDelegate, HTLDateSectionHeaderDelegate>
+@interface HTLReportListViewController () <UITableViewDataSource, UITableViewDelegate, HTLDateSectionHeaderDelegate> {
+    NSTimer *_timer;
+}
 
-@property(nonatomic, weak) IBOutlet UIButton *addButton;
+@property(nonatomic, weak) IBOutlet UIView *addButtonWidget;
+@property(nonatomic, weak) IBOutlet UILabel *timerLabel;
 @property(nonatomic, weak) IBOutlet NSLayoutConstraint *addButtonToBottomLayoutConstraint;
 @property(nonatomic, weak) IBOutlet NSLayoutConstraint *addButtonToRightLayoutConstraint;
 @property(nonatomic, weak) IBOutlet UITableView *tableView;
@@ -36,6 +40,14 @@ static const float kHeaderHeight = 35.0f;
 @property(nonatomic, assign) CGFloat originalToAddButtonToRight;
 
 - (IBAction)addButtonPanGesture:(UIPanGestureRecognizer *)panGestureRecognizer;
+
+- (IBAction)addButtonTapGesture:(UITapGestureRecognizer *)panGestureRecognizer;
+
+- (void)startTimer;
+
+- (void)stopTimer;
+
+- (void)timerAction:(NSTimer *)timer;
 
 - (void)subscribe;
 
@@ -58,16 +70,57 @@ static const float kHeaderHeight = 35.0f;
     }
 
     CGPoint translation = [panGestureRecognizer translationInView:self.view];
-    self.addButtonToBottomLayoutConstraint.constant = self.originalToAddButtonToBottom - translation.y;
-    self.addButtonToRightLayoutConstraint.constant = self.originalToAddButtonToRight - translation.x;
+
+    CGFloat toBottom = self.originalToAddButtonToBottom - translation.y;
+    if (toBottom < 0) {
+        toBottom = 0;
+    }
+    if (toBottom + self.addButtonWidget.frame.size.height > self.view.frame.size.height) {
+        toBottom = self.view.frame.size.height - self.addButtonWidget.frame.size.height;
+    }
+
+    self.addButtonToBottomLayoutConstraint.constant = toBottom;
+
+    CGFloat toRight = self.originalToAddButtonToRight - translation.x;
+    if (toRight < 0) {
+        toRight = 0;
+    }
+    if (toRight + self.addButtonWidget.frame.size.width > self.view.frame.size.width) {
+        toRight = self.view.frame.size.width - self.addButtonWidget.frame.size.width;
+    }
+    self.addButtonToRightLayoutConstraint.constant = toRight;
     [self.view layoutIfNeeded];
 
     [self saveDefaults];
 }
 
+- (IBAction)addButtonTapGesture:(UITapGestureRecognizer *)panGestureRecognizer {
+    [self performSegueWithIdentifier:kEditReportSegueIdentifier sender:self];
+}
+
+- (void)startTimer {
+    if (!_timer) {
+        _timer = [NSTimer scheduledTimerWithTimeInterval:0.1 target:self selector:@selector(timerAction:) userInfo:nil repeats:YES];
+    }
+    [_timer fire];
+}
+
+- (void)stopTimer {
+    [_timer invalidate];
+    _timer = nil;
+}
+
+- (void)timerAction:(NSTimer *)timer {
+    NSTimeInterval timeInterval = [[NSDate new] timeIntervalSinceDate:self.modelController.startDate];
+    self.timerLabel.text = stringWithTimeInterval(timeInterval);
+    if ([UIFont respondsToSelector:@selector(monospacedDigitSystemFontOfSize:weight:)]) {
+        self.timerLabel.font = [UIFont monospacedDigitSystemFontOfSize:25 weight:UIFontWeightRegular];
+    }
+}
+
 - (void)subscribe {
     [[NSNotificationCenter defaultCenter] addObserverForName:kHTLAppDelegateAddReportURLReceived object:nil queue:[NSOperationQueue mainQueue] usingBlock:^(NSNotification *note) {
-        [self performSegueWithIdentifier:kCreateReportSegueIdentifier sender:self];
+        [self performSegueWithIdentifier:kEditReportSegueIdentifier sender:self];
     }];
 }
 
@@ -87,7 +140,7 @@ static const float kHeaderHeight = 35.0f;
     if (addButtonToRightLayoutConstraintNumber) {
         self.addButtonToRightLayoutConstraint.constant = addButtonToRightLayoutConstraintNumber.floatValue;
     } else {
-        self.addButtonToRightLayoutConstraint.constant = (self.view.bounds.size.width - self.addButton.bounds.size.width) / 2;
+        self.addButtonToRightLayoutConstraint.constant = (self.view.bounds.size.width - self.addButtonWidget.bounds.size.width) / 2;
     }
 
     [self.view layoutIfNeeded];
@@ -130,15 +183,18 @@ static const float kHeaderHeight = 35.0f;
                               atScrollPosition:UITableViewScrollPositionBottom
                                       animated:NO];
     }
+
+    [self startTimer];
 }
 
 - (void)viewDidDisappear:(BOOL)animated {
+    [self stopTimer];
     [self unsubscribe];
     [super viewDidDisappear:animated];
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    if (([segue.identifier isEqualToString:@"EditReport"] || [segue.identifier isEqualToString:@"CreateReport"]) && [segue.destinationViewController isKindOfClass:[UINavigationController class]]) {
+    if ([segue.identifier isEqualToString:kEditReportSegueIdentifier] && [segue.destinationViewController isKindOfClass:[UINavigationController class]]) {
         UINavigationController *navigationController = segue.destinationViewController;
         HTLEditReportViewController *editReportViewController = (HTLEditReportViewController *) navigationController.topViewController;
 

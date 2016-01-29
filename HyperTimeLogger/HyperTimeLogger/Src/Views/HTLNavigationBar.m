@@ -18,7 +18,7 @@
 #pragma mark - HTLNavigationBar
 
 - (void)initializeUI {
-    self.barTintColor = [UIColor paperColorGray800];
+    self.barTintColor = [UIColor blackColor];
 }
 
 #pragma mark - UIView

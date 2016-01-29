@@ -21,6 +21,7 @@
 @implementation HTLReportListModelController
 @dynamic numberOfReportSections;
 @dynamic reportSections;
+@dynamic startDate;
 
 #pragma mark - HTLReportListModelController
 
@@ -30,6 +31,10 @@
 
 - (NSArray *)reportSections {
     return [HTLAppContentManger findAllReportSections];
+}
+
+- (NSDate *)startDate {
+    return [HTLAppContentManger findLastReportEndDate];
 }
 
 - (NSUInteger)numberOfReportsForDateSectionAtIndex:(NSInteger)index {

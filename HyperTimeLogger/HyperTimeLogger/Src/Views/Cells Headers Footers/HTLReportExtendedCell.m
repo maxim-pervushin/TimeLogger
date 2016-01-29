@@ -40,11 +40,16 @@
     self.categoryLabel.text = category;
     self.dateLabel.text = date;
     self.durationLabel.text = duration;
+//    self.colorView.backgroundColor = color;
+//    self.titleLabel.textColor = color;
+//    self.categoryLabel.textColor = color;
+//    self.dateLabel.textColor = color;
+//    self.durationLabel.textColor = color;
     self.colorView.backgroundColor = color;
-    self.titleLabel.textColor = color;
-    self.categoryLabel.textColor = color;
-    self.dateLabel.textColor = color;
-    self.durationLabel.textColor = color;
+    self.titleLabel.textColor = [[UIColor whiteColor] colorWithAlphaComponent:0.75];
+    self.categoryLabel.textColor = [[UIColor whiteColor] colorWithAlphaComponent:0.75];
+    self.dateLabel.textColor = [[UIColor whiteColor] colorWithAlphaComponent:0.75];
+    self.durationLabel.textColor = [[UIColor whiteColor] colorWithAlphaComponent:0.75];
 }
 
 @end

@@ -15,7 +15,7 @@
 
 - (BOOL)resetDefaults {
     [[NSUserDefaults standardUserDefaults] removeObjectForKey:@"self.addButtonToBottomLayoutConstraint.constant"];
-    [[NSUserDefaults standardUserDefaults] removeObjectForKey:@"self.addButtonToRightLayoutConstraint.constant"];
+    [[NSUserDefaults standardUserDefaults] removeObjectForKey:@"self.addButtonToLeftLayoutConstraint.constant"];
     [[NSUserDefaults standardUserDefaults] synchronize];
 
     return YES;

@@ -12,3 +12,5 @@
 - (NSString *)endDateFullString;
 
 @end
+
+NSString *stringWithTimeInterval(NSTimeInterval timeInterval);

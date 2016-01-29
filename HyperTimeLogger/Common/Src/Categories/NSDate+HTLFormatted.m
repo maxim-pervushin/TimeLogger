@@ -30,3 +30,13 @@
 }
 
 @end
+
+NSString *stringWithTimeInterval(NSTimeInterval timeInterval) {
+    NSInteger ti = (NSInteger) timeInterval;
+    NSInteger seconds = ti % 60;
+    NSInteger minutes = (ti / 60) % 60;
+    NSInteger hours = (ti / 3600);
+
+    return [NSString stringWithFormat:NSLocalizedString(@"%02ld:%02ld:%02ld", @"Duration string format"),
+                                      (long) hours, (long) minutes, (long) seconds];
+}

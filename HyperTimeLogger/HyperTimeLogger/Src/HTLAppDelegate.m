@@ -11,6 +11,9 @@
 #import "HTLContentManager.h"
 #import "HTLSqliteStorageProvider.h"
 #import "HTLCSVStringExportProvider.h"
+#import "HyperTimeLogger-Swift.h"
+#import "HTLReportExtendedCell.h"
+#import "HTLDateSectionHeader.h"
 #import <Fabric/Fabric.h>
 #import <Crashlytics/Crashlytics.h>
 
@@ -21,6 +24,8 @@ static NSString *const kApplicationGroup = @"group.timelogger";
 static NSString *const kStorageFileName = @"time_logger_storage.db";
 
 @interface HTLAppDelegate ()
+
+- (void)initializeAppearance;
 
 - (void)initializeCrashReporter;
 
@@ -35,6 +40,11 @@ static NSString *const kStorageFileName = @"time_logger_storage.db";
 
 - (NSString *)appVersion {
     return [[NSBundle mainBundle] objectForInfoDictionaryKey:kVersionIdentifierKey];
+}
+
+- (void)initializeAppearance {
+    [HTLLineView appearance].backgroundColor = [[UIColor whiteColor] colorWithAlphaComponent:0.25];
+    [HTLReportExtendedCell appearance].backgroundColor = [UIColor clearColor];
 }
 
 - (void)initializeCrashReporter {
@@ -56,7 +66,7 @@ static NSString *const kStorageFileName = @"time_logger_storage.db";
 }
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-
+    [self initializeAppearance];
     [self initializeCrashReporter];
     [self initializeLoggers];
     [self initializeContentManager];

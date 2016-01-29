@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
     </dependencies>
     <objects>
@@ -11,42 +12,52 @@
             <rect key="frame" x="0.0" y="0.0" width="415" height="46"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zyL-SD-Zwd">
+                <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aQ1-cW-KT9">
+                    <rect key="frame" x="0.0" y="0.0" width="415" height="46"/>
+                    <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="mfX-oq-5GC">
+                        <rect key="frame" x="0.0" y="0.0" width="415" height="46"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ogM-qg-NGh" userLabel="Show Report Button">
+                                <rect key="frame" x="373" y="4" width="38" height="38"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="ogM-qg-NGh" secondAttribute="height" multiplier="1:1" id="lyk-uK-4zQ"/>
+                                    <constraint firstAttribute="width" secondItem="ogM-qg-NGh" secondAttribute="height" multiplier="1:1" id="tyE-Be-PwV"/>
+                                </constraints>
+                                <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <state key="normal" image="statistics.png">
+                                    <color key="titleColor" red="1" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="statisticsButtonAction:" destination="iN0-l3-epB" eventType="touchUpInside" id="M6D-rK-ZFi"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="[sectionTitle]" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nOd-N7-Nrn" userLabel="Title Label">
+                                <rect key="frame" x="4" y="4" width="365" height="38"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="nOd-N7-Nrn" firstAttribute="top" secondItem="mfX-oq-5GC" secondAttribute="top" constant="4" id="AKi-gG-Dzs"/>
+                            <constraint firstAttribute="bottom" secondItem="ogM-qg-NGh" secondAttribute="bottom" constant="4" id="PDg-RN-y8J"/>
+                            <constraint firstItem="ogM-qg-NGh" firstAttribute="top" secondItem="mfX-oq-5GC" secondAttribute="top" constant="4" id="SlD-SB-rAk"/>
+                            <constraint firstItem="nOd-N7-Nrn" firstAttribute="leading" secondItem="mfX-oq-5GC" secondAttribute="leading" constant="4" id="XYp-B2-7u4"/>
+                            <constraint firstAttribute="bottom" secondItem="nOd-N7-Nrn" secondAttribute="bottom" constant="4" id="cEo-Wf-bjP"/>
+                            <constraint firstItem="ogM-qg-NGh" firstAttribute="leading" secondItem="nOd-N7-Nrn" secondAttribute="trailing" constant="4" id="dBe-if-WrU"/>
+                            <constraint firstAttribute="trailing" secondItem="ogM-qg-NGh" secondAttribute="trailing" constant="4" id="wXQ-i8-pKt"/>
+                        </constraints>
+                    </view>
+                    <blurEffect style="dark"/>
+                </visualEffectView>
+                <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zyL-SD-Zwd">
                     <rect key="frame" x="0.0" y="0.0" width="415" height="46"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Jxe-wG-3q1" userLabel="Background Color View">
                             <rect key="frame" x="0.0" y="0.0" width="415" height="46"/>
-                            <subviews>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ogM-qg-NGh" userLabel="Show Report Button">
-                                    <rect key="frame" x="369" y="4" width="38" height="38"/>
-                                    <constraints>
-                                        <constraint firstAttribute="width" secondItem="ogM-qg-NGh" secondAttribute="height" multiplier="1:1" id="lyk-uK-4zQ"/>
-                                    </constraints>
-                                    <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                    <state key="normal" image="statistics.png">
-                                        <color key="titleColor" red="1" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                    </state>
-                                    <connections>
-                                        <action selector="statisticsButtonAction:" destination="iN0-l3-epB" eventType="touchUpInside" id="M6D-rK-ZFi"/>
-                                    </connections>
-                                </button>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="[sectionTitle]" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nOd-N7-Nrn" userLabel="Title Label">
-                                    <rect key="frame" x="8" y="14" width="353" height="18"/>
-                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                    <nil key="highlightedColor"/>
-                                </label>
-                            </subviews>
-                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            <constraints>
-                                <constraint firstAttribute="bottom" secondItem="ogM-qg-NGh" secondAttribute="bottom" constant="4" id="2Iq-5u-T0z"/>
-                                <constraint firstItem="nOd-N7-Nrn" firstAttribute="leading" secondItem="Jxe-wG-3q1" secondAttribute="leading" constant="8" id="2VO-5b-dLe"/>
-                                <constraint firstAttribute="centerY" secondItem="nOd-N7-Nrn" secondAttribute="centerY" id="A3N-Cl-Ksj"/>
-                                <constraint firstAttribute="trailing" secondItem="ogM-qg-NGh" secondAttribute="trailing" constant="8" id="Rpc-n7-wYK"/>
-                                <constraint firstItem="ogM-qg-NGh" firstAttribute="top" secondItem="Jxe-wG-3q1" secondAttribute="top" constant="4" id="ayQ-fT-qf4"/>
-                                <constraint firstItem="ogM-qg-NGh" firstAttribute="leading" secondItem="nOd-N7-Nrn" secondAttribute="trailing" constant="8" id="o4k-iO-wQY"/>
-                            </constraints>
+                            <color key="backgroundColor" white="0.0" alpha="0.94999999999999996" colorSpace="calibratedWhite"/>
                         </view>
                     </subviews>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -61,8 +72,12 @@
             <constraints>
                 <constraint firstAttribute="bottom" secondItem="zyL-SD-Zwd" secondAttribute="bottom" id="0CK-Dw-025"/>
                 <constraint firstItem="zyL-SD-Zwd" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="A7J-7f-E4S"/>
+                <constraint firstItem="aQ1-cW-KT9" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="HeP-CT-i3e"/>
                 <constraint firstAttribute="trailing" secondItem="zyL-SD-Zwd" secondAttribute="trailing" id="J7x-pF-sfz"/>
+                <constraint firstAttribute="trailing" secondItem="aQ1-cW-KT9" secondAttribute="trailing" id="KFV-bJ-Fya"/>
                 <constraint firstItem="zyL-SD-Zwd" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="TvU-FH-nup"/>
+                <constraint firstItem="aQ1-cW-KT9" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="kCu-v7-JqY"/>
+                <constraint firstAttribute="bottom" secondItem="aQ1-cW-KT9" secondAttribute="bottom" id="x3l-Vs-aBc"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <nil key="simulatedTopBarMetrics"/>
@@ -73,7 +88,7 @@
                 <outlet property="sectionTitleLabel" destination="nOd-N7-Nrn" id="MTb-yF-L0J"/>
                 <outlet property="statisticsButton" destination="ogM-qg-NGh" id="H8t-1T-2x0"/>
             </connections>
-            <point key="canvasLocation" x="434.5" y="319"/>
+            <point key="canvasLocation" x="560.5" y="361"/>
         </view>
     </objects>
     <resources>

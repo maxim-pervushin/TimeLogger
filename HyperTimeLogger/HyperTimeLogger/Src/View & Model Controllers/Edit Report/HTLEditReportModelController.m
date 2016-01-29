@@ -7,8 +7,6 @@
 #import "HTLContentManager.h"
 #import "HTLReportExtendedDto.h"
 #import "HTLActionDto.h"
-#import "HTLCategoryDto.h"
-#import "HTLReportDto.h"
 #import "HTLAppDelegate.h"
 
 
