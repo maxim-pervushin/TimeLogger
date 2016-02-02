@@ -80,4 +80,15 @@ NSString *htlStringWithTimeInterval(NSTimeInterval timeInterval) {
     return [NSDate.mediumFormatter stringFromDate:self];
 }
 
+- (NSDate *)dateByAddingMinutes:(NSInteger)minutes {
+    NSDateComponents *components = [NSDateComponents new];
+    components.minute = minutes;
+    return [[NSCalendar currentCalendar] dateByAddingComponents:components toDate:self options:NSCalendarMatchNextTime];
+//    let calendar = NSCalendar.currentCalendar()
+//    let dateComponent = NSDateComponents()
+//    dateComponent.day = days
+//    return calendar.dateByAddingComponents(dateComponent, toDate: self, options: NSCalendarOptions.MatchNextTime)!
+
+}
+
 @end

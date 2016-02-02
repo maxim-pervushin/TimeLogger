@@ -122,12 +122,12 @@ static NSString *const kCategoryCellIdentifier = @"CategoryCell";
 
 - (IBAction)startDatePickerValueChanged:(id)sender {
     self.editor.reportStartDate = self.startDatePicker.date;
-    self.endDatePicker.minimumDate = self.startDatePicker.date;
+    self.endDatePicker.minimumDate = [self.startDatePicker.date dateByAddingMinutes:1];
 }
 
 - (IBAction)endDatePickerValueChanged:(id)sender {
     self.editor.reportEndDate = self.endDatePicker.date;
-    self.startDatePicker.maximumDate = self.startDatePicker.date;
+    self.startDatePicker.maximumDate = [self.startDatePicker.date dateByAddingMinutes:-1];
 }
 
 #pragma mark - HTLEditReportViewController public
@@ -207,17 +207,17 @@ static NSString *const kCategoryCellIdentifier = @"CategoryCell";
 }
 
 - (void)updateUI {
-    HTLReportExtendedDto *reportExtended = self.editor.updatedReportExtended;
-    if (!reportExtended) {
-        reportExtended = self.editor.originalReportExtended;
-    }
+//    HTLReportExtendedDto *reportExtended = self.editor.updatedReportExtended;
+//    if (!reportExtended) {
+//        reportExtended = self.editor.originalReportExtended;
+//    }
 
     __weak __typeof(self) weakSelf = self;
     dispatch_async(dispatch_get_main_queue(), ^{
 
         weakSelf.saveButton.enabled = weakSelf.editor.canSave;
 
-        weakSelf.textField.text = reportExtended ? reportExtended.action.title : @"";
+        weakSelf.textField.text = self.editor.action.title;
 
         if (weakSelf.editor.reportStartDate) {
             [weakSelf.startDateButton setTitle:[weakSelf.editor.reportStartDate startDateFullString] forState:UIControlStateNormal];

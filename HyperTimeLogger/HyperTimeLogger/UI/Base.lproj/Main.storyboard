@@ -1249,10 +1249,24 @@
                                                     <outlet property="delegate" destination="J5C-kP-cNI" id="8r5-SQ-hFA"/>
                                                 </connections>
                                             </collectionView>
-                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="caI-j5-rMv">
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Foo" placeholder="Action..." minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="caI-j5-rMv">
                                                 <rect key="frame" x="8" y="94" width="584" height="28"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="0.0" alpha="0.33000000000000002" colorSpace="calibratedRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="30" id="cRj-KY-IF2"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences" autocorrectionType="yes" keyboardAppearance="alert" returnKeyType="done"/>
+                                                <variation key="default">
+                                                    <mask key="constraints">
+                                                        <exclude reference="cRj-KY-IF2"/>
+                                                    </mask>
+                                                </variation>
+                                                <variation key="widthClass=compact">
+                                                    <mask key="constraints">
+                                                        <include reference="cRj-KY-IF2"/>
+                                                    </mask>
+                                                </variation>
                                                 <connections>
                                                     <action selector="textFieldDidEndOnExitAction:" destination="J5C-kP-cNI" eventType="editingDidEndOnExit" id="Zk2-AW-uPa"/>
                                                     <action selector="textFieldEditingChanged:" destination="J5C-kP-cNI" eventType="editingChanged" id="TOz-SO-BOs"/>

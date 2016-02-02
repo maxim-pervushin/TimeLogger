@@ -17,5 +17,7 @@ NSString *htlStringWithTimeInterval(NSTimeInterval timeInterval);
 
 - (NSString *)fullString;
 
+- (NSDate *)dateByAddingMinutes:(NSInteger)minutes;
+
 @end
 
