@@ -6,7 +6,8 @@
 import UIKit
 import QuartzCore
 
-@IBDesignable public class HTLAddButtonWidget: UIVisualEffectView {
+//@IBDesignable public class HTLAddButtonWidget: UIVisualEffectView {
+@IBDesignable public class HTLAddButtonWidget: UIView {
 
     override public func layoutSubviews() {
         super.layoutSubviews()

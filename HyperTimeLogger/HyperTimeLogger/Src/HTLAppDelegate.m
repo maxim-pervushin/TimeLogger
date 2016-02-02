@@ -14,6 +14,10 @@
 #import "HyperTimeLogger-Swift.h"
 #import "HTLReportExtendedCell.h"
 #import "HTLDateSectionHeader.h"
+#import "UIColor+FlatColors.h"
+#import "HyperTimeLogger-Swift.h"
+#import "HTLPieChartCell.h"
+#import "HTLStatisticsItemCell.h"
 #import <Fabric/Fabric.h>
 #import <Crashlytics/Crashlytics.h>
 
@@ -43,8 +47,36 @@ static NSString *const kStorageFileName = @"time_logger_storage.db";
 }
 
 - (void)initializeAppearance {
-    [HTLLineView appearance].backgroundColor = [[UIColor whiteColor] colorWithAlphaComponent:0.25];
+//    [UIView appearance].tintColor = [UIColor flatCloudsColor];
+    [UIView appearanceWhenContainedInInstancesOfClasses:@[HTLBackgroundView.class]].tintColor = [UIColor flatCloudsColor];
+    [UIButton appearance].backgroundColor = [UIColor flatAsbestosColor];
+    [HTLLineView appearance].backgroundColor = [UIColor flatConcreteColor];
+    [HTLBackgroundView appearance].backgroundColor = [UIColor flatCloudsColor];
+
+    [HTLLightBackgroundView appearance].backgroundColor = [UIColor flatCloudsColor];
+    [UIButton appearanceWhenContainedInInstancesOfClasses:@[[HTLLightBackgroundView class]]].backgroundColor = [UIColor flatAsbestosColor];
+    [UIButton appearanceWhenContainedInInstancesOfClasses:@[[HTLLightBackgroundView class]]].tintColor = [UIColor flatCloudsColor];
+    [[UIButton appearanceWhenContainedInInstancesOfClasses:@[[HTLLightBackgroundView class]]] setTitleColor:[UIColor flatCloudsColor]
+                                                                                          forState:UIControlStateNormal];
+    [[UIButton appearanceWhenContainedInInstancesOfClasses:@[[HTLLightBackgroundView class]]] setTitleColor:[UIColor flatCloudsColor]
+                                                                                          forState:UIControlStateDisabled];
+
+    [HTLTopBarView appearance].backgroundColor = [UIColor flatAsbestosColor];
     [HTLReportExtendedCell appearance].backgroundColor = [UIColor clearColor];
+
+    [HTLPieChartCell appearance].backgroundColor = [UIColor clearColor];
+    [HTLStatisticsItemCell appearance].backgroundColor = [UIColor clearColor];
+
+    [HTLNoContentCell appearance].backgroundColor = [UIColor clearColor];
+    [UILabel appearance].textColor = [UIColor flatAsbestosColor];
+
+    [HTLAddButtonWidget appearance].backgroundColor = [[UIColor flatAsbestosColor] colorWithAlphaComponent:0.75];
+    [HTLRoundedImageView appearanceWhenContainedInInstancesOfClasses:@[[HTLAddButtonWidget class]]].backgroundColor = [UIColor flatAsbestosColor];
+    [UILabel appearanceWhenContainedInInstancesOfClasses:@[[HTLAddButtonWidget class]]].textColor = [UIColor flatCloudsColor];
+
+    [UILabel appearanceWhenContainedInInstancesOfClasses:@[[HTLTopBarView class]]].textColor = [UIColor flatCloudsColor];
+    [UIButton appearanceWhenContainedInInstancesOfClasses:@[[HTLTopBarView class]]].backgroundColor = [UIColor clearColor];
+    [UIButton appearanceWhenContainedInInstancesOfClasses:@[[HTLTopBarView class]]].tintColor = [UIColor flatCloudsColor];
 }
 
 - (void)initializeCrashReporter {

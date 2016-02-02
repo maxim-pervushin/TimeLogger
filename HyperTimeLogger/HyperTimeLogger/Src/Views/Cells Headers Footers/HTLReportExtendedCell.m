@@ -8,6 +8,7 @@
 #import "HTLCategoryDto.h"
 #import "HTLReportExtendedDto.h"
 #import "HTLReportDto+Helpers.h"
+#import "NSDate+HTLTimeHelpers.h"
 
 @interface HTLReportExtendedCell ()
 
@@ -27,29 +28,27 @@
     NSString *date;
     NSString *duration;
     UIColor *color;
+    UIColor *backgroundColor;
 
     if (reportExtended) {
         title = reportExtended.action.title;
         category = reportExtended.category.localizedTitle;
-        date = reportExtended.report.endDateString;
-        duration = reportExtended.report.durationString;
+        date = [NSDate stringWithStartDate:reportExtended.report.startDate endDate:reportExtended.report.endDate];
+        duration = htlStringWithTimeInterval(reportExtended.report.duration);
         color = reportExtended.category.color;
+        backgroundColor = [reportExtended.category.color colorWithAlphaComponent:0.15];
     }
 
     self.titleLabel.text = title;
     self.categoryLabel.text = category;
     self.dateLabel.text = date;
     self.durationLabel.text = duration;
-//    self.colorView.backgroundColor = color;
-//    self.titleLabel.textColor = color;
-//    self.categoryLabel.textColor = color;
-//    self.dateLabel.textColor = color;
-//    self.durationLabel.textColor = color;
     self.colorView.backgroundColor = color;
-    self.titleLabel.textColor = [[UIColor whiteColor] colorWithAlphaComponent:0.75];
-    self.categoryLabel.textColor = [[UIColor whiteColor] colorWithAlphaComponent:0.75];
-    self.dateLabel.textColor = [[UIColor whiteColor] colorWithAlphaComponent:0.75];
-    self.durationLabel.textColor = [[UIColor whiteColor] colorWithAlphaComponent:0.75];
+    self.titleLabel.textColor = color;
+    self.categoryLabel.textColor = color;
+    self.dateLabel.textColor = color;
+    self.durationLabel.textColor = color;
+    self.backgroundColor = backgroundColor;
 }
 
 @end

@@ -14,7 +14,8 @@
 #import "HTLAppDelegate.h"
 #import "HTLEditReportViewController.h"
 #import "HTLStatisticsViewController.h"
-#import "NSDate+HTLFormatted.h"
+#import "NSDate+HTLTimeHelpers.h"
+#import "HTLDateSectionDto.h"
 
 
 static NSString *const kReportCellIdentifier = @"ReportCell";
@@ -112,7 +113,7 @@ static const float kHeaderHeight = 35.0f;
 
 - (void)timerAction:(NSTimer *)timer {
     NSTimeInterval timeInterval = [[NSDate new] timeIntervalSinceDate:self.modelController.startDate];
-    self.timerLabel.text = stringWithTimeInterval(timeInterval);
+    self.timerLabel.text = htlStringWithTimeInterval(timeInterval);
     if ([UIFont respondsToSelector:@selector(monospacedDigitSystemFontOfSize:weight:)]) {
         self.timerLabel.font = [UIFont monospacedDigitSystemFontOfSize:25 weight:UIFontWeightRegular];
     }
@@ -194,10 +195,8 @@ static const float kHeaderHeight = 35.0f;
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    if ([segue.identifier isEqualToString:kEditReportSegueIdentifier] && [segue.destinationViewController isKindOfClass:[UINavigationController class]]) {
-        UINavigationController *navigationController = segue.destinationViewController;
-        HTLEditReportViewController *editReportViewController = (HTLEditReportViewController *) navigationController.topViewController;
-
+    if ([segue.destinationViewController isKindOfClass:HTLEditReportViewController.class]) {
+        HTLEditReportViewController *editReportViewController =  segue.destinationViewController;
         HTLReportExtendedDto *reportExtended = nil;
         NSIndexPath *selected = self.tableView.indexPathForSelectedRow;
         if (selected) {
@@ -205,10 +204,16 @@ static const float kHeaderHeight = 35.0f;
         }
         editReportViewController.reportExtended = reportExtended;
 
-    } else if ([segue.identifier isEqualToString:kShowStatisticsSegueIdentifier]) {
+    } else if ([segue.destinationViewController isKindOfClass:HTLStatisticsViewController.class]) {
         HTLStatisticsViewController *statisticsViewController = segue.destinationViewController;
-        statisticsViewController.dateSection = sender;
+        if ([sender isKindOfClass:HTLDateSectionDto.class]) {
+            statisticsViewController.dateSection = sender;
+        }
     }
+}
+
+- (UIStatusBarStyle)preferredStatusBarStyle {
+    return UIStatusBarStyleLightContent;
 }
 
 #pragma mark - UITableViewDataSource, UITableViewDelegate
@@ -236,6 +241,7 @@ static const float kHeaderHeight = 35.0f;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    [self performSegueWithIdentifier:kEditReportSegueIdentifier sender:self];
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 

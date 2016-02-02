@@ -14,6 +14,7 @@
 #import "HTLReportExtendedDto.h"
 #import <NotificationCenter/NotificationCenter.h>
 #import "HyperTimeLogger-Swift.h"
+#import "NSDate+HTLTimeHelpers.h"
 //#import "ZLBalancedFlowLayout-Swift.h"
 //#import <ZLBalancedFlowLayout>
 //#import "ZLBalancedFlowLayout-Swift.h"
@@ -55,8 +56,8 @@ static const int kCollectionViewMinItemsPerRow = 3;
     if (reportExtended) {
         self.lastReportActionTitleLabel.text = reportExtended.action.title;
         self.lastReportCategoryTitleLabel.text = reportExtended.category.title;
-        self.lastReportDurationLabel.text = reportExtended.report.durationString;
-        self.lastReportEndDateLabel.text = reportExtended.report.endDateString;
+        self.lastReportDurationLabel.text = htlStringWithTimeInterval(reportExtended.report.duration);
+        self.lastReportEndDateLabel.text = [NSDate stringWithStartDate:reportExtended.report.startDate endDate:reportExtended.report.endDate];
     } else {
         self.lastReportActionTitleLabel.text = @"";
         self.lastReportCategoryTitleLabel.text = @"";

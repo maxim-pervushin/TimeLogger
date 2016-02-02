@@ -5,12 +5,17 @@
 
 #import <Foundation/Foundation.h>
 
-@interface NSDate (HTLFormatted)
+NSString *htlStringWithTimeInterval(NSTimeInterval timeInterval);
+
+@interface NSDate (HTLTimeHelpers)
+
++ (NSString *)stringWithStartDate:(NSDate *)startDate endDate:(NSDate *)endDate;
 
 - (NSString *)startDateFullString;
 
 - (NSString *)endDateFullString;
 
+- (NSString *)fullString;
+
 @end
 
-NSString *stringWithTimeInterval(NSTimeInterval timeInterval);

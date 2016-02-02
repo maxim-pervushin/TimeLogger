@@ -19,6 +19,7 @@
 - (void)configureWithCategory:(HTLCategoryDto *)category {
     self.titleLabel.text = category ? category.localizedTitle : @"";
     self.titleLabel.textColor = category ? category.color : [UIColor blackColor];
+    self.backgroundColor = category ? [category.color colorWithAlphaComponent:0.15] : [UIColor clearColor];
 }
 
 - (void)setSelected:(BOOL)selected {

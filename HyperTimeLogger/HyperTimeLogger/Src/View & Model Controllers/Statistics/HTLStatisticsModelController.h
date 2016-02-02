@@ -18,7 +18,9 @@
 
 @property(nonatomic, copy) HTLDateSectionDto *dateSection;
 
+@property(nonatomic, readonly) BOOL loaded;
 @property(nonatomic, readonly) NSArray *categories;
+@property(nonatomic, readonly) NSTimeInterval totalTime;
 
 - (void)reloadData;
 

@@ -10,11 +10,10 @@
 #import "HTLCompletionCollectionViewCell.h"
 #import "HTLCompletionDto.h"
 #import "HTLEditReportModelController.h"
-#import "HTLReportDto+Helpers.h"
 #import "HTLReportExtendedDto.h"
 #import "HTLReportExtendedEditor.h"
 #import "HyperTimeLogger-Swift.h"
-#import "NSDate+HTLFormatted.h"
+#import "NSDate+HTLTimeHelpers.h"
 
 static NSString *const kCompletionCellIdentifier = @"CompletionCell";
 static NSString *const kCategoryCellIdentifier = @"CategoryCell";
@@ -29,7 +28,7 @@ static NSString *const kCategoryCellIdentifier = @"CategoryCell";
 @property(nonatomic, readonly) HTLReportExtendedEditor *editor;
 
 @property(nonatomic, weak) IBOutlet NSLayoutConstraint *containerBottomConstraint;
-@property(nonatomic, weak) IBOutlet UIBarButtonItem *saveButton;
+@property(nonatomic, weak) IBOutlet UIButton *saveButton;
 @property(nonatomic, weak) IBOutlet UICollectionView *completionsCollectionView;
 @property(nonatomic, weak) IBOutlet UIButton *startDateButton;
 @property(nonatomic, weak) IBOutlet UIDatePicker *startDatePicker;
@@ -123,10 +122,12 @@ static NSString *const kCategoryCellIdentifier = @"CategoryCell";
 
 - (IBAction)startDatePickerValueChanged:(id)sender {
     self.editor.reportStartDate = self.startDatePicker.date;
+    self.endDatePicker.minimumDate = self.startDatePicker.date;
 }
 
 - (IBAction)endDatePickerValueChanged:(id)sender {
     self.editor.reportEndDate = self.endDatePicker.date;
+    self.startDatePicker.maximumDate = self.startDatePicker.date;
 }
 
 #pragma mark - HTLEditReportViewController public
@@ -256,6 +257,8 @@ static NSString *const kCategoryCellIdentifier = @"CategoryCell";
     [[NSNotificationCenter defaultCenter] addObserverForName:UIKeyboardWillChangeFrameNotification object:nil queue:[NSOperationQueue mainQueue] usingBlock:^(NSNotification *note) {
         CGRect frameEnd = [note.userInfo[UIKeyboardFrameEndUserInfoKey] CGRectValue];
         weakSelf.containerBottomConstraint.constant = weakSelf.view.bounds.size.height - frameEnd.origin.y;
+        [weakSelf setEndDatePickerVisible:NO animated:YES];
+        [weakSelf setStartDatePickerVisible:NO animated:YES];
         [weakSelf.view layoutIfNeeded];
     }];
 }
@@ -300,6 +303,10 @@ static NSString *const kCategoryCellIdentifier = @"CategoryCell";
 - (void)viewDidDisappear:(BOOL)animated {
     [self unsubscribe];
     [super viewDidDisappear:animated];
+}
+
+- (UIStatusBarStyle)preferredStatusBarStyle {
+    return UIStatusBarStyleLightContent;
 }
 
 #pragma mark - UICollectionViewDataSource, UICollectionViewDelegate

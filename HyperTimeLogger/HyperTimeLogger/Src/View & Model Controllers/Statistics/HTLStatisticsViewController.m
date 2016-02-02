@@ -10,6 +10,7 @@
 #import "HTLDateSectionDto.h"
 #import "HTLPieChartCell.h"
 #import "HTLStatisticsItemCell.h"
+#import "HyperTimeLogger-Swift.h"
 
 
 static NSString *const kPieChartCellIdentifier = @"PieChartCell";
@@ -23,12 +24,20 @@ static const CGFloat kStatisticsItemCellHeight = 44;
 
 @property(nonatomic, strong) HTLStatisticsModelController *modelController;
 
+- (IBAction)doneButtonAction:(id)sender;
+
 - (void)updateUI;
 
 @end
 
 
 @implementation HTLStatisticsViewController
+
+#pragma mark - HTLStatisticsViewController @IB
+
+- (IBAction)doneButtonAction:(id)sender {
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
 
 #pragma mark - HTLStatisticsViewController
 
@@ -52,42 +61,55 @@ static const CGFloat kStatisticsItemCellHeight = 44;
     self.title = self.dateSection.fulldateStringLocalized;
 }
 
+- (UIStatusBarStyle)preferredStatusBarStyle {
+    return UIStatusBarStyleLightContent;
+}
+
 #pragma mark - UITableViewDataSource, UITableViewDelegate
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 2;
+    return self.modelController.loaded && self.modelController.totalTime == 0 ? 1 : 2;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    if (section == 0) {
+    if (self.modelController.loaded && self.modelController.totalTime == 0) {
         return 1;
     } else {
-        return self.modelController.categories.count;
+        if (section == 0) {
+            return 1;
+        } else {
+            return self.modelController.categories.count;
+        }
     }
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (indexPath.section == 0) {
-        HTLPieChartCell *cell = [tableView dequeueReusableCellWithIdentifier:kPieChartCellIdentifier];
-        cell.pieChart.showLabel = NO;
-        cell.pieChart.dataSource = self;
-        cell.pieChart.delegate = self;
-        cell.pieChart.userInteractionEnabled = NO;
-
-        NSUInteger categoriesCount = self.modelController.categories.count;
-        if (categoriesCount > 0) {
-            [cell.activityIndicator stopAnimating];
-        } else {
-            [cell.activityIndicator startAnimating];
-        }
-
-        return cell;
-
+    if (self.modelController.loaded && self.modelController.totalTime == 0) {
+        return [tableView dequeueReusableCellWithIdentifier:HTLNoContentCell.defaultIdentifier forIndexPath:indexPath];
     } else {
-        HTLStatisticsItemCell *cell = [tableView dequeueReusableCellWithIdentifier:kStatisticsItemCellIdentifier];
-        HTLCategoryDto *category = self.modelController.categories[(NSUInteger) indexPath.row];
-        [cell configureWithStatisticsItem:[self.modelController statisticsForCategory:category]];
-        return cell;
+        if (indexPath.section == 0) {
+            HTLPieChartCell *cell = [tableView dequeueReusableCellWithIdentifier:kPieChartCellIdentifier];
+            cell.pieChart.showLabel = NO;
+            cell.pieChart.dataSource = self;
+            cell.pieChart.delegate = self;
+            cell.pieChart.userInteractionEnabled = NO;
+
+            NSUInteger categoriesCount = self.modelController.categories.count;
+            if (categoriesCount > 0) {
+                [cell.activityIndicator stopAnimating];
+            } else {
+                [cell.activityIndicator startAnimating];
+            }
+
+            return cell;
+
+        } else {
+            HTLStatisticsItemCell *cell = [tableView dequeueReusableCellWithIdentifier:kStatisticsItemCellIdentifier];
+            HTLCategoryDto *category = self.modelController.categories[(NSUInteger) indexPath.row];
+            NSTimeInterval totalTime = self.modelController.totalTime;
+            [cell configureWithStatisticsItem:[self.modelController statisticsForCategory:category] totalTime:totalTime];
+            return cell;
+        }
     }
 }
 

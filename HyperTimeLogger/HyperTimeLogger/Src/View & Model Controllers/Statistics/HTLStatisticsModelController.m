@@ -12,9 +12,12 @@
 #import "HTLAppDelegate.h"
 
 
-@interface HTLStatisticsModelController ()
+@interface HTLStatisticsModelController ()      {
+    BOOL _loaded;
+}
 
 @property (nonatomic, strong) NSArray *categoriesSaved;
+@property (nonatomic, assign) NSTimeInterval totalTimeSaved;
 @property (nonatomic, strong) NSDictionary *statisticsByCategorySaved;
 
 - (void)subscribe;
@@ -25,7 +28,9 @@
 
 
 @implementation HTLStatisticsModelController
+@dynamic loaded;
 @dynamic categories;
+@dynamic totalTime;
 
 #pragma mark - HTLStatisticsModelController
 
@@ -42,18 +47,20 @@
         NSArray *categories = [HTLAppContentManger findCategoriesWithDateSection:weakSelf.dateSection];
         NSMutableArray *categoriesCalculated = [NSMutableArray new];
         NSMutableDictionary *statisticsByCategoryCalculated = [NSMutableDictionary new];
+        NSTimeInterval totalTime = 0;
         for (HTLCategoryDto *category in categories) {
             NSArray *reportsExtended = [HTLAppContentManger findReportsExtendedWithDateSection:self.dateSection
                                                                                                      category:category];
 
-            NSTimeInterval totalTime = 0;
+            NSTimeInterval categoryTotalTime = 0;
             NSUInteger totalReports = 0;
             for (HTLReportExtendedDto *reportExtended in reportsExtended) {
-                totalTime += [reportExtended.report.endDate timeIntervalSinceDate:reportExtended.report.startDate];
+                categoryTotalTime += [reportExtended.report.endDate timeIntervalSinceDate:reportExtended.report.startDate];
                 totalReports++;
             }
+            totalTime += categoryTotalTime;
 
-            HTLStatisticsItemDto *statisticsItem = [HTLStatisticsItemDto statisticsItemWithCategory:category totalTime:totalTime totalReports:totalReports];
+            HTLStatisticsItemDto *statisticsItem = [HTLStatisticsItemDto statisticsItemWithCategory:category totalTime:categoryTotalTime totalReports:totalReports];
             if (statisticsItem) {
                 [categoriesCalculated addObject:category];
                 NSString *key = [NSString stringWithFormat:@"%@", @(category.hash)];
@@ -62,8 +69,10 @@
         }
 
         weakSelf.categoriesSaved = [categoriesCalculated copy];
+        weakSelf.totalTimeSaved = totalTime;
         weakSelf.statisticsByCategorySaved = [statisticsByCategoryCalculated copy];
 
+        _loaded = YES;
         [weakSelf contentChanged];
     });
 }
@@ -79,9 +88,16 @@
     [[NSNotificationCenter defaultCenter] removeObserver:self name:kHTLStorageProviderChangedNotification object:nil];
 };
 
+- (BOOL)loaded {
+    return _loaded;
+}
 
 - (NSArray *)categories {
     return self.categoriesSaved;
+}
+
+- (NSTimeInterval)totalTime {
+    return self.totalTimeSaved;
 }
 
 - (HTLStatisticsItemDto *)statisticsForCategory:(HTLCategoryDto *)category {
@@ -94,6 +110,7 @@
 - (instancetype)init {
     self = [super init];
     if (self) {
+        _loaded = NO;
         [self subscribe];
         [self reloadData];
     }

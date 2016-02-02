@@ -5,8 +5,14 @@
 /* Class = "UILabel"; text = "[Category]"; ObjectID = "3jm-gy-tqK"; */
 "3jm-gy-tqK.text" = "[Category]";
 
+/* Class = "UILabel"; text = "00:00:00"; ObjectID = "45X-uq-LZX"; */
+"45X-uq-LZX.text" = "00:00:00";
+
 /* Class = "UIButton"; normalTitle = "Reset Content"; ObjectID = "4Zy-wc-5eB"; */
 "4Zy-wc-5eB.normalTitle" = "Reset Content";
+
+/* Class = "UIButton"; normalTitle = "Done"; ObjectID = "5hz-ku-1S4"; */
+"5hz-ku-1S4.normalTitle" = "Done";
 
 /* Class = "UIButton"; normalTitle = "Start: [Start Date]"; ObjectID = "77B-vV-T3r"; */
 "77B-vV-T3r.normalTitle" = "Start: [Start Date]";
@@ -29,6 +35,18 @@
 /* Class = "UILabel"; text = "[Title]"; ObjectID = "Sgj-un-jmQ"; */
 "Sgj-un-jmQ.text" = "[Title]";
 
+/* Class = "UIButton"; normalTitle = "Save"; ObjectID = "TdG-UY-5Cy"; */
+"TdG-UY-5Cy.normalTitle" = "Save";
+
+/* Class = "UIButton"; normalTitle = "Done"; ObjectID = "V2w-1W-PFM"; */
+"V2w-1W-PFM.normalTitle" = "Done";
+
+/* Class = "UILabel"; text = "Not enough data to display statistics."; ObjectID = "VDY-Iu-HDf"; */
+"VDY-Iu-HDf.text" = "Not enough data to display statistics.";
+
+/* Class = "UIButton"; normalTitle = "Cancel"; ObjectID = "cVb-ND-Pff"; */
+"cVb-ND-Pff.normalTitle" = "Cancel";
+
 /* Class = "UILabel"; text = "[Title]"; ObjectID = "dvj-IQ-Opl"; */
 "dvj-IQ-Opl.text" = "[Title]";
 
@@ -46,3 +64,6 @@
 
 /* Class = "UIButton"; normalTitle = "Reset Defaults"; ObjectID = "vBj-xp-MRs"; */
 "vBj-xp-MRs.normalTitle" = "Reset Defaults";
+
+/* Class = "UILabel"; text = "[Percentage]"; ObjectID = "wGD-CJ-fTe"; */
+"wGD-CJ-fTe.text" = "[Percentage]";

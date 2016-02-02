@@ -8,7 +8,7 @@
 #import "HTLCSVStringExportProvider.h"
 #import "HTLReportExtendedDto.h"
 #import "HTLDateSectionDto.h"
-
+#import "UIColor+FlatColors.h"
 
 @interface HTLContentManager ()
 
@@ -47,13 +47,13 @@
     // Check categories.
     if ([self.storageProvider findCategoriesWithDateSection:nil].count == 0) {
         NSArray *initialCategories = @[
-                [HTLCategoryDto categoryWithIdentifier:@"0" title:@"Sleep" color:[UIColor paperColorDeepPurple]],
-                [HTLCategoryDto categoryWithIdentifier:@"1" title:@"Personal" color:[UIColor paperColorIndigo]],
-                [HTLCategoryDto categoryWithIdentifier:@"2" title:@"Road" color:[UIColor paperColorRed]],
-                [HTLCategoryDto categoryWithIdentifier:@"3" title:@"Work" color:[UIColor paperColorLightGreen]],
-                [HTLCategoryDto categoryWithIdentifier:@"4" title:@"Improvement" color:[UIColor paperColorDeepOrange]],
-                [HTLCategoryDto categoryWithIdentifier:@"5" title:@"Recreation" color:[UIColor paperColorCyan]],
-                [HTLCategoryDto categoryWithIdentifier:@"6" title:@"Time Waste" color:[UIColor paperColorBrown]]
+                [HTLCategoryDto categoryWithIdentifier:@"0" title:@"Sleep" color:[UIColor flatMidnightBlueColor]],
+                [HTLCategoryDto categoryWithIdentifier:@"1" title:@"Personal" color:[UIColor flatPumpkinColor]],
+                [HTLCategoryDto categoryWithIdentifier:@"2" title:@"Road" color:[UIColor flatWisteriaColor]],
+                [HTLCategoryDto categoryWithIdentifier:@"3" title:@"Work" color:[UIColor flatNephritisColor]],
+                [HTLCategoryDto categoryWithIdentifier:@"4" title:@"Improvement" color:[UIColor flatGreenSeaColor]],
+                [HTLCategoryDto categoryWithIdentifier:@"5" title:@"Recreation" color:[UIColor flatBelizeHoleColor]],
+                [HTLCategoryDto categoryWithIdentifier:@"6" title:@"Time Waste" color:[UIColor flatPomegranateColor]]
         ];
 
         for (HTLCategoryDto *category in initialCategories) {

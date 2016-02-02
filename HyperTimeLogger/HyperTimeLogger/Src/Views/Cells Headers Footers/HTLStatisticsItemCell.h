@@ -12,7 +12,7 @@
 
 @interface HTLStatisticsItemCell : UITableViewCell
 
-- (void)configureWithStatisticsItem:(HTLStatisticsItemDto *)statisticsItem;
+- (void)configureWithStatisticsItem:(HTLStatisticsItemDto *)statisticsItem totalTime:(NSTimeInterval)totalTime;
 
 @end
 
