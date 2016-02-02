@@ -207,11 +207,6 @@ static NSString *const kCategoryCellIdentifier = @"CategoryCell";
 }
 
 - (void)updateUI {
-//    HTLReportExtendedDto *reportExtended = self.editor.updatedReportExtended;
-//    if (!reportExtended) {
-//        reportExtended = self.editor.originalReportExtended;
-//    }
-
     __weak __typeof(self) weakSelf = self;
     dispatch_async(dispatch_get_main_queue(), ^{
 
