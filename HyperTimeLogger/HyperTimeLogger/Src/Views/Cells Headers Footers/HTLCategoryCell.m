@@ -5,7 +5,7 @@
 
 #import "HTLCategoryCell.h"
 #import "HTLCategoryDto.h"
-#import "UIColor+BFPaperColors.h"
+#import "UIColor+FlatColors.h"
 
 @interface HTLCategoryCell ()
 
@@ -24,7 +24,7 @@
 
 - (void)setSelected:(BOOL)selected {
     if (selected) {
-        self.selectionView.backgroundColor = [UIColor paperColorTextDarkDivider];
+        self.selectionView.backgroundColor = [UIColor flatConcreteColor];
         self.backgroundColor = [UIColor colorWithWhite:0 alpha:0.1f];
     } else {
         self.selectionView.backgroundColor = [UIColor clearColor];

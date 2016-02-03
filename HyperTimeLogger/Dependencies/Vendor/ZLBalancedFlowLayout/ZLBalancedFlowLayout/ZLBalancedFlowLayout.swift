@@ -112,7 +112,7 @@ public class ZLBalancedFlowLayout: UICollectionViewFlowLayout {
         return contentSize
     }
     
-    // MARK: - UICollectionViewLayout Helpers
+    // MARK: - UICollectionViewLayout HTLHelpers
     private func collectionView(collectionView:UICollectionView, frameForHeader isForHeader:Bool, inSection section:Int, inout updateContentSize contentSize:CGSize) -> CGRect {
         var size = referenceSizeForHeader(isForHeader, inSection: section), frame = CGRectZero
         if (scrollDirection == .Vertical) {
@@ -192,7 +192,7 @@ public class ZLBalancedFlowLayout: UICollectionViewFlowLayout {
         itemOriginYs = [[CGFloat]]()
     }
     
-    // MARK: - Delegate Helpers
+    // MARK: - Delegate HTLHelpers
     private func referenceSizeForHeader(isForHeader: Bool, inSection section: Int) -> CGSize {
         if let collectionView = self.collectionView, let delegate = collectionView.delegate as? UICollectionViewDelegateFlowLayout {
             if isForHeader {

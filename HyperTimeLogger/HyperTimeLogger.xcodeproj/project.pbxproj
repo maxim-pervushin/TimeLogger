@@ -23,7 +23,7 @@
 		73BC62568DE7117F7D84C604 /* HTLActionDto.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC648635BCE062AF18E634 /* HTLActionDto.m */; };
 		73BC62B4FA9BA474C4F3EAC9 /* HTLReportExtendedEditor.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6BD7F554BC56573CE86A /* HTLReportExtendedEditor.m */; };
 		73BC62D548E25B46D3759605 /* HyperTimeLogger.entitlements in Resources */ = {isa = PBXBuildFile; fileRef = 73BC66AAE26BE5005B6B3F36 /* HyperTimeLogger.entitlements */; };
-		73BC62DBB0557CEF66331263 /* HTLReportDto+Helpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6F771B4A63AA8FABCDF5 /* HTLReportDto+Helpers.m */; };
+		73BC62DBB0557CEF66331263 /* HTLReportDto+HTLHelpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6F771B4A63AA8FABCDF5 /* HTLReportDto+HTLHelpers.m */; };
 		73BC631CE07CD174D4AD23C0 /* HTLLineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC60ECEFAC2122A4C17181 /* HTLLineView.swift */; };
 		73BC632B40084A909E07A1F8 /* NSDate+HTLTimeHelpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC62DB5CA313A4BC61EC0F /* NSDate+HTLTimeHelpers.m */; };
 		73BC63786959F7D83E3E87CF /* HTLSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC69788FA88BEA8DAF03AC /* HTLSettingsViewController.m */; };
@@ -54,19 +54,18 @@
 		73BC67C565D3A4CC29A6EDE8 /* NSDate+HTLTimeHelpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC62DB5CA313A4BC61EC0F /* NSDate+HTLTimeHelpers.m */; };
 		73BC68033AF8061D639DCFC0 /* HTETodayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6B8E25A8D300C95D3491 /* HTETodayViewController.m */; };
 		73BC680C541F6C6C7A678530 /* HTLLightBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6A4018BAEAD4A02545CA /* HTLLightBackgroundView.swift */; };
-		73BC683F3F065135DC98F27B /* HTLAddButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6CED2DD0EDA6469CEEBA /* HTLAddButton.m */; };
 		73BC68546859BB9B9464FFD0 /* HTLReportListModelController.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6F28EAC2335F9576CA6C /* HTLReportListModelController.m */; };
 		73BC686682E53ABD3DCB152B /* HTLAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC62BD6319224D876880BD /* HTLAppDelegate.m */; };
+		73BC68668853BF61467DC6AE /* UIColor+HTLHelpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC60624B8CE64E57E76B25 /* UIColor+HTLHelpers.m */; };
 		73BC688E05940C6C7A19AEFE /* HTLCategoryDto.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC660F9035AF2D12D68B11 /* HTLCategoryDto.m */; };
-		73BC68952D802890D47F3381 /* HTLCompletionTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6597BF0ADA89652FD15C /* HTLCompletionTableViewCell.m */; };
 		73BC68A042945E51A24975F9 /* HTLReportExtendedEditor.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6BD7F554BC56573CE86A /* HTLReportExtendedEditor.m */; };
 		73BC68ACC3F021865C4EC1B1 /* NSDate+HTLTimeHelpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC62DB5CA313A4BC61EC0F /* NSDate+HTLTimeHelpers.m */; };
 		73BC68BD5C6BF2A0BA095605 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 73BC6FBF1D739E2158DA64F6 /* Images.xcassets */; };
 		73BC68C96107A4CF737B39ED /* HTLBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC667BBC86A8ED9DAF79F9 /* HTLBackgroundView.swift */; };
 		73BC68CA2E36757A886E80AE /* HTLLightBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6A4018BAEAD4A02545CA /* HTLLightBackgroundView.swift */; };
 		73BC68D041B3B7438345B659 /* HTLNavigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC675BA63D17605F56B715 /* HTLNavigationBar.m */; };
-		73BC68D75AF9520DFA1BB170 /* HTLReportDto+Helpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6F771B4A63AA8FABCDF5 /* HTLReportDto+Helpers.m */; };
-		73BC6919D98B939D1BBDAF28 /* HTLReportDto+Helpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6F771B4A63AA8FABCDF5 /* HTLReportDto+Helpers.m */; };
+		73BC68D75AF9520DFA1BB170 /* HTLReportDto+HTLHelpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6F771B4A63AA8FABCDF5 /* HTLReportDto+HTLHelpers.m */; };
+		73BC6919D98B939D1BBDAF28 /* HTLReportDto+HTLHelpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6F771B4A63AA8FABCDF5 /* HTLReportDto+HTLHelpers.m */; };
 		73BC69530AA65A5F73B11569 /* HTLCSVStringExportProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6FEC821B2D22ACD250CD /* HTLCSVStringExportProvider.m */; };
 		73BC697836C7BC71A9FAEE26 /* clock_transparent.png in Resources */ = {isa = PBXBuildFile; fileRef = 73BC68B4BB6FD2C16DCFD83A /* clock_transparent.png */; };
 		73BC698EF025811B34B8B94A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6B4DA596906232FF8970 /* main.m */; };
@@ -78,6 +77,7 @@
 		73BC6A38F00033FFAF9A4769 /* HTLSettingsModelController.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6E516EB62290DD7B243C /* HTLSettingsModelController.m */; };
 		73BC6A40B1C27D0F21D567DE /* HTLReportExtendedCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6096955E043B729051F4 /* HTLReportExtendedCell.m */; };
 		73BC6A8CA10634E4BF5F6311 /* HTLAddButtonWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC647FFAA49DF6B183D16E /* HTLAddButtonWidget.swift */; };
+		73BC6AAC3C7F3CA192377EC1 /* UIColor+HTLHelpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC60624B8CE64E57E76B25 /* UIColor+HTLHelpers.m */; };
 		73BC6AC1C3C34AB23E8A3D42 /* HTLModelController.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6B2EF7D4AAB16D0EC09A /* HTLModelController.m */; };
 		73BC6ACDC82E718A89E6C930 /* HTLSettingsModelController+TestData.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC61A9C99CE0428963C88B /* HTLSettingsModelController+TestData.m */; };
 		73BC6ACF153F24B101D5596E /* HTLCategoryCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6BF188BC4B62EBAED386 /* HTLCategoryCell.m */; };
@@ -101,6 +101,7 @@
 		73BC6D4AAD99665A10565079 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6B4DA596906232FF8970 /* main.m */; };
 		73BC6D50D0F7419C4DBD8D09 /* DateSectionHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 73BC6ED6CA4E40EF0A86A0D6 /* DateSectionHeader.xib */; };
 		73BC6D96930A9DDA7825C490 /* HTLCompletionCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6A799292EFF1A3FDE4D4 /* HTLCompletionCollectionViewCell.m */; };
+		73BC6DA30D82DB7740AD6F11 /* UIColor+HTLHelpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC60624B8CE64E57E76B25 /* UIColor+HTLHelpers.m */; };
 		73BC6E37E01E454ABCF88F75 /* HTLActionDto.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC648635BCE062AF18E634 /* HTLActionDto.m */; };
 		73BC6E4DED1BEDC0CE46C60D /* HTLStatisticsItemCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC68B935DD2C83FA55C77F /* HTLStatisticsItemCell.m */; };
 		73BC6E87D97E20610C0F256F /* HTLCircleButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6396FF8919F2C1A22A95 /* HTLCircleButton.m */; };
@@ -114,7 +115,7 @@
 		C516A6CC1B3A8F2A0018F022 /* HTLRoundButton.m in Sources */ = {isa = PBXBuildFile; fileRef = C516A6CB1B3A8F2A0018F022 /* HTLRoundButton.m */; };
 		C516A6CD1B3A8F2A0018F022 /* HTLRoundButton.m in Sources */ = {isa = PBXBuildFile; fileRef = C516A6CB1B3A8F2A0018F022 /* HTLRoundButton.m */; };
 		C516A6D31B3AD18E0018F022 /* NSDate+HTLComponents.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6F6EE1E455D98426F705 /* NSDate+HTLComponents.m */; };
-		C516A6D41B3AD18E0018F022 /* HTLReportDto+Helpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6F771B4A63AA8FABCDF5 /* HTLReportDto+Helpers.m */; };
+		C516A6D41B3AD18E0018F022 /* HTLReportDto+HTLHelpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6F771B4A63AA8FABCDF5 /* HTLReportDto+HTLHelpers.m */; };
 		C516A6D51B3AD18E0018F022 /* HTLReportDto.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6A41E76EE6DBA2B7B791 /* HTLReportDto.m */; };
 		C516A6D61B3AD18E0018F022 /* HTLCategoryDto.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC660F9035AF2D12D68B11 /* HTLCategoryDto.m */; };
 		C516A6D71B3AD18E0018F022 /* HTLActionDto.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC648635BCE062AF18E634 /* HTLActionDto.m */; };
@@ -127,11 +128,9 @@
 		C516A6DF1B3AD18E0018F022 /* HTLRoundButton.m in Sources */ = {isa = PBXBuildFile; fileRef = C516A6CB1B3A8F2A0018F022 /* HTLRoundButton.m */; };
 		C516A6E01B3AD18E0018F022 /* HTLCircleButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6396FF8919F2C1A22A95 /* HTLCircleButton.m */; };
 		C516A6E21B3AD18E0018F022 /* HTLNavigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC675BA63D17605F56B715 /* HTLNavigationBar.m */; };
-		C516A6E31B3AD18E0018F022 /* HTLAddButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6CED2DD0EDA6469CEEBA /* HTLAddButton.m */; };
 		C516A6E41B3AD18E0018F022 /* HTLWordCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6D5199B0C7EF65D8A836 /* HTLWordCell.m */; };
 		C516A6E51B3AD18E0018F022 /* HTLCategoryCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6BF188BC4B62EBAED386 /* HTLCategoryCell.m */; };
 		C516A6E61B3AD18E0018F022 /* HTLReportExtendedCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6096955E043B729051F4 /* HTLReportExtendedCell.m */; };
-		C516A6E71B3AD18E0018F022 /* HTLCompletionTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6597BF0ADA89652FD15C /* HTLCompletionTableViewCell.m */; };
 		C516A6E81B3AD18E0018F022 /* HTLCompletionCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6A799292EFF1A3FDE4D4 /* HTLCompletionCollectionViewCell.m */; };
 		C516A6E91B3AD18E0018F022 /* HTLDateSectionHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC615392383318004C30BA /* HTLDateSectionHeader.m */; };
 		C516A6EA1B3AD18E0018F022 /* HTLCSVStringExportProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6FEC821B2D22ACD250CD /* HTLCSVStringExportProvider.m */; };
@@ -168,7 +167,7 @@
 		C516A70F1B3AD18E0018F022 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C56ED4EC1B38217F00221171 /* Crashlytics.framework */; };
 		C516A7101B3AD18E0018F022 /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C56ED4EB1B38217F00221171 /* Fabric.framework */; };
 		C516A71E1B3AD2590018F022 /* NSDate+HTLComponents.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6F6EE1E455D98426F705 /* NSDate+HTLComponents.m */; };
-		C516A71F1B3AD2590018F022 /* HTLReportDto+Helpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6F771B4A63AA8FABCDF5 /* HTLReportDto+Helpers.m */; };
+		C516A71F1B3AD2590018F022 /* HTLReportDto+HTLHelpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6F771B4A63AA8FABCDF5 /* HTLReportDto+HTLHelpers.m */; };
 		C516A7201B3AD2590018F022 /* HTLReportDto.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6A41E76EE6DBA2B7B791 /* HTLReportDto.m */; };
 		C516A7211B3AD2590018F022 /* HTLCategoryDto.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC660F9035AF2D12D68B11 /* HTLCategoryDto.m */; };
 		C516A7221B3AD2590018F022 /* HTLActionDto.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC648635BCE062AF18E634 /* HTLActionDto.m */; };
@@ -181,11 +180,9 @@
 		C516A72A1B3AD2590018F022 /* HTLRoundButton.m in Sources */ = {isa = PBXBuildFile; fileRef = C516A6CB1B3A8F2A0018F022 /* HTLRoundButton.m */; };
 		C516A72B1B3AD2590018F022 /* HTLCircleButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6396FF8919F2C1A22A95 /* HTLCircleButton.m */; };
 		C516A72D1B3AD2590018F022 /* HTLNavigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC675BA63D17605F56B715 /* HTLNavigationBar.m */; };
-		C516A72E1B3AD2590018F022 /* HTLAddButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6CED2DD0EDA6469CEEBA /* HTLAddButton.m */; };
 		C516A72F1B3AD2590018F022 /* HTLWordCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6D5199B0C7EF65D8A836 /* HTLWordCell.m */; };
 		C516A7301B3AD2590018F022 /* HTLCategoryCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6BF188BC4B62EBAED386 /* HTLCategoryCell.m */; };
 		C516A7311B3AD2590018F022 /* HTLReportExtendedCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6096955E043B729051F4 /* HTLReportExtendedCell.m */; };
-		C516A7321B3AD2590018F022 /* HTLCompletionTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6597BF0ADA89652FD15C /* HTLCompletionTableViewCell.m */; };
 		C516A7331B3AD2590018F022 /* HTLCompletionCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6A799292EFF1A3FDE4D4 /* HTLCompletionCollectionViewCell.m */; };
 		C516A7341B3AD2590018F022 /* HTLDateSectionHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC615392383318004C30BA /* HTLDateSectionHeader.m */; };
 		C516A7351B3AD2590018F022 /* HTLCSVStringExportProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6FEC821B2D22ACD250CD /* HTLCSVStringExportProvider.m */; };
@@ -341,13 +338,6 @@
 		C582B3651B3EC8D5005CC526 /* HexColor.m in Sources */ = {isa = PBXBuildFile; fileRef = C582B2CE1B3EC8D5005CC526 /* HexColor.m */; };
 		C582B3661B3EC8D5005CC526 /* HexColor.m in Sources */ = {isa = PBXBuildFile; fileRef = C582B2CE1B3EC8D5005CC526 /* HexColor.m */; };
 		C582B3671B3EC8D5005CC526 /* HexColor.m in Sources */ = {isa = PBXBuildFile; fileRef = C582B2CE1B3EC8D5005CC526 /* HexColor.m */; };
-		C582B3841B3EC8D5005CC526 /* UIColor+BFPaperColors.m in Sources */ = {isa = PBXBuildFile; fileRef = C582B2D61B3EC8D5005CC526 /* UIColor+BFPaperColors.m */; };
-		C582B3851B3EC8D5005CC526 /* UIColor+BFPaperColors.m in Sources */ = {isa = PBXBuildFile; fileRef = C582B2D61B3EC8D5005CC526 /* UIColor+BFPaperColors.m */; };
-		C582B3861B3EC8D5005CC526 /* UIColor+BFPaperColors.m in Sources */ = {isa = PBXBuildFile; fileRef = C582B2D61B3EC8D5005CC526 /* UIColor+BFPaperColors.m */; };
-		C582B3871B3EC8D5005CC526 /* UIColor+BFPaperColors.m in Sources */ = {isa = PBXBuildFile; fileRef = C582B2D61B3EC8D5005CC526 /* UIColor+BFPaperColors.m */; };
-		C582B3881B3EC8D5005CC526 /* UIColor+BFPaperColors.m in Sources */ = {isa = PBXBuildFile; fileRef = C582B2D61B3EC8D5005CC526 /* UIColor+BFPaperColors.m */; };
-		C582B3891B3EC8D5005CC526 /* UIColor+BFPaperColors.m in Sources */ = {isa = PBXBuildFile; fileRef = C582B2D61B3EC8D5005CC526 /* UIColor+BFPaperColors.m */; };
-		C582B38A1B3EC8D5005CC526 /* UIColor+BFPaperColors.m in Sources */ = {isa = PBXBuildFile; fileRef = C582B2D61B3EC8D5005CC526 /* UIColor+BFPaperColors.m */; };
 		C582B3991B3EC8D5005CC526 /* ZLBalancedFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = C582B2DB1B3EC8D5005CC526 /* ZLBalancedFlowLayout.swift */; };
 		C582B39A1B3EC8D5005CC526 /* ZLBalancedFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = C582B2DB1B3EC8D5005CC526 /* ZLBalancedFlowLayout.swift */; };
 		C582B39B1B3EC8D5005CC526 /* ZLBalancedFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = C582B2DB1B3EC8D5005CC526 /* ZLBalancedFlowLayout.swift */; };
@@ -375,7 +365,7 @@
 		C59088C81B398E330099F8CB /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = C59088CA1B398E330099F8CB /* Localizable.strings */; };
 		C59088CD1B398FE20099F8CB /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = C59088CA1B398E330099F8CB /* Localizable.strings */; };
 		C59689A11B3C16270038018D /* NSDate+HTLComponents.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6F6EE1E455D98426F705 /* NSDate+HTLComponents.m */; };
-		C59689A21B3C16270038018D /* HTLReportDto+Helpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6F771B4A63AA8FABCDF5 /* HTLReportDto+Helpers.m */; };
+		C59689A21B3C16270038018D /* HTLReportDto+HTLHelpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6F771B4A63AA8FABCDF5 /* HTLReportDto+HTLHelpers.m */; };
 		C59689A31B3C16270038018D /* HTLReportDto.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6A41E76EE6DBA2B7B791 /* HTLReportDto.m */; };
 		C59689A41B3C16270038018D /* HTLCategoryDto.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC660F9035AF2D12D68B11 /* HTLCategoryDto.m */; };
 		C59689A51B3C16270038018D /* HTLActionDto.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC648635BCE062AF18E634 /* HTLActionDto.m */; };
@@ -396,7 +386,7 @@
 		C59689B71B3C16270038018D /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C533706F1B397E520095549E /* MainInterface.storyboard */; };
 		C59689B81B3C16270038018D /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = C59088CA1B398E330099F8CB /* Localizable.strings */; };
 		C59689C31B3C16350038018D /* NSDate+HTLComponents.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6F6EE1E455D98426F705 /* NSDate+HTLComponents.m */; };
-		C59689C41B3C16350038018D /* HTLReportDto+Helpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6F771B4A63AA8FABCDF5 /* HTLReportDto+Helpers.m */; };
+		C59689C41B3C16350038018D /* HTLReportDto+HTLHelpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6F771B4A63AA8FABCDF5 /* HTLReportDto+HTLHelpers.m */; };
 		C59689C51B3C16350038018D /* HTLReportDto.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6A41E76EE6DBA2B7B791 /* HTLReportDto.m */; };
 		C59689C61B3C16350038018D /* HTLCategoryDto.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC660F9035AF2D12D68B11 /* HTLCategoryDto.m */; };
 		C59689C71B3C16350038018D /* HTLActionDto.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC648635BCE062AF18E634 /* HTLActionDto.m */; };
@@ -434,6 +424,9 @@
 		C5A9EDF21C5A2BE200CE3EBA /* HTLLineLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5A9EDE71C5A2BE200CE3EBA /* HTLLineLayout.swift */; };
 		C5A9EDF31C5A2BE200CE3EBA /* HTLLineLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5A9EDE71C5A2BE200CE3EBA /* HTLLineLayout.swift */; };
 		C5BA1B801B26F890006D80BC /* TodayExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = C5BA1B731B26F890006D80BC /* TodayExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		C5E0EA5E1C6201A200972AFF /* UIColor+HTLHelpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC60624B8CE64E57E76B25 /* UIColor+HTLHelpers.m */; };
+		C5E0EA5F1C6201A200972AFF /* UIColor+HTLHelpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC60624B8CE64E57E76B25 /* UIColor+HTLHelpers.m */; };
+		C5E0EA601C6201A200972AFF /* UIColor+HTLHelpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC60624B8CE64E57E76B25 /* UIColor+HTLHelpers.m */; };
 		C5FFE3F21B1857CE007D317D /* HyperTimeLoggerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C5FFE3F11B1857CE007D317D /* HyperTimeLoggerTests.m */; };
 /* End PBXBuildFile section */
 
@@ -507,11 +500,11 @@
 /* Begin PBXFileReference section */
 		73BC6034DE2E0674AFE42546 /* HTLStatisticsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTLStatisticsViewController.h; sourceTree = "<group>"; };
 		73BC6047AEB024122C71236D /* HTLStringExportProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTLStringExportProvider.h; sourceTree = "<group>"; };
-		73BC608BED34E02C9AAE75C1 /* HTLReportDto+Helpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "HTLReportDto+Helpers.h"; sourceTree = "<group>"; };
+		73BC60624B8CE64E57E76B25 /* UIColor+HTLHelpers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+HTLHelpers.m"; sourceTree = "<group>"; };
+		73BC608BED34E02C9AAE75C1 /* HTLReportDto+HTLHelpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "HTLReportDto+HTLHelpers.h"; sourceTree = "<group>"; };
 		73BC6096955E043B729051F4 /* HTLReportExtendedCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTLReportExtendedCell.m; sourceTree = "<group>"; };
 		73BC60CAD26223A8777C0D40 /* HTLCategoryCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTLCategoryCell.h; sourceTree = "<group>"; };
 		73BC60ECEFAC2122A4C17181 /* HTLLineView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTLLineView.swift; sourceTree = "<group>"; };
-		73BC60F16E439E96504928B1 /* HTLCompletionTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTLCompletionTableViewCell.h; sourceTree = "<group>"; };
 		73BC60F50DF43992ADE82594 /* HTLSqliteStorageProvider+Deserialization.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "HTLSqliteStorageProvider+Deserialization.h"; sourceTree = "<group>"; };
 		73BC612AAFD0BFC06B406EC4 /* HTLCompletionDto.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTLCompletionDto.m; sourceTree = "<group>"; };
 		73BC6131F5C0D9F45485318E /* HTLNavigationBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTLNavigationBar.h; sourceTree = "<group>"; };
@@ -521,7 +514,6 @@
 		73BC61C5C5E177824633170B /* testdata_ru.json */ = {isa = PBXFileReference; lastKnownFileType = file.json; path = testdata_ru.json; sourceTree = "<group>"; };
 		73BC61D0A4CD7A364641B3B2 /* HyperTimeLogger.entitlements */ = {isa = PBXFileReference; lastKnownFileType = file.entitlements; path = HyperTimeLogger.entitlements; sourceTree = "<group>"; };
 		73BC61D37DB350A79F19F0DD /* testdata_en.json */ = {isa = PBXFileReference; lastKnownFileType = file.json; path = testdata_en.json; sourceTree = "<group>"; };
-		73BC622E9691559B4565139E /* Pods_TodayExtension.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Pods_TodayExtension.framework; path = "../../../Library/Caches/AppCode32/DerivedData/HyperTimeLogger-3b7e8ea7/Build/Products/Debug-iphonesimulator/Pods_TodayExtension.framework"; sourceTree = "<group>"; };
 		73BC623BCFD075E99FAA860D /* HTLWordCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTLWordCell.h; sourceTree = "<group>"; };
 		73BC62BD6319224D876880BD /* HTLAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTLAppDelegate.m; sourceTree = "<group>"; };
 		73BC62DB5CA313A4BC61EC0F /* NSDate+HTLTimeHelpers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+HTLTimeHelpers.m"; sourceTree = "<group>"; };
@@ -533,13 +525,11 @@
 		73BC647FFAA49DF6B183D16E /* HTLAddButtonWidget.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTLAddButtonWidget.swift; sourceTree = "<group>"; };
 		73BC648635BCE062AF18E634 /* HTLActionDto.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTLActionDto.m; sourceTree = "<group>"; };
 		73BC64B38D1BC62AB8562034 /* HTLStatisticsModelController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTLStatisticsModelController.m; sourceTree = "<group>"; };
-		73BC64D990F65D9E25A88C68 /* Pods_HyperTimeLogger.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Pods_HyperTimeLogger.framework; path = "../../../Library/Caches/AppCode32/DerivedData/HyperTimeLogger-3b7e8ea7/Build/Products/Debug-iphonesimulator/Pods_HyperTimeLogger.framework"; sourceTree = "<group>"; };
 		73BC64E454A17ED44DEA7F42 /* HTETodayModelController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTETodayModelController.h; sourceTree = "<group>"; };
 		73BC6556E962FBAFD5448885 /* HTLReportExtendedDto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTLReportExtendedDto.h; sourceTree = "<group>"; };
 		73BC656F19F67BA6578AE7DC /* HTLSettingsModelController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTLSettingsModelController.h; sourceTree = "<group>"; };
 		73BC657527EC1255C199221C /* HTLReportListModelController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTLReportListModelController.h; sourceTree = "<group>"; };
 		73BC657F0C73731F965A667D /* NSDate+HTLTimeHelpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+HTLTimeHelpers.h"; sourceTree = "<group>"; };
-		73BC6597BF0ADA89652FD15C /* HTLCompletionTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTLCompletionTableViewCell.m; sourceTree = "<group>"; };
 		73BC65FC45499E71FA1DDD91 /* DTFolderMonitor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DTFolderMonitor.h; sourceTree = "<group>"; };
 		73BC660F9035AF2D12D68B11 /* HTLCategoryDto.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTLCategoryDto.m; sourceTree = "<group>"; };
 		73BC6619E2BFF808511873B5 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.info; path = Info.plist; sourceTree = "<group>"; };
@@ -590,7 +580,6 @@
 		73BC6C4782FCAEADF81D13DD /* DTFolderMonitor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DTFolderMonitor.m; sourceTree = "<group>"; };
 		73BC6C705D0378287850972F /* HTETodayModelController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTETodayModelController.m; sourceTree = "<group>"; };
 		73BC6CB3E44ADE3599C48F2D /* HTLStatisticsItemCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTLStatisticsItemCell.h; sourceTree = "<group>"; };
-		73BC6CED2DD0EDA6469CEEBA /* HTLAddButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTLAddButton.m; sourceTree = "<group>"; };
 		73BC6D1ED9D0EB10CE1BD107 /* HyperTimeLogger.entitlements */ = {isa = PBXFileReference; lastKnownFileType = file.entitlements; path = HyperTimeLogger.entitlements; sourceTree = "<group>"; };
 		73BC6D1F71AFEE603353B859 /* HTLSqliteStorageProvider+Deserialization.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "HTLSqliteStorageProvider+Deserialization.m"; sourceTree = "<group>"; };
 		73BC6D503DBAD8F16F5B080E /* HTLReportListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTLReportListViewController.h; sourceTree = "<group>"; };
@@ -599,11 +588,11 @@
 		73BC6D6C232F3AF544860ECF /* HTLStatisticsItemDto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTLStatisticsItemDto.h; sourceTree = "<group>"; };
 		73BC6E168D88E254C8F6A4CE /* HTLReportListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTLReportListViewController.m; sourceTree = "<group>"; };
 		73BC6E2B7C419500D51BE784 /* HTLEditReportModelController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTLEditReportModelController.h; sourceTree = "<group>"; };
+		73BC6E3A59626AE28BDEE9D3 /* UIColor+HTLHelpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+HTLHelpers.h"; sourceTree = "<group>"; };
 		73BC6E4CD1FE08E15C414BAC /* HTLPieChartCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTLPieChartCell.m; sourceTree = "<group>"; };
 		73BC6E516EB62290DD7B243C /* HTLSettingsModelController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTLSettingsModelController.m; sourceTree = "<group>"; };
 		73BC6E57D1CF2B9726285238 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.info; path = Info.plist; sourceTree = "<group>"; };
 		73BC6E8BD579B5F8E32C09A6 /* HTLActionDto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTLActionDto.h; sourceTree = "<group>"; };
-		73BC6EB5C216FBFA08B74E51 /* HTLAddButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTLAddButton.h; sourceTree = "<group>"; };
 		73BC6ED6CA4E40EF0A86A0D6 /* DateSectionHeader.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DateSectionHeader.xib; sourceTree = "<group>"; };
 		73BC6EE7549A710918391000 /* HTLNoContentCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTLNoContentCell.swift; sourceTree = "<group>"; };
 		73BC6F1E0AC02A596C78B942 /* HTLContentManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTLContentManager.m; sourceTree = "<group>"; };
@@ -611,7 +600,7 @@
 		73BC6F5BBFCD10B7AF4F574A /* HTLCategoryDto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTLCategoryDto.h; sourceTree = "<group>"; };
 		73BC6F6B107E3546F7EBAE5C /* HTLEditReportModelController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTLEditReportModelController.m; sourceTree = "<group>"; };
 		73BC6F6EE1E455D98426F705 /* NSDate+HTLComponents.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+HTLComponents.m"; sourceTree = "<group>"; };
-		73BC6F771B4A63AA8FABCDF5 /* HTLReportDto+Helpers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "HTLReportDto+Helpers.m"; sourceTree = "<group>"; };
+		73BC6F771B4A63AA8FABCDF5 /* HTLReportDto+HTLHelpers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "HTLReportDto+HTLHelpers.m"; sourceTree = "<group>"; };
 		73BC6F7DCFA8D0EF70DD39E0 /* settings.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = settings.png; sourceTree = "<group>"; };
 		73BC6FB0EFED7B84F71E676E /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = ../../../../../Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator.sdk/System/Library/Frameworks/NotificationCenter.framework; sourceTree = "<group>"; };
 		73BC6FBF1D739E2158DA64F6 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
@@ -681,10 +670,6 @@
 		C582B2CE1B3EC8D5005CC526 /* HexColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HexColor.m; sourceTree = "<group>"; };
 		C582B2CF1B3EC8D5005CC526 /* LICENCE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENCE; sourceTree = "<group>"; };
 		C582B2D01B3EC8D5005CC526 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
-		C582B2D21B3EC8D5005CC526 /* LICENSE.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = LICENSE.md; sourceTree = "<group>"; };
-		C582B2D31B3EC8D5005CC526 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
-		C582B2D51B3EC8D5005CC526 /* UIColor+BFPaperColors.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+BFPaperColors.h"; sourceTree = "<group>"; };
-		C582B2D61B3EC8D5005CC526 /* UIColor+BFPaperColors.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+BFPaperColors.m"; sourceTree = "<group>"; };
 		C582B2D81B3EC8D5005CC526 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		C582B2D91B3EC8D5005CC526 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		C582B2DB1B3EC8D5005CC526 /* ZLBalancedFlowLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZLBalancedFlowLayout.swift; sourceTree = "<group>"; };
@@ -927,8 +912,6 @@
 			children = (
 				C582B3AF1B3ECC6A005CC526 /* libsqlite3.dylib */,
 				73BC6FB0EFED7B84F71E676E /* NotificationCenter.framework */,
-				73BC64D990F65D9E25A88C68 /* Pods_HyperTimeLogger.framework */,
-				73BC622E9691559B4565139E /* Pods_TodayExtension.framework */,
 			);
 			name = Frameworks;
 			path = ../../HyperTimeLogger;
@@ -969,8 +952,6 @@
 				73BC6BF188BC4B62EBAED386 /* HTLCategoryCell.m */,
 				73BC681B64B78D2126E3F273 /* HTLReportExtendedCell.h */,
 				73BC6096955E043B729051F4 /* HTLReportExtendedCell.m */,
-				73BC60F16E439E96504928B1 /* HTLCompletionTableViewCell.h */,
-				73BC6597BF0ADA89652FD15C /* HTLCompletionTableViewCell.m */,
 				73BC63DA891A05E05D6EB4CC /* HTLCompletionCollectionViewCell.h */,
 				73BC6A799292EFF1A3FDE4D4 /* HTLCompletionCollectionViewCell.m */,
 				73BC6B08F919C64D44AF4915 /* HTLDateSectionHeader.h */,
@@ -1038,8 +1019,6 @@
 				73BC683230DB63BFBED239E8 /* HTLCircleButton.h */,
 				73BC675BA63D17605F56B715 /* HTLNavigationBar.m */,
 				73BC6131F5C0D9F45485318E /* HTLNavigationBar.h */,
-				73BC6CED2DD0EDA6469CEEBA /* HTLAddButton.m */,
-				73BC6EB5C216FBFA08B74E51 /* HTLAddButton.h */,
 				73BC680C01076520B3D85144 /* Cells Headers Footers */,
 				73BC647FFAA49DF6B183D16E /* HTLAddButtonWidget.swift */,
 			);
@@ -1188,7 +1167,6 @@
 				C582B29E1B3EC8D5005CC526 /* CocoaLumberjack */,
 				C582B2BB1B3EC8D5005CC526 /* FMDB */,
 				C582B2CB1B3EC8D5005CC526 /* HexColors */,
-				C582B2D11B3EC8D5005CC526 /* UIColor+BFPaperColors */,
 				C582B2D71B3EC8D5005CC526 /* ZLBalancedFlowLayout */,
 				C56ED4EB1B38217F00221171 /* Fabric.framework */,
 				C56ED4EC1B38217F00221171 /* Crashlytics.framework */,
@@ -1214,10 +1192,12 @@
 			children = (
 				73BC6F6EE1E455D98426F705 /* NSDate+HTLComponents.m */,
 				73BC6AF703B69F7D9811A489 /* NSDate+HTLComponents.h */,
-				73BC6F771B4A63AA8FABCDF5 /* HTLReportDto+Helpers.m */,
-				73BC608BED34E02C9AAE75C1 /* HTLReportDto+Helpers.h */,
+				73BC6F771B4A63AA8FABCDF5 /* HTLReportDto+HTLHelpers.m */,
+				73BC608BED34E02C9AAE75C1 /* HTLReportDto+HTLHelpers.h */,
 				73BC62DB5CA313A4BC61EC0F /* NSDate+HTLTimeHelpers.m */,
 				73BC657F0C73731F965A667D /* NSDate+HTLTimeHelpers.h */,
+				73BC60624B8CE64E57E76B25 /* UIColor+HTLHelpers.m */,
+				73BC6E3A59626AE28BDEE9D3 /* UIColor+HTLHelpers.h */,
 			);
 			path = Categories;
 			sourceTree = "<group>";
@@ -1348,25 +1328,6 @@
 				C582B2CE1B3EC8D5005CC526 /* HexColor.m */,
 			);
 			path = Classes;
-			sourceTree = "<group>";
-		};
-		C582B2D11B3EC8D5005CC526 /* UIColor+BFPaperColors */ = {
-			isa = PBXGroup;
-			children = (
-				C582B2D21B3EC8D5005CC526 /* LICENSE.md */,
-				C582B2D31B3EC8D5005CC526 /* README.md */,
-				C582B2D41B3EC8D5005CC526 /* UIColor+BFPaperColors */,
-			);
-			path = "UIColor+BFPaperColors";
-			sourceTree = "<group>";
-		};
-		C582B2D41B3EC8D5005CC526 /* UIColor+BFPaperColors */ = {
-			isa = PBXGroup;
-			children = (
-				C582B2D51B3EC8D5005CC526 /* UIColor+BFPaperColors.h */,
-				C582B2D61B3EC8D5005CC526 /* UIColor+BFPaperColors.m */,
-			);
-			path = "UIColor+BFPaperColors";
 			sourceTree = "<group>";
 		};
 		C582B2D71B3EC8D5005CC526 /* ZLBalancedFlowLayout */ = {
@@ -1848,14 +1809,13 @@
 			files = (
 				C516A6D31B3AD18E0018F022 /* NSDate+HTLComponents.m in Sources */,
 				C582B2F91B3EC8D5005CC526 /* DDFileLogger.m in Sources */,
-				C516A6D41B3AD18E0018F022 /* HTLReportDto+Helpers.m in Sources */,
+				C516A6D41B3AD18E0018F022 /* HTLReportDto+HTLHelpers.m in Sources */,
 				C516A6D51B3AD18E0018F022 /* HTLReportDto.m in Sources */,
 				C5A9EDEF1C5A2BE200CE3EBA /* HTLLineLayout.swift in Sources */,
 				C516A6D61B3AD18E0018F022 /* HTLCategoryDto.m in Sources */,
 				C516A6D71B3AD18E0018F022 /* HTLActionDto.m in Sources */,
 				C516A6D81B3AD18E0018F022 /* HTLCompletionDto.m in Sources */,
 				C516A6D91B3AD18E0018F022 /* HTLDateSectionDto.m in Sources */,
-				C582B3851B3EC8D5005CC526 /* UIColor+BFPaperColors.m in Sources */,
 				C516A6DA1B3AD18E0018F022 /* HTLReportExtendedDto.m in Sources */,
 				C516A6DB1B3AD18E0018F022 /* HTLSqliteStorageProvider.m in Sources */,
 				C516A6DC1B3AD18E0018F022 /* HTLContentManager.m in Sources */,
@@ -1869,14 +1829,12 @@
 				C582B3001B3EC8D5005CC526 /* DDLog.m in Sources */,
 				C582B31C1B3EC8D5005CC526 /* DDMultiFormatter.m in Sources */,
 				C516A6E21B3AD18E0018F022 /* HTLNavigationBar.m in Sources */,
-				C516A6E31B3AD18E0018F022 /* HTLAddButton.m in Sources */,
 				C516A6E41B3AD18E0018F022 /* HTLWordCell.m in Sources */,
 				C582B2E41B3EC8D5005CC526 /* DDAbstractDatabaseLogger.m in Sources */,
 				C516A6E51B3AD18E0018F022 /* HTLCategoryCell.m in Sources */,
 				C582B30E1B3EC8D5005CC526 /* DDContextFilterLogFormatter.m in Sources */,
 				C516A6E61B3AD18E0018F022 /* HTLReportExtendedCell.m in Sources */,
 				C5A9EDE91C5A2BE200CE3EBA /* HTLGridLayout.swift in Sources */,
-				C516A6E71B3AD18E0018F022 /* HTLCompletionTableViewCell.m in Sources */,
 				C516A6E81B3AD18E0018F022 /* HTLCompletionCollectionViewCell.m in Sources */,
 				C582B35B1B3EC8D5005CC526 /* FMResultSet.m in Sources */,
 				C582B3541B3EC8D5005CC526 /* FMDatabaseQueue.m in Sources */,
@@ -1913,6 +1871,7 @@
 				73BC67153769259438DD2A5C /* HTLTopBarView.swift in Sources */,
 				73BC680C541F6C6C7A678530 /* HTLLightBackgroundView.swift in Sources */,
 				73BC624016E4231AC06C7519 /* HTLNoContentCell.swift in Sources */,
+				73BC68668853BF61467DC6AE /* UIColor+HTLHelpers.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1922,14 +1881,13 @@
 			files = (
 				C516A71E1B3AD2590018F022 /* NSDate+HTLComponents.m in Sources */,
 				C582B2F81B3EC8D5005CC526 /* DDFileLogger.m in Sources */,
-				C516A71F1B3AD2590018F022 /* HTLReportDto+Helpers.m in Sources */,
+				C516A71F1B3AD2590018F022 /* HTLReportDto+HTLHelpers.m in Sources */,
 				C516A7201B3AD2590018F022 /* HTLReportDto.m in Sources */,
 				C5A9EDEE1C5A2BE200CE3EBA /* HTLLineLayout.swift in Sources */,
 				C516A7211B3AD2590018F022 /* HTLCategoryDto.m in Sources */,
 				C516A7221B3AD2590018F022 /* HTLActionDto.m in Sources */,
 				C516A7231B3AD2590018F022 /* HTLCompletionDto.m in Sources */,
 				C516A7241B3AD2590018F022 /* HTLDateSectionDto.m in Sources */,
-				C582B3841B3EC8D5005CC526 /* UIColor+BFPaperColors.m in Sources */,
 				C516A7251B3AD2590018F022 /* HTLReportExtendedDto.m in Sources */,
 				C516A7261B3AD2590018F022 /* HTLSqliteStorageProvider.m in Sources */,
 				C516A7271B3AD2590018F022 /* HTLContentManager.m in Sources */,
@@ -1943,14 +1901,12 @@
 				C582B2FF1B3EC8D5005CC526 /* DDLog.m in Sources */,
 				C582B31B1B3EC8D5005CC526 /* DDMultiFormatter.m in Sources */,
 				C516A72D1B3AD2590018F022 /* HTLNavigationBar.m in Sources */,
-				C516A72E1B3AD2590018F022 /* HTLAddButton.m in Sources */,
 				C516A72F1B3AD2590018F022 /* HTLWordCell.m in Sources */,
 				C582B2E31B3EC8D5005CC526 /* DDAbstractDatabaseLogger.m in Sources */,
 				C516A7301B3AD2590018F022 /* HTLCategoryCell.m in Sources */,
 				C582B30D1B3EC8D5005CC526 /* DDContextFilterLogFormatter.m in Sources */,
 				C516A7311B3AD2590018F022 /* HTLReportExtendedCell.m in Sources */,
 				C5A9EDE81C5A2BE200CE3EBA /* HTLGridLayout.swift in Sources */,
-				C516A7321B3AD2590018F022 /* HTLCompletionTableViewCell.m in Sources */,
 				C516A7331B3AD2590018F022 /* HTLCompletionCollectionViewCell.m in Sources */,
 				C582B35A1B3EC8D5005CC526 /* FMResultSet.m in Sources */,
 				C582B3531B3EC8D5005CC526 /* FMDatabaseQueue.m in Sources */,
@@ -1987,6 +1943,7 @@
 				73BC69B7BD065D8F4AF05D94 /* HTLTopBarView.swift in Sources */,
 				73BC68CA2E36757A886E80AE /* HTLLightBackgroundView.swift in Sources */,
 				73BC6FA760B937F49D4F015F /* HTLNoContentCell.swift in Sources */,
+				73BC6AAC3C7F3CA192377EC1 /* UIColor+HTLHelpers.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1995,10 +1952,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				C59689A11B3C16270038018D /* NSDate+HTLComponents.m in Sources */,
-				C59689A21B3C16270038018D /* HTLReportDto+Helpers.m in Sources */,
+				C59689A21B3C16270038018D /* HTLReportDto+HTLHelpers.m in Sources */,
 				C582B2FC1B3EC8D5005CC526 /* DDFileLogger.m in Sources */,
 				C59689A31B3C16270038018D /* HTLReportDto.m in Sources */,
-				C582B3881B3EC8D5005CC526 /* UIColor+BFPaperColors.m in Sources */,
 				C59689A41B3C16270038018D /* HTLCategoryDto.m in Sources */,
 				C59689A51B3C16270038018D /* HTLActionDto.m in Sources */,
 				C59689A61B3C16270038018D /* HTLCompletionDto.m in Sources */,
@@ -2029,6 +1985,7 @@
 				C5A9EDEB1C5A2BE200CE3EBA /* HTLGridLayout.swift in Sources */,
 				C59689B01B3C16270038018D /* HTLRoundButton.m in Sources */,
 				C582B31F1B3EC8D5005CC526 /* DDMultiFormatter.m in Sources */,
+				C5E0EA5E1C6201A200972AFF /* UIColor+HTLHelpers.m in Sources */,
 				C59689B11B3C16270038018D /* HTLSqliteStorageProvider+Deserialization.m in Sources */,
 				C582B3571B3EC8D5005CC526 /* FMDatabaseQueue.m in Sources */,
 				C59689B21B3C16270038018D /* HTLModelController.m in Sources */,
@@ -2043,10 +2000,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				C59689C31B3C16350038018D /* NSDate+HTLComponents.m in Sources */,
-				C59689C41B3C16350038018D /* HTLReportDto+Helpers.m in Sources */,
+				C59689C41B3C16350038018D /* HTLReportDto+HTLHelpers.m in Sources */,
 				C582B2FD1B3EC8D5005CC526 /* DDFileLogger.m in Sources */,
 				C59689C51B3C16350038018D /* HTLReportDto.m in Sources */,
-				C582B3891B3EC8D5005CC526 /* UIColor+BFPaperColors.m in Sources */,
 				C59689C61B3C16350038018D /* HTLCategoryDto.m in Sources */,
 				C59689C71B3C16350038018D /* HTLActionDto.m in Sources */,
 				C59689C81B3C16350038018D /* HTLCompletionDto.m in Sources */,
@@ -2077,6 +2033,7 @@
 				C5A9EDEC1C5A2BE200CE3EBA /* HTLGridLayout.swift in Sources */,
 				C59689D21B3C16350038018D /* HTLRoundButton.m in Sources */,
 				C582B3201B3EC8D5005CC526 /* DDMultiFormatter.m in Sources */,
+				C5E0EA5F1C6201A200972AFF /* UIColor+HTLHelpers.m in Sources */,
 				C59689D31B3C16350038018D /* HTLSqliteStorageProvider+Deserialization.m in Sources */,
 				C582B3581B3EC8D5005CC526 /* FMDatabaseQueue.m in Sources */,
 				C59689D41B3C16350038018D /* HTLModelController.m in Sources */,
@@ -2091,10 +2048,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				73BC679BF2C1A1A36939932B /* NSDate+HTLComponents.m in Sources */,
-				73BC6919D98B939D1BBDAF28 /* HTLReportDto+Helpers.m in Sources */,
+				73BC6919D98B939D1BBDAF28 /* HTLReportDto+HTLHelpers.m in Sources */,
 				C582B2FE1B3EC8D5005CC526 /* DDFileLogger.m in Sources */,
 				73BC63E583DA471B2D26C36E /* HTLReportDto.m in Sources */,
-				C582B38A1B3EC8D5005CC526 /* UIColor+BFPaperColors.m in Sources */,
 				73BC688E05940C6C7A19AEFE /* HTLCategoryDto.m in Sources */,
 				73BC62568DE7117F7D84C604 /* HTLActionDto.m in Sources */,
 				73BC6436C539FA93E8CB0BFF /* HTLCompletionDto.m in Sources */,
@@ -2125,6 +2081,7 @@
 				C5A9EDED1C5A2BE200CE3EBA /* HTLGridLayout.swift in Sources */,
 				C516A6CD1B3A8F2A0018F022 /* HTLRoundButton.m in Sources */,
 				C582B3211B3EC8D5005CC526 /* DDMultiFormatter.m in Sources */,
+				C5E0EA601C6201A200972AFF /* UIColor+HTLHelpers.m in Sources */,
 				73BC60A9E3DA6728F9788F57 /* HTLSqliteStorageProvider+Deserialization.m in Sources */,
 				C582B3591B3EC8D5005CC526 /* FMDatabaseQueue.m in Sources */,
 				73BC63D7E123A596DFCD6FEC /* HTLModelController.m in Sources */,
@@ -2140,14 +2097,13 @@
 			files = (
 				73BC63A745D1B957781BC3C0 /* NSDate+HTLComponents.m in Sources */,
 				C582B2FA1B3EC8D5005CC526 /* DDFileLogger.m in Sources */,
-				73BC68D75AF9520DFA1BB170 /* HTLReportDto+Helpers.m in Sources */,
+				73BC68D75AF9520DFA1BB170 /* HTLReportDto+HTLHelpers.m in Sources */,
 				73BC663B16F6B52EE9662BF9 /* HTLReportDto.m in Sources */,
 				C5A9EDF01C5A2BE200CE3EBA /* HTLLineLayout.swift in Sources */,
 				73BC600E8C599F6D11BBD183 /* HTLCategoryDto.m in Sources */,
 				73BC6B1E338548FE30A4AFAD /* HTLActionDto.m in Sources */,
 				73BC6BF4CEB14B9FDFD57BAE /* HTLCompletionDto.m in Sources */,
 				73BC67A4E0C0CA36BB035D6C /* HTLDateSectionDto.m in Sources */,
-				C582B3861B3EC8D5005CC526 /* UIColor+BFPaperColors.m in Sources */,
 				73BC6A2B52E6295CE27B3C2B /* HTLReportExtendedDto.m in Sources */,
 				73BC663F4406329510726033 /* HTLSqliteStorageProvider.m in Sources */,
 				73BC6D0BCBFFC6D7B897C999 /* HTLContentManager.m in Sources */,
@@ -2161,14 +2117,12 @@
 				C582B3011B3EC8D5005CC526 /* DDLog.m in Sources */,
 				C582B31D1B3EC8D5005CC526 /* DDMultiFormatter.m in Sources */,
 				73BC68D041B3B7438345B659 /* HTLNavigationBar.m in Sources */,
-				73BC683F3F065135DC98F27B /* HTLAddButton.m in Sources */,
 				73BC6FB04C767843085BD236 /* HTLWordCell.m in Sources */,
 				C582B2E51B3EC8D5005CC526 /* DDAbstractDatabaseLogger.m in Sources */,
 				73BC6ACF153F24B101D5596E /* HTLCategoryCell.m in Sources */,
 				C582B30F1B3EC8D5005CC526 /* DDContextFilterLogFormatter.m in Sources */,
 				73BC6A40B1C27D0F21D567DE /* HTLReportExtendedCell.m in Sources */,
 				C5A9EDEA1C5A2BE200CE3EBA /* HTLGridLayout.swift in Sources */,
-				73BC68952D802890D47F3381 /* HTLCompletionTableViewCell.m in Sources */,
 				73BC6D96930A9DDA7825C490 /* HTLCompletionCollectionViewCell.m in Sources */,
 				C582B35C1B3EC8D5005CC526 /* FMResultSet.m in Sources */,
 				C582B3551B3EC8D5005CC526 /* FMDatabaseQueue.m in Sources */,
@@ -2205,6 +2159,7 @@
 				73BC66543E2156EC1A286A68 /* HTLTopBarView.swift in Sources */,
 				73BC6C62641A2687870DDD89 /* HTLLightBackgroundView.swift in Sources */,
 				73BC61685C3C5693ED37A447 /* HTLNoContentCell.swift in Sources */,
+				73BC6DA30D82DB7740AD6F11 /* UIColor+HTLHelpers.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2218,7 +2173,7 @@
 				C5FFE3F21B1857CE007D317D /* HyperTimeLoggerTests.m in Sources */,
 				C582B31E1B3EC8D5005CC526 /* DDMultiFormatter.m in Sources */,
 				C582B35D1B3EC8D5005CC526 /* FMResultSet.m in Sources */,
-				73BC62DBB0557CEF66331263 /* HTLReportDto+Helpers.m in Sources */,
+				73BC62DBB0557CEF66331263 /* HTLReportDto+HTLHelpers.m in Sources */,
 				73BC6A05148AF26290542AC6 /* HTLReportDto.m in Sources */,
 				C582B2FB1B3EC8D5005CC526 /* DDFileLogger.m in Sources */,
 				C582B3411B3EC8D5005CC526 /* FMDatabase.m in Sources */,
@@ -2237,7 +2192,6 @@
 				73BC619C76D5356050DEACF4 /* HTLCircleButton.m in Sources */,
 				73BC6B9FDBFB2EE8267221A9 /* HTLModelController.m in Sources */,
 				C582B3641B3EC8D5005CC526 /* HexColor.m in Sources */,
-				C582B3871B3EC8D5005CC526 /* UIColor+BFPaperColors.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

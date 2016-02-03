@@ -5,7 +5,7 @@
 
 #import "HTLReportDto.h"
 
-@interface HTLReportDto (Helpers)
+@interface HTLReportDto (HTLHelpers)
 
 - (NSTimeInterval)duration;
 

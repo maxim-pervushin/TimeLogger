@@ -7,7 +7,7 @@
 #import "HTLActionDto.h"
 #import "HTLCategoryDto.h"
 #import "HTLReportExtendedDto.h"
-#import "HTLReportDto+Helpers.h"
+#import "HTLReportDto+HTLHelpers.h"
 #import "NSDate+HTLTimeHelpers.h"
 
 @interface HTLReportExtendedCell ()

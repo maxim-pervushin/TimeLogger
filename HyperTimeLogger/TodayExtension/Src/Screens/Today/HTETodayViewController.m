@@ -10,14 +10,12 @@
 #import "HTETodayViewController.h"
 #import "HTLCompletionCollectionViewCell.h"
 #import "HTLCompletionDto.h"
-#import "HTLReportDto+Helpers.h"
+#import "HTLReportDto+HTLHelpers.h"
 #import "HTLReportExtendedDto.h"
 #import <NotificationCenter/NotificationCenter.h>
 #import "HyperTimeLogger-Swift.h"
 #import "NSDate+HTLTimeHelpers.h"
-//#import "ZLBalancedFlowLayout-Swift.h"
-//#import <ZLBalancedFlowLayout>
-//#import "ZLBalancedFlowLayout-Swift.h"
+
 
 static NSString *const kCompletionCellIdentifier = @"CompletionCell";
 // TODO: Load number of completions from defaults

@@ -4,7 +4,6 @@
 //
 
 #import "HTLNavigationBar.h"
-#import "UIColor+BFPaperColors.h"
 
 
 @interface HTLNavigationBar ()

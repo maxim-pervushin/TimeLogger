@@ -13,6 +13,7 @@
 #import "HTLReportExtendedDto.h"
 #import "HTLSqliteStorageProvider+Deserialization.h"
 #import "NSDate+HTLComponents.h"
+#import "UIColor+HTLHelpers.h"
 
 
 @interface HTLSqliteStorageProvider ()
