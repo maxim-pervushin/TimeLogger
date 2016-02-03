@@ -9,7 +9,6 @@
 
 @interface HTLDateSectionHeader ()
 
-//@property(nonatomic, weak) IBOutlet UIView *backgroundColorView;
 @property(nonatomic, weak) IBOutlet UILabel *sectionTitleLabel;
 @property(nonatomic, weak) IBOutlet UIButton *statisticsButton;
 
@@ -41,14 +40,9 @@
 }
 
 - (void)initializeUI {
-//    self.contentView.backgroundColor = [UIColor clearColor];
-//    self.backgroundColorView.backgroundColor = [UIColor paperColorGray800];
     UIImage *image = [[UIImage imageNamed:@"statistics.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
     [self.statisticsButton setImage:image forState:UIControlStateNormal];
     [self.statisticsButton setImage:image forState:UIControlStateSelected];
-//    self.statisticsButton.backgroundColor = [UIColor clearColor];
-//    self.statisticsButton.tintColor = [UIColor flatAsbestosColor];
-//    self.sectionTitleLabel.textColor = [UIColor flatCloudsColor];
 }
 
 #pragma mark - UIView

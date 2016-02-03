@@ -15,8 +15,11 @@
 @property(nonatomic, strong) id <HTLStorageProvider> storageProvider;
 @property(nonatomic, strong) HTLCSVStringExportProvider *csvStringExportProvider;
 @property(nonatomic, strong) NSDate *launchDate;
+@property(nonatomic, strong) NSString *launchVersion;
 
 - (void)initializeLaunchDate;
+
+- (void)initializeLaunchVersion;
 
 - (void)initializeStorage;
 
@@ -29,7 +32,7 @@
     contentManager.storageProvider = storageProvider;
     contentManager.csvStringExportProvider = exportProvider;
     [contentManager initializeLaunchDate];
-    [contentManager initializeStorage];
+    [contentManager initializeLaunchVersion];
     return contentManager;
 }
 
@@ -39,26 +42,37 @@
     if (!date) {
         date = [NSDate new];
         [defaults setObject:date forKey:@"launchDate"];
+        [defaults synchronize];
     }
     self.launchDate = date;
 }
 
-- (void)initializeStorage {
-    // Check categories.
-    if ([self.storageProvider findCategoriesWithDateSection:nil].count == 0) {
-        NSArray *initialCategories = @[
-                [HTLCategoryDto categoryWithIdentifier:@"0" title:@"Sleep" color:[UIColor flatMidnightBlueColor]],
-                [HTLCategoryDto categoryWithIdentifier:@"1" title:@"Personal" color:[UIColor flatPumpkinColor]],
-                [HTLCategoryDto categoryWithIdentifier:@"2" title:@"Road" color:[UIColor flatWisteriaColor]],
-                [HTLCategoryDto categoryWithIdentifier:@"3" title:@"Work" color:[UIColor flatNephritisColor]],
-                [HTLCategoryDto categoryWithIdentifier:@"4" title:@"Improvement" color:[UIColor flatGreenSeaColor]],
-                [HTLCategoryDto categoryWithIdentifier:@"5" title:@"Recreation" color:[UIColor flatBelizeHoleColor]],
-                [HTLCategoryDto categoryWithIdentifier:@"6" title:@"Time Waste" color:[UIColor flatPomegranateColor]]
-        ];
+- (void)initializeLaunchVersion {
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    NSString *launchVersion = [defaults objectForKey:@"launchVersion"];
+    NSString *currentVersion = [NSBundle mainBundle].infoDictionary[@"CFBundleVersion"];
+    if (![launchVersion isEqualToString:currentVersion]) {
+        launchVersion = currentVersion;
+        [defaults setObject:launchVersion forKey:@"launchVersion"];
+        [defaults synchronize];
+        [self initializeStorage];
+    }
+    self.launchVersion = launchVersion;
+}
 
-        for (HTLCategoryDto *category in initialCategories) {
-            [self.storageProvider storeCategory:category];
-        }
+- (void)initializeStorage {
+    NSArray *initialCategories = @[
+            [HTLCategoryDto categoryWithIdentifier:@"0" title:@"Sleep" color:[UIColor flatMidnightBlueColor]],
+            [HTLCategoryDto categoryWithIdentifier:@"1" title:@"Personal" color:[UIColor flatPumpkinColor]],
+            [HTLCategoryDto categoryWithIdentifier:@"2" title:@"Road" color:[UIColor flatWisteriaColor]],
+            [HTLCategoryDto categoryWithIdentifier:@"3" title:@"Work" color:[UIColor flatNephritisColor]],
+            [HTLCategoryDto categoryWithIdentifier:@"4" title:@"Improvement" color:[UIColor flatGreenSeaColor]],
+            [HTLCategoryDto categoryWithIdentifier:@"5" title:@"Recreation" color:[UIColor flatBelizeHoleColor]],
+            [HTLCategoryDto categoryWithIdentifier:@"6" title:@"Time Waste" color:[UIColor flatPomegranateColor]]
+    ];
+
+    for (HTLCategoryDto *category in initialCategories) {
+        [self.storageProvider storeCategory:category];
     }
 }
 
@@ -109,7 +123,6 @@
 }
 
 - (NSDate *)findLastReportEndDate {
-    // TODO: If nil == [self.storageProvider findLastReportEndDate] return app launch date
     NSDate *date = [self.storageProvider findLastReportEndDate];
     if (!date) {
         date = self.launchDate;
