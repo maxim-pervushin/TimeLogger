@@ -9,7 +9,7 @@
 #import "HTLCategoryDto.h"
 #import "HTLCompletionCollectionViewCell.h"
 #import "HTLCompletionDto.h"
-#import "HTLEditReportModelController.h"
+#import "HTLEditReportDataSource.h"
 #import "HTLReportExtendedDto.h"
 #import "HTLReportExtendedEditor.h"
 #import "HyperTimeLogger-Swift.h"
@@ -20,12 +20,9 @@ static NSString *const kCategoryCellIdentifier = @"CategoryCell";
 
 
 @interface HTLEditReportViewController () <UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout, HTLLineLayoutDelegate> {
-    HTLEditReportModelController *_modelController;
+    HTLEditReportDataSource *_dataSource;
     HTLReportExtendedEditor *_editor;
 }
-
-@property(nonatomic, readonly) HTLEditReportModelController *modelController;
-@property(nonatomic, readonly) HTLReportExtendedEditor *editor;
 
 @property(nonatomic, weak) IBOutlet NSLayoutConstraint *containerBottomConstraint;
 @property(nonatomic, weak) IBOutlet UIButton *saveButton;
@@ -38,6 +35,9 @@ static NSString *const kCategoryCellIdentifier = @"CategoryCell";
 @property(nonatomic, weak) IBOutlet NSLayoutConstraint *endDateContainerHeightConstraint;
 @property(nonatomic, weak) IBOutlet UICollectionView *categoriesCollectionView;
 @property(nonatomic, weak) IBOutlet UITextField *textField;
+
+@property(nonatomic, readonly) HTLEditReportDataSource *dataSource;
+@property(nonatomic, readonly) HTLReportExtendedEditor *editor;
 
 - (IBAction)startDateButtonAction:(id)sender;
 
@@ -135,7 +135,7 @@ static NSString *const kCategoryCellIdentifier = @"CategoryCell";
 - (void)setReportExtended:(HTLReportExtendedDto *)reportExtended {
     self.editor.originalReportExtended = reportExtended;
     if (!reportExtended) {
-        self.editor.reportStartDate = self.modelController.startDate;
+        self.editor.reportStartDate = self.dataSource.startDate;
         self.editor.reportEndDate = [NSDate new];
     }
 }
@@ -146,14 +146,14 @@ static NSString *const kCategoryCellIdentifier = @"CategoryCell";
 
 #pragma mark - HTLEditReportViewController private
 
-- (HTLEditReportModelController *)modelController {
-    if (!_modelController) {
+- (HTLEditReportDataSource *)dataSource {
+    if (!_dataSource) {
         __weak __typeof(self) weakSelf = self;
-        _modelController = [HTLEditReportModelController modelControllerWithContentChangedBlock:^{
+        _dataSource = [HTLEditReportDataSource dataSourceWithDataChangedBlock:^{
             [weakSelf updateUI];
         }];
     }
-    return _modelController;
+    return _dataSource;
 }
 
 - (HTLReportExtendedEditor *)editor {
@@ -228,7 +228,7 @@ static NSString *const kCategoryCellIdentifier = @"CategoryCell";
         [weakSelf.categoriesCollectionView reloadData];
 
         if (weakSelf.editor.category) {
-            NSUInteger selectedCategoryIndex = [weakSelf.modelController.categories indexOfObject:weakSelf.editor.category];
+            NSUInteger selectedCategoryIndex = [weakSelf.dataSource.categories indexOfObject:weakSelf.editor.category];
             NSIndexPath *selectedCategoryIndexPath = [NSIndexPath indexPathForRow:selectedCategoryIndex inSection:0];
             [weakSelf.categoriesCollectionView selectItemAtIndexPath:selectedCategoryIndexPath animated:YES scrollPosition:UICollectionViewScrollPositionCenteredHorizontally];
         }
@@ -237,7 +237,7 @@ static NSString *const kCategoryCellIdentifier = @"CategoryCell";
 
 - (void)save {
     if (self.editor.updatedReportExtended) {
-        [self.modelController saveReportExtended:self.editor.updatedReportExtended];
+        [self.dataSource saveReportExtended:self.editor.updatedReportExtended];
     }
 }
 
@@ -263,7 +263,7 @@ static NSString *const kCategoryCellIdentifier = @"CategoryCell";
 }
 
 - (void)selectCategory:(HTLCategoryDto *)category {
-    self.editor.category = category ? category : self.modelController.categories.firstObject;
+    self.editor.category = category ? category : self.dataSource.categories.firstObject;
 }
 
 - (void)selectCompletion:(HTLCompletionDto *)completion {
@@ -324,30 +324,30 @@ static NSString *const kCategoryCellIdentifier = @"CategoryCell";
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
     if (self.categoriesCollectionView == collectionView) {
-        return self.modelController.categories.count;
+        return self.dataSource.categories.count;
     }
-    return [self.modelController completionsForAction:self.editor.action].count;
+    return [self.dataSource completionsForAction:self.editor.action].count;
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     if (self.categoriesCollectionView == collectionView) {
         HTLCategoryCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:kCategoryCellIdentifier forIndexPath:indexPath];
-        [cell configureWithCategory:self.modelController.categories[(NSUInteger) indexPath.row]];
+        [cell configureWithCategory:self.dataSource.categories[(NSUInteger) indexPath.row]];
         return cell;
 
     } else {
         HTLCompletionCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:kCompletionCellIdentifier forIndexPath:indexPath];
-        [cell configureWithCompletion:[self.modelController completionsForAction:self.editor.action][(NSUInteger) indexPath.row]];
+        [cell configureWithCompletion:[self.dataSource completionsForAction:self.editor.action][(NSUInteger) indexPath.row]];
         return cell;
     }
 }
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
     if (self.categoriesCollectionView == collectionView) {
-        [self selectCategory:self.modelController.categories[(NSUInteger) indexPath.row]];
+        [self selectCategory:self.dataSource.categories[(NSUInteger) indexPath.row]];
 
     } else {
-        [self selectCompletion:[self.modelController completionsForAction:self.editor.action][(NSUInteger) indexPath.row]];
+        [self selectCompletion:[self.dataSource completionsForAction:self.editor.action][(NSUInteger) indexPath.row]];
         [collectionView deselectItemAtIndexPath:indexPath animated:YES];
     }
 }
@@ -355,7 +355,7 @@ static NSString *const kCategoryCellIdentifier = @"CategoryCell";
 #pragma mark - HTLLineLayoutDelegate
 
 - (CGFloat)collectionView:(UICollectionView *)collectionView layout:(HTLLineLayout *)collectionViewLayout widthForItemAtIndexPath:(NSIndexPath *)indexPath {
-    return [HTLCategoryCell widthWithCategory:self.modelController.categories[(NSUInteger) indexPath.row]];
+    return [HTLCategoryCell widthWithCategory:self.dataSource.categories[(NSUInteger) indexPath.row]];
 }
 
 @end

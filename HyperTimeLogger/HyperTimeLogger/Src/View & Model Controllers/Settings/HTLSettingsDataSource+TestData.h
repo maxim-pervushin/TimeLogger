@@ -4,10 +4,10 @@
 //
 
 
-#import "HTLSettingsModelController.h"
+#import "HTLSettingsDataSource.h"
 
 
-@interface HTLSettingsModelController (TestData)
+@interface HTLSettingsDataSource (TestData)
 
 - (BOOL)generateTestData;
 

@@ -3,13 +3,13 @@
 // Copyright (c) 2015 Maxim Pervushin. All rights reserved.
 //
 
-#import "HTLReportListModelController.h"
+#import "HTLReportListDataSource.h"
 #import "HTLContentManager.h"
 #import "HTLDateSectionDto.h"
 #import "HTLAppDelegate.h"
 
 
-@interface HTLReportListModelController ()
+@interface HTLReportListDataSource ()
 
 - (void)subscribe;
 
@@ -18,12 +18,12 @@
 @end;
 
 
-@implementation HTLReportListModelController
+@implementation HTLReportListDataSource
 @dynamic numberOfReportSections;
 @dynamic reportSections;
 @dynamic startDate;
 
-#pragma mark - HTLReportListModelController
+#pragma mark - HTLReportListDataSource
 
 - (NSUInteger)numberOfReportSections {
     return [HTLAppContentManger numberOfReportSections];
@@ -52,7 +52,7 @@
 - (void)subscribe {
     __weak __typeof(self) weakSelf = self;
     [[NSNotificationCenter defaultCenter] addObserverForName:kHTLStorageProviderChangedNotification object:nil queue:nil usingBlock:^(NSNotification *note) {
-        [weakSelf contentChanged];
+        [weakSelf dataChanged];
     }];
 }
 

@@ -4,7 +4,7 @@
 //
 
 
-#import "HTLModelController.h"
+#import "HTLDataSource.h"
 
 
 @class HTLActionDto;
@@ -13,7 +13,7 @@
 @class HTLReportDto;
 
 
-@interface HTLEditReportModelController : HTLModelController
+@interface HTLEditReportDataSource : HTLDataSource
 
 @property(nonatomic, readonly) NSArray *categories;
 

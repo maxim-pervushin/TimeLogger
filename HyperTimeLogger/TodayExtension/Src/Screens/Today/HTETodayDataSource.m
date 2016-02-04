@@ -3,7 +3,7 @@
 // Copyright (c) 2015 Maxim Pervushin. All rights reserved.
 //
 
-#import "HTETodayModelController.h"
+#import "HTETodayDataSource.h"
 #import "HTLContentManager.h"
 #import "HTLReportExtendedDto.h"
 #import "HTLCompletionDto.h"
@@ -19,7 +19,7 @@ static NSString *const kApplicationGroup = @"group.timelogger";
 static NSString *const kStorageFileName = @"time_logger_storage.db";
 
 
-@interface HTETodayModelController ()
+@interface HTETodayDataSource ()
 
 @property(nonatomic, strong) HTLContentManager *contentManager;
 
@@ -30,10 +30,10 @@ static NSString *const kStorageFileName = @"time_logger_storage.db";
 @end;
 
 
-@implementation HTETodayModelController
+@implementation HTETodayDataSource
 @synthesize contentManager = contentManager_;
 
-#pragma mark - HTETodayModelController
+#pragma mark - HTETodayDataSource
 
 - (NSArray *)completions:(NSUInteger)numberOfCompletions {
     NSArray *completions = [self.contentManager findCompletionsWithText:nil];
@@ -64,7 +64,7 @@ static NSString *const kStorageFileName = @"time_logger_storage.db";
 - (void)subscribe {
     __weak __typeof(self) weakSelf = self;
     [[NSNotificationCenter defaultCenter] addObserverForName:kHTLStorageProviderChangedNotification object:nil queue:nil usingBlock:^(NSNotification *note) {
-        [weakSelf contentChanged];
+        [weakSelf dataChanged];
     }];
 }
 

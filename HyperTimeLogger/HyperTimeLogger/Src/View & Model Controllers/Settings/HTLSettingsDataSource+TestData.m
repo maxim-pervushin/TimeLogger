@@ -3,7 +3,7 @@
 // Copyright (c) 2015 Maxim Pervushin. All rights reserved.
 //
 
-#import "HTLSettingsModelController+TestData.h"
+#import "HTLSettingsDataSource+TestData.h"
 #import "HTLCategoryDto.h"
 #import "NSDate+HTLComponents.h"
 #import "HTLReportDto.h"
@@ -11,7 +11,7 @@
 #import "HTLContentManager.h"
 #import "HTLAppDelegate.h"
 
-@implementation HTLSettingsModelController (TestData)
+@implementation HTLSettingsDataSource (TestData)
 
 - (NSString *)newIdentifier {
     return [NSUUID UUID].UUIDString;

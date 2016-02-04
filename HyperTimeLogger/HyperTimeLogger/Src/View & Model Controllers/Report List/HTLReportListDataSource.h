@@ -3,13 +3,13 @@
 // Copyright (c) 2015 Maxim Pervushin. All rights reserved.
 //
 
-#import "HTLModelController.h"
+#import "HTLDataSource.h"
 
 
 @class HTLReportDto;
 
 
-@interface HTLReportListModelController : HTLModelController
+@interface HTLReportListDataSource : HTLDataSource
 
 @property(nonatomic, readonly) NSUInteger numberOfReportSections;
 

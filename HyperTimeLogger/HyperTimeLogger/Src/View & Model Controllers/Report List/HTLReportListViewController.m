@@ -8,7 +8,7 @@
 
 #import "HTLReportListViewController.h"
 #import "HTLReportExtendedCell.h"
-#import "HTLReportListModelController.h"
+#import "HTLReportListDataSource.h"
 #import "HTLReportExtendedDto.h"
 #import "HTLDateSectionHeader.h"
 #import "HTLAppDelegate.h"
@@ -27,6 +27,7 @@ static const float kHeaderHeight = 35.0f;
 
 
 @interface HTLReportListViewController () <UITableViewDataSource, UITableViewDelegate, HTLDateSectionHeaderDelegate> {
+    HTLReportListDataSource *_dataSource;
     NSTimer *_timer;
 }
 
@@ -36,7 +37,7 @@ static const float kHeaderHeight = 35.0f;
 @property(nonatomic, weak) IBOutlet NSLayoutConstraint *addButtonToRightLayoutConstraint;
 @property(nonatomic, weak) IBOutlet UITableView *tableView;
 
-@property(nonatomic, strong) HTLReportListModelController *modelController;
+@property(nonatomic, readonly) HTLReportListDataSource *dataSource;
 @property(nonatomic, assign) CGFloat originalToAddButtonToBottom;
 @property(nonatomic, assign) CGFloat originalToAddButtonToRight;
 
@@ -62,7 +63,7 @@ static const float kHeaderHeight = 35.0f;
 
 @implementation HTLReportListViewController
 
-#pragma mark - HTLReportListViewController
+#pragma mark - HTLReportListViewController @IB
 
 - (IBAction)addButtonPanGesture:(UIPanGestureRecognizer *)panGestureRecognizer {
     if (panGestureRecognizer.state == UIGestureRecognizerStateBegan) {
@@ -99,6 +100,20 @@ static const float kHeaderHeight = 35.0f;
     [self performSegueWithIdentifier:kEditReportSegueIdentifier sender:self];
 }
 
+#pragma mark - HTLReportListViewController
+
+- (HTLReportListDataSource *)dataSource {
+    if (!_dataSource) {
+        __weak __typeof(self) weakSelf = self;
+        _dataSource = [HTLReportListDataSource dataSourceWithDataChangedBlock:^{
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [weakSelf.tableView reloadData];
+            });
+        }];
+    }
+    return _dataSource;
+}
+
 - (void)startTimer {
     if (!_timer) {
         _timer = [NSTimer scheduledTimerWithTimeInterval:0.1 target:self selector:@selector(timerAction:) userInfo:nil repeats:YES];
@@ -112,7 +127,7 @@ static const float kHeaderHeight = 35.0f;
 }
 
 - (void)timerAction:(NSTimer *)timer {
-    NSTimeInterval timeInterval = [[NSDate new] timeIntervalSinceDate:self.modelController.startDate];
+    NSTimeInterval timeInterval = [[NSDate new] timeIntervalSinceDate:self.dataSource.startDate];
     self.timerLabel.text = htlStringWithTimeInterval(timeInterval);
     if ([UIFont respondsToSelector:@selector(monospacedDigitSystemFontOfSize:weight:)]) {
         self.timerLabel.font = [UIFont monospacedDigitSystemFontOfSize:25 weight:UIFontWeightRegular];
@@ -160,13 +175,6 @@ static const float kHeaderHeight = 35.0f;
     UINib *sectionHeaderNib = [UINib nibWithNibName:@"DateSectionHeader" bundle:nil];
     [self.tableView registerNib:sectionHeaderNib forHeaderFooterViewReuseIdentifier:kDateSectionHeaderIdentifier];
     self.tableView.contentInset = UIEdgeInsetsMake(0, 0, 120, 0);
-
-    __weak __typeof(self) weakSelf = self;
-    self.modelController = [HTLReportListModelController modelControllerWithContentChangedBlock:^{
-        dispatch_async(dispatch_get_main_queue(), ^{
-            [weakSelf.tableView reloadData];
-        });
-    }];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -177,9 +185,9 @@ static const float kHeaderHeight = 35.0f;
     [self loadDefaults];
 
     // Scroll to bottom
-    NSUInteger sectionsCount = self.modelController.numberOfReportSections;
+    NSUInteger sectionsCount = self.dataSource.numberOfReportSections;
     if (sectionsCount > 0) {
-        NSUInteger recordsCount = [self.modelController reportsExtendedForDateSectionAtIndex:sectionsCount - 1].count;
+        NSUInteger recordsCount = [self.dataSource reportsExtendedForDateSectionAtIndex:sectionsCount - 1].count;
         [self.tableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:recordsCount - 1 inSection:sectionsCount - 1]
                               atScrollPosition:UITableViewScrollPositionBottom
                                       animated:NO];
@@ -196,11 +204,11 @@ static const float kHeaderHeight = 35.0f;
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([segue.destinationViewController isKindOfClass:HTLEditReportViewController.class]) {
-        HTLEditReportViewController *editReportViewController =  segue.destinationViewController;
+        HTLEditReportViewController *editReportViewController = segue.destinationViewController;
         HTLReportExtendedDto *reportExtended = nil;
         NSIndexPath *selected = self.tableView.indexPathForSelectedRow;
         if (selected) {
-            reportExtended = [self.modelController reportsExtendedForDateSectionAtIndex:selected.section][(NSUInteger) selected.row];
+            reportExtended = [self.dataSource reportsExtendedForDateSectionAtIndex:selected.section][(NSUInteger) selected.row];
         }
         editReportViewController.reportExtended = reportExtended;
 
@@ -219,23 +227,23 @@ static const float kHeaderHeight = 35.0f;
 #pragma mark - UITableViewDataSource, UITableViewDelegate
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return self.modelController.numberOfReportSections;
+    return self.dataSource.numberOfReportSections;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return [self.modelController numberOfReportsForDateSectionAtIndex:section];
+    return [self.dataSource numberOfReportsForDateSectionAtIndex:section];
 }
 
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
     HTLDateSectionHeader *header = [tableView dequeueReusableHeaderFooterViewWithIdentifier:kDateSectionHeaderIdentifier];
-    [header configureWithDateSection:self.modelController.reportSections[(NSUInteger) section]];
+    [header configureWithDateSection:self.dataSource.reportSections[(NSUInteger) section]];
     header.delegate = self;
     return header;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     HTLReportExtendedCell *cell = [tableView dequeueReusableCellWithIdentifier:kReportCellIdentifier forIndexPath:indexPath];
-    HTLReportExtendedDto *report = [self.modelController reportsExtendedForDateSectionAtIndex:(NSUInteger) indexPath.section][(NSUInteger) indexPath.row];
+    HTLReportExtendedDto *report = [self.dataSource reportsExtendedForDateSectionAtIndex:(NSUInteger) indexPath.section][(NSUInteger) indexPath.row];
     [cell configureWithReport:report];
     return cell;
 }

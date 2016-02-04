@@ -4,18 +4,20 @@
 //
 
 #import "HTLSettingsViewController.h"
-#import "HTLSettingsModelController.h"
-#import "HTLSettingsModelController+TestData.h"
+#import "HTLSettingsDataSource.h"
+#import "HTLSettingsDataSource+TestData.h"
 #import "HTLAppDelegate.h"
 #import <MessageUI/MessageUI.h>
 
-@interface HTLSettingsViewController () <MFMailComposeViewControllerDelegate>
+@interface HTLSettingsViewController () <MFMailComposeViewControllerDelegate> {
+    HTLSettingsDataSource *_dataSource;
+}
 
 @property(nonatomic, weak) IBOutlet UIButton *exportToCSVButton;
 @property(nonatomic, weak) IBOutlet UIView *generateTestDataContainer;
 @property(nonatomic, weak) IBOutlet UIButton *generateTestDataButton;
 
-@property(nonatomic, strong) HTLSettingsModelController *modelController;
+@property(nonatomic, readonly) HTLSettingsDataSource *dataSource;
 
 - (IBAction)doneButtonAction:(id)sender;
 
@@ -33,7 +35,7 @@
 
 @implementation HTLSettingsViewController
 
-#pragma mark - HTLSettingsViewController
+#pragma mark - HTLSettingsViewController @IB
 
 - (IBAction)doneButtonAction:(id)sender {
     if (self.presentingViewController) {
@@ -44,10 +46,10 @@
 - (IBAction)resetContentButtonAction:(id)sender {
     UIAlertController *alertController = [UIAlertController alertControllerWithTitle:NSLocalizedString(@"Reset content", nil)
                                                                              message:NSLocalizedString(@"Are you sure want to reset all data?", nil)
-            preferredStyle:UIAlertControllerStyleAlert];
+                                                                      preferredStyle:UIAlertControllerStyleAlert];
     __weak __typeof(self) weakSelf = self;
     [alertController addAction:[UIAlertAction actionWithTitle:NSLocalizedString(@"Reset", nil) style:UIAlertActionStyleDestructive handler:^(UIAlertAction *action) {
-        [weakSelf.modelController resetContent];
+        [weakSelf.dataSource resetContent];
     }]];
     [alertController addAction:[UIAlertAction actionWithTitle:NSLocalizedString(@"Cancel", nil) style:UIAlertActionStyleCancel handler:nil]];
     [self presentViewController:alertController animated:YES completion:nil];
@@ -59,14 +61,14 @@
                                                                       preferredStyle:UIAlertControllerStyleAlert];
     __weak __typeof(self) weakSelf = self;
     [alertController addAction:[UIAlertAction actionWithTitle:NSLocalizedString(@"Reset", nil) style:UIAlertActionStyleDestructive handler:^(UIAlertAction *action) {
-        [weakSelf.modelController resetDefaults];
+        [weakSelf.dataSource resetDefaults];
     }]];
     [alertController addAction:[UIAlertAction actionWithTitle:NSLocalizedString(@"Cancel", nil) style:UIAlertActionStyleCancel handler:nil]];
     [self presentViewController:alertController animated:YES completion:nil];
 }
 
 - (IBAction)exportToCSVButtonAction:(id)sender {
-    NSString *csv = [self.modelController exportDataToCSV];
+    NSString *csv = [self.dataSource exportDataToCSV];
     if (csv.length == 0) {
         UIAlertController *alertController = [UIAlertController alertControllerWithTitle:NSLocalizedString(@"Export to CSV", nil)
                                                                                  message:NSLocalizedString(@"There is no data to export.", nil)
@@ -99,11 +101,20 @@
     [self generateTestData];
 }
 
-- (void)generateTestData {
-    [self.modelController generateTestData];
+#pragma mark - HTLSettingsViewController
+
+- (HTLSettingsDataSource *)dataSource {
+    if (!_dataSource) {
+        _dataSource = [HTLSettingsDataSource dataSourceWithDataChangedBlock:nil];
+    }
+    return _dataSource;
 }
 
-- (void)sendMailCSV:(NSString *)csv  {
+- (void)generateTestData {
+    [self.dataSource generateTestData];
+}
+
+- (void)sendMailCSV:(NSString *)csv {
     MFMailComposeViewController *mailComposeViewController = [MFMailComposeViewController new];
     mailComposeViewController.mailComposeDelegate = self;
     [mailComposeViewController setSubject:NSLocalizedString(@"Data export from Time Logger", nil)];
@@ -114,7 +125,7 @@
     [self presentViewController:mailComposeViewController animated:YES completion:nil];
 }
 
-- (void)copyCSV:(NSString *)csv  {
+- (void)copyCSV:(NSString *)csv {
     [UIPasteboard generalPasteboard].string = csv;
 }
 
@@ -122,7 +133,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.modelController = [HTLSettingsModelController modelControllerWithContentChangedBlock:nil];
     self.generateTestDataContainer.hidden = [HTLAppVersion isEqualToString:@""];
     self.generateTestDataButton.hidden = [HTLAppVersion isEqualToString:@""];
 }

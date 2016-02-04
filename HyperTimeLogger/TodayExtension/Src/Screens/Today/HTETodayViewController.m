@@ -6,7 +6,7 @@
 //  Copyright (c) 2015 Maxim Pervushin. All rights reserved.
 //
 
-#import "HTETodayModelController.h"
+#import "HTETodayDataSource.h"
 #import "HTETodayViewController.h"
 #import "HTLCompletionCollectionViewCell.h"
 #import "HTLCompletionDto.h"
@@ -23,17 +23,18 @@ static const NSUInteger kNumberOfCompletions = 9;
 static const int kCollectionViewRowHeight = 40;
 static const int kCollectionViewMinItemsPerRow = 3;
 
-@interface HTETodayViewController () <NCWidgetProviding, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout>
+@interface HTETodayViewController () <NCWidgetProviding, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout> {
+    HTETodayDataSource *_dataSource;
+}
 
 @property(nonatomic, weak) IBOutlet UILabel *lastReportActionTitleLabel;
 @property(nonatomic, weak) IBOutlet UILabel *lastReportCategoryTitleLabel;
 @property(nonatomic, weak) IBOutlet UILabel *lastReportDurationLabel;
 @property(nonatomic, weak) IBOutlet UILabel *lastReportEndDateLabel;
-
 @property(nonatomic, weak) IBOutlet UICollectionView *collectionView;
 @property(nonatomic, weak) IBOutlet NSLayoutConstraint *collectionViewHeightConstraint;
 
-@property(nonatomic, strong) HTETodayModelController *modelController;
+@property(nonatomic, readonly) HTETodayDataSource *dataSource;
 
 - (IBAction)addCustomAction:(id)sender;
 
@@ -50,7 +51,7 @@ static const int kCollectionViewMinItemsPerRow = 3;
 }
 
 - (void)updateUI {
-    HTLReportExtendedDto *reportExtended = self.modelController.lastReportExtended;
+    HTLReportExtendedDto *reportExtended = self.dataSource.lastReportExtended;
     if (reportExtended) {
         self.lastReportActionTitleLabel.text = reportExtended.action.title;
         self.lastReportCategoryTitleLabel.text = reportExtended.category.title;
@@ -71,14 +72,20 @@ static const int kCollectionViewMinItemsPerRow = 3;
 
 #pragma mark - UIViewController
 
+- (HTETodayDataSource *)dataSource {
+    if (!_dataSource) {
+        __weak __typeof(self) weakSelf = self;
+        _dataSource = [HTETodayDataSource dataSourceWithDataChangedBlock:^{
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [weakSelf updateUI];
+            });
+        }];
+    }
+    return _dataSource;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
-
-    self.modelController = [HTETodayModelController modelControllerWithContentChangedBlock:^{
-        dispatch_async(dispatch_get_main_queue(), ^{
-            [self updateUI];
-        });
-    }];
 
     if ([self.collectionView.collectionViewLayout isKindOfClass:[ZLBalancedFlowLayout class]]) {
         ZLBalancedFlowLayout *balancedFlowLayout = (ZLBalancedFlowLayout *) self.collectionView.collectionViewLayout;
@@ -108,12 +115,12 @@ static const int kCollectionViewMinItemsPerRow = 3;
 #pragma mark - UICollectionViewDataSource
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-    return [self.modelController completions:kNumberOfCompletions].count;
+    return [self.dataSource completions:kNumberOfCompletions].count;
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     HTLCompletionCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:kCompletionCellIdentifier forIndexPath:indexPath];
-    [cell configureWithCompletion:[self.modelController completions:kNumberOfCompletions][(NSUInteger) indexPath.row]];
+    [cell configureWithCompletion:[self.dataSource completions:kNumberOfCompletions][(NSUInteger) indexPath.row]];
     return cell;
 }
 
@@ -122,8 +129,8 @@ static const int kCollectionViewMinItemsPerRow = 3;
 }
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
-    HTLCompletionDto *completion = [self.modelController completions:kNumberOfCompletions][(NSUInteger) indexPath.row];
-    [self.modelController createReportWithCompletion:completion];
+    HTLCompletionDto *completion = [self.dataSource completions:kNumberOfCompletions][(NSUInteger) indexPath.row];
+    [self.dataSource createReportWithCompletion:completion];
     [collectionView deselectItemAtIndexPath:indexPath animated:YES];
 }
 

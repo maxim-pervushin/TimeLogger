@@ -4,12 +4,12 @@
 //
 
 
-#import "HTLModelController.h"
+#import "HTLDataSource.h"
 
 @class HTLCompletionDto;
 @class HTLReportExtendedDto;
 
-@interface HTETodayModelController : HTLModelController
+@interface HTETodayDataSource : HTLDataSource
 
 - (NSArray *)completions:(NSUInteger)numberOfCompletions;
 

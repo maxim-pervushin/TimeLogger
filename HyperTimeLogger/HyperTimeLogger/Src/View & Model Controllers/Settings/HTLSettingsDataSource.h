@@ -3,10 +3,10 @@
 // Copyright (c) 2015 Maxim Pervushin. All rights reserved.
 //
 
-#import "HTLModelController.h"
+#import "HTLDataSource.h"
 
 
-@interface HTLSettingsModelController : HTLModelController
+@interface HTLSettingsDataSource : HTLDataSource
 
 - (BOOL)resetContent;
 

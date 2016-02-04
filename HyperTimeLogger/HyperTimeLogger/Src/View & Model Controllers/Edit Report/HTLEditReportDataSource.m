@@ -3,18 +3,18 @@
 // Copyright (c) 2015 Maxim Pervushin. All rights reserved.
 //
 
-#import "HTLEditReportModelController.h"
+#import "HTLEditReportDataSource.h"
 #import "HTLContentManager.h"
 #import "HTLReportExtendedDto.h"
 #import "HTLActionDto.h"
 #import "HTLAppDelegate.h"
 
 
-@implementation HTLEditReportModelController
+@implementation HTLEditReportDataSource
 @dynamic categories;
 @dynamic startDate;
 
-#pragma mark - HTLCreateReportModelController
+#pragma mark - HTLEditReportDataSource
 
 - (NSArray *)categories {
     return [HTLAppContentManger findCategoriesWithDateSection:nil];

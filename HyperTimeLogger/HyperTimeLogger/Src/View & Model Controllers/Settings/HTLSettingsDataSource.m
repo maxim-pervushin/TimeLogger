@@ -3,11 +3,11 @@
 // Copyright (c) 2015 Maxim Pervushin. All rights reserved.
 //
 
-#import "HTLSettingsModelController.h"
+#import "HTLSettingsDataSource.h"
 #import "HTLContentManager.h"
 #import "HTLAppDelegate.h"
 
-@implementation HTLSettingsModelController
+@implementation HTLSettingsDataSource
 
 - (BOOL)resetContent {
     return [HTLAppContentManger clear];

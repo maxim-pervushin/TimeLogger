@@ -3,7 +3,7 @@
 // Copyright (c) 2015 Maxim Pervushin. All rights reserved.
 //
 
-#import "HTLModelController.h"
+#import "HTLDataSource.h"
 
 
 @class HTLCategoryDto;
@@ -11,10 +11,10 @@
 @class HTLStatisticsItemDto;
 
 
-@interface HTLStatisticsModelController : HTLModelController
+@interface HTLStatisticsDataSource : HTLDataSource
 
-+ (instancetype)modelControllerWithDateSection:(HTLDateSectionDto *)dateSection
-                           contentChangedBlock:(HTLModelControllerContentChangedBlock)block;
++ (instancetype)dataSourceWithDateSection:(HTLDateSectionDto *)dateSection
+                         dataChangedBlock:(HTLDataSourceDataChangedBlock)block;
 
 @property(nonatomic, copy) HTLDateSectionDto *dateSection;
 

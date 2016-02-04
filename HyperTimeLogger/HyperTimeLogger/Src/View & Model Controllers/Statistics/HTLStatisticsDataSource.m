@@ -3,7 +3,7 @@
 // Copyright (c) 2015 Maxim Pervushin. All rights reserved.
 //
 
-#import "HTLStatisticsModelController.h"
+#import "HTLStatisticsDataSource.h"
 #import "HTLReportDto.h"
 #import "HTLReportExtendedDto.h"
 #import "HTLContentManager.h"
@@ -12,7 +12,7 @@
 #import "HTLAppDelegate.h"
 
 
-@interface HTLStatisticsModelController ()      {
+@interface HTLStatisticsDataSource ()      {
     BOOL _loaded;
 }
 
@@ -27,16 +27,16 @@
 @end
 
 
-@implementation HTLStatisticsModelController
+@implementation HTLStatisticsDataSource
 @dynamic loaded;
 @dynamic categories;
 @dynamic totalTime;
 
-#pragma mark - HTLStatisticsModelController
+#pragma mark - HTLStatisticsDataSource
 
-+ (instancetype)modelControllerWithDateSection:(HTLDateSectionDto *)dateSection contentChangedBlock:(HTLModelControllerContentChangedBlock)block {
++ (instancetype)dataSourceWithDateSection:(HTLDateSectionDto *)dateSection dataChangedBlock:(HTLDataSourceDataChangedBlock)block {
 
-    HTLStatisticsModelController *instance = [self modelControllerWithContentChangedBlock:block];
+    HTLStatisticsDataSource *instance = [self dataSourceWithDataChangedBlock:block];
     instance.dateSection = dateSection;
     return instance;
 }
@@ -73,7 +73,7 @@
         weakSelf.statisticsByCategorySaved = [statisticsByCategoryCalculated copy];
 
         _loaded = YES;
-        [weakSelf contentChanged];
+        [weakSelf dataChanged];
     });
 }
 
