@@ -4,14 +4,14 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "HTLCategoryDto.h"
-#import "HTLActionDto.h"
+#import "HTLCategory.h"
+#import "HTLAction.h"
 
 
 typedef NSString *HTLReportIdentifier;
 
 
-@interface HTLReportDto : NSObject <NSCopying>
+@interface HTLReport : NSObject <NSCopying>
 
 + (instancetype)reportWithIdentifier:(HTLReportIdentifier)identifier actionIdentifier:(HTLActionIdentifier)actionIdentifier categoryIdentifier:(HTLCategoryIdentifier)categoryIdentifier startDate:(NSDate *)startDate endDate:(NSDate *)endDate;
 
@@ -21,7 +21,7 @@ typedef NSString *HTLReportIdentifier;
 
 - (BOOL)isEqual:(id)other;
 
-- (BOOL)isEqualToDto:(HTLReportDto *)dto;
+- (BOOL)isEqualToDto:(HTLReport *)dto;
 
 - (NSUInteger)hash;
 

@@ -9,11 +9,11 @@
 #import <UIKit/UIKit.h>
 
 
-#define HTLAppContentManger ((HTLAppDelegate *)[UIApplication sharedApplication].delegate).contentManager
+#define HTLAppDataManger ((HTLAppDelegate *)[UIApplication sharedApplication].delegate).dataManager
 #define HTLAppVersion ((HTLAppDelegate *)[UIApplication sharedApplication].delegate).appVersion
 
 
-@class HTLContentManager;
+@class HTLDataManager;
 
 
 static NSString *const kHTLAppDelegateAddReportURLReceived = @"HTLAppDelegateAddReportURLReceived";
@@ -21,7 +21,7 @@ static NSString *const kHTLAppDelegateAddReportURLReceived = @"HTLAppDelegateAdd
 @interface HTLAppDelegate : UIResponder <UIApplicationDelegate>
 
 @property(nonatomic, strong) UIWindow *window;
-@property(nonatomic, strong) HTLContentManager *contentManager;
+@property(nonatomic, strong) HTLDataManager *dataManager;
 @property(nonatomic, readonly) NSString *appVersion;
 
 @end

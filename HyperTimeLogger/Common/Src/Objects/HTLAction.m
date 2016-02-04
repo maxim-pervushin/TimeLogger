@@ -3,10 +3,10 @@
 // Copyright (c) 2015 Maxim Pervushin. All rights reserved.
 //
 
-#import "HTLActionDto.h"
+#import "HTLAction.h"
 
 
-@implementation HTLActionDto
+@implementation HTLAction
 @synthesize identifier = identifier_;
 @synthesize title = title_;
 
@@ -26,7 +26,7 @@
 #pragma mark - NSCopying
 
 - (id)copyWithZone:(NSZone *)zone {
-    HTLActionDto *copy = [[[self class] allocWithZone:zone] init];
+    HTLAction *copy = [[[self class] allocWithZone:zone] init];
 
     if (copy != nil) {
         copy->identifier_ = identifier_;
@@ -47,7 +47,7 @@
     return [self isEqualToAction:other];
 }
 
-- (BOOL)isEqualToAction:(HTLActionDto *)action {
+- (BOOL)isEqualToAction:(HTLAction *)action {
     if (self == action)
         return YES;
     if (action == nil)

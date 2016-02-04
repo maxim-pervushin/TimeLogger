@@ -3,21 +3,21 @@
 // Copyright (c) 2015 Maxim Pervushin. All rights reserved.
 //
 
-#import "HTLCategoryDto.h"
+#import "HTLCategory.h"
 #import "HTLStatisticsItemCell.h"
 
-@implementation HTLStatisticsItemDto
+@implementation HTLStatisticsItem
 @synthesize category = category_;
 @synthesize totalTime = totalTime_;
 @synthesize totalReports = totalReports_;
 
 #pragma mark - HTLStatisticsItemDto
 
-+ (instancetype)statisticsItemWithCategory:(HTLCategoryDto *)category totalTime:(NSTimeInterval)totalTime totalReports:(NSUInteger)totalReports {
++ (instancetype)statisticsItemWithCategory:(HTLCategory *)category totalTime:(NSTimeInterval)totalTime totalReports:(NSUInteger)totalReports {
     return [[self alloc] initWithCategory:category totalTime:totalTime totalReports:totalReports];
 }
 
-- (instancetype)initWithCategory:(HTLCategoryDto *)category totalTime:(NSTimeInterval)totalTime totalReports:(NSUInteger)totalReports {
+- (instancetype)initWithCategory:(HTLCategory *)category totalTime:(NSTimeInterval)totalTime totalReports:(NSUInteger)totalReports {
     self = [super init];
     if (self) {
         category_ = [category copy];
@@ -30,7 +30,7 @@
 #pragma mark - NSCopying
 
 - (id)copyWithZone:(NSZone *)zone {
-    HTLStatisticsItemDto *copy = [[[self class] allocWithZone:zone] init];
+    HTLStatisticsItem *copy = [[[self class] allocWithZone:zone] init];
 
     if (copy != nil) {
         copy->category_ = category_;
@@ -52,7 +52,7 @@
     return [self isEqualToDto:other];
 }
 
-- (BOOL)isEqualToDto:(HTLStatisticsItemDto *)dto {
+- (BOOL)isEqualToDto:(HTLStatisticsItem *)dto {
     if (self == dto)
         return YES;
     if (dto == nil)

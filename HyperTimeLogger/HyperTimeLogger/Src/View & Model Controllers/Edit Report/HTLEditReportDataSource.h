@@ -7,10 +7,10 @@
 #import "HTLDataSource.h"
 
 
-@class HTLActionDto;
-@class HTLCategoryDto;
-@class HTLReportExtendedDto;
-@class HTLReportDto;
+@class HTLAction;
+@class HTLCategory;
+@class HTLReportExtended;
+@class HTLReport;
 
 
 @interface HTLEditReportDataSource : HTLDataSource
@@ -19,8 +19,8 @@
 
 @property(nonatomic, readonly) NSDate *startDate;
 
-- (NSArray *)completionsForAction:(HTLActionDto *)action;
+- (NSArray *)completionsForAction:(HTLAction *)action;
 
-- (BOOL)saveReportExtended:(HTLReportExtendedDto *)reportExtended;
+- (BOOL)saveReportExtended:(HTLReportExtended *)reportExtended;
 
 @end

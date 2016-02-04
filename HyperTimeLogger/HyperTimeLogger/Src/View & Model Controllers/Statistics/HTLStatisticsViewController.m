@@ -6,8 +6,8 @@
 #import "HTLStatisticsViewController.h"
 #import "HTLStatisticsDataSource.h"
 #import "XYPieChart.h"
-#import "HTLCategoryDto.h"
-#import "HTLDateSectionDto.h"
+#import "HTLCategory.h"
+#import "HTLDateSection.h"
 #import "HTLPieChartCell.h"
 #import "HTLStatisticsItemCell.h"
 #import "HyperTimeLogger-Swift.h"
@@ -112,7 +112,7 @@ static const CGFloat kStatisticsItemCellHeight = 44;
 
         } else {
             HTLStatisticsItemCell *cell = [tableView dequeueReusableCellWithIdentifier:kStatisticsItemCellIdentifier];
-            HTLCategoryDto *category = self.dataSource.categories[(NSUInteger) indexPath.row];
+            HTLCategory *category = self.dataSource.categories[(NSUInteger) indexPath.row];
             NSTimeInterval totalTime = self.dataSource.totalTime;
             [cell configureWithStatisticsItem:[self.dataSource statisticsForCategory:category] totalTime:totalTime];
             return cell;
@@ -135,13 +135,13 @@ static const CGFloat kStatisticsItemCellHeight = 44;
 }
 
 - (CGFloat)pieChart:(XYPieChart *)pieChart valueForSliceAtIndex:(NSUInteger)index {
-    HTLCategoryDto *category = self.dataSource.categories[index];
-    HTLStatisticsItemDto *statisticsItem = [self.dataSource statisticsForCategory:category];
+    HTLCategory *category = self.dataSource.categories[index];
+    HTLStatisticsItem *statisticsItem = [self.dataSource statisticsForCategory:category];
     return (CGFloat) statisticsItem.totalTime;
 }
 
 - (UIColor *)pieChart:(XYPieChart *)pieChart colorForSliceAtIndex:(NSUInteger)index {
-    HTLCategoryDto *category = self.dataSource.categories[index];
+    HTLCategory *category = self.dataSource.categories[index];
     return category.color;
 }
 

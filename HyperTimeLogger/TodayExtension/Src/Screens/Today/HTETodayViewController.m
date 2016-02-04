@@ -9,9 +9,9 @@
 #import "HTETodayDataSource.h"
 #import "HTETodayViewController.h"
 #import "HTLCompletionCollectionViewCell.h"
-#import "HTLCompletionDto.h"
-#import "HTLReportDto+HTLHelpers.h"
-#import "HTLReportExtendedDto.h"
+#import "HTLCompletion.h"
+#import "HTLReport+HTLHelpers.h"
+#import "HTLReportExtended.h"
 #import <NotificationCenter/NotificationCenter.h>
 #import "HyperTimeLogger-Swift.h"
 #import "NSDate+HTLTimeHelpers.h"
@@ -51,7 +51,7 @@ static const int kCollectionViewMinItemsPerRow = 3;
 }
 
 - (void)updateUI {
-    HTLReportExtendedDto *reportExtended = self.dataSource.lastReportExtended;
+    HTLReportExtended *reportExtended = self.dataSource.lastReportExtended;
     if (reportExtended) {
         self.lastReportActionTitleLabel.text = reportExtended.action.title;
         self.lastReportCategoryTitleLabel.text = reportExtended.category.title;
@@ -129,7 +129,7 @@ static const int kCollectionViewMinItemsPerRow = 3;
 }
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
-    HTLCompletionDto *completion = [self.dataSource completions:kNumberOfCompletions][(NSUInteger) indexPath.row];
+    HTLCompletion *completion = [self.dataSource completions:kNumberOfCompletions][(NSUInteger) indexPath.row];
     [self.dataSource createReportWithCompletion:completion];
     [collectionView deselectItemAtIndexPath:indexPath animated:YES];
 }

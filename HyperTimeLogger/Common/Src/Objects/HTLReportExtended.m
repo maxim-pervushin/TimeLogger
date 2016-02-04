@@ -3,25 +3,25 @@
 // Copyright (c) 2015 Maxim Pervushin. All rights reserved.
 //
 
-#import "HTLReportExtendedDto.h"
-#import "HTLActionDto.h"
-#import "HTLCategoryDto.h"
-#import "HTLDateSectionDto.h"
-#import "HTLReportDto.h"
+#import "HTLReportExtended.h"
+#import "HTLAction.h"
+#import "HTLCategory.h"
+#import "HTLDateSection.h"
+#import "HTLReport.h"
 
 
-@implementation HTLReportExtendedDto
+@implementation HTLReportExtended
 @synthesize report = report_;
 @synthesize action = action_;
 @synthesize category = category_;
 
 #pragma mark - HTLReportExtendedDto
 
-+ (instancetype)reportExtendedWithReport:(HTLReportDto *)report action:(HTLActionDto *)action category:(HTLCategoryDto *)category {
++ (instancetype)reportExtendedWithReport:(HTLReport *)report action:(HTLAction *)action category:(HTLCategory *)category {
     return [[self alloc] initWithReport:report action:action category:category];
 }
 
-- (instancetype)initWithReport:(HTLReportDto *)report action:(HTLActionDto *)action category:(HTLCategoryDto *)category {
+- (instancetype)initWithReport:(HTLReport *)report action:(HTLAction *)action category:(HTLCategory *)category {
     if (!report || !action || !category) {
         return nil;
     }
@@ -38,7 +38,7 @@
 #pragma mark - NSCopying
 
 - (id)copyWithZone:(NSZone *)zone {
-    HTLReportExtendedDto *copy = [[[self class] allocWithZone:zone] init];
+    HTLReportExtended *copy = [[[self class] allocWithZone:zone] init];
 
     if (copy != nil) {
         copy->report_ = report_;
@@ -60,7 +60,7 @@
     return [self isEqualToDto:other];
 }
 
-- (BOOL)isEqualToDto:(HTLReportExtendedDto *)dto {
+- (BOOL)isEqualToDto:(HTLReportExtended *)dto {
     if (self == dto)
         return YES;
     if (dto == nil)

@@ -3,9 +3,9 @@
 // Copyright (c) 2015 Maxim Pervushin. All rights reserved.
 //
 
-#import "HTLReportDto.h"
+#import "HTLReport.h"
 
-@interface HTLReportDto (HTLHelpers)
+@interface HTLReport (HTLHelpers)
 
 - (NSTimeInterval)duration;
 

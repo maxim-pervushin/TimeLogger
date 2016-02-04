@@ -6,15 +6,15 @@
 
 #import "HTLDataSource.h"
 
-@class HTLCompletionDto;
-@class HTLReportExtendedDto;
+@class HTLCompletion;
+@class HTLReportExtended;
 
 @interface HTETodayDataSource : HTLDataSource
 
 - (NSArray *)completions:(NSUInteger)numberOfCompletions;
 
-- (BOOL)createReportWithCompletion:(HTLCompletionDto *)completion;
+- (BOOL)createReportWithCompletion:(HTLCompletion *)completion;
 
-- (HTLReportExtendedDto *)lastReportExtended;
+- (HTLReportExtended *)lastReportExtended;
 
 @end

@@ -6,7 +6,7 @@
 #import "HTLDataSource.h"
 
 
-@class HTLReportDto;
+@class HTLReport;
 
 
 @interface HTLReportListDataSource : HTLDataSource

@@ -4,11 +4,11 @@
 //
 
 #import "HTLSettingsDataSource+TestData.h"
-#import "HTLCategoryDto.h"
+#import "HTLCategory.h"
 #import "NSDate+HTLComponents.h"
-#import "HTLReportDto.h"
-#import "HTLReportExtendedDto.h"
-#import "HTLContentManager.h"
+#import "HTLReport.h"
+#import "HTLReportExtended.h"
+#import "HTLDataManager.h"
 #import "HTLAppDelegate.h"
 
 @implementation HTLSettingsDataSource (TestData)
@@ -50,8 +50,8 @@
             DDLogDebug(@"%.1f%%", (double) i / (double) repeats * 100);
 
             for (NSDictionary *testDataSet in testData) {
-                HTLActionDto *action = [HTLActionDto actionWithIdentifier:[self newIdentifier] title:testDataSet[@"action"]];
-                HTLCategoryDto *category = [HTLCategoryDto categoryWithIdentifier:[self newIdentifier] title:testDataSet[@"category"] color:[UIColor redColor]];
+                HTLAction *action = [HTLAction actionWithIdentifier:[self newIdentifier] title:testDataSet[@"action"]];
+                HTLCategory *category = [HTLCategory categoryWithIdentifier:[self newIdentifier] title:testDataSet[@"category"] color:[UIColor redColor]];
 
                 NSInteger from = ((NSNumber *) testDataSet[@"from"]).integerValue;
                 NSInteger fromHours = from / 100;
@@ -64,16 +64,16 @@
                 NSDate *endDate = [self yesterdayHours:toHours - 24 * (i - 1) minutes:toMinutes];
 
 
-                HTLReportDto *report = [HTLReportDto reportWithIdentifier:[self newIdentifier]
-                                                         actionIdentifier:action.identifier
-                                                       categoryIdentifier:category.identifier
-                                                                startDate:startDate
-                                                                  endDate:endDate];
+                HTLReport *report = [HTLReport reportWithIdentifier:[self newIdentifier]
+                                                   actionIdentifier:action.identifier
+                                                 categoryIdentifier:category.identifier
+                                                          startDate:startDate
+                                                            endDate:endDate];
 
-                [HTLAppContentManger storeReportExtended:
-                        [HTLReportExtendedDto reportExtendedWithReport:report
-                                                                action:action
-                                                              category:category]];
+                [HTLAppDataManger storeReportExtended:
+                        [HTLReportExtended reportExtendedWithReport:report
+                                                             action:action
+                                                           category:category]];
 
             }
         }

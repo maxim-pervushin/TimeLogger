@@ -4,14 +4,14 @@
 //
 
 #import "HTLReportExtendedEditor.h"
-#import "HTLReportExtendedDto.h"
+#import "HTLReportExtended.h"
 
 @interface HTLReportExtendedEditor () {
-    HTLReportExtendedDto *_originalReportExtended;
+    HTLReportExtended *_originalReportExtended;
     NSDate *_reportStartDate;
     NSDate *_reportEndDate;
-    HTLActionDto *_action;
-    HTLCategoryDto *_category;
+    HTLAction *_action;
+    HTLCategory *_category;
 }
 
 @property(nonatomic, copy) HTLReportExtendedEditorChangedBlock changedBlock;
@@ -29,7 +29,7 @@
     return instance;
 }
 
-- (void)setOriginalReportExtended:(HTLReportExtendedDto *)originalReportExtended {
+- (void)setOriginalReportExtended:(HTLReportExtended *)originalReportExtended {
     _originalReportExtended = originalReportExtended;
     _reportStartDate = originalReportExtended.report.startDate;
     _reportEndDate = originalReportExtended.report.endDate;
@@ -38,7 +38,7 @@
     [self changed];
 }
 
-- (HTLReportExtendedDto *)updatedReportExtended {
+- (HTLReportExtended *)updatedReportExtended {
     if (!_reportStartDate || !_reportEndDate || !_action || !_category) {
         // Invalid data
         return nil;
@@ -61,15 +61,15 @@
         reportIdentifier = [NSUUID UUID].UUIDString;
     }
 
-    HTLReportDto *report = [HTLReportDto reportWithIdentifier:reportIdentifier
-                                             actionIdentifier:_action.identifier
-                                           categoryIdentifier:_category.identifier
-                                                    startDate:_reportStartDate
-                                                      endDate:_reportEndDate];
+    HTLReport *report = [HTLReport reportWithIdentifier:reportIdentifier
+                                       actionIdentifier:_action.identifier
+                                     categoryIdentifier:_category.identifier
+                                              startDate:_reportStartDate
+                                                endDate:_reportEndDate];
 
-    return [HTLReportExtendedDto reportExtendedWithReport:report
-                                                   action:_action
-                                                 category:_category];
+    return [HTLReportExtended reportExtendedWithReport:report
+                                                action:_action
+                                              category:_category];
 }
 
 - (BOOL)canSave {
@@ -86,12 +86,12 @@
     [self changed];
 }
 
-- (void)setAction:(HTLActionDto *)action {
+- (void)setAction:(HTLAction *)action {
     _action = action;
     [self changed];
 }
 
-- (void)setCategory:(HTLCategoryDto *)category {
+- (void)setCategory:(HTLCategory *)category {
     _category = category;
     [self changed];
 }

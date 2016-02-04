@@ -9,7 +9,7 @@
 typedef NSString *HTLCategoryIdentifier;
 
 
-@interface HTLCategoryDto : NSObject <NSCopying>
+@interface HTLCategory : NSObject <NSCopying>
 
 + (instancetype)categoryWithIdentifier:(HTLCategoryIdentifier)identifier title:(NSString *)title color:(UIColor *)color;
 
@@ -19,7 +19,7 @@ typedef NSString *HTLCategoryIdentifier;
 
 - (BOOL)isEqual:(id)other;
 
-- (BOOL)isEqualToCategory:(HTLCategoryDto *)category;
+- (BOOL)isEqualToCategory:(HTLCategory *)category;
 
 - (NSUInteger)hash;
 
@@ -32,7 +32,7 @@ typedef NSString *HTLCategoryIdentifier;
 @end
 
 
-@interface HTLCategoryDto (Localized)
+@interface HTLCategory (Localized)
 
 @property(nonatomic, readonly) NSString *localizedTitle;
 

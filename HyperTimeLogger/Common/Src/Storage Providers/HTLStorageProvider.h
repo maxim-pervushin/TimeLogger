@@ -10,9 +10,9 @@
 static NSString *const kHTLStorageProviderChangedNotification = @"HTLStorageProviderChangedNotification";
 
 
-@class HTLReportExtendedDto;
-@class HTLCategoryDto;
-@class HTLDateSectionDto;
+@class HTLReportExtended;
+@class HTLCategory;
+@class HTLDateSection;
 
 
 @protocol HTLStorageProvider <NSObject>
@@ -21,11 +21,11 @@ static NSString *const kHTLStorageProviderChangedNotification = @"HTLStorageProv
 
 // Categories
 
-- (NSUInteger)numberOfCategoriesWithDateSection:(HTLDateSectionDto *)dateSection;
+- (NSUInteger)numberOfCategoriesWithDateSection:(HTLDateSection *)dateSection;
 
-- (NSArray *)findCategoriesWithDateSection:(HTLDateSectionDto *)dateSection;
+- (NSArray *)findCategoriesWithDateSection:(HTLDateSection *)dateSection;
 
-- (BOOL)storeCategory:(HTLCategoryDto *)category;
+- (BOOL)storeCategory:(HTLCategory *)category;
 
 // Report sections
 
@@ -35,15 +35,15 @@ static NSString *const kHTLStorageProviderChangedNotification = @"HTLStorageProv
 
 // Reports
 
-- (NSUInteger)numberOfReportsWithDateSection:(HTLDateSectionDto *)dateSection;
+- (NSUInteger)numberOfReportsWithDateSection:(HTLDateSection *)dateSection;
 
-- (NSArray *)findReportsExtendedWithDateSection:(HTLDateSectionDto *)dateSection category:(HTLCategoryDto *)category;
+- (NSArray *)findReportsExtendedWithDateSection:(HTLDateSection *)dateSection category:(HTLCategory *)category;
 
-- (BOOL)storeReportExtended:(HTLReportExtendedDto *)reportExtended;
+- (BOOL)storeReportExtended:(HTLReportExtended *)reportExtended;
 
 - (NSDate *)findLastReportEndDate;
 
-- (HTLReportExtendedDto *)findLastReportExtended;
+- (HTLReportExtended *)findLastReportExtended;
 
 // Completions
 

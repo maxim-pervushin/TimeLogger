@@ -6,12 +6,12 @@
 #import <UIKit/UIKit.h>
 
 
-@class HTLDateSectionDto;
+@class HTLDateSection;
 
 
 @interface HTLStatisticsViewController : UIViewController
 
-@property(nonatomic, copy) HTLDateSectionDto *dateSection;
+@property(nonatomic, copy) HTLDateSection *dateSection;
 
 @end
 

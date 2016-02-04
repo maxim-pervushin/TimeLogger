@@ -9,7 +9,7 @@
 typedef NSString *HTLActionIdentifier;
 
 
-@interface HTLActionDto : NSObject <NSCopying>
+@interface HTLAction : NSObject <NSCopying>
 
 + (instancetype)actionWithIdentifier:(HTLActionIdentifier)identifier title:(NSString *)title;
 
@@ -19,7 +19,7 @@ typedef NSString *HTLActionIdentifier;
 
 - (BOOL)isEqual:(id)other;
 
-- (BOOL)isEqualToAction:(HTLActionDto *)action;
+- (BOOL)isEqualToAction:(HTLAction *)action;
 
 - (NSUInteger)hash;
 

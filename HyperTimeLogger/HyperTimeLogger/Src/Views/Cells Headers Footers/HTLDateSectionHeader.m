@@ -4,7 +4,7 @@
 //
 
 #import "HTLDateSectionHeader.h"
-#import "HTLDateSectionDto.h"
+#import "HTLDateSection.h"
 #import "UIColor+FlatColors.h"
 
 @interface HTLDateSectionHeader ()
@@ -12,7 +12,7 @@
 @property(nonatomic, weak) IBOutlet UILabel *sectionTitleLabel;
 @property(nonatomic, weak) IBOutlet UIButton *statisticsButton;
 
-@property(nonatomic, copy) HTLDateSectionDto *dateSection;
+@property(nonatomic, copy) HTLDateSection *dateSection;
 
 - (IBAction)statisticsButtonAction:(id)sender;
 
@@ -24,7 +24,7 @@
 
 #pragma mark - HTLDateSectionHeader
 
-- (void)configureWithDateSection:(HTLDateSectionDto *)dateSection {
+- (void)configureWithDateSection:(HTLDateSection *)dateSection {
     self.dateSection = dateSection;
     if (self.dateSection) {
         self.sectionTitleLabel.text = self.dateSection.fulldateStringLocalized;

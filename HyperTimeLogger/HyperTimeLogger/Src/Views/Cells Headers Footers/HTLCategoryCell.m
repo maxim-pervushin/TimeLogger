@@ -4,7 +4,7 @@
 //
 
 #import "HTLCategoryCell.h"
-#import "HTLCategoryDto.h"
+#import "HTLCategory.h"
 #import "UIColor+FlatColors.h"
 
 @interface HTLCategoryCell ()
@@ -16,7 +16,7 @@
 
 @implementation HTLCategoryCell
 
-- (void)configureWithCategory:(HTLCategoryDto *)category {
+- (void)configureWithCategory:(HTLCategory *)category {
     self.titleLabel.text = category ? category.localizedTitle : @"";
     self.titleLabel.textColor = category ? category.color : [UIColor blackColor];
     self.backgroundColor = category ? [category.color colorWithAlphaComponent:0.15] : [UIColor clearColor];
@@ -32,7 +32,7 @@
     }
 }
 
-+ (CGFloat)widthWithCategory:(HTLCategoryDto *)category {
++ (CGFloat)widthWithCategory:(HTLCategory *)category {
     if (category) {
         return [category.localizedTitle sizeWithAttributes:@{NSFontAttributeName : [UIFont boldSystemFontOfSize:15.0f]}].width + 24;
     }

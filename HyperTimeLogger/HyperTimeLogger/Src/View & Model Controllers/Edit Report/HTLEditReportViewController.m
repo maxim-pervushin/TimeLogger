@@ -4,13 +4,13 @@
 //
 
 #import "HTLEditReportViewController.h"
-#import "HTLActionDto.h"
+#import "HTLAction.h"
 #import "HTLCategoryCell.h"
-#import "HTLCategoryDto.h"
+#import "HTLCategory.h"
 #import "HTLCompletionCollectionViewCell.h"
-#import "HTLCompletionDto.h"
+#import "HTLCompletion.h"
 #import "HTLEditReportDataSource.h"
-#import "HTLReportExtendedDto.h"
+#import "HTLReportExtended.h"
 #import "HTLReportExtendedEditor.h"
 #import "HyperTimeLogger-Swift.h"
 #import "NSDate+HTLTimeHelpers.h"
@@ -65,9 +65,9 @@ static NSString *const kCategoryCellIdentifier = @"CategoryCell";
 
 - (void)unsubscribe;
 
-- (void)selectCategory:(HTLCategoryDto *)category;
+- (void)selectCategory:(HTLCategory *)category;
 
-- (void)selectCompletion:(HTLCompletionDto *)completion;
+- (void)selectCompletion:(HTLCompletion *)completion;
 
 @end
 
@@ -93,8 +93,8 @@ static NSString *const kCategoryCellIdentifier = @"CategoryCell";
 }
 
 - (IBAction)textFieldEditingChanged:(id)sender {
-    self.editor.action = [HTLActionDto actionWithIdentifier:[NSUUID UUID].UUIDString
-                                                      title:self.textField.text];
+    self.editor.action = [HTLAction actionWithIdentifier:[NSUUID UUID].UUIDString
+                                                   title:self.textField.text];
     [self.completionsCollectionView reloadData];
 }
 
@@ -132,7 +132,7 @@ static NSString *const kCategoryCellIdentifier = @"CategoryCell";
 
 #pragma mark - HTLEditReportViewController public
 
-- (void)setReportExtended:(HTLReportExtendedDto *)reportExtended {
+- (void)setReportExtended:(HTLReportExtended *)reportExtended {
     self.editor.originalReportExtended = reportExtended;
     if (!reportExtended) {
         self.editor.reportStartDate = self.dataSource.startDate;
@@ -140,7 +140,7 @@ static NSString *const kCategoryCellIdentifier = @"CategoryCell";
     }
 }
 
-- (HTLReportExtendedDto *)reportExtended {
+- (HTLReportExtended *)reportExtended {
     return self.editor.originalReportExtended;
 }
 
@@ -262,11 +262,11 @@ static NSString *const kCategoryCellIdentifier = @"CategoryCell";
     [[NSNotificationCenter defaultCenter] removeObserver:self name:UIKeyboardWillChangeFrameNotification object:nil];
 }
 
-- (void)selectCategory:(HTLCategoryDto *)category {
+- (void)selectCategory:(HTLCategory *)category {
     self.editor.category = category ? category : self.dataSource.categories.firstObject;
 }
 
-- (void)selectCompletion:(HTLCompletionDto *)completion {
+- (void)selectCompletion:(HTLCompletion *)completion {
     if (!completion) {
         return;
     }

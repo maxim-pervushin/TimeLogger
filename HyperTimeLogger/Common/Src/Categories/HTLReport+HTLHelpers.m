@@ -3,9 +3,9 @@
 // Copyright (c) 2015 Maxim Pervushin. All rights reserved.
 //
 
-#import "HTLReportDto+HTLHelpers.h"
+#import "HTLReport+HTLHelpers.h"
 
-@implementation HTLReportDto (HTLHelpers)
+@implementation HTLReport (HTLHelpers)
 
 - (NSTimeInterval)duration {
     return [self.endDate timeIntervalSinceDate:self.startDate];

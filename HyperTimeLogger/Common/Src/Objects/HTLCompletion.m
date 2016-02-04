@@ -3,21 +3,21 @@
 // Copyright (c) 2015 Maxim Pervushin. All rights reserved.
 //
 
-#import "HTLCompletionDto.h"
-#import "HTLCategoryDto.h"
-#import "HTLActionDto.h"
+#import "HTLCompletion.h"
+#import "HTLCategory.h"
+#import "HTLAction.h"
 
 
-@implementation HTLCompletionDto
+@implementation HTLCompletion
 @synthesize action = action_;
 @synthesize category = category_;
 @synthesize weight = weight_;
 
-+ (instancetype)completionWithAction:(HTLActionDto *)action category:(HTLCategoryDto *)category weight:(NSUInteger)weight {
++ (instancetype)completionWithAction:(HTLAction *)action category:(HTLCategory *)category weight:(NSUInteger)weight {
     return [[self alloc] initWithAction:action category:category weight:weight];
 }
 
-- (instancetype)initWithAction:(HTLActionDto *)action category:(HTLCategoryDto *)category weight:(NSUInteger)weight {
+- (instancetype)initWithAction:(HTLAction *)action category:(HTLCategory *)category weight:(NSUInteger)weight {
     if (!action || !category) {
         return nil;
     }
@@ -34,7 +34,7 @@
 #pragma mark - NSCopying
 
 - (id)copyWithZone:(NSZone *)zone {
-    HTLCompletionDto *copy = [[[self class] allocWithZone:zone] init];
+    HTLCompletion *copy = [[[self class] allocWithZone:zone] init];
 
     if (copy != nil) {
         copy->action_ = action_;
@@ -56,7 +56,7 @@
     return [self isEqualToCompletion:other];
 }
 
-- (BOOL)isEqualToCompletion:(HTLCompletionDto *)completion {
+- (BOOL)isEqualToCompletion:(HTLCompletion *)completion {
     if (self == completion)
         return YES;
     if (completion == nil)

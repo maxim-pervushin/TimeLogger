@@ -6,17 +6,17 @@
 #import "HTLDataSource.h"
 
 
-@class HTLCategoryDto;
-@class HTLDateSectionDto;
-@class HTLStatisticsItemDto;
+@class HTLCategory;
+@class HTLDateSection;
+@class HTLStatisticsItem;
 
 
 @interface HTLStatisticsDataSource : HTLDataSource
 
-+ (instancetype)dataSourceWithDateSection:(HTLDateSectionDto *)dateSection
++ (instancetype)dataSourceWithDateSection:(HTLDateSection *)dateSection
                          dataChangedBlock:(HTLDataSourceDataChangedBlock)block;
 
-@property(nonatomic, copy) HTLDateSectionDto *dateSection;
+@property(nonatomic, copy) HTLDateSection *dateSection;
 
 @property(nonatomic, readonly) BOOL loaded;
 @property(nonatomic, readonly) NSArray *categories;
@@ -24,6 +24,6 @@
 
 - (void)reloadData;
 
-- (HTLStatisticsItemDto *)statisticsForCategory:(HTLCategoryDto *)category;
+- (HTLStatisticsItem *)statisticsForCategory:(HTLCategory *)category;
 
 @end

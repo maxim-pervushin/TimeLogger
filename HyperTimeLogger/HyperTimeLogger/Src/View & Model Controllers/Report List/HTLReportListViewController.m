@@ -9,13 +9,13 @@
 #import "HTLReportListViewController.h"
 #import "HTLReportExtendedCell.h"
 #import "HTLReportListDataSource.h"
-#import "HTLReportExtendedDto.h"
+#import "HTLReportExtended.h"
 #import "HTLDateSectionHeader.h"
 #import "HTLAppDelegate.h"
 #import "HTLEditReportViewController.h"
 #import "HTLStatisticsViewController.h"
 #import "NSDate+HTLTimeHelpers.h"
-#import "HTLDateSectionDto.h"
+#import "HTLDateSection.h"
 
 
 static NSString *const kReportCellIdentifier = @"ReportCell";
@@ -205,7 +205,7 @@ static const float kHeaderHeight = 35.0f;
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([segue.destinationViewController isKindOfClass:HTLEditReportViewController.class]) {
         HTLEditReportViewController *editReportViewController = segue.destinationViewController;
-        HTLReportExtendedDto *reportExtended = nil;
+        HTLReportExtended *reportExtended = nil;
         NSIndexPath *selected = self.tableView.indexPathForSelectedRow;
         if (selected) {
             reportExtended = [self.dataSource reportsExtendedForDateSectionAtIndex:selected.section][(NSUInteger) selected.row];
@@ -214,7 +214,7 @@ static const float kHeaderHeight = 35.0f;
 
     } else if ([segue.destinationViewController isKindOfClass:HTLStatisticsViewController.class]) {
         HTLStatisticsViewController *statisticsViewController = segue.destinationViewController;
-        if ([sender isKindOfClass:HTLDateSectionDto.class]) {
+        if ([sender isKindOfClass:HTLDateSection.class]) {
             statisticsViewController.dateSection = sender;
         }
     }
@@ -243,7 +243,7 @@ static const float kHeaderHeight = 35.0f;
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     HTLReportExtendedCell *cell = [tableView dequeueReusableCellWithIdentifier:kReportCellIdentifier forIndexPath:indexPath];
-    HTLReportExtendedDto *report = [self.dataSource reportsExtendedForDateSectionAtIndex:(NSUInteger) indexPath.section][(NSUInteger) indexPath.row];
+    HTLReportExtended *report = [self.dataSource reportsExtendedForDateSectionAtIndex:(NSUInteger) indexPath.section][(NSUInteger) indexPath.row];
     [cell configureWithReport:report];
     return cell;
 }
@@ -259,7 +259,7 @@ static const float kHeaderHeight = 35.0f;
 
 #pragma mark  - HTLDateSectionHeaderDelegate
 
-- (void)dateSectionHeader:(HTLDateSectionHeader *)dateSectionHeader showStatisticsForDateSection:(HTLDateSectionDto *)dateSection {
+- (void)dateSectionHeader:(HTLDateSectionHeader *)dateSectionHeader showStatisticsForDateSection:(HTLDateSection *)dateSection {
     [self performSegueWithIdentifier:kShowStatisticsSegueIdentifier sender:dateSection];
 }
 

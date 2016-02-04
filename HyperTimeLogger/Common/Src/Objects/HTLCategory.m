@@ -3,10 +3,10 @@
 // Copyright (c) 2015 Maxim Pervushin. All rights reserved.
 //
 
-#import "HTLCategoryDto.h"
+#import "HTLCategory.h"
 
 
-@implementation HTLCategoryDto
+@implementation HTLCategory
 @synthesize identifier = identifier_;
 @synthesize title = title_;
 @synthesize color = color_;
@@ -28,7 +28,7 @@
 #pragma mark - NSCopying
 
 - (id)copyWithZone:(NSZone *)zone {
-    HTLCategoryDto *copy = [[[self class] allocWithZone:zone] init];
+    HTLCategory *copy = [[[self class] allocWithZone:zone] init];
 
     if (copy != nil) {
         copy->identifier_ = identifier_;
@@ -50,7 +50,7 @@
     return [self isEqualToCategory:other];
 }
 
-- (BOOL)isEqualToCategory:(HTLCategoryDto *)category {
+- (BOOL)isEqualToCategory:(HTLCategory *)category {
     if (self == category)
         return YES;
     if (category == nil)
@@ -84,7 +84,7 @@
 
 @end
 
-@implementation HTLCategoryDto (Localized)
+@implementation HTLCategory (Localized)
 
 - (NSString *)localizedTitle {
     return NSLocalizedString(self.title, nil);

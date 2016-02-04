@@ -4,15 +4,15 @@
 //
 
 #import <UIkit/UIkit.h>
-#include "HTLStatisticsItemDto.h"
+#include "HTLStatisticsItem.h"
 
 
-@class HTLCategoryDto;
+@class HTLCategory;
 
 
 @interface HTLStatisticsItemCell : UITableViewCell
 
-- (void)configureWithStatisticsItem:(HTLStatisticsItemDto *)statisticsItem totalTime:(NSTimeInterval)totalTime;
+- (void)configureWithStatisticsItem:(HTLStatisticsItem *)statisticsItem totalTime:(NSTimeInterval)totalTime;
 
 @end
 

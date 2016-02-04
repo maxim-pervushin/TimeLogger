@@ -3,10 +3,10 @@
 // Copyright (c) 2015 Maxim Pervushin. All rights reserved.
 //
 
-#import "HTLReportDto.h"
+#import "HTLReport.h"
 
 
-@implementation HTLReportDto
+@implementation HTLReport
 @synthesize identifier = identifier_;
 @synthesize actionIdentifier = actionIdentifier_;
 @synthesize categoryIdentifier = categoryIdentifier_;
@@ -34,7 +34,7 @@
 #pragma mark - NSCopying
 
 - (id)copyWithZone:(NSZone *)zone {
-    HTLReportDto *copy = [[[self class] allocWithZone:zone] init];
+    HTLReport *copy = [[[self class] allocWithZone:zone] init];
 
     if (copy != nil) {
         copy->identifier_ = identifier_;
@@ -58,7 +58,7 @@
     return [self isEqualToDto:other];
 }
 
-- (BOOL)isEqualToDto:(HTLReportDto *)dto {
+- (BOOL)isEqualToDto:(HTLReport *)dto {
     if (self == dto)
         return YES;
     if (dto == nil)

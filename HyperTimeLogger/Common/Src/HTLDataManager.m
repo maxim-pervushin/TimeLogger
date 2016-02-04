@@ -3,14 +3,14 @@
 // Copyright (c) 2015 Maxim Pervushin. All rights reserved.
 //
 
-#import "HTLContentManager.h"
-#import "HTLReportDto.h"
+#import "HTLDataManager.h"
+#import "HTLReport.h"
 #import "HTLCSVStringExportProvider.h"
-#import "HTLReportExtendedDto.h"
-#import "HTLDateSectionDto.h"
+#import "HTLReportExtended.h"
+#import "HTLDateSection.h"
 #import "UIColor+FlatColors.h"
 
-@interface HTLContentManager ()
+@interface HTLDataManager ()
 
 @property(nonatomic, strong) id <HTLStorageProvider> storageProvider;
 @property(nonatomic, strong) HTLCSVStringExportProvider *csvStringExportProvider;
@@ -25,10 +25,10 @@
 
 @end
 
-@implementation HTLContentManager
+@implementation HTLDataManager
 
 + (instancetype)contentManagerWithStorageProvider:(id <HTLStorageProvider>)storageProvider exportProvider:(id <HTLStringExportProvider>)exportProvider {
-    HTLContentManager *contentManager = [HTLContentManager new];
+    HTLDataManager *contentManager = [HTLDataManager new];
     contentManager.storageProvider = storageProvider;
     contentManager.csvStringExportProvider = exportProvider;
     [contentManager initializeLaunchDate];
@@ -62,16 +62,16 @@
 
 - (void)initializeStorage {
     NSArray *initialCategories = @[
-            [HTLCategoryDto categoryWithIdentifier:@"0" title:@"Sleep" color:[UIColor flatMidnightBlueColor]],
-            [HTLCategoryDto categoryWithIdentifier:@"1" title:@"Personal" color:[UIColor flatPumpkinColor]],
-            [HTLCategoryDto categoryWithIdentifier:@"2" title:@"Road" color:[UIColor flatWisteriaColor]],
-            [HTLCategoryDto categoryWithIdentifier:@"3" title:@"Work" color:[UIColor flatNephritisColor]],
-            [HTLCategoryDto categoryWithIdentifier:@"4" title:@"Improvement" color:[UIColor flatGreenSeaColor]],
-            [HTLCategoryDto categoryWithIdentifier:@"5" title:@"Recreation" color:[UIColor flatBelizeHoleColor]],
-            [HTLCategoryDto categoryWithIdentifier:@"6" title:@"Time Waste" color:[UIColor flatPomegranateColor]]
+            [HTLCategory categoryWithIdentifier:@"0" title:@"Sleep" color:[UIColor flatMidnightBlueColor]],
+            [HTLCategory categoryWithIdentifier:@"1" title:@"Personal" color:[UIColor flatPumpkinColor]],
+            [HTLCategory categoryWithIdentifier:@"2" title:@"Road" color:[UIColor flatWisteriaColor]],
+            [HTLCategory categoryWithIdentifier:@"3" title:@"Work" color:[UIColor flatNephritisColor]],
+            [HTLCategory categoryWithIdentifier:@"4" title:@"Improvement" color:[UIColor flatGreenSeaColor]],
+            [HTLCategory categoryWithIdentifier:@"5" title:@"Recreation" color:[UIColor flatBelizeHoleColor]],
+            [HTLCategory categoryWithIdentifier:@"6" title:@"Time Waste" color:[UIColor flatPomegranateColor]]
     ];
 
-    for (HTLCategoryDto *category in initialCategories) {
+    for (HTLCategory *category in initialCategories) {
         [self.storageProvider storeCategory:category];
     }
 }
@@ -82,15 +82,15 @@
     return result;
 }
 
-- (NSUInteger)numberOfCategoriesWithDateSection:(HTLDateSectionDto *)dateSection {
+- (NSUInteger)numberOfCategoriesWithDateSection:(HTLDateSection *)dateSection {
     return [self.storageProvider numberOfCategoriesWithDateSection:dateSection];
 }
 
-- (NSArray *)findCategoriesWithDateSection:(HTLDateSectionDto *)dateSection {
+- (NSArray *)findCategoriesWithDateSection:(HTLDateSection *)dateSection {
     return [self.storageProvider findCategoriesWithDateSection:dateSection];
 }
 
-- (BOOL)storeCategory:(HTLCategoryDto *)category {
+- (BOOL)storeCategory:(HTLCategory *)category {
     return [self.storageProvider storeCategory:category];
 }
 
@@ -106,15 +106,15 @@
     return [self.storageProvider findAllReportSections];
 }
 
-- (NSUInteger)numberOfReportsWithDateSection:(HTLDateSectionDto *)dateSection {
+- (NSUInteger)numberOfReportsWithDateSection:(HTLDateSection *)dateSection {
     return [self.storageProvider numberOfReportsWithDateSection:dateSection];
 }
 
-- (NSArray *)findReportsExtendedWithDateSection:(HTLDateSectionDto *)dateSection category:(HTLCategoryDto *)category {
+- (NSArray *)findReportsExtendedWithDateSection:(HTLDateSection *)dateSection category:(HTLCategory *)category {
     return [self.storageProvider findReportsExtendedWithDateSection:dateSection category:category];
 }
 
-- (BOOL)storeReportExtended:(HTLReportExtendedDto *)reportExtended {
+- (BOOL)storeReportExtended:(HTLReportExtended *)reportExtended {
     return [self.storageProvider storeReportExtended:reportExtended];
 }
 
@@ -130,7 +130,7 @@
     return date;
 }
 
-- (HTLReportExtendedDto *)findLastReportExtended {
+- (HTLReportExtended *)findLastReportExtended {
     return [self.storageProvider findLastReportExtended];
 }
 

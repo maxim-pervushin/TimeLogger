@@ -4,12 +4,12 @@
 //
 
 #import "HTETodayDataSource.h"
-#import "HTLContentManager.h"
-#import "HTLReportExtendedDto.h"
-#import "HTLCompletionDto.h"
-#import "HTLCategoryDto.h"
-#import "HTLActionDto.h"
-#import "HTLReportDto.h"
+#import "HTLDataManager.h"
+#import "HTLReportExtended.h"
+#import "HTLCompletion.h"
+#import "HTLCategory.h"
+#import "HTLAction.h"
+#import "HTLReport.h"
 #import "HTLAppDelegate.h"
 #import "HTLCSVStringExportProvider.h"
 #import "HTLSqliteStorageProvider.h"
@@ -21,7 +21,7 @@ static NSString *const kStorageFileName = @"time_logger_storage.db";
 
 @interface HTETodayDataSource ()
 
-@property(nonatomic, strong) HTLContentManager *contentManager;
+@property(nonatomic, strong) HTLDataManager *contentManager;
 
 - (void)subscribe;
 
@@ -44,20 +44,20 @@ static NSString *const kStorageFileName = @"time_logger_storage.db";
     return [result copy];
 }
 
-- (BOOL)createReportWithCompletion:(HTLCompletionDto *)completion {
+- (BOOL)createReportWithCompletion:(HTLCompletion *)completion {
     NSDate *startDate = self.contentManager.findLastReportEndDate;
-    HTLReportDto *report = [HTLReportDto reportWithIdentifier:[NSUUID UUID].UUIDString
-                                             actionIdentifier:completion.action.identifier
-                                           categoryIdentifier:completion.category.identifier
-                                                    startDate:startDate ? startDate : [NSDate new]
-                                                      endDate:[NSDate new]];
-    HTLReportExtendedDto *reportExtended =
-            [HTLReportExtendedDto reportExtendedWithReport:report action:completion.action category:completion.category];
+    HTLReport *report = [HTLReport reportWithIdentifier:[NSUUID UUID].UUIDString
+                                       actionIdentifier:completion.action.identifier
+                                     categoryIdentifier:completion.category.identifier
+                                              startDate:startDate ? startDate : [NSDate new]
+                                                endDate:[NSDate new]];
+    HTLReportExtended *reportExtended =
+            [HTLReportExtended reportExtendedWithReport:report action:completion.action category:completion.category];
 
     return [self.contentManager storeReportExtended:reportExtended];
 }
 
-- (HTLReportExtendedDto *)lastReportExtended {
+- (HTLReportExtended *)lastReportExtended {
     return self.contentManager.findLastReportExtended;
 }
 
@@ -84,7 +84,7 @@ static NSString *const kStorageFileName = @"time_logger_storage.db";
         HTLSqliteStorageProvider *sqliteStorageProvider =
                 [HTLSqliteStorageProvider sqliteStorageProviderWithStorageFolderURL:storageFolderURL
                                                                     storageFileName:kStorageFileName];
-        contentManager_ = [HTLContentManager contentManagerWithStorageProvider:sqliteStorageProvider exportProvider:[HTLCSVStringExportProvider new]];
+        contentManager_ = [HTLDataManager contentManagerWithStorageProvider:sqliteStorageProvider exportProvider:[HTLCSVStringExportProvider new]];
         [self subscribe];
     }
     return self;

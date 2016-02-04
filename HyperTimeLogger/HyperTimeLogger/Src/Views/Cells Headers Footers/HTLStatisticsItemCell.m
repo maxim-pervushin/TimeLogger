@@ -4,7 +4,7 @@
 //
 
 #import "HTLStatisticsItemCell.h"
-#import "HTLCategoryDto.h"
+#import "HTLCategory.h"
 #import "NSDate+HTLTimeHelpers.h"
 
 
@@ -20,7 +20,7 @@
 
 @implementation HTLStatisticsItemCell
 
-- (void)configureWithStatisticsItem:(HTLStatisticsItemDto *)statisticsItem totalTime:(NSTimeInterval)totalTime {
+- (void)configureWithStatisticsItem:(HTLStatisticsItem *)statisticsItem totalTime:(NSTimeInterval)totalTime {
     if (statisticsItem) {
         self.categoryTitleLabel.text = statisticsItem.category.localizedTitle;
         self.totalTimeLabel.text = htlStringWithTimeInterval(statisticsItem.totalTime);

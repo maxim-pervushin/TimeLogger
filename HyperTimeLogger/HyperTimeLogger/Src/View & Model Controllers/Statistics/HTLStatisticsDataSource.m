@@ -4,11 +4,11 @@
 //
 
 #import "HTLStatisticsDataSource.h"
-#import "HTLReportDto.h"
-#import "HTLReportExtendedDto.h"
-#import "HTLContentManager.h"
-#import "HTLDateSectionDto.h"
-#import "HTLStatisticsItemDto.h"
+#import "HTLReport.h"
+#import "HTLReportExtended.h"
+#import "HTLDataManager.h"
+#import "HTLDateSection.h"
+#import "HTLStatisticsItem.h"
 #import "HTLAppDelegate.h"
 
 
@@ -34,7 +34,7 @@
 
 #pragma mark - HTLStatisticsDataSource
 
-+ (instancetype)dataSourceWithDateSection:(HTLDateSectionDto *)dateSection dataChangedBlock:(HTLDataSourceDataChangedBlock)block {
++ (instancetype)dataSourceWithDateSection:(HTLDateSection *)dateSection dataChangedBlock:(HTLDataSourceDataChangedBlock)block {
 
     HTLStatisticsDataSource *instance = [self dataSourceWithDataChangedBlock:block];
     instance.dateSection = dateSection;
@@ -44,23 +44,23 @@
 - (void)reloadData {
     __weak __typeof(self) weakSelf = self;
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0), ^{
-        NSArray *categories = [HTLAppContentManger findCategoriesWithDateSection:weakSelf.dateSection];
+        NSArray *categories = [HTLAppDataManger findCategoriesWithDateSection:weakSelf.dateSection];
         NSMutableArray *categoriesCalculated = [NSMutableArray new];
         NSMutableDictionary *statisticsByCategoryCalculated = [NSMutableDictionary new];
         NSTimeInterval totalTime = 0;
-        for (HTLCategoryDto *category in categories) {
-            NSArray *reportsExtended = [HTLAppContentManger findReportsExtendedWithDateSection:self.dateSection
-                                                                                                     category:category];
+        for (HTLCategory *category in categories) {
+            NSArray *reportsExtended = [HTLAppDataManger findReportsExtendedWithDateSection:self.dateSection
+                                                                                   category:category];
 
             NSTimeInterval categoryTotalTime = 0;
             NSUInteger totalReports = 0;
-            for (HTLReportExtendedDto *reportExtended in reportsExtended) {
+            for (HTLReportExtended *reportExtended in reportsExtended) {
                 categoryTotalTime += [reportExtended.report.endDate timeIntervalSinceDate:reportExtended.report.startDate];
                 totalReports++;
             }
             totalTime += categoryTotalTime;
 
-            HTLStatisticsItemDto *statisticsItem = [HTLStatisticsItemDto statisticsItemWithCategory:category totalTime:categoryTotalTime totalReports:totalReports];
+            HTLStatisticsItem *statisticsItem = [HTLStatisticsItem statisticsItemWithCategory:category totalTime:categoryTotalTime totalReports:totalReports];
             if (statisticsItem) {
                 [categoriesCalculated addObject:category];
                 NSString *key = [NSString stringWithFormat:@"%@", @(category.hash)];
@@ -100,7 +100,7 @@
     return self.totalTimeSaved;
 }
 
-- (HTLStatisticsItemDto *)statisticsForCategory:(HTLCategoryDto *)category {
+- (HTLStatisticsItem *)statisticsForCategory:(HTLCategory *)category {
     NSString *key = [NSString stringWithFormat:@"%@", @(category.hash)];
     return self.statisticsByCategorySaved[key];
 }

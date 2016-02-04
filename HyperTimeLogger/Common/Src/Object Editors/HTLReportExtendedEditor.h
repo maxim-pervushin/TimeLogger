@@ -4,12 +4,12 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "HTLReportDto.h"
+#import "HTLReport.h"
 
-@class HTLReportExtendedDto;
-@class HTLCategoryDto;
-@class HTLActionDto;
-@class HTLReportDto;
+@class HTLReportExtended;
+@class HTLCategory;
+@class HTLAction;
+@class HTLReport;
 
 
 typedef void (^HTLReportExtendedEditorChangedBlock)();
@@ -19,14 +19,14 @@ typedef void (^HTLReportExtendedEditorChangedBlock)();
 
 + (instancetype)editorWithChangedBlock:(HTLReportExtendedEditorChangedBlock)block;
 
-@property(nonatomic, strong) HTLReportExtendedDto *originalReportExtended;
-@property(nonatomic, readonly) HTLReportExtendedDto *updatedReportExtended;
+@property(nonatomic, strong) HTLReportExtended *originalReportExtended;
+@property(nonatomic, readonly) HTLReportExtended *updatedReportExtended;
 
 @property (nonatomic, readonly) BOOL canSave;
 
 @property(nonatomic, strong) NSDate *reportStartDate;
 @property(nonatomic, strong) NSDate *reportEndDate;
-@property(nonatomic, strong) HTLActionDto *action;
-@property(nonatomic, strong) HTLCategoryDto *category;
+@property(nonatomic, strong) HTLAction *action;
+@property(nonatomic, strong) HTLCategory *category;
 
 @end

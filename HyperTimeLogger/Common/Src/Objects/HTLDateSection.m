@@ -3,11 +3,11 @@
 // Copyright (c) 2015 Maxim Pervushin. All rights reserved.
 //
 
-#import "HTLDateSectionDto.h"
+#import "HTLDateSection.h"
 #import "NSDate+HTLComponents.h"
 
 
-@implementation HTLDateSectionDto
+@implementation HTLDateSection
 @synthesize dateString = dateString_;
 @synthesize timeString = timeString_;
 @synthesize timeZoneString = timeZoneString_;
@@ -29,7 +29,7 @@
 #pragma mark - NSCopying
 
 - (id)copyWithZone:(NSZone *)zone {
-    HTLDateSectionDto *copy = [[[self class] allocWithZone:zone] init];
+    HTLDateSection *copy = [[[self class] allocWithZone:zone] init];
 
     if (copy != nil) {
         copy->dateString_ = dateString_;
@@ -51,7 +51,7 @@
     return [self isEqualToDto:other];
 }
 
-- (BOOL)isEqualToDto:(HTLDateSectionDto *)dto {
+- (BOOL)isEqualToDto:(HTLDateSection *)dto {
     if (self == dto)
         return YES;
     if (dto == nil)
@@ -85,7 +85,7 @@
 
 @end
 
-@implementation HTLDateSectionDto (Helpers)
+@implementation HTLDateSection (Helpers)
 
 + (NSDateFormatter *)fullFormatter {
     NSDateFormatter *formatter = [NSDateFormatter new];
@@ -95,7 +95,7 @@
 }
 
 - (NSString *)fulldateStringLocalized {
-    return [[HTLDateSectionDto fullFormatter] stringFromDate:[NSDate dateWithDateString:self.dateString timeString:self.timeString timeZoneString:self.timeZoneString]];
+    return [[HTLDateSection fullFormatter] stringFromDate:[NSDate dateWithDateString:self.dateString timeString:self.timeString timeZoneString:self.timeZoneString]];
 }
 
 @end

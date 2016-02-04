@@ -4,9 +4,9 @@
 //
 
 #import "HTLEditReportDataSource.h"
-#import "HTLContentManager.h"
-#import "HTLReportExtendedDto.h"
-#import "HTLActionDto.h"
+#import "HTLDataManager.h"
+#import "HTLReportExtended.h"
+#import "HTLAction.h"
 #import "HTLAppDelegate.h"
 
 
@@ -17,22 +17,22 @@
 #pragma mark - HTLEditReportDataSource
 
 - (NSArray *)categories {
-    return [HTLAppContentManger findCategoriesWithDateSection:nil];
+    return [HTLAppDataManger findCategoriesWithDateSection:nil];
 }
 
 - (NSDate *)startDate {
-    return [HTLAppContentManger findLastReportEndDate];
+    return [HTLAppDataManger findLastReportEndDate];
 }
 
-- (NSArray *)completionsForAction:(HTLActionDto *)action {
+- (NSArray *)completionsForAction:(HTLAction *)action {
     if (!action) {
-        return [HTLAppContentManger findCompletionsWithText:nil];
+        return [HTLAppDataManger findCompletionsWithText:nil];
     }
-    return [HTLAppContentManger findCompletionsWithText:action.title];
+    return [HTLAppDataManger findCompletionsWithText:action.title];
 }
 
-- (BOOL)saveReportExtended:(HTLReportExtendedDto *)reportExtended {
-    return [HTLAppContentManger storeReportExtended:reportExtended];
+- (BOOL)saveReportExtended:(HTLReportExtended *)reportExtended {
+    return [HTLAppDataManger storeReportExtended:reportExtended];
 }
 
 @end

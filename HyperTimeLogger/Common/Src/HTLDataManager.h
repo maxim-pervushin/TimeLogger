@@ -9,7 +9,7 @@
 @protocol HTLStringExportProvider;
 
 
-@interface HTLContentManager : NSObject <HTLStorageProvider>
+@interface HTLDataManager : NSObject <HTLStorageProvider>
 
 + (instancetype)contentManagerWithStorageProvider:(id <HTLStorageProvider>)storageProvider exportProvider:(id <HTLStringExportProvider>)exportProvider;
 

@@ -7,22 +7,22 @@
 #import "HTLSqliteStorageProvider.h"
 
 @class FMResultSet;
-@class HTLActionDto;
-@class HTLCompletionDto;
-@class HTLReportDto;
+@class HTLAction;
+@class HTLCompletion;
+@class HTLReport;
 
 @interface HTLSqliteStorageProvider (Deserialization)
 
-- (HTLActionDto *)actionWithResultSet:(FMResultSet *)resultSet;
+- (HTLAction *)actionWithResultSet:(FMResultSet *)resultSet;
 
-- (HTLCategoryDto *)categoryWithResultSet:(FMResultSet *)resultSet;
+- (HTLCategory *)categoryWithResultSet:(FMResultSet *)resultSet;
 
-- (HTLDateSectionDto *)dateSectionWithResultSet:(FMResultSet *)resultSet;
+- (HTLDateSection *)dateSectionWithResultSet:(FMResultSet *)resultSet;
 
-- (HTLReportDto *)reportWithResultSet:(FMResultSet *)resultSet;
+- (HTLReport *)reportWithResultSet:(FMResultSet *)resultSet;
 
-- (HTLReportExtendedDto *)reportExtendedWithResultSet:(FMResultSet *)resultSet;
+- (HTLReportExtended *)reportExtendedWithResultSet:(FMResultSet *)resultSet;
 
-- (HTLCompletionDto *)completionWithResultSet:(FMResultSet *)resultSet;
+- (HTLCompletion *)completionWithResultSet:(FMResultSet *)resultSet;
 
 @end

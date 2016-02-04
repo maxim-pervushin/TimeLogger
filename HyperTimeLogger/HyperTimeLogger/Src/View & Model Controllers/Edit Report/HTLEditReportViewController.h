@@ -6,11 +6,11 @@
 #import <UIKit/UIKit.h>
 
 
-@class HTLReportExtendedDto;
+@class HTLReportExtended;
 
 
 @interface HTLEditReportViewController : UIViewController
 
-@property(nonatomic, copy) HTLReportExtendedDto *reportExtended;
+@property(nonatomic, copy) HTLReportExtended *reportExtended;
 
 @end

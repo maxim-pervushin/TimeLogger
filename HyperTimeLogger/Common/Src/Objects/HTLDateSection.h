@@ -6,7 +6,7 @@
 #import <Foundation/Foundation.h>
 
 
-@interface HTLDateSectionDto : NSObject <NSCopying>
+@interface HTLDateSection : NSObject <NSCopying>
 
 + (instancetype)dateSectionWithDateString:(NSString *)dateString timeString:(NSString *)timeString timeZone:(NSString *)timeZone;
 
@@ -16,7 +16,7 @@
 
 - (BOOL)isEqual:(id)other;
 
-- (BOOL)isEqualToDto:(HTLDateSectionDto *)dto;
+- (BOOL)isEqualToDto:(HTLDateSection *)dto;
 
 - (NSUInteger)hash;
 
@@ -29,7 +29,7 @@
 @end
 
 
-@interface HTLDateSectionDto (Helpers)
+@interface HTLDateSection (Helpers)
 
 @property (nonatomic, readonly) NSString *fulldateStringLocalized;
 

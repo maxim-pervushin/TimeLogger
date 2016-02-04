@@ -7,7 +7,7 @@
 //
 
 #import "HTLAppDelegate.h"
-#import "HTLContentManager.h"
+#import "HTLDataManager.h"
 #import "HTLSqliteStorageProvider.h"
 #import "HTLCSVStringExportProvider.h"
 #import "HTLReportExtendedCell.h"
@@ -105,7 +105,7 @@ static NSString *const kStorageFileName = @"time_logger_storage.db";
     HTLSqliteStorageProvider *sqliteStorageProvider =
             [HTLSqliteStorageProvider sqliteStorageProviderWithStorageFolderURL:storageFolderURL
                                                                 storageFileName:kStorageFileName];
-    self.contentManager = [HTLContentManager contentManagerWithStorageProvider:sqliteStorageProvider exportProvider:[HTLCSVStringExportProvider new]];
+    self.dataManager = [HTLDataManager contentManagerWithStorageProvider:sqliteStorageProvider exportProvider:[HTLCSVStringExportProvider new]];
 }
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
