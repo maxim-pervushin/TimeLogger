@@ -42,6 +42,7 @@
 		73BC663B16F6B52EE9662BF9 /* HTLReportDto.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6A41E76EE6DBA2B7B791 /* HTLReportDto.m */; };
 		73BC663F4406329510726033 /* HTLSqliteStorageProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC686334D59793FEFA2E86 /* HTLSqliteStorageProvider.m */; };
 		73BC66543E2156EC1A286A68 /* HTLTopBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC64192B6EF7AB8A700A9C /* HTLTopBarView.swift */; };
+		73BC66B026C8DD04DDB65B0C /* HTLButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6968DEE8D9C79A5AB9FB /* HTLButton.swift */; };
 		73BC66E062885277EA135AC0 /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73BC6FB0EFED7B84F71E676E /* NotificationCenter.framework */; };
 		73BC66FBEB3FEDA6D59A4EEB /* HTLSqliteStorageProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC686334D59793FEFA2E86 /* HTLSqliteStorageProvider.m */; };
 		73BC67153769259438DD2A5C /* HTLTopBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC64192B6EF7AB8A700A9C /* HTLTopBarView.swift */; };
@@ -51,6 +52,7 @@
 		73BC679DD95BD9F43FE6A2AB /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6B4DA596906232FF8970 /* main.m */; };
 		73BC67A4E0C0CA36BB035D6C /* HTLDateSectionDto.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC66709A1F2D03B601899D /* HTLDateSectionDto.m */; };
 		73BC67C565D3A4CC29A6EDE8 /* NSDate+HTLTimeHelpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC62DB5CA313A4BC61EC0F /* NSDate+HTLTimeHelpers.m */; };
+		73BC67D43872E6465FB36050 /* HTLTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC654D3DAB9AE23903E3BE /* HTLTextField.swift */; };
 		73BC67E812EA793D35E89D55 /* HTLStatisticsItemDto.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6DFB1BA7EA57448732DA /* HTLStatisticsItemDto.m */; };
 		73BC68033AF8061D639DCFC0 /* HTETodayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6B8E25A8D300C95D3491 /* HTETodayViewController.m */; };
 		73BC680C541F6C6C7A678530 /* HTLLightBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6A4018BAEAD4A02545CA /* HTLLightBackgroundView.swift */; };
@@ -81,13 +83,16 @@
 		73BC6ACDC82E718A89E6C930 /* HTLSettingsModelController+TestData.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC61A9C99CE0428963C88B /* HTLSettingsModelController+TestData.m */; };
 		73BC6ACF153F24B101D5596E /* HTLCategoryCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6BF188BC4B62EBAED386 /* HTLCategoryCell.m */; };
 		73BC6AEDC24B3643325E6F75 /* HTLCategoryDto.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC660F9035AF2D12D68B11 /* HTLCategoryDto.m */; };
+		73BC6AF0B9F2A679291650B0 /* HTLTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC654D3DAB9AE23903E3BE /* HTLTextField.swift */; };
 		73BC6AF3A7B25DE8264E7098 /* HTLReportExtendedEditor.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6BD7F554BC56573CE86A /* HTLReportExtendedEditor.m */; };
 		73BC6B1E338548FE30A4AFAD /* HTLActionDto.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC648635BCE062AF18E634 /* HTLActionDto.m */; };
 		73BC6B5E48C8D2C5D91C39EB /* HTLStatisticsModelController.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC64B38D1BC62AB8562034 /* HTLStatisticsModelController.m */; };
+		73BC6B95408C6F7DE2D1AC61 /* HTLButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6968DEE8D9C79A5AB9FB /* HTLButton.swift */; };
 		73BC6B9FDBFB2EE8267221A9 /* HTLModelController.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6B2EF7D4AAB16D0EC09A /* HTLModelController.m */; };
 		73BC6BB80E74AD1C414F0C8D /* HTLPieChartCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6E4CD1FE08E15C414BAC /* HTLPieChartCell.m */; };
 		73BC6BBDB05B2D670300F209 /* HTLReportExtendedDto.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC666118C4F574F66F741D /* HTLReportExtendedDto.m */; };
 		73BC6BCFC083BDB023D12F96 /* HTLDateSectionDto.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC66709A1F2D03B601899D /* HTLDateSectionDto.m */; };
+		73BC6BF00902B35EF408768C /* HTLButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6968DEE8D9C79A5AB9FB /* HTLButton.swift */; };
 		73BC6BF4CEB14B9FDFD57BAE /* HTLCompletionDto.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC612AAFD0BFC06B406EC4 /* HTLCompletionDto.m */; };
 		73BC6C0B03028348E4AD5B35 /* NSDate+HTLTimeHelpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC62DB5CA313A4BC61EC0F /* NSDate+HTLTimeHelpers.m */; };
 		73BC6C3879C2267F06376B2E /* HTLDateSectionDto.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC66709A1F2D03B601899D /* HTLDateSectionDto.m */; };
@@ -104,6 +109,7 @@
 		73BC6DA30D82DB7740AD6F11 /* UIColor+HTLHelpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC60624B8CE64E57E76B25 /* UIColor+HTLHelpers.m */; };
 		73BC6E37E01E454ABCF88F75 /* HTLActionDto.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC648635BCE062AF18E634 /* HTLActionDto.m */; };
 		73BC6E4DED1BEDC0CE46C60D /* HTLStatisticsItemCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC68B935DD2C83FA55C77F /* HTLStatisticsItemCell.m */; };
+		73BC6E52ED3D1C17CE5E2362 /* HTLTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC654D3DAB9AE23903E3BE /* HTLTextField.swift */; };
 		73BC6E8F223111B6EB5A243E /* HTLReportListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6E168D88E254C8F6A4CE /* HTLReportListViewController.m */; };
 		73BC6EA73C3B70E4C3527E01 /* HTLLineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC60ECEFAC2122A4C17181 /* HTLLineView.swift */; };
 		73BC6F084CF5127FC0661E55 /* HTLReportExtendedEditor.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6BD7F554BC56573CE86A /* HTLReportExtendedEditor.m */; };
@@ -513,6 +519,7 @@
 		73BC648635BCE062AF18E634 /* HTLActionDto.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTLActionDto.m; sourceTree = "<group>"; };
 		73BC64B38D1BC62AB8562034 /* HTLStatisticsModelController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTLStatisticsModelController.m; sourceTree = "<group>"; };
 		73BC64E454A17ED44DEA7F42 /* HTETodayModelController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTETodayModelController.h; sourceTree = "<group>"; };
+		73BC654D3DAB9AE23903E3BE /* HTLTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTLTextField.swift; sourceTree = "<group>"; };
 		73BC6556E962FBAFD5448885 /* HTLReportExtendedDto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTLReportExtendedDto.h; sourceTree = "<group>"; };
 		73BC656F19F67BA6578AE7DC /* HTLSettingsModelController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTLSettingsModelController.h; sourceTree = "<group>"; };
 		73BC657527EC1255C199221C /* HTLReportListModelController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTLReportListModelController.h; sourceTree = "<group>"; };
@@ -540,6 +547,7 @@
 		73BC68B935DD2C83FA55C77F /* HTLStatisticsItemCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTLStatisticsItemCell.m; sourceTree = "<group>"; };
 		73BC68DA26EAC7B4FDF38B76 /* HTLCompletionDto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTLCompletionDto.h; sourceTree = "<group>"; };
 		73BC693996F5418B34AAA1E5 /* HTLSettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTLSettingsViewController.h; sourceTree = "<group>"; };
+		73BC6968DEE8D9C79A5AB9FB /* HTLButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTLButton.swift; sourceTree = "<group>"; };
 		73BC69788FA88BEA8DAF03AC /* HTLSettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTLSettingsViewController.m; sourceTree = "<group>"; };
 		73BC6A08B8F5E4EB350AA2FD /* HTLEditReportViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTLEditReportViewController.h; sourceTree = "<group>"; };
 		73BC6A22878FD4F414CF5C2A /* settings@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "settings@2x.png"; sourceTree = "<group>"; };
@@ -997,6 +1005,8 @@
 			children = (
 				73BC680C01076520B3D85144 /* Cells Headers Footers */,
 				73BC647FFAA49DF6B183D16E /* HTLAddButtonWidget.swift */,
+				73BC654D3DAB9AE23903E3BE /* HTLTextField.swift */,
+				73BC6968DEE8D9C79A5AB9FB /* HTLButton.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -1847,6 +1857,8 @@
 				73BC624016E4231AC06C7519 /* HTLNoContentCell.swift in Sources */,
 				73BC68668853BF61467DC6AE /* UIColor+HTLHelpers.m in Sources */,
 				73BC6024FC6ACEB7F174B963 /* HTLStatisticsItemDto.m in Sources */,
+				73BC6E52ED3D1C17CE5E2362 /* HTLTextField.swift in Sources */,
+				73BC66B026C8DD04DDB65B0C /* HTLButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1916,6 +1928,8 @@
 				73BC6FA760B937F49D4F015F /* HTLNoContentCell.swift in Sources */,
 				73BC6AAC3C7F3CA192377EC1 /* UIColor+HTLHelpers.m in Sources */,
 				73BC6C3C58AE8FE3CF49B186 /* HTLStatisticsItemDto.m in Sources */,
+				73BC6AF0B9F2A679291650B0 /* HTLTextField.swift in Sources */,
+				73BC6B95408C6F7DE2D1AC61 /* HTLButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2129,6 +2143,8 @@
 				73BC61685C3C5693ED37A447 /* HTLNoContentCell.swift in Sources */,
 				73BC6DA30D82DB7740AD6F11 /* UIColor+HTLHelpers.m in Sources */,
 				73BC67E812EA793D35E89D55 /* HTLStatisticsItemDto.m in Sources */,
+				73BC67D43872E6465FB36050 /* HTLTextField.swift in Sources */,
+				73BC6BF00902B35EF408768C /* HTLButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
