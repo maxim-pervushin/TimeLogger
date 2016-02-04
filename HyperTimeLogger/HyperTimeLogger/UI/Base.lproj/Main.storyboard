@@ -188,7 +188,7 @@
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="45X-uq-LZX">
                                         <rect key="frame" x="-42" y="-21" width="42" height="21"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="24"/>
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -201,7 +201,9 @@
                                     <constraint firstAttribute="trailing" secondItem="KMN-vU-Zbm" secondAttribute="trailing" id="QmS-fa-EfS"/>
                                     <constraint firstItem="KMN-vU-Zbm" firstAttribute="top" secondItem="XeI-6A-xKb" secondAttribute="top" id="fZe-mn-HGy"/>
                                     <constraint firstAttribute="bottom" secondItem="45X-uq-LZX" secondAttribute="bottom" constant="8" id="kUq-zQ-l4p"/>
-                                    <constraint firstItem="KMN-vU-Zbm" firstAttribute="leading" secondItem="45X-uq-LZX" secondAttribute="trailing" constant="8" id="lXt-w0-OMf"/>
+                                    <constraint firstItem="KMN-vU-Zbm" firstAttribute="leading" secondItem="45X-uq-LZX" secondAttribute="trailing" constant="8" id="lXt-w0-OMf">
+                                        <variation key="widthClass=compact" constant="0.0"/>
+                                    </constraint>
                                     <constraint firstAttribute="width" constant="240" id="vae-zJ-BkL"/>
                                     <constraint firstAttribute="height" constant="60" id="xnY-tY-3L5"/>
                                 </constraints>
