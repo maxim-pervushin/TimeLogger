@@ -295,6 +295,18 @@ static NSString *const kCategoryCellIdentifier = @"CategoryCell";
     [self updateUI];
 }
 
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    [self.textField becomeFirstResponder];
+}
+
+- (void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
+    if (self.textField.isFirstResponder) {
+        [self.textField resignFirstResponder];
+    }
+}
+
 - (void)viewDidDisappear:(BOOL)animated {
     [self unsubscribe];
     [super viewDidDisappear:animated];
