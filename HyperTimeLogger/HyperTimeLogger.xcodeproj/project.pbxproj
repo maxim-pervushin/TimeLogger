@@ -232,6 +232,7 @@
 		C51F13121B32C5B2001F452F /* add.png in Resources */ = {isa = PBXBuildFile; fileRef = C51F13111B32C5B2001F452F /* add.png */; };
 		C53370711B397E520095549E /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C533706F1B397E520095549E /* MainInterface.storyboard */; };
 		C53370781B397FC50095549E /* DTFolderMonitor.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6C4782FCAEADF81D13DD /* DTFolderMonitor.m */; };
+		C54FBB621C68C14A00170177 /* testdata_ru.json in Resources */ = {isa = PBXBuildFile; fileRef = 73BC61C5C5E177824633170B /* testdata_ru.json */; };
 		C55912531B3C06B8002593BE /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C55912511B3C06B8002593BE /* InfoPlist.strings */; };
 		C55912591B3C0853002593BE /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C55912571B3C0853002593BE /* InfoPlist.strings */; };
 		C559125E1B3C0867002593BE /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C559125C1B3C0867002593BE /* InfoPlist.strings */; };
@@ -1737,6 +1738,7 @@
 				C59088C81B398E330099F8CB /* Localizable.strings in Resources */,
 				C58B38621B395FB7006C7AE7 /* Main.storyboard in Resources */,
 				C51F13121B32C5B2001F452F /* add.png in Resources */,
+				C54FBB621C68C14A00170177 /* testdata_ru.json in Resources */,
 				73BC6D42F5DEFED44D50CF72 /* settings@3x.png in Resources */,
 				C51F13101B32C592001F452F /* statistics@3x.png in Resources */,
 				C51F130F1B32C592001F452F /* statistics@2x.png in Resources */,
@@ -2335,7 +2337,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "HyperTimeLogger Beta";
 				PROVISIONING_PROFILE = "";
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 				USER_HEADER_SEARCH_PATHS = "\"${PROJECT_DIR}/../Pods\"/**";
 			};
 			name = Debug;
@@ -2358,7 +2360,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "HyperTimeLogger Beta";
 				PROVISIONING_PROFILE = "";
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 				USER_HEADER_SEARCH_PATHS = "\"${PROJECT_DIR}/../Pods\"/**";
 			};
 			name = Release;
@@ -2381,7 +2383,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "HyperTimeLogger Alpha";
 				PROVISIONING_PROFILE = "";
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 				USER_HEADER_SEARCH_PATHS = "\"${PROJECT_DIR}/../Pods\"/**";
 			};
 			name = Debug;
@@ -2405,7 +2407,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "HyperTimeLogger Alpha";
 				PROVISIONING_PROFILE = "";
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 				USER_HEADER_SEARCH_PATHS = "\"${PROJECT_DIR}/../Pods\"/**";
 			};
 			name = Release;
@@ -2433,7 +2435,7 @@
 				PRODUCT_NAME = "TodayExtension Alpha";
 				PROVISIONING_PROFILE = "";
 				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -2456,7 +2458,7 @@
 				PRODUCT_NAME = "TodayExtension Alpha";
 				PROVISIONING_PROFILE = "";
 				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
@@ -2483,7 +2485,7 @@
 				PRODUCT_NAME = "TodayExtension Beta";
 				PROVISIONING_PROFILE = "";
 				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -2506,7 +2508,7 @@
 				PRODUCT_NAME = "TodayExtension Beta";
 				PROVISIONING_PROFILE = "";
 				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
@@ -2533,7 +2535,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -2556,7 +2558,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
@@ -2664,7 +2666,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 				USER_HEADER_SEARCH_PATHS = "\"${PROJECT_DIR}/../Pods\"/**";
 			};
 			name = Debug;
@@ -2687,7 +2689,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 				USER_HEADER_SEARCH_PATHS = "\"${PROJECT_DIR}/../Pods\"/**";
 			};
 			name = Release;
