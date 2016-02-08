@@ -54,7 +54,7 @@ static const int kCollectionViewMinItemsPerRow = 3;
     HTLReportExtended *reportExtended = self.dataSource.lastReportExtended;
     if (reportExtended) {
         self.lastReportActionTitleLabel.text = reportExtended.action.title;
-        self.lastReportCategoryTitleLabel.text = reportExtended.category.title;
+        self.lastReportCategoryTitleLabel.text = reportExtended.category.localizedTitle;
         self.lastReportDurationLabel.text = htlStringWithTimeInterval(reportExtended.report.duration);
         self.lastReportEndDateLabel.text = [NSDate stringWithStartDate:reportExtended.report.startDate endDate:reportExtended.report.endDate];
     } else {
