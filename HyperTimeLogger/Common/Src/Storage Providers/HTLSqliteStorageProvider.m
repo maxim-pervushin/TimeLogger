@@ -5,14 +5,15 @@
 
 #import "DTFolderMonitor.h"
 #import "FMDB.h"
-#import "HTLActionDto.h"
-#import "HTLCategoryDto.h"
-#import "HTLCompletionDto.h"
-#import "HTLDateSectionDto.h"
-#import "HTLReportDto.h"
-#import "HTLReportExtendedDto.h"
+#import "HTLAction.h"
+#import "HTLCategory.h"
+#import "HTLCompletion.h"
+#import "HTLDateSection.h"
+#import "HTLReport.h"
+#import "HTLReportExtended.h"
 #import "HTLSqliteStorageProvider+Deserialization.h"
 #import "NSDate+HTLComponents.h"
+#import "UIColor+HTLHelpers.h"
 
 
 @interface HTLSqliteStorageProvider ()
@@ -116,7 +117,7 @@
 
 #pragma mark - DB
 
-- (NSArray *)categoriesWithDateSection:(HTLDateSectionDto *)dateSection database:(FMDatabase *)database {
+- (NSArray *)categoriesWithDateSection:(HTLDateSection *)dateSection database:(FMDatabase *)database {
 
     NSMutableString *whereString = [NSMutableString new];
     if (dateSection) {
@@ -143,7 +144,7 @@
 
     NSMutableArray *categories = [NSMutableArray new];
     while ([resultSet next]) {
-        HTLCategoryDto *category = [self categoryWithResultSet:resultSet];
+        HTLCategory *category = [self categoryWithResultSet:resultSet];
         if (category) {
             [categories addObject:category];
         }
@@ -153,7 +154,7 @@
     return [categories copy];
 }
 
-- (HTLActionDto *)actionWithTitle:(NSString *)title database:(FMDatabase *)database {
+- (HTLAction *)actionWithTitle:(NSString *)title database:(FMDatabase *)database {
     FMResultSet *resultSet = [database executeQuery:
                     @"SELECT "
                             "identifier AS actionIdentifier, "
@@ -165,14 +166,14 @@
                                     @"title" : title ? title : @""
                             }];
 
-    HTLActionDto *result;
+    HTLAction *result;
     if ([resultSet next]) {
         result = [self actionWithResultSet:resultSet];
     }
     return result;
 }
 
-- (HTLActionDto *)storeAction:(HTLActionDto *)action database:(FMDatabase *)database {
+- (HTLAction *)storeAction:(HTLAction *)action database:(FMDatabase *)database {
     BOOL success = [database executeUpdate:@"INSERT OR REPLACE INTO action VALUES (:identifier, :title);"
                    withParameterDictionary:@{
                            @"identifier" : action.identifier,
@@ -188,7 +189,7 @@
     }
 }
 
-- (NSUInteger)numberOfCategoriesWithDateSection:(HTLDateSectionDto *)dateSection database:(FMDatabase *)database {
+- (NSUInteger)numberOfCategoriesWithDateSection:(HTLDateSection *)dateSection database:(FMDatabase *)database {
     NSMutableString *whereString = [NSMutableString new];
     if (dateSection) {
         [whereString appendString:
@@ -220,7 +221,7 @@
     return result;
 }
 
-- (HTLCategoryDto *)categoryWithTitle:(NSString *)title database:(FMDatabase *)database {
+- (HTLCategory *)categoryWithTitle:(NSString *)title database:(FMDatabase *)database {
     FMResultSet *resultSet = [database executeQuery:
                     @"SELECT "
                             "identifier AS categoryIdentifier, "
@@ -233,14 +234,14 @@
                                     @"title" : title ? title : @""
                             }];
 
-    HTLCategoryDto *result;
+    HTLCategory *result;
     if ([resultSet next]) {
         result = [self categoryWithResultSet:resultSet];
     }
     return result;
 }
 
-- (HTLCategoryDto *)storeCategory:(HTLCategoryDto *)category database:(FMDatabase *)database {
+- (HTLCategory *)storeCategory:(HTLCategory *)category database:(FMDatabase *)database {
     BOOL success = [database executeUpdate:@"INSERT OR REPLACE INTO category VALUES (:identifier, :title, :color)"
                    withParameterDictionary:@{
                            @"identifier" : category.identifier,
@@ -257,7 +258,7 @@
     }
 }
 
-- (HTLReportDto *)storeReport:(HTLReportDto *)report database:(FMDatabase *)database {
+- (HTLReport *)storeReport:(HTLReport *)report database:(FMDatabase *)database {
     NSString *startDateString;
     NSString *startTimeString;
     NSString *startTimeZoneString;
@@ -315,7 +316,7 @@
 
     NSMutableArray *sections = [NSMutableArray new];
     while ([resultSet next]) {
-        HTLDateSectionDto *dateSection = [self dateSectionWithResultSet:resultSet];
+        HTLDateSection *dateSection = [self dateSectionWithResultSet:resultSet];
         if (dateSection) {
             [sections addObject:dateSection];
         }
@@ -325,7 +326,7 @@
     return [NSArray arrayWithArray:sections];
 }
 
-- (NSUInteger)numberOfReportsWithDateSection:(HTLDateSectionDto *)dateSection database:(FMDatabase *)database {
+- (NSUInteger)numberOfReportsWithDateSection:(HTLDateSection *)dateSection database:(FMDatabase *)database {
     NSMutableString *whereString = [NSMutableString new];
     if (dateSection) {
         [whereString appendString:@"WHERE report.endDate = :dateSectionDate "
@@ -356,7 +357,7 @@
     return result;
 }
 
-- (NSArray *)reportsExtendedWithDateSection:(HTLDateSectionDto *)dateSection category:(HTLCategoryDto *)category database:(FMDatabase *)database {
+- (NSArray *)reportsExtendedWithDateSection:(HTLDateSection *)dateSection category:(HTLCategory *)category database:(FMDatabase *)database {
 
     NSMutableString *whereString = [NSMutableString new];
     if (dateSection) {
@@ -399,7 +400,7 @@
 
     NSMutableArray *reportsExtended = [NSMutableArray new];
     while ([resultSet next]) {
-        HTLReportExtendedDto *reportExtended = [self reportExtendedWithResultSet:resultSet];
+        HTLReportExtended *reportExtended = [self reportExtendedWithResultSet:resultSet];
         if (reportExtended) {
             [reportsExtended addObject:reportExtended];
         }
@@ -430,7 +431,7 @@
     return lastReportEndDate;
 }
 
-- (HTLReportExtendedDto *)lastReportExtendedInDatabase:(FMDatabase *)database {
+- (HTLReportExtended *)lastReportExtendedInDatabase:(FMDatabase *)database {
     FMResultSet *resultSet = [database executeQuery:
             @"SELECT "
                     "report.identifier AS identifier, "
@@ -450,7 +451,7 @@
                     "INNER JOIN action ON report.actionIdentifier = action.identifier "
                     "ORDER BY report.startDate DESC, report.startTime DESC LIMIT 1;"];
 
-    HTLReportExtendedDto *lastReportExtended;
+    HTLReportExtended *lastReportExtended;
     if ([resultSet next]) {
         lastReportExtended = [self reportExtendedWithResultSet:resultSet];
     }
@@ -477,7 +478,7 @@
 
     NSMutableArray *completions = [NSMutableArray new];
     while ([resultSet next]) {
-        HTLCompletionDto *completion = [self completionWithResultSet:resultSet];
+        HTLCompletion *completion = [self completionWithResultSet:resultSet];
         if (completion) {
             [completions addObject:completion];
         }
@@ -499,7 +500,7 @@
     return result;
 }
 
-- (NSUInteger)numberOfCategoriesWithDateSection:(HTLDateSectionDto *)dateSection {
+- (NSUInteger)numberOfCategoriesWithDateSection:(HTLDateSection *)dateSection {
     NSString *cacheKey = [NSString stringWithFormat:@"%@_%@",
                                                     NSStringFromSelector(_cmd),
                                                     dateSection ? @(dateSection.hash) : @""];
@@ -523,7 +524,7 @@
     return result;
 }
 
-- (NSArray *)findCategoriesWithDateSection:(HTLDateSectionDto *)dateSection {
+- (NSArray *)findCategoriesWithDateSection:(HTLDateSection *)dateSection {
     NSString *cacheKey = [NSString stringWithFormat:@"%@_%@",
                                                     NSStringFromSelector(_cmd),
                                                     dateSection ? @(dateSection.hash) : @""];
@@ -546,7 +547,7 @@
     return categories;
 }
 
-- (BOOL)storeCategory:(HTLCategoryDto *)category {
+- (BOOL)storeCategory:(HTLCategory *)category {
     if (!category) {
         return NO;
     }
@@ -558,7 +559,7 @@
 
     [self clearCaches];
 
-    HTLCategoryDto *added = [self storeCategory:category database:database];
+    HTLCategory *added = [self storeCategory:category database:database];
     if (!added) {
         [database close];
         return NO;
@@ -610,7 +611,7 @@
     return reportSections;
 }
 
-- (NSUInteger)numberOfReportsWithDateSection:(HTLDateSectionDto *)dateSection {
+- (NSUInteger)numberOfReportsWithDateSection:(HTLDateSection *)dateSection {
     NSString *cacheKey = [NSString stringWithFormat:@"%@_%@",
                                                     NSStringFromSelector(_cmd),
                                                     dateSection ? @(dateSection.hash) : @""];
@@ -634,7 +635,7 @@
     return result;
 }
 
-- (NSArray *)findReportsExtendedWithDateSection:(HTLDateSectionDto *)dateSection category:(HTLCategoryDto *)category {
+- (NSArray *)findReportsExtendedWithDateSection:(HTLDateSection *)dateSection category:(HTLCategory *)category {
     NSString *cacheKey = [NSString stringWithFormat:@"%@_%@_%@",
                                                     NSStringFromSelector(_cmd),
                                                     dateSection ? @(dateSection.hash) : @"",
@@ -662,7 +663,7 @@
     return result;
 }
 
-- (BOOL)storeReportExtended:(HTLReportExtendedDto *)reportExtended {
+- (BOOL)storeReportExtended:(HTLReportExtended *)reportExtended {
     if (!reportExtended) {
         return NO;
     }
@@ -674,7 +675,7 @@
 
     [self clearCaches];
 
-    HTLActionDto *action = [self actionWithTitle:reportExtended.action.title database:database];
+    HTLAction *action = [self actionWithTitle:reportExtended.action.title database:database];
     if (!action) {
         action = [self storeAction:reportExtended.action database:database];
     }
@@ -683,7 +684,7 @@
         return NO;
     }
 
-    HTLCategoryDto *category = [self categoryWithTitle:reportExtended.category.title database:database];
+    HTLCategory *category = [self categoryWithTitle:reportExtended.category.title database:database];
     if (!category) {
         category = [self storeCategory:reportExtended.category database:database];
     }
@@ -692,12 +693,12 @@
         return NO;
     }
 
-    HTLReportDto *report = [HTLReportDto reportWithIdentifier:reportExtended.report.identifier
-                                             actionIdentifier:action.identifier
-                                           categoryIdentifier:category.identifier
-                                                    startDate:reportExtended.report.startDate
-                                                      endDate:reportExtended.report.endDate];
-    HTLReportDto *storedReport = [self storeReport:report database:database];
+    HTLReport *report = [HTLReport reportWithIdentifier:reportExtended.report.identifier
+                                       actionIdentifier:action.identifier
+                                     categoryIdentifier:category.identifier
+                                              startDate:reportExtended.report.startDate
+                                                endDate:reportExtended.report.endDate];
+    HTLReport *storedReport = [self storeReport:report database:database];
     if (!storedReport) {
         [database close];
         return NO;
@@ -732,9 +733,9 @@
     return lastReportEndDate;
 }
 
-- (HTLReportExtendedDto *)findLastReportExtended {
+- (HTLReportExtended *)findLastReportExtended {
     NSString *cacheKey = NSStringFromSelector(_cmd);
-    HTLReportExtendedDto *cached = [self.cache objectForKey:cacheKey];
+    HTLReportExtended *cached = [self.cache objectForKey:cacheKey];
     if (cached) {
         DDLogVerbose(@"Retrieving cached Last Report Extended");
         return cached;
@@ -745,7 +746,7 @@
         return nil;
     }
 
-    HTLReportExtendedDto *lastReportExtended = [self lastReportExtendedInDatabase:database];
+    HTLReportExtended *lastReportExtended = [self lastReportExtendedInDatabase:database];
 
     [database close];
 

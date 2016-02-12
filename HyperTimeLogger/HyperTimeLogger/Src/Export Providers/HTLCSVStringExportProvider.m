@@ -4,10 +4,10 @@
 //
 
 #import "HTLCSVStringExportProvider.h"
-#import "HTLReportExtendedDto.h"
-#import "HTLActionDto.h"
-#import "HTLCategoryDto.h"
-#import "HTLReportDto.h"
+#import "HTLReportExtended.h"
+#import "HTLAction.h"
+#import "HTLCategory.h"
+#import "HTLReport.h"
 
 static NSString *const kDefaultDateFormat = @"yyyy-MM-dd HH:mm:ss ZZZ";
 
@@ -32,8 +32,8 @@ static NSString *const kDefaultDateFormat = @"yyyy-MM-dd HH:mm:ss ZZZ";
 
 - (NSString *)exportReportsExtended:(NSArray *)reportsExtended {
     NSMutableString *csvString = [NSMutableString new];
-    for (HTLReportExtendedDto *reportExtended in reportsExtended) {
-        if (![reportExtended isKindOfClass:[HTLReportExtendedDto class]]) {
+    for (HTLReportExtended *reportExtended in reportsExtended) {
+        if (![reportExtended isKindOfClass:[HTLReportExtended class]]) {
             DDLogError(@"Invalid class: %@", reportExtended);
             continue;
         }

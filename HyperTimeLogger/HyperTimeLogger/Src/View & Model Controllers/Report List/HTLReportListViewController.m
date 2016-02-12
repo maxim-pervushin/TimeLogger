@@ -8,34 +8,48 @@
 
 #import "HTLReportListViewController.h"
 #import "HTLReportExtendedCell.h"
-#import "HTLReportListModelController.h"
-#import "HTLReportExtendedDto.h"
+#import "HTLReportListDataSource.h"
+#import "HTLReportExtended.h"
 #import "HTLDateSectionHeader.h"
 #import "HTLAppDelegate.h"
 #import "HTLEditReportViewController.h"
 #import "HTLStatisticsViewController.h"
+#import "NSDate+HTLTimeHelpers.h"
+#import "HTLDateSection.h"
 
 
 static NSString *const kReportCellIdentifier = @"ReportCell";
 static NSString *const kDateSectionHeaderIdentifier = @"DateSectionHeader";
-static NSString *const kCreateReportSegueIdentifier = @"CreateReport";
+static NSString *const kEditReportSegueIdentifier = @"EditReport";
 static NSString *const kShowStatisticsSegueIdentifier = @"ShowStatistics";
 static const float kAddButtonToBottomDefault = 50.0f;
 static const float kHeaderHeight = 35.0f;
 
 
-@interface HTLReportListViewController () <UITableViewDataSource, UITableViewDelegate, HTLDateSectionHeaderDelegate>
+@interface HTLReportListViewController () <UITableViewDataSource, UITableViewDelegate, HTLDateSectionHeaderDelegate> {
+    HTLReportListDataSource *_dataSource;
+    NSTimer *_timer;
+}
 
-@property(nonatomic, weak) IBOutlet UIButton *addButton;
+@property(nonatomic, weak) IBOutlet UIView *addButtonWidget;
+@property(nonatomic, weak) IBOutlet UILabel *timerLabel;
 @property(nonatomic, weak) IBOutlet NSLayoutConstraint *addButtonToBottomLayoutConstraint;
 @property(nonatomic, weak) IBOutlet NSLayoutConstraint *addButtonToRightLayoutConstraint;
 @property(nonatomic, weak) IBOutlet UITableView *tableView;
 
-@property(nonatomic, strong) HTLReportListModelController *modelController;
+@property(nonatomic, readonly) HTLReportListDataSource *dataSource;
 @property(nonatomic, assign) CGFloat originalToAddButtonToBottom;
 @property(nonatomic, assign) CGFloat originalToAddButtonToRight;
 
 - (IBAction)addButtonPanGesture:(UIPanGestureRecognizer *)panGestureRecognizer;
+
+- (IBAction)addButtonTapGesture:(UITapGestureRecognizer *)panGestureRecognizer;
+
+- (void)startTimer;
+
+- (void)stopTimer;
+
+- (void)timerAction:(NSTimer *)timer;
 
 - (void)subscribe;
 
@@ -49,7 +63,7 @@ static const float kHeaderHeight = 35.0f;
 
 @implementation HTLReportListViewController
 
-#pragma mark - HTLReportListViewController
+#pragma mark - HTLReportListViewController @IB
 
 - (IBAction)addButtonPanGesture:(UIPanGestureRecognizer *)panGestureRecognizer {
     if (panGestureRecognizer.state == UIGestureRecognizerStateBegan) {
@@ -58,16 +72,71 @@ static const float kHeaderHeight = 35.0f;
     }
 
     CGPoint translation = [panGestureRecognizer translationInView:self.view];
-    self.addButtonToBottomLayoutConstraint.constant = self.originalToAddButtonToBottom - translation.y;
-    self.addButtonToRightLayoutConstraint.constant = self.originalToAddButtonToRight - translation.x;
+
+    CGFloat toBottom = self.originalToAddButtonToBottom - translation.y;
+    if (toBottom < 0) {
+        toBottom = 0;
+    }
+    if (toBottom + self.addButtonWidget.frame.size.height > self.view.frame.size.height) {
+        toBottom = self.view.frame.size.height - self.addButtonWidget.frame.size.height;
+    }
+
+    self.addButtonToBottomLayoutConstraint.constant = toBottom;
+
+    CGFloat toRight = self.originalToAddButtonToRight - translation.x;
+    if (toRight < 0) {
+        toRight = 0;
+    }
+    if (toRight + self.addButtonWidget.frame.size.width > self.view.frame.size.width) {
+        toRight = self.view.frame.size.width - self.addButtonWidget.frame.size.width;
+    }
+    self.addButtonToRightLayoutConstraint.constant = toRight;
     [self.view layoutIfNeeded];
 
     [self saveDefaults];
 }
 
+- (IBAction)addButtonTapGesture:(UITapGestureRecognizer *)panGestureRecognizer {
+    [self performSegueWithIdentifier:kEditReportSegueIdentifier sender:self];
+}
+
+#pragma mark - HTLReportListViewController
+
+- (HTLReportListDataSource *)dataSource {
+    if (!_dataSource) {
+        __weak __typeof(self) weakSelf = self;
+        _dataSource = [HTLReportListDataSource dataSourceWithDataChangedBlock:^{
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [weakSelf.tableView reloadData];
+            });
+        }];
+    }
+    return _dataSource;
+}
+
+- (void)startTimer {
+    if (!_timer) {
+        _timer = [NSTimer scheduledTimerWithTimeInterval:0.1 target:self selector:@selector(timerAction:) userInfo:nil repeats:YES];
+    }
+    [_timer fire];
+}
+
+- (void)stopTimer {
+    [_timer invalidate];
+    _timer = nil;
+}
+
+- (void)timerAction:(NSTimer *)timer {
+    NSTimeInterval timeInterval = [[NSDate new] timeIntervalSinceDate:self.dataSource.startDate];
+    self.timerLabel.text = htlStringWithTimeInterval(timeInterval);
+    if ([UIFont respondsToSelector:@selector(monospacedDigitSystemFontOfSize:weight:)]) {
+        self.timerLabel.font = [UIFont monospacedDigitSystemFontOfSize:25 weight:UIFontWeightRegular];
+    }
+}
+
 - (void)subscribe {
     [[NSNotificationCenter defaultCenter] addObserverForName:kHTLAppDelegateAddReportURLReceived object:nil queue:[NSOperationQueue mainQueue] usingBlock:^(NSNotification *note) {
-        [self performSegueWithIdentifier:kCreateReportSegueIdentifier sender:self];
+        [self performSegueWithIdentifier:kEditReportSegueIdentifier sender:self];
     }];
 }
 
@@ -87,7 +156,7 @@ static const float kHeaderHeight = 35.0f;
     if (addButtonToRightLayoutConstraintNumber) {
         self.addButtonToRightLayoutConstraint.constant = addButtonToRightLayoutConstraintNumber.floatValue;
     } else {
-        self.addButtonToRightLayoutConstraint.constant = (self.view.bounds.size.width - self.addButton.bounds.size.width) / 2;
+        self.addButtonToRightLayoutConstraint.constant = (self.view.bounds.size.width - self.addButtonWidget.bounds.size.width) / 2;
     }
 
     [self.view layoutIfNeeded];
@@ -106,13 +175,6 @@ static const float kHeaderHeight = 35.0f;
     UINib *sectionHeaderNib = [UINib nibWithNibName:@"DateSectionHeader" bundle:nil];
     [self.tableView registerNib:sectionHeaderNib forHeaderFooterViewReuseIdentifier:kDateSectionHeaderIdentifier];
     self.tableView.contentInset = UIEdgeInsetsMake(0, 0, 120, 0);
-
-    __weak __typeof(self) weakSelf = self;
-    self.modelController = [HTLReportListModelController modelControllerWithContentChangedBlock:^{
-        dispatch_async(dispatch_get_main_queue(), ^{
-            [weakSelf.tableView reloadData];
-        });
-    }];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -123,68 +185,71 @@ static const float kHeaderHeight = 35.0f;
     [self loadDefaults];
 
     // Scroll to bottom
-    NSUInteger sectionsCount = self.modelController.numberOfReportSections;
+    NSUInteger sectionsCount = self.dataSource.numberOfReportSections;
     if (sectionsCount > 0) {
-        NSUInteger recordsCount = [self.modelController reportsExtendedForDateSectionAtIndex:sectionsCount - 1].count;
+        NSUInteger recordsCount = [self.dataSource reportsExtendedForDateSectionAtIndex:sectionsCount - 1].count;
         [self.tableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:recordsCount - 1 inSection:sectionsCount - 1]
                               atScrollPosition:UITableViewScrollPositionBottom
                                       animated:NO];
     }
+
+    [self startTimer];
 }
 
 - (void)viewDidDisappear:(BOOL)animated {
+    [self stopTimer];
     [self unsubscribe];
     [super viewDidDisappear:animated];
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    if ([segue.identifier isEqualToString:@"EditReport"] && [segue.destinationViewController isKindOfClass:[UINavigationController class]]) {
-        UINavigationController *navigationController = segue.destinationViewController;
-        HTLEditReportViewController *createReportViewController = (HTLEditReportViewController *) navigationController.topViewController;
-
+    if ([segue.destinationViewController isKindOfClass:HTLEditReportViewController.class]) {
+        HTLEditReportViewController *editReportViewController = segue.destinationViewController;
+        HTLReportExtended *reportExtended = nil;
         NSIndexPath *selected = self.tableView.indexPathForSelectedRow;
-        if (!selected) {
-            return;
+        if (selected) {
+            reportExtended = [self.dataSource reportsExtendedForDateSectionAtIndex:selected.section][(NSUInteger) selected.row];
         }
+        editReportViewController.reportExtended = reportExtended;
 
-        HTLReportExtendedDto *reportExtended = [self.modelController reportsExtendedForDateSectionAtIndex:selected.section][(NSUInteger) selected.row];
-        if (!reportExtended) {
-            return;
-        }
-
-        createReportViewController.reportExtended = reportExtended;
-
-    } else if ([segue.identifier isEqualToString:kShowStatisticsSegueIdentifier]) {
+    } else if ([segue.destinationViewController isKindOfClass:HTLStatisticsViewController.class]) {
         HTLStatisticsViewController *statisticsViewController = segue.destinationViewController;
-        statisticsViewController.dateSection = sender;
+        if ([sender isKindOfClass:HTLDateSection.class]) {
+            statisticsViewController.dateSection = sender;
+        }
     }
+}
+
+- (UIStatusBarStyle)preferredStatusBarStyle {
+    return UIStatusBarStyleLightContent;
 }
 
 #pragma mark - UITableViewDataSource, UITableViewDelegate
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return self.modelController.numberOfReportSections;
+    return self.dataSource.numberOfReportSections;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return [self.modelController numberOfReportsForDateSectionAtIndex:section];
+    return [self.dataSource numberOfReportsForDateSectionAtIndex:section];
 }
 
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
     HTLDateSectionHeader *header = [tableView dequeueReusableHeaderFooterViewWithIdentifier:kDateSectionHeaderIdentifier];
-    [header configureWithDateSection:self.modelController.reportSections[(NSUInteger) section]];
+    [header configureWithDateSection:self.dataSource.reportSections[(NSUInteger) section]];
     header.delegate = self;
     return header;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     HTLReportExtendedCell *cell = [tableView dequeueReusableCellWithIdentifier:kReportCellIdentifier forIndexPath:indexPath];
-    HTLReportExtendedDto *report = [self.modelController reportsExtendedForDateSectionAtIndex:(NSUInteger) indexPath.section][(NSUInteger) indexPath.row];
+    HTLReportExtended *report = [self.dataSource reportsExtendedForDateSectionAtIndex:(NSUInteger) indexPath.section][(NSUInteger) indexPath.row];
     [cell configureWithReport:report];
     return cell;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    [self performSegueWithIdentifier:kEditReportSegueIdentifier sender:self];
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 
@@ -194,7 +259,7 @@ static const float kHeaderHeight = 35.0f;
 
 #pragma mark  - HTLDateSectionHeaderDelegate
 
-- (void)dateSectionHeader:(HTLDateSectionHeader *)dateSectionHeader showStatisticsForDateSection:(HTLDateSectionDto *)dateSection {
+- (void)dateSectionHeader:(HTLDateSectionHeader *)dateSectionHeader showStatisticsForDateSection:(HTLDateSection *)dateSection {
     [self performSegueWithIdentifier:kShowStatisticsSegueIdentifier sender:dateSection];
 }
 

@@ -29,3 +29,21 @@
 "Copy to Pasteboard" = "Copy to Pasteboard";
 
 "Cancel" = "Cancel";
+
+"Reset content" = "Reset content";
+
+"Are you sure want to reset all data?" = "Are you sure want to reset all data?";
+
+"Reset" = "Reset";
+
+"Reset defaults" = "Reset defaults";
+
+"Are you sure want to reset all defaults?" = "Are you sure want to reset all defaults?";
+
+"Export to CSV" = "Export to CSV";
+
+"There is no data to export." = "There is no data to export.";
+
+"Data export from Time Logger" = "Data export from Time Logger";
+
+"Look at files attached" = "Look at files attached";

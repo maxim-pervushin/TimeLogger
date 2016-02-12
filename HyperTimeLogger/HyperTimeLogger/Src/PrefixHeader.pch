@@ -10,6 +10,5 @@
 #define HyperTimeLogger_PrefixHeader_pch
 
 #import "CocoaLumberjack.h"
-#import "UIColor+BFPaperColors.h"
 
 #endif

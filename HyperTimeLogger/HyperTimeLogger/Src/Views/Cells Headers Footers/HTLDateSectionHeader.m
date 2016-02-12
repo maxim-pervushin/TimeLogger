@@ -4,15 +4,15 @@
 //
 
 #import "HTLDateSectionHeader.h"
-#import "HTLDateSectionDto.h"
+#import "HTLDateSection.h"
+#import "UIColor+FlatColors.h"
 
 @interface HTLDateSectionHeader ()
 
-@property(nonatomic, weak) IBOutlet UIView *backgroundColorView;
 @property(nonatomic, weak) IBOutlet UILabel *sectionTitleLabel;
 @property(nonatomic, weak) IBOutlet UIButton *statisticsButton;
 
-@property(nonatomic, copy) HTLDateSectionDto *dateSection;
+@property(nonatomic, copy) HTLDateSection *dateSection;
 
 - (IBAction)statisticsButtonAction:(id)sender;
 
@@ -24,7 +24,7 @@
 
 #pragma mark - HTLDateSectionHeader
 
-- (void)configureWithDateSection:(HTLDateSectionDto *)dateSection {
+- (void)configureWithDateSection:(HTLDateSection *)dateSection {
     self.dateSection = dateSection;
     if (self.dateSection) {
         self.sectionTitleLabel.text = self.dateSection.fulldateStringLocalized;
@@ -40,14 +40,9 @@
 }
 
 - (void)initializeUI {
-    self.contentView.backgroundColor = [UIColor clearColor];
-    self.backgroundColorView.backgroundColor = [UIColor paperColorGray800];
     UIImage *image = [[UIImage imageNamed:@"statistics.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
     [self.statisticsButton setImage:image forState:UIControlStateNormal];
     [self.statisticsButton setImage:image forState:UIControlStateSelected];
-    self.statisticsButton.backgroundColor = [UIColor clearColor];
-    self.statisticsButton.tintColor = [UIColor paperColorTextLight];
-    self.sectionTitleLabel.textColor = [UIColor paperColorTextLight];
 }
 
 #pragma mark - UIView

@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
     </dependencies>
     <objects>
@@ -11,69 +12,56 @@
             <rect key="frame" x="0.0" y="0.0" width="415" height="46"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zyL-SD-Zwd">
+                <view opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" translatesAutoresizingMaskIntoConstraints="NO" id="ldi-CY-LZ6" customClass="HTLTopBarView" customModule="HyperTimeLogger" customModuleProvider="target">
                     <rect key="frame" x="0.0" y="0.0" width="415" height="46"/>
                     <subviews>
-                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Jxe-wG-3q1" userLabel="Background Color View">
-                            <rect key="frame" x="0.0" y="0.0" width="415" height="46"/>
-                            <subviews>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ogM-qg-NGh" userLabel="Show Report Button">
-                                    <rect key="frame" x="369" y="4" width="38" height="38"/>
-                                    <constraints>
-                                        <constraint firstAttribute="width" secondItem="ogM-qg-NGh" secondAttribute="height" multiplier="1:1" id="lyk-uK-4zQ"/>
-                                    </constraints>
-                                    <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                    <state key="normal" image="statistics.png">
-                                        <color key="titleColor" red="1" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                    </state>
-                                    <connections>
-                                        <action selector="statisticsButtonAction:" destination="iN0-l3-epB" eventType="touchUpInside" id="M6D-rK-ZFi"/>
-                                    </connections>
-                                </button>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="[sectionTitle]" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nOd-N7-Nrn" userLabel="Title Label">
-                                    <rect key="frame" x="8" y="14" width="353" height="18"/>
-                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                    <nil key="highlightedColor"/>
-                                </label>
-                            </subviews>
-                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yTP-Mg-ZFY" userLabel="Show Report Button">
+                            <rect key="frame" x="365" y="4" width="38" height="38"/>
                             <constraints>
-                                <constraint firstAttribute="bottom" secondItem="ogM-qg-NGh" secondAttribute="bottom" constant="4" id="2Iq-5u-T0z"/>
-                                <constraint firstItem="nOd-N7-Nrn" firstAttribute="leading" secondItem="Jxe-wG-3q1" secondAttribute="leading" constant="8" id="2VO-5b-dLe"/>
-                                <constraint firstAttribute="centerY" secondItem="nOd-N7-Nrn" secondAttribute="centerY" id="A3N-Cl-Ksj"/>
-                                <constraint firstAttribute="trailing" secondItem="ogM-qg-NGh" secondAttribute="trailing" constant="8" id="Rpc-n7-wYK"/>
-                                <constraint firstItem="ogM-qg-NGh" firstAttribute="top" secondItem="Jxe-wG-3q1" secondAttribute="top" constant="4" id="ayQ-fT-qf4"/>
-                                <constraint firstItem="ogM-qg-NGh" firstAttribute="leading" secondItem="nOd-N7-Nrn" secondAttribute="trailing" constant="8" id="o4k-iO-wQY"/>
+                                <constraint firstAttribute="width" secondItem="yTP-Mg-ZFY" secondAttribute="height" multiplier="1:1" id="V22-iB-gy0"/>
                             </constraints>
-                        </view>
+                            <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            <state key="normal" image="statistics.png">
+                                <color key="titleColor" red="1" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <connections>
+                                <action selector="statisticsButtonAction:" destination="iN0-l3-epB" eventType="touchUpInside" id="X8C-kC-esv"/>
+                            </connections>
+                        </button>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="[sectionTitle]" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RVL-LQ-f8j" userLabel="Title Label">
+                            <rect key="frame" x="17" y="4" width="340" height="38"/>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
                     </subviews>
-                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     <constraints>
-                        <constraint firstItem="Jxe-wG-3q1" firstAttribute="top" secondItem="zyL-SD-Zwd" secondAttribute="top" id="1Tb-aW-Qye"/>
-                        <constraint firstAttribute="trailing" secondItem="Jxe-wG-3q1" secondAttribute="trailing" id="FHj-9t-gER"/>
-                        <constraint firstItem="Jxe-wG-3q1" firstAttribute="leading" secondItem="zyL-SD-Zwd" secondAttribute="leading" id="N7t-PX-y0t"/>
-                        <constraint firstAttribute="bottom" secondItem="Jxe-wG-3q1" secondAttribute="bottom" id="UD4-Db-icN"/>
+                        <constraint firstItem="yTP-Mg-ZFY" firstAttribute="leading" secondItem="RVL-LQ-f8j" secondAttribute="trailing" constant="8" id="6l1-kw-HL8"/>
+                        <constraint firstItem="RVL-LQ-f8j" firstAttribute="top" secondItem="ldi-CY-LZ6" secondAttribute="top" constant="4" id="Ena-C3-dhc"/>
+                        <constraint firstItem="RVL-LQ-f8j" firstAttribute="leading" secondItem="ldi-CY-LZ6" secondAttribute="leading" constant="17" id="Ky4-xf-3c5"/>
+                        <constraint firstAttribute="bottom" secondItem="yTP-Mg-ZFY" secondAttribute="bottom" constant="4" id="naQ-gu-nee"/>
+                        <constraint firstItem="yTP-Mg-ZFY" firstAttribute="top" secondItem="ldi-CY-LZ6" secondAttribute="top" constant="4" id="tZO-iA-t9A"/>
+                        <constraint firstAttribute="bottom" secondItem="RVL-LQ-f8j" secondAttribute="bottom" constant="4" id="u6l-pC-kQ1"/>
+                        <constraint firstAttribute="trailing" secondItem="yTP-Mg-ZFY" secondAttribute="trailing" constant="12" id="yNL-HT-jl0"/>
                     </constraints>
                 </view>
             </subviews>
             <constraints>
-                <constraint firstAttribute="bottom" secondItem="zyL-SD-Zwd" secondAttribute="bottom" id="0CK-Dw-025"/>
-                <constraint firstItem="zyL-SD-Zwd" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="A7J-7f-E4S"/>
-                <constraint firstAttribute="trailing" secondItem="zyL-SD-Zwd" secondAttribute="trailing" id="J7x-pF-sfz"/>
-                <constraint firstItem="zyL-SD-Zwd" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="TvU-FH-nup"/>
+                <constraint firstAttribute="trailing" secondItem="ldi-CY-LZ6" secondAttribute="trailing" id="9Ut-6Z-eEt"/>
+                <constraint firstAttribute="bottom" secondItem="ldi-CY-LZ6" secondAttribute="bottom" id="SfY-BP-4nI"/>
+                <constraint firstItem="ldi-CY-LZ6" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="VgY-La-76O"/>
+                <constraint firstItem="ldi-CY-LZ6" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="nrX-9S-Mi4"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <nil key="simulatedTopBarMetrics"/>
             <nil key="simulatedBottomBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
-                <outlet property="backgroundColorView" destination="Jxe-wG-3q1" id="Q4m-KO-1ed"/>
-                <outlet property="sectionTitleLabel" destination="nOd-N7-Nrn" id="MTb-yF-L0J"/>
-                <outlet property="statisticsButton" destination="ogM-qg-NGh" id="H8t-1T-2x0"/>
+                <outlet property="sectionTitleLabel" destination="RVL-LQ-f8j" id="l3l-BH-b6U"/>
+                <outlet property="statisticsButton" destination="yTP-Mg-ZFY" id="UsO-kX-Egm"/>
             </connections>
-            <point key="canvasLocation" x="434.5" y="319"/>
+            <point key="canvasLocation" x="560.5" y="361"/>
         </view>
     </objects>
     <resources>

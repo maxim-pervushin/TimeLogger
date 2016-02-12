@@ -7,12 +7,16 @@
 //
 
 #import "HTLAppDelegate.h"
-#import "CocoaLumberjack.h"
-#import "HTLContentManager.h"
+#import "HTLDataManager.h"
 #import "HTLSqliteStorageProvider.h"
 #import "HTLCSVStringExportProvider.h"
+#import "HTLReportExtendedCell.h"
+#import "UIColor+FlatColors.h"
+#import "HTLPieChartCell.h"
+#import "HTLStatisticsItemCell.h"
 #import <Fabric/Fabric.h>
 #import <Crashlytics/Crashlytics.h>
+#import "HyperTimeLogger-Swift.h"
 
 
 static NSString *const kAddReportURL = @"timelogger://add";
@@ -21,6 +25,8 @@ static NSString *const kApplicationGroup = @"group.timelogger";
 static NSString *const kStorageFileName = @"time_logger_storage.db";
 
 @interface HTLAppDelegate ()
+
+- (void)initializeAppearance;
 
 - (void)initializeCrashReporter;
 
@@ -35,6 +41,53 @@ static NSString *const kStorageFileName = @"time_logger_storage.db";
 
 - (NSString *)appVersion {
     return [[NSBundle mainBundle] objectForInfoDictionaryKey:kVersionIdentifierKey];
+}
+
+- (void)initializeAppearance {
+
+    // HTLButton
+    [HTLButton appearance].backgroundColor = [UIColor flatAsbestosColor];
+    [HTLButton appearance].tintColor = [UIColor flatCloudsColor];
+
+    [HTLLineView appearance].backgroundColor = [UIColor flatConcreteColor];
+
+    [UILabel appearance].textColor = [UIColor flatAsbestosColor];
+
+    [HTLReportExtendedCell appearance].backgroundColor = [UIColor clearColor];
+
+    [HTLPieChartCell appearance].backgroundColor = [UIColor clearColor];
+
+    [HTLStatisticsItemCell appearance].backgroundColor = [UIColor clearColor];
+
+    [HTLNoContentCell appearance].backgroundColor = [UIColor clearColor];
+
+    [HTLBackgroundView appearance].backgroundColor = [UIColor flatCloudsColor];
+//    [UIView appearanceWhenContainedInInstancesOfClasses:@[HTLBackgroundView.class]].tintColor = [UIColor flatCloudsColor];
+
+
+    [HTLLightBackgroundView appearance].backgroundColor = [UIColor flatCloudsColor];
+    [UIButton appearanceWhenContainedInInstancesOfClasses:@[[HTLLightBackgroundView class]]].backgroundColor = [UIColor flatAsbestosColor];
+    [UIButton appearanceWhenContainedInInstancesOfClasses:@[[HTLLightBackgroundView class]]].tintColor = [UIColor flatCloudsColor];
+    [[UIButton appearanceWhenContainedInInstancesOfClasses:@[[HTLLightBackgroundView class]]] setTitleColor:[UIColor flatCloudsColor]
+                                                                                                   forState:UIControlStateNormal];
+    [[UIButton appearanceWhenContainedInInstancesOfClasses:@[[HTLLightBackgroundView class]]] setTitleColor:[UIColor flatCloudsColor]
+                                                                                                   forState:UIControlStateDisabled];
+
+    // HTLTextField
+    [HTLTextField appearance].textColor = [UIColor flatWetAsphaltColor];
+    [HTLTextField appearance].tintColor = [UIColor flatWetAsphaltColor];
+    [HTLTextField appearance].placeholderTextColor = [[UIColor flatWetAsphaltColor] colorWithAlphaComponent:0.3];
+    [HTLTextField appearance].backgroundColor = [UIColor clearColor];
+    [UIView appearanceWhenContainedInInstancesOfClasses:@[HTLTextField.class]].tintColor = [UIColor flatWetAsphaltColor];;
+
+    [HTLTopBarView appearance].backgroundColor = [UIColor flatAsbestosColor];
+    [UILabel appearanceWhenContainedInInstancesOfClasses:@[[HTLTopBarView class]]].textColor = [UIColor flatCloudsColor];
+    [UIButton appearanceWhenContainedInInstancesOfClasses:@[[HTLTopBarView class]]].backgroundColor = [UIColor clearColor];
+    [UIButton appearanceWhenContainedInInstancesOfClasses:@[[HTLTopBarView class]]].tintColor = [UIColor flatCloudsColor];
+
+    [HTLAddButtonWidget appearance].backgroundColor = [[UIColor flatAsbestosColor] colorWithAlphaComponent:0.75];
+    [HTLRoundedImageView appearanceWhenContainedInInstancesOfClasses:@[[HTLAddButtonWidget class]]].backgroundColor = [UIColor flatAsbestosColor];
+    [UILabel appearanceWhenContainedInInstancesOfClasses:@[[HTLAddButtonWidget class]]].textColor = [UIColor flatCloudsColor];
 }
 
 - (void)initializeCrashReporter {
@@ -52,11 +105,11 @@ static NSString *const kStorageFileName = @"time_logger_storage.db";
     HTLSqliteStorageProvider *sqliteStorageProvider =
             [HTLSqliteStorageProvider sqliteStorageProviderWithStorageFolderURL:storageFolderURL
                                                                 storageFileName:kStorageFileName];
-    self.contentManager = [HTLContentManager contentManagerWithStorageProvider:sqliteStorageProvider exportProvider:[HTLCSVStringExportProvider new]];
+    self.dataManager = [HTLDataManager contentManagerWithStorageProvider:sqliteStorageProvider exportProvider:[HTLCSVStringExportProvider new]];
 }
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-
+    [self initializeAppearance];
     [self initializeCrashReporter];
     [self initializeLoggers];
     [self initializeContentManager];

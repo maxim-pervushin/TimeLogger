@@ -4,12 +4,13 @@
 //
 
 #import "HTLStatisticsViewController.h"
-#import "HTLStatisticsModelController.h"
+#import "HTLStatisticsDataSource.h"
 #import "XYPieChart.h"
-#import "HTLCategoryDto.h"
-#import "HTLDateSectionDto.h"
+#import "HTLCategory.h"
+#import "HTLDateSection.h"
 #import "HTLPieChartCell.h"
 #import "HTLStatisticsItemCell.h"
+#import "HyperTimeLogger-Swift.h"
 
 
 static NSString *const kPieChartCellIdentifier = @"PieChartCell";
@@ -17,11 +18,15 @@ static NSString *const kStatisticsItemCellIdentifier = @"StatisticsItemCell";
 static const CGFloat kStatisticsItemCellHeight = 44;
 
 
-@interface HTLStatisticsViewController () <UITableViewDataSource, UITableViewDelegate, XYPieChartDataSource, XYPieChartDelegate>
+@interface HTLStatisticsViewController () <UITableViewDataSource, UITableViewDelegate, XYPieChartDataSource, XYPieChartDelegate> {
+    HTLStatisticsDataSource *_dataSource;
+}
 
 @property(nonatomic, weak) IBOutlet UITableView *tableView;
 
-@property(nonatomic, strong) HTLStatisticsModelController *modelController;
+@property(nonatomic, readonly) HTLStatisticsDataSource *dataSource;
+
+- (IBAction)doneButtonAction:(id)sender;
 
 - (void)updateUI;
 
@@ -30,7 +35,24 @@ static const CGFloat kStatisticsItemCellHeight = 44;
 
 @implementation HTLStatisticsViewController
 
+#pragma mark - HTLStatisticsViewController @IB
+
+- (IBAction)doneButtonAction:(id)sender {
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
 #pragma mark - HTLStatisticsViewController
+
+- (HTLStatisticsDataSource *)dataSource {
+    if (!_dataSource) {
+        __weak __typeof(self) weakSelf = self;
+        _dataSource = [HTLStatisticsDataSource dataSourceWithDateSection:self.dateSection
+                                                        dataChangedBlock:^{
+                                                            [weakSelf updateUI];
+                                                        }];
+    }
+    return _dataSource;
+}
 
 - (void)updateUI {
     __weak __typeof(self) weakSelf = self;
@@ -43,51 +65,58 @@ static const CGFloat kStatisticsItemCellHeight = 44;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    __weak __typeof(self) weakSelf = self;
-    self.modelController = [HTLStatisticsModelController modelControllerWithDateSection:self.dateSection
-                                                                    contentChangedBlock:^{
-                                                                        [weakSelf updateUI];
-                                                                    }];
-
     self.title = self.dateSection.fulldateStringLocalized;
+}
+
+- (UIStatusBarStyle)preferredStatusBarStyle {
+    return UIStatusBarStyleLightContent;
 }
 
 #pragma mark - UITableViewDataSource, UITableViewDelegate
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 2;
+    return self.dataSource.loaded && self.dataSource.totalTime == 0 ? 1 : 2;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    if (section == 0) {
+    if (self.dataSource.loaded && self.dataSource.totalTime == 0) {
         return 1;
     } else {
-        return self.modelController.categories.count;
+        if (section == 0) {
+            return 1;
+        } else {
+            return self.dataSource.categories.count;
+        }
     }
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (indexPath.section == 0) {
-        HTLPieChartCell *cell = [tableView dequeueReusableCellWithIdentifier:kPieChartCellIdentifier];
-        cell.pieChart.showLabel = NO;
-        cell.pieChart.dataSource = self;
-        cell.pieChart.delegate = self;
-        cell.pieChart.userInteractionEnabled = NO;
-
-        NSUInteger categoriesCount = self.modelController.categories.count;
-        if (categoriesCount > 0) {
-            [cell.activityIndicator stopAnimating];
-        } else {
-            [cell.activityIndicator startAnimating];
-        }
-
-        return cell;
-
+    if (self.dataSource.loaded && self.dataSource.totalTime == 0) {
+        return [tableView dequeueReusableCellWithIdentifier:HTLNoContentCell.defaultIdentifier forIndexPath:indexPath];
     } else {
-        HTLStatisticsItemCell *cell = [tableView dequeueReusableCellWithIdentifier:kStatisticsItemCellIdentifier];
-        HTLCategoryDto *category = self.modelController.categories[(NSUInteger) indexPath.row];
-        [cell configureWithStatisticsItem:[self.modelController statisticsForCategory:category]];
-        return cell;
+        if (indexPath.section == 0) {
+            HTLPieChartCell *cell = [tableView dequeueReusableCellWithIdentifier:kPieChartCellIdentifier];
+            cell.pieChart.showLabel = NO;
+            cell.pieChart.dataSource = self;
+            cell.pieChart.delegate = self;
+            cell.pieChart.userInteractionEnabled = NO;
+
+            NSUInteger categoriesCount = self.dataSource.categories.count;
+            if (categoriesCount > 0) {
+                [cell.activityIndicator stopAnimating];
+            } else {
+                [cell.activityIndicator startAnimating];
+            }
+
+            return cell;
+
+        } else {
+            HTLStatisticsItemCell *cell = [tableView dequeueReusableCellWithIdentifier:kStatisticsItemCellIdentifier];
+            HTLCategory *category = self.dataSource.categories[(NSUInteger) indexPath.row];
+            NSTimeInterval totalTime = self.dataSource.totalTime;
+            [cell configureWithStatisticsItem:[self.dataSource statisticsForCategory:category] totalTime:totalTime];
+            return cell;
+        }
     }
 }
 
@@ -102,17 +131,17 @@ static const CGFloat kStatisticsItemCellHeight = 44;
 #pragma mark - XYPieChartDataSource, XYPieChartDelegate
 
 - (NSUInteger)numberOfSlicesInPieChart:(XYPieChart *)pieChart {
-    return self.modelController.categories.count;
+    return self.dataSource.categories.count;
 }
 
 - (CGFloat)pieChart:(XYPieChart *)pieChart valueForSliceAtIndex:(NSUInteger)index {
-    HTLCategoryDto *category = self.modelController.categories[index];
-    HTLStatisticsItemDto *statisticsItem = [self.modelController statisticsForCategory:category];
+    HTLCategory *category = self.dataSource.categories[index];
+    HTLStatisticsItem *statisticsItem = [self.dataSource statisticsForCategory:category];
     return (CGFloat) statisticsItem.totalTime;
 }
 
 - (UIColor *)pieChart:(XYPieChart *)pieChart colorForSliceAtIndex:(NSUInteger)index {
-    HTLCategoryDto *category = self.modelController.categories[index];
+    HTLCategory *category = self.dataSource.categories[index];
     return category.color;
 }
 

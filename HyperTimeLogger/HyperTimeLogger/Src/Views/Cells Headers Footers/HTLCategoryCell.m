@@ -4,8 +4,8 @@
 //
 
 #import "HTLCategoryCell.h"
-#import "HTLCategoryDto.h"
-#import "UIColor+BFPaperColors.h"
+#import "HTLCategory.h"
+#import "UIColor+FlatColors.h"
 
 @interface HTLCategoryCell ()
 
@@ -16,14 +16,15 @@
 
 @implementation HTLCategoryCell
 
-- (void)configureWithCategory:(HTLCategoryDto *)category {
+- (void)configureWithCategory:(HTLCategory *)category {
     self.titleLabel.text = category ? category.localizedTitle : @"";
     self.titleLabel.textColor = category ? category.color : [UIColor blackColor];
+    self.backgroundColor = category ? [category.color colorWithAlphaComponent:0.15] : [UIColor clearColor];
 }
 
 - (void)setSelected:(BOOL)selected {
     if (selected) {
-        self.selectionView.backgroundColor = [UIColor paperColorTextDarkDivider];
+        self.selectionView.backgroundColor = [UIColor flatConcreteColor];
         self.backgroundColor = [UIColor colorWithWhite:0 alpha:0.1f];
     } else {
         self.selectionView.backgroundColor = [UIColor clearColor];
@@ -31,7 +32,7 @@
     }
 }
 
-+ (CGFloat)widthWithCategory:(HTLCategoryDto *)category {
++ (CGFloat)widthWithCategory:(HTLCategory *)category {
     if (category) {
         return [category.localizedTitle sizeWithAttributes:@{NSFontAttributeName : [UIFont boldSystemFontOfSize:15.0f]}].width + 24;
     }

@@ -4,10 +4,11 @@
 //
 
 #import "HTLReportExtendedCell.h"
-#import "HTLActionDto.h"
-#import "HTLCategoryDto.h"
-#import "HTLReportExtendedDto.h"
-#import "HTLReportDto+Helpers.h"
+#import "HTLAction.h"
+#import "HTLCategory.h"
+#import "HTLReportExtended.h"
+#import "HTLReport+HTLHelpers.h"
+#import "NSDate+HTLTimeHelpers.h"
 
 @interface HTLReportExtendedCell ()
 
@@ -21,19 +22,21 @@
 
 @implementation HTLReportExtendedCell
 
-- (void)configureWithReport:(HTLReportExtendedDto *)reportExtended {
+- (void)configureWithReport:(HTLReportExtended *)reportExtended {
     NSString *title;
     NSString *category;
     NSString *date;
     NSString *duration;
     UIColor *color;
+    UIColor *backgroundColor;
 
     if (reportExtended) {
         title = reportExtended.action.title;
         category = reportExtended.category.localizedTitle;
-        date = reportExtended.report.endDateString;
-        duration = reportExtended.report.durationString;
+        date = [NSDate stringWithStartDate:reportExtended.report.startDate endDate:reportExtended.report.endDate];
+        duration = htlStringWithTimeInterval(reportExtended.report.duration);
         color = reportExtended.category.color;
+        backgroundColor = [reportExtended.category.color colorWithAlphaComponent:0.15];
     }
 
     self.titleLabel.text = title;
@@ -45,6 +48,7 @@
     self.categoryLabel.textColor = color;
     self.dateLabel.textColor = color;
     self.durationLabel.textColor = color;
+    self.backgroundColor = backgroundColor;
 }
 
 @end

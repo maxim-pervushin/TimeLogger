@@ -29,3 +29,21 @@
 "Copy to Pasteboard" = "Скопировать в буфер обмена";
 
 "Cancel" = "Отмена";
+
+"Reset content" = "Удалить данные";
+
+"Are you sure want to reset all data?" = "Вы действительно хотите удалить все данные?";
+
+"Reset" = "Удалить";
+
+"Reset defaults" = "Удалить настройки";
+
+"Are you sure want to reset all defaults?" = "Вы действительно хотите удалить все настройки?";
+
+"Export to CSV" = "Экспортировать в CSV";
+
+"There is no data to export." = "Нет данных для экспорта.";
+
+"Data export from Time Logger" = "Экспорт данных из Time Logger";
+
+"Look at files attached" = "См. файл в приложении к письму";
