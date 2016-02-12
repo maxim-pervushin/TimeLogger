@@ -3,245 +3,245 @@
     "from": 28,
     "to": 727,
     "action": "Сон",
-    "categoryTitle": "Sleep",
+    "category": "Sleep",
     "categorySubTitle": ""
   },
   {
     "from": 727,
     "to": 734,
     "action": "Душ",
-    "categoryTitle": "Personal",
+    "category": "Personal",
     "categorySubTitle": ""
   },
   {
     "from": 734,
     "to": 750,
     "action": "Готовка завтрака",
-    "categoryTitle": "Personal",
+    "category": "Personal",
     "categorySubTitle": ""
   },
   {
     "from": 750,
     "to": 805,
     "action": "Завтрак",
-    "categoryTitle": "Personal",
+    "category": "Personal",
     "categorySubTitle": ""
   },
   {
     "from": 805,
     "to": 827,
     "action": "Медитация",
-    "categoryTitle": "Improvement",
+    "category": "Improvement",
     "categorySubTitle": ""
   },
   {
     "from": 827,
     "to": 840,
     "action": "Сборы",
-    "categoryTitle": "Personal",
+    "category": "Personal",
     "categorySubTitle": ""
   },
   {
     "from": 840,
     "to": 857,
     "action": "Дорога в офис",
-    "categoryTitle": "Road",
+    "category": "Road",
     "categorySubTitle": ""
   },
   {
     "from": 857,
     "to": 912,
     "action": "Кофе",
-    "categoryTitle": "Time Waste",
+    "category": "Time Waste",
     "categorySubTitle": ""
   },
   {
     "from": 912,
     "to": 933,
     "action": "Чтение новостей",
-    "categoryTitle": "Improvement",
+    "category": "Improvement",
     "categorySubTitle": ""
   },
   {
     "from": 933,
     "to": 1040,
     "action": "Работа над хронометражом",
-    "categoryTitle": "Work",
+    "category": "Work",
     "categorySubTitle": ""
   },
   {
     "from": 1040,
     "to": 1047,
     "action": "Интернет",
-    "categoryTitle": "Time Waste",
+    "category": "Time Waste",
     "categorySubTitle": ""
   },
   {
     "from": 1047,
     "to": 1155,
     "action": "Работа над хронометражом",
-    "categoryTitle": "Work",
+    "category": "Work",
     "categorySubTitle": ""
   },
   {
     "from": 1155,
     "to": 1207,
     "action": "Дорога в кафе",
-    "categoryTitle": "Road",
+    "category": "Road",
     "categorySubTitle": ""
   },
   {
     "from": 1207,
     "to": 1226,
     "action": "Обед",
-    "categoryTitle": "Personal",
+    "category": "Personal",
     "categorySubTitle": ""
   },
   {
     "from": 1226,
     "to": 1240,
     "action": "Дорога в офис",
-    "categoryTitle": "Road",
+    "category": "Road",
     "categorySubTitle": ""
   },
   {
     "from": 1240,
     "to": 1334,
     "action": "Работа над хронометражом",
-    "categoryTitle": "Work",
+    "category": "Work",
     "categorySubTitle": ""
   },
   {
     "from": 1334,
     "to": 1341,
     "action": "Интернет",
-    "categoryTitle": "Time Waste",
+    "category": "Time Waste",
     "categorySubTitle": ""
   },
   {
     "from": 1341,
     "to": 1527,
     "action": "Работа над хронометражом",
-    "categoryTitle": "Work",
+    "category": "Work",
     "categorySubTitle": ""
   },
   {
     "from": 1527,
     "to": 1544,
     "action": "Перекус",
-    "categoryTitle": "Personal",
+    "category": "Personal",
     "categorySubTitle": ""
   },
   {
     "from": 1544,
     "to": 1644,
     "action": "Работа над хронометражом",
-    "categoryTitle": "Work",
+    "category": "Work",
     "categorySubTitle": ""
   },
   {
     "from": 1644,
     "to": 1651,
     "action": "Интернет",
-    "categoryTitle": "Time Waste",
+    "category": "Time Waste",
     "categorySubTitle": ""
   },
   {
     "from": 1651,
     "to": 1705,
     "action": "Дорога домой",
-    "categoryTitle": "Road",
+    "category": "Road",
     "categorySubTitle": ""
   },
   {
     "from": 1705,
     "to": 1725,
     "action": "Сборы в тренажерный зал",
-    "categoryTitle": "Personal",
+    "category": "Personal",
     "categorySubTitle": ""
   },
   {
     "from": 1725,
     "to": 1744,
     "action": "Дорога в тренажерный зал",
-    "categoryTitle": "Road",
+    "category": "Road",
     "categorySubTitle": ""
   },
   {
     "from": 1744,
     "to": 1751,
     "action": "Переодевание",
-    "categoryTitle": "Personal",
+    "category": "Personal",
     "categorySubTitle": ""
   },
   {
     "from": 1751,
     "to": 1922,
     "action": "Тренировка",
-    "categoryTitle": "Improvement",
+    "category": "Improvement",
     "categorySubTitle": ""
   },
   {
     "from": 1922,
     "to": 1933,
     "action": "Душ",
-    "categoryTitle": "Personal",
+    "category": "Personal",
     "categorySubTitle": ""
   },
   {
     "from": 1933,
     "to": 1939,
     "action": "Переодевание",
-    "categoryTitle": "Personal",
+    "category": "Personal",
     "categorySubTitle": ""
   },
   {
     "from": 1939,
     "to": 2000,
     "action": "Дорога домой",
-    "categoryTitle": "Road",
+    "category": "Road",
     "categorySubTitle": ""
   },
   {
     "from": 2000,
     "to": 2022,
     "action": "Готовка ужина",
-    "categoryTitle": "Personal",
+    "category": "Personal",
     "categorySubTitle": ""
   },
   {
     "from": 2022,
     "to": 2053,
     "action": "Ужин",
-    "categoryTitle": "Personal",
+    "category": "Personal",
     "categorySubTitle": ""
   },
   {
     "from": 2053,
     "to": 2058,
     "action": "Интернет",
-    "categoryTitle": "Time Waste",
+    "category": "Time Waste",
     "categorySubTitle": ""
   },
   {
     "from": 2058,
     "to": 2130,
     "action": "Чтение статей",
-    "categoryTitle": "Improvement",
+    "category": "Improvement",
     "categorySubTitle": ""
   },
   {
     "from": 2130,
     "to": 2200,
     "action": "Дорога в кино",
-    "categoryTitle": "Road",
+    "category": "Road",
     "categorySubTitle": ""
   },
   {
     "from": 2200,
     "to": 2335,
     "action": "Кино",
-    "categoryTitle": "Recreation",
+    "category": "Recreation",
     "categorySubTitle": ""
   }
 ]
