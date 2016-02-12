@@ -6,7 +6,7 @@
 #import "HTLRoundButton.h"
 
 
-static const int kButtonCornerRadius = 5;
+static const int kButtonCornerRadius = 3;
 
 @implementation HTLRoundButton
 
@@ -19,15 +19,17 @@ static const int kButtonCornerRadius = 5;
     [self configure];
 }
 
-- (id)initWithCoder:(NSCoder *)aDecoder {
-    self = [super initWithCoder:aDecoder];
-    
+- (instancetype)initWithFrame:(CGRect)frame {
+    self = [super initWithFrame:frame];
+    if (self) {
+        [self configure];
+    }
     return self;
 }
 
-- (instancetype)initWithFrame:(CGRect)frame {
-    self = [super initWithFrame:frame];
-    return self;
+- (CGSize)intrinsicContentSize {
+    CGSize size = [super intrinsicContentSize];
+    return CGSizeMake(size.width + self.titleEdgeInsets.left + self.titleEdgeInsets.right, size.height + self.titleEdgeInsets.top + self.titleEdgeInsets.bottom);
 }
 
 @end

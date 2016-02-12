@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9059" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="HTLStatisticsHeader">
+            <rect key="frame" x="0.0" y="0.0" width="459" height="310"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MFc-Ru-8Jv" userLabel="Background View">
+                    <rect key="frame" x="0.0" y="0.0" width="459" height="309"/>
+                    <animations/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hUD-E8-r4K" customClass="HTLLineView">
+                    <rect key="frame" x="0.0" y="309" width="459" height="1"/>
+                    <animations/>
+                    <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="1" placeholder="YES" id="cN9-0G-cNf"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Bc5-DG-NGQ" userLabel="Chart Container">
+                    <rect key="frame" x="8" y="8" width="443" height="293"/>
+                    <subviews>
+                        <view contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="wJU-Tf-Mbm" customClass="XYPieChart">
+                            <rect key="frame" x="75" y="0.0" width="293" height="293"/>
+                            <animations/>
+                            <constraints>
+                                <constraint firstAttribute="width" secondItem="wJU-Tf-Mbm" secondAttribute="height" multiplier="1:1" id="Lrh-q0-kna"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                    <animations/>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="wJU-Tf-Mbm" secondAttribute="trailing" priority="750" id="HYM-km-IWq"/>
+                        <constraint firstItem="wJU-Tf-Mbm" firstAttribute="width" relation="lessThanOrEqual" secondItem="Bc5-DG-NGQ" secondAttribute="width" id="SOJ-j3-fKM"/>
+                        <constraint firstAttribute="bottom" secondItem="wJU-Tf-Mbm" secondAttribute="bottom" priority="750" id="VgX-NR-aAH"/>
+                        <constraint firstItem="wJU-Tf-Mbm" firstAttribute="height" relation="lessThanOrEqual" secondItem="Bc5-DG-NGQ" secondAttribute="height" id="VuQ-41-Ei5"/>
+                        <constraint firstItem="wJU-Tf-Mbm" firstAttribute="leading" secondItem="Bc5-DG-NGQ" secondAttribute="leading" priority="750" id="kbg-ax-i2F"/>
+                        <constraint firstItem="wJU-Tf-Mbm" firstAttribute="centerX" secondItem="Bc5-DG-NGQ" secondAttribute="centerX" id="ngP-sI-nfb"/>
+                        <constraint firstItem="wJU-Tf-Mbm" firstAttribute="top" secondItem="Bc5-DG-NGQ" secondAttribute="top" priority="750" id="sKQ-nP-G4S"/>
+                        <constraint firstItem="wJU-Tf-Mbm" firstAttribute="centerY" secondItem="Bc5-DG-NGQ" secondAttribute="centerY" id="slG-hE-O9Z"/>
+                    </constraints>
+                </view>
+                <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="hgu-eL-zBf">
+                    <rect key="frame" x="220" y="145" width="20" height="20"/>
+                    <animations/>
+                </activityIndicatorView>
+            </subviews>
+            <animations/>
+            <constraints>
+                <constraint firstItem="Bc5-DG-NGQ" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="8" id="1QB-zj-ZHw"/>
+                <constraint firstItem="hUD-E8-r4K" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="25K-yx-KYw"/>
+                <constraint firstAttribute="trailing" secondItem="MFc-Ru-8Jv" secondAttribute="trailing" id="5tX-UG-h8b"/>
+                <constraint firstItem="Bc5-DG-NGQ" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="8" id="8nn-fm-nPQ"/>
+                <constraint firstAttribute="trailing" secondItem="Bc5-DG-NGQ" secondAttribute="trailing" constant="8" id="8tE-8p-9jS"/>
+                <constraint firstItem="hgu-eL-zBf" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="9gr-Gc-4LD"/>
+                <constraint firstItem="hgu-eL-zBf" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="BUG-KS-dj9"/>
+                <constraint firstItem="MFc-Ru-8Jv" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="I4C-4g-lq5"/>
+                <constraint firstItem="hUD-E8-r4K" firstAttribute="top" secondItem="MFc-Ru-8Jv" secondAttribute="bottom" id="Khj-2X-Tch"/>
+                <constraint firstItem="MFc-Ru-8Jv" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="akD-pY-pcu"/>
+                <constraint firstAttribute="trailing" secondItem="hUD-E8-r4K" secondAttribute="trailing" id="ieo-BQ-tZC"/>
+                <constraint firstItem="hUD-E8-r4K" firstAttribute="top" secondItem="Bc5-DG-NGQ" secondAttribute="bottom" constant="8" id="izo-ON-buo"/>
+                <constraint firstAttribute="bottom" secondItem="hUD-E8-r4K" secondAttribute="bottom" id="lmX-I8-ahA"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="activityIndicatorView" destination="hgu-eL-zBf" id="8QP-jD-KRv"/>
+                <outlet property="chart" destination="wJU-Tf-Mbm" id="LZd-Nu-5PJ"/>
+            </connections>
+            <point key="canvasLocation" x="451.5" y="552"/>
+        </view>
+    </objects>
+</document>
