@@ -12,6 +12,4 @@
 
 + (NSDate *)dateWithDateString:(NSString *)dateString timeString:(NSString *)timeString timeZoneString:(NSString *)timeZoneString;
 
-+ (NSDate *)dateWithDateString:(NSString *)dateString;
-
 @end

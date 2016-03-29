@@ -131,11 +131,11 @@
 
 #pragma mark - UIViewController
 
-- (void)viewDidLoad {
-    [super viewDidLoad];
-    self.generateTestDataContainer.hidden = [HTLAppVersion isEqualToString:@""];
-    self.generateTestDataButton.hidden = [HTLAppVersion isEqualToString:@""];
-}
+//- (void)viewDidLoad {
+//    [super viewDidLoad];
+//    self.generateTestDataContainer.hidden = [HTLAppVersion isEqualToString:@""];
+//    self.generateTestDataButton.hidden = [HTLAppVersion isEqualToString:@""];
+//}
 
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];

@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
+@class HTLReportExtended;
+
 @interface HTETodayViewController : UIViewController
 
 @end

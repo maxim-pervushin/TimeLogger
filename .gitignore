@@ -33,3 +33,13 @@ build
 Podfile.lock
 Pods/
 Framework
+
+# Fastlane
+# Fastlane temporary profiling data
+/fastlane/report.xml
+# Deliver temporary error output
+/fastlane/Error*.png
+# Deliver temporary preview output
+/fastlane/Preview.html
+# Snapshot generated screenshots
+/fastlane/screenshots/

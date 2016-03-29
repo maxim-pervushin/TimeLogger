@@ -4,7 +4,7 @@ HexColors
 
 ![Badge w/ Version](http://cocoapod-badges.herokuapp.com/p/HexColors/badge.png)
 
-HexColors is drop in mark for HexColor Support for NSColor and UIColor. Support for HexColors with prefixed # and without.
+HexColors is drop in category for HexColor Support for NSColor and UIColor. Support for HexColors with prefixed # and without.
 
 #Example iOS
 ``` objective-c

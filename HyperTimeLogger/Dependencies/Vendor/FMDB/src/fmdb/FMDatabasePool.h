@@ -173,9 +173,9 @@
 @end
 
 
-/** FMDatabasePool delegate mark
+/** FMDatabasePool delegate category
  
- This is a mark that defines the protocol for the FMDatabasePool delegate
+ This is a category that defines the protocol for the FMDatabasePool delegate
  */
 
 @interface NSObject (FMDatabasePoolDelegate)

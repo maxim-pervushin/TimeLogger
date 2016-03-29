@@ -232,7 +232,10 @@
 		C51F13121B32C5B2001F452F /* add.png in Resources */ = {isa = PBXBuildFile; fileRef = C51F13111B32C5B2001F452F /* add.png */; };
 		C53370711B397E520095549E /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C533706F1B397E520095549E /* MainInterface.storyboard */; };
 		C53370781B397FC50095549E /* DTFolderMonitor.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6C4782FCAEADF81D13DD /* DTFolderMonitor.m */; };
-		C54FBB621C68C14A00170177 /* testdata_ru.json in Resources */ = {isa = PBXBuildFile; fileRef = 73BC61C5C5E177824633170B /* testdata_ru.json */; };
+		C557BEA01CAA7488005C5334 /* HyperTimeLoggerUISnapshots.swift in Sources */ = {isa = PBXBuildFile; fileRef = C557BE9F1CAA7488005C5334 /* HyperTimeLoggerUISnapshots.swift */; };
+		C557BEA81CAA7497005C5334 /* SnapshotHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = C557BEA71CAA7497005C5334 /* SnapshotHelper.swift */; };
+		C557BEAA1CAA74EB005C5334 /* testdata_ru.json in Resources */ = {isa = PBXBuildFile; fileRef = 73BC61C5C5E177824633170B /* testdata_ru.json */; };
+		C557BEAB1CAA74EB005C5334 /* testdata_en.json in Resources */ = {isa = PBXBuildFile; fileRef = 73BC61D37DB350A79F19F0DD /* testdata_en.json */; };
 		C55912531B3C06B8002593BE /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C55912511B3C06B8002593BE /* InfoPlist.strings */; };
 		C55912591B3C0853002593BE /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C55912571B3C0853002593BE /* InfoPlist.strings */; };
 		C559125E1B3C0867002593BE /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C559125C1B3C0867002593BE /* InfoPlist.strings */; };
@@ -428,6 +431,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		C557BEA21CAA7488005C5334 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C5FFE3CA1B1857CD007D317D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C5FFE3D11B1857CD007D317D;
+			remoteInfo = HyperTimeLogger;
+		};
 		C59689F51B3C19860038018D /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = C5FFE3CA1B1857CD007D317D /* Project object */;
@@ -611,6 +621,10 @@
 		C53370701B397E520095549E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
 		C53370721B397E5C0095549E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/MainInterface.strings; sourceTree = "<group>"; };
 		C53370731B397E5F0095549E /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/MainInterface.strings; sourceTree = "<group>"; };
+		C557BE9D1CAA7488005C5334 /* HyperTimeLoggerUISnapshots.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HyperTimeLoggerUISnapshots.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		C557BE9F1CAA7488005C5334 /* HyperTimeLoggerUISnapshots.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HyperTimeLoggerUISnapshots.swift; sourceTree = "<group>"; };
+		C557BEA11CAA7488005C5334 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C557BEA71CAA7497005C5334 /* SnapshotHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SnapshotHelper.swift; path = ../../fastlane/SnapshotHelper.swift; sourceTree = "<group>"; };
 		C55912521B3C06B8002593BE /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		C55912541B3C06BE002593BE /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		C55912551B3C06C1002593BE /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/InfoPlist.strings; sourceTree = "<group>"; };
@@ -733,6 +747,13 @@
 				C582B3B21B3ECD26005CC526 /* libsqlite3.dylib in Frameworks */,
 				C516A75A1B3AD2590018F022 /* Crashlytics.framework in Frameworks */,
 				C516A75B1B3AD2590018F022 /* Fabric.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C557BE9A1CAA7488005C5334 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1223,6 +1244,16 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		C557BE9E1CAA7488005C5334 /* HyperTimeLoggerUISnapshots */ = {
+			isa = PBXGroup;
+			children = (
+				C557BEA71CAA7497005C5334 /* SnapshotHelper.swift */,
+				C557BE9F1CAA7488005C5334 /* HyperTimeLoggerUISnapshots.swift */,
+				C557BEA11CAA7488005C5334 /* Info.plist */,
+			);
+			path = HyperTimeLoggerUISnapshots;
+			sourceTree = "<group>";
+		};
 		C582B29E1B3EC8D5005CC526 /* CocoaLumberjack */ = {
 			isa = PBXGroup;
 			children = (
@@ -1398,6 +1429,7 @@
 				73BC638E0B41F356D8A5AFDC /* Dependencies */,
 				73BC6EF11D6CD7307BA62A1F /* HyperTimeLogger */,
 				C5FFE3EE1B1857CE007D317D /* HyperTimeLoggerTests */,
+				C557BE9E1CAA7488005C5334 /* HyperTimeLoggerUISnapshots */,
 				C5FFE3D31B1857CE007D317D /* Products */,
 				C5BA1B761B26F890006D80BC /* TodayExtension */,
 			);
@@ -1413,6 +1445,7 @@
 				C516A7621B3AD2590018F022 /* HyperTimeLogger Alpha.app */,
 				C59689BE1B3C16270038018D /* TodayExtension Alpha.appex */,
 				C59689E01B3C16350038018D /* TodayExtension Beta.appex */,
+				C557BE9D1CAA7488005C5334 /* HyperTimeLoggerUISnapshots.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -1476,6 +1509,24 @@
 			productName = HyperTimeLogger;
 			productReference = C516A7621B3AD2590018F022 /* HyperTimeLogger Alpha.app */;
 			productType = "com.apple.product-type.application";
+		};
+		C557BE9C1CAA7488005C5334 /* HyperTimeLoggerUISnapshots */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C557BEA61CAA7489005C5334 /* Build configuration list for PBXNativeTarget "HyperTimeLoggerUISnapshots" */;
+			buildPhases = (
+				C557BE991CAA7488005C5334 /* Sources */,
+				C557BE9A1CAA7488005C5334 /* Frameworks */,
+				C557BE9B1CAA7488005C5334 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C557BEA31CAA7488005C5334 /* PBXTargetDependency */,
+			);
+			name = HyperTimeLoggerUISnapshots;
+			productName = HyperTimeLoggerUISnapshots;
+			productReference = C557BE9D1CAA7488005C5334 /* HyperTimeLoggerUISnapshots.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 		C596899E1B3C16270038018D /* TodayExtension Alpha */ = {
 			isa = PBXNativeTarget;
@@ -1573,7 +1624,7 @@
 			isa = PBXProject;
 			attributes = {
 				CLASSPREFIX = HTL;
-				LastSwiftUpdateCheck = 0720;
+				LastSwiftUpdateCheck = 0730;
 				LastUpgradeCheck = 0630;
 				ORGANIZATIONNAME = "Maxim Pervushin";
 				TargetAttributes = {
@@ -1592,6 +1643,10 @@
 								enabled = 1;
 							};
 						};
+					};
+					C557BE9C1CAA7488005C5334 = {
+						CreatedOnToolsVersion = 7.3;
+						TestTargetID = C5FFE3D11B1857CD007D317D;
 					};
 					C596899E1B3C16270038018D = {
 						DevelopmentTeam = FRM2L78456;
@@ -1643,6 +1698,7 @@
 				C596899E1B3C16270038018D /* TodayExtension Alpha */,
 				C59689C01B3C16350038018D /* TodayExtension Beta */,
 				C5BA1B721B26F890006D80BC /* TodayExtension */,
+				C557BE9C1CAA7488005C5334 /* HyperTimeLoggerUISnapshots */,
 			);
 		};
 /* End PBXProject section */
@@ -1696,6 +1752,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		C557BE9B1CAA7488005C5334 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		C59689B61B3C16270038018D /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -1731,6 +1794,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				73BC697836C7BC71A9FAEE26 /* clock_transparent.png in Resources */,
+				C557BEAB1CAA74EB005C5334 /* testdata_en.json in Resources */,
 				C559125E1B3C0867002593BE /* InfoPlist.strings in Resources */,
 				73BC617D5432B3204E578CF4 /* settings.png in Resources */,
 				C55912621B3C0925002593BE /* HyperTimeLogger.entitlements in Resources */,
@@ -1738,7 +1802,7 @@
 				C59088C81B398E330099F8CB /* Localizable.strings in Resources */,
 				C58B38621B395FB7006C7AE7 /* Main.storyboard in Resources */,
 				C51F13121B32C5B2001F452F /* add.png in Resources */,
-				C54FBB621C68C14A00170177 /* testdata_ru.json in Resources */,
+				C557BEAA1CAA74EB005C5334 /* testdata_ru.json in Resources */,
 				73BC6D42F5DEFED44D50CF72 /* settings@3x.png in Resources */,
 				C51F13101B32C592001F452F /* statistics@3x.png in Resources */,
 				C51F130F1B32C592001F452F /* statistics@2x.png in Resources */,
@@ -1940,6 +2004,15 @@
 				73BC6B95408C6F7DE2D1AC61 /* HTLButton.swift in Sources */,
 				73BC67C636639DCC37BE1B64 /* HTLGridLayout.swift in Sources */,
 				73BC6913AFEA03D21F899951 /* HTLLineLayout.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C557BE991CAA7488005C5334 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C557BEA01CAA7488005C5334 /* HyperTimeLoggerUISnapshots.swift in Sources */,
+				C557BEA81CAA7497005C5334 /* SnapshotHelper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2192,6 +2265,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		C557BEA31CAA7488005C5334 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C5FFE3D11B1857CD007D317D /* HyperTimeLogger */;
+			targetProxy = C557BEA21CAA7488005C5334 /* PBXContainerItemProxy */;
+		};
 		C59689F61B3C19860038018D /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = C596899E1B3C16270038018D /* TodayExtension Alpha */;
@@ -2409,6 +2487,35 @@
 				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				USER_HEADER_SEARCH_PATHS = "\"${PROJECT_DIR}/../Pods\"/**";
+			};
+			name = Release;
+		};
+		C557BEA41CAA7489005C5334 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_TESTABILITY = YES;
+				INFOPLIST_FILE = HyperTimeLoggerUISnapshots/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.maximpervushin.HyperTimeLoggerUISnapshots;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TEST_TARGET_NAME = HyperTimeLogger;
+			};
+			name = Debug;
+		};
+		C557BEA51CAA7489005C5334 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				INFOPLIST_FILE = HyperTimeLoggerUISnapshots/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.maximpervushin.HyperTimeLoggerUISnapshots;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = HyperTimeLogger;
 			};
 			name = Release;
 		};
@@ -2746,6 +2853,14 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		C557BEA61CAA7489005C5334 /* Build configuration list for PBXNativeTarget "HyperTimeLoggerUISnapshots" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C557BEA41CAA7489005C5334 /* Debug */,
+				C557BEA51CAA7489005C5334 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 		C59689BB1B3C16270038018D /* Build configuration list for PBXNativeTarget "TodayExtension Alpha" */ = {
 			isa = XCConfigurationList;
