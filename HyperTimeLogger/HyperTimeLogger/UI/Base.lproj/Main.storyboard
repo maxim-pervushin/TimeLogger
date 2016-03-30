@@ -150,6 +150,7 @@
                                     </view>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jmw-eB-eo5" customClass="HTLButton" customModule="HyperTimeLogger" customModuleProvider="target">
                                         <rect key="frame" x="286" y="24" width="22" height="36"/>
+                                        <accessibility key="accessibilityConfiguration" identifier="Statistics"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="36" id="lgf-2E-eke"/>
                                         </constraints>
@@ -160,6 +161,7 @@
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="quC-Xz-W0K" customClass="HTLButton" customModule="HyperTimeLogger" customModuleProvider="target">
                                         <rect key="frame" x="12" y="24" width="22" height="36"/>
+                                        <accessibility key="accessibilityConfiguration" identifier="Settings"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="36" id="bjA-R0-2Aw"/>
                                         </constraints>
@@ -350,6 +352,7 @@
                                     </view>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5hz-ku-1S4" customClass="HTLButton" customModule="HyperTimeLogger" customModuleProvider="target">
                                         <rect key="frame" x="12" y="24" width="37" height="36"/>
+                                        <accessibility key="accessibilityConfiguration" identifier="Done"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="36" id="nby-td-1fn"/>
                                         </constraints>
@@ -430,6 +433,7 @@
                                     </view>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cVb-ND-Pff" customClass="HTLButton" customModule="HyperTimeLogger" customModuleProvider="target">
                                         <rect key="frame" x="12" y="24" width="48" height="36"/>
+                                        <accessibility key="accessibilityConfiguration" identifier="Cancel"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="36" id="ez0-eE-FGd"/>
                                         </constraints>
@@ -440,6 +444,7 @@
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TdG-UY-5Cy" customClass="HTLButton" customModule="HyperTimeLogger" customModuleProvider="target">
                                         <rect key="frame" x="274" y="24" width="34" height="36"/>
+                                        <accessibility key="accessibilityConfiguration" identifier="Save"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="36" id="DUB-9A-sY7"/>
                                         </constraints>
@@ -646,6 +651,7 @@
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Action..." minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="caI-j5-rMv" customClass="HTLTextField" customModule="HyperTimeLogger" customModuleProvider="target">
                                                 <rect key="frame" x="8" y="95" width="304" height="30"/>
                                                 <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="0.0" alpha="0.33000000000000002" colorSpace="calibratedRGB"/>
+                                                <accessibility key="accessibilityConfiguration" identifier="TextField"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="30" id="cRj-KY-IF2"/>
                                                 </constraints>
@@ -752,6 +758,7 @@
                                     </view>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="V2w-1W-PFM" customClass="HTLButton" customModule="HyperTimeLogger" customModuleProvider="target">
                                         <rect key="frame" x="12" y="24" width="37" height="36"/>
+                                        <accessibility key="accessibilityConfiguration" identifier="Done"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="36" id="mMc-Pb-lDD"/>
                                         </constraints>

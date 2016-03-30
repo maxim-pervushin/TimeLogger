@@ -66,6 +66,7 @@ static const float kHeaderHeight = 35.0f;
 #pragma mark - HTLReportListViewController @IB
 
 - (IBAction)addButtonPanGesture:(UIPanGestureRecognizer *)panGestureRecognizer {
+    NSLog(@"addButtonPanGesture:");
     if (panGestureRecognizer.state == UIGestureRecognizerStateBegan) {
         self.originalToAddButtonToBottom = self.addButtonToBottomLayoutConstraint.constant;
         self.originalToAddButtonToRight = self.addButtonToRightLayoutConstraint.constant;
@@ -97,6 +98,7 @@ static const float kHeaderHeight = 35.0f;
 }
 
 - (IBAction)addButtonTapGesture:(UITapGestureRecognizer *)panGestureRecognizer {
+    NSLog(@"addButtonTapGesture:");
     [self performSegueWithIdentifier:kEditReportSegueIdentifier sender:self];
 }
 

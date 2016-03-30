@@ -26,12 +26,23 @@ class HyperTimeLoggerUISnapshots: XCTestCase {
     
     func testMakeSnapshots() {
         
+        let app = XCUIApplication()
         snapshot("01_Reports")
         
-        XCUIApplication().buttons["AddReportButton"].tap()
-        
+        app.buttons["AddReportButton"].tap()
+
+        app.textFields["TextField"].typeText("Sleep")
+        app.collectionViews.staticTexts.elementBoundByIndex(0).tap()
         snapshot("02_AddReport")
         
+        app.buttons["Save"].tap()
+        app.buttons["Statistics"].tap()
+        snapshot("03_Statistics")
         
+        app.buttons["Done"].tap()
+        app.buttons["Settings"].tap()
+        snapshot("04_Settings")
+        
+        app.buttons["Done"].tap()
     }
 }

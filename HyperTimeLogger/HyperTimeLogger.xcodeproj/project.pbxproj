@@ -232,8 +232,8 @@
 		C51F13121B32C5B2001F452F /* add.png in Resources */ = {isa = PBXBuildFile; fileRef = C51F13111B32C5B2001F452F /* add.png */; };
 		C53370711B397E520095549E /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C533706F1B397E520095549E /* MainInterface.storyboard */; };
 		C53370781B397FC50095549E /* DTFolderMonitor.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6C4782FCAEADF81D13DD /* DTFolderMonitor.m */; };
-		C557BEA01CAA7488005C5334 /* HyperTimeLoggerUISnapshots.swift in Sources */ = {isa = PBXBuildFile; fileRef = C557BE9F1CAA7488005C5334 /* HyperTimeLoggerUISnapshots.swift */; };
-		C557BEA81CAA7497005C5334 /* SnapshotHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = C557BEA71CAA7497005C5334 /* SnapshotHelper.swift */; };
+		C53B27D31CABCE05001112F5 /* HyperTimeLoggerUISnapshots.swift in Sources */ = {isa = PBXBuildFile; fileRef = C557BE9F1CAA7488005C5334 /* HyperTimeLoggerUISnapshots.swift */; };
+		C53B27D41CABCE5B001112F5 /* SnapshotHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = C557BEA71CAA7497005C5334 /* SnapshotHelper.swift */; };
 		C557BEAA1CAA74EB005C5334 /* testdata_ru.json in Resources */ = {isa = PBXBuildFile; fileRef = 73BC61C5C5E177824633170B /* testdata_ru.json */; };
 		C557BEAB1CAA74EB005C5334 /* testdata_en.json in Resources */ = {isa = PBXBuildFile; fileRef = 73BC61D37DB350A79F19F0DD /* testdata_en.json */; };
 		C55912531B3C06B8002593BE /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C55912511B3C06B8002593BE /* InfoPlist.strings */; };
@@ -2011,8 +2011,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C557BEA01CAA7488005C5334 /* HyperTimeLoggerUISnapshots.swift in Sources */,
-				C557BEA81CAA7497005C5334 /* SnapshotHelper.swift in Sources */,
+				C53B27D31CABCE05001112F5 /* HyperTimeLoggerUISnapshots.swift in Sources */,
+				C53B27D41CABCE5B001112F5 /* SnapshotHelper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2861,6 +2861,7 @@
 				C557BEA51CAA7489005C5334 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		C59689BB1B3C16270038018D /* Build configuration list for PBXNativeTarget "TodayExtension Alpha" */ = {
 			isa = XCConfigurationList;
