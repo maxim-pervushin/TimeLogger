@@ -9,11 +9,8 @@
 #import <UIKit/UIKit.h>
 
 
-#define HTLAppDataManger ((HTLAppDelegate *)[UIApplication sharedApplication].delegate).dataManager
-#define HTLAppVersion ((HTLAppDelegate *)[UIApplication sharedApplication].delegate).appVersion
-
-
 @class HTLDataManager;
+@class HTLRemindersManager;
 
 
 static NSString *const kHTLAppDelegateAddReportURLReceived = @"HTLAppDelegateAddReportURLReceived";
@@ -22,7 +19,8 @@ static NSString *const kHTLAppDelegateAddReportURLReceived = @"HTLAppDelegateAdd
 
 @property(nonatomic, strong) UIWindow *window;
 @property(nonatomic, strong) HTLDataManager *dataManager;
-@property(nonatomic, readonly) NSString *appVersion;
+@property(nonatomic, strong) HTLRemindersManager *remindersManager;
+@property(nonatomic, readonly) NSString *versionIdentifier;
 
 @end
 

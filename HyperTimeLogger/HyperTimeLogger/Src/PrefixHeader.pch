@@ -10,5 +10,6 @@
 #define HyperTimeLogger_PrefixHeader_pch
 
 #import "CocoaLumberjack.h"
+#import "HTLApp.h"
 
 #endif

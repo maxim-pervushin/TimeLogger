@@ -4,9 +4,9 @@
 //
 
 #import "HTLReportListDataSource.h"
+#import "HTLApp.h"
 #import "HTLDataManager.h"
 #import "HTLDateSection.h"
-#import "HTLAppDelegate.h"
 
 
 @interface HTLReportListDataSource ()
@@ -26,26 +26,26 @@
 #pragma mark - HTLReportListDataSource
 
 - (NSUInteger)numberOfReportSections {
-    return [HTLAppDataManger numberOfReportSections];
+    return [[HTLApp dataManager] numberOfReportSections];
 }
 
 - (NSArray *)reportSections {
-    return [HTLAppDataManger findAllReportSections];
+    return [[HTLApp dataManager] findAllReportSections];
 }
 
 - (NSDate *)startDate {
-    return [HTLAppDataManger findLastReportEndDate];
+    return [[HTLApp dataManager] findLastReportEndDate];
 }
 
 - (NSUInteger)numberOfReportsForDateSectionAtIndex:(NSInteger)index {
     HTLDateSection *dateSection = self.reportSections[(NSUInteger) index];
-    NSUInteger result = [HTLAppDataManger numberOfReportsWithDateSection:dateSection];
+    NSUInteger result = [[HTLApp dataManager] numberOfReportsWithDateSection:dateSection];
     return result;
 }
 
 - (NSArray *)reportsExtendedForDateSectionAtIndex:(NSInteger)index {
-    HTLDateSection *dateSection = [HTLAppDataManger findAllReportSections][(NSUInteger) index];
-    NSArray *result = [HTLAppDataManger findReportsExtendedWithDateSection:dateSection category:nil];
+    HTLDateSection *dateSection = [[HTLApp dataManager] findAllReportSections][(NSUInteger) index];
+    NSArray *result = [[HTLApp dataManager] findReportsExtendedWithDateSection:dateSection category:nil];
     return result;
 }
 

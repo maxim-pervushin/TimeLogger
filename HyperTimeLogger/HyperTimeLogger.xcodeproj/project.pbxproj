@@ -10,6 +10,7 @@
 		73BC600E8C599F6D11BBD183 /* HTLCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC660F9035AF2D12D68B11 /* HTLCategory.m */; };
 		73BC6024FC6ACEB7F174B963 /* HTLStatisticsItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6DFB1BA7EA57448732DA /* HTLStatisticsItem.m */; };
 		73BC60350E34CB944F864BEB /* HTLGridLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC642EB7C81CE00DEA7BFF /* HTLGridLayout.swift */; };
+		73BC603C6999323AA4A2A108 /* HTLTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC61DB6BCF259F77ECDC73 /* HTLTableViewCell.swift */; };
 		73BC603DBF071D0B044B2FD3 /* HTLAddButtonWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC647FFAA49DF6B183D16E /* HTLAddButtonWidget.swift */; };
 		73BC60A9E3DA6728F9788F57 /* HTLSqliteStorageProvider+Deserialization.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6D1F71AFEE603353B859 /* HTLSqliteStorageProvider+Deserialization.m */; };
 		73BC60CE4459BFA4B08E91C1 /* HTLLineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC60ECEFAC2122A4C17181 /* HTLLineView.swift */; };
@@ -23,8 +24,11 @@
 		73BC624016E4231AC06C7519 /* HTLNoContentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6EE7549A710918391000 /* HTLNoContentCell.swift */; };
 		73BC62568DE7117F7D84C604 /* HTLAction.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC648635BCE062AF18E634 /* HTLAction.m */; };
 		73BC625BC83ED66A65CA00E7 /* HTLGridLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC642EB7C81CE00DEA7BFF /* HTLGridLayout.swift */; };
+		73BC627669223D49E249BABE /* HTLLightLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6BDC5778C422461315BD /* HTLLightLabel.swift */; };
+		73BC627809262B309B3BAD31 /* HTLRemindersManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6625C10B129814778031 /* HTLRemindersManager.m */; };
 		73BC62B4FA9BA474C4F3EAC9 /* HTLReportExtendedEditor.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6BD7F554BC56573CE86A /* HTLReportExtendedEditor.m */; };
 		73BC62D548E25B46D3759605 /* HyperTimeLogger.entitlements in Resources */ = {isa = PBXBuildFile; fileRef = 73BC66AAE26BE5005B6B3F36 /* HyperTimeLogger.entitlements */; };
+		73BC62D9BBBA43478E2A61F5 /* HTLApp.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC66455BD3AF0537AF0E6F /* HTLApp.m */; };
 		73BC62DBB0557CEF66331263 /* HTLReport+HTLHelpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6F771B4A63AA8FABCDF5 /* HTLReport+HTLHelpers.m */; };
 		73BC631CE07CD174D4AD23C0 /* HTLLineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC60ECEFAC2122A4C17181 /* HTLLineView.swift */; };
 		73BC632B40084A909E07A1F8 /* NSDate+HTLTimeHelpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC62DB5CA313A4BC61EC0F /* NSDate+HTLTimeHelpers.m */; };
@@ -37,6 +41,7 @@
 		73BC63E583DA471B2D26C36E /* HTLReport.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6A41E76EE6DBA2B7B791 /* HTLReport.m */; };
 		73BC6436C539FA93E8CB0BFF /* HTLCompletion.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC612AAFD0BFC06B406EC4 /* HTLCompletion.m */; };
 		73BC645C882530C5C0520F4E /* HTLLineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC60ECEFAC2122A4C17181 /* HTLLineView.swift */; };
+		73BC6503CA7D55DD98899F17 /* HTLLightLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6BDC5778C422461315BD /* HTLLightLabel.swift */; };
 		73BC6546D21485AC3595DCC6 /* HTLLineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC60ECEFAC2122A4C17181 /* HTLLineView.swift */; };
 		73BC65AB5A04FEEA2462F6AF /* HTLCompletionCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6A799292EFF1A3FDE4D4 /* HTLCompletionCollectionViewCell.m */; };
 		73BC65EBF2E0EFBE18CE5FAA /* HTLReportExtended.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC666118C4F574F66F741D /* HTLReportExtended.m */; };
@@ -49,22 +54,28 @@
 		73BC66E062885277EA135AC0 /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73BC6FB0EFED7B84F71E676E /* NotificationCenter.framework */; };
 		73BC66FBEB3FEDA6D59A4EEB /* HTLSqliteStorageProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC686334D59793FEFA2E86 /* HTLSqliteStorageProvider.m */; };
 		73BC67153769259438DD2A5C /* HTLTopBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC64192B6EF7AB8A700A9C /* HTLTopBarView.swift */; };
+		73BC672D084C250E6A23F8F7 /* HTLTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC61DB6BCF259F77ECDC73 /* HTLTableViewCell.swift */; };
 		73BC673ED541609F1B93818F /* HTLSqliteStorageProvider+Deserialization.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6D1F71AFEE603353B859 /* HTLSqliteStorageProvider+Deserialization.m */; };
 		73BC67476FACD1FEC5E9D5BB /* HTLBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC667BBC86A8ED9DAF79F9 /* HTLBackgroundView.swift */; };
 		73BC679BF2C1A1A36939932B /* NSDate+HTLComponents.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6F6EE1E455D98426F705 /* NSDate+HTLComponents.m */; };
 		73BC679DD95BD9F43FE6A2AB /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6B4DA596906232FF8970 /* main.m */; };
+		73BC67A14318B06728E4839F /* HTLTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6219F0FACF6F0F1C8C76 /* HTLTableView.swift */; };
 		73BC67A4E0C0CA36BB035D6C /* HTLDateSection.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC66709A1F2D03B601899D /* HTLDateSection.m */; };
 		73BC67BFC684ABF439BF06D9 /* HTLGridLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC642EB7C81CE00DEA7BFF /* HTLGridLayout.swift */; };
 		73BC67C565D3A4CC29A6EDE8 /* NSDate+HTLTimeHelpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC62DB5CA313A4BC61EC0F /* NSDate+HTLTimeHelpers.m */; };
 		73BC67C636639DCC37BE1B64 /* HTLGridLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC642EB7C81CE00DEA7BFF /* HTLGridLayout.swift */; };
 		73BC67D43872E6465FB36050 /* HTLTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC654D3DAB9AE23903E3BE /* HTLTextField.swift */; };
 		73BC67E812EA793D35E89D55 /* HTLStatisticsItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6DFB1BA7EA57448732DA /* HTLStatisticsItem.m */; };
+		73BC67EBD320430D5857DB9D /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC679BB1D9E72CF141C410 /* SettingsViewController.swift */; };
 		73BC68033AF8061D639DCFC0 /* HTETodayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6B8E25A8D300C95D3491 /* HTETodayViewController.m */; };
+		73BC68040DDC25E2A6DB987F /* HTLRemindersManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6625C10B129814778031 /* HTLRemindersManager.m */; };
 		73BC680C541F6C6C7A678530 /* HTLLightBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6A4018BAEAD4A02545CA /* HTLLightBackgroundView.swift */; };
+		73BC682FC4E950FABC42BE9E /* HTLNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6234BC728B47BE55516B /* HTLNavigationBar.swift */; };
 		73BC68546859BB9B9464FFD0 /* HTLReportListDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6F28EAC2335F9576CA6C /* HTLReportListDataSource.m */; };
 		73BC686682E53ABD3DCB152B /* HTLAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC62BD6319224D876880BD /* HTLAppDelegate.m */; };
 		73BC68668853BF61467DC6AE /* UIColor+HTLHelpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC60624B8CE64E57E76B25 /* UIColor+HTLHelpers.m */; };
 		73BC6868B421D681C346C5ED /* HTLLineLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6C9DCB8A7FE3DB68B98D /* HTLLineLayout.swift */; };
+		73BC687D909FE2C6A8FA0400 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC679BB1D9E72CF141C410 /* SettingsViewController.swift */; };
 		73BC688E05940C6C7A19AEFE /* HTLCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC660F9035AF2D12D68B11 /* HTLCategory.m */; };
 		73BC68A042945E51A24975F9 /* HTLReportExtendedEditor.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6BD7F554BC56573CE86A /* HTLReportExtendedEditor.m */; };
 		73BC68ACC3F021865C4EC1B1 /* NSDate+HTLTimeHelpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC62DB5CA313A4BC61EC0F /* NSDate+HTLTimeHelpers.m */; };
@@ -92,9 +103,14 @@
 		73BC6AEDC24B3643325E6F75 /* HTLCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC660F9035AF2D12D68B11 /* HTLCategory.m */; };
 		73BC6AF0B9F2A679291650B0 /* HTLTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC654D3DAB9AE23903E3BE /* HTLTextField.swift */; };
 		73BC6AF3A7B25DE8264E7098 /* HTLReportExtendedEditor.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6BD7F554BC56573CE86A /* HTLReportExtendedEditor.m */; };
+		73BC6AFA49F3171B56E464F5 /* HTLApp.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC66455BD3AF0537AF0E6F /* HTLApp.m */; };
+		73BC6B047F234AEFC09BD331 /* HTLNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6234BC728B47BE55516B /* HTLNavigationBar.swift */; };
 		73BC6B1E338548FE30A4AFAD /* HTLAction.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC648635BCE062AF18E634 /* HTLAction.m */; };
+		73BC6B4A9AFC84A22837C731 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC679BB1D9E72CF141C410 /* SettingsViewController.swift */; };
 		73BC6B5E48C8D2C5D91C39EB /* HTLStatisticsDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC64B38D1BC62AB8562034 /* HTLStatisticsDataSource.m */; };
 		73BC6B6C3CDB2266ECBA4BA5 /* HTLLineLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6C9DCB8A7FE3DB68B98D /* HTLLineLayout.swift */; };
+		73BC6B8AD6C0ED7ED1F64AEA /* HTLLightLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6BDC5778C422461315BD /* HTLLightLabel.swift */; };
+		73BC6B95382105A764001092 /* HTLTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC61DB6BCF259F77ECDC73 /* HTLTableViewCell.swift */; };
 		73BC6B95408C6F7DE2D1AC61 /* HTLButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6968DEE8D9C79A5AB9FB /* HTLButton.swift */; };
 		73BC6B9FDBFB2EE8267221A9 /* HTLDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6B2EF7D4AAB16D0EC09A /* HTLDataSource.m */; };
 		73BC6BB80E74AD1C414F0C8D /* HTLPieChartCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6E4CD1FE08E15C414BAC /* HTLPieChartCell.m */; };
@@ -110,7 +126,10 @@
 		73BC6C62641A2687870DDD89 /* HTLLightBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6A4018BAEAD4A02545CA /* HTLLightBackgroundView.swift */; };
 		73BC6C6C39E9EC7676F73D0F /* HTLGridLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC642EB7C81CE00DEA7BFF /* HTLGridLayout.swift */; };
 		73BC6C75E24784AC052671E5 /* HTLEditReportViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6B659C1F2AF2CF606296 /* HTLEditReportViewController.m */; };
+		73BC6C974FCEF7F2E22CDEEF /* HTLRemindersManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6625C10B129814778031 /* HTLRemindersManager.m */; };
 		73BC6CC003E2DB538E6F16DE /* settings@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 73BC6A22878FD4F414CF5C2A /* settings@2x.png */; };
+		73BC6CDBEFCF220BE15C6707 /* HTLNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6234BC728B47BE55516B /* HTLNavigationBar.swift */; };
+		73BC6CF0058A7E5EA572126C /* HTLApp.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC66455BD3AF0537AF0E6F /* HTLApp.m */; };
 		73BC6D0BCBFFC6D7B897C999 /* HTLDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6F1E0AC02A596C78B942 /* HTLDataManager.m */; };
 		73BC6D42F5DEFED44D50CF72 /* settings@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 73BC6B415FC214ECAF121C50 /* settings@3x.png */; };
 		73BC6D4AAD99665A10565079 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6B4DA596906232FF8970 /* main.m */; };
@@ -118,7 +137,9 @@
 		73BC6D6180E599F9CB8A0D8F /* HTLGridLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC642EB7C81CE00DEA7BFF /* HTLGridLayout.swift */; };
 		73BC6D96930A9DDA7825C490 /* HTLCompletionCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6A799292EFF1A3FDE4D4 /* HTLCompletionCollectionViewCell.m */; };
 		73BC6DA30D82DB7740AD6F11 /* UIColor+HTLHelpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC60624B8CE64E57E76B25 /* UIColor+HTLHelpers.m */; };
+		73BC6E1306A15A029AC7BF97 /* HTLTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6219F0FACF6F0F1C8C76 /* HTLTableView.swift */; };
 		73BC6E37E01E454ABCF88F75 /* HTLAction.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC648635BCE062AF18E634 /* HTLAction.m */; };
+		73BC6E3ADFA6FBBB5FEA3468 /* HTLTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6219F0FACF6F0F1C8C76 /* HTLTableView.swift */; };
 		73BC6E4DED1BEDC0CE46C60D /* HTLStatisticsItemCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC68B935DD2C83FA55C77F /* HTLStatisticsItemCell.m */; };
 		73BC6E52ED3D1C17CE5E2362 /* HTLTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC654D3DAB9AE23903E3BE /* HTLTextField.swift */; };
 		73BC6E8F223111B6EB5A243E /* HTLReportListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6E168D88E254C8F6A4CE /* HTLReportListViewController.m */; };
@@ -520,6 +541,9 @@
 		73BC61C5C5E177824633170B /* testdata_ru.json */ = {isa = PBXFileReference; lastKnownFileType = file.json; path = testdata_ru.json; sourceTree = "<group>"; };
 		73BC61D0A4CD7A364641B3B2 /* HyperTimeLogger.entitlements */ = {isa = PBXFileReference; lastKnownFileType = file.entitlements; path = HyperTimeLogger.entitlements; sourceTree = "<group>"; };
 		73BC61D37DB350A79F19F0DD /* testdata_en.json */ = {isa = PBXFileReference; lastKnownFileType = file.json; path = testdata_en.json; sourceTree = "<group>"; };
+		73BC61DB6BCF259F77ECDC73 /* HTLTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTLTableViewCell.swift; sourceTree = "<group>"; };
+		73BC6219F0FACF6F0F1C8C76 /* HTLTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTLTableView.swift; sourceTree = "<group>"; };
+		73BC6234BC728B47BE55516B /* HTLNavigationBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTLNavigationBar.swift; sourceTree = "<group>"; };
 		73BC62BD6319224D876880BD /* HTLAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTLAppDelegate.m; sourceTree = "<group>"; };
 		73BC62DB5CA313A4BC61EC0F /* NSDate+HTLTimeHelpers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+HTLTimeHelpers.m"; sourceTree = "<group>"; };
 		73BC63407702DDDB04CF58F7 /* HTLDateSection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTLDateSection.h; sourceTree = "<group>"; };
@@ -539,6 +563,8 @@
 		73BC65FC45499E71FA1DDD91 /* DTFolderMonitor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DTFolderMonitor.h; sourceTree = "<group>"; };
 		73BC660F9035AF2D12D68B11 /* HTLCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTLCategory.m; sourceTree = "<group>"; };
 		73BC6619E2BFF808511873B5 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.info; path = Info.plist; sourceTree = "<group>"; };
+		73BC6625C10B129814778031 /* HTLRemindersManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTLRemindersManager.m; sourceTree = "<group>"; };
+		73BC66455BD3AF0537AF0E6F /* HTLApp.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTLApp.m; sourceTree = "<group>"; };
 		73BC666118C4F574F66F741D /* HTLReportExtended.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTLReportExtended.m; sourceTree = "<group>"; };
 		73BC66709A1F2D03B601899D /* HTLDateSection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTLDateSection.m; sourceTree = "<group>"; };
 		73BC667BBC86A8ED9DAF79F9 /* HTLBackgroundView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTLBackgroundView.swift; sourceTree = "<group>"; };
@@ -549,6 +575,8 @@
 		73BC672CAAD267B51798D558 /* HTLSettingsDataSource+TestData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "HTLSettingsDataSource+TestData.h"; sourceTree = "<group>"; };
 		73BC674C459A467E5BBE9DE3 /* HTLStatisticsDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTLStatisticsDataSource.h; sourceTree = "<group>"; };
 		73BC675CBCFB6D6ED03FCEEC /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.info; path = Info.plist; sourceTree = "<group>"; };
+		73BC67950DC9CFBE0494A7E3 /* HTLApp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTLApp.h; sourceTree = "<group>"; };
+		73BC679BB1D9E72CF141C410 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		73BC67B2DC0CBCFD95BC63E9 /* HTLDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTLDataSource.h; sourceTree = "<group>"; };
 		73BC681B64B78D2126E3F273 /* HTLReportExtendedCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTLReportExtendedCell.h; sourceTree = "<group>"; };
 		73BC684DB010D412F9E74A52 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
@@ -579,6 +607,7 @@
 		73BC6B86F0BBBAD9C3ECC490 /* HTLStatisticsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTLStatisticsViewController.m; sourceTree = "<group>"; };
 		73BC6B8E25A8D300C95D3491 /* HTETodayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTETodayViewController.m; sourceTree = "<group>"; };
 		73BC6BD7F554BC56573CE86A /* HTLReportExtendedEditor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTLReportExtendedEditor.m; sourceTree = "<group>"; };
+		73BC6BDC5778C422461315BD /* HTLLightLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTLLightLabel.swift; sourceTree = "<group>"; };
 		73BC6BE6B628DC71E15F4935 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.info; path = Info.plist; sourceTree = "<group>"; };
 		73BC6BF188BC4B62EBAED386 /* HTLCategoryCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTLCategoryCell.m; sourceTree = "<group>"; };
 		73BC6C4782FCAEADF81D13DD /* DTFolderMonitor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DTFolderMonitor.m; sourceTree = "<group>"; };
@@ -587,6 +616,7 @@
 		73BC6CB3E44ADE3599C48F2D /* HTLStatisticsItemCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTLStatisticsItemCell.h; sourceTree = "<group>"; };
 		73BC6D1ED9D0EB10CE1BD107 /* HyperTimeLogger.entitlements */ = {isa = PBXFileReference; lastKnownFileType = file.entitlements; path = HyperTimeLogger.entitlements; sourceTree = "<group>"; };
 		73BC6D1F71AFEE603353B859 /* HTLSqliteStorageProvider+Deserialization.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "HTLSqliteStorageProvider+Deserialization.m"; sourceTree = "<group>"; };
+		73BC6D4E23E1406F0359E6F3 /* HTLRemindersManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTLRemindersManager.h; sourceTree = "<group>"; };
 		73BC6D503DBAD8F16F5B080E /* HTLReportListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTLReportListViewController.h; sourceTree = "<group>"; };
 		73BC6D6409414252AAAEAAEE /* HTLStatisticsItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTLStatisticsItem.h; sourceTree = "<group>"; };
 		73BC6D6BFFE1DD9ED9D91649 /* HTETodayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTETodayViewController.h; sourceTree = "<group>"; };
@@ -621,6 +651,7 @@
 		C53370701B397E520095549E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
 		C53370721B397E5C0095549E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/MainInterface.strings; sourceTree = "<group>"; };
 		C53370731B397E5F0095549E /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/MainInterface.strings; sourceTree = "<group>"; };
+		C53D29821CFDA94700151BA0 /* BridgingHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BridgingHeader.h; sourceTree = "<group>"; };
 		C557BE9D1CAA7488005C5334 /* HyperTimeLoggerUISnapshots.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HyperTimeLoggerUISnapshots.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C557BE9F1CAA7488005C5334 /* HyperTimeLoggerUISnapshots.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HyperTimeLoggerUISnapshots.swift; sourceTree = "<group>"; };
 		C557BEA11CAA7488005C5334 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -828,6 +859,9 @@
 				73BC62D67E6B6DE79F2310E9 /* View & Model Controllers */,
 				73BC6B4DA596906232FF8970 /* main.m */,
 				73BC6AD5E7AB90AA7FBB9715 /* PrefixHeader.pch */,
+				73BC692680BA4CB115AF09E9 /* Notifications */,
+				73BC66455BD3AF0537AF0E6F /* HTLApp.m */,
+				73BC67950DC9CFBE0494A7E3 /* HTLApp.h */,
 			);
 			path = Src;
 			sourceTree = "<group>";
@@ -1012,6 +1046,15 @@
 			path = "Export Providers";
 			sourceTree = "<group>";
 		};
+		73BC692680BA4CB115AF09E9 /* Notifications */ = {
+			isa = PBXGroup;
+			children = (
+				73BC6625C10B129814778031 /* HTLRemindersManager.m */,
+				73BC6D4E23E1406F0359E6F3 /* HTLRemindersManager.h */,
+			);
+			path = Notifications;
+			sourceTree = "<group>";
+		};
 		73BC6962C60F0AB1DC65AB5C /* Live */ = {
 			isa = PBXGroup;
 			children = (
@@ -1029,6 +1072,10 @@
 				73BC647FFAA49DF6B183D16E /* HTLAddButtonWidget.swift */,
 				73BC654D3DAB9AE23903E3BE /* HTLTextField.swift */,
 				73BC6968DEE8D9C79A5AB9FB /* HTLButton.swift */,
+				73BC6219F0FACF6F0F1C8C76 /* HTLTableView.swift */,
+				73BC6234BC728B47BE55516B /* HTLNavigationBar.swift */,
+				73BC61DB6BCF259F77ECDC73 /* HTLTableViewCell.swift */,
+				73BC6BDC5778C422461315BD /* HTLLightLabel.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -1103,6 +1150,7 @@
 				73BC6E516EB62290DD7B243C /* HTLSettingsDataSource.m */,
 				73BC672CAAD267B51798D558 /* HTLSettingsDataSource+TestData.h */,
 				73BC61A9C99CE0428963C88B /* HTLSettingsDataSource+TestData.m */,
+				73BC679BB1D9E72CF141C410 /* SettingsViewController.swift */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -1201,6 +1249,7 @@
 				73BC64EBE7360C9E78BCE3C7 /* UI */,
 				73BC6B6BBDDF603A1AA9D02C /* TestData */,
 				73BC639F2C5AEF9CBA443885 /* Versions */,
+				C53D29821CFDA94700151BA0 /* BridgingHeader.h */,
 			);
 			path = HyperTimeLogger;
 			sourceTree = "<group>";
@@ -1933,6 +1982,13 @@
 				73BC66B026C8DD04DDB65B0C /* HTLButton.swift in Sources */,
 				73BC625BC83ED66A65CA00E7 /* HTLGridLayout.swift in Sources */,
 				73BC638A6FA5B2F7F6011EA9 /* HTLLineLayout.swift in Sources */,
+				73BC68040DDC25E2A6DB987F /* HTLRemindersManager.m in Sources */,
+				73BC687D909FE2C6A8FA0400 /* SettingsViewController.swift in Sources */,
+				73BC67A14318B06728E4839F /* HTLTableView.swift in Sources */,
+				73BC62D9BBBA43478E2A61F5 /* HTLApp.m in Sources */,
+				73BC682FC4E950FABC42BE9E /* HTLNavigationBar.swift in Sources */,
+				73BC672D084C250E6A23F8F7 /* HTLTableViewCell.swift in Sources */,
+				73BC627669223D49E249BABE /* HTLLightLabel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2004,6 +2060,13 @@
 				73BC6B95408C6F7DE2D1AC61 /* HTLButton.swift in Sources */,
 				73BC67C636639DCC37BE1B64 /* HTLGridLayout.swift in Sources */,
 				73BC6913AFEA03D21F899951 /* HTLLineLayout.swift in Sources */,
+				73BC6C974FCEF7F2E22CDEEF /* HTLRemindersManager.m in Sources */,
+				73BC6B4A9AFC84A22837C731 /* SettingsViewController.swift in Sources */,
+				73BC6E3ADFA6FBBB5FEA3468 /* HTLTableView.swift in Sources */,
+				73BC6AFA49F3171B56E464F5 /* HTLApp.m in Sources */,
+				73BC6CDBEFCF220BE15C6707 /* HTLNavigationBar.swift in Sources */,
+				73BC6B95382105A764001092 /* HTLTableViewCell.swift in Sources */,
+				73BC6B8AD6C0ED7ED1F64AEA /* HTLLightLabel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2228,6 +2291,13 @@
 				73BC6BF00902B35EF408768C /* HTLButton.swift in Sources */,
 				73BC60350E34CB944F864BEB /* HTLGridLayout.swift in Sources */,
 				73BC6868B421D681C346C5ED /* HTLLineLayout.swift in Sources */,
+				73BC627809262B309B3BAD31 /* HTLRemindersManager.m in Sources */,
+				73BC67EBD320430D5857DB9D /* SettingsViewController.swift in Sources */,
+				73BC6E1306A15A029AC7BF97 /* HTLTableView.swift in Sources */,
+				73BC6CF0058A7E5EA572126C /* HTLApp.m in Sources */,
+				73BC6B047F234AEFC09BD331 /* HTLNavigationBar.swift in Sources */,
+				73BC603C6999323AA4A2A108 /* HTLTableViewCell.swift in Sources */,
+				73BC6503CA7D55DD98899F17 /* HTLLightLabel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2415,6 +2485,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "HyperTimeLogger Beta";
 				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = HyperTimeLogger/BridgingHeader.h;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				USER_HEADER_SEARCH_PATHS = "\"${PROJECT_DIR}/../Pods\"/**";
 			};
@@ -2438,6 +2509,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "HyperTimeLogger Beta";
 				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = HyperTimeLogger/BridgingHeader.h;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				USER_HEADER_SEARCH_PATHS = "\"${PROJECT_DIR}/../Pods\"/**";
 			};
@@ -2461,6 +2533,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "HyperTimeLogger Alpha";
 				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = HyperTimeLogger/BridgingHeader.h;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				USER_HEADER_SEARCH_PATHS = "\"${PROJECT_DIR}/../Pods\"/**";
 			};
@@ -2485,6 +2558,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "HyperTimeLogger Alpha";
 				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = HyperTimeLogger/BridgingHeader.h;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				USER_HEADER_SEARCH_PATHS = "\"${PROJECT_DIR}/../Pods\"/**";
 			};
@@ -2773,6 +2847,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = HyperTimeLogger/BridgingHeader.h;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				USER_HEADER_SEARCH_PATHS = "\"${PROJECT_DIR}/../Pods\"/**";
 			};
@@ -2796,6 +2871,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = HyperTimeLogger/BridgingHeader.h;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				USER_HEADER_SEARCH_PATHS = "\"${PROJECT_DIR}/../Pods\"/**";
 			};
