@@ -4,13 +4,13 @@
 //
 
 #import "HTLSettingsDataSource.h"
+#import "HTLApp.h"
 #import "HTLDataManager.h"
-#import "HTLAppDelegate.h"
 
 @implementation HTLSettingsDataSource
 
 - (BOOL)resetContent {
-    return [HTLAppDataManger clear];
+    return [[HTLApp dataManager] clear];
 }
 
 - (BOOL)resetDefaults {
@@ -22,7 +22,7 @@
 }
 
 - (NSString *)exportDataToCSV {
-    return [HTLAppDataManger exportDataToCSV];
+    return [[HTLApp dataManager] exportDataToCSV];
 }
 
 @end

@@ -17,6 +17,7 @@
 #import <Fabric/Fabric.h>
 #import <Crashlytics/Crashlytics.h>
 #import "HyperTimeLogger-Swift.h"
+#import "HTLRemindersManager.h"
 
 
 static NSString *const kAddReportURL = @"timelogger://add";
@@ -37,20 +38,25 @@ static NSString *const kStorageFileName = @"time_logger_storage.db";
 @end
 
 @implementation HTLAppDelegate
-@dynamic appVersion;
+@dynamic versionIdentifier;
 
-- (NSString *)appVersion {
+- (NSString *)versionIdentifier {
     return [[NSBundle mainBundle] objectForInfoDictionaryKey:kVersionIdentifierKey];
 }
 
 - (void)initializeAppearance {
 
-    // HTLButton
     [HTLButton appearance].backgroundColor = [UIColor flatAsbestosColor];
     [HTLButton appearance].tintColor = [UIColor flatCloudsColor];
 
+    [HTLNavigationBar appearance].tintColor = [UIColor flatCloudsColor];
+
+    [HTLTableViewCell appearance].backgroundColor = [UIColor flatAsbestosColor];
+
+
     [HTLLineView appearance].backgroundColor = [UIColor flatConcreteColor];
 
+    [HTLLightLabel appearance].textColor = [UIColor flatCloudsColor];
     [UILabel appearance].textColor = [UIColor flatAsbestosColor];
 
     [HTLReportExtendedCell appearance].backgroundColor = [UIColor clearColor];
@@ -100,7 +106,7 @@ static NSString *const kStorageFileName = @"time_logger_storage.db";
 }
 
 - (void)initializeContentManager {
-    NSString *applicationGroup = [NSString stringWithFormat:@"%@%@", kApplicationGroup, [self.appVersion isEqualToString:@""] ? @"" : [NSString stringWithFormat:@"-%@", self.appVersion]];
+    NSString *applicationGroup = [NSString stringWithFormat:@"%@%@", kApplicationGroup, [self.versionIdentifier isEqualToString:@""] ? @"" : [NSString stringWithFormat:@"-%@", self.versionIdentifier]];
     NSURL *storageFolderURL = [[NSFileManager defaultManager] containerURLForSecurityApplicationGroupIdentifier:applicationGroup];
     HTLSqliteStorageProvider *sqliteStorageProvider =
             [HTLSqliteStorageProvider sqliteStorageProviderWithStorageFolderURL:storageFolderURL
@@ -108,11 +114,20 @@ static NSString *const kStorageFileName = @"time_logger_storage.db";
     self.dataManager = [HTLDataManager contentManagerWithStorageProvider:sqliteStorageProvider exportProvider:[HTLCSVStringExportProvider new]];
 }
 
+- (void)initializeRemindersManager {
+    self.remindersManager = [HTLRemindersManager new];
+}
+
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     [self initializeAppearance];
     [self initializeCrashReporter];
     [self initializeLoggers];
     [self initializeContentManager];
+    [self initializeRemindersManager];
+
+    if (nil != launchOptions[UIApplicationLaunchOptionsLocalNotificationKey]) {
+        [[NSNotificationCenter defaultCenter] postNotificationName:kHTLAppDelegateAddReportURLReceived object:nil];
+    }
 
     return YES;
 }
@@ -122,6 +137,9 @@ static NSString *const kStorageFileName = @"time_logger_storage.db";
         [[NSNotificationCenter defaultCenter] postNotificationName:kHTLAppDelegateAddReportURLReceived object:nil];
     }
     return YES;
+}
+
+- (void)application:(UIApplication *)application didReceiveLocalNotification:(UILocalNotification *)notification {
 }
 
 @end

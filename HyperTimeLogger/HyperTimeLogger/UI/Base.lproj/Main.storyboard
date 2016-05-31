@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="bWL-M1-wCh">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="bWL-M1-wCh">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
@@ -159,15 +159,15 @@
                                             <segue destination="FHu-qc-3H3" kind="modal" id="A2H-3a-sb7"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="quC-Xz-W0K" customClass="HTLButton" customModule="HyperTimeLogger" customModuleProvider="target">
-                                        <rect key="frame" x="12" y="24" width="22" height="36"/>
+                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="quC-Xz-W0K" customClass="HTLButton" customModule="HyperTimeLogger" customModuleProvider="target">
+                                        <rect key="frame" x="8" y="24" width="22" height="36"/>
                                         <accessibility key="accessibilityConfiguration" identifier="Settings"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="36" id="bjA-R0-2Aw"/>
                                         </constraints>
                                         <state key="normal" image="settings.png"/>
                                         <connections>
-                                            <segue destination="47e-2Z-u09" kind="modal" id="X8g-yV-Eeh"/>
+                                            <segue destination="fX1-gk-tI8" kind="modal" id="VUn-fE-01y"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -237,6 +237,279 @@
             </objects>
             <point key="canvasLocation" x="-89.599999999999994" y="-234.77333333333334"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="4ds-tC-aI7">
+            <objects>
+                <navigationController id="fX1-gk-tI8" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" translucent="NO" id="ZqB-LR-aMZ" customClass="HTLNavigationBar" customModule="HyperTimeLogger" customModuleProvider="target">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.42352941176470588" green="0.47450980392156861" blue="0.47843137254901963" alpha="1" colorSpace="calibratedRGB"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="XLF-sU-bF6" kind="relationship" relationship="rootViewController" id="AMc-RM-Wz1"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="L4R-1b-Fnm" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="384" y="-1035"/>
+        </scene>
+        <!--Settings View Controller-->
+        <scene sceneID="HAt-CT-UNb">
+            <objects>
+                <tableViewController id="XLF-sU-bF6" customClass="SettingsViewController" customModule="HyperTimeLogger" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="none" allowsSelection="NO" showsSelectionImmediatelyOnTouchBegin="NO" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="gso-WO-5eZ" customClass="HTLTableView" customModule="HyperTimeLogger" customModuleProvider="target">
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <sections>
+                            <tableViewSection id="I1U-5e-Hek">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="22" id="oNj-jk-m5v">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="22"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="oNj-jk-m5v" id="HgA-SN-mmu">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="22"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="2vZ-D6-zIO" customClass="HTLTableViewCell" customModule="HyperTimeLogger" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="22" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="2vZ-D6-zIO" id="jSZ-rH-CmA">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Reminders" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NNg-zs-c6a" customClass="HTLLightLabel" customModule="HyperTimeLogger" customModuleProvider="target">
+                                                    <rect key="frame" x="8" y="11" width="247" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" red="0.90980392156862744" green="0.92549019607843142" blue="0.93333333333333335" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Om8-vq-ytz">
+                                                    <rect key="frame" x="263" y="6" width="51" height="31"/>
+                                                    <color key="onTintColor" red="0.90980392156862744" green="0.92549019607843142" blue="0.93333333333333335" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <connections>
+                                                        <action selector="remindersEnabledSwitchValueChanged:" destination="XLF-sU-bF6" eventType="valueChanged" id="scy-fH-YUc"/>
+                                                    </connections>
+                                                </switch>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="Om8-vq-ytz" firstAttribute="trailing" secondItem="jSZ-rH-CmA" secondAttribute="trailingMargin" id="8em-iS-YiV"/>
+                                                <constraint firstItem="Om8-vq-ytz" firstAttribute="centerY" secondItem="jSZ-rH-CmA" secondAttribute="centerY" id="Snr-Fb-IDB"/>
+                                                <constraint firstItem="NNg-zs-c6a" firstAttribute="centerY" secondItem="jSZ-rH-CmA" secondAttribute="centerY" id="W7y-v0-Zdy"/>
+                                                <constraint firstItem="NNg-zs-c6a" firstAttribute="leading" secondItem="jSZ-rH-CmA" secondAttribute="leadingMargin" id="jq5-te-IaG"/>
+                                                <constraint firstItem="Om8-vq-ytz" firstAttribute="leading" secondItem="NNg-zs-c6a" secondAttribute="trailing" constant="8" id="oor-Ea-XZs"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="216" id="ZaL-pd-Wht">
+                                        <rect key="frame" x="0.0" y="66" width="320" height="216"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ZaL-pd-Wht" id="Z59-Pe-9bb">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="216"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qgk-nF-Zrm" customClass="HTLLightBackgroundView" customModule="HyperTimeLogger" customModuleProvider="target">
+                                                    <rect key="frame" x="0.0" y="0.0" width="320" height="216"/>
+                                                    <subviews>
+                                                        <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="countDownTimer" minuteInterval="1" useCurrentDate="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iBi-sB-whS">
+                                                            <rect key="frame" x="0.0" y="0.0" width="320" height="216"/>
+                                                            <date key="date" timeIntervalSinceReferenceDate="-978266699.51762903">
+                                                                <!--1970-01-01 11:15:00 +0000-->
+                                                            </date>
+                                                            <connections>
+                                                                <action selector="notificationsIntervalPickerValueChanged:" destination="XLF-sU-bF6" eventType="valueChanged" id="PtM-aC-JrC"/>
+                                                            </connections>
+                                                        </datePicker>
+                                                    </subviews>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <constraints>
+                                                        <constraint firstItem="iBi-sB-whS" firstAttribute="top" secondItem="qgk-nF-Zrm" secondAttribute="top" id="Eab-Id-6eW"/>
+                                                        <constraint firstAttribute="trailing" secondItem="iBi-sB-whS" secondAttribute="trailing" id="S8F-Yf-Qba"/>
+                                                        <constraint firstItem="iBi-sB-whS" firstAttribute="leading" secondItem="qgk-nF-Zrm" secondAttribute="leading" id="dqr-Yt-ITN"/>
+                                                    </constraints>
+                                                </view>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="qgk-nF-Zrm" secondAttribute="bottom" id="9ex-hv-SBt"/>
+                                                <constraint firstItem="qgk-nF-Zrm" firstAttribute="top" secondItem="Z59-Pe-9bb" secondAttribute="top" id="DNI-Fc-3So"/>
+                                                <constraint firstItem="qgk-nF-Zrm" firstAttribute="leading" secondItem="Z59-Pe-9bb" secondAttribute="leading" id="Su6-Fv-1zF"/>
+                                                <constraint firstAttribute="trailing" secondItem="qgk-nF-Zrm" secondAttribute="trailing" id="YrF-uU-9N5"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                            <tableViewSection id="eKj-Kc-6AW">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="22" id="zzH-3N-Jt8">
+                                        <rect key="frame" x="0.0" y="282" width="320" height="22"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="zzH-3N-Jt8" id="zsG-PB-4fR">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="22"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="jYF-DJ-Pi4" customClass="HTLTableViewCell" customModule="HyperTimeLogger" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="304" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="jYF-DJ-Pi4" id="o7M-Z0-dZP">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Eqq-7r-wbo" customClass="HTLButton" customModule="HyperTimeLogger" customModuleProvider="target">
+                                                    <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                                    <state key="normal" title="Export to CSV"/>
+                                                </button>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="Eqq-7r-wbo" firstAttribute="leading" secondItem="o7M-Z0-dZP" secondAttribute="leading" id="DzW-Z2-MFz"/>
+                                                <constraint firstItem="Eqq-7r-wbo" firstAttribute="top" secondItem="o7M-Z0-dZP" secondAttribute="top" id="WF5-St-aS5"/>
+                                                <constraint firstAttribute="trailing" secondItem="Eqq-7r-wbo" secondAttribute="trailing" id="eH4-LX-JrI"/>
+                                                <constraint firstAttribute="bottom" secondItem="Eqq-7r-wbo" secondAttribute="bottom" id="jZ4-w9-mk4"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                            <tableViewSection id="WAT-xy-zed">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="22" id="RkP-sK-cad">
+                                        <rect key="frame" x="0.0" y="348" width="320" height="22"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="RkP-sK-cad" id="V16-x1-yNh">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="22"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="UkB-GO-zx7" customClass="HTLTableViewCell" customModule="HyperTimeLogger" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="370" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="UkB-GO-zx7" id="1tA-Ts-edq">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="raV-Xh-mPD" customClass="HTLButton" customModule="HyperTimeLogger" customModuleProvider="target">
+                                                    <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                                    <state key="normal" title="Reset Content"/>
+                                                </button>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="raV-Xh-mPD" secondAttribute="trailing" id="1OK-Iw-Fnr"/>
+                                                <constraint firstItem="raV-Xh-mPD" firstAttribute="leading" secondItem="1tA-Ts-edq" secondAttribute="leading" id="c7y-Eu-qTX"/>
+                                                <constraint firstItem="raV-Xh-mPD" firstAttribute="top" secondItem="1tA-Ts-edq" secondAttribute="top" id="hnI-iW-kMh"/>
+                                                <constraint firstAttribute="bottom" secondItem="raV-Xh-mPD" secondAttribute="bottom" id="q4T-cm-lwk"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                            <tableViewSection id="IE4-xp-PFy">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="22" id="gfH-3A-ICj">
+                                        <rect key="frame" x="0.0" y="414" width="320" height="22"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="gfH-3A-ICj" id="oQx-VI-JJA">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="22"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="Uqy-zv-ehN" customClass="HTLTableViewCell" customModule="HyperTimeLogger" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="436" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Uqy-zv-ehN" id="7yO-JI-zLX">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Sj-0V-iCG" customClass="HTLButton" customModule="HyperTimeLogger" customModuleProvider="target">
+                                                    <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                                    <state key="normal" title="Reset Defaults"/>
+                                                </button>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="0Sj-0V-iCG" firstAttribute="leading" secondItem="7yO-JI-zLX" secondAttribute="leading" id="1YV-DJ-3cg"/>
+                                                <constraint firstAttribute="bottom" secondItem="0Sj-0V-iCG" secondAttribute="bottom" id="RvB-4w-TVZ"/>
+                                                <constraint firstItem="0Sj-0V-iCG" firstAttribute="top" secondItem="7yO-JI-zLX" secondAttribute="top" id="nF7-69-wTz"/>
+                                                <constraint firstAttribute="trailing" secondItem="0Sj-0V-iCG" secondAttribute="trailing" id="pbq-fQ-85D"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                            <tableViewSection id="6gZ-eA-d0w">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="22" id="4GC-or-BjK">
+                                        <rect key="frame" x="0.0" y="480" width="320" height="22"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="4GC-or-BjK" id="zel-vK-80B">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="22"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="J9z-NN-VqM" customClass="HTLTableViewCell" customModule="HyperTimeLogger" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="502" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="J9z-NN-VqM" id="9gQ-PC-KP9">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="brq-Hc-qG8" customClass="HTLButton" customModule="HyperTimeLogger" customModuleProvider="target">
+                                                    <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                                    <state key="normal" title="Generate Test Data"/>
+                                                </button>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="brq-Hc-qG8" secondAttribute="trailing" id="FZO-Eu-Rza"/>
+                                                <constraint firstAttribute="bottom" secondItem="brq-Hc-qG8" secondAttribute="bottom" id="RhN-iy-1XT"/>
+                                                <constraint firstItem="brq-Hc-qG8" firstAttribute="leading" secondItem="9gQ-PC-KP9" secondAttribute="leading" id="p2Y-To-xEL"/>
+                                                <constraint firstItem="brq-Hc-qG8" firstAttribute="top" secondItem="9gQ-PC-KP9" secondAttribute="top" id="pIs-kf-YBc"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="pZi-e8-mEs">
+                                        <rect key="frame" x="0.0" y="546" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="pZi-e8-mEs" id="rjj-qa-XQN">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                        </sections>
+                        <connections>
+                            <outlet property="dataSource" destination="XLF-sU-bF6" id="JR8-8y-YS5"/>
+                            <outlet property="delegate" destination="XLF-sU-bF6" id="dxo-9J-t8W"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="Fsz-Mz-Zw6">
+                        <barButtonItem key="leftBarButtonItem" systemItem="done" id="hIg-kt-WcW">
+                            <connections>
+                                <action selector="doneButtonAction:" destination="XLF-sU-bF6" id="jo0-Xx-A98"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="localNotificationsIntervalCell" destination="ZaL-pd-Wht" id="DRs-DV-Zj8"/>
+                        <outlet property="remindersEnabledSwitch" destination="Om8-vq-ytz" id="LBZ-Ht-c4Z"/>
+                        <outlet property="remindersIntervalPicker" destination="iBi-sB-whS" id="g0h-gp-VTJ"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nbF-oz-7tW" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="831" y="-1035"/>
+        </scene>
         <!--Settings View Controller-->
         <scene sceneID="bhv-9l-aAJ">
             <objects>
@@ -252,10 +525,10 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Background" translatesAutoresizingMaskIntoConstraints="NO" id="htG-r6-HFI">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                             </imageView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vg6-1d-3uW" userLabel="Reset Content Container">
+                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vg6-1d-3uW" userLabel="Reset Content Container">
                                 <rect key="frame" x="0.0" y="84" width="320" height="40"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Zy-wc-5eB" customClass="HTLButton" customModule="HyperTimeLogger" customModuleProvider="target">
+                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Zy-wc-5eB" customClass="HTLButton" customModule="HyperTimeLogger" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="40"/>
                                         <state key="normal" title="Reset Content">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -274,10 +547,17 @@
                                     <constraint firstAttribute="trailing" secondItem="4Zy-wc-5eB" secondAttribute="trailing" id="sPp-zz-Whm"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RrL-q5-ASr" userLabel="Reset Defaults Container">
+                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3m9-cN-i8g" userLabel="Notifications Container">
+                                <rect key="frame" x="0.0" y="264" width="320" height="40"/>
+                                <color key="backgroundColor" white="1" alpha="0.25" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="8AV-fR-4fl"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="RrL-q5-ASr" userLabel="Reset Defaults Container">
                                 <rect key="frame" x="0.0" y="134" width="320" height="40"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vBj-xp-MRs" customClass="HTLButton" customModule="HyperTimeLogger" customModuleProvider="target">
+                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vBj-xp-MRs" customClass="HTLButton" customModule="HyperTimeLogger" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="40"/>
                                         <state key="normal" title="Reset Defaults">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -296,10 +576,10 @@
                                     <constraint firstAttribute="trailing" secondItem="vBj-xp-MRs" secondAttribute="trailing" id="x08-nd-SZ7"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Oyf-b1-yJ2" userLabel="Export to CSV Container">
+                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Oyf-b1-yJ2" userLabel="Export to CSV Container">
                                 <rect key="frame" x="0.0" y="184" width="320" height="40"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="erl-mU-x5B" customClass="HTLButton" customModule="HyperTimeLogger" customModuleProvider="target">
+                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="erl-mU-x5B" customClass="HTLButton" customModule="HyperTimeLogger" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="40"/>
                                         <state key="normal" title="Export To CSV">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -318,10 +598,10 @@
                                     <constraint firstAttribute="height" constant="40" id="zbL-Yv-zcm"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UOy-tH-wd9" userLabel="Generate Test Data Container">
+                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="UOy-tH-wd9" userLabel="Generate Test Data Container">
                                 <rect key="frame" x="0.0" y="234" width="320" height="40"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p3C-ZV-Aiz" customClass="HTLButton" customModule="HyperTimeLogger" customModuleProvider="target">
+                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p3C-ZV-Aiz" customClass="HTLButton" customModule="HyperTimeLogger" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="40"/>
                                         <state key="normal" title="Generate Test Data">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -375,7 +655,6 @@
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="vg6-1d-3uW" firstAttribute="top" secondItem="fTW-j6-Wx9" secondAttribute="bottom" constant="20" id="0qT-te-qRn"/>
                             <constraint firstItem="fTW-j6-Wx9" firstAttribute="leading" secondItem="lsZ-z4-Zfb" secondAttribute="leading" id="D5x-nm-goO"/>
                             <constraint firstItem="RrL-q5-ASr" firstAttribute="leading" secondItem="lsZ-z4-Zfb" secondAttribute="leading" id="GaH-9n-Fof"/>
                             <constraint firstItem="fTW-j6-Wx9" firstAttribute="top" secondItem="lsZ-z4-Zfb" secondAttribute="top" id="GqV-N1-uQO"/>
@@ -404,7 +683,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="X79-we-1I6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="384.80000000000001" y="-922.05333333333328"/>
+            <point key="canvasLocation" x="1222" y="-541"/>
         </scene>
         <!--Edit Report View Controller-->
         <scene sceneID="g3d-0o-aFV">
@@ -927,7 +1206,6 @@
         <image name="statistics.png" width="22" height="17"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="X8g-yV-Eeh"/>
         <segue reference="xss-nb-MOj"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="1" green="0.50196081399917603" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>

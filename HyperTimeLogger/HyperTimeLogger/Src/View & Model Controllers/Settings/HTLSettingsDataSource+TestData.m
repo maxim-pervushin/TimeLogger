@@ -4,12 +4,12 @@
 //
 
 #import "HTLSettingsDataSource+TestData.h"
+#import "HTLApp.h"
 #import "HTLCategory.h"
 #import "NSDate+HTLComponents.h"
 #import "HTLReport.h"
 #import "HTLReportExtended.h"
 #import "HTLDataManager.h"
-#import "HTLAppDelegate.h"
 
 @implementation HTLSettingsDataSource (TestData)
 
@@ -70,7 +70,7 @@
                                                           startDate:startDate
                                                             endDate:endDate];
 
-                [HTLAppDataManger storeReportExtended:
+                [[HTLApp dataManager] storeReportExtended:
                         [HTLReportExtended reportExtendedWithReport:report
                                                              action:action
                                                            category:category]];

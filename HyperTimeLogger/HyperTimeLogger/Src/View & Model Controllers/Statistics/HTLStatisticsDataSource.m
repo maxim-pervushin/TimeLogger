@@ -4,12 +4,12 @@
 //
 
 #import "HTLStatisticsDataSource.h"
+#import "HTLApp.h"
 #import "HTLReport.h"
 #import "HTLReportExtended.h"
 #import "HTLDataManager.h"
 #import "HTLDateSection.h"
 #import "HTLStatisticsItem.h"
-#import "HTLAppDelegate.h"
 
 
 @interface HTLStatisticsDataSource ()      {
@@ -44,12 +44,12 @@
 - (void)reloadData {
     __weak __typeof(self) weakSelf = self;
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0), ^{
-        NSArray *categories = [HTLAppDataManger findCategoriesWithDateSection:weakSelf.dateSection];
+        NSArray *categories = [[HTLApp dataManager] findCategoriesWithDateSection:weakSelf.dateSection];
         NSMutableArray *categoriesCalculated = [NSMutableArray new];
         NSMutableDictionary *statisticsByCategoryCalculated = [NSMutableDictionary new];
         NSTimeInterval totalTime = 0;
         for (HTLCategory *category in categories) {
-            NSArray *reportsExtended = [HTLAppDataManger findReportsExtendedWithDateSection:self.dateSection
+            NSArray *reportsExtended = [[HTLApp dataManager] findReportsExtendedWithDateSection:self.dateSection
                                                                                    category:category];
 
             NSTimeInterval categoryTotalTime = 0;
