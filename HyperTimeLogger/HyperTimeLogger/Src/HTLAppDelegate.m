@@ -50,6 +50,8 @@ static NSString *const kStorageFileName = @"time_logger_storage.db";
     [HTLButton appearance].tintColor = [UIColor flatCloudsColor];
 
     [HTLNavigationBar appearance].tintColor = [UIColor flatCloudsColor];
+    [HTLNavigationBar appearance].barTintColor = [UIColor flatAsbestosColor];
+    [HTLNavigationBar appearance].barStyle = UIBarStyleBlack;
 
     [HTLTableViewCell appearance].backgroundColor = [UIColor flatAsbestosColor];
 

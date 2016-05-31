@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="bWL-M1-wCh">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="Qiz-B5-XH0">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
@@ -16,14 +16,14 @@
                         <viewControllerLayoutGuide type="bottom" id="aeP-Xy-oAe"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Vjn-Vx-jZb" customClass="HTLBackgroundView" customModule="HyperTimeLogger" customModuleProvider="target">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Background" translatesAutoresizingMaskIntoConstraints="NO" id="eJ3-aY-laZ">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
                             </imageView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="CmE-Wj-DPf" userLabel="Reports Table View">
-                                <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ReportCell" id="Uod-oO-zMN" customClass="HTLReportExtendedCell">
@@ -102,7 +102,7 @@
                                 </connections>
                             </tableView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XeI-6A-xKb" customClass="HTLAddButtonWidget" customModule="HyperTimeLogger" customModuleProvider="target">
-                                <rect key="frame" x="30" y="458" width="240" height="60"/>
+                                <rect key="frame" x="30" y="394" width="240" height="60"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="add.png" translatesAutoresizingMaskIntoConstraints="NO" id="KMN-vU-Zbm" customClass="HTLRoundedImageView" customModule="HyperTimeLogger" customModuleProvider="target">
                                         <rect key="frame" x="180" y="0.0" width="60" height="60"/>
@@ -138,66 +138,18 @@
                                     <outletCollection property="gestureRecognizers" destination="BK9-0L-aWt" appends="YES" id="tWR-Dh-Pht"/>
                                 </connections>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kka-RN-YK7" customClass="HTLTopBarView" customModule="HyperTimeLogger" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="64"/>
-                                <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="thO-rO-v1w" customClass="HTLLineView" customModule="HyperTimeLogger" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="63" width="320" height="1"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="1" placeholder="YES" id="bCY-tx-6zP"/>
-                                        </constraints>
-                                    </view>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jmw-eB-eo5" customClass="HTLButton" customModule="HyperTimeLogger" customModuleProvider="target">
-                                        <rect key="frame" x="286" y="24" width="22" height="36"/>
-                                        <accessibility key="accessibilityConfiguration" identifier="Statistics"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="36" id="lgf-2E-eke"/>
-                                        </constraints>
-                                        <state key="normal" image="statistics.png"/>
-                                        <connections>
-                                            <segue destination="FHu-qc-3H3" kind="modal" id="A2H-3a-sb7"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="quC-Xz-W0K" customClass="HTLButton" customModule="HyperTimeLogger" customModuleProvider="target">
-                                        <rect key="frame" x="8" y="24" width="22" height="36"/>
-                                        <accessibility key="accessibilityConfiguration" identifier="Settings"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="36" id="bjA-R0-2Aw"/>
-                                        </constraints>
-                                        <state key="normal" image="settings.png"/>
-                                        <connections>
-                                            <segue destination="fX1-gk-tI8" kind="modal" id="VUn-fE-01y"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                                <color key="backgroundColor" red="0.50196081400000003" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="64" id="5ri-yR-N9e"/>
-                                    <constraint firstAttribute="trailing" secondItem="jmw-eB-eo5" secondAttribute="trailing" constant="12" id="6ek-1g-x5f"/>
-                                    <constraint firstAttribute="bottom" secondItem="quC-Xz-W0K" secondAttribute="bottom" constant="4" id="An7-oZ-pWO"/>
-                                    <constraint firstItem="thO-rO-v1w" firstAttribute="leading" secondItem="kka-RN-YK7" secondAttribute="leading" id="KDy-xz-jIQ"/>
-                                    <constraint firstAttribute="bottom" secondItem="thO-rO-v1w" secondAttribute="bottom" id="eiG-qw-Ah2"/>
-                                    <constraint firstAttribute="bottom" secondItem="jmw-eB-eo5" secondAttribute="bottom" constant="4" id="i0u-z0-elY"/>
-                                    <constraint firstAttribute="trailing" secondItem="thO-rO-v1w" secondAttribute="trailing" id="tdj-4X-sdk"/>
-                                    <constraint firstItem="quC-Xz-W0K" firstAttribute="leading" secondItem="kka-RN-YK7" secondAttribute="leading" constant="12" id="xJp-zR-K4u"/>
-                                </constraints>
-                            </view>
                         </subviews>
                         <constraints>
-                            <constraint firstItem="CmE-Wj-DPf" firstAttribute="top" secondItem="kka-RN-YK7" secondAttribute="bottom" id="11p-rm-vDh"/>
                             <constraint firstItem="aeP-Xy-oAe" firstAttribute="top" secondItem="CmE-Wj-DPf" secondAttribute="bottom" id="15E-oD-g20"/>
                             <constraint firstItem="eJ3-aY-laZ" firstAttribute="top" secondItem="Vjn-Vx-jZb" secondAttribute="top" id="38D-cJ-ccI"/>
                             <constraint firstAttribute="bottom" secondItem="XeI-6A-xKb" secondAttribute="bottom" constant="50" id="6Ah-Cq-WsM"/>
+                            <constraint firstItem="CmE-Wj-DPf" firstAttribute="top" secondItem="80p-4T-6fx" secondAttribute="bottom" id="7oG-2M-k8k"/>
                             <constraint firstItem="eJ3-aY-laZ" firstAttribute="leading" secondItem="Vjn-Vx-jZb" secondAttribute="leading" id="9ir-r2-14u"/>
                             <constraint firstItem="aeP-Xy-oAe" firstAttribute="top" secondItem="eJ3-aY-laZ" secondAttribute="bottom" id="AwU-W9-LfI"/>
                             <constraint firstAttribute="trailing" secondItem="XeI-6A-xKb" secondAttribute="trailing" constant="50" id="G7O-ZB-xnp"/>
-                            <constraint firstAttribute="trailing" secondItem="kka-RN-YK7" secondAttribute="trailing" id="NMl-Jz-XU9"/>
                             <constraint firstItem="CmE-Wj-DPf" firstAttribute="leading" secondItem="Vjn-Vx-jZb" secondAttribute="leading" id="TzQ-Qs-3wk"/>
-                            <constraint firstItem="kka-RN-YK7" firstAttribute="top" secondItem="Vjn-Vx-jZb" secondAttribute="top" id="jqp-b2-8bB"/>
                             <constraint firstAttribute="trailing" secondItem="CmE-Wj-DPf" secondAttribute="trailing" id="uFC-14-fKG"/>
                             <constraint firstAttribute="trailing" secondItem="eJ3-aY-laZ" secondAttribute="trailing" id="vOc-0c-EQ7"/>
-                            <constraint firstItem="kka-RN-YK7" firstAttribute="leading" secondItem="Vjn-Vx-jZb" secondAttribute="leading" id="xcv-PW-ryA"/>
                         </constraints>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout"/>
@@ -235,7 +187,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="-89.599999999999994" y="-234.77333333333334"/>
+            <point key="canvasLocation" x="-90" y="-235"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="4ds-tC-aI7">
@@ -684,6 +636,22 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="X79-we-1I6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1222" y="-541"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="DQR-ne-IYU">
+            <objects>
+                <navigationController id="Qiz-B5-XH0" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="u3c-ot-STR" customClass="HTLNavigationBar" customModule="HyperTimeLogger" customModuleProvider="target">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="bWL-M1-wCh" kind="relationship" relationship="rootViewController" id="H41-kM-5Lc"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="j3D-d4-kFo" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-165" y="448"/>
         </scene>
         <!--Edit Report View Controller-->
         <scene sceneID="g3d-0o-aFV">
@@ -1196,7 +1164,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YDC-4Q-Xdy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="384.80000000000001" y="-227.19999999999999"/>
+            <point key="canvasLocation" x="384" y="-235"/>
         </scene>
     </scenes>
     <resources>
