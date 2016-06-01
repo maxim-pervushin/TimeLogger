@@ -8,8 +8,8 @@
 /* Class = "UILabel"; text = "00:00:00"; ObjectID = "45X-uq-LZX"; */
 "45X-uq-LZX.text" = "00:00:00";
 
-/* Class = "UIButton"; normalTitle = "Reset Content"; ObjectID = "4Zy-wc-5eB"; */
-"4Zy-wc-5eB.normalTitle" = "Reset Content";
+/* Class = "UIButton"; normalTitle = "Reset Content"; ObjectID = "raV-Xh-mPD"; */
+"raV-Xh-mPD.normalTitle" = "Reset Content";
 
 /* Class = "UIButton"; normalTitle = "Done"; ObjectID = "5hz-ku-1S4"; */
 "5hz-ku-1S4.normalTitle" = "Done";
@@ -50,8 +50,8 @@
 /* Class = "UILabel"; text = "[Title]"; ObjectID = "dvj-IQ-Opl"; */
 "dvj-IQ-Opl.text" = "[Title]";
 
-/* Class = "UIButton"; normalTitle = "Export To CSV"; ObjectID = "erl-mU-x5B"; */
-"erl-mU-x5B.normalTitle" = "Export To CSV";
+/* Class = "UIButton"; normalTitle = "Export To CSV"; ObjectID = "Eqq-7r-wbo"; */
+"Eqq-7r-wbo.normalTitle" = "Export To CSV";
 
 /* Class = "UILabel"; text = "[Action Title]"; ObjectID = "fZ0-7Z-dsf"; */
 "fZ0-7Z-dsf.text" = "[Action Title]";
@@ -59,11 +59,14 @@
 /* Class = "UILabel"; text = "[Category Title]"; ObjectID = "fbC-MA-1cf"; */
 "fbC-MA-1cf.text" = "[Category Title]";
 
-/* Class = "UIButton"; normalTitle = "Generate Test Data"; ObjectID = "p3C-ZV-Aiz"; */
-"p3C-ZV-Aiz.normalTitle" = "Generate Test Data";
+/* Class = "UIButton"; normalTitle = "Generate Test Data"; ObjectID = "brq-Hc-qG8"; */
+"brq-Hc-qG8.normalTitle" = "Generate Test Data";
 
-/* Class = "UIButton"; normalTitle = "Reset Defaults"; ObjectID = "vBj-xp-MRs"; */
-"vBj-xp-MRs.normalTitle" = "Reset Defaults";
+/* Class = "UIButton"; normalTitle = "Reset Defaults"; ObjectID = "0Sj-0V-iCG"; */
+"0Sj-0V-iCG.normalTitle" = "Reset Defaults";
 
 /* Class = "UILabel"; text = "[Percentage]"; ObjectID = "wGD-CJ-fTe"; */
 "wGD-CJ-fTe.text" = "[Percentage]";
+
+/* Class = "UILabel"; text = "Reminders"; ObjectID = "NNg-zs-c6a"; */
+"NNg-zs-c6a.text" = "Reminders";
