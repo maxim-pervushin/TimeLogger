@@ -33,7 +33,6 @@
 		73BC62DBB0557CEF66331263 /* HTLReport+HTLHelpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6F771B4A63AA8FABCDF5 /* HTLReport+HTLHelpers.m */; };
 		73BC631CE07CD174D4AD23C0 /* HTLLineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC60ECEFAC2122A4C17181 /* HTLLineView.swift */; };
 		73BC632B40084A909E07A1F8 /* NSDate+HTLTimeHelpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC62DB5CA313A4BC61EC0F /* NSDate+HTLTimeHelpers.m */; };
-		73BC63786959F7D83E3E87CF /* HTLSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC69788FA88BEA8DAF03AC /* HTLSettingsViewController.m */; };
 		73BC638A6FA5B2F7F6011EA9 /* HTLLineLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6C9DCB8A7FE3DB68B98D /* HTLLineLayout.swift */; };
 		73BC63A745D1B957781BC3C0 /* NSDate+HTLComponents.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6F6EE1E455D98426F705 /* NSDate+HTLComponents.m */; };
 		73BC63D51F415B3D2950F6A6 /* HTLStatisticsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6B86F0BBBAD9C3ECC490 /* HTLStatisticsViewController.m */; };
@@ -176,7 +175,6 @@
 		C516A6EA1B3AD18E0018F022 /* HTLCSVStringExportProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6FEC821B2D22ACD250CD /* HTLCSVStringExportProvider.m */; };
 		C516A6EB1B3AD18E0018F022 /* HTLAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC62BD6319224D876880BD /* HTLAppDelegate.m */; };
 		C516A6EC1B3AD18E0018F022 /* HTLSqliteStorageProvider+Deserialization.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6D1F71AFEE603353B859 /* HTLSqliteStorageProvider+Deserialization.m */; };
-		C516A6ED1B3AD18E0018F022 /* HTLSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC69788FA88BEA8DAF03AC /* HTLSettingsViewController.m */; };
 		C516A6EE1B3AD18E0018F022 /* HTLSettingsDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6E516EB62290DD7B243C /* HTLSettingsDataSource.m */; };
 		C516A6EF1B3AD18E0018F022 /* HTLStatisticsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6B86F0BBBAD9C3ECC490 /* HTLStatisticsViewController.m */; };
 		C516A6F01B3AD18E0018F022 /* HTLReportListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6E168D88E254C8F6A4CE /* HTLReportListViewController.m */; };
@@ -224,7 +222,6 @@
 		C516A7351B3AD2590018F022 /* HTLCSVStringExportProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6FEC821B2D22ACD250CD /* HTLCSVStringExportProvider.m */; };
 		C516A7361B3AD2590018F022 /* HTLAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC62BD6319224D876880BD /* HTLAppDelegate.m */; };
 		C516A7371B3AD2590018F022 /* HTLSqliteStorageProvider+Deserialization.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6D1F71AFEE603353B859 /* HTLSqliteStorageProvider+Deserialization.m */; };
-		C516A7381B3AD2590018F022 /* HTLSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC69788FA88BEA8DAF03AC /* HTLSettingsViewController.m */; };
 		C516A7391B3AD2590018F022 /* HTLSettingsDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6E516EB62290DD7B243C /* HTLSettingsDataSource.m */; };
 		C516A73A1B3AD2590018F022 /* HTLStatisticsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6B86F0BBBAD9C3ECC490 /* HTLStatisticsViewController.m */; };
 		C516A73B1B3AD2590018F022 /* HTLReportListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6E168D88E254C8F6A4CE /* HTLReportListViewController.m */; };
@@ -594,9 +591,7 @@
 		73BC68B4BB6FD2C16DCFD83A /* clock_transparent.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = clock_transparent.png; sourceTree = "<group>"; };
 		73BC68B935DD2C83FA55C77F /* HTLStatisticsItemCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTLStatisticsItemCell.m; sourceTree = "<group>"; };
 		73BC68DA26EAC7B4FDF38B76 /* HTLCompletion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTLCompletion.h; sourceTree = "<group>"; };
-		73BC693996F5418B34AAA1E5 /* HTLSettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTLSettingsViewController.h; sourceTree = "<group>"; };
 		73BC6968DEE8D9C79A5AB9FB /* HTLButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTLButton.swift; sourceTree = "<group>"; };
-		73BC69788FA88BEA8DAF03AC /* HTLSettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTLSettingsViewController.m; sourceTree = "<group>"; };
 		73BC6A08B8F5E4EB350AA2FD /* HTLEditReportViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTLEditReportViewController.h; sourceTree = "<group>"; };
 		73BC6A22878FD4F414CF5C2A /* settings@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "settings@2x.png"; sourceTree = "<group>"; };
 		73BC6A4018BAEAD4A02545CA /* HTLLightBackgroundView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTLLightBackgroundView.swift; sourceTree = "<group>"; };
@@ -1156,8 +1151,6 @@
 		73BC6C3FD8FF91AD26080AB4 /* Settings */ = {
 			isa = PBXGroup;
 			children = (
-				73BC693996F5418B34AAA1E5 /* HTLSettingsViewController.h */,
-				73BC69788FA88BEA8DAF03AC /* HTLSettingsViewController.m */,
 				73BC656F19F67BA6578AE7DC /* HTLSettingsDataSource.h */,
 				73BC6E516EB62290DD7B243C /* HTLSettingsDataSource.m */,
 				73BC672CAAD267B51798D558 /* HTLSettingsDataSource+TestData.h */,
@@ -1962,7 +1955,6 @@
 				C516A6EA1B3AD18E0018F022 /* HTLCSVStringExportProvider.m in Sources */,
 				C516A6EB1B3AD18E0018F022 /* HTLAppDelegate.m in Sources */,
 				C516A6EC1B3AD18E0018F022 /* HTLSqliteStorageProvider+Deserialization.m in Sources */,
-				C516A6ED1B3AD18E0018F022 /* HTLSettingsViewController.m in Sources */,
 				C516A6EE1B3AD18E0018F022 /* HTLSettingsDataSource.m in Sources */,
 				C516A6EF1B3AD18E0018F022 /* HTLStatisticsViewController.m in Sources */,
 				C582B3071B3EC8D5005CC526 /* DDTTYLogger.m in Sources */,
@@ -2042,7 +2034,6 @@
 				C516A7351B3AD2590018F022 /* HTLCSVStringExportProvider.m in Sources */,
 				C516A7361B3AD2590018F022 /* HTLAppDelegate.m in Sources */,
 				C516A7371B3AD2590018F022 /* HTLSqliteStorageProvider+Deserialization.m in Sources */,
-				C516A7381B3AD2590018F022 /* HTLSettingsViewController.m in Sources */,
 				C516A7391B3AD2590018F022 /* HTLSettingsDataSource.m in Sources */,
 				C516A73A1B3AD2590018F022 /* HTLStatisticsViewController.m in Sources */,
 				C582B3061B3EC8D5005CC526 /* DDTTYLogger.m in Sources */,
@@ -2275,7 +2266,6 @@
 				73BC69E4F116C55691C0B6DF /* HTLCSVStringExportProvider.m in Sources */,
 				73BC686682E53ABD3DCB152B /* HTLAppDelegate.m in Sources */,
 				73BC673ED541609F1B93818F /* HTLSqliteStorageProvider+Deserialization.m in Sources */,
-				73BC63786959F7D83E3E87CF /* HTLSettingsViewController.m in Sources */,
 				73BC6A38F00033FFAF9A4769 /* HTLSettingsDataSource.m in Sources */,
 				73BC63D51F415B3D2950F6A6 /* HTLStatisticsViewController.m in Sources */,
 				C582B3081B3EC8D5005CC526 /* DDTTYLogger.m in Sources */,

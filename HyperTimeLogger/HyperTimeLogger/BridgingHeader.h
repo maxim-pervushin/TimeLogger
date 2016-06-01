@@ -8,5 +8,7 @@
 
 #import "HTLApp.h"
 #import "HTLRemindersManager.h"
+#import "HTLSettingsDataSource.h"
+#import "HTLSettingsDataSource+TestData.h"
 #import "UIColor+FlatColors.h"
 #import "UIColor+HTLHelpers.h"

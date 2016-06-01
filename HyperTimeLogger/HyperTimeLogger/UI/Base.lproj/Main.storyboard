@@ -271,7 +271,7 @@
                                                                 <!--1970-01-01 11:15:00 +0000-->
                                                             </date>
                                                             <connections>
-                                                                <action selector="notificationsIntervalPickerValueChanged:" destination="XLF-sU-bF6" eventType="valueChanged" id="PtM-aC-JrC"/>
+                                                                <action selector="remindersIntervalPickerValueChanged:" destination="XLF-sU-bF6" eventType="valueChanged" id="5sS-TH-ZIr"/>
                                                             </connections>
                                                         </datePicker>
                                                     </subviews>
@@ -314,6 +314,9 @@
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Eqq-7r-wbo" customClass="HTLButton" customModule="HyperTimeLogger" customModuleProvider="target">
                                                     <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                                     <state key="normal" title="Export to CSV"/>
+                                                    <connections>
+                                                        <action selector="exportToCSVButtonAction:" destination="XLF-sU-bF6" eventType="touchUpInside" id="phJ-7t-g3N"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
                                             <constraints>
@@ -348,6 +351,9 @@
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="raV-Xh-mPD" customClass="HTLButton" customModule="HyperTimeLogger" customModuleProvider="target">
                                                     <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                                     <state key="normal" title="Reset Content"/>
+                                                    <connections>
+                                                        <action selector="resetContentButtonAction:" destination="XLF-sU-bF6" eventType="touchUpInside" id="jmW-Qp-mTK"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
                                             <constraints>
@@ -382,6 +388,9 @@
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Sj-0V-iCG" customClass="HTLButton" customModule="HyperTimeLogger" customModuleProvider="target">
                                                     <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                                     <state key="normal" title="Reset Defaults"/>
+                                                    <connections>
+                                                        <action selector="resetDefaultsButtonAction:" destination="XLF-sU-bF6" eventType="touchUpInside" id="jxc-BR-vNt"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
                                             <constraints>
@@ -416,6 +425,9 @@
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="brq-Hc-qG8" customClass="HTLButton" customModule="HyperTimeLogger" customModuleProvider="target">
                                                     <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                                     <state key="normal" title="Generate Test Data"/>
+                                                    <connections>
+                                                        <action selector="generateTestDataButtonAction:" destination="XLF-sU-bF6" eventType="touchUpInside" id="Oxu-7z-ScY"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
                                             <constraints>
