@@ -156,7 +156,7 @@
                     <navigationItem key="navigationItem" id="Las-gv-CnI">
                         <barButtonItem key="leftBarButtonItem" image="settings.png" id="NAx-8s-eaW">
                             <connections>
-                                <segue destination="47e-2Z-u09" kind="modal" id="5Cr-yp-qGW"/>
+                                <segue destination="fX1-gk-tI8" kind="modal" id="e3X-xN-eLk"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" image="statistics.png" id="Bok-tL-Upo">
@@ -193,10 +193,9 @@
         <scene sceneID="4ds-tC-aI7">
             <objects>
                 <navigationController id="fX1-gk-tI8" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" translucent="NO" id="ZqB-LR-aMZ" customClass="HTLNavigationBar" customModule="HyperTimeLogger" customModuleProvider="target">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="ZqB-LR-aMZ" customClass="HTLNavigationBar" customModule="HyperTimeLogger" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="barTintColor" red="0.42352941176470588" green="0.47450980392156861" blue="0.47843137254901963" alpha="1" colorSpace="calibratedRGB"/>
                     </navigationBar>
                     <connections>
                         <segue destination="XLF-sU-bF6" kind="relationship" relationship="rootViewController" id="AMc-RM-Wz1"/>
@@ -211,14 +210,14 @@
             <objects>
                 <tableViewController id="XLF-sU-bF6" customClass="SettingsViewController" customModule="HyperTimeLogger" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="none" allowsSelection="NO" showsSelectionImmediatelyOnTouchBegin="NO" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="gso-WO-5eZ" customClass="HTLTableView" customModule="HyperTimeLogger" customModuleProvider="target">
-                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <sections>
                             <tableViewSection id="I1U-5e-Hek">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="22" id="oNj-jk-m5v">
-                                        <rect key="frame" x="0.0" y="0.0" width="320" height="22"/>
+                                        <rect key="frame" x="0.0" y="64" width="320" height="22"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="oNj-jk-m5v" id="HgA-SN-mmu">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="22"/>
@@ -227,7 +226,7 @@
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="2vZ-D6-zIO" customClass="HTLTableViewCell" customModule="HyperTimeLogger" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="22" width="320" height="44"/>
+                                        <rect key="frame" x="0.0" y="86" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="2vZ-D6-zIO" id="jSZ-rH-CmA">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -257,7 +256,7 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="216" id="ZaL-pd-Wht">
-                                        <rect key="frame" x="0.0" y="66" width="320" height="216"/>
+                                        <rect key="frame" x="0.0" y="130" width="320" height="216"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ZaL-pd-Wht" id="Z59-Pe-9bb">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="216"/>
@@ -297,7 +296,7 @@
                             <tableViewSection id="eKj-Kc-6AW">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="22" id="zzH-3N-Jt8">
-                                        <rect key="frame" x="0.0" y="282" width="320" height="22"/>
+                                        <rect key="frame" x="0.0" y="346" width="320" height="22"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="zzH-3N-Jt8" id="zsG-PB-4fR">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="22"/>
@@ -306,7 +305,7 @@
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="jYF-DJ-Pi4" customClass="HTLTableViewCell" customModule="HyperTimeLogger" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="304" width="320" height="44"/>
+                                        <rect key="frame" x="0.0" y="368" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="jYF-DJ-Pi4" id="o7M-Z0-dZP">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -331,7 +330,7 @@
                             <tableViewSection id="WAT-xy-zed">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="22" id="RkP-sK-cad">
-                                        <rect key="frame" x="0.0" y="348" width="320" height="22"/>
+                                        <rect key="frame" x="0.0" y="412" width="320" height="22"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="RkP-sK-cad" id="V16-x1-yNh">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="22"/>
@@ -340,7 +339,7 @@
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="UkB-GO-zx7" customClass="HTLTableViewCell" customModule="HyperTimeLogger" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="370" width="320" height="44"/>
+                                        <rect key="frame" x="0.0" y="434" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="UkB-GO-zx7" id="1tA-Ts-edq">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -365,7 +364,7 @@
                             <tableViewSection id="IE4-xp-PFy">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="22" id="gfH-3A-ICj">
-                                        <rect key="frame" x="0.0" y="414" width="320" height="22"/>
+                                        <rect key="frame" x="0.0" y="478" width="320" height="22"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="gfH-3A-ICj" id="oQx-VI-JJA">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="22"/>
@@ -374,7 +373,7 @@
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="Uqy-zv-ehN" customClass="HTLTableViewCell" customModule="HyperTimeLogger" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="436" width="320" height="44"/>
+                                        <rect key="frame" x="0.0" y="500" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Uqy-zv-ehN" id="7yO-JI-zLX">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -399,7 +398,7 @@
                             <tableViewSection id="6gZ-eA-d0w">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="22" id="4GC-or-BjK">
-                                        <rect key="frame" x="0.0" y="480" width="320" height="22"/>
+                                        <rect key="frame" x="0.0" y="544" width="320" height="22"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="4GC-or-BjK" id="zel-vK-80B">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="22"/>
@@ -408,7 +407,7 @@
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="J9z-NN-VqM" customClass="HTLTableViewCell" customModule="HyperTimeLogger" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="502" width="320" height="44"/>
+                                        <rect key="frame" x="0.0" y="566" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="J9z-NN-VqM" id="9gQ-PC-KP9">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -429,7 +428,7 @@
                                         <color key="backgroundColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="pZi-e8-mEs">
-                                        <rect key="frame" x="0.0" y="546" width="320" height="44"/>
+                                        <rect key="frame" x="0.0" y="610" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="pZi-e8-mEs" id="rjj-qa-XQN">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -635,7 +634,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="X79-we-1I6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1222" y="-541"/>
+            <point key="canvasLocation" x="1000" y="-397"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="DQR-ne-IYU">
@@ -651,7 +650,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="j3D-d4-kFo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-165" y="448"/>
+            <point key="canvasLocation" x="-532" y="-235"/>
         </scene>
         <!--Edit Report View Controller-->
         <scene sceneID="g3d-0o-aFV">
@@ -1168,7 +1167,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Background" width="540" height="960"/>
+        <image name="Background" width="2048" height="2048"/>
         <image name="add.png" width="512" height="512"/>
         <image name="settings.png" width="22" height="22"/>
         <image name="statistics.png" width="22" height="17"/>
