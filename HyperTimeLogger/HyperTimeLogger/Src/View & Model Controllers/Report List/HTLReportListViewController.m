@@ -16,6 +16,8 @@
 #import "HTLStatisticsViewController.h"
 #import "NSDate+HTLTimeHelpers.h"
 #import "HTLDateSection.h"
+#import "HTLEditReportNavigationController.h"
+#import "HTLStatisticsNavigationController.h"
 
 
 static NSString *const kReportCellIdentifier = @"ReportCell";
@@ -66,7 +68,6 @@ static const float kHeaderHeight = 35.0f;
 #pragma mark - HTLReportListViewController @IB
 
 - (IBAction)addButtonPanGesture:(UIPanGestureRecognizer *)panGestureRecognizer {
-    NSLog(@"addButtonPanGesture:");
     if (panGestureRecognizer.state == UIGestureRecognizerStateBegan) {
         self.originalToAddButtonToBottom = self.addButtonToBottomLayoutConstraint.constant;
         self.originalToAddButtonToRight = self.addButtonToRightLayoutConstraint.constant;
@@ -98,7 +99,6 @@ static const float kHeaderHeight = 35.0f;
 }
 
 - (IBAction)addButtonTapGesture:(UITapGestureRecognizer *)panGestureRecognizer {
-    NSLog(@"addButtonTapGesture:");
     [self performSegueWithIdentifier:kEditReportSegueIdentifier sender:self];
 }
 
@@ -196,6 +196,8 @@ static const float kHeaderHeight = 35.0f;
     }
 
     [self startTimer];
+
+    [self.view bringSubviewToFront:self.addButtonWidget];
 }
 
 - (void)viewDidDisappear:(BOOL)animated {
@@ -205,19 +207,19 @@ static const float kHeaderHeight = 35.0f;
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    if ([segue.destinationViewController isKindOfClass:HTLEditReportViewController.class]) {
-        HTLEditReportViewController *editReportViewController = segue.destinationViewController;
+    if ([segue.destinationViewController isKindOfClass:HTLEditReportNavigationController.class]) {
+        HTLEditReportNavigationController *editReportController = segue.destinationViewController;
         HTLReportExtended *reportExtended = nil;
         NSIndexPath *selected = self.tableView.indexPathForSelectedRow;
         if (selected) {
             reportExtended = [self.dataSource reportsExtendedForDateSectionAtIndex:selected.section][(NSUInteger) selected.row];
         }
-        editReportViewController.reportExtended = reportExtended;
+        editReportController.reportExtended = reportExtended;
 
-    } else if ([segue.destinationViewController isKindOfClass:HTLStatisticsViewController.class]) {
-        HTLStatisticsViewController *statisticsViewController = segue.destinationViewController;
+    } else if ([segue.destinationViewController isKindOfClass:HTLStatisticsNavigationController.class]) {
+        HTLStatisticsNavigationController *statisticsController = segue.destinationViewController;
         if ([sender isKindOfClass:HTLDateSection.class]) {
-            statisticsViewController.dateSection = sender;
+            statisticsController.dateSection = sender;
         }
     }
 }

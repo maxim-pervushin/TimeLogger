@@ -21,6 +21,7 @@
 		73BC61685C3C5693ED37A447 /* HTLNoContentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6EE7549A710918391000 /* HTLNoContentCell.swift */; };
 		73BC61727743AF39FA81CF8C /* HTLReportExtendedEditor.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6BD7F554BC56573CE86A /* HTLReportExtendedEditor.m */; };
 		73BC617D5432B3204E578CF4 /* settings.png in Resources */ = {isa = PBXBuildFile; fileRef = 73BC6F7DCFA8D0EF70DD39E0 /* settings.png */; };
+		73BC622981AB08195531EA00 /* HTLEditReportNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6BCE34A162CD95FBCD50 /* HTLEditReportNavigationController.m */; };
 		73BC624016E4231AC06C7519 /* HTLNoContentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6EE7549A710918391000 /* HTLNoContentCell.swift */; };
 		73BC62568DE7117F7D84C604 /* HTLAction.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC648635BCE062AF18E634 /* HTLAction.m */; };
 		73BC625BC83ED66A65CA00E7 /* HTLGridLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC642EB7C81CE00DEA7BFF /* HTLGridLayout.swift */; };
@@ -41,7 +42,9 @@
 		73BC63E583DA471B2D26C36E /* HTLReport.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6A41E76EE6DBA2B7B791 /* HTLReport.m */; };
 		73BC6436C539FA93E8CB0BFF /* HTLCompletion.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC612AAFD0BFC06B406EC4 /* HTLCompletion.m */; };
 		73BC645C882530C5C0520F4E /* HTLLineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC60ECEFAC2122A4C17181 /* HTLLineView.swift */; };
+		73BC64E69F86351BFBC6E83A /* HTLStatisticsNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6413E04F260E7D9A638C /* HTLStatisticsNavigationController.m */; };
 		73BC6503CA7D55DD98899F17 /* HTLLightLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6BDC5778C422461315BD /* HTLLightLabel.swift */; };
+		73BC65162CD2DB40305221DF /* HTLStatisticsNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6413E04F260E7D9A638C /* HTLStatisticsNavigationController.m */; };
 		73BC6546D21485AC3595DCC6 /* HTLLineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC60ECEFAC2122A4C17181 /* HTLLineView.swift */; };
 		73BC65AB5A04FEEA2462F6AF /* HTLCompletionCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6A799292EFF1A3FDE4D4 /* HTLCompletionCollectionViewCell.m */; };
 		73BC65EBF2E0EFBE18CE5FAA /* HTLReportExtended.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC666118C4F574F66F741D /* HTLReportExtended.m */; };
@@ -128,8 +131,10 @@
 		73BC6C75E24784AC052671E5 /* HTLEditReportViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6B659C1F2AF2CF606296 /* HTLEditReportViewController.m */; };
 		73BC6C974FCEF7F2E22CDEEF /* HTLRemindersManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6625C10B129814778031 /* HTLRemindersManager.m */; };
 		73BC6CC003E2DB538E6F16DE /* settings@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 73BC6A22878FD4F414CF5C2A /* settings@2x.png */; };
+		73BC6CD1C666E8AC2D5F5F94 /* HTLEditReportNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6BCE34A162CD95FBCD50 /* HTLEditReportNavigationController.m */; };
 		73BC6CDBEFCF220BE15C6707 /* HTLNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6234BC728B47BE55516B /* HTLNavigationBar.swift */; };
 		73BC6CF0058A7E5EA572126C /* HTLApp.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC66455BD3AF0537AF0E6F /* HTLApp.m */; };
+		73BC6CF4390B0432131A4D2A /* HTLStatisticsNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6413E04F260E7D9A638C /* HTLStatisticsNavigationController.m */; };
 		73BC6D0BCBFFC6D7B897C999 /* HTLDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6F1E0AC02A596C78B942 /* HTLDataManager.m */; };
 		73BC6D42F5DEFED44D50CF72 /* settings@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 73BC6B415FC214ECAF121C50 /* settings@3x.png */; };
 		73BC6D4AAD99665A10565079 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6B4DA596906232FF8970 /* main.m */; };
@@ -137,6 +142,7 @@
 		73BC6D6180E599F9CB8A0D8F /* HTLGridLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC642EB7C81CE00DEA7BFF /* HTLGridLayout.swift */; };
 		73BC6D96930A9DDA7825C490 /* HTLCompletionCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6A799292EFF1A3FDE4D4 /* HTLCompletionCollectionViewCell.m */; };
 		73BC6DA30D82DB7740AD6F11 /* UIColor+HTLHelpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC60624B8CE64E57E76B25 /* UIColor+HTLHelpers.m */; };
+		73BC6DCC5333CE54D1D567DF /* HTLEditReportNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6BCE34A162CD95FBCD50 /* HTLEditReportNavigationController.m */; };
 		73BC6E1306A15A029AC7BF97 /* HTLTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6219F0FACF6F0F1C8C76 /* HTLTableView.swift */; };
 		73BC6E37E01E454ABCF88F75 /* HTLAction.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC648635BCE062AF18E634 /* HTLAction.m */; };
 		73BC6E3ADFA6FBBB5FEA3468 /* HTLTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6219F0FACF6F0F1C8C76 /* HTLTableView.swift */; };
@@ -548,6 +554,7 @@
 		73BC62DB5CA313A4BC61EC0F /* NSDate+HTLTimeHelpers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+HTLTimeHelpers.m"; sourceTree = "<group>"; };
 		73BC63407702DDDB04CF58F7 /* HTLDateSection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTLDateSection.h; sourceTree = "<group>"; };
 		73BC63DA891A05E05D6EB4CC /* HTLCompletionCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTLCompletionCollectionViewCell.h; sourceTree = "<group>"; };
+		73BC6413E04F260E7D9A638C /* HTLStatisticsNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTLStatisticsNavigationController.m; sourceTree = "<group>"; };
 		73BC64192B6EF7AB8A700A9C /* HTLTopBarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTLTopBarView.swift; sourceTree = "<group>"; };
 		73BC642D0A6375B6BC652163 /* HTLStorageProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTLStorageProvider.h; sourceTree = "<group>"; };
 		73BC642EB7C81CE00DEA7BFF /* HTLGridLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTLGridLayout.swift; sourceTree = "<group>"; };
@@ -579,6 +586,7 @@
 		73BC679BB1D9E72CF141C410 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		73BC67B2DC0CBCFD95BC63E9 /* HTLDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTLDataSource.h; sourceTree = "<group>"; };
 		73BC681B64B78D2126E3F273 /* HTLReportExtendedCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTLReportExtendedCell.h; sourceTree = "<group>"; };
+		73BC6838C0CE0A0F93AF2882 /* HTLStatisticsNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTLStatisticsNavigationController.h; sourceTree = "<group>"; };
 		73BC684DB010D412F9E74A52 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		73BC686334D59793FEFA2E86 /* HTLSqliteStorageProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTLSqliteStorageProvider.m; sourceTree = "<group>"; };
 		73BC68877A11CD82AB9F0321 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.info; path = Info.plist; sourceTree = "<group>"; };
@@ -595,6 +603,7 @@
 		73BC6A41E76EE6DBA2B7B791 /* HTLReport.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTLReport.m; sourceTree = "<group>"; };
 		73BC6A799292EFF1A3FDE4D4 /* HTLCompletionCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTLCompletionCollectionViewCell.m; sourceTree = "<group>"; };
 		73BC6A907569DDE24F45ABAE /* HTLReportExtendedEditor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTLReportExtendedEditor.h; sourceTree = "<group>"; };
+		73BC6AB1EDAD2A0B57C44C3F /* HTLEditReportNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTLEditReportNavigationController.h; sourceTree = "<group>"; };
 		73BC6ACDFC039D8AAE2C5C57 /* HTLReport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTLReport.h; sourceTree = "<group>"; };
 		73BC6AD5E7AB90AA7FBB9715 /* PrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		73BC6AF703B69F7D9811A489 /* NSDate+HTLComponents.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+HTLComponents.h"; sourceTree = "<group>"; };
@@ -606,6 +615,7 @@
 		73BC6B659C1F2AF2CF606296 /* HTLEditReportViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTLEditReportViewController.m; sourceTree = "<group>"; };
 		73BC6B86F0BBBAD9C3ECC490 /* HTLStatisticsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTLStatisticsViewController.m; sourceTree = "<group>"; };
 		73BC6B8E25A8D300C95D3491 /* HTETodayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTETodayViewController.m; sourceTree = "<group>"; };
+		73BC6BCE34A162CD95FBCD50 /* HTLEditReportNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTLEditReportNavigationController.m; sourceTree = "<group>"; };
 		73BC6BD7F554BC56573CE86A /* HTLReportExtendedEditor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTLReportExtendedEditor.m; sourceTree = "<group>"; };
 		73BC6BDC5778C422461315BD /* HTLLightLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTLLightLabel.swift; sourceTree = "<group>"; };
 		73BC6BE6B628DC71E15F4935 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.info; path = Info.plist; sourceTree = "<group>"; };
@@ -834,6 +844,8 @@
 				73BC6B659C1F2AF2CF606296 /* HTLEditReportViewController.m */,
 				73BC6E2B7C419500D51BE784 /* HTLEditReportDataSource.h */,
 				73BC6F6B107E3546F7EBAE5C /* HTLEditReportDataSource.m */,
+				73BC6BCE34A162CD95FBCD50 /* HTLEditReportNavigationController.m */,
+				73BC6AB1EDAD2A0B57C44C3F /* HTLEditReportNavigationController.h */,
 			);
 			path = "Edit Report";
 			sourceTree = "<group>";
@@ -1276,6 +1288,8 @@
 				73BC6B86F0BBBAD9C3ECC490 /* HTLStatisticsViewController.m */,
 				73BC674C459A467E5BBE9DE3 /* HTLStatisticsDataSource.h */,
 				73BC64B38D1BC62AB8562034 /* HTLStatisticsDataSource.m */,
+				73BC6413E04F260E7D9A638C /* HTLStatisticsNavigationController.m */,
+				73BC6838C0CE0A0F93AF2882 /* HTLStatisticsNavigationController.h */,
 			);
 			path = Statistics;
 			sourceTree = "<group>";
@@ -1989,6 +2003,8 @@
 				73BC682FC4E950FABC42BE9E /* HTLNavigationBar.swift in Sources */,
 				73BC672D084C250E6A23F8F7 /* HTLTableViewCell.swift in Sources */,
 				73BC627669223D49E249BABE /* HTLLightLabel.swift in Sources */,
+				73BC6DCC5333CE54D1D567DF /* HTLEditReportNavigationController.m in Sources */,
+				73BC64E69F86351BFBC6E83A /* HTLStatisticsNavigationController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2067,6 +2083,8 @@
 				73BC6CDBEFCF220BE15C6707 /* HTLNavigationBar.swift in Sources */,
 				73BC6B95382105A764001092 /* HTLTableViewCell.swift in Sources */,
 				73BC6B8AD6C0ED7ED1F64AEA /* HTLLightLabel.swift in Sources */,
+				73BC6CD1C666E8AC2D5F5F94 /* HTLEditReportNavigationController.m in Sources */,
+				73BC65162CD2DB40305221DF /* HTLStatisticsNavigationController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2298,6 +2316,8 @@
 				73BC6B047F234AEFC09BD331 /* HTLNavigationBar.swift in Sources */,
 				73BC603C6999323AA4A2A108 /* HTLTableViewCell.swift in Sources */,
 				73BC6503CA7D55DD98899F17 /* HTLLightLabel.swift in Sources */,
+				73BC622981AB08195531EA00 /* HTLEditReportNavigationController.m in Sources */,
+				73BC6CF4390B0432131A4D2A /* HTLStatisticsNavigationController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

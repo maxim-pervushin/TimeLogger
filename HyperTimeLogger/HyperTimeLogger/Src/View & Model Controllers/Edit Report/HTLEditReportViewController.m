@@ -25,7 +25,7 @@ static NSString *const kCategoryCellIdentifier = @"CategoryCell";
 }
 
 @property(nonatomic, weak) IBOutlet NSLayoutConstraint *containerBottomConstraint;
-@property(nonatomic, weak) IBOutlet UIButton *saveButton;
+@property(nonatomic, weak) IBOutlet UIBarButtonItem *saveButton;
 @property(nonatomic, weak) IBOutlet UICollectionView *completionsCollectionView;
 @property(nonatomic, weak) IBOutlet UIButton *startDateButton;
 @property(nonatomic, weak) IBOutlet UIDatePicker *startDatePicker;
