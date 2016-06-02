@@ -89,17 +89,9 @@ class SettingsViewController: UITableViewController, MFMailComposeViewController
         presentViewController(alert, animated: true, completion: nil)
     }
 
-    @IBAction func generateTestDataButtonAction(sender: AnyObject) {
-        dataSource.generateTestData()
-    }
-
     // MARK: UITableViewController
 
     override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        if indexPath.section == 4 && HTLApp.versionIdentifier() == "" {
-            return 0
-        }
-
         if let remindersEnabledSwitch = remindersEnabledSwitch where indexPath.section == 0 && indexPath.row == 2 {
             return remindersEnabledSwitch.on ? 216 : 0
         }
@@ -108,6 +100,16 @@ class SettingsViewController: UITableViewController, MFMailComposeViewController
 
     // MARK: UIViewController
 
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        if HTLApp.versionIdentifier() != "" {
+            let gestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(SettingsViewController.generateTestDataGesture(_:)))
+            gestureRecognizer.numberOfTapsRequired = 7
+            gestureRecognizer.numberOfTouchesRequired = 2
+            tableView.addGestureRecognizer(gestureRecognizer)
+        }
+    }
+    
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         updateUI()
@@ -116,7 +118,7 @@ class SettingsViewController: UITableViewController, MFMailComposeViewController
     // MARK: private
 
     private let dataSource = HTLSettingsDataSource()
-
+    
     private func updateUI() {
         remindersEnabledSwitch?.on = HTLApp.remindersManager().enabled
 
@@ -127,6 +129,10 @@ class SettingsViewController: UITableViewController, MFMailComposeViewController
         }
     }
 
+    @objc private func generateTestDataGesture(sender: AnyObject) {
+        dataSource.generateTestData()
+    }
+    
     private func sendMailCSV(csv: String) {
         guard let data = csv.dataUsingEncoding(NSUTF8StringEncoding) else {
             return

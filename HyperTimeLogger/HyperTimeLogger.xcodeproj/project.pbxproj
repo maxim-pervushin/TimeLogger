@@ -398,6 +398,7 @@
 		C5866B6F1C5D357400EECB4B /* UIColor+FlatColors.m in Sources */ = {isa = PBXBuildFile; fileRef = C5866B691C5D357400EECB4B /* UIColor+FlatColors.m */; };
 		C58B38611B395FB7006C7AE7 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = C58B385D1B395FB7006C7AE7 /* LaunchScreen.xib */; };
 		C58B38621B395FB7006C7AE7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C58B385F1B395FB7006C7AE7 /* Main.storyboard */; };
+		C58BF8D11CFF234600D8FB86 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = C59088CA1B398E330099F8CB /* Localizable.strings */; };
 		C59088C81B398E330099F8CB /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = C59088CA1B398E330099F8CB /* Localizable.strings */; };
 		C59088CD1B398FE20099F8CB /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = C59088CA1B398E330099F8CB /* Localizable.strings */; };
 		C59689A11B3C16270038018D /* NSDate+HTLComponents.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BC6F6EE1E455D98426F705 /* NSDate+HTLComponents.m */; };
@@ -462,6 +463,13 @@
 			remoteGlobalIDString = C5FFE3D11B1857CD007D317D;
 			remoteInfo = HyperTimeLogger;
 		};
+		C58BF8D21CFF240D00D8FB86 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C5FFE3CA1B1857CD007D317D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C516A7191B3AD2590018F022;
+			remoteInfo = "HyperTimeLogger Alpha";
+		};
 		C59689F51B3C19860038018D /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = C5FFE3CA1B1857CD007D317D /* Project object */;
@@ -482,6 +490,13 @@
 			proxyType = 1;
 			remoteGlobalIDString = C5BA1B721B26F890006D80BC;
 			remoteInfo = TodayExtension;
+		};
+		C5C381951CFF3A1C004C7E48 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C5FFE3CA1B1857CD007D317D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C516A6CE1B3AD18E0018F022;
+			remoteInfo = "HyperTimeLogger Beta";
 		};
 		C5FFE3EC1B1857CE007D317D /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -1578,6 +1593,8 @@
 			);
 			dependencies = (
 				C557BEA31CAA7488005C5334 /* PBXTargetDependency */,
+				C58BF8D31CFF240D00D8FB86 /* PBXTargetDependency */,
+				C5C381961CFF3A1C004C7E48 /* PBXTargetDependency */,
 			);
 			name = HyperTimeLoggerUISnapshots;
 			productName = HyperTimeLoggerUISnapshots;
@@ -1702,7 +1719,7 @@
 					};
 					C557BE9C1CAA7488005C5334 = {
 						CreatedOnToolsVersion = 7.3;
-						TestTargetID = C5FFE3D11B1857CD007D317D;
+						TestTargetID = C516A7191B3AD2590018F022;
 					};
 					C596899E1B3C16270038018D = {
 						DevelopmentTeam = FRM2L78456;
@@ -1812,6 +1829,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C58BF8D11CFF234600D8FB86 /* Localizable.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2350,6 +2368,11 @@
 			target = C5FFE3D11B1857CD007D317D /* HyperTimeLogger */;
 			targetProxy = C557BEA21CAA7488005C5334 /* PBXContainerItemProxy */;
 		};
+		C58BF8D31CFF240D00D8FB86 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C516A7191B3AD2590018F022 /* HyperTimeLogger Alpha */;
+			targetProxy = C58BF8D21CFF240D00D8FB86 /* PBXContainerItemProxy */;
+		};
 		C59689F61B3C19860038018D /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = C596899E1B3C16270038018D /* TodayExtension Alpha */;
@@ -2364,6 +2387,11 @@
 			isa = PBXTargetDependency;
 			target = C5BA1B721B26F890006D80BC /* TodayExtension */;
 			targetProxy = C5BA1B7E1B26F890006D80BC /* PBXContainerItemProxy */;
+		};
+		C5C381961CFF3A1C004C7E48 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C516A6CE1B3AD18E0018F022 /* HyperTimeLogger Beta */;
+			targetProxy = C5C381951CFF3A1C004C7E48 /* PBXContainerItemProxy */;
 		};
 		C5FFE3ED1B1857CE007D317D /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -2586,7 +2614,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.maximpervushin.HyperTimeLoggerUISnapshots;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				TEST_TARGET_NAME = HyperTimeLogger;
+				TEST_TARGET_NAME = "HyperTimeLogger Alpha";
 			};
 			name = Debug;
 		};
@@ -2599,7 +2627,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.maximpervushin.HyperTimeLoggerUISnapshots;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_TARGET_NAME = HyperTimeLogger;
+				TEST_TARGET_NAME = "HyperTimeLogger Alpha";
 			};
 			name = Release;
 		};

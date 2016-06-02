@@ -27,22 +27,37 @@ class HyperTimeLoggerUISnapshots: XCTestCase {
     func testMakeSnapshots() {
         
         let app = XCUIApplication()
-        snapshot("01_Reports")
         
+        waitFor(app.buttons["Settings"], seconds: 1)
+        app.buttons["Settings"].tap()
+        
+        // Settings Screen
+        snapshot("04_Settings")
+        // Generate Test Data
+        app.tables.elementBoundByIndex(0).cells.elementBoundByIndex(0).tapWithNumberOfTaps(7, numberOfTouches: 2)
+        app.buttons["Done"].tap()
+
+        // Reports List Screen
+        snapshot("01_Reports")
         app.buttons["AddReportButton"].tap()
 
-        app.textFields["TextField"].typeText("Sleep")
-        app.collectionViews.staticTexts.elementBoundByIndex(0).tap()
+        // Add Report Screen
+        app.textFields["TextField"].tapWithNumberOfTaps(7, numberOfTouches: 2)//typeText("Sleep")
+        app.collectionViews["Categories"].cells.elementBoundByIndex(0).tap()
         snapshot("02_AddReport")
         
         app.buttons["Save"].tap()
+
+        // Reports List Screen
         app.buttons["Statistics"].tap()
+        
+        // Statistics Screen
         snapshot("03_Statistics")
-        
-        app.buttons["Done"].tap()
-        app.buttons["Settings"].tap()
-        snapshot("04_Settings")
-        
-        app.buttons["Done"].tap()
+    }
+    
+    func waitFor(element:XCUIElement, seconds waitSeconds:Double) {
+        let exists = NSPredicate(format: "exists == 1")
+        expectationForPredicate(exists, evaluatedWithObject: element, handler: nil)
+        waitForExpectationsWithTimeout(waitSeconds, handler: nil)
     }
 }

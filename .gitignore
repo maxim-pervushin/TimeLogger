@@ -43,3 +43,6 @@ Framework
 /fastlane/Preview.html
 # Snapshot generated screenshots
 /fastlane/screenshots/
+
+/screenshots
+screenshots

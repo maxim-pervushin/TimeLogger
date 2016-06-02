@@ -274,6 +274,11 @@ static NSString *const kCategoryCellIdentifier = @"CategoryCell";
     self.editor.category = completion.category;
 }
 
+- (void)setTestActionTitle {
+    self.textField.text = NSLocalizedString(@"Sleep", nil);
+    [self textFieldEditingChanged:self.textField];
+}
+
 #pragma mark - UIViewController
 
 - (void)viewDidLoad {
@@ -282,6 +287,13 @@ static NSString *const kCategoryCellIdentifier = @"CategoryCell";
     if ([self.categoriesCollectionView.collectionViewLayout isKindOfClass:[HTLLineLayout class]]) {
         HTLLineLayout *lineLayout = (HTLLineLayout *) self.categoriesCollectionView.collectionViewLayout;
         lineLayout.delegate = self;
+    }
+
+    if (![HTLApp.versionIdentifier isEqualToString:@""]) {
+        UITapGestureRecognizer *recognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(setTestActionTitle)];
+        recognizer.numberOfTapsRequired = 7;
+        recognizer.numberOfTouchesRequired = 2;
+        [self.textField addGestureRecognizer:recognizer];
     }
 
     [self updateUI];

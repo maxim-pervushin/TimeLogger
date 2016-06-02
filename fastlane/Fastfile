@@ -32,11 +32,6 @@ platform :ios do
     scan
   end
 
-  desc "Make screenshots"
-  lane :snapshot do
-    snapshot
-  end
-
   desc "Submit a new Beta Build to Apple TestFlight"
   desc "This will also make sure the profile is up to date"
   lane :beta do
