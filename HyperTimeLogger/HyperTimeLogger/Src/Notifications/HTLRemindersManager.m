@@ -13,8 +13,8 @@ static NSString *const kRemindersEnabledKey = @"RemindersEnabled";
 static NSString *const kRemindersIntervalKey = @"RemindersInterval";
 
 @implementation HTLRemindersManager
-@synthesize enabled;
-@synthesize interval;
+@dynamic enabled;
+@dynamic interval;
 
 #pragma mark - HTLRemindersManager public
 
@@ -59,14 +59,11 @@ static NSString *const kRemindersIntervalKey = @"RemindersInterval";
     NSMutableArray *notifications = [NSMutableArray new];
     for (int i = 0; i < kMaxLocalNotificationsNumber; i++) {
         UILocalNotification *localNotification = [UILocalNotification new];
-        // localNotification.repeatInterval = NSCalendarUnitMinute;
-//        localNotification.category = kLocalNotificationCategory;
         localNotification.fireDate = [NSDate dateWithTimeIntervalSinceNow:(i * reminderInterval)];
         localNotification.timeZone = [NSTimeZone localTimeZone];
         localNotification.soundName = UILocalNotificationDefaultSoundName;
-        localNotification.alertTitle = @"Title";
-        localNotification.alertBody = [NSString stringWithFormat:@"Notification: #%d", i];
-        localNotification.alertAction = @"Log Smth";
+        localNotification.alertTitle = [[NSBundle mainBundle] localizedInfoDictionary][@"CFBundleDisplayName"];
+        localNotification.alertBody = NSLocalizedString(@"Don't forget to log your activities!", @"");
         localNotification.hasAction = YES;
         [notifications addObject:localNotification];
     }
